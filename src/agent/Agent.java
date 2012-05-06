@@ -116,7 +116,7 @@ public class Agent {
 			//get the agent action
 			//if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")){
 			//if(i<500){
-			//	AgentAct = pXML.execute("walk_fine");
+				AgentAct = pXML.execute("walk_fine");
 			//}else{
 			//	AgentAct = pXML.execute("strafe_left");
 			//}
