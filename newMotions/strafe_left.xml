@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xsi:noNamespaceSchemaLocation="moves.xsd">
+
+	<low_skills>
+		<low_skill name="strafe_left" firstPhase="strafe_left_worse_stance" />
+	</low_skills>
+	<phases>
+		<phase name="strafe_left_worse_stance" next="strafing_left_worse">
+			<effectors>
+				<rle3 end="30" />
+				<rle4 end="-60"/>
+				<rle5 end="30" />
+				
+				<lle3 end="30" />
+				<lle4 end="-60"/>
+				<lle5 end="30" />
+				
+				
+				<rae1 end="-90"/>
+				<lae1 end="-90"/>
+				<rae2 end="-10"/>
+				<lae2 end="10"/>
+				<rae3 end="90"/>
+				<lae3 end="-90"/>
+				<rae4 end="45"/>
+				<lae4 end="-45"/>
+				
+				<rle2 end="0"/>
+				<lle2 end="0"/>
+				<rle6 end="0"/>
+				<lle6 end="0"/>
+			</effectors>
+			<duration>1000</duration>
+			<finalize>strafe_left_worse_stance</finalize>
+		</phase>
+		
+		<phase name="strafing_left_worse" next="strafing_left_worse3">
+			<effectors>
+				
+				<rle2 end="-30"/>
+				<lle2 end="0"/>
+				<rle6 end="3"/>
+				<lle6 end="0"/>
+				
+				
+				
+			</effectors>
+			<duration>250</duration>
+		</phase>
+		<phase name="strafing_left_worse3" next="strafing_left_worse4">
+			<effectors>
+				
+				<rle2 end="0"/>
+				<lle2 end="3"/>
+				<rle6 end="0"/>
+				<lle6 end="0"/>
+				
+				
+				
+			</effectors>
+			<duration>250</duration>
+		</phase>
+		
+		<phase name="strafing_left_worse4" next="strafing_left_worse5">
+			<effectors>
+				
+				<rle2 end="0"/>
+				<lle2 end="5"/>
+				<rle6 end="0"/>
+				<lle6 end="-2"/>
+				
+				
+				
+			</effectors>
+			<duration>250</duration>
+			<finalize>strafe_left_worse_stance</finalize>
+		</phase>
+		<phase name="strafing_left_worse5" next="strafing_left_worse" isFinal="true">
+			<effectors>
+				
+				<rle2 end="0"/>
+				<lle2 end="3"/>
+				<rle6 end="0"/>
+				<lle6 end="0"/>
+				
+				
+				
+			</effectors>
+			<duration>240</duration>
+			<finalize>strafe_left_worse_stance</finalize>
+		</phase>
+	</phases>
+</robot>

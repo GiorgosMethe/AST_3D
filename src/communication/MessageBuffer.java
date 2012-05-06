@@ -1,0 +1,49 @@
+/*******************************************************************************
+ * Copyright 2012, Technical University of Crete
+ * Autonomous Agents, winter semester 2011-12
+ * Semester Assignment
+ * 
+ * @author Methenitis Giorgos
+ * @author Mpountouris Konstantinos
+ * @author Papadimitriou Maouro Vassilis
+ * @author Skipetaris Dimosthenis 
+ *******************************************************************************/
+
+package communication;
+
+import worldState.TeamState;
+
+
+public class MessageBuffer {
+
+	public static float[] DistancesBuffer =new float[8];
+
+
+	@SuppressWarnings("static-access")
+	public static void UpdateBuffer(HearMessage msg){
+	
+		if(!msg.getMsg().equalsIgnoreCase("")){
+			String[] splittedMsg = msg.getMsg().split("%");
+			if(splittedMsg[1].equalsIgnoreCase(TeamState.getTeamSide())){
+				
+				DistancesBuffer[Integer.parseInt(splittedMsg[2])]=Float.parseFloat(splittedMsg[3]);
+
+			}
+		}
+
+	}
+
+
+	public static float[] getDistancesBuffer() {
+		return DistancesBuffer;
+	}
+
+
+	public static void setDistancesBuffer(float[] distancesBuffer) {
+		DistancesBuffer = distancesBuffer;
+	}
+
+
+
+
+}

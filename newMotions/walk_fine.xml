@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xsi:noNamespaceSchemaLocation="moves.xsd">
+	<low_skills>
+		<low_skill name="walk_fine" firstPhase="walk_attempt_start" />
+	</low_skills>
+
+	<phases>
+		<phase name="walk_attempt_start" next="walk_attempt_wait" skipIfFlag="in_walk_position">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="7" />
+				<lle2 end="-7" />
+				<rle3 end="55" />
+				<lle3 end="55" />
+				<rle4 end="-60" />
+				<lle4 end="-60" />
+				<rle5 end="30" />
+				<lle5 end="30" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
+				<rae1 end="-90" />
+				<lae1 end="-90" />
+				<rae2 end="-10" />
+				<lae2 end="10" />
+				<rae3 end="90" />
+				<lae3 end="-90" />
+				<rae4 end="45" />
+				<lae4 end="-45" />
+			</effectors>
+			<duration>700</duration>
+		</phase>
+		<phase name="walk_attempt_wait" next="walk_attempt3" skipIfFlag="in_walk_position">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+			</effectors>
+			<duration>1000</duration>
+		</phase>
+		<phase name="walk_attempt3" next="walk_attempt4" setFlagFalse="in_walk_position">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<rle3 end="65" />
+				<rle4 end="-80" />
+				<rle5 end="40" />
+				<lle3 end="55" />
+				<lle4 end="-60" />
+				<lle5 end="30" />
+				<rae1 end="-90" />
+				<lae1 end="-90" />
+			</effectors>
+			<duration>150</duration>
+		</phase>
+		<phase name="walk_attempt4" next="walk_attempt5">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<rle3 end="55" />
+				<rle4 end="-60" />
+				<rle5 end="30" />
+				<lle3 end="45" computed="left_walk_lean_lle3" />
+				<lle4 end="-70" />
+				<lle5 end="40" computed="left_walk_lean_lle5" />
+				<rae1 end="-100" />
+				<lae1 end="-80" />
+			</effectors>
+			<duration>150</duration>
+		</phase>
+		<phase name="walk_attempt5" next="walk_attempt6">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<lle3 end="65" />
+				<lle4 end="-80" />
+				<lle5 end="40" />
+				<rle3 end="55" />
+				<rle4 end="-60" />
+				<rle5 end="30" />
+				<rae1 end="-90" />
+				<lae1 end="-90" />
+			</effectors>
+			<duration>150</duration>
+		</phase>
+		<phase name="walk_attempt6" next="walk_fine_final" isFinal="true">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<lle3 end="55" />
+				<lle4 end="-60" />
+				<lle5 end="30" />
+				<rle3 end="45" computed="right_walk_lean_rle3" />
+				<rle4 end="-70" />
+				<rle5 end="40" computed="right_walk_lean_rle5" />
+				<rae1 end="-80" />
+				<lae1 end="-100" />
+			</effectors>
+			<duration>150</duration>
+			<finalize>walk_fine_final</finalize>
+		</phase>
+		<phase name="walk_fine_final" next="walk_fine_final2">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="0" />
+				<lle2 end="0" />
+				<rle3 end="55" />
+				<lle3 end="55" />
+				<rle4 end="-60" />
+				<lle4 end="-60" />
+				<rle5 end="30" />
+				<lle5 end="30" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
+				<rae1 end="-90" />
+				<lae1 end="-90" />
+				<rae2 end="-10" />
+				<lae2 end="10" />
+				<rae3 end="90" />
+				<lae3 end="-90" />
+				<rae4 end="45" />
+				<lae4 end="-45" />
+			</effectors>
+			<duration>500</duration>
+		</phase>
+		<phase name="walk_fine_final2" next="walk_fine_final3">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="7" />
+				<lle2 end="-7" />
+				<rle3 end="55" />
+				<lle3 end="55" />
+				<rle4 end="-60" />
+				<lle4 end="-60" />
+				<rle5 end="30" />
+				<lle5 end="30" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
+				<rae1 end="-90" />
+				<lae1 end="-90" />
+				<rae2 end="-10" />
+				<lae2 end="10" />
+				<rae3 end="90" />
+				<lae3 end="-90" />
+				<rae4 end="45" />
+				<lae4 end="-45" />
+			</effectors>
+			<duration>700</duration>
+			<finalize>walk_fine_final2</finalize>
+		</phase>
+		<phase name="walk_fine_final3" isFinal="true">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+			</effectors>
+			<duration>700</duration>
+			<finalize>walk_fine_final3</finalize>
+		</phase>
+	</phases>
+</robot>
