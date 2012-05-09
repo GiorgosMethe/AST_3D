@@ -16,17 +16,13 @@ public class GetPhase {
 								
 			}
 			
-			
 			return null;
-						
-			
-			
+							
 		}else{
 			
 			return null;
 
 		}
-
 		
 	}
 	

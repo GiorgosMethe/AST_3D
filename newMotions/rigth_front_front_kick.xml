@@ -93,7 +93,7 @@ parametrizable: looks like there is a posibility of changing the time to change 
 			</effectors>
 			<duration>40</duration>
 		</phase>
-		<phase name="rigth_front_front_kick4"  next="rigth_front_front_kick">
+		<phase name="rigth_front_front_kick4">
 			<effectors>
 				<rle1 end="0" />
 				<lle1 end="0" />

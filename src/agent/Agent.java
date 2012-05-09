@@ -47,7 +47,6 @@ public class Agent {
 		NewMotionStorage nMs=new NewMotionStorage();
 		XMLMovement pXML=new XMLMovement();
 
-
 		//connection config
 		//String host = args[0];
 		String host = "127.0.0.1";
@@ -87,10 +86,12 @@ public class Agent {
 		//String Teamname=args[2];
 		//player position
 		Ch.Number(num);
-
+		
+		long time,time1=0,time2 = 0;
 		while(con.isConnected()){
 
 			i++;
+			time=System.nanoTime();
 			//update perceptors
 			Gp.GetPerceptors(con);
 			//update ball position
@@ -105,6 +106,22 @@ public class Agent {
 				think.Role(num);
 				sm.Say("distance", con);
 				HearMessage.MessageDecoder();
+				System.out.println("###################33------->>>>>>>>"+MotionTrigger.getMotion());
+				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
+					AgentAct = pXML.execute("walk_fine");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
+					AgentAct = pXML.execute("turn_left");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")){
+					AgentAct= pXML.execute("turn_right");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")){
+					AgentAct= pXML.execute("strafe_right");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
+					AgentAct= pXML.execute("strafe_left");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
+					AgentAct= pXML.execute("rigth_front_front_kick");
+				}else{
+					AgentAct= pXML.execute("");
+				}
 			}
 			
 			//check if i am down
@@ -113,27 +130,14 @@ public class Agent {
 			//get the head movement
 			String headAct=Sb.MoveHead();
 		
-			//get the agent action
-			//if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")){
-			if(i<200){
-			AgentAct = pXML.execute("turn_left");
-			}else{
-				AgentAct = pXML.execute("strafe_left");
-			}
-			
-
-			//}else{
-			//	PreviousMotionPhase.setMotionName("");
-			//	PreviousMotionPhase.setMotionPhase("");
-			//	AgentAct= dnc.MotionFactory(MotionTrigger.getMotion());
-			//}
-			
-
-			//
 			//create the hole agents actions
 			String Act=headAct+AgentAct;
 			//Act
 			con.sendMessage(Act);
+			
+			long time3 = System.nanoTime()-time;
+
+			System.out.println("avg time to do all:"+time3);
 
 		}
 
