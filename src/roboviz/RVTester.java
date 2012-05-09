@@ -1,5 +1,3 @@
-package roboviz;
-
 /*
  *  Copyright 2011 RoboViz
  *
@@ -15,6 +13,8 @@ package roboviz;
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
+package roboviz;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
