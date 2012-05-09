@@ -12,7 +12,7 @@
  ***********************************************************************************/
 package newMotions;
 
-import motions.Motions;
+
 import perceptor.GetNormalJointValueDegrees;
 
 public class MoveJoints {

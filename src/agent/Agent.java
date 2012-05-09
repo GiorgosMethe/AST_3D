@@ -15,6 +15,8 @@ package agent;
 import communication.HearMessage;
 import communication.SendMessage;
 import localization.BallPosition;
+import localization.Coordinate;
+import localization.LocalizationResults;
 import motions.CurrentMotion;
 import motions.MotionStorage;
 import motions.MotionTrigger;
@@ -22,11 +24,14 @@ import newMotions.NewMotionStorage;
 import newMotions.XMLMovement;
 import behavior.Think;
 import action.SeekBall;
+import action.WalkTo;
 import connection.Connection;
 import connection.MessageController;
 import connection.ServerCyrcles;
 import worldState.GameState;
 import java.lang.String;
+
+import org.omg.CORBA.LocalObject;
 
 import perceptor.isFallen;
 
@@ -132,6 +137,20 @@ public class Agent {
 				}
 			}
 			
+			/****************************experiments***************************/
+			
+			//AgentAct= pXML.execute("walk_fine");
+			Coordinate a=new Coordinate(-6, -6);
+			WalkTo.Act(a, 90);
+			
+			
+			System.out.println(LocalizationResults.getBody_angle());
+			System.out.println("----------------");
+			
+
+			/*******************************************************************/
+			
+			
 			//check if i am down
 			iF.Check();
 		
@@ -143,6 +162,8 @@ public class Agent {
 			
 			//Act
 			con.sendMessage(Act);
+			
+			
 
 		}
 

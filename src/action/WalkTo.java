@@ -12,45 +12,46 @@
  ***********************************************************************************/
 package action;
 
-import connection.ServerCyrcles;
 import localization.Coordinate;
 import localization.LocalizationResults;
-import motions.MotionTrigger;
 
 public class WalkTo {
 	
-	public void Act(float X,float Y,float Theta){
+	public static void Act(Coordinate target,float Theta){
 		
-		Coordinate target=new Coordinate(4, -4);
-
-		double dx=target.getX()-LocalizationResults.current_location.getX();
-		double dy=target.getY()-LocalizationResults.current_location.getY();
-		double dTheta=-Math.atan(dy/dx)+LocalizationResults.getBody_angle();
-
-		if(ServerCyrcles.getCyrclesNow()%20==0){
-			if(Math.abs(dx)<1 && Math.abs(dy)<1){
-				MotionTrigger.setMotion("");
-			}else{
-
-
-				if(dTheta>15){
-
-					if(dTheta>0){
-						MotionTrigger.setMotion("TurnRight40");
-
-					}else{
-						MotionTrigger.setMotion("TurnLeft40");
-					}
-
-				}else{
-
-					MotionTrigger.setMotion("Forwards50");
-
-				}
-
-			}
-		}
+		double ThetaToTarget=FindAngle(target);
+		
+		
+		
 		
 	}
 
+public static double FindAngle(Coordinate target){
+		
+		double dx=target.getX()-LocalizationResults.getCurrent_location().getX();
+		double dy=target.getY()-LocalizationResults.getCurrent_location().getY();
+		
+		double ThetaToTarget=Math.toDegrees(Math.atan2(dx, dy));
+		if(ThetaToTarget>=0 && ThetaToTarget<90){
+			
+			ThetaToTarget=90-ThetaToTarget;
+			
+		}else if(ThetaToTarget>=90 && ThetaToTarget<180){
+			
+			ThetaToTarget=-(ThetaToTarget-90);
+			
+		}else if(ThetaToTarget<-90 && ThetaToTarget>=-180){
+			
+			ThetaToTarget=-(ThetaToTarget+270);
+			
+		}else if(ThetaToTarget>=-90 && ThetaToTarget<-0){
+			
+			ThetaToTarget=-(ThetaToTarget-90);
+			
+		}
+			
+		return ThetaToTarget;
+	}
+	
+	
 }
