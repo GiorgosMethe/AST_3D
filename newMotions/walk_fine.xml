@@ -84,7 +84,7 @@
 			</effectors>
 			<duration>150</duration>
 		</phase>
-		<phase name="walk_attempt6" next="walk_fine_final" isFinal="true">
+		<phase name="walk_attempt6" next="walk_attempt3" isFinal="true">
 			<effectors>
 				<he1 end="0" computed="headAngle1" />
 				<he2 end="0" computed="headAngle2" />

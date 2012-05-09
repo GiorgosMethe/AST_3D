@@ -81,7 +81,7 @@ public class Agent {
 		max = 0;
 		//player number
 		//num=7;
-		num=6;
+		num=7;
 		Teamname="tuc";
 		// team name
 		//String Teamname=args[2];
@@ -115,11 +115,11 @@ public class Agent {
 		
 			//get the agent action
 			//if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")){
-			//if(i<500){
-				AgentAct = pXML.execute("walk_fine");
-			//}else{
-			//	AgentAct = pXML.execute("strafe_left");
-			//}
+			if(i<200){
+			AgentAct = pXML.execute("turn_left");
+			}else{
+				AgentAct = pXML.execute("strafe_left");
+			}
 			
 
 			//}else{

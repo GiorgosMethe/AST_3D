@@ -102,7 +102,11 @@ public class ReadXMLFile {
 						Node nNode3 = Finalize.item(0);
 						if (nNode3.getNodeType() == Node.ELEMENT_NODE){
 							Element eElement1 = (Element) nNode3;
-							pha.setFinalize(eElement1.getTextContent());
+							if(eElement1.getTextContent().equalsIgnoreCase("")){
+								pha.setFinalize("");
+							}else{
+								pha.setFinalize(eElement1.getTextContent());
+							}
 						}
 					}
 

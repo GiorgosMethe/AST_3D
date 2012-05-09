@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xsi:noNamespaceSchemaLocation="moves.xsd">
+	<constants>
+		<constant name="strafe_leg_crouch" value="30" />
+		<constant name="strafe_leg_span" value="7" />
+		<constant name="strafe_step_length" value="15" />
+	</constants>
+
+	<low_skills>
+		<low_skill name="turn_left" firstPhase="turn_left_big_prewait" />
+	</low_skills>
+
+	<phases>
+		<phase name="turn_left_big_prewait" next="turn_left_big_stance">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<lle3 end="80" />
+				<lle4 end="-60" />
+				<lle5 end="30" />
+				<rle3 end="80" />
+				<rle4 end="-60" />
+				<rle5 end="30" />
+				<lae1 end="-90" />
+				<rae1 end="-90" />
+				<lae2 end="10" />
+				<rae2 end="-10" />
+				<lae3 end="-90" />
+				<rae3 end="90" />
+				<lae4 end="-45" />
+				<rae4 end="45" />
+			</effectors>
+			<duration>800</duration>
+		</phase>
+		<phase name="turn_left_big_stance" next="start_big_turning_left">
+			<effectors>
+				<lle3 end="80" />
+				<lle4 end="-60" />
+				<lle5 end="30" />
+				<rle3 end="80" />
+				<rle4 end="-60" />
+				<rle5 end="30" />
+				<lae1 end="-90" />
+				<rae1 end="-90" />
+				<lae2 end="10" />
+				<rae2 end="-10" />
+				<lae3 end="-90" />
+				<rae3 end="90" />
+				<lae4 end="-45" />
+				<rae4 end="45" />
+			</effectors>
+			<duration>1000</duration>
+		</phase>
+		<phase name="start_big_turning_left" next="start_big_turning_left3">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<lle2 end="30" />
+				<rle2 end="0" />
+				<lle6 end="-3" />
+				<rle6 end="0" />
+			</effectors>
+			<duration>250</duration>
+		</phase>
+		<phase name="start_big_turning_left3" next="start_big_turning_left4">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<lle2 end="0" />
+				<rle2 end="-3" />
+				<lle6 end="0" />
+				<rle6 end="0" />
+			</effectors>
+			<duration>250</duration>
+		</phase>
+		<phase name="start_big_turning_left4" next="start_big_turning_left5">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<lle2 end="0" />
+				<rle2 end="-5" />
+				<lle6 end="0" />
+				<rle6 end="2" />
+			</effectors>
+			<duration>250</duration>
+		</phase>
+		<phase name="start_big_turning_left5" next="start_big_turning_left" isFinal="true">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<lle2 end="0" />
+				<rle2 end="-3" />
+				<lle6 end="0" />
+				<rle6 end="0" />
+			</effectors>
+			<duration>240</duration>
+			<finalize>stop_big_turning_left</finalize>
+		</phase>
+		<phase name="stop_big_turning_left" isFinal="true">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<lle1 end="0" />
+				<rle1 end="0" />
+				<lle2 end="7" />
+				<rle2 end="-7" />
+				<lle3 end="55" />
+				<rle3 end="55" />
+				<lle4 end="-60" />
+				<rle4 end="-60" />
+				<lle5 end="30" />
+				<rle5 end="30" />
+				<lle6 end="-7" />
+				<rle6 end="7" />
+				<lae1 end="-90" />
+				<rae1 end="-90" />
+				<lae2 end="-10" />
+				<rae2 end="10" />
+				<lae3 end="90" />
+				<rae3 end="-90" />
+				<lae4 end="45" />
+				<rae4 end="-45" />
+			</effectors>
+			<duration>1000</duration>
+			<finalize>stop_big_turning_left</finalize>
+		</phase>
+	</phases>
+</robot>
