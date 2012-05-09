@@ -1,17 +1,23 @@
+/***********************************************************************************
+ * 				  Copyright 2012, Technical University of Crete				       *
+ * 							 Academic Year 2011-2012					           *
+ ***********************************************************************************
+ * 								Thesis Project								       *
+ ***********************************************************************************
+ * @author Methenitis Georgios													   *
+ * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League*
+ * Start date: 25-04-2012														   *																	 
+ * End date  : xx-xx-2012														   *																			   *
+ ***********************************************************************************/
 package agent;
+
 import communication.HearMessage;
 import communication.SendMessage;
 import localization.BallPosition;
-import localization.LocalizationResults;
 import motions.CurrentMotion;
-import motions.MotionController;
 import motions.MotionStorage;
 import motions.MotionTrigger;
-import motions.Motions;
-import newMotions.Motion;
 import newMotions.NewMotionStorage;
-import newMotions.MotionPlaying;
-import newMotions.ReadXMLFile;
 import newMotions.XMLMovement;
 import behavior.Think;
 import action.SeekBall;
@@ -40,7 +46,6 @@ public class Agent {
 		MessageController Gp = new MessageController();
 		SeekBall Sb = new SeekBall();
 		SendMessage sm = new SendMessage();
-		MotionController dnc=new MotionController();
 		Think think=new Think();
 		isFallen iF=new isFallen();
 		MotionStorage Ms=new MotionStorage();
@@ -48,13 +53,11 @@ public class Agent {
 		XMLMovement pXML=new XMLMovement();
 
 		//connection config
-		//String host = args[0];
 		String host = "127.0.0.1";
-		//int port = Integer.parseInt(args[1]);
 		int port=3100;
+		
 		//initializes the connection
 		Connection con = new Connection(host,port);
-
 
 		//read old .motion files
 		System.out.print("loading old .motion files");
@@ -77,36 +80,40 @@ public class Agent {
 		}
 		//server cyrcles
 		int i=0;
-		max = 0;
+		
 		//player number
-		//num=7;
 		num=7;
 		Teamname="tuc";
 		// team name
-		//String Teamname=args[2];
+		
 		//player position
 		Ch.Number(num);
 		
-		long time,time1=0,time2 = 0;
 		while(con.isConnected()){
 
+			//update server cyrcles
 			i++;
-			time=System.nanoTime();
+			
 			//update perceptors
 			Gp.GetPerceptors(con);
+			
 			//update ball position
 			BallPosition.WhereIsTheBall();
+			
 			//update server cyrcles
 			ServerCyrcles.setCyrclesNow(i);
+			
 			//init Agent
 			InitAgent.Init(Teamname, num, con);
 			//think
+			
 			String AgentAct="";
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
+				
 				think.Role(num);
 				sm.Say("distance", con);
 				HearMessage.MessageDecoder();
-				System.out.println("###################33------->>>>>>>>"+MotionTrigger.getMotion());
+				
 				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 					AgentAct = pXML.execute("walk_fine");
 				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
@@ -132,12 +139,9 @@ public class Agent {
 		
 			//create the hole agents actions
 			String Act=headAct+AgentAct;
+			
 			//Act
 			con.sendMessage(Act);
-			
-			long time3 = System.nanoTime()-time;
-
-			System.out.println("avg time to do all:"+time3);
 
 		}
 

@@ -1,13 +1,14 @@
-/*******************************************************************************
- * Copyright 2012, Technical University of Crete
- * Autonomous Agents, winter semester 2011-12
- * Semester Assignment
- * 
- * @author Methenitis Giorgos
- * @author Mpountouris Konstantinos
- * @author Papadimitriou Maouro Vassilis
- * @author Skipetaris Dimosthenis 
- *******************************************************************************/
+/***********************************************************************************
+ * 				  Copyright 2012, Technical University of Crete				       *
+ * 							 Academic Year 2011-2012					           *
+ ***********************************************************************************
+ * 								Thesis Project								       *
+ ***********************************************************************************
+ * @author Methenitis Georgios													   *
+ * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League*
+ * Start date: 25-04-2012														   *																	 
+ * End date  : xx-xx-2012														   *																			   *
+ ***********************************************************************************/
 package behavior;
 
 
@@ -16,9 +17,9 @@ import motions.MotionTrigger;
 import perceptor.Ball;
 import perceptor.HingeJointPerceptor;
 import perceptor.Vision;
-import action.DcGoToPos;
 import action.GetPosToGoal;
 import action.GetUp;
+import action.GoToPos;
 import action.Kick;
 import action.StandUp;
 import action.TurnOver;
@@ -33,7 +34,7 @@ public class DefenderCenter {
 	WalkToBall wTb=new WalkToBall();
 	Kick Kb=new Kick();  
 	GetPosToGoal gPtG = new GetPosToGoal();
-	DcGoToPos gTp= new DcGoToPos();
+	GoToPos gTp= new GoToPos();
 	StandUp sU=new StandUp();
 	TurnOver tO=new TurnOver();
 	GetUp gU=new GetUp();
