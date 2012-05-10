@@ -23,8 +23,8 @@ import action.TurnOver;
 import action.TurnToBall;
 import action.TurnToSeeBall;
 import action.WalkToBall;
-import perceptor.Ball;
-import perceptor.Vision;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 
 public class BehaviorFactory {
 

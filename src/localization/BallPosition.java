@@ -12,8 +12,8 @@
  ***********************************************************************************/
 package localization;
 
-import perceptor.Ball;
 import perceptor.HingeJointPerceptor;
+import perceptor.vision.Ball;
 
 public class BallPosition {
 

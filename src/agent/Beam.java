@@ -34,7 +34,7 @@ public class Beam {
 		}else if(number==6){
 			beamX="-3.0"; beamY="3.0"; beamTheta="0.0";
 		}else if(number==7){
-			beamX="-6.0"; beamY="-4.0"; beamTheta="180.0";
+			beamX="-1.0"; beamY="-1.0"; beamTheta="0.0";
 		}else{
 			
 		}

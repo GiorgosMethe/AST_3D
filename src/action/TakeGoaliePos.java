@@ -13,7 +13,7 @@
 
 package action;
 
-import perceptor.Ball;
+import perceptor.vision.Ball;
 import localization.LocalizationResults;
 import motions.MotionTrigger;
 

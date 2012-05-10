@@ -23,15 +23,13 @@ import motions.MotionTrigger;
 import newMotions.NewMotionStorage;
 import newMotions.XMLMovement;
 import behavior.Think;
-import action.SeekBall;
 import action.WalkTo;
+import action.vision.SeekBall;
 import connection.Connection;
 import connection.MessageController;
 import connection.ServerCyrcles;
 import worldState.GameState;
 import java.lang.String;
-
-import org.omg.CORBA.LocalObject;
 
 import perceptor.isFallen;
 
@@ -118,7 +116,7 @@ public class Agent {
 				
 				think.Role(num);
 				sm.Say("distance", con);
-				HearMessage.MessageDecoder();
+				HearMessage.MessageDecoder();				
 				
 				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 					AgentAct = pXML.execute("walk_fine");
@@ -140,11 +138,27 @@ public class Agent {
 			/****************************experiments***************************/
 			
 			//AgentAct= pXML.execute("walk_fine");
-			Coordinate a=new Coordinate(-6, -6);
-			WalkTo.Act(a, 90);
+			Coordinate a=new Coordinate(-6, -4);
+			WalkTo.Act(a, 0);
+			
+			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
+				AgentAct = pXML.execute("walk_fine");
+			}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
+				AgentAct = pXML.execute("turn_left");
+			}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")){
+				AgentAct= pXML.execute("turn_right");
+			}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")){
+				AgentAct= pXML.execute("strafe_right");
+			}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
+				AgentAct= pXML.execute("strafe_left");
+			}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
+				AgentAct= pXML.execute("rigth_front_front_kick");
+			}else{
+				AgentAct= pXML.execute("");
+			}
 			
 			
-			System.out.println(LocalizationResults.getBody_angle());
+			System.out.println("body angle:"+LocalizationResults.getBody_angle());
 			System.out.println("----------------");
 			
 
@@ -155,7 +169,7 @@ public class Agent {
 			iF.Check();
 		
 			//get the head movement
-			String headAct=Sb.MoveHead();
+			String headAct=Sb.MoveHead(2);
 		
 			//create the hole agents actions
 			String Act=headAct+AgentAct;

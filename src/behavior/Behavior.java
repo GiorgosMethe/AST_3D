@@ -13,8 +13,8 @@
 package behavior;
 
 import motions.MotionTrigger;
-import perceptor.Ball;
-import perceptor.Vision;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 
 public class Behavior {
 

@@ -13,7 +13,7 @@
 package communication;
 
 import behavior.BehaviorStateMachine;
-import perceptor.Ball;
+import perceptor.vision.Ball;
 import worldState.TeamState;
 import agent.AgentType;
 import connection.Connection;

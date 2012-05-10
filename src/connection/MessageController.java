@@ -16,11 +16,11 @@ import java.util.Vector;
 import javax.vecmath.Vector3d;
 
 import perceptor.Accelerometer;
-import perceptor.Ball;
 import perceptor.ForceResistancePerceptor;
 import perceptor.GyroScope;
 import perceptor.HingeJointPerceptor;
-import perceptor.Vision;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 
 import communication.HearMessage;
 import communication.MessageBuffer;

@@ -14,6 +14,9 @@ package perceptor;
 
 import java.util.Vector;
 import javax.vecmath.Vector3d;
+
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 import communication.HearMessage;
 import agent.Agent;
 import agent.AgentType;

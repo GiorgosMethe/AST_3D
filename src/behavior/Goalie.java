@@ -16,8 +16,8 @@ import action.Kick;
 import action.TakeGoaliePos;
 import action.TurnToBall;
 import action.TurnToSeeBall;
-import perceptor.Ball;
-import perceptor.Vision;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 
 public class Goalie {
 

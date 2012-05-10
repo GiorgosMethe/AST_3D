@@ -10,8 +10,21 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package behavior;
+package perceptor.vision;
 
-public class DcBehavior {
+public class Vision {
+	
+	
+	public static boolean iSee;
+
+	public static boolean isiSee() {
+		return iSee;
+	}
+
+	public static void setiSee(boolean iSee) {
+		Vision.iSee = iSee;
+	}
+	
+	
 
 }

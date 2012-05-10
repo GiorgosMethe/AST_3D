@@ -14,9 +14,9 @@ package behavior;
 
 import localization.BallPosition;
 import motions.MotionTrigger;
-import perceptor.Ball;
 import perceptor.HingeJointPerceptor;
-import perceptor.Vision;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 import action.GetPosToGoal;
 import action.GetUp;
 import action.GoToPos;
