@@ -51,7 +51,7 @@ public class ReadXMLFile {
 
 
 
-			File fXmlFile = new File("newMotions/"+name+".xml");
+			File fXmlFile = new File("motions/XMLMotions/"+name+".xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);

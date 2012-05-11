@@ -14,8 +14,8 @@ package behavior;
 
 import action.Kick;
 import action.TakeGoaliePos;
-import action.TurnToBall;
-import action.TurnToSeeBall;
+import action.simple.TurnToBall;
+import action.simple.TurnToSeeBall;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 

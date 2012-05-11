@@ -73,71 +73,71 @@ public class MotionStorage {
 
 		if (motionName.equalsIgnoreCase("Forwards50")){
 
-			MotionFilepath="motions/Forwards50.motion";
+			MotionFilepath="motions/OldMotions/Forwards50.motion";
 
 		}else if (motionName.equalsIgnoreCase("Forwards")){
 
-			MotionFilepath="motions/Forwards.motion";
+			MotionFilepath="motions/OldMotions/Forwards.motion";
 
 		}else if (motionName.equalsIgnoreCase("Backwards")){
 
-			MotionFilepath="motions/Backwards.motion";
+			MotionFilepath="motions/OldMotions/Backwards.motion";
 
 		}else if (motionName.equalsIgnoreCase("SideStepLeft")){
 
-			MotionFilepath="motions/SideStepLeft.motion";
+			MotionFilepath="motions/OldMotions/SideStepLeft.motion";
 
 		}else if (motionName.equalsIgnoreCase("SideStepRight")){
 
-			MotionFilepath="motions/SideStepRight.motion";
+			MotionFilepath="motions/OldMotions/SideStepRight.motion";
 
 		}else if (motionName.equalsIgnoreCase("StandUpFromFront")){
 
-			MotionFilepath="motions/StandUpFromFront.motion";
+			MotionFilepath="motions/OldMotions/StandUpFromFront.motion";
 
 		}else if (motionName.equalsIgnoreCase("TurnLeft40")){
 
-			MotionFilepath="motions/TurnLeft40.motion";
+			MotionFilepath="motions/OldMotions/TurnLeft40.motion";
 
 		}else if (motionName.equalsIgnoreCase("TurnLeft60")){
 
-			MotionFilepath="motions/TurnLeft60.motion";
+			MotionFilepath="motions/OldMotions/TurnLeft60.motion";
 
 		}else if (motionName.equalsIgnoreCase("TurnLeft180")){
 
-			MotionFilepath="motions/TurnLeft180.motion";
+			MotionFilepath="motions/OldMotions/TurnLeft180.motion";
 
 		}else if (motionName.equalsIgnoreCase("TurnRight40")){
 
-			MotionFilepath="motions/TurnRight40.motion";
+			MotionFilepath="motions/OldMotions/TurnRight40.motion";
 
 		}else if (motionName.equalsIgnoreCase("TurnRight60")){
 
-			MotionFilepath="motions/TurnRight60.motion";
+			MotionFilepath="motions/OldMotions/TurnRight60.motion";
 
 		}else if (motionName.equalsIgnoreCase("Init")){
 
-			MotionFilepath="motions/KickForwardRight.motion";
+			MotionFilepath="motions/OldMotions/KickForwardRight.motion";
 			
 		}else if (motionName.equalsIgnoreCase("KickForwardRight")){
 
-			MotionFilepath="motions/KickForwardRight.motion";
+			MotionFilepath="motions/OldMotions/KickForwardRight.motion";
 		
 		}else if (motionName.equalsIgnoreCase("leftFall")){
 
-			MotionFilepath="motions/leftFall.motion";
+			MotionFilepath="motions/OldMotions/leftFall.motion";
 			
 		}else if (motionName.equalsIgnoreCase("KickSideRight")){
 
-			MotionFilepath="motions/KickSideRight.motion";
+			MotionFilepath="motions/OldMotions/KickSideRight.motion";
 			
 		}else if (motionName.equalsIgnoreCase("TurnOver")){
 
-			MotionFilepath="motions/TurnOver.motion";
+			MotionFilepath="motions/OldMotions/TurnOver.motion";
 			
 		}else if (motionName.equalsIgnoreCase("KickForwardLeft")){
 
-			MotionFilepath="motions/KickForwardLeft.motion";
+			MotionFilepath="motions/OldMotions/KickForwardLeft.motion";
 			
 		}else{
 

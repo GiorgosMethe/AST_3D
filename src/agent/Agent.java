@@ -20,10 +20,12 @@ import localization.LocalizationResults;
 import motions.CurrentMotion;
 import motions.MotionStorage;
 import motions.MotionTrigger;
-import newMotions.NewMotionStorage;
+import newMotions.XMLMotionStorage;
 import newMotions.XMLMovement;
 import behavior.Think;
-import action.WalkTo;
+import action.simple.TurnToBall;
+import action.simple.TurnToSeeBall;
+import action.simple.WalkTo;
 import action.vision.SeekBall;
 import connection.Connection;
 import connection.MessageController;
@@ -53,7 +55,7 @@ public class Agent {
 		Think think=new Think();
 		isFallen iF=new isFallen();
 		MotionStorage Ms=new MotionStorage();
-		NewMotionStorage nMs=new NewMotionStorage();
+		XMLMotionStorage nMs=new XMLMotionStorage();
 		XMLMovement pXML=new XMLMovement();
 
 		//connection config
@@ -138,8 +140,7 @@ public class Agent {
 			/****************************experiments***************************/
 			
 			//AgentAct= pXML.execute("walk_fine");
-			Coordinate a=new Coordinate(-6, -4);
-			WalkTo.Act(a, 0);
+			TurnToSeeBall.Act();
 			
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 				AgentAct = pXML.execute("walk_fine");
@@ -169,7 +170,7 @@ public class Agent {
 			iF.Check();
 		
 			//get the head movement
-			String headAct=Sb.MoveHead(2);
+			String headAct=Sb.MoveHead(1);
 		
 			//create the hole agents actions
 			String Act=headAct+AgentAct;

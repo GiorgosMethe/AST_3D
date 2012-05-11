@@ -10,41 +10,30 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
+package action.simple;
 
-package action;
-
-import localization.BallPosition;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 import motions.MotionTrigger;
-import perceptor.HingeJointPerceptor;
-
-public class WalkToBall {
 
 
+public class TurnToSeeBall {
 
-	public void Act(){
 
-		if(Math.abs((HingeJointPerceptor.getHj1()+BallPosition.getAngle()))>20){
+	public static void Act(){
 
-			if(HingeJointPerceptor.getHj1()>0){
-				MotionTrigger.setMotion("TurnLeft40");
-
+		if(Vision.isiSee()){
+			if(Ball.isSeeTheBall()){
+				MotionTrigger.setMotion("");
 			}else{
 				MotionTrigger.setMotion("TurnRight40");
-
 			}
-
-
-		}else{
-
-			MotionTrigger.setMotion("Forwards50");
-
 		}
-
+		
+								
 	}
 
-
-
-
-
-
 }
+
+
+

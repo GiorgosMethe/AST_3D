@@ -10,7 +10,7 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package action;
+package action.simple;
 
 import localization.Coordinate;
 import localization.LocalizationResults;

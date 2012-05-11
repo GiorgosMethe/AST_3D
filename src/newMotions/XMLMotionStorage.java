@@ -13,7 +13,7 @@
 package newMotions;
 
 
-public class NewMotionStorage {
+public class XMLMotionStorage {
 	
 	public static Motion walk_fine;
 	public static Motion strafe_left;
@@ -57,7 +57,7 @@ public class NewMotionStorage {
 	}
 
 	public static void setWalk_fine(Motion walk_fine) {
-		NewMotionStorage.walk_fine = walk_fine;
+		XMLMotionStorage.walk_fine = walk_fine;
 	}
 
 	public static Motion getStrafe_left() {
@@ -65,7 +65,7 @@ public class NewMotionStorage {
 	}
 
 	public static void setStrafe_left(Motion strafe_left) {
-		NewMotionStorage.strafe_left = strafe_left;
+		XMLMotionStorage.strafe_left = strafe_left;
 	}
 
 	public static Motion getStrafe_right() {
@@ -73,7 +73,7 @@ public class NewMotionStorage {
 	}
 
 	public static void setStrafe_right(Motion strafe_right) {
-		NewMotionStorage.strafe_right = strafe_right;
+		XMLMotionStorage.strafe_right = strafe_right;
 	}
 
 	public static Motion getTurn_left() {
@@ -81,7 +81,7 @@ public class NewMotionStorage {
 	}
 
 	public static void setTurn_left(Motion turn_left) {
-		NewMotionStorage.turn_left = turn_left;
+		XMLMotionStorage.turn_left = turn_left;
 	}
 
 	public static Motion getTurn_right() {
@@ -89,7 +89,7 @@ public class NewMotionStorage {
 	}
 
 	public static void setTurn_right(Motion turn_right) {
-		NewMotionStorage.turn_right = turn_right;
+		XMLMotionStorage.turn_right = turn_right;
 	}
 
 	public static Motion getRigth_front_front_kick() {
@@ -97,7 +97,7 @@ public class NewMotionStorage {
 	}
 
 	public static void setRigth_front_front_kick(Motion rigth_front_front_kick) {
-		NewMotionStorage.rigth_front_front_kick = rigth_front_front_kick;
+		XMLMotionStorage.rigth_front_front_kick = rigth_front_front_kick;
 	}
 	
 	

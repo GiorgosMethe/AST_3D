@@ -24,9 +24,9 @@ import action.GoToPos;
 import action.Kick;
 import action.StandUp;
 import action.TurnOver;
-import action.TurnToBall;
-import action.TurnToSeeBall;
-import action.WalkToBall;
+import action.simple.TurnToBall;
+import action.simple.TurnToSeeBall;
+import action.simple.WalkToBall;
 
 public class DefenderCenter {
 
