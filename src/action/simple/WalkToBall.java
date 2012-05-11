@@ -16,35 +16,53 @@ package action.simple;
 import localization.BallPosition;
 import motions.MotionTrigger;
 import perceptor.HingeJointPerceptor;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 
 public class WalkToBall {
 
+	public static boolean Act(){
+
+		if(Vision.isiSee()){
+
+			if(Ball.isSeeTheBall()){
+
+				if(TurnToBall.Act()==true){
+
+					if((Ball.getDistance()>0.5)){
+
+						MotionTrigger.setMotion("Forwards50");
+						return false;
+
+					}else{
+
+						if(Ball.getAngleY()+HingeJointPerceptor.getHj2()<-48){
+
+							MotionTrigger.setMotion("");
+							return true;
+
+						}else{
+
+							MotionTrigger.setMotion("Forwards50");
+							return false;
+
+						}
 
 
-	public void Act(){
+					}
 
-		if(Math.abs((HingeJointPerceptor.getHj1()+BallPosition.getAngle()))>20){
 
-			if(HingeJointPerceptor.getHj1()>0){
-				MotionTrigger.setMotion("TurnLeft40");
 
-			}else{
-				MotionTrigger.setMotion("TurnRight40");
+				}else{
+
+					return false;
+				}
 
 			}
 
-
-		}else{
-
-			MotionTrigger.setMotion("Forwards50");
-
 		}
+		return false;
 
 	}
-
-
-
-
-
 
 }

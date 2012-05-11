@@ -20,23 +20,34 @@ import motions.MotionTrigger;
 public class TurnToBall {
 
 
-	public static void Act(){
+	public static boolean Act(){
 
-		if(Math.abs((HingeJointPerceptor.getHj1()+BallPosition.getAngle()))>20){
+		if(TurnToSeeBall.Act()==true){
 
-			if(HingeJointPerceptor.getHj1()>0){
-				MotionTrigger.setMotion("TurnLeft40");
+			if(Math.abs(HingeJointPerceptor.getHj1())+Math.abs(BallPosition.getAngle())>15){
+
+				if(HingeJointPerceptor.getHj1()>0){
+
+					MotionTrigger.setMotion("TurnLeft40");
+					return false;
+
+				}else{
+
+					MotionTrigger.setMotion("TurnRight40");
+					return false;
+
+				}
+
 
 			}else{
-				MotionTrigger.setMotion("TurnRight40");
+
+				MotionTrigger.setMotion("");
+				return true;
 
 			}
 
-
 		}else{
-
-			MotionTrigger.setMotion("");
-
+			return false;
 		}
 
 	}

@@ -23,9 +23,11 @@ import motions.MotionTrigger;
 import newMotions.XMLMotionStorage;
 import newMotions.XMLMovement;
 import behavior.Think;
+import action.comlex.GoKickBall;
 import action.simple.TurnToBall;
 import action.simple.TurnToSeeBall;
 import action.simple.WalkTo;
+import action.simple.WalkToBall;
 import action.vision.SeekBall;
 import connection.Connection;
 import connection.MessageController;
@@ -33,7 +35,10 @@ import connection.ServerCyrcles;
 import worldState.GameState;
 import java.lang.String;
 
+import perceptor.HingeJointPerceptor;
 import perceptor.isFallen;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 
 
 public class Agent {
@@ -116,31 +121,34 @@ public class Agent {
 			String AgentAct="";
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
 				
-				think.Role(num);
-				sm.Say("distance", con);
-				HearMessage.MessageDecoder();				
-				
-				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
-					AgentAct = pXML.execute("walk_fine");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
-					AgentAct = pXML.execute("turn_left");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")){
-					AgentAct= pXML.execute("turn_right");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")){
-					AgentAct= pXML.execute("strafe_right");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
-					AgentAct= pXML.execute("strafe_left");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
-					AgentAct= pXML.execute("rigth_front_front_kick");
-				}else{
-					AgentAct= pXML.execute("");
-				}
+//				think.Role(num);
+//				sm.Say("distance", con);
+//				HearMessage.MessageDecoder();				
+//				
+//				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
+//					AgentAct = pXML.execute("walk_fine");
+//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
+//					AgentAct = pXML.execute("turn_left");
+//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")){
+//					AgentAct= pXML.execute("turn_right");
+//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")){
+//					AgentAct= pXML.execute("strafe_right");
+//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
+//					AgentAct= pXML.execute("strafe_left");
+//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
+//					AgentAct= pXML.execute("rigth_front_front_kick");
+//				}else{
+//					AgentAct= pXML.execute("");
+//				}
 			}
 			
 			/****************************experiments***************************/
 			
 			//AgentAct= pXML.execute("walk_fine");
-			TurnToSeeBall.Act();
+			
+			if(Vision.isiSee()){
+				GoKickBall.Act();
+			}
 			
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 				AgentAct = pXML.execute("walk_fine");
@@ -159,7 +167,8 @@ public class Agent {
 			}
 			
 			
-			System.out.println("body angle:"+LocalizationResults.getBody_angle());
+			System.out.println("ball Jh1:"+HingeJointPerceptor.getHj1());
+			System.out.println("ball angleY:"+(Ball.getAngleX()+HingeJointPerceptor.getHj1()));
 			System.out.println("----------------");
 			
 

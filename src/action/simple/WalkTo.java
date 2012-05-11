@@ -18,7 +18,7 @@ import motions.MotionTrigger;
 
 public class WalkTo {
 
-	public static void Act(Coordinate target,float Theta){
+	public static boolean Act(Coordinate target,float Theta){
 
 		double ThetaToTarget=FindAngle(target);
 
@@ -26,8 +26,8 @@ public class WalkTo {
 
 			if(Math.abs(FindAngleDifference(Theta))<20){
 				
-				System.out.println("eftasa kai exw epi8ymhth gwnia");
 				MotionTrigger.setMotion("");
+				return true;	
 				
 			}else{
 				
@@ -36,10 +36,12 @@ public class WalkTo {
 				if(FindAngleDifference(Theta)<0){
 					
 					MotionTrigger.setMotion("TurnRight40");
+					return false;
 					
 				}else{
 					
 					MotionTrigger.setMotion("TurnLeft40");
+					return false;
 					
 				}
 				
@@ -52,6 +54,7 @@ public class WalkTo {
 					
 					System.out.println(" den eftasa eftasa kai exw epi8ymhth gwnia");
 					MotionTrigger.setMotion("Forwards50");
+					return false;
 					
 				}else{
 					
@@ -60,19 +63,18 @@ public class WalkTo {
 					if(FindAngleDifference(ThetaToTarget)<0){
 						
 						MotionTrigger.setMotion("TurnRight40");
+						return false;
 						
 					}else{
 						
 						MotionTrigger.setMotion("TurnLeft40");
+						return false;
 						
 					}
 					
 				}
 
 		}
-		System.out.println("distance to target:"+FindDistanceToTarget(target));
-		System.out.println("angle from target"+FindAngleDifference(ThetaToTarget));
-		System.out.println("angle2 from target"+FindAngleDifference(Theta));
 
 	}
 
