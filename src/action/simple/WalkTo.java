@@ -52,6 +52,7 @@ public class WalkTo {
 				
 				if(Math.abs(FindAngleDifference(ThetaToTarget))<20){
 					
+					
 					System.out.println(" den eftasa eftasa kai exw epi8ymhth gwnia");
 					MotionTrigger.setMotion("Forwards50");
 					return false;

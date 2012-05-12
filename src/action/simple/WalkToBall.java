@@ -27,42 +27,43 @@ public class WalkToBall {
 
 			if(Ball.isSeeTheBall()){
 
-				if(TurnToBall.Act()==true){
 
-					if((Ball.getDistance()>0.5)){
+				if(Ball.getDistance()<0.48){
+					MotionTrigger.setMotion("");
+					return true;
 
-						MotionTrigger.setMotion("Forwards50");
-						return false;
+				}else{
 
-					}else{
 
-						if(Ball.getAngleY()+HingeJointPerceptor.getHj2()<-48){
 
-							MotionTrigger.setMotion("");
-							return true;
+					if(Math.abs(HingeJointPerceptor.getHj1())+Math.abs(BallPosition.getAngle())>15){
+
+						if(HingeJointPerceptor.getHj1()>0){
+
+							MotionTrigger.setMotion("TurnLeft40");
+							return false;
 
 						}else{
 
-							MotionTrigger.setMotion("Forwards50");
+							MotionTrigger.setMotion("TurnRight40");
 							return false;
 
 						}
 
 
+					}else{
+
+						MotionTrigger.setMotion("Forwards50");
+						return false;
 					}
 
-
-
-				}else{
-
-					return false;
 				}
 
 			}
+			return false;
 
 		}
 		return false;
 
 	}
-
 }

@@ -23,7 +23,8 @@ import motions.MotionTrigger;
 import newMotions.XMLMotionStorage;
 import newMotions.XMLMovement;
 import behavior.Think;
-import action.comlex.GoKickBall;
+import action.ActionStateMachine;
+import action.complex.GoKickBall;
 import action.simple.TurnToBall;
 import action.simple.TurnToSeeBall;
 import action.simple.WalkTo;
@@ -62,6 +63,9 @@ public class Agent {
 		MotionStorage Ms=new MotionStorage();
 		XMLMotionStorage nMs=new XMLMotionStorage();
 		XMLMovement pXML=new XMLMovement();
+		
+		///
+		ActionStateMachine.setState("GoToBall");
 
 		//connection config
 		String host = "127.0.0.1";
@@ -146,9 +150,9 @@ public class Agent {
 			
 			//AgentAct= pXML.execute("walk_fine");
 			
-			if(Vision.isiSee()){
+			//if(Vision.isiSee()){
 				GoKickBall.Act();
-			}
+			//}
 			
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 				AgentAct = pXML.execute("walk_fine");
@@ -168,7 +172,10 @@ public class Agent {
 			
 			
 			System.out.println("ball Jh1:"+HingeJointPerceptor.getHj1());
-			System.out.println("ball angleY:"+(Ball.getAngleX()+HingeJointPerceptor.getHj1()));
+			System.out.println("ball Jh2:"+HingeJointPerceptor.getHj2());
+			System.out.println("ball calc distance:"+Math.sqrt(Math.pow(Ball.getDistance(), 2)+Math.pow(0.525, 2)));
+			System.out.println("ball distance"+Ball.getDistance());
+			System.out.println("ball angleY"+Ball.getAngleY());
 			System.out.println("----------------");
 			
 

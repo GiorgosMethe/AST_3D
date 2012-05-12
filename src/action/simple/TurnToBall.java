@@ -24,7 +24,7 @@ public class TurnToBall {
 
 		if(TurnToSeeBall.Act()==true){
 
-			if(Math.abs(HingeJointPerceptor.getHj1())+Math.abs(BallPosition.getAngle())>15){
+			if(Math.abs(HingeJointPerceptor.getHj1())+Math.abs(BallPosition.getAngle())>20){
 
 				if(HingeJointPerceptor.getHj1()>0){
 
