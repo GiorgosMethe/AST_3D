@@ -151,7 +151,7 @@ public class Agent {
 			//AgentAct= pXML.execute("walk_fine");
 			
 			//if(Vision.isiSee()){
-				GoKickBall.Act();
+				WalkToBall.Act();
 			//}
 			
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){

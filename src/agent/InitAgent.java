@@ -13,6 +13,7 @@
 package agent;
 
 import newMotions.MotionPlaying;
+import newMotions.WalkLeaning;
 import communication.HearMessage;
 import communication.WhoSent;
 
@@ -51,6 +52,7 @@ public class InitAgent {
 				MotionPlaying.setMotionName(null);	
 				MotionPlaying.setMotionPhase(null);
 				MotionPlaying.setStartCyrcle(0);
+				WalkLeaning.setLean("right");
 				
 				CurrentMotion.setCurrentMotionPlaying("");
 				con.sendMessage("(init(unum "+number+")(teamname "+Teamname+"))");

@@ -28,7 +28,7 @@ public class WalkToBall {
 			if(Ball.isSeeTheBall()){
 
 
-				if(Ball.getDistance()<0.48){
+				if(Ball.getDistance()<0.47){
 					MotionTrigger.setMotion("");
 					return true;
 
@@ -36,8 +36,9 @@ public class WalkToBall {
 
 
 
-					if(Math.abs(HingeJointPerceptor.getHj1())+Math.abs(BallPosition.getAngle())>15){
+					if(Math.abs(HingeJointPerceptor.getHj1())+Math.abs(BallPosition.getAngle())>20){
 
+						
 						if(HingeJointPerceptor.getHj1()>0){
 
 							MotionTrigger.setMotion("TurnLeft40");

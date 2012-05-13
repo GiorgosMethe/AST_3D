@@ -1,5 +1,6 @@
 package action.complex;
 
+import newMotions.MotionPlaying;
 import motions.MotionTrigger;
 import perceptor.HingeJointPerceptor;
 import perceptor.vision.Ball;
@@ -12,14 +13,8 @@ public class GoKickBall {
 	public static boolean Act(){
 		
 		
-//			if(WalkToBall.Act()){
-//				if(PrepareKick.Act()){
-//					MotionTrigger.setMotion("KickForwardRight");
-//				}	
-//			}
-			
-		
-		
+	
+		System.out.println(ActionStateMachine.getState());
 		if(ActionStateMachine.getState().equalsIgnoreCase("GoToBall")){
 			if(WalkToBall.Act()){
 				ActionStateMachine.setState("PrepareToKick");
@@ -35,8 +30,17 @@ public class GoKickBall {
 			}
 			return false;
 		}else if(ActionStateMachine.getState().equalsIgnoreCase("Kick")){
-			MotionTrigger.setMotion("KickForwardRight");
-			ActionStateMachine.setState("GoToBall");
+			System.out.println(MotionPlaying.getMotionName());
+			if(MotionPlaying.getMotionName()==null){
+				
+			}else{
+			if(MotionPlaying.getMotionName().equalsIgnoreCase("rigth_front_front_kick")){
+				ActionStateMachine.setState("GoToBall");
+			}else{
+				ActionStateMachine.setState("Kick");
+				MotionTrigger.setMotion("KickForwardRight");
+			}	
+			}
 			return true;
 		}
 		return false;
