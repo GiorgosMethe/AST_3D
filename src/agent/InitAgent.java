@@ -52,7 +52,7 @@ public class InitAgent {
 				MotionPlaying.setMotionName(null);	
 				MotionPlaying.setMotionPhase(null);
 				MotionPlaying.setStartCyrcle(0);
-				WalkLeaning.setLean("right");
+				WalkLeaning.setLean("");
 				
 				CurrentMotion.setCurrentMotionPlaying("");
 				con.sendMessage("(init(unum "+number+")(teamname "+Teamname+"))");
