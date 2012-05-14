@@ -14,7 +14,7 @@ package action.simple;
 
 import localization.Coordinate;
 import localization.LocalizationResults;
-import motions.MotionTrigger;
+import motion.old.MotionTrigger;
 
 public class WalkTo {
 

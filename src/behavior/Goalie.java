@@ -12,10 +12,10 @@
  ***********************************************************************************/
 package behavior;
 
-import action.Kick;
-import action.TakeGoaliePos;
 import action.simple.TurnToBall;
 import action.simple.TurnToSeeBall;
+import action.undeclared.Kick;
+import action.undeclared.TakeGoaliePos;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 

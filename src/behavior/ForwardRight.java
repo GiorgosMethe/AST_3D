@@ -13,19 +13,19 @@
 package behavior;
 
 import localization.BallPosition;
-import motions.MotionTrigger;
+import motion.old.MotionTrigger;
 import perceptor.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
-import action.GetPosToGoal;
-import action.GetUp;
-import action.GoToPos;
-import action.Kick;
-import action.StandUp;
-import action.TurnOver;
 import action.simple.TurnToBall;
 import action.simple.TurnToSeeBall;
 import action.simple.WalkToBall;
+import action.undeclared.GetPosToGoal;
+import action.undeclared.GetUp;
+import action.undeclared.GoToPos;
+import action.undeclared.Kick;
+import action.undeclared.StandUp;
+import action.undeclared.TurnOver;
 
 public class ForwardRight {
 

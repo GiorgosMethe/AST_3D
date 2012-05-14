@@ -17,23 +17,24 @@ import communication.SendMessage;
 import localization.BallPosition;
 import localization.Coordinate;
 import localization.LocalizationResults;
-import motions.CurrentMotion;
-import motions.MotionStorage;
-import motions.MotionTrigger;
-import newMotions.XMLMotionStorage;
-import newMotions.XMLMovement;
+import motion.old.CurrentMotion;
+import motion.old.MotionStorage;
+import motion.old.MotionTrigger;
+import motion.xml.XMLMotionStorage;
+import motion.xml.XMLMovement;
 import behavior.Think;
-import action.ActionStateMachine;
 import action.complex.GoKickBall;
 import action.simple.TurnToBall;
 import action.simple.TurnToSeeBall;
 import action.simple.WalkTo;
 import action.simple.WalkToBall;
+import action.undeclared.ActionStateMachine;
 import action.vision.SeekBall;
 import connection.Connection;
 import connection.MessageController;
 import connection.ServerCyrcles;
 import worldState.GameState;
+
 import java.lang.String;
 
 import perceptor.HingeJointPerceptor;
@@ -151,7 +152,11 @@ public class Agent {
 			//AgentAct= pXML.execute("walk_fine");
 			
 			//if(Vision.isiSee()){
-				WalkToBall.Act();
+			//MotionTrigger.setMotion("KickForwardRight");
+				GoKickBall.Act();
+				System.out.println(""+Ball.getAngleX());
+				System.out.println(""+Ball.getAngleY());
+				System.out.println(""+Ball.getDistance());
 			//}
 			
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
@@ -173,7 +178,7 @@ public class Agent {
 			
 			System.out.println("ball Jh1:"+HingeJointPerceptor.getHj1());
 			System.out.println("ball Jh2:"+HingeJointPerceptor.getHj2());
-			System.out.println("ball calc distance:"+Math.sqrt(Math.pow(Ball.getDistance(), 2)+Math.pow(0.525, 2)));
+			System.out.println("ball calc distance:"+Math.sqrt(Math.pow(Ball.getDistance(), 2)+Math.pow(0.540, 2)));
 			System.out.println("ball distance"+Ball.getDistance());
 			System.out.println("ball angleY"+Ball.getAngleY());
 			System.out.println("----------------");

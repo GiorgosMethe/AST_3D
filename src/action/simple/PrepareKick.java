@@ -1,6 +1,6 @@
 package action.simple;
 
-import motions.MotionTrigger;
+import motion.old.MotionTrigger;
 import perceptor.HingeJointPerceptor;
 import perceptor.vision.Ball;
 

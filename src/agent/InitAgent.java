@@ -12,13 +12,13 @@
  ***********************************************************************************/
 package agent;
 
-import newMotions.MotionPlaying;
-import newMotions.WalkLeaning;
 import communication.HearMessage;
 import communication.WhoSent;
 
-import motions.CurrentMotion;
-import motions.MotionTrigger;
+import motion.old.CurrentMotion;
+import motion.old.MotionTrigger;
+import motion.xml.MotionPlaying;
+import motion.xml.WalkLeaning;
 import behavior.BehaviorDone;
 import behavior.BehaviorStateMachine;
 import connection.Connection;

@@ -14,7 +14,8 @@
 package action.simple;
 
 import localization.BallPosition;
-import motions.MotionTrigger;
+import motion.old.MotionTrigger;
+import motion.xml.WalkLeaning;
 import perceptor.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
@@ -50,11 +51,29 @@ public class WalkToBall {
 							return false;
 
 						}
+						
+					}else if(Math.abs(HingeJointPerceptor.getHj1())+Math.abs(BallPosition.getAngle())>5){
+
+							
+							if(HingeJointPerceptor.getHj1()>0){
+
+								MotionTrigger.setMotion("Forwards50");
+								WalkLeaning.setLean("left");
+								return false;
+
+							}else{
+
+								MotionTrigger.setMotion("Forwards50");
+								WalkLeaning.setLean("right");
+								return false;
+
+							}
 
 
 					}else{
 
 						MotionTrigger.setMotion("Forwards50");
+						WalkLeaning.setLean("");
 						return false;
 					}
 

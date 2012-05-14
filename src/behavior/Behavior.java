@@ -12,7 +12,7 @@
  ***********************************************************************************/
 package behavior;
 
-import motions.MotionTrigger;
+import motion.old.MotionTrigger;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 

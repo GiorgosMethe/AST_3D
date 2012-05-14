@@ -14,7 +14,7 @@ package action.simple;
 
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
-import motions.MotionTrigger;
+import motion.old.MotionTrigger;
 
 
 public class TurnToSeeBall {
