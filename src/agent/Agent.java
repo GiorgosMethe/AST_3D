@@ -173,10 +173,8 @@ public class Agent {
 			}
 			
 			
-			System.out.println("dx:"+kinematics.HeadPosition.Calculate().PositionX);
-			System.out.println("dy:"+kinematics.HeadPosition.Calculate().PositionY);
-			System.out.println("theta:"+HingeJointPerceptor.getRlj5());
-		
+			System.out.println("--"+Ball.getDistance());
+			System.out.println("-"+Ball.RealDistance());
 
 			System.out.println("----------------");
 			

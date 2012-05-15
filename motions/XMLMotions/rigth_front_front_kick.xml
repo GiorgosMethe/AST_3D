@@ -21,8 +21,8 @@ parametrizable: looks like there is a posibility of changing the time to change 
 			<effectors>
 				<rle1 end="0" />
 				<lle1 end="0" />
-				<rle2 end="7" />
-				<lle2 end="-7" />
+				<rle2 end="10" />
+				<lle2 end="-10" />
 				<rle3 end="55" />
 				<lle3 end="55" />
 				<rle4 end="-60" />
@@ -57,7 +57,7 @@ parametrizable: looks like there is a posibility of changing the time to change 
 				<rle6 end="15" />
 				<lle6 end="15" />
 			</effectors>
-			<duration>4000</duration>
+			<duration>5000</duration>
 		</phase>
 		<phase name="rigth_front_front_kick2"  next="rigth_front_front_kick3">
 			<effectors>
@@ -93,7 +93,7 @@ parametrizable: looks like there is a posibility of changing the time to change 
 			</effectors>
 			<duration>40</duration>
 		</phase>
-		<phase name="rigth_front_front_kick4"  next="rigth_front_front_kick">
+		<phase name="rigth_front_front_kick4">
 			<effectors>
 				<rle1 end="0" />
 				<lle1 end="0" />
@@ -108,7 +108,7 @@ parametrizable: looks like there is a posibility of changing the time to change 
 				<rle6 end="15" />
 				<lle6 end="15" />
 			</effectors>
-			<duration>4000</duration>
+			<duration>5000</duration>
 		</phase>
 	</phases>
 </robot>

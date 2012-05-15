@@ -12,7 +12,7 @@
  ***********************************************************************************/
 package perceptor.vision;
 
-import perceptor.HingeJointPerceptor;
+import kinematics.JointPosition2D;
 
 public class Ball {
 
@@ -62,12 +62,18 @@ public class Ball {
 		Ball.angleY = angleY;
 	}
 	
-	public static boolean isKickable(){
-		if(HingeJointPerceptor.getHj1()<-15 && HingeJointPerceptor.getHj1()>-17){
-			return true;
-		}else{
-			return false;
-		}	
+	public static float RealDistance(){
+		
+		JointPosition2D HeadPos=kinematics.HeadPosition.Calculate();
+		
+		float distance = (float) Math.sqrt(Math.pow(Ball.getDistance(), 2) + Math.pow(HeadPos.PositionY, 2));
+		
+		float distanceFromFoot = distance - HeadPos.PositionX;
+		
+		
+		return distanceFromFoot;
+
+		
 	}
 	
 }

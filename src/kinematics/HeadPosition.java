@@ -14,9 +14,9 @@ public class HeadPosition {
 		JointPosition2D JointPosition2DUpperLegR = DirectKinematics.CalculatePosition(JointPosition2DLegR, NAOConstraints.UpperLegHeight, HingeJointPerceptor.getRlj4());
 		JointPosition2D JointPosition2DBodyR = DirectKinematics.CalculatePosition(JointPosition2DUpperLegR, NAOConstraints.bodyHeight, HingeJointPerceptor.getRlj3());
 		
-		JointPosition2D JointPosition2DLegL = DirectKinematics.CalculatePosition(footposition, NAOConstraints.LegHeight, HingeJointPerceptor.getRlj5());
-		JointPosition2D JointPosition2DUpperLegL = DirectKinematics.CalculatePosition(JointPosition2DLegL, NAOConstraints.UpperLegHeight, HingeJointPerceptor.getRlj4());
-		JointPosition2D JointPosition2DBodyL = DirectKinematics.CalculatePosition(JointPosition2DUpperLegL, NAOConstraints.bodyHeight, HingeJointPerceptor.getRlj3());
+		JointPosition2D JointPosition2DLegL = DirectKinematics.CalculatePosition(footposition, NAOConstraints.LegHeight, HingeJointPerceptor.getLlj5());
+		JointPosition2D JointPosition2DUpperLegL = DirectKinematics.CalculatePosition(JointPosition2DLegL, NAOConstraints.UpperLegHeight, HingeJointPerceptor.getLlj4());
+		JointPosition2D JointPosition2DBodyL = DirectKinematics.CalculatePosition(JointPosition2DUpperLegL, NAOConstraints.bodyHeight, HingeJointPerceptor.getLlj3());
 		
 		float JointPosition2DHeadX=(JointPosition2DBodyR.PositionX+JointPosition2DBodyL.PositionX)/2;
 		float JointPosition2DHeadY=(JointPosition2DBodyR.PositionY+JointPosition2DBodyL.PositionY)/2;
