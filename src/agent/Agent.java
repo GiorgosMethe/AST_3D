@@ -154,9 +154,6 @@ public class Agent {
 			//if(Vision.isiSee()){
 			//MotionTrigger.setMotion("KickForwardRight");
 				GoKickBall.Act();
-				System.out.println(""+Ball.getAngleX());
-				System.out.println(""+Ball.getAngleY());
-				System.out.println(""+Ball.getDistance());
 			//}
 			
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
@@ -176,11 +173,11 @@ public class Agent {
 			}
 			
 			
-			System.out.println("ball Jh1:"+HingeJointPerceptor.getHj1());
-			System.out.println("ball Jh2:"+HingeJointPerceptor.getHj2());
-			System.out.println("ball calc distance:"+Math.sqrt(Math.pow(Ball.getDistance(), 2)+Math.pow(0.540, 2)));
-			System.out.println("ball distance"+Ball.getDistance());
-			System.out.println("ball angleY"+Ball.getAngleY());
+			System.out.println("dx:"+kinematics.HeadPosition.Calculate().PositionX);
+			System.out.println("dy:"+kinematics.HeadPosition.Calculate().PositionY);
+			System.out.println("theta:"+HingeJointPerceptor.getRlj5());
+		
+
 			System.out.println("----------------");
 			
 
