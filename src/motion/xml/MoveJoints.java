@@ -66,6 +66,16 @@ public class MoveJoints {
 						}else if(joint.equalsIgnoreCase("rle5")){
 							move=(float) 32;
 						}
+					}else if(WalkLeaning.getLean().equalsIgnoreCase("slow")&&MotionPlaying.getMotionName().equalsIgnoreCase("walk_fine")&&pha.getName().equalsIgnoreCase("walk_attempt4")){
+						if(joint.equalsIgnoreCase("lle3")){
+							move=(float) 52;
+						}
+						
+					}else if(WalkLeaning.getLean().equalsIgnoreCase("slow")&&MotionPlaying.getMotionName().equalsIgnoreCase("walk_fine")&&pha.getName().equalsIgnoreCase("walk_attempt6")){
+						if(joint.equalsIgnoreCase("rle3")){
+							move=(float) 52;
+						}
+						
 					}
 					for(int j=0;j<NaoJoints.length;j++){
 						if(NaoJoints[j].equalsIgnoreCase(joint)){

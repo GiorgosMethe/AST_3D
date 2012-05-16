@@ -34,6 +34,9 @@ public class GetMotion {
 		}else if(name.equalsIgnoreCase("rigth_front_front_kick")){
 			Motion mot=XMLMotionStorage.getRigth_front_front_kick();
 			return mot;
+		}else if(name.equalsIgnoreCase("test")){
+			Motion mot=XMLMotionStorage.getTest();
+			return mot;
 		}
 		
 		

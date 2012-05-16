@@ -14,32 +14,22 @@ public class GoKickBall {
 	public static boolean Act(){
 
 
-//			if(WalkToBall.Act()){
-//				if(PrepareKick.Act()){
-//					MotionTrigger.setMotion("KickForwardRight");
-//				}	
-//			}
-
-
-
 		if(ActionStateMachine.getState().equalsIgnoreCase("GoToBall")){
 			if(WalkToBall.Act()){
-				ActionStateMachine.setState("PrepareToKick");
+				ActionStateMachine.setState("Kick");
 			}else{
 				ActionStateMachine.setState("GoToBall");
 			}
-			return false;
-		}else if(ActionStateMachine.getState().equalsIgnoreCase("PrepareToKick")){
-			if(PrepareKick.Act()){
-				ActionStateMachine.setState("Kick");
-			}else{
-				ActionStateMachine.setState("PrepareToKick");
-			}
-			return false;
 		}else if(ActionStateMachine.getState().equalsIgnoreCase("Kick")){
+			if(MotionPlaying.getMotionPhase()!=null){
+			if(MotionPlaying.getMotionPhase().equalsIgnoreCase("rigth_front_front_kick4")){
+				ActionStateMachine.setState("GoToBall");
+				return true;
+			}
+			}
 			MotionTrigger.setMotion("KickForwardRight");
 			ActionStateMachine.setState("GoToBall");
-			return true;
+			
 		}
 		return false;
 

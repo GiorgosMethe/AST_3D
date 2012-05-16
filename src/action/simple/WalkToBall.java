@@ -29,18 +29,37 @@ public class WalkToBall {
 			if(Ball.isSeeTheBall()){
 
 
-				if((Ball.RealDistance()<0.37)&&(Ball.getDistance()<0.46)){
-					System.out.println("stopppppppppppppPP!!!!!!!!!");
-					MotionTrigger.setMotion("");
-					return true;
+				if((Ball.RealDistance()<0.37)&&(Ball.getDistance()<0.46)&&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
+
+					if((HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())>0)){
+						MotionTrigger.setMotion("TurnRight40");
+						return false;
+					}else{
+
+						System.out.println("stopppppppppppppPP!!!!!!!!!");
+						MotionTrigger.setMotion("");
+						return true;
+					}
 
 				}else{
 
+					float AngleThresholdBigTurn;
+					float AngleThresholdWalkLeaningTurn;
+					if(Ball.getDistance()<1){
+
+						AngleThresholdBigTurn=10;
+						AngleThresholdWalkLeaningTurn = 2;
+
+					}else{
+
+						AngleThresholdBigTurn=20;
+						AngleThresholdWalkLeaningTurn = 5;
+					}
 
 
-					if((Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))>15){
+					if((Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))>AngleThresholdBigTurn){
 
-						
+
 						if((HingeJointPerceptor.getHj1()+Ball.getAngleX())>0){
 
 							MotionTrigger.setMotion("TurnLeft40");
@@ -52,29 +71,34 @@ public class WalkToBall {
 							return false;
 
 						}
-						
-					}else if((Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))>5){
 
-							
-							if((HingeJointPerceptor.getHj1()+Ball.getAngleX())>0){
+					}else if((Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))>AngleThresholdWalkLeaningTurn){
 
-								MotionTrigger.setMotion("Forwards50");
-								WalkLeaning.setLean("left");
-								return false;
 
-							}else{
+						if((HingeJointPerceptor.getHj1()+Ball.getAngleX())>0){
 
-								MotionTrigger.setMotion("Forwards50");
-								WalkLeaning.setLean("right");
-								return false;
+							MotionTrigger.setMotion("Forwards50");
+							WalkLeaning.setLean("left");
+							return false;
 
-							}
+						}else{
+
+							MotionTrigger.setMotion("Forwards50");
+							WalkLeaning.setLean("right");
+							return false;
+
+						}
 
 
 					}else{
 
-						MotionTrigger.setMotion("Forwards50");
-						WalkLeaning.setLean("");
+						if(Ball.getDistance()<1){
+							MotionTrigger.setMotion("Forwards50");
+							WalkLeaning.setLean("slow");
+						}else{
+							MotionTrigger.setMotion("Forwards50");
+							WalkLeaning.setLean("");
+						}
 						return false;
 					}
 

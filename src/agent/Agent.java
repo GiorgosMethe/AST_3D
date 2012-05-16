@@ -173,9 +173,7 @@ public class Agent {
 			}
 			
 			
-			System.out.println("--"+Ball.getDistance());
-			System.out.println("-"+Ball.RealDistance());
-
+			System.out.println("--"+MotionTrigger.getMotion());
 			System.out.println("----------------");
 			
 
