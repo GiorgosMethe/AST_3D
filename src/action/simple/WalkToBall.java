@@ -36,7 +36,6 @@ public class WalkToBall {
 						return false;
 					}else{
 
-						System.out.println("stopppppppppppppPP!!!!!!!!!");
 						MotionTrigger.setMotion("");
 						return true;
 					}

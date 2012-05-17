@@ -108,7 +108,9 @@ public class WalkTo {
 		double dx=target.getX()-LocalizationResults.getCurrent_location().getX();
 		double dy=target.getY()-LocalizationResults.getCurrent_location().getY();
 		double DistanceToTarget=Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
+		
 		return DistanceToTarget;
+		
 	}
 
 
