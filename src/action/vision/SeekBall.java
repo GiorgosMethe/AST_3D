@@ -33,6 +33,8 @@ public class SeekBall {
 			Action=MoveHeadToBall();
 		}else if(type==2){
 			Action=MoveHeadToLocalize();
+		}else if(type==3){
+			Action=MoveHeadToLocalizeBall();
 		}
 
 
@@ -49,7 +51,7 @@ public class SeekBall {
 		String str="";
 
 		if(Vision.isiSee()==true){
-			if(LocalizationResults.getLandmarks().size()<=1){
+			if(LocalizationResults.getLandmarks().size()<=1 && Ball.isSeeTheBall()==false){
 				
 				float realMoveX=gNjV.Get("he1", moveX)/8;
 				float realMoveY=gNjV.Get("he2", moveY)/8;
@@ -66,6 +68,42 @@ public class SeekBall {
 
 					
 				}
+				
+				str="("+"he1"+" "+centerToLocateX(AngleX)+")"+"("+"he2"+" "+centerToLocateY(AngleY)+")";
+								
+			}
+		}
+		return str;
+	}
+	
+	public String MoveHeadToLocalizeBall(){
+
+
+		int cycles=ServerCyrcles.getCyrclesNow();
+		float moveX=(float) (2.09*Math.sin(cycles/15));
+		float moveY= (float) (0.59*Math.sin(cycles/8)-0.078);
+		String str="";
+
+		if(Vision.isiSee()==true){
+			if(LocalizationResults.getLandmarks().size()<=1 && Ball.isSeeTheBall()==false){
+				
+				float realMoveX=gNjV.Get("he1", moveX)/8;
+				float realMoveY=gNjV.Get("he2", moveY)/8;
+				str="("+"he1"+" "+realMoveX+")"+"("+"he2"+" "+realMoveY+")";
+
+			}else{
+				
+				double AngleX = 0;
+				double AngleY = 0;
+				for(int i=0;i<LocalizationResults.getLandmarks().size();i++){				
+					
+					AngleX = AngleX + LocalizationResults.getLandmarks().elementAt(i).Horizontal_Angle;
+					AngleY = AngleY + LocalizationResults.getLandmarks().elementAt(i).Vertical_Angle;
+
+					
+				}
+				AngleX = AngleX + Ball.getAngleX();
+				AngleY = AngleY + Ball.getAngleY();
 				
 				str="("+"he1"+" "+centerToLocateX(AngleX)+")"+"("+"he2"+" "+centerToLocateY(AngleY)+")";
 								

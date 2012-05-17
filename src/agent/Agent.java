@@ -153,7 +153,10 @@ public class Agent {
 			
 			//if(Vision.isiSee()){
 			//MotionTrigger.setMotion("KickForwardRight");
-				GoKickBall.Act();
+			GoKickBall.Act();
+			
+//			Coordinate target=new Coordinate(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y);
+//			WalkTo.Act(target,0);
 			//}
 			
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
@@ -173,7 +176,8 @@ public class Agent {
 			}
 			
 			
-			System.out.println("--"+MotionTrigger.getMotion());
+		
+			System.out.println("rd-"+Ball.RealDistance());
 			System.out.println("----------------");
 			
 

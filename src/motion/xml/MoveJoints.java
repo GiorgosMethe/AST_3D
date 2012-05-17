@@ -68,12 +68,14 @@ public class MoveJoints {
 						}
 					}else if(WalkLeaning.getLean().equalsIgnoreCase("slow")&&MotionPlaying.getMotionName().equalsIgnoreCase("walk_fine")&&pha.getName().equalsIgnoreCase("walk_attempt4")){
 						if(joint.equalsIgnoreCase("lle3")){
-							move=(float) 52;
+							move=(float) 44;
+							System.out.println("allagh");
 						}
 						
 					}else if(WalkLeaning.getLean().equalsIgnoreCase("slow")&&MotionPlaying.getMotionName().equalsIgnoreCase("walk_fine")&&pha.getName().equalsIgnoreCase("walk_attempt6")){
 						if(joint.equalsIgnoreCase("rle3")){
-							move=(float) 52;
+							move=(float) 44;
+							System.out.println("allagh");
 						}
 						
 					}

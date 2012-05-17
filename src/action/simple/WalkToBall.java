@@ -29,10 +29,10 @@ public class WalkToBall {
 			if(Ball.isSeeTheBall()){
 
 
-				if((Ball.RealDistance()<0.37)&&(Ball.getDistance()<0.46)&&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
+				if((Ball.RealDistance()<0.778)){//&&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
 
 					if((HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())>0)){
-						MotionTrigger.setMotion("TurnRight40");
+						MotionTrigger.setMotion("SideStepLeft");
 						return false;
 					}else{
 

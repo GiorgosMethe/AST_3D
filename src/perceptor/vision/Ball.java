@@ -68,7 +68,7 @@ public class Ball {
 		
 		float distance = (float) Math.sqrt(Math.pow(Ball.getDistance(), 2) + Math.pow(HeadPos.PositionY, 2));
 		
-		float distanceFromFoot = distance - HeadPos.PositionX;
+		float distanceFromFoot = distance + HeadPos.PositionX;
 		
 		
 		return distanceFromFoot;
