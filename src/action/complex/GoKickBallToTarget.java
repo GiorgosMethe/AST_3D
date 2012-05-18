@@ -2,7 +2,6 @@ package action.complex;
 
 import motion.old.MotionTrigger;
 import motion.xml.CheckKickEnd;
-import motion.xml.MotionPlaying;
 import action.simple.WalkToBall;
 import action.undeclared.ActionStateMachine;
 

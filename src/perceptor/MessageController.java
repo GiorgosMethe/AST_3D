@@ -10,20 +10,17 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package connection;
+package perceptor;
 
 import java.util.Vector;
 import javax.vecmath.Vector3d;
 
-import perceptor.Accelerometer;
-import perceptor.ForceResistancePerceptor;
-import perceptor.GyroScope;
-import perceptor.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 
 import communication.HearMessage;
 import communication.MessageBuffer;
+import connection.Connection;
 
 import agent.Agent;
 import agent.AgentType;

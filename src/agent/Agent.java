@@ -12,35 +12,24 @@
  ***********************************************************************************/
 package agent;
 
-import communication.HearMessage;
-import communication.SendMessage;
 import localization.BallPosition;
-import localization.Coordinate;
-import localization.LocalizationResults;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
-import behavior.Think;
 import action.complex.GoKickBall;
-import action.simple.TurnToBall;
-import action.simple.TurnToSeeBall;
-import action.simple.WalkTo;
-import action.simple.WalkToBall;
 import action.undeclared.ActionStateMachine;
+import action.vision.ObstacleAvoidance;
 import action.vision.SeekBall;
 import connection.Connection;
-import connection.MessageController;
 import connection.ServerCyrcles;
 import worldState.GameState;
-
 import java.lang.String;
 
-import perceptor.HingeJointPerceptor;
+import perceptor.MessageController;
 import perceptor.isFallen;
 import perceptor.vision.Ball;
-import perceptor.vision.Vision;
 
 
 public class Agent {
@@ -58,8 +47,8 @@ public class Agent {
 		Check Ch=new Check();
 		MessageController Gp = new MessageController();
 		SeekBall Sb = new SeekBall();
-		SendMessage sm = new SendMessage();
-		Think think=new Think();
+		//SendMessage sm = new SendMessage();
+		//Think think=new Think();
 		isFallen iF=new isFallen();
 		MotionStorage Ms=new MotionStorage();
 		XMLMotionStorage nMs=new XMLMotionStorage();
@@ -98,8 +87,8 @@ public class Agent {
 		int i=0;
 		
 		//player number
-		num=7;
-		Teamname="tuc";
+		num=6;
+		Teamname="alloi";
 		// team name
 		
 		//player position
@@ -153,8 +142,8 @@ public class Agent {
 			
 			//if(Vision.isiSee()){
 			//MotionTrigger.setMotion("KickForwardRight");
-			GoKickBall.Act();
-			
+			//GoKickBall.Act();
+			ObstacleAvoidance.Act();
 //			Coordinate target=new Coordinate(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y);
 //			WalkTo.Act(target,0);
 			//}
@@ -174,10 +163,7 @@ public class Agent {
 			}else{
 				AgentAct= pXML.execute("");
 			}
-			
-			
-		
-			System.out.println("rd-"+Ball.RealDistance());
+
 			System.out.println("----------------");
 			
 

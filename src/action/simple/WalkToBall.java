@@ -13,7 +13,6 @@
 
 package action.simple;
 
-import localization.BallPosition;
 import motion.old.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.HingeJointPerceptor;
