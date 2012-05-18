@@ -336,11 +336,11 @@ public class Perceptors {
 							j--;
 							if(k!=0){
 								player_distance=player_distance/k;
-								player_horizontal_angle=player_horizontal_angle/k;
-								player_vertical_angle=player_horizontal_angle;	
+								player_horizontal_angle=(player_horizontal_angle/k)+HingeJointPerceptor.getHj1();
+								player_vertical_angle=(player_horizontal_angle/k)+HingeJointPerceptor.getHj2();	
 							}
 							Landmark player=new Landmark(player_id, player_distance, player_vertical_angle, player_horizontal_angle);
-							if(team_name.equalsIgnoreCase("tuc")){
+							if(team_name.equalsIgnoreCase(Agent.Teamname)){
 								if(!player.getName().equalsIgnoreCase(Agent.num+"")){
 									coplayers.add(player);
 								}

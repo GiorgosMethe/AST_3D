@@ -42,6 +42,7 @@ public class Agent {
 	private static float max;
 
 	public static String Teamname="";
+	
 	public static void main(String[] args) {
 
 		Check Ch=new Check();
@@ -87,7 +88,7 @@ public class Agent {
 		int i=0;
 		
 		//player number
-		num=6;
+		num=7;
 		Teamname="alloi";
 		// team name
 		
