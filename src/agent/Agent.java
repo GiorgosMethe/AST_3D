@@ -29,6 +29,7 @@ import java.lang.String;
 
 import perceptor.MessageController;
 import perceptor.isFallen;
+import perceptor.vision.Vision;
 
 
 public class Agent {
@@ -87,7 +88,7 @@ public class Agent {
 		int i=0;
 		
 		//player number
-		num=5;
+		num=7;
 		Teamname="e";
 		// team name
 		
@@ -139,8 +140,9 @@ public class Agent {
 			/****************************experiments***************************/
 			//GoKickBall.Act();
 			
-			
+			if(Vision.isiSee()){
 			ObstacleAvoidance.Act();
+			}
 //			WayOutObstacle.Act(LocalizationResults.getBody_angle());
 			
 //			Coordinate target=new Coordinate(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y);
@@ -173,8 +175,8 @@ public class Agent {
 			iF.Check();
 		
 			//get the head movement
-			String headAct=Sb.MoveHead(1);
-		
+			//String headAct=Sb.MoveHead(1);
+			String headAct="";
 			//create the hole agents actions
 			String Act=headAct+AgentAct;
 			
