@@ -29,7 +29,6 @@ import java.lang.String;
 
 import perceptor.MessageController;
 import perceptor.isFallen;
-import perceptor.vision.Ball;
 
 
 public class Agent {
@@ -88,8 +87,8 @@ public class Agent {
 		int i=0;
 		
 		//player number
-		num=7;
-		Teamname="alloi";
+		num=5;
+		Teamname="e";
 		// team name
 		
 		//player position
@@ -138,13 +137,12 @@ public class Agent {
 			}
 			
 			/****************************experiments***************************/
-			
-			//AgentAct= pXML.execute("walk_fine");
-			
-			//if(Vision.isiSee()){
-			//MotionTrigger.setMotion("KickForwardRight");
 			//GoKickBall.Act();
+			
+			
 			ObstacleAvoidance.Act();
+//			WayOutObstacle.Act(LocalizationResults.getBody_angle());
+			
 //			Coordinate target=new Coordinate(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y);
 //			WalkTo.Act(target,0);
 			//}
