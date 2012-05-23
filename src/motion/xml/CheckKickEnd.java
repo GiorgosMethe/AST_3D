@@ -1,6 +1,6 @@
 package motion.xml;
 
-import behavior.general.ActionStateMachine;
+import behavior.fsm.GKBstates;
 
 public class CheckKickEnd {
 
@@ -10,7 +10,7 @@ public class CheckKickEnd {
 			
 			if(MotionPlaying.getMotionPhase().equalsIgnoreCase("rigth_front_front_kick4")){
 
-				ActionStateMachine.setState("GoToBall");
+				GKBstates.setState("GoToBall");
 				return true;
 
 			}

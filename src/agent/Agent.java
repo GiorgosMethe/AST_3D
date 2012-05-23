@@ -13,28 +13,20 @@
 package agent;
 
 import localization.BallPosition;
-import localization.Coordinate;
-import localization.LocalizationResults;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
-import behavior.complex.GoKickBall;
+import perceptor.MessageController;
+import perceptor.isFallen;
+import worldState.GameState;
 import behavior.complex.GoKickBallToGoal;
-import behavior.general.ActionStateMachine;
-import behavior.simple.WalkTo;
-import behavior.vision.ObstacleAvoidance;
+import behavior.fsm.GKBstates;
 import behavior.vision.SeekBall;
 import behavior.vision.VisionType;
 import connection.Connection;
 import connection.ServerCyrcles;
-import worldState.GameState;
-import java.lang.String;
-
-import perceptor.MessageController;
-import perceptor.isFallen;
-import perceptor.vision.Vision;
 
 
 public class Agent {
@@ -61,7 +53,7 @@ public class Agent {
 		XMLMovement pXML=new XMLMovement();
 		
 		///
-		ActionStateMachine.setState("GoToBall");
+		GKBstates.setState("GoToBall");
 
 		//connection config
 		String host = "127.0.0.1";
@@ -161,7 +153,7 @@ public class Agent {
 				AgentAct= pXML.execute("");
 			}
 
-			System.out.println("----------------");
+			System.out.println("----------------"+MotionTrigger.getMotion());
 			
 
 			/*******************************************************************/

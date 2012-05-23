@@ -1,36 +1,35 @@
 package behavior.complex;
 
-import behavior.general.ActionStateMachine;
-import behavior.simple.PrepareKickToGoal;
-import behavior.simple.WalkToBall;
-import behavior.vision.KickSuccess;
-import behavior.vision.VisionType;
 import localization.Coordinate;
 import localization.LocalizationResults;
 import motion.old.MotionTrigger;
 import motion.xml.CheckKickEnd;
+import behavior.fsm.GKBTGstates;
+import behavior.fsm.GKBstates;
+import behavior.simple.WalkToBall;
+import behavior.vision.KickSuccess;
 
 public class GoKickBallToGoal {
 
 	public static boolean Act(){
 
-		if(ActionStateMachine.getState().equalsIgnoreCase("GoToBall")){
+		if(GKBTGstates.getState().equalsIgnoreCase("Start")){
 			
 			if(WalkToBall.Act()){
-				ActionStateMachine.setState("TakePosition");
+				GKBTGstates.setState("TakePosition");
 				KickSuccess.setStart(new Coordinate(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y));
 			}else{
-				ActionStateMachine.setState("GoToBall");
+				GKBTGstates.setState("Start");
 			}
 			
-		}else if(ActionStateMachine.getState().equalsIgnoreCase("TakePosition")){
+		}else if(GKBTGstates.getState().equalsIgnoreCase("TakePosition")){
 			
 			if(PrepareKickToGoal.Act()){
-				ActionStateMachine.setState("Kick");
+				GKBTGstates.setState("Kick");
 			}
 			
 					
-		}else if(ActionStateMachine.getState().equalsIgnoreCase("Kick")){
+		}else if(GKBTGstates.getState().equalsIgnoreCase("Kick")){
 			
 			if(CheckKickEnd.Check()){
 				
@@ -41,14 +40,14 @@ public class GoKickBallToGoal {
 				}else{
 					System.out.println("den petyxa klotsia");
 				}
-				ActionStateMachine.setState("GoToBall");
+				GKBTGstates.setState("Start");
 				
 				return true;
 			
 			}
 			
 			MotionTrigger.setMotion("KickForwardRight");
-			ActionStateMachine.setState("GoToBall");
+			GKBstates.setState("GoToBall");
 			
 		}
 		return false;

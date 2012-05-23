@@ -1,25 +1,25 @@
 package behavior.complex;
 
-import behavior.general.ActionStateMachine;
-import behavior.simple.WalkToBall;
-import behavior.vision.KickSuccess;
 import localization.Coordinate;
 import localization.LocalizationResults;
 import motion.old.MotionTrigger;
 import motion.xml.CheckKickEnd;
+import behavior.fsm.GKBstates;
+import behavior.simple.WalkToBall;
+import behavior.vision.KickSuccess;
 
 public class GoKickBall {
 
 	public static boolean Act(){
 
-		if(ActionStateMachine.getState().equalsIgnoreCase("GoToBall")){
+		if(GKBstates.getState().equalsIgnoreCase("Start")){
 			if(WalkToBall.Act()){
-				ActionStateMachine.setState("Kick");
+				GKBstates.setState("Kick");
 				KickSuccess.setStart(new Coordinate(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y));
 			}else{
-				ActionStateMachine.setState("GoToBall");
+				GKBstates.setState("Start");
 			}
-		}else if(ActionStateMachine.getState().equalsIgnoreCase("Kick")){
+		}else if(GKBstates.getState().equalsIgnoreCase("Kick")){
 			if(CheckKickEnd.Check()){
 				KickSuccess.setEnd(new Coordinate(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y));
 				
@@ -28,13 +28,13 @@ public class GoKickBall {
 				}else{
 					System.out.println("den petyxa klotsia");
 				}
-				ActionStateMachine.setState("GoToBall");
+				GKBstates.setState("Start");
 				
 				return true;
 			
 			}
 			MotionTrigger.setMotion("KickForwardRight");
-			ActionStateMachine.setState("GoToBall");
+			GKBstates.setState("Start");
 			
 		}
 		return false;

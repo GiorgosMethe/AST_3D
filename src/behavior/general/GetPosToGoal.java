@@ -13,13 +13,13 @@
 
 package behavior.general;
 
-import behavior.old.BehaviorStateMachine;
 import localization.BallPosition;
 import localization.Landmark;
 import localization.LocalizationResults;
 import motion.old.MotionTrigger;
 import perceptor.HingeJointPerceptor;
 import worldState.TeamState;
+import behavior.old.BehaviorStateMachine;
 
 public class GetPosToGoal {
 

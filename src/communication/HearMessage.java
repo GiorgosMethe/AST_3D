@@ -12,11 +12,11 @@
  ***********************************************************************************/
 package communication;
 
-import connection.Connection;
-import agent.AgentType;
-import behavior.old.BehaviorStateMachine;
 import perceptor.vision.Ball;
 import worldState.TeamState;
+import agent.AgentType;
+import behavior.old.BehaviorStateMachine;
+import connection.Connection;
 public class HearMessage {
 
 	Connection con = new Connection();

@@ -1,7 +1,7 @@
-package behavior.general;
+package behavior.fsm;
 
-public class ActionStateMachine {
-	
+public class GKBTGstates {
+
 	public static String State;
 
 	public static String getState() {
@@ -12,6 +12,4 @@ public class ActionStateMachine {
 		State = state;
 	}
 	
-	
-
 }

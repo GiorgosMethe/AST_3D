@@ -12,12 +12,12 @@
  ***********************************************************************************/
 package behavior.old;
 
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 import behavior.general.Kick;
 import behavior.general.TakeGoaliePos;
 import behavior.simple.TurnToBall;
 import behavior.simple.TurnToSeeBall;
-import perceptor.vision.Ball;
-import perceptor.vision.Vision;
 
 public class Goalie {
 

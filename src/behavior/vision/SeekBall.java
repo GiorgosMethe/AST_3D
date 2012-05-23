@@ -14,11 +14,11 @@
 package behavior.vision;
 
 import localization.LocalizationResults;
-import connection.ServerCyrcles;
 import perceptor.GetNormalJointValue;
 import perceptor.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
+import connection.ServerCyrcles;
 
 
 public class SeekBall {
@@ -53,7 +53,7 @@ public class SeekBall {
 		String str="";
 
 		if(Vision.isiSee()==true){
-			if(LocalizationResults.getLandmarks().size()<=1 && Ball.isSeeTheBall()==false){
+			if(LocalizationResults.getLandmarks().size()<=1){
 
 				float realMoveX=gNjV.Get("he1", moveX)/8;
 				float realMoveY=gNjV.Get("he2", moveY)/8;
@@ -66,12 +66,11 @@ public class SeekBall {
 				for(int i=0;i<LocalizationResults.getLandmarks().size();i++){				
 
 					AngleX = AngleX + LocalizationResults.getLandmarks().elementAt(i).Horizontal_Angle;
-					AngleY = AngleY + LocalizationResults.getLandmarks().elementAt(i).Vertical_Angle;
 
 				}
 
 				AngleX = AngleX/LocalizationResults.getLandmarks().size();
-				AngleY = AngleY/LocalizationResults.getLandmarks().size();
+				AngleY = gNjV.Get("he2", 0)/10;
 				str="("+"he1"+" "+centerToLocateX(AngleX)+")"+"("+"he2"+" "+centerToLocateY(AngleY)+")";
 
 			}
@@ -117,13 +116,11 @@ public class SeekBall {
 
 	public String MoveHeadStraight(){
 
-		int cycles=ServerCyrcles.getCyrclesNow();
-		float moveX=(float) (2.09*Math.sin(cycles/15));
-		float moveY= (float) (0.59*Math.sin(cycles/8)-0.078);
 		String str="";
 
-		float realMoveY=gNjV.Get("he2", moveY)/10;
-		str="("+"he1"+" "+0+")"+"("+"he2"+" "+1+")";
+		float realMoveX=gNjV.Get("he1", 0)/10;
+		float realMoveY=gNjV.Get("he2", 0)/10;
+		str="("+"he1"+" "+realMoveX+")"+"("+"he2"+" "+realMoveY+")";
 
 		return str;
 	}

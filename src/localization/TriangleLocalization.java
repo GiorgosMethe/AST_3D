@@ -4,7 +4,8 @@
  *
  * Thesis Project
  *
- * @author Methenitis Georgios Student ID:2006030085	
+ * @author Methenitis Georgios Student ID:2006030085 
+ * @author Vassilis Papadimitriou	
  *
  * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
  * Start date: 25-04-2012											 
@@ -300,6 +301,61 @@ public class TriangleLocalization {
 		double y=ay+d*Math.sin(Math.toRadians(f));
 		Coordinate Det =new Coordinate(x, y);
 		return Det; 
+	}
+	
+	public static double FindAngle(Coordinate target){
+
+		double dx=target.getX()-LocalizationResults.getCurrent_location().getX();
+		double dy=target.getY()-LocalizationResults.getCurrent_location().getY();
+
+		double ThetaToTarget=Math.toDegrees(Math.atan2(dx, dy));
+		if(ThetaToTarget>=0 && ThetaToTarget<90){
+
+			ThetaToTarget=90-ThetaToTarget;
+
+		}else if(ThetaToTarget>=90 && ThetaToTarget<180){
+
+			ThetaToTarget=-(ThetaToTarget-90);
+
+		}else if(ThetaToTarget<-90 && ThetaToTarget>=-180){
+
+			ThetaToTarget=-(ThetaToTarget+270);
+
+		}else if(ThetaToTarget>=-90 && ThetaToTarget<-0){
+
+			ThetaToTarget=-(ThetaToTarget-90);
+
+		}
+		
+		return ThetaToTarget;
+	}
+
+
+
+
+	public static double FindDistanceToTarget(Coordinate target){
+
+		double dx=target.getX()-LocalizationResults.getCurrent_location().getX();
+		double dy=target.getY()-LocalizationResults.getCurrent_location().getY();
+		double DistanceToTarget=Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
+		
+		return DistanceToTarget;
+		
+	}
+
+
+	public static double FindAngleDifference(double ThetaToTarget){
+		
+		double BodyAngle=LocalizationResults.getBody_angle();
+		double DesirableAngle=ThetaToTarget;
+		double AngleDifference=DesirableAngle-BodyAngle;
+		
+		if(AngleDifference>180){
+			AngleDifference=AngleDifference-360;
+		}
+		
+		return AngleDifference;
+		
 	}
 
 }

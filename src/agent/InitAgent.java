@@ -12,16 +12,20 @@
  ***********************************************************************************/
 package agent;
 
-import communication.HearMessage;
-import communication.WhoSent;
-
 import motion.old.CurrentMotion;
 import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
+import behavior.fsm.GKBTGstates;
+import behavior.fsm.GKBstates;
+import behavior.fsm.PKTGstates;
 import behavior.old.BehaviorDone;
 import behavior.old.BehaviorStateMachine;
 import behavior.vision.VisionType;
+
+import communication.HearMessage;
+import communication.WhoSent;
+
 import connection.Connection;
 import connection.ServerCyrcles;
 
@@ -44,6 +48,12 @@ public class InitAgent {
 				}else{
 					new BehaviorStateMachine("goToPos","start");
 				}
+				
+				//init behavior fsm
+				GKBstates.setState("Start");
+				GKBTGstates.setState("Start");
+				PKTGstates.setState("Start");
+				PKTGstates.setTimeout(0);
 				
 				//Old Movement
 				CurrentMotion.setSoftChangeCounter(0);

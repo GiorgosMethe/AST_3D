@@ -13,9 +13,9 @@
 
 package behavior.simple;
 
-import perceptor.HingeJointPerceptor;
 import localization.BallPosition;
 import motion.old.MotionTrigger;
+import perceptor.HingeJointPerceptor;
 
 public class TurnToBall {
 

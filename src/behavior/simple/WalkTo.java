@@ -13,25 +13,25 @@
 package behavior.simple;
 
 import localization.Coordinate;
-import localization.LocalizationResults;
+import localization.TriangleLocalization;
 import motion.old.MotionTrigger;
 
 public class WalkTo {
 
 	public static boolean Act(Coordinate target,float Theta){
 
-		double ThetaToTarget=FindAngle(target);
+		double ThetaToTarget=TriangleLocalization.FindAngle(target);
 
-		if(FindDistanceToTarget(target)<0.5){
+		if(TriangleLocalization.FindDistanceToTarget(target)<0.5){
 
-			if(Math.abs(FindAngleDifference(Theta))<20){
+			if(Math.abs(TriangleLocalization.FindAngleDifference(Theta))<20){
 				
 				MotionTrigger.setMotion("");
 				return true;	
 				
 			}else{
 				
-				if(FindAngleDifference(Theta)<0){
+				if(TriangleLocalization.FindAngleDifference(Theta)<0){
 					
 					MotionTrigger.setMotion("TurnRight40");
 					return false;
@@ -48,14 +48,14 @@ public class WalkTo {
 		}else{
 			
 				
-				if(Math.abs(FindAngleDifference(ThetaToTarget))<20){
+				if(Math.abs(TriangleLocalization.FindAngleDifference(ThetaToTarget))<20){
 
 					MotionTrigger.setMotion("Forwards50");
 					return false;
 					
 				}else{
 					
-					if(FindAngleDifference(ThetaToTarget)<0){
+					if(TriangleLocalization.FindAngleDifference(ThetaToTarget)<0){
 						
 						MotionTrigger.setMotion("TurnRight40");
 						return false;
@@ -72,67 +72,6 @@ public class WalkTo {
 		}
 
 	}
-
-	public static double FindAngle(Coordinate target){
-
-		double dx=target.getX()-LocalizationResults.getCurrent_location().getX();
-		double dy=target.getY()-LocalizationResults.getCurrent_location().getY();
-
-		double ThetaToTarget=Math.toDegrees(Math.atan2(dx, dy));
-		if(ThetaToTarget>=0 && ThetaToTarget<90){
-
-			ThetaToTarget=90-ThetaToTarget;
-
-		}else if(ThetaToTarget>=90 && ThetaToTarget<180){
-
-			ThetaToTarget=-(ThetaToTarget-90);
-
-		}else if(ThetaToTarget<-90 && ThetaToTarget>=-180){
-
-			ThetaToTarget=-(ThetaToTarget+270);
-
-		}else if(ThetaToTarget>=-90 && ThetaToTarget<-0){
-
-			ThetaToTarget=-(ThetaToTarget-90);
-
-		}
-		
-		return ThetaToTarget;
-	}
-
-
-
-
-	public static double FindDistanceToTarget(Coordinate target){
-
-		double dx=target.getX()-LocalizationResults.getCurrent_location().getX();
-		double dy=target.getY()-LocalizationResults.getCurrent_location().getY();
-		double DistanceToTarget=Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
-		
-		return DistanceToTarget;
-		
-	}
-
-
-	public static double FindAngleDifference(double ThetaToTarget){
-		
-		double BodyAngle=LocalizationResults.getBody_angle();
-		double DesirableAngle=ThetaToTarget;
-		double AngleDifference=DesirableAngle-BodyAngle;
-		
-		if(AngleDifference>180){
-			AngleDifference=AngleDifference-360;
-		}
-		
-		return AngleDifference;
-		
-	}
-
-
-
-
-
-
 
 
 }

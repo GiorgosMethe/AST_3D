@@ -13,9 +13,9 @@
 
 package behavior.general;
 
-import perceptor.vision.Ball;
 import localization.LocalizationResults;
 import motion.old.MotionTrigger;
+import perceptor.vision.Ball;
 
 public class TakeGoaliePos {
 

@@ -4,8 +4,9 @@
  *
  * Thesis Project
  *
- * @author Methenitis Georgios Student ID:2006030085	
- *
+ * @author Methenitis Georgios Student ID:2006030085 
+ * @author Vassilis Papadimitriou	
+ * 
  * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
@@ -13,21 +14,26 @@
 package perceptor;
 
 import java.util.Vector;
+
 import javax.vecmath.Vector3d;
 
+import localization.AgentPosition;
+import localization.Coordinate;
+import localization.Landmark;
+import localization.LocalizationResults;
+import localization.TriangleLocalization;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
+import worldState.GameState;
+import worldState.ServerTime;
+import worldState.TeamState;
+import agent.Agent;
+import agent.AgentType;
 
 import communication.HearMessage;
 import communication.MessageBuffer;
-import connection.Connection;
 
-import agent.Agent;
-import agent.AgentType;
-import localization.*;
-import worldState.ServerTime;
-import worldState.GameState;
-import worldState.TeamState;
+import connection.Connection;
 
 public class MessageController {
 	Coordinate curloc=new Coordinate(0, 0);

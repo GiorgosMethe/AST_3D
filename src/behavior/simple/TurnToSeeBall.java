@@ -12,9 +12,9 @@
  ***********************************************************************************/
 package behavior.simple;
 
+import motion.old.MotionTrigger;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
-import motion.old.MotionTrigger;
 
 
 public class TurnToSeeBall {

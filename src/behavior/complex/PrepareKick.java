@@ -1,4 +1,4 @@
-package behavior.simple;
+package behavior.complex;
 
 import motion.old.MotionTrigger;
 import perceptor.HingeJointPerceptor;

@@ -11,7 +11,6 @@
  * End date  : xx-xx-2012
  ***********************************************************************************/
 package connection;
-import connection.Connection;
 public class ServerCyrcles {
 	
 	

@@ -13,6 +13,11 @@
 package behavior.old;
 
 
+import localization.BallPosition;
+import motion.old.MotionTrigger;
+import perceptor.HingeJointPerceptor;
+import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 import behavior.general.GetPosToGoal;
 import behavior.general.GetUp;
 import behavior.general.GoToPos;
@@ -22,11 +27,6 @@ import behavior.general.TurnOver;
 import behavior.simple.TurnToBall;
 import behavior.simple.TurnToSeeBall;
 import behavior.simple.WalkToBall;
-import localization.BallPosition;
-import motion.old.MotionTrigger;
-import perceptor.HingeJointPerceptor;
-import perceptor.vision.Ball;
-import perceptor.vision.Vision;
 
 public class DefenderCenter {
 

@@ -5,6 +5,7 @@
  * Thesis Project
  *
  * @author Methenitis Georgios Student ID:2006030085	
+ * @author Vassilis Papadimitriou
  *
  * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
  * Start date: 25-04-2012											 

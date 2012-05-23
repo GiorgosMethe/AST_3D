@@ -13,18 +13,25 @@
 package perceptor;
 
 import java.util.Vector;
+
 import javax.vecmath.Vector3d;
 
+import localization.AgentPosition;
+import localization.Coordinate;
+import localization.Landmark;
+import localization.LocalizationResults;
+import localization.TriangleLocalization;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
-import communication.HearMessage;
+import worldState.GameState;
+import worldState.ServerTime;
+import worldState.TeamState;
 import agent.Agent;
 import agent.AgentType;
-import localization.*;
+
+import communication.HearMessage;
+
 import connection.Connection;
-import worldState.ServerTime;
-import worldState.GameState;
-import worldState.TeamState;
 
 public class Perceptors {
 	Coordinate curloc=new Coordinate(0, 0);

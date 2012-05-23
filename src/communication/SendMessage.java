@@ -12,10 +12,10 @@
  ***********************************************************************************/
 package communication;
 
-import behavior.old.BehaviorStateMachine;
 import perceptor.vision.Ball;
 import worldState.TeamState;
 import agent.AgentType;
+import behavior.old.BehaviorStateMachine;
 import connection.Connection;
 public class SendMessage {
 	

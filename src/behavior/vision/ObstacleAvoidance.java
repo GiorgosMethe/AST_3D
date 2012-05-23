@@ -7,7 +7,6 @@ import java.util.Vector;
 import localization.BodyTheta;
 import localization.Landmark;
 import localization.LocalizationResults;
-import motion.old.MotionTrigger;
 
 public class ObstacleAvoidance {
 

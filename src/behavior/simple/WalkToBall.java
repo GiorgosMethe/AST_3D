@@ -69,7 +69,7 @@ public class WalkToBall {
 							return false;
 
 						}
-
+					/*
 					}else if((Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))>AngleThresholdWalkLeaningTurn){
 
 
@@ -86,7 +86,7 @@ public class WalkToBall {
 							return false;
 
 						}
-
+					*/
 
 					}else{
 
