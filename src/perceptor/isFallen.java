@@ -12,7 +12,7 @@
  ***********************************************************************************/
 package perceptor;
 
-import behavior.BehaviorStateMachine;
+import behavior.old.BehaviorStateMachine;
 
 public class isFallen {
 	

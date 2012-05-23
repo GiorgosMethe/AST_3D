@@ -1,6 +1,6 @@
 package motion.xml;
 
-import action.undeclared.ActionStateMachine;
+import behavior.general.ActionStateMachine;
 
 public class CheckKickEnd {
 

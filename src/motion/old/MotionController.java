@@ -11,7 +11,7 @@
  * End date  : xx-xx-2012
  ***********************************************************************************/
 package motion.old;
-import behavior.BehaviorDone;
+import behavior.old.BehaviorDone;
 import connection.Connection;
 import connection.ServerCyrcles;
 

@@ -19,8 +19,9 @@ import motion.old.CurrentMotion;
 import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
-import behavior.BehaviorDone;
-import behavior.BehaviorStateMachine;
+import behavior.old.BehaviorDone;
+import behavior.old.BehaviorStateMachine;
+import behavior.vision.VisionType;
 import connection.Connection;
 import connection.ServerCyrcles;
 
@@ -43,16 +44,22 @@ public class InitAgent {
 				}else{
 					new BehaviorStateMachine("goToPos","start");
 				}
+				
+				//Old Movement
 				CurrentMotion.setSoftChangeCounter(0);
 				InitAgent.setPlayerInited(false);
 				BehaviorDone.setName("");
 				BehaviorDone.setBehaviorDone(true);
 				MotionTrigger.setMotion("");
+				
 				//XML movement
 				MotionPlaying.setMotionName(null);	
 				MotionPlaying.setMotionPhase(null);
 				MotionPlaying.setStartCyrcle(0);
 				WalkLeaning.setLean("");
+				
+				//Vision Type
+				VisionType.setType(1);
 				
 				CurrentMotion.setCurrentMotionPlaying("");
 				con.sendMessage("(init(unum "+number+")(teamname "+Teamname+"))");

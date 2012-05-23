@@ -12,7 +12,7 @@
  ***********************************************************************************/
 package communication;
 
-import behavior.BehaviorStateMachine;
+import behavior.old.BehaviorStateMachine;
 import perceptor.vision.Ball;
 import worldState.TeamState;
 import agent.AgentType;
