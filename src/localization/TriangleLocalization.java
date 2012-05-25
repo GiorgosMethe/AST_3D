@@ -13,18 +13,20 @@
  ***********************************************************************************/
 package localization;
 
+import perceptor.vision.Ball;
+
 public class TriangleLocalization {
 
 
 
-	public static Coordinate F1L_det= new Coordinate (-10.5,7);
-	public static Coordinate F1R_det= new Coordinate (10.5,7);
-	public static Coordinate F2L_det= new Coordinate (-10.5,-7);
-	public static Coordinate F2R_det= new Coordinate (10.5,-7);
-	public static Coordinate G1L_det= new Coordinate (-10.5,1.05);
-	public static Coordinate G2L_det= new Coordinate (-10.5,-1.05);
-	public static Coordinate G1R_det= new Coordinate (10.5,1.05);
-	public static Coordinate G2R_det= new Coordinate (10.5,-1.05);
+	public static Coordinate F1L_det= new Coordinate (-15,10);
+	public static Coordinate F1R_det= new Coordinate (15,10);
+	public static Coordinate F2L_det= new Coordinate (-15,-10);
+	public static Coordinate F2R_det= new Coordinate (15,-10);
+	public static Coordinate G1L_det= new Coordinate (-15,1.05);
+	public static Coordinate G2L_det= new Coordinate (-15,-1.05);
+	public static Coordinate G1R_det= new Coordinate (15,1.05);
+	public static Coordinate G2R_det= new Coordinate (15,-1.05);
 	public Coordinate Localize (Landmark lmark1 , Landmark lmark2 ){
 		String mark1=null;
 		String mark2=null;
@@ -303,6 +305,35 @@ public class TriangleLocalization {
 		return Det; 
 	}
 	
+	
+	public static double FindAngleFromBall(Coordinate target){
+
+		double dx=target.getX()-LocalizationResults.ball_location.getX();
+		double dy=target.getY()-LocalizationResults.ball_location.getY();
+
+		double ThetaToTarget=Math.toDegrees(Math.atan2(dx, dy));
+		if(ThetaToTarget>=0 && ThetaToTarget<90){
+
+			ThetaToTarget=90-ThetaToTarget;
+
+		}else if(ThetaToTarget>=90 && ThetaToTarget<180){
+
+			ThetaToTarget=-(ThetaToTarget-90);
+
+		}else if(ThetaToTarget<-90 && ThetaToTarget>=-180){
+
+			ThetaToTarget=-(ThetaToTarget+270);
+
+		}else if(ThetaToTarget>=-90 && ThetaToTarget<-0){
+
+			ThetaToTarget=-(ThetaToTarget-90);
+
+		}
+		
+		return ThetaToTarget;
+	}
+	
+	
 	public static double FindAngle(Coordinate target){
 
 		double dx=target.getX()-LocalizationResults.getCurrent_location().getX();
@@ -357,5 +388,18 @@ public class TriangleLocalization {
 		return AngleDifference;
 		
 	}
+	
+	public static double FindWalkingAngleToKick(Coordinate Target){
+		
+		double TargetFromBall = FindAngleFromBall(Target);
+		
+		double distanceToProperPosition = Math.sqrt(Math.pow(Ball.getDistance(), 2)+Math.pow(1, 2)-(2*Ball.getDistance()*1*Math.cos(Math.toRadians(TargetFromBall))));
+	
+		double WalkingAngle = Math.toDegrees(Math.asin((1*Math.sin(TargetFromBall))/distanceToProperPosition));
+		
+		return WalkingAngle;
+		
+	}
+	
 
 }

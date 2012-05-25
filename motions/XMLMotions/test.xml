@@ -1,128 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot xsi:noNamespaceSchemaLocation="moves.xsd">
-	<constants>
-		<constant name="strafe_leg_crouch" value="30" />
-		<constant name="strafe_leg_span" value="7" />
-		<constant name="strafe_step_length" value="15" />
-	</constants>
-
 	<low_skills>
-		<low_skill name="test" firstPhase="turn_left_big_prewait" />
+		<low_skill name="test" firstPhase="rigth_high_kick" />
 	</low_skills>
-
+	
 	<phases>
-		<phase name="turn_left_big_prewait" next="turn_left_big_stance">
+		<phase name="rigth_high_kick" next="rigth_high_kick1">
 			<effectors>
-				<he1 end="0" computed="headAngle1" />
-				<he2 end="0" computed="headAngle2" />
-				<lle3 end="80" />
-				<lle4 end="-60" />
-				<lle5 end="30" />
-				<rle3 end="80" />
-				<rle4 end="-60" />
-				<rle5 end="30" />
-				<lae1 end="-90" />
-				<rae1 end="-90" />
-				<lae2 end="10" />
-				<rae2 end="-10" />
-				<lae3 end="-90" />
-				<rae3 end="90" />
-				<lae4 end="-45" />
-				<rae4 end="45" />
 			</effectors>
-			<duration>800</duration>
+			<duration>100</duration>
 		</phase>
-		<phase name="turn_left_big_stance" next="start_big_turning_left">
+		<phase name="rigth_high_kick1" next="rigth_high_kick2">
 			<effectors>
-				<lle3 end="80" />
-				<lle4 end="-60" />
-				<lle5 end="30" />
-				<rle3 end="80" />
-				<rle4 end="-60" />
-				<rle5 end="30" />
-				<lae1 end="-90" />
-				<rae1 end="-90" />
-				<lae2 end="10" />
-				<rae2 end="-10" />
-				<lae3 end="-90" />
-				<rae3 end="90" />
-				<lae4 end="-45" />
-				<rae4 end="45" />
-			</effectors>
-			<duration>1000</duration>
-		</phase>
-		<phase name="start_big_turning_left" next="start_big_turning_left3">
-			<effectors>
-				<he1 end="0" computed="headAngle1" />
-				<he2 end="0" computed="headAngle2" />
-				<lle2 end="30" />
-				<rle2 end="0" />
-				<lle6 end="-3" />
-				<rle6 end="0" />
-			</effectors>
-			<duration>250</duration>
-		</phase>
-		<phase name="start_big_turning_left3" next="start_big_turning_left4">
-			<effectors>
-				<he1 end="0" computed="headAngle1" />
-				<he2 end="0" computed="headAngle2" />
-				<lle2 end="0" />
-				<rle2 end="-3" />
-				<lle6 end="0" />
-				<rle6 end="0" />
-			</effectors>
-			<duration>250</duration>
-		</phase>
-		<phase name="start_big_turning_left4" next="start_big_turning_left5">
-			<effectors>
-				<he1 end="0" computed="headAngle1" />
-				<he2 end="0" computed="headAngle2" />
-				<lle2 end="0" />
-				<rle2 end="-5" />
-				<lle6 end="0" />
-				<rle6 end="2" />
-			</effectors>
-			<duration>250</duration>
-		</phase>
-		<phase name="start_big_turning_left5" next="stop_big_turning_left" isFinal="true">
-			<effectors>
-				<he1 end="0" computed="headAngle1" />
-				<he2 end="0" computed="headAngle2" />
-				<lle2 end="0" />
-				<rle2 end="-3" />
-				<lle6 end="0" />
-				<rle6 end="0" />
-			</effectors>
-			<duration>240</duration>
-			<finalize>stop_big_turning_left</finalize>
-		</phase>
-		<phase name="stop_big_turning_left" isFinal="true">
-			<effectors>
-				<he1 end="0" computed="headAngle1" />
-				<he2 end="0" computed="headAngle2" />
-				<lle1 end="0" />
 				<rle1 end="0" />
-				<lle2 end="7" />
-				<rle2 end="-7" />
-				<lle3 end="55" />
+				<lle1 end="0" />
+				<rle2 end="7" />
+				<lle2 end="-8" />
 				<rle3 end="55" />
-				<lle4 end="-60" />
+				<lle3 end="55" />
 				<rle4 end="-60" />
-				<lle5 end="30" />
+				<lle4 end="-60" />
 				<rle5 end="30" />
-				<lle6 end="-7" />
-				<rle6 end="7" />
-				<lae1 end="-90" />
-				<rae1 end="-90" />
-				<lae2 end="-10" />
-				<rae2 end="10" />
-				<lae3 end="90" />
-				<rae3 end="-90" />
-				<lae4 end="45" />
-				<rae4 end="-45" />
+				<lle5 end="30" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
+				<rae1 end="-90"/>
+				<lae1 end="-90"/>
+				<rae2 end="-10"/>
+				<lae2 end="10"/>
+				<rae3 end="90"/>
+				<lae3 end="-90"/>
+				<rae4 end="45"/>
+				<lae4 end="-45"/>
+			</effectors>
+			<duration>500</duration>
+		</phase>
+		<phase name="rigth_high_kick2"  next="rigth_high_kick3">
+			<effectors>
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="7" />
+				<lle2 end="-7" />
+				<rle3 end="55" />
+				<lle3 end="75" />
+				<rle4 end="-60" />
+				<lle4 end="-100" />
+				<rle5 end="30" />
+				<lle5 end="50" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
 			</effectors>
 			<duration>1000</duration>
-			<finalize>stop_big_turning_left</finalize>
 		</phase>
+		<phase name="rigth_high_kick3"  next="rigth_high_kick35">
+			<effectors>
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="7" />
+				<lle2 end="-7" />
+				<rle3 end="55" />
+				<lle3 end="65" />
+				<rle4 end="-60" />
+				<lle4 end="-50" />
+				<rle5 end="30" />
+				<lle5 end="15" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
+			</effectors>
+			<duration>1000</duration>
+		</phase>
+		<phase name="rigth_high_kick35"  next="rigth_high_kick4">
+			<effectors>
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="7" />
+				<lle2 end="-7" />
+				<rle3 end="55" />
+				<lle3 end="65" />
+				<rle4 end="-80" />
+				<lle4 end="-50" />
+				<rle5 end="50" />
+				<lle5 end="15" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
+			</effectors>
+			<duration>1000</duration>
+		</phase>
+		<phase name="rigth_high_kick4"  next="rigth_high_kick5">
+			<effectors>
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="-7" />
+				<lle2 end="-7" />
+				<rle3 end="0" />
+				<lle3 end="42" />
+				<rle4 end="-91" />
+				<lle4 end="0" />
+				<rle5 end="67" />
+				<lle5 end="0" />
+				<rle6 end="7" />
+				<lle6 end="7" />
+			</effectors>
+			<duration>5000</duration>
+		</phase>
+		<phase name="rigth_high_kick5">
+			<effectors>
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="-7" />
+				<lle2 end="-7" />
+				<rle3 end="42" />
+				<lle3 end="-21" />
+				<rle4 end="-28" />
+				<lle4 end="0" />
+				<rle5 end="4" />
+				<lle5 end="0" />
+				<rle6 end="7" />
+				<lle6 end="7" />
+			</effectors>
+			<duration>120</duration>
+		</phase>-->
 	</phases>
 </robot>

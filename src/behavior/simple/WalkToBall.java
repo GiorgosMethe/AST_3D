@@ -28,11 +28,18 @@ public class WalkToBall {
 			if(Ball.isSeeTheBall()){
 
 
-				if((Ball.RealDistance()<0.778)){//&&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
+				if((Ball.RealDistance()<0.788)){//&&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
 
-					if((HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())>0)){
+					if((HingeJointPerceptor.getHj1()+Ball.getAngleX())<-15){
+							
+						MotionTrigger.setMotion("SideStepRight");
+						return false;
+						
+					}else if((HingeJointPerceptor.getHj1()+Ball.getAngleX())>0){
+						
 						MotionTrigger.setMotion("SideStepLeft");
 						return false;
+						
 					}else{
 
 						MotionTrigger.setMotion("");
@@ -69,7 +76,7 @@ public class WalkToBall {
 							return false;
 
 						}
-					/*
+					
 					}else if((Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))>AngleThresholdWalkLeaningTurn){
 
 
@@ -86,7 +93,6 @@ public class WalkToBall {
 							return false;
 
 						}
-					*/
 
 					}else{
 

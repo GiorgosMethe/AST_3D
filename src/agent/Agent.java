@@ -13,16 +13,22 @@
 package agent;
 
 import localization.BallPosition;
+import localization.Coordinate;
+import localization.LocalizationResults;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
+import perceptor.HingeJointPerceptor;
 import perceptor.MessageController;
 import perceptor.isFallen;
+import perceptor.vision.Ball;
 import worldState.GameState;
-import behavior.complex.GoKickBallToGoal;
+import behavior.complex.GoKickBall;
+import behavior.complex.GoKickBallToTarget;
 import behavior.fsm.GKBstates;
+import behavior.simple.WalkToBall;
 import behavior.vision.SeekBall;
 import behavior.vision.VisionType;
 import connection.Connection;
@@ -85,7 +91,7 @@ public class Agent {
 		int i=0;
 		
 		//player number
-		num=6;
+		num=7;
 		Teamname="e";
 		// team name
 		
@@ -135,8 +141,9 @@ public class Agent {
 			}
 			
 			/****************************experiments***************************/
-			GoKickBallToGoal.Act();
-			
+			GoKickBallToTarget.Act(NAOConstraints.OpponentGoal);
+			//MotionTrigger.setMotion("Forwards50");
+			//GoKickBall.Act();
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 				AgentAct = pXML.execute("walk_fine");
 			}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
@@ -148,13 +155,12 @@ public class Agent {
 			}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
 				AgentAct= pXML.execute("strafe_left");
 			}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
-				AgentAct= pXML.execute("rigth_front_front_kick");
+				AgentAct= pXML.execute("test");
 			}else{
 				AgentAct= pXML.execute("");
 			}
 
-			System.out.println("----------------"+MotionTrigger.getMotion());
-			
+//			System.out.println("----------------");
 
 			/*******************************************************************/
 			

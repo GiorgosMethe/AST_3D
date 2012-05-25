@@ -10,7 +10,6 @@ public class CheckKickEnd {
 			
 			if(MotionPlaying.getMotionPhase().equalsIgnoreCase("rigth_front_front_kick4")){
 
-				GKBstates.setState("GoToBall");
 				return true;
 
 			}

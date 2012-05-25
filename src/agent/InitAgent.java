@@ -16,7 +16,7 @@ import motion.old.CurrentMotion;
 import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
-import behavior.fsm.GKBTGstates;
+import behavior.fsm.GKBTTstates;
 import behavior.fsm.GKBstates;
 import behavior.fsm.PKTGstates;
 import behavior.old.BehaviorDone;
@@ -51,8 +51,9 @@ public class InitAgent {
 				
 				//init behavior fsm
 				GKBstates.setState("Start");
-				GKBTGstates.setState("Start");
-				PKTGstates.setState("Start");
+				GKBTTstates.setState("Start");
+				GKBTTstates.setTimeout(0);
+				PKTGstates.setPrefferedAngleToWalk(0);
 				PKTGstates.setTimeout(0);
 				
 				//Old Movement

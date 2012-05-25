@@ -10,6 +10,6 @@ public class NAOConstraints {
 	
 	public static float LegHeight=(float) 0.15;
 	
-	public static Coordinate OpponentGoal = new Coordinate(11, 0); 
+	public static Coordinate OpponentGoal = new Coordinate(15, 0); 
 
 }

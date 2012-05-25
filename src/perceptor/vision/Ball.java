@@ -12,6 +12,7 @@
  ***********************************************************************************/
 package perceptor.vision;
 
+import motion.xml.MotionPlaying;
 import kinematics.JointPosition2D;
 
 public class Ball {
@@ -70,6 +71,11 @@ public class Ball {
 		
 		float distanceFromFoot = distance + HeadPos.PositionX;
 		
+		if(MotionPlaying.getMotionName()!=null){
+			if(MotionPlaying.getMotionName().equalsIgnoreCase("turn_left")||MotionPlaying.getMotionName().equalsIgnoreCase("turn_right")){
+				distanceFromFoot = distanceFromFoot + 0.1f;
+			}
+		}
 		
 		return distanceFromFoot;
 
