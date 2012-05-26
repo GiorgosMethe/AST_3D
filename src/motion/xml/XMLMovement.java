@@ -12,6 +12,7 @@
  ***********************************************************************************/
 package motion.xml;
 
+import motion.xml.check.Check4Change;
 import connection.ServerCyrcles;
 
 public class XMLMovement {

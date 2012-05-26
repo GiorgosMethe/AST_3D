@@ -20,8 +20,7 @@ public class CalculateValuesToTarget {
 				PKTGstates.setTimeout((timeout+1));
 				Coordinate Co = TriangleLocalization.FindWalkingCoordinateToKick(Target);
 				double X = PKTGstates.getProperPositionToWalk().getX()+Co.getX();
-				double Y = PKTGstates.getProperPositionToWalk().getY()+Co.getY();
-			
+				double Y = PKTGstates.getProperPositionToWalk().getY()+Co.getY();			
 				PKTGstates.setProperPositionToWalk(new Coordinate(X, Y));
 
 

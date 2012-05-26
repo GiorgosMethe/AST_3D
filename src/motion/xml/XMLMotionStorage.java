@@ -21,7 +21,7 @@ public class XMLMotionStorage {
 	public static Motion turn_left;
 	public static Motion turn_right;
 	public static Motion rigth_front_front_kick;
-	public static Motion test;
+	public static Motion right_strong_kick;
 	ReadXMLFile rXMLf=new ReadXMLFile();
 	
 	public void StoreMotions(){
@@ -50,8 +50,8 @@ public class XMLMotionStorage {
 		setRigth_front_front_kick(rigth_front_front_kick);
 		System.out.print(".");
 		
-		test=rXMLf.readMotion("test");
-		setTest(test);
+		right_strong_kick=rXMLf.readMotion("strong_right_kick");
+		setRight_strong_kick(right_strong_kick);
 		System.out.print(".");
 		
 		
@@ -105,13 +105,15 @@ public class XMLMotionStorage {
 		XMLMotionStorage.rigth_front_front_kick = rigth_front_front_kick;
 	}
 
-	public static Motion getTest() {
-		return test;
+	public static Motion getRight_strong_kick() {
+		return right_strong_kick;
 	}
 
-	public static void setTest(Motion test) {
-		XMLMotionStorage.test = test;
+	public static void setRight_strong_kick(Motion right_strong_kick) {
+		XMLMotionStorage.right_strong_kick = right_strong_kick;
 	}
+
+
 	
 	
 	

@@ -70,7 +70,7 @@ public class SeekBall {
 				}
 
 				AngleX = AngleX/LocalizationResults.getLandmarks().size();
-				AngleY = gNjV.Get("he2", 0)/10;
+				AngleY = gNjV.Get("he2", 10)/10;
 				str="("+"he1"+" "+centerToLocateX(AngleX)+")"+"("+"he2"+" "+centerToLocateY(AngleY)+")";
 
 			}

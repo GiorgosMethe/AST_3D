@@ -17,14 +17,19 @@ import localization.Coordinate;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
+import motion.xml.MotionPlaying;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
+import motion.xml.check.CheckStrongKickEnd;
 import perceptor.MessageController;
 import perceptor.isFallen;
 import worldState.GameState;
+import behavior.complex.GoKickBall;
 import behavior.complex.GoKickBallToTarget;
+import behavior.fsm.GKBTTstates;
 import behavior.fsm.GKBstates;
 import behavior.vision.SeekBall;
+import behavior.vision.VisionType;
 import connection.Connection;
 import connection.ServerCyrcles;
 
@@ -136,7 +141,8 @@ public class Agent {
 			
 			/****************************experiments***************************/
 			GoKickBallToTarget.Act(NAOConstraints.OpponentGoal);
-						
+			//GoKickBall.Act();
+			
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 				AgentAct = pXML.execute("walk_fine");
 			}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
@@ -148,13 +154,15 @@ public class Agent {
 			}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
 				AgentAct= pXML.execute("strafe_left");
 			}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
-				AgentAct= pXML.execute("test");
+				AgentAct= pXML.execute("strong_right_kick");
 			}else{
 				AgentAct= pXML.execute("");
 			}
 
-			System.out.println("----------------");
+			if(MotionPlaying.getMotionPhase()!=null){
+			//System.out.println("----------------"+CheckStrongKickEnd.Check());
 
+			}
 			/*******************************************************************/
 			
 			
@@ -162,8 +170,8 @@ public class Agent {
 			iF.Check();
 		
 			//get the head movement
-			//String headAct=Sb.MoveHead(VisionType.getType());
-			String headAct=Sb.MoveHead(1);
+			String headAct=Sb.MoveHead(VisionType.getType());
+			//String headAct=Sb.MoveHead(1);
 
 			//create the hole agents actions
 			String Act=headAct+AgentAct;

@@ -1,10 +1,14 @@
 package behavior.complex;
 
+import perceptor.vision.Ball;
+import localization.CompleteCoordinate;
 import localization.Coordinate;
+import localization.TriangleLocalization;
 import behavior.fsm.GKBTTstates;
 import behavior.fsm.PKTGstates;
 import behavior.simple.TurnToBall;
-import behavior.simple.WalkTo;
+import behavior.simple.WalkToXY;
+import behavior.simple.WalkToXYTheta;
 import behavior.vision.VisionType;
 
 public class GoKickBallToTarget {
@@ -22,7 +26,6 @@ public class GoKickBallToTarget {
 
 			if(CalculateValuesToTarget.Act(Target)){
 				GKBTTstates.setState("WalkToPosition");
-				return true;
 			}
 
 		}else if(GKBTTstates.getState().equalsIgnoreCase("WalkToPosition")){
@@ -34,8 +37,8 @@ public class GoKickBallToTarget {
 
 		}else if(GKBTTstates.getState().equalsIgnoreCase("StartCycle")){
 
-				VisionType.setType(3);
-				if(WalkTo.Act(new Coordinate(PKTGstates.getResult().X,PKTGstates.getResult().Y),(float) PKTGstates.getResult().Theta)){
+				VisionType.setType(2);
+				if(WalkToXY.Act(new Coordinate(PKTGstates.getResult().X,PKTGstates.getResult().Y))){
 					GKBTTstates.setState("GoForKick");
 					VisionType.setType(1);
 				}
@@ -43,9 +46,33 @@ public class GoKickBallToTarget {
 
 		}else if(GKBTTstates.getState().equalsIgnoreCase("GoForKick")){
 			
+			VisionType.setType(1);
 			if(GoKickBall.Act()){
-				GKBTTstates.setState("Start");
+				GKBTTstates.setState("EndKick");
 			}
+			
+		}else if(GKBTTstates.getState().equalsIgnoreCase("EndKick")){
+			
+			if(GKBTTstates.getTimeout()<300){
+
+				int timeout = GKBTTstates.getTimeout();
+				GKBTTstates.setTimeout((timeout+1));
+
+
+			}else{
+
+				GKBTTstates.setTimeout(0);
+				if(Ball.getDistance()<1.5){
+					GKBTTstates.setState("GoForKick");
+					return true;
+				}else{
+					GKBTTstates.setState("Start");
+					return true;
+				}
+				
+
+			}
+			
 		}
 
 		return false;
