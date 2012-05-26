@@ -22,18 +22,26 @@ public class Beam {
 		String beamY = null;
 		String beamTheta = null;
 		if(number==1){
-			beamX="-11.0"; beamY="0.0"; beamTheta="0.0";
+			beamX="-14.5"; beamY="0.0"; beamTheta="0.0";
 		}else if(number==2){
-			beamX="-7.0"; beamY="-3.0"; beamTheta="0.0";
+			beamX="-12.5"; beamY="-5.0"; beamTheta="0.0";
 		}else if(number==3){
-			 beamX="-7.0"; beamY="0.0"; beamTheta="0.0";
+			beamX="-12.5"; beamY="5.0"; beamTheta="0.0";
 		}else if(number==4){
-			beamX="-7.0"; beamY="3.0"; beamTheta="0.0";
+			beamX="-12.5"; beamY="0.0"; beamTheta="0.0";
 		}else if(number==5){
-			beamX="-3.0"; beamY="-3.0"; beamTheta="0.0";
+			beamX="-8.0"; beamY="-3.0"; beamTheta="0.0";
 		}else if(number==6){
-			beamX="-3.0"; beamY="3.0"; beamTheta="0.0";
+			beamX="-10.0"; beamY="0.0"; beamTheta="0.0";
 		}else if(number==7){
+			beamX="-5.0"; beamY="3.0"; beamTheta="0.0";
+		}else if(number==8){
+			beamX="-8.0"; beamY="3.0"; beamTheta="0.0";
+		}else if(number==9){
+			beamX="-4.0"; beamY="2.0"; beamTheta="0.0";
+		}else if(number==10){
+			beamX="-4.0"; beamY="-2.0"; beamTheta="0.0";
+		}else if(number==11){
 			beamX="-5.0"; beamY="0.0"; beamTheta="0.0";
 		}else{
 			

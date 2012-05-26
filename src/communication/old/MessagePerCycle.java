@@ -10,7 +10,7 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package communication;
+package communication.old;
 
 import agent.AgentType;
 import connection.ServerCyrcles;
@@ -19,9 +19,9 @@ public class MessagePerCycle {
 
 	public static boolean PerNumCircles(int number){
 
-		int MaxNum=7;
+		int MaxNum=11;
 
-		if (ServerCyrcles.getCyrclesNow()%4==0){
+		if (ServerCyrcles.getCyrclesNow()%2==0){
 
 			if(WhoSent.getCounter()==MaxNum){
 				WhoSent.setCounter(1);

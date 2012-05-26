@@ -10,16 +10,14 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package behavior.simple;
+package behavior.complex;
 
-import perceptor.HingeJointPerceptor;
-import perceptor.vision.Ball;
 import localization.Coordinate;
 import localization.TriangleLocalization;
 import motion.old.MotionTrigger;
 import motion.xml.WalkLeaning;
 
-public class WalkToXY {
+public class WalkToCoordinate {
 
 	public static boolean Act(Coordinate target){
 

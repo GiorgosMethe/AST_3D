@@ -3,7 +3,6 @@ package behavior.complex;
 import localization.Coordinate;
 import localization.LocalizationResults;
 import motion.old.MotionTrigger;
-import motion.xml.check.CheckKickEnd;
 import motion.xml.check.CheckStrongKickEnd;
 import behavior.fsm.GKBstates;
 import behavior.simple.WalkToBall;

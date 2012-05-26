@@ -2,14 +2,15 @@ package behavior.complex;
 
 import localization.Coordinate;
 import perceptor.vision.Ball;
+import agent.NAOConstraints;
 import behavior.fsm.GKBTTstates;
 import behavior.fsm.PKTGstates;
 import behavior.simple.TurnToBall;
 import behavior.vision.VisionType;
 
-public class GoKickBallToTarget {
+public class GoKickBallToGoal {
 
-	public static boolean Act(Coordinate Target){
+	public static boolean Act(){
 
 		if(GKBTTstates.getState().equalsIgnoreCase("Start")){
 
@@ -20,7 +21,7 @@ public class GoKickBallToTarget {
 
 		}else if(GKBTTstates.getState().equalsIgnoreCase("CalculatePosition")){
 
-			if(CalculateValuesToTarget.Act(Target)){
+			if(CalculateValuesToTarget.Act(NAOConstraints.OpponentGoal)){
 				GKBTTstates.setState("WalkToPosition");
 			}
 
@@ -74,6 +75,5 @@ public class GoKickBallToTarget {
 		return false;
 
 	}
-
-
+	
 }

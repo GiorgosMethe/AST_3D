@@ -30,8 +30,8 @@ import worldState.TeamState;
 import agent.Agent;
 import agent.AgentType;
 
-import communication.HearMessage;
-import communication.MessageBuffer;
+import communication.old.HearMessage;
+import communication.old.MessageBuffer;
 
 import connection.Connection;
 

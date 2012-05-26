@@ -10,20 +10,10 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package communication;
+package localization;
 
-public class WhoSent {
-	 
-	public static int Counter;
 
-	public static int getCounter() {
-		return Counter;
-	}
-
-	public static void setCounter(int counter) {
-		Counter = counter;
-	}
-
+public class SoccerFieldRegions {
 	
 	
 

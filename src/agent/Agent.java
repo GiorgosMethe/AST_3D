@@ -13,23 +13,20 @@
 package agent;
 
 import localization.BallPosition;
-import localization.Coordinate;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
-import motion.xml.MotionPlaying;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
-import motion.xml.check.CheckStrongKickEnd;
 import perceptor.MessageController;
 import perceptor.isFallen;
 import worldState.GameState;
-import behavior.complex.GoKickBall;
-import behavior.complex.GoKickBallToTarget;
-import behavior.fsm.GKBTTstates;
 import behavior.fsm.GKBstates;
 import behavior.vision.SeekBall;
 import behavior.vision.VisionType;
+
+import communication.old.SendMessage;
+
 import connection.Connection;
 import connection.ServerCyrcles;
 
@@ -47,10 +44,9 @@ public class Agent {
 	
 	public static void main(String[] args) {
 
-		Check Ch=new Check();
 		MessageController Gp = new MessageController();
 		SeekBall Sb = new SeekBall();
-		//SendMessage sm = new SendMessage();
+		SendMessage sm = new SendMessage();
 		//Think think=new Think();
 		isFallen iF=new isFallen();
 		MotionStorage Ms=new MotionStorage();
@@ -90,12 +86,9 @@ public class Agent {
 		int i=0;
 		
 		//player number
-		num=7;
+		num=0;
 		Teamname="e";
 		// team name
-		
-		//player position
-		Ch.Number(num);
 		
 		while(con.isConnected()){
 
@@ -118,51 +111,29 @@ public class Agent {
 			String AgentAct="";
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
 				
-//				think.Role(num);
-//				sm.Say("distance", con);
-//				HearMessage.MessageDecoder();				
-//				
-//				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
-//					AgentAct = pXML.execute("walk_fine");
-//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
-//					AgentAct = pXML.execute("turn_left");
-//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")){
-//					AgentAct= pXML.execute("turn_right");
-//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")){
-//					AgentAct= pXML.execute("strafe_right");
-//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
-//					AgentAct= pXML.execute("strafe_left");
-//				}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
-//					AgentAct= pXML.execute("rigth_front_front_kick");
-//				}else{
-//					AgentAct= pXML.execute("");
-//				}
+				//think.Role(num);
+				sm.Say("distance", con);
+				//HearMessage.MessageDecoder();				
+				
+				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
+					AgentAct = pXML.execute("walk_fine");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
+					AgentAct = pXML.execute("turn_left");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")){
+					AgentAct= pXML.execute("turn_right");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")){
+					AgentAct= pXML.execute("strafe_right");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
+					AgentAct= pXML.execute("strafe_left");
+				}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
+					AgentAct= pXML.execute("rigth_front_front_kick");
+				}else{
+					AgentAct= pXML.execute("");
+				}
 			}
 			
 			/****************************experiments***************************/
-			GoKickBallToTarget.Act(NAOConstraints.OpponentGoal);
-			//GoKickBall.Act();
-			
-			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
-				AgentAct = pXML.execute("walk_fine");
-			}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
-				AgentAct = pXML.execute("turn_left");
-			}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")){
-				AgentAct= pXML.execute("turn_right");
-			}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")){
-				AgentAct= pXML.execute("strafe_right");
-			}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
-				AgentAct= pXML.execute("strafe_left");
-			}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
-				AgentAct= pXML.execute("strong_right_kick");
-			}else{
-				AgentAct= pXML.execute("");
-			}
 
-			if(MotionPlaying.getMotionPhase()!=null){
-			//System.out.println("----------------"+CheckStrongKickEnd.Check());
-
-			}
 			/*******************************************************************/
 			
 			
