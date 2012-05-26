@@ -14,23 +14,17 @@ package agent;
 
 import localization.BallPosition;
 import localization.Coordinate;
-import localization.LocalizationResults;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
-import perceptor.HingeJointPerceptor;
 import perceptor.MessageController;
 import perceptor.isFallen;
-import perceptor.vision.Ball;
 import worldState.GameState;
-import behavior.complex.GoKickBall;
 import behavior.complex.GoKickBallToTarget;
 import behavior.fsm.GKBstates;
-import behavior.simple.WalkToBall;
 import behavior.vision.SeekBall;
-import behavior.vision.VisionType;
 import connection.Connection;
 import connection.ServerCyrcles;
 
@@ -142,8 +136,7 @@ public class Agent {
 			
 			/****************************experiments***************************/
 			GoKickBallToTarget.Act(NAOConstraints.OpponentGoal);
-			//MotionTrigger.setMotion("Forwards50");
-			//GoKickBall.Act();
+						
 			if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 				AgentAct = pXML.execute("walk_fine");
 			}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
@@ -160,7 +153,7 @@ public class Agent {
 				AgentAct= pXML.execute("");
 			}
 
-//			System.out.println("----------------");
+			System.out.println("----------------");
 
 			/*******************************************************************/
 			
@@ -169,8 +162,8 @@ public class Agent {
 			iF.Check();
 		
 			//get the head movement
-			String headAct=Sb.MoveHead(VisionType.getType());
-
+			//String headAct=Sb.MoveHead(VisionType.getType());
+			String headAct=Sb.MoveHead(1);
 
 			//create the hole agents actions
 			String Act=headAct+AgentAct;

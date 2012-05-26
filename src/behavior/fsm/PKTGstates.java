@@ -1,10 +1,14 @@
 package behavior.fsm;
 
+import localization.CompleteCoordinate;
+import localization.Coordinate;
+
 public class PKTGstates {
 
 	public static int timeout;
 	
-	public static double PrefferedAngleToWalk,result;
+	public static Coordinate ProperPositionToWalk;
+	public static CompleteCoordinate result;
 
 	public static int getTimeout() {
 		return timeout;
@@ -14,20 +18,24 @@ public class PKTGstates {
 		PKTGstates.timeout = timeout;
 	}
 
-	public static double getPrefferedAngleToWalk() {
-		return PrefferedAngleToWalk;
+	public static Coordinate getProperPositionToWalk() {
+		return ProperPositionToWalk;
 	}
 
-	public static void setPrefferedAngleToWalk(double prefferedAngleToWalk) {
-		PrefferedAngleToWalk = prefferedAngleToWalk;
+	public static void setProperPositionToWalk(Coordinate properPositionToWalk) {
+		ProperPositionToWalk = properPositionToWalk;
 	}
 
-	public static double getResult() {
+	public static CompleteCoordinate getResult() {
 		return result;
 	}
 
-	public static void setResult(double result) {
+	public static void setResult(CompleteCoordinate result) {
 		PKTGstates.result = result;
 	}
+
+
+
+	
 
 }

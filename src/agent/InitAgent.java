@@ -12,6 +12,7 @@
  ***********************************************************************************/
 package agent;
 
+import localization.Coordinate;
 import motion.old.CurrentMotion;
 import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;
@@ -53,7 +54,8 @@ public class InitAgent {
 				GKBstates.setState("Start");
 				GKBTTstates.setState("Start");
 				GKBTTstates.setTimeout(0);
-				PKTGstates.setPrefferedAngleToWalk(0);
+				PKTGstates.setProperPositionToWalk(new Coordinate(0, 0));
+				PKTGstates.setResult(null);
 				PKTGstates.setTimeout(0);
 				
 				//Old Movement

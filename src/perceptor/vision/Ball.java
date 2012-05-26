@@ -12,8 +12,8 @@
  ***********************************************************************************/
 package perceptor.vision;
 
-import motion.xml.MotionPlaying;
 import kinematics.JointPosition2D;
+import motion.xml.MotionPlaying;
 
 public class Ball {
 

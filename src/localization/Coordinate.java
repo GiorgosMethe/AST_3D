@@ -30,5 +30,14 @@ public class Coordinate {
 	public void setY(double y) {
 		Y = y;
 	}
+	
+	public static Coordinate addCoordinate(Coordinate a, Coordinate b){
+		
+		Coordinate c = new Coordinate((a.X + b.X),(b.Y + b.Y));
+		
+		return c;
+		
+		
+	}
 
 }

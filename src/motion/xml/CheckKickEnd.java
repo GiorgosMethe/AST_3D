@@ -1,6 +1,5 @@
 package motion.xml;
 
-import behavior.fsm.GKBstates;
 
 public class CheckKickEnd {
 

@@ -13,7 +13,6 @@
  ***********************************************************************************/
 package localization;
 
-import perceptor.vision.Ball;
 
 public class TriangleLocalization {
 
@@ -219,7 +218,7 @@ public class TriangleLocalization {
 			x= cx + (by-ay)*u/D;
 			y= cy - (bx-ax)*u/D;
 		}
-		//System.out.println("poition at  ( "+x+" , "+y+" )");
+		
 		Coordinate Det =new Coordinate(x, y);
 		return Det; 
 	}
@@ -245,12 +244,7 @@ public class TriangleLocalization {
 			univer_angle=180-(Math.toDegrees(angle_y)-Math.abs(f));
 			}
 		
-	//	System.out.println("angle from flag =="+f);
-	//	System.out.println("distance from flag=="+d);
-	//	System.out.println("flag x =="+ax);
-	//	System.out.println("flag y =="+ay);
-	//	System.out.println("angle =="+univer_angle);
-	//	System.out.println("angle calc =="+Math.toDegrees(angle_y));
+
 		if(univer_angle<-180){
 			univer_angle=univer_angle+360;
 		}else if(univer_angle>180){
@@ -284,12 +278,7 @@ public class TriangleLocalization {
 		}else if(univer_angle>180){
 			univer_angle=univer_angle-360;
 		}
-	//	System.out.println("angle from flag =="+f);
-	//	System.out.println("distance from flag=="+d);
-	//	System.out.println("flag x =="+ax);
-	//	System.out.println("flag y =="+ay);
-	//	System.out.println("angle =="+univer_angle);
-	//	System.out.println("angle calc =="+Math.toDegrees(angle_y));
+	
 		return univer_angle;
 
 	}
@@ -373,6 +362,16 @@ public class TriangleLocalization {
 		return DistanceToTarget;
 		
 	}
+	
+	public static double FindDistanceAmong2Coordinates(Coordinate start, Coordinate end){
+
+		double dx=end.getX()-start.getX();
+		double dy=end.getY()-start.getY();
+		double DistanceToTarget=Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
+		
+		return DistanceToTarget;
+		
+	}
 
 
 	public static double FindAngleDifference(double ThetaToTarget){
@@ -389,15 +388,28 @@ public class TriangleLocalization {
 		
 	}
 	
-	public static double FindWalkingAngleToKick(Coordinate Target){
+	public static double FindCoordinateAngleToKick(Coordinate Target){
 		
 		double TargetFromBall = FindAngleFromBall(Target);
 		
-		double distanceToProperPosition = Math.sqrt(Math.pow(Ball.getDistance(), 2)+Math.pow(1, 2)-(2*Ball.getDistance()*1*Math.cos(Math.toRadians(TargetFromBall))));
-	
-		double WalkingAngle = Math.toDegrees(Math.asin((1*Math.sin(TargetFromBall))/distanceToProperPosition));
+		return TargetFromBall;
 		
-		return WalkingAngle;
+	}
+	
+	public static Coordinate FindWalkingCoordinateToKick(Coordinate Target){
+		
+		double TargetFromBall = FindAngleFromBall(Target);
+		
+		Coordinate  WalkingCoordinateToKick = get_det_with_distance_angle(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y,
+				TargetFromBall, -1);
+		
+		
+		//double distanceToProperPosition = Math.sqrt(Math.pow(Ball.getDistance(), 2)+Math.pow(1.5, 2)-(2*Ball.getDistance()*1*Math.cos(Math.toRadians(TargetFromBall))));
+		
+		
+		//double WalkingAngle = Math.toDegrees(Math.asin((1.5*Math.sin(TargetFromBall))/distanceToProperPosition));
+		
+		return WalkingCoordinateToKick;
 		
 	}
 	
