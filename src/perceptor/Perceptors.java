@@ -29,7 +29,7 @@ import worldState.TeamState;
 import agent.Agent;
 import agent.AgentType;
 
-import communication.old.HearMessage;
+import communication.effector.HearMessage;
 
 import connection.Connection;
 

@@ -12,20 +12,21 @@
  ***********************************************************************************/
 package agent;
 
+import communication.effector.SendMessage;
+
 import localization.BallPosition;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
-import perceptor.MessageController;
+import perceptor.MessageParser;
 import perceptor.isFallen;
 import worldState.GameState;
 import behavior.fsm.GKBstates;
 import behavior.vision.SeekBall;
 import behavior.vision.VisionType;
 
-import communication.old.SendMessage;
 
 import connection.Connection;
 import connection.ServerCyrcles;
@@ -44,7 +45,7 @@ public class Agent {
 	
 	public static void main(String[] args) {
 
-		MessageController Gp = new MessageController();
+		MessageParser Gp = new MessageParser();
 		SeekBall Sb = new SeekBall();
 		SendMessage sm = new SendMessage();
 		//Think think=new Think();
@@ -84,9 +85,10 @@ public class Agent {
 		}
 		//server cyrcles
 		int i=0;
+		int j=0;
 		
 		//player number
-		num=0;
+		num=1;
 		Teamname="e";
 		// team name
 		
@@ -109,10 +111,11 @@ public class Agent {
 			//think
 			
 			String AgentAct="";
+			String SayEffector = "";
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
 				
 				//think.Role(num);
-				sm.Say("distance", con);
+				SayEffector = sm.Say("eisaimalakas"+num, con);
 				//HearMessage.MessageDecoder();				
 				
 				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
@@ -130,6 +133,11 @@ public class Agent {
 				}else{
 					AgentAct= pXML.execute("");
 				}
+				
+				j=j+1;
+				ServerCyrcles.setGameCyrcles(j);
+				
+				System.out.println("cyrcles now: "+j);
 			}
 			
 			/****************************experiments***************************/
@@ -145,7 +153,7 @@ public class Agent {
 			//String headAct=Sb.MoveHead(1);
 
 			//create the hole agents actions
-			String Act=headAct+AgentAct;
+			String Act=headAct+AgentAct+SayEffector;
 			
 			//Act
 			con.sendMessage(Act);

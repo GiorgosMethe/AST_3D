@@ -30,14 +30,14 @@ import worldState.TeamState;
 import agent.Agent;
 import agent.AgentType;
 
-import communication.old.HearMessage;
-import communication.old.MessageBuffer;
+import communication.effector.HearMessage;
+import communication.perceptor.MessageBuffer;
 
 import connection.Connection;
 
-public class MessageController {
+public class MessageParser {
 	Coordinate curloc=new Coordinate(0, 0);
-	public MessageController() {
+	public MessageParser() {
 
 	}
 	int k=0;
@@ -248,16 +248,17 @@ public class MessageController {
 						i = i + 4;
 					}else{
 	
-						System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-						HearMessage.setSelf(false);
-						float direction = Float.parseFloat(message.elementAt(i+2));
-						HearMessage.setDirection(direction);
-						float time = Float.parseFloat(message.elementAt(i+1));
-						HearMessage.setTime(time);
-						String msg = message.elementAt(i+3);
-						HearMessage.setMsg(msg);
-						HearMessage Htemp = new HearMessage(time, direction, msg, false);
-						MessageBuffer.UpdateBuffer(Htemp);
+						System.out.println(message.elementAt(i+3));
+//						System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//						HearMessage.setSelf(false);
+//						float direction = Float.parseFloat(message.elementAt(i+2));
+//						HearMessage.setDirection(direction);
+//						float time = Float.parseFloat(message.elementAt(i+1));
+//						HearMessage.setTime(time);
+//						String msg = message.elementAt(i+3);
+//						HearMessage.setMsg(msg);
+//						HearMessage Htemp = new HearMessage(time, direction, msg, false);
+//						MessageBuffer.UpdateBuffer(Htemp);
 						i = i + 4;
 					}
 

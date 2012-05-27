@@ -10,7 +10,9 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package communication.old;
+package communication.perceptor;
+
+import communication.effector.HearMessage;
 
 import worldState.TeamState;
 

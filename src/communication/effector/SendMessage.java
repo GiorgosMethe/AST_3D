@@ -13,18 +13,19 @@
 package communication.effector;
 
 
+import agent.AgentType;
 import connection.Connection;
 public class SendMessage {
 	
-	public void Say(String type, Connection con){
+	public String Say(String msg, Connection con){
 		
-		String message="";
-		String coderMessage="";
+		String message = "(say"+" "+msg+")";
+		
+		if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+			return message;
+		}
 
-		message = "(say"+" "+coderMessage+")";
-		
-		
-		con.sendMessage(message);
+		return "";
 
 	}
 	

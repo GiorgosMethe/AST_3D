@@ -24,8 +24,8 @@ import behavior.old.BehaviorDone;
 import behavior.old.BehaviorStateMachine;
 import behavior.vision.VisionType;
 
-import communication.old.HearMessage;
-import communication.old.WhoSent;
+import communication.effector.HearMessage;
+import communication.effector.WhoSent;
 
 import connection.Connection;
 import connection.ServerCyrcles;
