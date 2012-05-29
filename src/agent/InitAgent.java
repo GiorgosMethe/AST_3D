@@ -24,6 +24,7 @@ import behavior.old.BehaviorDone;
 import behavior.old.BehaviorStateMachine;
 import behavior.vision.VisionType;
 
+import communication.handler.MessageType;
 import communication.handler.WhoSent;
 
 import connection.Connection;
@@ -75,8 +76,10 @@ public class InitAgent {
 				
 				CurrentMotion.setCurrentMotionPlaying("");
 				con.sendMessage("(init(unum "+number+")(teamname "+Teamname+"))");
-				AgentType.setPlayerNum(number);
+				
+				//communication
 				WhoSent.setCounter(1);
+				MessageType.setType(1);
 				
 
 			}else if(cyrcles==3){

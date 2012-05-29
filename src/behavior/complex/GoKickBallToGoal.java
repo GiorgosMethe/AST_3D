@@ -2,7 +2,7 @@ package behavior.complex;
 
 import localization.Coordinate;
 import perceptor.vision.Ball;
-import agent.NAOConstraints;
+import agent.Constraints;
 import behavior.fsm.GKBTTstates;
 import behavior.fsm.PKTGstates;
 import behavior.simple.TurnToBall;
@@ -21,7 +21,7 @@ public class GoKickBallToGoal {
 
 		}else if(GKBTTstates.getState().equalsIgnoreCase("CalculatePosition")){
 
-			if(CalculateValuesToTarget.Act(NAOConstraints.OpponentGoal)){
+			if(CalculateValuesToTarget.Act(Constraints.OpponentGoal)){
 				GKBTTstates.setState("WalkToPosition");
 			}
 

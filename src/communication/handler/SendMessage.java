@@ -13,48 +13,88 @@
 package communication.handler;
 
 
-import communication.coordination.CoordinationMessageCoder;
+import communication.coordination.CoordinationMessageEncoder;
+import communication.oFunctions.MessageEncoder;
+
 
 import agent.AgentType;
 import connection.Connection;
 public class SendMessage {
-	
-	
+
+
 	/*
 	 * Class creates the communication effector of the agents.
 	 * There are several types of messages
 	 * type 1: starts the communication between the players
-	 * type 2: sends coordination values
+	 * type 2: admin sends to start coordination
+	 * type 3: coordination messages
+	 * type 4: stop coordination messages
+	 * type 5: message which indicates fall of the player
+	 * type 6: Idle
 	 */
 	public String Say(int type, Connection con){
-		
+
 		String message = "";
-		
+
 		if(type ==1){
-			
-			
-			
-			
-			
-		}else if(type == 2){
-			
-			message = "(say"+" "+CoordinationMessageCoder.Create()+")";
+
+			message = "(say"+" "+MessageEncoder.CreateStartMessage()+")";
 			
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
 				return message;
 			}
-		
+
+		}else if(type == 2){
+
+			message = "(say"+" "+MessageEncoder.CreateStartCoordinationMessage()+")";
+
+			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+				return message;
+			}
+
+
+		}else if(type == 3){
+
+			message = "(say"+" "+CoordinationMessageEncoder.Create()+")";
+
+			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+				return message;
+			}
+
+		}else if(type == 4){
+
+			message = "(say"+" "+MessageEncoder.CreateEndCoordinationMessage()+")";
+
+			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+				return message;
+			}
+
+		}else if(type == 5){
+
+			message = "";
+			/*
+			 * 
+			 * 
+			 * needs something
+			 * 
+			 * 
+			 */
+
+		}else if(type == 6){
+
+			message = "";
 
 		}else{
-			
-			
-			
+
+			System.err.println("invalid message type");
+			System.exit(1);
+
 		}
-		
-		
+
+
 		return "";
-		
+
 	}
-	
+
 
 }

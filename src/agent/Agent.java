@@ -12,6 +12,7 @@
  ***********************************************************************************/
 package agent;
 
+import communication.handler.MessageType;
 import communication.handler.SendMessage;
 
 import localization.BallPosition;
@@ -88,7 +89,7 @@ public class Agent {
 		int j=0;
 		
 		//player number
-		num=9;
+		num=11;
 		Teamname="e";
 		// team name
 		
@@ -115,7 +116,7 @@ public class Agent {
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
 				
 				
-				SayEffector = sm.Say(2, con);
+				SayEffector = sm.Say(MessageType.getType(), con);
 				
 				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 					AgentAct = pXML.execute("walk_fine");

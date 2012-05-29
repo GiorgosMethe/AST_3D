@@ -1,3 +1,12 @@
+/**
+ * 
+ */
+package communication.oFunctions;
+
+import java.util.Vector;
+
+import agent.Constraints;
+
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
  * Academic Year 2011-2012
@@ -10,19 +19,32 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
+public class MessageBuffer {
 
-package agent;
+	static Vector<Integer> InitBuffer = new Vector<Integer>();
 
-public class Check {
-	
-	public void Number(final int number){
+	public static boolean addInit(int num){
 
-		if(number>11){
-			System.err.println("error number (1-7)");
-			System.exit(1);
+
+		if(InitBuffer.size()==Constraints.numberPlayers){
+			
+			return true;
+		
+		}else{
+
+			if(!InitBuffer.contains(num)){	
+
+				InitBuffer.addElement(num);	
+				
+			}
+				
 		}
 		
-		
+		return false;
+
 	}
+
+
+
 
 }

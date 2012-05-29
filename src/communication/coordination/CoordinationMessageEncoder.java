@@ -19,19 +19,20 @@ import agent.AgentType;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class CoordinationMessageCoder {
+public class CoordinationMessageEncoder {
 	
 	public static String Create(){
 		
 		String message = "";
+		String type  = "c"+",";
 		
-		message += Integer.toString(AgentType.getPlayerNum())+"%";
+		message += type + Integer.toString(AgentType.getPlayerNum())+",";
 		
-		message += Integer.toString((int) Math.rint(LocalizationResults.getCurrent_location().X))+"%";
-		message += Integer.toString((int) Math.rint(LocalizationResults.getCurrent_location().Y))+"%";
+		message += Integer.toString((int) Math.rint(LocalizationResults.getCurrent_location().X))+",";
+		message += Integer.toString((int) Math.rint(LocalizationResults.getCurrent_location().Y))+",";
 		
-		message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().X))+"%";
-		message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().Y))+"%";
+		message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().X))+",";
+		message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().Y));
 			
 		
 		return message;

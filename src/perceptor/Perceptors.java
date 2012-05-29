@@ -16,6 +16,9 @@ import java.util.Vector;
 
 import javax.vecmath.Vector3d;
 
+import communication.oFunctions.MessageDecoder;
+import communication.oFunctions.MessageEncoder;
+
 import localization.AgentPosition;
 import localization.Coordinate;
 import localization.Landmark;
@@ -28,6 +31,7 @@ import worldState.ServerTime;
 import worldState.TeamState;
 import agent.Agent;
 import agent.AgentType;
+import agent.Constraints;
 
 import connection.Connection;
 
@@ -252,7 +256,23 @@ public class Perceptors {
 						
 						float direction = Float.parseFloat(ReceivedMessage.elementAt(i+2));
 						String msg = ReceivedMessage.elementAt(i+3);
-						System.out.println("phra mnm "+msg);
+						
+						//This player is the administrator of the coordination function
+						if(AgentType.getPlayerNum()==Constraints.CoordinationPlayer){
+							
+							MessageDecoder.MessageHandlerAdmin(msg);
+							System.out.println("dvasssssss"+msg);
+	
+					
+						//These players are the field players of the coordination function
+						}else{
+							
+							
+							
+							
+							
+							
+						}
 					
 					}
 
