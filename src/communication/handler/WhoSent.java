@@ -10,24 +10,21 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package communication.effector;
+package communication.handler;
 
+public class WhoSent {
+	 
+	public static int Counter;
 
-import agent.AgentType;
-import connection.Connection;
-public class SendMessage {
-	
-	public String Say(String msg, Connection con){
-		
-		String message = "(say"+" "+msg+")";
-		
-		if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
-			return message;
-		}
-
-		return "";
-
+	public static int getCounter() {
+		return Counter;
 	}
+
+	public static void setCounter(int counter) {
+		Counter = counter;
+	}
+
+	
 	
 
 }

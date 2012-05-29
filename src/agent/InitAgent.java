@@ -24,8 +24,7 @@ import behavior.old.BehaviorDone;
 import behavior.old.BehaviorStateMachine;
 import behavior.vision.VisionType;
 
-import communication.effector.HearMessage;
-import communication.effector.WhoSent;
+import communication.handler.WhoSent;
 
 import connection.Connection;
 import connection.ServerCyrcles;
@@ -78,7 +77,6 @@ public class InitAgent {
 				con.sendMessage("(init(unum "+number+")(teamname "+Teamname+"))");
 				AgentType.setPlayerNum(number);
 				WhoSent.setCounter(1);
-				HearMessage.InitMessage();
 				
 
 			}else if(cyrcles==3){

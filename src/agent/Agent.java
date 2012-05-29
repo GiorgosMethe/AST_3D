@@ -12,7 +12,7 @@
  ***********************************************************************************/
 package agent;
 
-import communication.effector.SendMessage;
+import communication.handler.SendMessage;
 
 import localization.BallPosition;
 import motion.old.CurrentMotion;
@@ -20,7 +20,7 @@ import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
-import perceptor.MessageParser;
+import perceptor.Perceptors;
 import perceptor.isFallen;
 import worldState.GameState;
 import behavior.fsm.GKBstates;
@@ -45,7 +45,7 @@ public class Agent {
 	
 	public static void main(String[] args) {
 
-		MessageParser Gp = new MessageParser();
+		Perceptors Gp = new Perceptors();
 		SeekBall Sb = new SeekBall();
 		SendMessage sm = new SendMessage();
 		//Think think=new Think();
@@ -88,7 +88,7 @@ public class Agent {
 		int j=0;
 		
 		//player number
-		num=1;
+		num=9;
 		Teamname="e";
 		// team name
 		
@@ -114,9 +114,8 @@ public class Agent {
 			String SayEffector = "";
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
 				
-				//think.Role(num);
-				SayEffector = sm.Say("eisaimalakas"+num, con);
-				//HearMessage.MessageDecoder();				
+				
+				SayEffector = sm.Say(2, con);
 				
 				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
 					AgentAct = pXML.execute("walk_fine");
