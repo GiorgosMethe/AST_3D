@@ -22,7 +22,7 @@ public class MessagePerCycle {
 
 		int MaxNum=12;
 
-		if (ServerCyrcles.getGameCyrcles()%2==0){
+		if (ServerCyrcles.getGameCyrcles()%3==0){
 
 			if(WhoSent.getCounter()==MaxNum){
 				WhoSent.setCounter(1);

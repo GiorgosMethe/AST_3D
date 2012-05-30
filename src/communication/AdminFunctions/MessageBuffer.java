@@ -1,7 +1,7 @@
 /**
  * 
  */
-package communication.oFunctions;
+package communication.AdminFunctions;
 
 import java.util.Vector;
 
@@ -22,12 +22,14 @@ import agent.Constraints;
 public class MessageBuffer {
 
 	static Vector<Integer> InitBuffer = new Vector<Integer>();
+	static Vector<Integer> StartBuffer = new Vector<Integer>();
 
 	public static boolean addInit(int num){
 
 
-		if(InitBuffer.size()==Constraints.numberPlayers){
+		if(InitBuffer.size()==Constraints.numberPlayers-1){
 			
+			InitBuffer.removeAllElements();
 			return true;
 		
 		}else{
@@ -43,6 +45,30 @@ public class MessageBuffer {
 		return false;
 
 	}
+	
+	public static boolean addStart(int num){
+
+
+		if(InitBuffer.size()==Constraints.numberPlayers-1){
+			
+			InitBuffer.removeAllElements();
+			return true;
+		
+		}else{
+
+			if(!InitBuffer.contains(num)){	
+
+				InitBuffer.addElement(num);	
+				
+			}
+				
+		}
+		
+		return false;
+
+	}
+	
+
 
 
 

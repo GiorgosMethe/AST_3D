@@ -20,13 +20,14 @@ public class MessageType {
 	/*
 	 * This class holds the type of message
 	 * a player should send in the next server cycle
-	 * type 1: start coordination message
-	 * type 2: admin message to field player to start sending coordination messages
-	 * type 3: coordination message 
-	 * type 4: stop coordination message
-	 * type 5: only for coordination admin, he sends the actions to each agent
-	 * in order to maximize the team's payoff value
-	 * 
+	 * type 1: starts the communication between the players
+	 * type 2: admin sends to start coordination message 1
+	 * type 3: admin sends to start coordination message 2
+	 * type 4: coordination message 1
+	 * type 5: coordination message 2
+	 * type 6: stop coordination messages
+	 * type 7: message which indicates fall of the player
+	 * type 8: Idle
 	 */
 	
 	

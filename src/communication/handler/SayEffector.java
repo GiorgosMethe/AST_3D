@@ -13,24 +13,26 @@
 package communication.handler;
 
 
-import communication.coordination.CoordinationMessageEncoder;
-import communication.oFunctions.MessageEncoder;
-
-
 import agent.AgentType;
+
+import communication.FieldFunctions.MessageCreator;
+import communication.coordination.CoordinationMessageCreator;
+
 import connection.Connection;
-public class SendMessage {
+public class SayEffector {
 
 
 	/*
 	 * Class creates the communication effector of the agents.
 	 * There are several types of messages
 	 * type 1: starts the communication between the players
-	 * type 2: admin sends to start coordination
-	 * type 3: coordination messages
-	 * type 4: stop coordination messages
-	 * type 5: message which indicates fall of the player
-	 * type 6: Idle
+	 * type 2: admin sends to start coordination message 1
+	 * type 3: admin sends to start coordination message 2
+	 * type 4: coordination message 1
+	 * type 5: coordination message 2
+	 * type 6: stop coordination messages
+	 * type 7: message which indicates fall of the player
+	 * type 8: Idle
 	 */
 	public String Say(int type, Connection con){
 
@@ -38,7 +40,7 @@ public class SendMessage {
 
 		if(type ==1){
 
-			message = "(say"+" "+MessageEncoder.CreateStartMessage()+")";
+			message = "(say"+" "+MessageCreator.CreateStartMessage()+")";
 			
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
 				return message;
@@ -46,30 +48,46 @@ public class SendMessage {
 
 		}else if(type == 2){
 
-			message = "(say"+" "+MessageEncoder.CreateStartCoordinationMessage()+")";
+			message = "(say"+" "+MessageCreator.CreateStartCoordinationMessage1()+")";
 
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
 				return message;
 			}
-
-
+			
 		}else if(type == 3){
 
-			message = "(say"+" "+CoordinationMessageEncoder.Create()+")";
+			message = "(say"+" "+MessageCreator.CreateStartCoordinationMessage2()+")";
 
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
 				return message;
 			}
+
 
 		}else if(type == 4){
 
-			message = "(say"+" "+MessageEncoder.CreateEndCoordinationMessage()+")";
+			message = "(say"+" "+CoordinationMessageCreator.Create1()+")";
+
+			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+				return message;
+			}
+			
+		}else if(type == 5){
+
+			message = "(say"+" "+CoordinationMessageCreator.Create2()+")";
 
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
 				return message;
 			}
 
-		}else if(type == 5){
+		}else if(type == 6){
+
+			message = "(say"+" "+MessageCreator.CreateEndCoordinationMessage()+")";
+
+			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+				return message;
+			}
+
+		}else if(type == 7){
 
 			message = "";
 			/*
@@ -80,7 +98,7 @@ public class SendMessage {
 			 * 
 			 */
 
-		}else if(type == 6){
+		}else if(type == 8){
 
 			message = "";
 

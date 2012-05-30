@@ -3,7 +3,6 @@
  */
 package communication.coordination;
 
-import coordination.SoccerFieldCoordinateValue;
 import localization.LocalizationResults;
 import agent.AgentType;
 
@@ -19,12 +18,30 @@ import agent.AgentType;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class CoordinationMessageEncoder {
+public class CoordinationMessageCreator {
 	
-	public static String Create(){
+	public static String Create1(){
 		
 		String message = "";
-		String type  = "c"+",";
+		String type  = "c1"+",";
+		
+		message += type + Integer.toString(AgentType.getPlayerNum())+",";
+		
+		message += Integer.toString((int) Math.rint(LocalizationResults.getCurrent_location().X))+",";
+		message += Integer.toString((int) Math.rint(LocalizationResults.getCurrent_location().Y))+",";
+		
+		message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().X))+",";
+		message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().Y));
+			
+		
+		return message;
+		
+	}
+	
+	public static String Create2(){
+		
+		String message = "";
+		String type  = "c2"+",";
 		
 		message += type + Integer.toString(AgentType.getPlayerNum())+",";
 		

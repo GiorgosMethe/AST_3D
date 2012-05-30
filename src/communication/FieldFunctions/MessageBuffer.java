@@ -1,7 +1,11 @@
 /**
  * 
  */
-package communication.coordination;
+package communication.FieldFunctions;
+
+import java.util.Vector;
+
+import agent.Constraints;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
@@ -15,6 +19,35 @@ package communication.coordination;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class CoordinationMessageDecoder {
+public class MessageBuffer {
+
+	static Vector<Integer> InitBuffer = new Vector<Integer>();
+
+	public static boolean addInit(int num){
+
+
+		if(InitBuffer.size()==Constraints.numberPlayers-1){
+			
+			InitBuffer.removeAllElements();
+			return true;
+		
+		}else{
+
+			if(!InitBuffer.contains(num)){	
+
+				InitBuffer.addElement(num);	
+				
+			}
+				
+		}
+		
+		return false;
+
+	}
+	
+
+
+
+
 
 }

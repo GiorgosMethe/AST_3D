@@ -12,9 +12,6 @@
  ***********************************************************************************/
 package agent;
 
-import communication.handler.MessageType;
-import communication.handler.SendMessage;
-
 import localization.BallPosition;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
@@ -28,6 +25,8 @@ import behavior.fsm.GKBstates;
 import behavior.vision.SeekBall;
 import behavior.vision.VisionType;
 
+import communication.handler.MessageType;
+import communication.handler.SayEffector;
 
 import connection.Connection;
 import connection.ServerCyrcles;
@@ -48,7 +47,7 @@ public class Agent {
 
 		Perceptors Gp = new Perceptors();
 		SeekBall Sb = new SeekBall();
-		SendMessage sm = new SendMessage();
+		SayEffector sm = new SayEffector();
 		//Think think=new Think();
 		isFallen iF=new isFallen();
 		MotionStorage Ms=new MotionStorage();
@@ -89,7 +88,7 @@ public class Agent {
 		int j=0;
 		
 		//player number
-		num=11;
+		num=1;
 		Teamname="e";
 		// team name
 		

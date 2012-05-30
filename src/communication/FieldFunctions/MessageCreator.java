@@ -1,7 +1,7 @@
 /**
  * 
  */
-package communication.oFunctions;
+package communication.FieldFunctions;
 
 import agent.AgentType;
 
@@ -17,7 +17,7 @@ import agent.AgentType;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class MessageEncoder {
+public class MessageCreator {
 	
 
 	public static String CreateStartMessage(){
@@ -29,18 +29,24 @@ public class MessageEncoder {
 		return message;
 	}
 
-	public static String CreateStartCoordinationMessage(){
+	public static String CreateStartCoordinationMessage1(){
+				
+		String message = "";
+		message = "s1"+","+AgentType.PlayerNum;
 		
+		return message;
+	}
+	
+	public static String CreateStartCoordinationMessage2(){
 		
 		String message = "";
-		message = "s"+","+AgentType.PlayerNum;
+		message = "s2"+","+AgentType.PlayerNum;
 		
 		return message;
 	}
 	
 	public static String CreateEndCoordinationMessage(){
-		
-		
+			
 		String message = "";
 		message = "e"+","+AgentType.PlayerNum;
 		
