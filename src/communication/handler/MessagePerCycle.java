@@ -14,20 +14,21 @@ package communication.handler;
 
 
 import agent.AgentType;
+import agent.Constraints;
 import connection.ServerCyrcles;
 
 public class MessagePerCycle {
 
 	public static boolean PerNumCircles(int number){
 
-		int MaxNum=12;
+		int MaxNum=Constraints.numberPlayers;
 
-		if (ServerCyrcles.getGameCyrcles()%3==0){
+		if (ServerCyrcles.getGameCyrcles()%4==0){
 
-			if(WhoSent.getCounter()==MaxNum){
+			if(WhoSent.getCounter()>MaxNum-1){
 				WhoSent.setCounter(1);
 			}else{
-				WhoSent.setCounter(WhoSent.getCounter()+1);
+				WhoSent.setCounter((WhoSent.getCounter()+1));
 			}
 			
 			if(AgentType.getPlayerNum()==WhoSent.getCounter()){

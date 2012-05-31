@@ -1,11 +1,11 @@
 /**
  * 
  */
-package communication.FieldFunctions;
+package communication.coordination.field;
 
-import agent.Constraints;
 import communication.handler.MessageType;
 
+import agent.Constraints;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
@@ -19,81 +19,68 @@ import communication.handler.MessageType;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class MessageReceiverField {
+public class FieldCordMessageReceiver {
 	
+	
+	public static void MessageHandler(String msg){
 
-	/*
-	 * Method which handles the messages a field agent hears
-	 * 
-	 */
-	public static void MessageHandlerField(String msg){
-		
-		
+
 		if(msg.startsWith("s1,")){
-			
+
 			StartReceiver1(msg);
-			
+
 		}else if(msg.startsWith("s2,")){
-			
+
 			StartReceiver2(msg);
-			
+
 		}else if(msg.startsWith("e,")){
-			
-			StartReceiver2(msg);
-			
+
+			//StartReceiver2(msg);
+
 		}else{
-				
-			System.err.println("Field Message Receiver: Unknown type of message received: "+msg);
+
 			
+
 		}
-		
+
 	}
-	
-	
+
+
 	public static void StartReceiver1(String msg){
-		
+
 		String[] splittedMsg = msg.split(",");
-		
+
 		int flag = Constraints.CoordinationPlayer;
 		boolean result = flag==(Integer.parseInt(splittedMsg[1]));
-		
+
 		if(result){
-			
+
 			MessageType.setType(4);
-			
+
 		}
-		
+
 	}
 	
 	public static void StartReceiver2(String msg){
-		
+
 		String[] splittedMsg = msg.split(",");
-		
+
 		int flag = Constraints.CoordinationPlayer;
 		boolean result = flag==(Integer.parseInt(splittedMsg[1]));
-		
+
 		if(result){
-			
+
 			MessageType.setType(5);
-			
+
 		}
-		
+
 	}
 	
-	public static void EndReceiver(String msg){
-		
-		String[] splittedMsg = msg.split(",");
-		
-		int flag = Constraints.CoordinationPlayer;
-		boolean result = flag==(Integer.parseInt(splittedMsg[1]));
-		
-		if(result){
-			
-			MessageType.setType(8);
-			
-		}
-		
-	}
+	
+	
+	
+	
+	
 	
 	
 	

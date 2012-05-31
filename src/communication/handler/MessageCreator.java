@@ -1,8 +1,10 @@
 /**
  * 
  */
-package communication.FieldFunctions;
+package communication.handler;
 
+import perceptor.vision.Ball;
+import localization.LocalizationResults;
 import agent.AgentType;
 
 /***********************************************************************************
@@ -51,6 +53,39 @@ public class MessageCreator {
 		message = "e"+","+AgentType.PlayerNum;
 		
 		return message;
+	}
+	
+	public static String CreateCoordinationMessage1(){
+		
+		String message = "";
+		String type  = "c1"+",";
+		
+		message += type + Integer.toString(AgentType.getPlayerNum())+",";
+		
+		message += Integer.toString((int) Math.rint(LocalizationResults.getCurrent_location().X))+",";
+		message += Integer.toString((int) Math.rint(LocalizationResults.getCurrent_location().Y))+",";
+		
+		message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().X))+",";
+		message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().Y));
+			
+		
+		return message;
+		
+	}
+	
+	public static String CreateCoordinationMessage2(){
+		
+		String message = "";
+		String type  = "c2"+",";
+		
+		message += type + Integer.toString(AgentType.getPlayerNum())+",";
+		
+		message += Integer.toString((int) Math.rint(Ball.getDistance()))+",";
+		message += "ddd";
+			
+		
+		return message;
+		
 	}
 	
 }

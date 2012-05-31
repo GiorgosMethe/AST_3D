@@ -78,7 +78,7 @@ public class InitAgent {
 				con.sendMessage("(init(unum "+number+")(teamname "+Teamname+"))");
 				
 				//communication
-				WhoSent.setCounter(1);
+				WhoSent.setCounter(0);
 				MessageType.setType(1);
 				
 

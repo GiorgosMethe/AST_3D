@@ -1,7 +1,7 @@
 /**
  * 
  */
-package communication.FieldFunctions;
+package communication.coordination.admin;
 
 import java.util.Vector;
 
@@ -19,35 +19,33 @@ import agent.Constraints;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class MessageBuffer {
-
+public class AdminMessageBuffer {
+	
 	static Vector<Integer> InitBuffer = new Vector<Integer>();
+	static Vector<Integer> StartBuffer = new Vector<Integer>();
 
 	public static boolean addInit(int num){
 
 
 		if(InitBuffer.size()==Constraints.numberPlayers-1){
-			
+
 			InitBuffer.removeAllElements();
 			return true;
-		
+
 		}else{
 
 			if(!InitBuffer.contains(num)){	
 
 				InitBuffer.addElement(num);	
-				
+
 			}
-				
+
 		}
-		
+
 		return false;
 
 	}
 	
-
-
-
-
+	
 
 }

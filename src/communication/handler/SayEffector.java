@@ -12,18 +12,16 @@
  ***********************************************************************************/
 package communication.handler;
 
-
 import agent.AgentType;
-
-import communication.FieldFunctions.MessageCreator;
-import communication.coordination.CoordinationMessageCreator;
-
 import connection.Connection;
+
+
+
 public class SayEffector {
 
 
 	/*
-	 * Class creates the communication effector of the agents.
+	 * Class creates the communication message of the agents.
 	 * There are several types of messages
 	 * type 1: starts the communication between the players
 	 * type 2: admin sends to start coordination message 1
@@ -65,7 +63,7 @@ public class SayEffector {
 
 		}else if(type == 4){
 
-			message = "(say"+" "+CoordinationMessageCreator.Create1()+")";
+			message = "(say"+" "+MessageCreator.CreateCoordinationMessage1()+")";
 
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
 				return message;
@@ -73,7 +71,7 @@ public class SayEffector {
 			
 		}else if(type == 5){
 
-			message = "(say"+" "+CoordinationMessageCreator.Create2()+")";
+			message = "(say"+" "+MessageCreator.CreateCoordinationMessage2()+")";
 
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
 				return message;
