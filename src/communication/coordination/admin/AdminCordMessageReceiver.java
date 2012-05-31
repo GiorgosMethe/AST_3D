@@ -26,16 +26,13 @@ public class AdminCordMessageReceiver {
 		if(msg.startsWith("i,")){
 
 			InitReceiver(msg);
-			System.out.println(""+msg);
 
 		}else if(msg.startsWith("c1,")){
 
-			System.out.println(""+msg);
 			CoordinationReceiver1(msg);
 
 		}else if(msg.startsWith("c2,")){
 
-			System.out.println(""+msg);
 			CoordinationReceiver2(msg);
 
 		}else{
@@ -73,8 +70,6 @@ public class AdminCordMessageReceiver {
 
 		if(result){
 			
-			System.out.println("teleiwsa me to c1");
-
 			MessageType.setType(3);
 
 		}
@@ -89,8 +84,7 @@ public class AdminCordMessageReceiver {
 
 		if(result){
 
-			System.out.println("teleiwsa me to c2");
-			MessageType.setType(6);
+			MessageType.setType(2);
 
 		}
 

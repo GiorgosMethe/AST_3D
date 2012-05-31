@@ -19,7 +19,7 @@ public class CoordinationMessage {
 	
 	public int number;
 	public int PlayerX,playerY,playerTheta;
-	public int ballX,ballY,BallTheta;
+	public int ballX,ballY,BallTheta,BallDistance;
 	/**
 	 * @param number
 	 * @param playerX
@@ -28,20 +28,22 @@ public class CoordinationMessage {
 	 * @param ballX
 	 * @param ballY
 	 * @param ballTheta
+	 * @param ballDistance
 	 */
-	public CoordinationMessage(int number, int playerX, int playerY,int playerTheta, int ballX, int ballY, int ballTheta) {
 	
+	public CoordinationMessage(int number, int playerX, int playerY,int playerTheta, int ballX, int ballY, int ballTheta,int ballDistance) {
+		
 		this.number = number;
-		PlayerX = playerX;
+		this.PlayerX = playerX;
 		this.playerY = playerY;
 		this.playerTheta = playerTheta;
 		this.ballX = ballX;
 		this.ballY = ballY;
-		BallTheta = ballTheta;
-		
-		
-		
+		this.BallTheta = ballTheta;
+		this.BallDistance = ballDistance;
 	}
+	
+	
 	public int getNumber() {
 		return number;
 	}
@@ -84,6 +86,15 @@ public class CoordinationMessage {
 	public void setBallTheta(int ballTheta) {
 		BallTheta = ballTheta;
 	}
+	public int getBallDistance() {
+		return BallDistance;
+	}
+	public void setBallDistance(int ballDistance) {
+		BallDistance = ballDistance;
+	}
+
+	
+	
 	
 
 

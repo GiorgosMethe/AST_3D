@@ -83,7 +83,7 @@ public class MessageCreator {
 		message += Integer.toString((int) Math.rint(Ball.getDistance()))+",";
 		message += Integer.toString((int) Math.rint(Ball.getAngleX()))+",";
 
-		message += Integer.toString((int) Math.rint(LocalizationResults.getBody_angle()));;
+		message += Integer.toString((int) Math.rint(LocalizationResults.getBody_angle()));
 
 
 		return message;

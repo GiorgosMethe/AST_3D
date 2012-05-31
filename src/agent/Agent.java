@@ -136,7 +136,6 @@ public class Agent {
 				j=j+1;
 				ServerCyrcles.setGameCyrcles(j);
 				
-				System.out.println("cyrcles now: "+j);
 			}
 			
 			/****************************experiments***************************/
@@ -152,7 +151,6 @@ public class Agent {
 			//String headAct=Sb.MoveHead(1);
 
 			//create the hole agents actions
-			System.out.println(SayEffector);
 			String Act=headAct+AgentAct+SayEffector;
 			
 			//Act
