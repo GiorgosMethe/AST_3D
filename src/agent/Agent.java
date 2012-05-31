@@ -21,9 +21,9 @@ import motion.xml.XMLMovement;
 import perceptor.Perceptors;
 import perceptor.isFallen;
 import worldState.GameState;
-import behavior.fsm.GKBstates;
-import behavior.vision.SeekBall;
-import behavior.vision.VisionType;
+import action.fsm.GKBstates;
+import action.vision.SeekBall;
+import action.vision.VisionType;
 
 import communication.handler.MessageType;
 import communication.handler.SayEffector;
@@ -152,6 +152,7 @@ public class Agent {
 			//String headAct=Sb.MoveHead(1);
 
 			//create the hole agents actions
+			System.out.println(SayEffector);
 			String Act=headAct+AgentAct+SayEffector;
 			
 			//Act

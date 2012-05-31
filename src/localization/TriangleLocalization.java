@@ -402,12 +402,7 @@ public class TriangleLocalization {
 		
 		Coordinate  WalkingCoordinateToKick = get_det_with_distance_angle(LocalizationResults.ball_location.X, LocalizationResults.ball_location.Y,
 				TargetFromBall, -1);
-		
-		
-		//double distanceToProperPosition = Math.sqrt(Math.pow(Ball.getDistance(), 2)+Math.pow(1.5, 2)-(2*Ball.getDistance()*1*Math.cos(Math.toRadians(TargetFromBall))));
-		
-		
-		//double WalkingAngle = Math.toDegrees(Math.asin((1.5*Math.sin(TargetFromBall))/distanceToProperPosition));
+
 		
 		return WalkingCoordinateToKick;
 		

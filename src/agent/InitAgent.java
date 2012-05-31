@@ -17,12 +17,12 @@ import motion.old.CurrentMotion;
 import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
-import behavior.fsm.GKBTTstates;
-import behavior.fsm.GKBstates;
-import behavior.fsm.PKTGstates;
+import action.fsm.GKBTTstates;
+import action.fsm.GKBstates;
+import action.fsm.PKTGstates;
+import action.vision.VisionType;
 import behavior.old.BehaviorDone;
 import behavior.old.BehaviorStateMachine;
-import behavior.vision.VisionType;
 
 import communication.handler.MessageType;
 import communication.handler.WhoSent;

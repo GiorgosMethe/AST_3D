@@ -14,10 +14,10 @@ package behavior.old;
 
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
-import behavior.general.Kick;
-import behavior.general.TakeGoaliePos;
-import behavior.simple.TurnToBall;
-import behavior.simple.TurnToSeeBall;
+import action.general.Kick;
+import action.general.TakeGoaliePos;
+import action.simple.TurnToBall;
+import action.simple.TurnToSeeBall;
 
 public class Goalie {
 

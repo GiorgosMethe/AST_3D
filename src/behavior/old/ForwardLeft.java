@@ -17,15 +17,15 @@ import motion.old.MotionTrigger;
 import perceptor.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
-import behavior.general.GetPosToGoal;
-import behavior.general.GetUp;
-import behavior.general.GoToPos;
-import behavior.general.Kick;
-import behavior.general.StandUp;
-import behavior.general.TurnOver;
-import behavior.simple.TurnToBall;
-import behavior.simple.TurnToSeeBall;
-import behavior.simple.WalkToBall;
+import action.general.GetPosToGoal;
+import action.general.GetUp;
+import action.general.GoToPos;
+import action.general.Kick;
+import action.general.StandUp;
+import action.general.TurnOver;
+import action.simple.TurnToBall;
+import action.simple.TurnToSeeBall;
+import action.simple.WalkToBall;
 
 public class ForwardLeft {
 

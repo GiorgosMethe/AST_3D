@@ -28,14 +28,17 @@ public class FieldCordMessageReceiver {
 		if(msg.startsWith("s1,")){
 
 			StartReceiver1(msg);
+			System.out.println(msg);
 
 		}else if(msg.startsWith("s2,")){
 
 			StartReceiver2(msg);
+			System.out.println(msg);
 
 		}else if(msg.startsWith("e,")){
 
-			//StartReceiver2(msg);
+			StartReceiverEnd(msg);
+			System.out.println(msg);
 
 		}else{
 
@@ -56,6 +59,21 @@ public class FieldCordMessageReceiver {
 		if(result){
 
 			MessageType.setType(4);
+
+		}
+
+	}
+	
+	public static void StartReceiverEnd(String msg){
+
+		String[] splittedMsg = msg.split(",");
+
+		int flag = Constraints.CoordinationPlayer;
+		boolean result = flag==(Integer.parseInt(splittedMsg[1]));
+
+		if(result){
+
+			MessageType.setType(8);
 
 		}
 

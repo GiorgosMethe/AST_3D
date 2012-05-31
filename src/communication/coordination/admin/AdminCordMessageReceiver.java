@@ -69,9 +69,11 @@ public class AdminCordMessageReceiver {
 
 		String[] splittedMsg = msg.split(",");
 
-		boolean result = AdminMessageBuffer.addInit(Integer.parseInt(splittedMsg[1]));
+		boolean result = AdminMessageBuffer.addC1(Integer.parseInt(splittedMsg[1]),msg);
 
 		if(result){
+			
+			System.out.println("teleiwsa me to c1");
 
 			MessageType.setType(3);
 
@@ -83,11 +85,12 @@ public class AdminCordMessageReceiver {
 
 		String[] splittedMsg = msg.split(",");
 
-		boolean result = AdminMessageBuffer.addInit(Integer.parseInt(splittedMsg[1]));
+		boolean result = AdminMessageBuffer.addC2(Integer.parseInt(splittedMsg[1]),msg);
 
 		if(result){
 
-			MessageType.setType(2);
+			System.out.println("teleiwsa me to c2");
+			MessageType.setType(6);
 
 		}
 
