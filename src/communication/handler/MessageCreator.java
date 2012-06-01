@@ -3,8 +3,8 @@
  */
 package communication.handler;
 
-import perceptor.vision.Ball;
 import localization.LocalizationResults;
+import perceptor.vision.Ball;
 import agent.AgentType;
 
 /***********************************************************************************

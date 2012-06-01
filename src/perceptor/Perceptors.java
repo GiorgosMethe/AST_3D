@@ -16,9 +16,6 @@ import java.util.Vector;
 
 import javax.vecmath.Vector3d;
 
-import communication.coordination.admin.AdminCordMessageReceiver;
-import communication.coordination.field.FieldCordMessageReceiver;
-
 import localization.AgentPosition;
 import localization.Coordinate;
 import localization.Landmark;
@@ -32,6 +29,10 @@ import worldState.TeamState;
 import agent.Agent;
 import agent.AgentType;
 import agent.Constraints;
+
+import communication.coordination.admin.AdminCordMessageReceiver;
+import communication.coordination.field.FieldCordMessageReceiver;
+
 import connection.Connection;
 
 
@@ -247,13 +248,13 @@ public class Perceptors {
 
 				} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase("hear")) {
 
-					float time = Float.parseFloat(ReceivedMessage.elementAt(i+1));
+					//float time = Float.parseFloat(ReceivedMessage.elementAt(i+1));
 
 					if(ReceivedMessage.elementAt(i+2).equalsIgnoreCase("self")){
 						
 					}else{
 						
-						float direction = Float.parseFloat(ReceivedMessage.elementAt(i+2));
+						//float direction = Float.parseFloat(ReceivedMessage.elementAt(i+2));
 						String msg = ReceivedMessage.elementAt(i+3);
 						
 						
