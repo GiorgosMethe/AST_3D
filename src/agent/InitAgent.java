@@ -82,7 +82,7 @@ public class InitAgent {
 				WhoSent.setCounter(0);
 				MessageType.setType(1);
 				MessageType.setCommunicationType(0);
-				ActionMessages.setSize(30);
+				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
 				
 
 			}else if(cyrcles==3){

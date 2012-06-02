@@ -13,6 +13,7 @@
 package communication.handler;
 
 import agent.AgentType;
+import agent.Constraints;
 import connection.Connection;
 import coordination.ActionMessages;
 
@@ -47,7 +48,7 @@ public class SayEffector {
 
 		}else if(type == 2){
 
-			message = "(say"+" "+MessageCreator.CreateStartCoordinationMessage1()+")";
+			message = "(say"+" "+MessageCreator.CreateStartCoordinationMessage()+")";
 
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),MessageType.getCommunicationType())==true){
 				return message;
@@ -60,7 +61,7 @@ public class SayEffector {
 
 		}else if(type == 4){
 
-			message = "(say"+" "+MessageCreator.CreateCoordinationMessage1()+")";
+			message = "(say"+" "+MessageCreator.CreateCoordinationMessage()+")";
 
 			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),MessageType.getCommunicationType())==true){
 				return message;
@@ -72,14 +73,14 @@ public class SayEffector {
 
 		}else if(type == 6){
 
-			if(ActionMessages.getSize()==0){
+			if(ActionMessages.getTimeout()==0){
 
 				MessageType.setType(2);
-				ActionMessages.setSize(20);
+				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
 				
 			}else{
 				
-				ActionMessages.setSize((ActionMessages.getSize()-1));
+				ActionMessages.setTimeout((ActionMessages.getTimeout()-1));
 
 				message = "(say"+" "+MessageCreator.CreateEndCoordinationMessage()+")";
 

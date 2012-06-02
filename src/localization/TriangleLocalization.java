@@ -349,6 +349,33 @@ public class TriangleLocalization {
 		
 		return ThetaToTarget;
 	}
+	
+	public static double FindAngleBetweenCoordinates(Coordinate start, Coordinate target){
+
+		double dx=target.getX()-start.getX();
+		double dy=target.getY()-start.getY();
+
+		double ThetaToTarget=Math.toDegrees(Math.atan2(dx, dy));
+		if(ThetaToTarget>=0 && ThetaToTarget<90){
+
+			ThetaToTarget=90-ThetaToTarget;
+
+		}else if(ThetaToTarget>=90 && ThetaToTarget<180){
+
+			ThetaToTarget=-(ThetaToTarget-90);
+
+		}else if(ThetaToTarget<-90 && ThetaToTarget>=-180){
+
+			ThetaToTarget=-(ThetaToTarget+270);
+
+		}else if(ThetaToTarget>=-90 && ThetaToTarget<-0){
+
+			ThetaToTarget=-(ThetaToTarget-90);
+
+		}
+		
+		return ThetaToTarget;
+	}
 
 
 

@@ -3,6 +3,13 @@
  */
 package coordination;
 
+import java.util.Vector;
+
+import agent.Constraints;
+
+import localization.Coordinate;
+import localization.TriangleLocalization;
+
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
  * Academic Year 2011-2012
@@ -17,16 +24,15 @@ package coordination;
  ***********************************************************************************/
 public class Coordination {
 	
-	public static void MakeCoordination(CoordinationMessage message){
+	public static void MakeCoordination(Vector<CoordinationMessage> coordinationVector){
 		
+
+		for(int i=0;i<coordinationVector.size();i++){
+			
+			System.out.println(coordinationVector.elementAt(i).number+" Value::"+BehaviorValues.Calculate("GoKickBallToGoal", coordinationVector.elementAt(i)));
+					
+		}
 		
-		
-		System.out.println("message");
-		System.out.println(message.getNumber());	
-		System.out.println(message.getPlayerX());
-		System.out.println(message.getPlayerY());
-		System.out.println(message.getBallTheta());
-		System.out.println(message.getBallDistance());
 		
 	}
 

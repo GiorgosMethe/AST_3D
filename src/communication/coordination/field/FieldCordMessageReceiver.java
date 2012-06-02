@@ -25,12 +25,17 @@ public class FieldCordMessageReceiver {
 	public static void MessageHandler(String msg){
 
 
-		if(msg.startsWith("s1,")){
+		if(msg.startsWith("s,")){
 
 			StartReceiver1(msg);
-
+			System.out.println(msg);
 
 		}else if(msg.startsWith("e,")){
+
+			StartReceiverEnd(msg);
+			System.out.println(msg);
+			
+		}else if(msg.startsWith("a,")){
 
 			StartReceiverEnd(msg);
 			System.out.println(msg);

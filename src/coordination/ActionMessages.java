@@ -17,15 +17,19 @@ package coordination;
  ***********************************************************************************/
 public class ActionMessages {
 	
-	public static int size;
+	public static int timeout;
 
-	public static int getSize() {
-		return size;
+	public static int getTimeout() {
+		return timeout;
 	}
 
-	public static void setSize(int size) {
-		ActionMessages.size = size;
+	public static void setTimeout(int timeout) {
+		ActionMessages.timeout = timeout;
 	}
+	
+	
+
+
 	
 	
 	

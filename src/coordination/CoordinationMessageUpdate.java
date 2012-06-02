@@ -19,8 +19,10 @@ import java.util.Vector;
  ***********************************************************************************/
 public class CoordinationMessageUpdate {
 	
+	
 	public static void update(Vector<String> CoordinationMessage){
-		
+	
+		Vector<CoordinationMessage> CoordinationVector = new Vector<CoordinationMessage>();
 	
 		int number = 0;
 		int playerX = 0,playerY = 0;
@@ -51,11 +53,13 @@ public class CoordinationMessageUpdate {
 			}
 
 			CoordinationMessage cm = new CoordinationMessage(number, playerX, playerY, ballDistance, ballTheta);
+			CoordinationVector.addElement(cm);
 			
 			
-			Coordination.MakeCoordination(cm);
 			
 		}
+		
+		Coordination.MakeCoordination(CoordinationVector);
 		
 		
 		

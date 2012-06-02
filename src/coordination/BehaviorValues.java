@@ -3,6 +3,10 @@
  */
 package coordination;
 
+import localization.Coordinate;
+import localization.TriangleLocalization;
+import agent.Constraints;
+
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
  * Academic Year 2011-2012
@@ -16,5 +20,41 @@ package coordination;
  * End date  : xx-xx-2012
  ***********************************************************************************/
 public class BehaviorValues {
+	
+	public static double Calculate(String action, CoordinationMessage player){
+		
+		
+		if(action.equalsIgnoreCase("GoKickBallToGoal")){
+			
+			double theta = player.getBallTheta();
+			double distance = player.getBallDistance();
+			Coordinate ballPos = TriangleLocalization.get_det_with_distance_angle(player.getPlayerX(), player.getPlayerY(), theta, distance);
+			double ballValue = SoccerFieldCoordinateValue.Calculate(ballPos);
+			
+			double ThetaToGoal = Math.abs(TriangleLocalization.FindAngleBetweenCoordinates(ballPos, Constraints.OpponentGoal))+
+					Math.abs(TriangleLocalization.FindAngleBetweenCoordinates(new Coordinate(player.PlayerX, player.getPlayerY()), Constraints.OpponentGoal));
+		
+			double finalValue = -distance-ThetaToGoal-ballValue;
+			
+			return finalValue;
+			
+			
+			
+		}else{
+			
+			
+			
+			
+			
+			
+			
+			return 0;
+		}
+		
+		
+		
+		
+		
+	}
 
 }

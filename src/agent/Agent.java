@@ -89,7 +89,7 @@ public class Agent {
 		int j=0;
 		
 		//player number
-		num=5;
+		num=11;
 		Teamname="e";
 		// team name
 		

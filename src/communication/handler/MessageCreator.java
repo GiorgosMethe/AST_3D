@@ -31,18 +31,10 @@ public class MessageCreator {
 		return message;
 	}
 
-	public static String CreateStartCoordinationMessage1(){
+	public static String CreateStartCoordinationMessage(){
 
 		String message = "";
-		message = "s1"+","+AgentType.PlayerNum;
-
-		return message;
-	}
-
-	public static String CreateStartCoordinationMessage2(){
-
-		String message = "";
-		message = "s2"+","+AgentType.PlayerNum;
+		message = "s"+","+AgentType.PlayerNum;
 
 		return message;
 	}
@@ -55,7 +47,7 @@ public class MessageCreator {
 		return message;
 	}
 
-	public static String CreateCoordinationMessage1(){
+	public static String CreateCoordinationMessage(){
 
 		String message = "";
 		String type  = "c"+",";
