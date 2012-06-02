@@ -15,7 +15,7 @@ package behavior.old;
 
 import localization.BallPosition;
 import motion.old.MotionTrigger;
-import perceptor.HingeJointPerceptor;
+import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 import action.general.GetPosToGoal;

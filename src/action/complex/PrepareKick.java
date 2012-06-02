@@ -1,7 +1,7 @@
 package action.complex;
 
 import motion.old.MotionTrigger;
-import perceptor.HingeJointPerceptor;
+import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;
 
 public class PrepareKick {

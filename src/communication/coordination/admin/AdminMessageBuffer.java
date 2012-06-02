@@ -6,7 +6,7 @@ package communication.coordination.admin;
 import java.util.Vector;
 
 import agent.Constraints;
-import coordination.CoordinationMessageUpdate;
+import coordination.communication.CoordinationMessageUpdate;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete

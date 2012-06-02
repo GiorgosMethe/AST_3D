@@ -15,7 +15,7 @@ package action.simple;
 
 import motion.old.MotionTrigger;
 import motion.xml.WalkLeaning;
-import perceptor.HingeJointPerceptor;
+import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 

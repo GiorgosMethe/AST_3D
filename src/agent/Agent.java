@@ -18,9 +18,9 @@ import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
-import perceptor.Perceptors;
-import perceptor.isFallen;
-import worldState.GameState;
+import perceptor.utils.UpdatePerceptors;
+import perceptor.utils.isFallen;
+import perceptor.worldstate.GameState;
 import action.complex.GoKickBallToGoal;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
@@ -46,7 +46,7 @@ public class Agent {
 	
 	public static void main(String[] args) {
 
-		Perceptors Gp = new Perceptors();
+		UpdatePerceptors Gp = new UpdatePerceptors();
 		SeekBall Sb = new SeekBall();
 		SayEffector sm = new SayEffector();
 		//Think think=new Think();
@@ -115,6 +115,7 @@ public class Agent {
 			String SayEffector = "";
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
 				
+				GoKickBallToGoal.Act();
 				SayEffector = sm.Say(MessageType.getType(), con);
 				
 				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){

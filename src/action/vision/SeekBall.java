@@ -14,8 +14,8 @@
 package action.vision;
 
 import localization.LocalizationResults;
-import perceptor.GetNormalJointValue;
-import perceptor.HingeJointPerceptor;
+import motion.utils.GetNormalJointValue;
+import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 import connection.ServerCyrcles;

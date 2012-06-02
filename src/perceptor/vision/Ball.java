@@ -12,7 +12,7 @@
  ***********************************************************************************/
 package perceptor.vision;
 
-import kinematics.JointPosition2D;
+import motion.kinematics.JointPosition2D;
 import motion.xml.MotionPlaying;
 
 public class Ball {
@@ -65,7 +65,7 @@ public class Ball {
 	
 	public static float RealDistance(){
 		
-		JointPosition2D HeadPos=kinematics.HeadPosition.Calculate();
+		JointPosition2D HeadPos=motion.kinematics.HeadPosition.Calculate();
 		
 		float distance = (float) Math.sqrt(Math.pow(Ball.getDistance(), 2) + Math.pow(HeadPos.PositionY, 2));
 		

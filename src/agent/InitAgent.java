@@ -29,7 +29,7 @@ import communication.handler.WhoSent;
 
 import connection.Connection;
 import connection.ServerCyrcles;
-import coordination.ActionMessages;
+import coordination.communication.ActionMessages;
 
 public class InitAgent {
 

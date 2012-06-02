@@ -13,7 +13,7 @@
 package motion.xml;
 
 
-import perceptor.GetNormalJointValueDegrees;
+import motion.utils.GetNormalJointValueDegrees;
 
 public class MoveJoints {
 

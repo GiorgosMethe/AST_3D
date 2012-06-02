@@ -17,8 +17,8 @@ import localization.BallPosition;
 import localization.Landmark;
 import localization.LocalizationResults;
 import motion.old.MotionTrigger;
-import perceptor.HingeJointPerceptor;
-import worldState.TeamState;
+import perceptor.joints.HingeJointPerceptor;
+import perceptor.worldstate.TeamState;
 import behavior.old.BehaviorStateMachine;
 
 public class GetPosToGoal {

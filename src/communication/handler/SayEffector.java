@@ -15,7 +15,7 @@ package communication.handler;
 import agent.AgentType;
 import agent.Constraints;
 import connection.Connection;
-import coordination.ActionMessages;
+import coordination.communication.ActionMessages;
 
 
 

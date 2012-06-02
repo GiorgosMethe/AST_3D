@@ -14,8 +14,9 @@ package motion.old;
 
 import java.util.Vector;
 
-import perceptor.GetNormalJointValue;
-import perceptor.GetNormalJointValueDegrees;
+import motion.utils.GetNormalJointValue;
+import motion.utils.GetNormalJointValueDegrees;
+
 
 public class Motions {
 
