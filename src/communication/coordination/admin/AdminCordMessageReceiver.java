@@ -33,7 +33,7 @@ public class AdminCordMessageReceiver {
 
 		}else{
 
-			
+			System.out.println("");
 
 		}
 
@@ -66,7 +66,12 @@ public class AdminCordMessageReceiver {
 
 		if(result){
 			
-			//MessageType.setType(2);
+			//coordination end message
+			MessageType.setType(6);
+			
+			//from now on, only admin can send messages
+			MessageType.setCommunicationType(1);
+			
 
 		}
 

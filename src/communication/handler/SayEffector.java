@@ -14,6 +14,7 @@ package communication.handler;
 
 import agent.AgentType;
 import connection.Connection;
+import coordination.ActionMessages;
 
 
 
@@ -24,11 +25,11 @@ public class SayEffector {
 	 * Class creates the communication message of the agents.
 	 * There are several types of messages
 	 * type 1: starts the communication between the players
-	 * type 2: admin sends to start coordination message 1
+	 * type 2(admin): admin sends to start coordination message 1
 	 * type 3: empty
 	 * type 4: coordination message 1
 	 * type 5: empty
-	 * type 6: stop coordination messages
+	 * type 6(admin): stop coordination messages
 	 * type 7: message which indicates fall of the player
 	 * type 8: Idle
 	 */
@@ -39,8 +40,8 @@ public class SayEffector {
 		if(type ==1){
 
 			message = "(say"+" "+MessageCreator.CreateStartMessage()+")";
-			
-			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+
+			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),MessageType.getCommunicationType())==true){
 				return message;
 			}
 
@@ -48,10 +49,10 @@ public class SayEffector {
 
 			message = "(say"+" "+MessageCreator.CreateStartCoordinationMessage1()+")";
 
-			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),MessageType.getCommunicationType())==true){
 				return message;
 			}
-			
+
 		}else if(type == 3){
 
 			message = "";
@@ -61,20 +62,30 @@ public class SayEffector {
 
 			message = "(say"+" "+MessageCreator.CreateCoordinationMessage1()+")";
 
-			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
+			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),MessageType.getCommunicationType())==true){
 				return message;
 			}
-			
+
 		}else if(type == 5){
 
 			message = "";
 
 		}else if(type == 6){
 
-			message = "(say"+" "+MessageCreator.CreateEndCoordinationMessage()+")";
+			if(ActionMessages.getSize()==0){
 
-			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
-				return message;
+				MessageType.setType(2);
+				ActionMessages.setSize(20);
+				
+			}else{
+				
+				ActionMessages.setSize((ActionMessages.getSize()-1));
+
+				message = "(say"+" "+MessageCreator.CreateEndCoordinationMessage()+")";
+
+				if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),MessageType.getCommunicationType())==true){
+					return message;
+				}
 			}
 
 		}else if(type == 7){

@@ -29,6 +29,7 @@ import communication.handler.WhoSent;
 
 import connection.Connection;
 import connection.ServerCyrcles;
+import coordination.ActionMessages;
 
 public class InitAgent {
 
@@ -80,6 +81,8 @@ public class InitAgent {
 				//communication
 				WhoSent.setCounter(0);
 				MessageType.setType(1);
+				MessageType.setCommunicationType(0);
+				ActionMessages.setSize(30);
 				
 
 			}else if(cyrcles==3){

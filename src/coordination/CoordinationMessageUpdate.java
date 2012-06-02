@@ -29,7 +29,7 @@ public class CoordinationMessageUpdate {
 		
 		
 		
-		System.err.println("----------------------------------------");
+		System.out.println("----------------------------------------");
 		for(int i=0;i<CoordinationMessage.size();i++){
 			
 			String[] cmarray = CoordinationMessage.elementAt(i).split(",");

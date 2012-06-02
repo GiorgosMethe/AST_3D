@@ -19,27 +19,58 @@ import connection.ServerCyrcles;
 
 public class MessagePerCycle {
 
-	public static boolean PerNumCircles(int number){
+	/*
+	 * @number, who tries to send
+	 * @type, who can send, type 0 for all players,
+	 * type 1 only for admin
+	 */
+	public static boolean PerNumCircles(int number, int type){
 
 		int MaxNum=Constraints.numberPlayers;
 
-		if (ServerCyrcles.getGameCyrcles()%2==0){
+		if(MessageType.getCommunicationType()==1){
 
-			if(WhoSent.getCounter()>MaxNum-1){
-				WhoSent.setCounter(1);
-			}else{
-				WhoSent.setCounter((WhoSent.getCounter()+1));
+			if (ServerCyrcles.getGameCyrcles()%2==0){
+				
+				if(AgentType.getPlayerNum()==Constraints.CoordinationPlayer){
+					
+					return true;
+					
+				}else{
+					
+					return false;
+					
+				}
+				
 			}
 			
-			if(AgentType.getPlayerNum()==WhoSent.getCounter()){
-				return true;
-			}else{
-				return false;
-			}
+			
+			return false;
+			
+			
+			
 		}else{
 
-			return false;
+			if (ServerCyrcles.getGameCyrcles()%2==0){
+
+				if(WhoSent.getCounter()>MaxNum-1){
+					WhoSent.setCounter(1);
+				}else{
+					WhoSent.setCounter((WhoSent.getCounter()+1));
+				}
+
+				if(AgentType.getPlayerNum()==WhoSent.getCounter()){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+
+				return false;
+			}
+
 		}
-		
+
+
 	}
 }

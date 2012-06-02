@@ -32,6 +32,17 @@ public class MessageType {
 	
 	
 	public static int type;
+	public static int communicationType;
+	
+	
+
+	public static int getCommunicationType() {
+		return communicationType;
+	}
+
+	public static void setCommunicationType(int communicationType) {
+		MessageType.communicationType = communicationType;
+	}
 
 	public static int getType() {
 		return type;

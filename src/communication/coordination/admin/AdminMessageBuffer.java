@@ -66,6 +66,8 @@ public class AdminMessageBuffer {
 		}else{
 
 			if(!cBuffer.contains(num)){	
+				
+				System.out.println("pros8etw ton"+num);
 
 				cBuffer.addElement(num);	
 				CoordinationMessageBuffer.addElement(msg);
