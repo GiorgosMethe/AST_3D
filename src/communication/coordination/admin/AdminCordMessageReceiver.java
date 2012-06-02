@@ -27,13 +27,9 @@ public class AdminCordMessageReceiver {
 
 			InitReceiver(msg);
 
-		}else if(msg.startsWith("c1,")){
+		}else if(msg.startsWith("c,")){
 
-			CoordinationReceiver1(msg);
-
-		}else if(msg.startsWith("c2,")){
-
-			CoordinationReceiver2(msg);
+			CoordinationReceiver(msg);
 
 		}else{
 
@@ -62,43 +58,19 @@ public class AdminCordMessageReceiver {
 	
 	
 	
-	public static void CoordinationReceiver1(String msg){
+	public static void CoordinationReceiver(String msg){
 
 		String[] splittedMsg = msg.split(",");
 
-		boolean result = AdminMessageBuffer.addC1(Integer.parseInt(splittedMsg[1]),msg);
+		boolean result = AdminMessageBuffer.addC(Integer.parseInt(splittedMsg[1]),msg);
 
 		if(result){
 			
-			MessageType.setType(3);
+			//MessageType.setType(2);
 
 		}
 
 	}
-	
-	public static void CoordinationReceiver2(String msg){
-
-		String[] splittedMsg = msg.split(",");
-
-		boolean result = AdminMessageBuffer.addC2(Integer.parseInt(splittedMsg[1]),msg);
-
-		if(result){
-
-			MessageType.setType(2);
-
-		}
-
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 }

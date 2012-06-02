@@ -1,7 +1,7 @@
 /**
  * 
  */
-package coordination;
+package action.complex;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
@@ -15,18 +15,18 @@ package coordination;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class Coordination {
+public class WalkToDirection {
 	
-	public static void MakeCoordination(CoordinationMessage message){
+	
+	public static void Act(double Direction){
 		
 		
 		
-		System.out.println("message");
-		System.out.println(message.getNumber());	
-		System.out.println(message.getPlayerX());
-		System.out.println(message.getPlayerY());
-		System.out.println(message.getBallTheta());
-		System.out.println(message.getBallDistance());
+		
+		
+		
+		
+		
 		
 	}
 

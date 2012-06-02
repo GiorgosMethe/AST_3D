@@ -21,6 +21,7 @@ import motion.xml.XMLMovement;
 import perceptor.Perceptors;
 import perceptor.isFallen;
 import worldState.GameState;
+import action.complex.GoKickBallToGoal;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
@@ -88,7 +89,7 @@ public class Agent {
 		int j=0;
 		
 		//player number
-		num=11;
+		num=4;
 		Teamname="e";
 		// team name
 		
@@ -114,7 +115,6 @@ public class Agent {
 			String SayEffector = "";
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
 				
-				
 				SayEffector = sm.Say(MessageType.getType(), con);
 				
 				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
@@ -128,7 +128,7 @@ public class Agent {
 				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
 					AgentAct= pXML.execute("strafe_left");
 				}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
-					AgentAct= pXML.execute("rigth_front_front_kick");
+					AgentAct= pXML.execute("strong_right_kick");
 				}else{
 					AgentAct= pXML.execute("");
 				}
@@ -141,6 +141,7 @@ public class Agent {
 			/****************************experiments***************************/
 
 			/*******************************************************************/
+			
 			
 			
 			//check if i am down

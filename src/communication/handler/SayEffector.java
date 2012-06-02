@@ -25,9 +25,9 @@ public class SayEffector {
 	 * There are several types of messages
 	 * type 1: starts the communication between the players
 	 * type 2: admin sends to start coordination message 1
-	 * type 3: admin sends to start coordination message 2
+	 * type 3: empty
 	 * type 4: coordination message 1
-	 * type 5: coordination message 2
+	 * type 5: empty
 	 * type 6: stop coordination messages
 	 * type 7: message which indicates fall of the player
 	 * type 8: Idle
@@ -54,11 +54,7 @@ public class SayEffector {
 			
 		}else if(type == 3){
 
-			message = "(say"+" "+MessageCreator.CreateStartCoordinationMessage2()+")";
-
-			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
-				return message;
-			}
+			message = "";
 
 
 		}else if(type == 4){
@@ -71,11 +67,7 @@ public class SayEffector {
 			
 		}else if(type == 5){
 
-			message = "(say"+" "+MessageCreator.CreateCoordinationMessage2()+")";
-
-			if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum())==true){
-				return message;
-			}
+			message = "";
 
 		}else if(type == 6){
 

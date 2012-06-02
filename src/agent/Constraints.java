@@ -6,7 +6,7 @@ public class Constraints {
 	
 	public static int CoordinationPlayer = 1;
 	
-	public static int numberPlayers = 11;
+	public static int numberPlayers = 5;
 	
 	public static float bodyHeight=(float) 0.3;
 	

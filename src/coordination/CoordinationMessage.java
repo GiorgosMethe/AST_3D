@@ -18,32 +18,27 @@ package coordination;
 public class CoordinationMessage {
 	
 	public int number;
-	public int PlayerX,playerY,playerTheta;
-	public int ballX,ballY,BallTheta,BallDistance;
+	public int PlayerX,PlayerY;
+	public int BallDistance,BallTheta;
+	
+	
+	
+	
 	/**
 	 * @param number
 	 * @param playerX
 	 * @param playerY
-	 * @param playerTheta
-	 * @param ballX
-	 * @param ballY
-	 * @param ballTheta
 	 * @param ballDistance
+	 * @param ballTheta
 	 */
-	
-	public CoordinationMessage(int number, int playerX, int playerY,int playerTheta, int ballX, int ballY, int ballTheta,int ballDistance) {
+	public CoordinationMessage(int number, int playerX, int playerY,int ballDistance, int ballTheta) {
 		
 		this.number = number;
-		this.PlayerX = playerX;
-		this.playerY = playerY;
-		this.playerTheta = playerTheta;
-		this.ballX = ballX;
-		this.ballY = ballY;
-		this.BallTheta = ballTheta;
-		this.BallDistance = ballDistance;
+		PlayerX = playerX;
+		PlayerY = playerY;
+		BallDistance = ballDistance;
+		BallTheta = ballTheta;
 	}
-	
-	
 	public int getNumber() {
 		return number;
 	}
@@ -57,40 +52,22 @@ public class CoordinationMessage {
 		PlayerX = playerX;
 	}
 	public int getPlayerY() {
-		return playerY;
+		return PlayerY;
 	}
 	public void setPlayerY(int playerY) {
-		this.playerY = playerY;
-	}
-	public int getPlayerTheta() {
-		return playerTheta;
-	}
-	public void setPlayerTheta(int playerTheta) {
-		this.playerTheta = playerTheta;
-	}
-	public int getBallX() {
-		return ballX;
-	}
-	public void setBallX(int ballX) {
-		this.ballX = ballX;
-	}
-	public int getBallY() {
-		return ballY;
-	}
-	public void setBallY(int ballY) {
-		this.ballY = ballY;
-	}
-	public int getBallTheta() {
-		return BallTheta;
-	}
-	public void setBallTheta(int ballTheta) {
-		BallTheta = ballTheta;
+		PlayerY = playerY;
 	}
 	public int getBallDistance() {
 		return BallDistance;
 	}
 	public void setBallDistance(int ballDistance) {
 		BallDistance = ballDistance;
+	}
+	public int getBallTheta() {
+		return BallTheta;
+	}
+	public void setBallTheta(int ballTheta) {
+		BallTheta = ballTheta;
 	}
 
 	
