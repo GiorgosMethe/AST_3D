@@ -3,6 +3,8 @@
  */
 package coordination.main;
 
+import coordination.action.ActionObject;
+
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
  * Academic Year 2011-2012
@@ -16,5 +18,27 @@ package coordination.main;
  * End date  : xx-xx-2012
  ***********************************************************************************/
 public class ActionTable {
+	
+	/*
+	 * The results of coordination function are saved in this Array and then they are used by communication system
+	 * in order to be send to agents
+	 */
+	public static ActionObject[] CoordinateActions = new ActionObject[12];
+
+	public static ActionObject[] getCoordinateActions() {
+		return CoordinateActions;
+	}
+
+	public static void setCoordinateActions(ActionObject[] coordinateActions) {
+		CoordinateActions = coordinateActions;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

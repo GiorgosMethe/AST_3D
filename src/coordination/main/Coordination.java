@@ -5,6 +5,7 @@ package coordination.main;
 
 import java.util.Vector;
 
+import coordination.action.ActionObject;
 import coordination.action.ActionValue;
 import coordination.communication.CoordinationMessage;
 
@@ -24,9 +25,7 @@ public class Coordination {
 	
 	
 	public static void MakeCoordination(Vector<CoordinationMessage> coordinationVector){
-		
-
-		
+			
 		int max = -100;
 		int player = 0;
 		for(int i=0;i<coordinationVector.size();i++){
@@ -36,10 +35,14 @@ public class Coordination {
 			if(value4Goal>max){
 				player = coordinationVector.elementAt(i).getNumber();
 			}
-			
-			
 					
 		}
+		
+		ActionObject ActionObject = new ActionObject("GoKickBallToGoal", 0, 0, 0);
+		
+		ActionTable.CoordinateActions[player]= ActionObject;
+		
+		
 		
 		
 	}

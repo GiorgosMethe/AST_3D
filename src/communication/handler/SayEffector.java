@@ -26,11 +26,11 @@ public class SayEffector {
 	 * Class creates the communication message of the agents.
 	 * There are several types of messages
 	 * type 1: starts the communication between the players
-	 * type 2(admin): admin sends to start coordination message 1
-	 * type 3: empty
+	 * type 2: (admin) sends to start coordination message 1
+	 * type 3: (admin) sends back action messages
 	 * type 4: coordination message 1
 	 * type 5: empty
-	 * type 6(admin): stop coordination messages
+	 * type 6: (admin) sends to stop coordination messages
 	 * type 7: message which indicates fall of the player
 	 * type 8: Idle
 	 */
@@ -54,6 +54,10 @@ public class SayEffector {
 				return message;
 			}
 
+		
+		/*
+		 * action messages
+		 */
 		}else if(type == 3){
 
 			message = "";
@@ -71,6 +75,11 @@ public class SayEffector {
 
 			message = "";
 
+			
+		/*
+		* type 6: this is an administrator message in order to stop agents from sending
+		* coordination messages to him			 * 
+		*/
 		}else if(type == 6){
 
 			if(ActionMessages.getTimeout()==0){
