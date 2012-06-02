@@ -3,9 +3,9 @@
  */
 package communication.coordination.field;
 
-import communication.handler.MessageType;
-
 import agent.Constraints;
+
+import communication.handler.MessageType;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
