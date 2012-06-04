@@ -20,7 +20,6 @@ public class ActionMessages {
 	public static int timeout;
 	
 	public static int player;
-
 	
 	
 	public static int getTimeout() {

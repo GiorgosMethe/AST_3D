@@ -8,7 +8,7 @@ public class Constraints {
 	/*
 	 * simulation static values
 	 */
-	public static int numberPlayers = 5;
+	public static int numberPlayers = 11;
 	
 	
 	/*

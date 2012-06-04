@@ -10,7 +10,7 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package connection;
+package connection.utils;
 
 import java.util.Vector;
 

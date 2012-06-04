@@ -15,7 +15,7 @@ package communication.utils;
 
 import agent.AgentType;
 import agent.Constraints;
-import connection.ServerCyrcles;
+import connection.utils.ServerCyrcles;
 
 public class MessagePerCycle {
 

@@ -12,8 +12,8 @@
  ***********************************************************************************/
 package motion.old;
 import behavior.old.BehaviorDone;
-import connection.Connection;
-import connection.ServerCyrcles;
+import connection.TCPSocket.Connection;
+import connection.utils.ServerCyrcles;
 
 
 public class MotionController {

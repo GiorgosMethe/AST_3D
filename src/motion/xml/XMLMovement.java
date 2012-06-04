@@ -13,7 +13,7 @@
 package motion.xml;
 
 import motion.xml.check.Check4Change;
-import connection.ServerCyrcles;
+import connection.utils.ServerCyrcles;
 
 public class XMLMovement {
 

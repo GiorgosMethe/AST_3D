@@ -3,11 +3,11 @@
  */
 package communication.utils;
 
-import coordination.action.ActionTranslator;
-import coordination.main.ActionTable;
 import localization.LocalizationResults;
 import perceptor.vision.Ball;
 import agent.AgentType;
+import coordination.action.ActionTranslator;
+import coordination.main.ActionTable;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
@@ -67,25 +67,43 @@ public class MessageCreator {
 
 	}
 	
+	/*
+	 * this function helps admin to send the selected actions to each agent
+	 * @player admin wants to create the action message for this player
+	 */
 	public static String CreateActionMessage(int player){
 
 		String message = "";
-		String type  = "a"+",";
-
-		message += type + String.valueOf(player) + ",";
+		message  += "a"+",";
 		
-		if(ActionTable.CoordinateActions[player]!=null){
-			if(ActionTable.CoordinateActions[player].getAction().equalsIgnoreCase("GoKickBall")) {
+		for(int i=0;i<ActionTable.CoordinateActions.size();i++){
+			
+			if(ActionTable.CoordinateActions.elementAt(i).number == player){	
 				
-				message += String.valueOf(ActionTranslator.FromStringToType("GoKickBall"));
+				//player number
+				message += String.valueOf(player)+",";
 				
 				
-			}
+				String ActionName = ActionTable.CoordinateActions.elementAt(i).action;
+				int type = ActionTranslator.FromActionToID(ActionName);
+				
+				//action id
+				message += type + ",";
+					
+				double p1 = ActionTable.CoordinateActions.elementAt(i).parametres1;
+				double p2 = ActionTable.CoordinateActions.elementAt(i).parametres1;
+				double p3 = ActionTable.CoordinateActions.elementAt(i).parametres1;
+				
+				String ps1 = String.valueOf((int) Math.rint(p1));
+				String ps2 = String.valueOf((int) Math.rint(p2));
+				String ps3 = String.valueOf((int) Math.rint(p3));
+				
+				//parameters
+				message += ps1 + "," + ps2 + "," + ps3;
+
+			}	
 		}
 		
-		System.out.println("ffffff"+message);
-
-
 		return message;
 
 	}

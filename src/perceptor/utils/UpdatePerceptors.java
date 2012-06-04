@@ -37,7 +37,7 @@ import agent.Constraints;
 import communication.coordination.admin.AdminCordMessageReceiver;
 import communication.coordination.field.FieldCordMessageReceiver;
 
-import connection.Connection;
+import connection.TCPSocket.Connection;
 
 
 public class UpdatePerceptors {

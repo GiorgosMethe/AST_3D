@@ -17,31 +17,35 @@ package coordination.action;
  ***********************************************************************************/
 public class ActionTranslator {
 	
-	public static String FromTypeToString(int type){
+	public static String FromIDToAction(int type){
 		
 		String Action = ""; 
 		
-		if(type==1){
+		if(type == 0){
+			
+			Action = "";
+			
+		}else if(type == 1){
 			
 			Action = "GoKickBallToGoal";
-			
+	
 		}
-		
-		
-		
 		
 		
 		return Action;
 	
 	}
 
-	public static int FromStringToType(String name){
+	public static int FromActionToID(String name){
 		
 		int type = 0;
 		
 		if(name.equalsIgnoreCase("GoKickBallToGoal")){
 			
 			type = 1;
+			
+		}else{
+			
 			
 		}
 		

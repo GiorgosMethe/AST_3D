@@ -27,8 +27,8 @@ import behavior.old.BehaviorStateMachine;
 import communication.utils.MessageType;
 import communication.utils.WhoSent;
 
-import connection.Connection;
-import connection.ServerCyrcles;
+import connection.TCPSocket.Connection;
+import connection.utils.ServerCyrcles;
 import coordination.communication.ActionMessages;
 
 public class InitAgent {

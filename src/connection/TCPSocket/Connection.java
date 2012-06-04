@@ -1,4 +1,4 @@
-package connection;
+package connection.TCPSocket;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -9,6 +9,8 @@ import java.net.UnknownHostException;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import connection.utils.GetMessageAsVector;
 
 public class Connection {
 	// handle for logging

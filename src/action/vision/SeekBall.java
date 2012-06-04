@@ -18,7 +18,7 @@ import motion.utils.GetNormalJointValue;
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
-import connection.ServerCyrcles;
+import connection.utils.ServerCyrcles;
 
 
 public class SeekBall {

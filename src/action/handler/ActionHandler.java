@@ -1,11 +1,10 @@
 /**
  * 
  */
-package coordination.main;
+package action.handler;
 
-import java.util.Vector;
-
-import coordination.action.ActionObject;
+import action.complex.GoKickBallToGoal;
+import coordination.action.ActionTranslator;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
@@ -19,12 +18,15 @@ import coordination.action.ActionObject;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class ActionTable {
+public class ActionHandler{
 	
-	/*
-	 * The results of coordination function are saved in this Array and then they are used by communication system
-	 * in order to be send to agents
-	 */
-	public static Vector<ActionObject> CoordinateActions = new Vector<ActionObject>();
+	public static void HandleActionMessage(String actionMessage) {
+		
+		String[] splittedMsg = actionMessage.split(",");
+		
+		System.out.println("eimai o "+splittedMsg[1]);
+		System.out.println("kai 8a kanw "+ActionTranslator.FromIDToAction(Integer.parseInt(splittedMsg[2])));
+		
+	}
 
 }

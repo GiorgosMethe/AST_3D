@@ -1,12 +1,3 @@
-/**
- * 
- */
-package coordination.main;
-
-import java.util.Vector;
-
-import coordination.action.ActionObject;
-
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
  * Academic Year 2011-2012
@@ -19,12 +10,36 @@ import coordination.action.ActionObject;
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-public class ActionTable {
+package connection.utils;
+public class ServerCyrcles {
 	
-	/*
-	 * The results of coordination function are saved in this Array and then they are used by communication system
-	 * in order to be send to agents
-	 */
-	public static Vector<ActionObject> CoordinateActions = new Vector<ActionObject>();
+	
+	static int Cyrcles=0;
+	static int GameCyrcles=0;
+	
+	public static int getCyrclesNow() {
+		return Cyrcles;
+	}
+
+
+	public static void setCyrclesNow(int cyrcles) {
+		Cyrcles = cyrcles;
+	}
+
+
+	public static int getGameCyrcles() {
+		return GameCyrcles;
+	}
+
+
+	public static void setGameCyrcles(int gameCyrcles) {
+		GameCyrcles = gameCyrcles;
+	}
+	
+	
+	
+	
+	
+	
 
 }

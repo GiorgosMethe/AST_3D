@@ -3,6 +3,8 @@
  */
 package communication.coordination.field;
 
+import action.handler.ActionHandler;
+import agent.AgentType;
 import agent.Constraints;
 
 import communication.utils.MessageType;
@@ -27,17 +29,17 @@ public class FieldCordMessageReceiver {
 
 		if(msg.startsWith("s,")){
 
-			StartReceiver1(msg);
+			StartMsgHandler(msg);
 			System.out.println(msg);
 
 		}else if(msg.startsWith("e,")){
 
-			StartReceiverEnd(msg);
+			EndMsgHandler(msg);
 			System.out.println(msg);
 			
 		}else if(msg.startsWith("a,")){
 
-			StartReceiverEnd(msg);
+			ActionMsgHandler(msg);
 			System.out.println("pairnw action"+msg);
 
 		}else{
@@ -48,7 +50,7 @@ public class FieldCordMessageReceiver {
 	}
 
 
-	public static void StartReceiver1(String msg){
+	private static void StartMsgHandler(String msg){
 
 		String[] splittedMsg = msg.split(",");
 
@@ -63,7 +65,7 @@ public class FieldCordMessageReceiver {
 
 	}
 	
-	public static void StartReceiverEnd(String msg){
+	private static void EndMsgHandler(String msg){
 
 		String[] splittedMsg = msg.split(",");
 
@@ -73,6 +75,21 @@ public class FieldCordMessageReceiver {
 		if(result){
 
 			MessageType.setType(8);
+
+		}
+
+	}
+	
+	private static void ActionMsgHandler(String msg){
+
+		String[] splittedMsg = msg.split(",");
+
+		int flag = AgentType.getPlayerNum();
+		boolean me = flag==(Integer.parseInt(splittedMsg[1]));
+
+		if(me){
+
+			ActionHandler.HandleActionMessage(msg);
 
 		}
 

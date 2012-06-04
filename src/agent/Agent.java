@@ -21,7 +21,6 @@ import motion.xml.XMLMovement;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
-import action.complex.GoKickBallToGoal;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
@@ -29,8 +28,8 @@ import action.vision.VisionType;
 import communication.utils.MessageType;
 import communication.utils.SayEffector;
 
-import connection.Connection;
-import connection.ServerCyrcles;
+import connection.TCPSocket.Connection;
+import connection.utils.ServerCyrcles;
 
 
 public class Agent {
@@ -89,7 +88,7 @@ public class Agent {
 		int j=0;
 		
 		//player number
-		num=5;
+		num=11;
 		Teamname="e";
 		// team name
 		
@@ -142,6 +141,10 @@ public class Agent {
 			
 			/****************************experiments***************************/
 
+			
+			
+			
+			
 			/*******************************************************************/
 			
 			

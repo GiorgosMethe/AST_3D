@@ -14,7 +14,7 @@ package communication.utils;
 
 import agent.AgentType;
 import agent.Constraints;
-import connection.Connection;
+import connection.TCPSocket.Connection;
 import coordination.communication.ActionMessages;
 
 

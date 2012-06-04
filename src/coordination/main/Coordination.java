@@ -26,23 +26,51 @@ public class Coordination {
 	
 	public static void MakeCoordination(Vector<CoordinationMessage> coordinationVector){
 			
-		int max = -100;
+		/*
+		 * Here is the main coordination function, 
+		 * coordination administrator calculates 
+		 * the actions which maximize team reward 
+		 * 
+		 */
+		
+		double max = -100;
 		int player = 0;
 		for(int i=0;i<coordinationVector.size();i++){
 			
+			System.out.println(player);
 			double value4Goal = ActionValue.Calculate("GoKickBallToGoal", coordinationVector.elementAt(i));
 			
 			if(value4Goal>max){
+				max = value4Goal;
 				player = coordinationVector.elementAt(i).getNumber();
 			}
+			
 					
 		}
 		
-		ActionObject ActionObject = new ActionObject("GoKickBallToGoal", 0, 0, 0);
+		System.out.println("o "+player+"exei mikroteri value");
+	
 		
-		ActionTable.CoordinateActions[player]= ActionObject;
-		
-		
+		/*
+		 * This is the end of coordination function
+		 * Coordination admin should have decided 
+		 * action for all field player; now these 
+		 * actions will be sent to field players 
+		 * 
+		 */
+		ActionTable.CoordinateActions.removeAllElements();
+		for(int j=0;j<coordinationVector.size();j++){
+			ActionObject ActionObject = null;
+			
+			if(coordinationVector.elementAt(j).getNumber()==player){
+				ActionObject = new ActionObject(coordinationVector.elementAt(j).getNumber(),"GoKickBallToGoal", 0, 0, 0);
+			}else{
+				ActionObject = new ActionObject(coordinationVector.elementAt(j).getNumber(),"", 0, 0, 0);
+			}
+			
+			ActionTable.CoordinateActions.add(ActionObject);
+			
+		}
 		
 		
 	}
