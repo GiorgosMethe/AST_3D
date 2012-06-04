@@ -17,7 +17,7 @@ package localization;
 public class TriangleLocalization {
 
 
-
+	//11 players rcssserver 0.6.6
 	public static Coordinate F1L_det= new Coordinate (-15,10);
 	public static Coordinate F1R_det= new Coordinate (15,10);
 	public static Coordinate F2L_det= new Coordinate (-15,-10);
@@ -26,6 +26,9 @@ public class TriangleLocalization {
 	public static Coordinate G2L_det= new Coordinate (-15,-1.05);
 	public static Coordinate G1R_det= new Coordinate (15,1.05);
 	public static Coordinate G2R_det= new Coordinate (15,-1.05);
+	
+
+	
 	public Coordinate Localize (Landmark lmark1 , Landmark lmark2 ){
 		String mark1=null;
 		String mark2=null;

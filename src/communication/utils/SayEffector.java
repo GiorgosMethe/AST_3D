@@ -10,7 +10,7 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package communication.handler;
+package communication.utils;
 
 import agent.AgentType;
 import agent.Constraints;
@@ -54,13 +54,27 @@ public class SayEffector {
 				return message;
 			}
 
-		
-		/*
-		 * action messages
-		 */
+			
 		}else if(type == 3){
+			
+			
+			
+			
+			if(ActionMessages.getPlayer()<Constraints.numberPlayers+1){
 
-			message = "";
+				if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),MessageType.getCommunicationType())==true){
+					message = "(say"+" "+MessageCreator.CreateActionMessage(ActionMessages.getPlayer())+")";
+					ActionMessages.setPlayer((ActionMessages.getPlayer()+1));
+					return message;
+				}
+				
+			}else{
+						
+				MessageType.setType(2);
+				ActionMessages.setPlayer(2);
+				MessageType.setCommunicationType(0);				
+				
+			}
 
 
 		}else if(type == 4){
@@ -75,25 +89,23 @@ public class SayEffector {
 
 			message = "";
 
-			
-		/*
-		* type 6: this is an administrator message in order to stop agents from sending
-		* coordination messages to him			 * 
-		*/
+
+			/*
+			 * type 6: this is an administrator message in order to stop agents from sending
+			 * coordination messages to him
+			 */
 		}else if(type == 6){
 
 			if(ActionMessages.getTimeout()==0){
 
-				MessageType.setType(2);
+				MessageType.setType(3);
 				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
-				
-			}else{
-				
-				ActionMessages.setTimeout((ActionMessages.getTimeout()-1));
 
-				message = "(say"+" "+MessageCreator.CreateEndCoordinationMessage()+")";
+			}else{
 
 				if(MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),MessageType.getCommunicationType())==true){
+					ActionMessages.setTimeout((ActionMessages.getTimeout()-1));
+					message = "(say"+" "+MessageCreator.CreateEndCoordinationMessage()+")";
 					return message;
 				}
 			}

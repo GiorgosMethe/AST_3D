@@ -24,8 +24,8 @@ import action.vision.VisionType;
 import behavior.old.BehaviorDone;
 import behavior.old.BehaviorStateMachine;
 
-import communication.handler.MessageType;
-import communication.handler.WhoSent;
+import communication.utils.MessageType;
+import communication.utils.WhoSent;
 
 import connection.Connection;
 import connection.ServerCyrcles;
@@ -83,6 +83,7 @@ public class InitAgent {
 				MessageType.setType(1);
 				MessageType.setCommunicationType(0);
 				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
+				ActionMessages.setPlayer(2);
 				
 
 			}else if(cyrcles==3){

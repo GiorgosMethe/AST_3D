@@ -8,7 +8,7 @@ public class Constraints {
 	/*
 	 * simulation static values
 	 */
-	public static int numberPlayers = 11;
+	public static int numberPlayers = 5;
 	
 	
 	/*
@@ -24,8 +24,8 @@ public class Constraints {
 	/*
 	 * Localization static values
 	 */
-	public static Coordinate OpponentGoal = new Coordinate(15, 0); 
-	
+	//11 player rcssserver 0.6.6
+	public static Coordinate OpponentGoal = new Coordinate(15, 0); 	
 	
 	
 	/*

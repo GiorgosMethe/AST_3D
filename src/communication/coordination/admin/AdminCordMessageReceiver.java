@@ -3,7 +3,7 @@
  */
 package communication.coordination.admin;
 
-import communication.handler.MessageType;
+import communication.utils.MessageType;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
@@ -22,7 +22,8 @@ public class AdminCordMessageReceiver {
 	
 	public static void MessageHandler(String msg){
 
-
+		System.out.println(msg);
+		
 		if(msg.startsWith("i,")){
 
 			InitReceiver(msg);

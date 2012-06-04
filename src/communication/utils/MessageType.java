@@ -1,7 +1,7 @@
 /**
  * 
  */
-package communication.handler;
+package communication.utils;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete

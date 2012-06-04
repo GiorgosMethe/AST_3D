@@ -5,7 +5,7 @@ package communication.coordination.field;
 
 import agent.Constraints;
 
-import communication.handler.MessageType;
+import communication.utils.MessageType;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete
@@ -38,11 +38,10 @@ public class FieldCordMessageReceiver {
 		}else if(msg.startsWith("a,")){
 
 			StartReceiverEnd(msg);
-			System.out.println(msg);
+			System.out.println("pairnw action"+msg);
 
 		}else{
 
-			
 
 		}
 

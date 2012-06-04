@@ -26,8 +26,8 @@ import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
 
-import communication.handler.MessageType;
-import communication.handler.SayEffector;
+import communication.utils.MessageType;
+import communication.utils.SayEffector;
 
 import connection.Connection;
 import connection.ServerCyrcles;
@@ -89,7 +89,7 @@ public class Agent {
 		int j=0;
 		
 		//player number
-		num=11;
+		num=5;
 		Teamname="e";
 		// team name
 		
@@ -115,7 +115,7 @@ public class Agent {
 			String SayEffector = "";
 			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
 				
-				GoKickBallToGoal.Act();
+				//GoKickBallToGoal.Act();
 				SayEffector = sm.Say(MessageType.getType(), con);
 				
 				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
@@ -136,6 +136,7 @@ public class Agent {
 				
 				j=j+1;
 				ServerCyrcles.setGameCyrcles(j);
+				System.out.println("GC:"+ServerCyrcles.getGameCyrcles());
 				
 			}
 			

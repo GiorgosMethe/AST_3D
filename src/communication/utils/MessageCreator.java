@@ -1,8 +1,10 @@
 /**
  * 
  */
-package communication.handler;
+package communication.utils;
 
+import coordination.action.ActionTranslator;
+import coordination.main.ActionTable;
 import localization.LocalizationResults;
 import perceptor.vision.Ball;
 import agent.AgentType;
@@ -64,5 +66,37 @@ public class MessageCreator {
 		return message;
 
 	}
+	
+	public static String CreateActionMessage(int player){
+
+		String message = "";
+		String type  = "a"+",";
+
+		message += type + String.valueOf(player) + ",";
+		
+		if(ActionTable.CoordinateActions[player]!=null){
+			if(ActionTable.CoordinateActions[player].getAction().equalsIgnoreCase("GoKickBall")) {
+				
+				message += String.valueOf(ActionTranslator.FromStringToType("GoKickBall"));
+				
+				
+			}
+		}
+		
+		System.out.println("ffffff"+message);
+
+
+		return message;
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

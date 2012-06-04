@@ -21,6 +21,9 @@ public class Beam {
 		String beamX = null;
 		String beamY = null;
 		String beamTheta = null;
+		
+		
+		
 		if(number==1){
 			beamX="-14.5"; beamY="0.0"; beamTheta="0.0";
 		}else if(number==2){
@@ -42,9 +45,9 @@ public class Beam {
 		}else if(number==10){
 			beamX="-4.0"; beamY="-2.0"; beamTheta="0.0";
 		}else if(number==11){
-			beamX="-5.0"; beamY="0.0"; beamTheta="0.0";
+			beamX="-3.0"; beamY="0.0"; beamTheta="0.0";
 		}else{
-			
+
 		}
 		
 		beam=beamX+" "+beamY+" "+beamTheta;
