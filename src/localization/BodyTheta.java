@@ -1,12 +1,10 @@
 package localization;
 
 public class BodyTheta {
-	
+
 	public float ThetaStart;
 	public float ThetaEnd;
-	
-	
-	
+
 	public BodyTheta(float thetaStart, float thetaEnd) {
 		ThetaStart = thetaStart;
 		ThetaEnd = thetaEnd;

@@ -16,12 +16,11 @@ package action.general;
 import motion.old.MotionTrigger;
 
 public class TurnOver {
-	
-	public void Act(){
-		
+
+	public void Act() {
+
 		MotionTrigger.setMotion("TurnOver");
-		
-		
+
 	}
 
 }

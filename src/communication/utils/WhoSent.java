@@ -13,7 +13,7 @@
 package communication.utils;
 
 public class WhoSent {
-	 
+
 	public static int Counter;
 
 	public static int getCounter() {
@@ -23,8 +23,5 @@ public class WhoSent {
 	public static void setCounter(int counter) {
 		Counter = counter;
 	}
-
-	
-	
 
 }

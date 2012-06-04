@@ -19,44 +19,49 @@ import perceptor.vision.Ball;
 
 public class TakeGoaliePos {
 
-	public void Act(){
+	public void Act() {
 
-
-		boolean alreadyGivenMove=false;
-		if(Ball.getDistance()<4){
-			if(LocalizationResults.getCurrent_location().getX()<-10.5){
-				alreadyGivenMove=true;
+		boolean alreadyGivenMove = false;
+		if (Ball.getDistance() < 4) {
+			if (LocalizationResults.getCurrent_location().getX() < -10.5) {
+				alreadyGivenMove = true;
 				MotionTrigger.setMotion("Forwards50");
-			}else if(LocalizationResults.getCurrent_location().getX()>-9.5){
-				alreadyGivenMove=true;
+			} else if (LocalizationResults.getCurrent_location().getX() > -9.5) {
+				alreadyGivenMove = true;
 				MotionTrigger.setMotion("Backwards");
-			}else{
+			} else {
 
-				if(LocalizationResults.getCurrent_location().getY()>0.8 && alreadyGivenMove==false){
-					alreadyGivenMove=true;
+				if (LocalizationResults.getCurrent_location().getY() > 0.8
+						&& alreadyGivenMove == false) {
+					alreadyGivenMove = true;
 					MotionTrigger.setMotion("SideStepRight");
-				}else if(LocalizationResults.getCurrent_location().getY()<-0.8 && alreadyGivenMove==false){
-					alreadyGivenMove=true;
+				} else if (LocalizationResults.getCurrent_location().getY() < -0.8
+						&& alreadyGivenMove == false) {
+					alreadyGivenMove = true;
 					MotionTrigger.setMotion("SideStepLeft");
-				}else{
+				} else {
 
-					if(LocalizationResults.getBody_angle()>10 && alreadyGivenMove==false){
-						alreadyGivenMove=true;
+					if (LocalizationResults.getBody_angle() > 10
+							&& alreadyGivenMove == false) {
+						alreadyGivenMove = true;
 						MotionTrigger.setMotion("TurnRight40");
-					}else if(LocalizationResults.getBody_angle()>10 && alreadyGivenMove==false){
-						alreadyGivenMove=true;
+					} else if (LocalizationResults.getBody_angle() > 10
+							&& alreadyGivenMove == false) {
+						alreadyGivenMove = true;
 						MotionTrigger.setMotion("TurnLeft40");
-					}else{
+					} else {
 
-						if(LocalizationResults.getBall_location().getY()<LocalizationResults.getCurrent_location().getY() && alreadyGivenMove==false){
+						if (LocalizationResults.getBall_location().getY() < LocalizationResults
+								.getCurrent_location().getY()
+								&& alreadyGivenMove == false) {
 							MotionTrigger.setMotion("SideStepRight");
-						}else{
+						} else {
 							MotionTrigger.setMotion("SideStepLeft");
 						}
 					}
 
-				}		
-			}	
+				}
+			}
 		}
 	}
 

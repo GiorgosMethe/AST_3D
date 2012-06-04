@@ -10,17 +10,16 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
- 
+
 package action.general;
 
 import motion.old.MotionTrigger;
 
 public class GetUp {
 
-	
-	public void Act(){
-		
+	public void Act() {
+
 		MotionTrigger.setMotion("Init");
-		
+
 	}
 }

@@ -12,7 +12,6 @@
  ***********************************************************************************/
 package communication.utils;
 
-
 import agent.AgentType;
 import agent.Constraints;
 import connection.utils.ServerCyrcles;
@@ -21,56 +20,52 @@ public class MessagePerCycle {
 
 	/*
 	 * @number, who tries to send
-	 * @type, who can send, type 0 for all players,
-	 * type 1 only for admin
+	 * 
+	 * @type, who can send, type 0 for all players, type 1 only for admin
 	 */
-	public static boolean PerNumCircles(int number, int type){
+	public static boolean PerNumCircles(int number, int type) {
 
-		int MaxNum=Constraints.numberPlayers;
+		int MaxNum = Constraints.numberPlayers;
 
-		if(MessageType.getCommunicationType()==1){
+		if (MessageType.getCommunicationType() == 1) {
 
-			if (ServerCyrcles.getGameCyrcles()%2==0){
-				
-				if(AgentType.getPlayerNum()==Constraints.CoordinationPlayer){
-					
+			if (ServerCyrcles.getGameCyrcles() % 2 == 0) {
+
+				if (AgentType.getPlayerNum() == Constraints.CoordinationPlayer) {
+
 					return true;
-					
-				}else{
-					
+
+				} else {
+
 					return false;
-					
+
 				}
-				
+
 			}
-			
-			
+
 			return false;
-			
-			
-			
-		}else{
 
-			if (ServerCyrcles.getGameCyrcles()%2==0){
+		} else {
 
-				if(WhoSent.getCounter()>MaxNum-1){
+			if (ServerCyrcles.getGameCyrcles() % 2 == 0) {
+
+				if (WhoSent.getCounter() > MaxNum - 1) {
 					WhoSent.setCounter(1);
-				}else{
-					WhoSent.setCounter((WhoSent.getCounter()+1));
+				} else {
+					WhoSent.setCounter((WhoSent.getCounter() + 1));
 				}
 
-				if(AgentType.getPlayerNum()==WhoSent.getCounter()){
+				if (AgentType.getPlayerNum() == WhoSent.getCounter()) {
 					return true;
-				}else{
+				} else {
 					return false;
 				}
-			}else{
+			} else {
 
 				return false;
 			}
 
 		}
-
 
 	}
 }

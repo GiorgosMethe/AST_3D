@@ -16,10 +16,11 @@ import perceptor.sensors.GyroScope;
 import behavior.old.BehaviorStateMachine;
 
 public class isFallen {
-	
-	public void Check(){
-		
-		if((Math.abs(GyroScope.getAngleZ())+Math.abs(GyroScope.getAngleZ()+Math.abs(GyroScope.getAngleZ())))>500){
+
+	public void Check() {
+
+		if ((Math.abs(GyroScope.getAngleZ()) + Math.abs(GyroScope.getAngleZ()
+				+ Math.abs(GyroScope.getAngleZ()))) > 500) {
 			BehaviorStateMachine.setName("Fallen");
 			BehaviorStateMachine.setState("start");
 		}

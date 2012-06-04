@@ -16,9 +16,9 @@ package action.general;
 import motion.old.MotionTrigger;
 
 public class StandUp {
-	
-	public void Act(){
-		
+
+	public void Act() {
+
 		MotionTrigger.setMotion("StandUpFromFront");
 
 	}

@@ -19,38 +19,36 @@ import perceptor.joints.HingeJointPerceptor;
 
 public class TurnToBall {
 
+	public static boolean Act() {
 
-	public static boolean Act(){
+		if (TurnToSeeBall.Act() == true) {
 
-		if(TurnToSeeBall.Act()==true){
+			if (Math.abs(HingeJointPerceptor.getHj1())
+					+ Math.abs(BallPosition.getAngle()) > 20) {
 
-			if(Math.abs(HingeJointPerceptor.getHj1())+Math.abs(BallPosition.getAngle())>20){
-
-				if(HingeJointPerceptor.getHj1()>0){
+				if (HingeJointPerceptor.getHj1() > 0) {
 
 					MotionTrigger.setMotion("TurnLeft40");
 					return false;
 
-				}else{
+				} else {
 
 					MotionTrigger.setMotion("TurnRight40");
 					return false;
 
 				}
 
-
-			}else{
+			} else {
 
 				MotionTrigger.setMotion("");
 				return true;
 
 			}
 
-		}else{
+		} else {
 			return false;
 		}
 
 	}
-
 
 }

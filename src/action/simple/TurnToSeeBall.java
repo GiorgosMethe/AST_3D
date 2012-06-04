@@ -16,32 +16,27 @@ import motion.old.MotionTrigger;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 
-
 public class TurnToSeeBall {
 
+	public static boolean Act() {
 
-	public static boolean Act(){
+		if (Vision.isiSee()) {
+			if (Ball.isSeeTheBall()) {
 
-		if(Vision.isiSee()){
-			if(Ball.isSeeTheBall()){
-				
 				MotionTrigger.setMotion("");
 				return true;
-			}else{
-				
+			} else {
+
 				MotionTrigger.setMotion("TurnRight40");
 				return false;
 			}
-			
-		}else{
-		
+
+		} else {
+
 			return false;
-			
+
 		}
-							
+
 	}
 
 }
-
-
-

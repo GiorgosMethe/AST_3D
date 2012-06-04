@@ -18,30 +18,23 @@ import perceptor.joints.HingeJointPerceptor;
 
 public class GoToPos {
 
-	public void Act(){
+	public void Act() {
 
+		if (Math.abs((HingeJointPerceptor.getHj1() + BallPosition.getAngle())) > 20) {
 
-		if(Math.abs((HingeJointPerceptor.getHj1()+BallPosition.getAngle()))>20){
-
-			if(HingeJointPerceptor.getHj1()>0){
+			if (HingeJointPerceptor.getHj1() > 0) {
 				MotionTrigger.setMotion("TurnLeft40");
 
-			}else{
+			} else {
 				MotionTrigger.setMotion("TurnRight40");
 
 			}
 
-
-		}else{
+		} else {
 
 			MotionTrigger.setMotion("Forwards50");
 
 		}
-
-
-
-
-
 
 	}
 

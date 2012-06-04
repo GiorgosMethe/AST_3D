@@ -34,73 +34,72 @@ import coordination.communication.ActionMessages;
 public class InitAgent {
 
 	public static boolean playerReady;
-	
 
-	public static void Init(String Teamname, int number,Connection con){
+	public static void Init(String Teamname, int number, Connection con) {
 
-		Beam bm=new Beam();
-		String beam=bm.Init(number);
-		int cyrcles=ServerCyrcles.getCyrclesNow();
-		//boolean AgentInitialized=false;
-		if(cyrcles>=0 && cyrcles<10){
-			if(cyrcles==1){
-				
-				if(number==1){
-					new BehaviorStateMachine("Goalie","start");
-				}else{
-					new BehaviorStateMachine("goToPos","start");
+		Beam bm = new Beam();
+		String beam = bm.Init(number);
+		int cyrcles = ServerCyrcles.getCyrclesNow();
+		// boolean AgentInitialized=false;
+		if (cyrcles >= 0 && cyrcles < 10) {
+			if (cyrcles == 1) {
+
+				if (number == 1) {
+					new BehaviorStateMachine("Goalie", "start");
+				} else {
+					new BehaviorStateMachine("goToPos", "start");
 				}
-				
-				//init behavior fsm
+
+				// init behavior fsm
 				GKBstates.setState("Start");
 				GKBTTstates.setState("Start");
 				GKBTTstates.setTimeout(0);
 				PKTGstates.setProperPositionToWalk(new Coordinate(0, 0));
 				PKTGstates.setResult(null);
 				PKTGstates.setTimeout(0);
-				
-				//Old Movement
+
+				// Old Movement
 				CurrentMotion.setSoftChangeCounter(0);
 				InitAgent.setPlayerInited(false);
 				BehaviorDone.setName("");
 				BehaviorDone.setBehaviorDone(true);
 				MotionTrigger.setMotion("");
-				
-				//XML movement
-				MotionPlaying.setMotionName(null);	
+
+				// XML movement
+				MotionPlaying.setMotionName(null);
 				MotionPlaying.setMotionPhase(null);
 				MotionPlaying.setStartCyrcle(0);
 				WalkLeaning.setLean("");
-				
-				//Vision Type
+
+				// Vision Type
 				VisionType.setType(1);
-				
+
 				CurrentMotion.setCurrentMotionPlaying("");
-				con.sendMessage("(init(unum "+number+")(teamname "+Teamname+"))");
-				
-				//communication
+				con.sendMessage("(init(unum " + number + ")(teamname "
+						+ Teamname + "))");
+
+				// communication
 				WhoSent.setCounter(0);
 				MessageType.setType(1);
 				MessageType.setCommunicationType(0);
 				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
 				ActionMessages.setPlayer(2);
-				
 
-			}else if(cyrcles==3){
+			} else if (cyrcles == 3) {
 
-				con.sendMessage("(beam "+beam+")");
+				con.sendMessage("(beam " + beam + ")");
 
 			}
-			
+
 			MotionTrigger.setMotion("Init");
-			if(cyrcles==9){
+			if (cyrcles == 9) {
 				InitAgent.setPlayerInited(true);
 			}
 		}
 
 	}
 
-	public static void CreateAgent(Connection con){
+	public static void CreateAgent(Connection con) {
 		con.sendMessage("(scene rsg/agent/nao/nao.rsg)");
 	}
 
@@ -111,7 +110,5 @@ public class InitAgent {
 	public static void setPlayerInited(boolean playerInited) {
 		InitAgent.playerReady = playerInited;
 	}
-
-
 
 }

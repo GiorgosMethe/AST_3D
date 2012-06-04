@@ -20,6 +20,5 @@ public class GKBTTstates {
 	public static void setTimeout(int timeout) {
 		GKBTTstates.timeout = timeout;
 	}
-	
-	
+
 }

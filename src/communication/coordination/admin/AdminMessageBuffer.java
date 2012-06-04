@@ -9,16 +9,14 @@ import agent.Constraints;
 import coordination.communication.CoordinationMessageUpdate;
 
 /***********************************************************************************
- * Copyright 2012, Technical University of Crete
- * Academic Year 2011-2012
- *
+ * Copyright 2012, Technical University of Crete Academic Year 2011-2012
+ * 
  * Thesis Project
- *
- * @author Methenitis Georgios Student ID:2006030085	
- *
- * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
- * Start date: 25-04-2012											 
- * End date  : xx-xx-2012
+ * 
+ * @author Methenitis Georgios Student ID:2006030085
+ * 
+ *         Abstract: Player Behavior and Team Strategy for the RoboCup 3D
+ *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
 public class AdminMessageBuffer {
 
@@ -28,20 +26,18 @@ public class AdminMessageBuffer {
 	static Vector<Integer> cBuffer = new Vector<Integer>();
 	static Vector<String> CoordinationMessageBuffer = new Vector<String>();
 
+	public static boolean addInit(int num) {
 
-	public static boolean addInit(int num){
-
-
-		if(InitBuffer.size()==Constraints.numberPlayers-1){
+		if (InitBuffer.size() == Constraints.numberPlayers - 1) {
 
 			InitBuffer.removeAllElements();
 			return true;
 
-		}else{
+		} else {
 
-			if(!InitBuffer.contains(num)){	
+			if (!InitBuffer.contains(num)) {
 
-				InitBuffer.addElement(num);	
+				InitBuffer.addElement(num);
 
 			}
 
@@ -51,25 +47,23 @@ public class AdminMessageBuffer {
 
 	}
 
-	public static boolean addC(int num, String msg){
+	public static boolean addC(int num, String msg) {
 
+		if (cBuffer.size() == Constraints.numberPlayers - 1) {
 
-		if(cBuffer.size()==Constraints.numberPlayers-1){
-
-			
 			CoordinationMessageUpdate.update(CoordinationMessageBuffer);
 			CoordinationMessageBuffer.removeAllElements();
 			cBuffer.removeAllElements();
 
 			return true;
 
-		}else{
+		} else {
 
-			if(!cBuffer.contains(num)){
-				
-				System.out.println("pros8etw ton"+num);
+			if (!cBuffer.contains(num)) {
 
-				cBuffer.addElement(num);	
+				System.out.println("pros8etw ton" + num);
+
+				cBuffer.addElement(num);
 				CoordinationMessageBuffer.addElement(msg);
 
 			}
@@ -79,7 +73,5 @@ public class AdminMessageBuffer {
 		return false;
 
 	}
-
-
 
 }

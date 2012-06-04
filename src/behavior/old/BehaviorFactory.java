@@ -12,8 +12,6 @@
  ***********************************************************************************/
 package behavior.old;
 
-
-
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 import action.general.GetPosToGoal;
@@ -28,294 +26,292 @@ import action.simple.WalkToBall;
 
 public class BehaviorFactory {
 
-	TurnToSeeBall tTsB=new TurnToSeeBall();
-	TurnToBall tTb=new TurnToBall();
-	WalkToBall wTb=new WalkToBall();
-	Kick Kb=new Kick();
+	TurnToSeeBall tTsB = new TurnToSeeBall();
+	TurnToBall tTb = new TurnToBall();
+	WalkToBall wTb = new WalkToBall();
+	Kick Kb = new Kick();
 	GetPosToGoal gPtG = new GetPosToGoal();
-	GoToPos gTp= new GoToPos();
-	StandUp sU=new StandUp();
-	TurnOver tO=new TurnOver();
-	GetUp gU=new GetUp();
+	GoToPos gTp = new GoToPos();
+	StandUp sU = new StandUp();
+	TurnOver tO = new TurnOver();
+	GetUp gU = new GetUp();
 
-	public void BehaviorController(){
+	public void BehaviorController() {
 
-		////////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////go kick the ball////////////////////////////////////////
-		////////////////////////////////////////////////////////////////////////////////////////////////
+		// //////////////////////////////////////////////////////////////////////////////////////////////
+		// /////////////////////////////////////go kick the
+		// ball////////////////////////////////////////
+		// //////////////////////////////////////////////////////////////////////////////////////////////
 
+		if (BehaviorStateMachine.getName().equalsIgnoreCase("goKickTheBall")) {
 
+			if (BehaviorStateMachine.getState().equalsIgnoreCase("start")) {
 
+				if (Vision.isiSee() == true) {
 
-		if(BehaviorStateMachine.getName().equalsIgnoreCase("goKickTheBall")){
-
-			if(BehaviorStateMachine.getState().equalsIgnoreCase("start")){
-
-				if(Vision.isiSee()==true){
-
-					if(Ball.isSeeTheBall()==true){
+					if (Ball.isSeeTheBall() == true) {
 
 						BehaviorStateMachine.setState("iSeeBall");
 
-					}else{
+					} else {
 
 						BehaviorStateMachine.setState("NotSeeBall");
 
 					}
 
-				}else{
+				} else {
 
 					BehaviorStateMachine.setState("start");
 
 				}
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("iSeeBall")){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"iSeeBall")) {
 
-				tTb.Act();
+				TurnToBall.Act();
 				BehaviorStateMachine.setState("walkToBall");
 
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"NotSeeBall")) {
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("NotSeeBall")){
-
-
-				tTsB.Act();
+				TurnToSeeBall.Act();
 
 				BehaviorStateMachine.setState("start");
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("walkToBall")){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"walkToBall")) {
 
-				if(Ball.getDistance()>0.5){
-					wTb.Act();
+				if (Ball.getDistance() > 0.5) {
+					WalkToBall.Act();
 					BehaviorStateMachine.setState("walkToBall");
-				}else{
+				} else {
 
 					BehaviorStateMachine.setState("Kick");
 
+				}
 
-				}			
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase("Kick")) {
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("Kick")){
-
-				if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("")){
+				if (BehaviorDone.isBehaviorDone() == true
+						&& BehaviorDone.getName().equalsIgnoreCase("")) {
 					BehaviorDone.setBehaviorDone(false);
 					BehaviorDone.setName("Kick");
-					Kb.Act();				
+					Kb.Act();
 					BehaviorStateMachine.setState("Kick");
-				}else if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("Kick")){
+				} else if (BehaviorDone.isBehaviorDone() == true
+						&& BehaviorDone.getName().equalsIgnoreCase("Kick")) {
 					BehaviorDone.setName("");
 					BehaviorDone.setBehaviorDone(true);
 					BehaviorStateMachine.setState("start");
-				}else{
+				} else {
 
 				}
 			}
 
+			// //////////////////////////////////////////////////////////////////////////////////////////////
+			// /////////////////////////////////////kick the ball to
+			// goal////////////////////////////////////
+			// //////////////////////////////////////////////////////////////////////////////////////////////
 
+		} else if (BehaviorStateMachine.getName().equalsIgnoreCase(
+				"KickTheBallToGoal")) {
 
+			if (BehaviorStateMachine.getState().equalsIgnoreCase("start")) {
 
+				if (Vision.isiSee() == true) {
 
-
-			////////////////////////////////////////////////////////////////////////////////////////////////
-			///////////////////////////////////////kick the ball to goal////////////////////////////////////
-			////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-		}else if(BehaviorStateMachine.getName().equalsIgnoreCase("KickTheBallToGoal")){
-
-			if(BehaviorStateMachine.getState().equalsIgnoreCase("start")){
-
-				if(Vision.isiSee()==true){
-
-					if(Ball.isSeeTheBall()==true){
+					if (Ball.isSeeTheBall() == true) {
 
 						BehaviorStateMachine.setState("iSeeBall");
 
-					}else{
+					} else {
 
 						BehaviorStateMachine.setState("NotSeeBall");
 
 					}
 
-				}else{
+				} else {
 
 					BehaviorStateMachine.setState("start");
 
 				}
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("iSeeBall")){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"iSeeBall")) {
 
-				tTb.Act();
+				TurnToBall.Act();
 				BehaviorStateMachine.setState("walkToBall");
 
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"NotSeeBall")) {
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("NotSeeBall")){
-
-
-				tTsB.Act();
+				TurnToSeeBall.Act();
 
 				BehaviorStateMachine.setState("start");
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("walkToBall")){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"walkToBall")) {
 
-				if(Ball.getDistance()>0.6){
-					wTb.Act();
+				if (Ball.getDistance() > 0.6) {
+					WalkToBall.Act();
 					BehaviorStateMachine.setState("walkToBall");
-				}else{
+				} else {
 					BehaviorStateMachine.setState("GetPosToGoal");
-
 
 				}
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("GetPosToGoal")){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"GetPosToGoal")) {
 
 				gPtG.Act();
 
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"goBall")) {
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("goBall")){
-
-				if(Ball.getDistance()>0.5){
-					wTb.Act();
+				if (Ball.getDistance() > 0.5) {
+					WalkToBall.Act();
 					BehaviorStateMachine.setState("goBall");
-				}else{
+				} else {
 					BehaviorStateMachine.setState("Kick");
-
 
 				}
 
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase("Kick")) {
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("Kick")){
-
-				if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("")){
+				if (BehaviorDone.isBehaviorDone() == true
+						&& BehaviorDone.getName().equalsIgnoreCase("")) {
 					BehaviorDone.setBehaviorDone(false);
 					BehaviorDone.setName("Kick");
-					Kb.Act();				
+					Kb.Act();
 					BehaviorStateMachine.setState("Kick");
-				}else if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("Kick")){
+				} else if (BehaviorDone.isBehaviorDone() == true
+						&& BehaviorDone.getName().equalsIgnoreCase("Kick")) {
 					BehaviorDone.setName("");
 					BehaviorDone.setBehaviorDone(true);
 					BehaviorStateMachine.setState("start");
-				}else{
+				} else {
 
 				}
 			}
 
+			// //////////////////////////////////////////////////////////////////////////////////////////////
+			// /////////////////////////////////////go to
+			// position///////////////////////////////////////////
+			// //////////////////////////////////////////////////////////////////////////////////////////////
 
-			////////////////////////////////////////////////////////////////////////////////////////////////
-			///////////////////////////////////////go to position///////////////////////////////////////////
-			////////////////////////////////////////////////////////////////////////////////////////////////
+		} else if (BehaviorStateMachine.getName().equalsIgnoreCase("goToPos")) {
 
-		}else if(BehaviorStateMachine.getName().equalsIgnoreCase("goToPos")){
+			if (BehaviorStateMachine.getState().equalsIgnoreCase("start")) {
 
-			if(BehaviorStateMachine.getState().equalsIgnoreCase("start")){
+				if (Vision.isiSee() == true) {
 
-				if(Vision.isiSee()==true){
-
-					if(Ball.isSeeTheBall()==true){
+					if (Ball.isSeeTheBall() == true) {
 
 						BehaviorStateMachine.setState("iSeeBall");
 
-					}else{
+					} else {
 
 						BehaviorStateMachine.setState("NotSeeBall");
 
 					}
 
-				}else{
+				} else {
 
 					BehaviorStateMachine.setState("start");
 
 				}
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("iSeeBall")){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"iSeeBall")) {
 
-				
-				if(Ball.getDistance()>5){
-					
+				if (Ball.getDistance() > 5) {
+
 					gTp.Act();
 					BehaviorStateMachine.setState("start");
-					
-				}else{
-					
+
+				} else {
+
 					BehaviorStateMachine.setState("start");
 				}
 
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"NotSeeBall")) {
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("NotSeeBall")){
-
-
-				tTsB.Act();
+				TurnToSeeBall.Act();
 
 				BehaviorStateMachine.setState("start");
 
 			}
 
-			//////////////////////////////////////////////////////////////////////////////////////////////
-			//////////////////////////////////////robot fall//////////////////////////////////////////////
-			//////////////////////////////////////////////////////////////////////////////////////////////
+			// ////////////////////////////////////////////////////////////////////////////////////////////
+			// ////////////////////////////////////robot
+			// fall//////////////////////////////////////////////
+			// ////////////////////////////////////////////////////////////////////////////////////////////
 
-		}else if(BehaviorStateMachine.getName().equalsIgnoreCase("Fallen")){
+		} else if (BehaviorStateMachine.getName().equalsIgnoreCase("Fallen")) {
 
-
-//			if(BehaviorStateMachine.getState().equalsIgnoreCase("start")){
-//				BehaviorDone.setName("");
-//				BehaviorDone.setBehaviorDone(true);
-//				BehaviorStateMachine.setState("turnOver");
-//				
-//			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("turnOver")){
-//
-//				if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("")){
-//					BehaviorDone.setBehaviorDone(false);
-//					BehaviorDone.setName("turnOver");
-//					tO.Act();				
-//				}else if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("turnOver")){
-//					BehaviorDone.setName("");
-//					BehaviorDone.setBehaviorDone(true);
-//					BehaviorStateMachine.setState("standup");
-//				}else{
-//
-//				}
-//
-//			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("standup")){
-//				
-//				if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("")){
-//					BehaviorDone.setBehaviorDone(false);
-//					BehaviorDone.setName("standup");
-//					sU.Act();				
-//				}else if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("standup")){
-//					BehaviorDone.setName("");
-//					BehaviorDone.setBehaviorDone(true);
-//					BehaviorStateMachine.setState("getup");
-//				}else{
-//
-//				}
-//				
-//			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("getup")){
-//				
-//				if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("")){
-//					BehaviorDone.setBehaviorDone(false);
-//					BehaviorDone.setName("getup");
-//					gU.Act();				
-//				}else if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("getup")){
-//					BehaviorDone.setName("");
-//					BehaviorDone.setBehaviorDone(true);
-//					BehaviorStateMachine.setState("KickTheBallToGoal");
-//					BehaviorStateMachine.setName("start");
-//				}else{
-//
-//				}
-//		
-//				
-//			}
-
+			// if(BehaviorStateMachine.getState().equalsIgnoreCase("start")){
+			// BehaviorDone.setName("");
+			// BehaviorDone.setBehaviorDone(true);
+			// BehaviorStateMachine.setState("turnOver");
+			//
+			// }else
+			// if(BehaviorStateMachine.getState().equalsIgnoreCase("turnOver")){
+			//
+			// if(BehaviorDone.isBehaviorDone()==true &&
+			// BehaviorDone.getName().equalsIgnoreCase("")){
+			// BehaviorDone.setBehaviorDone(false);
+			// BehaviorDone.setName("turnOver");
+			// tO.Act();
+			// }else if(BehaviorDone.isBehaviorDone()==true &&
+			// BehaviorDone.getName().equalsIgnoreCase("turnOver")){
+			// BehaviorDone.setName("");
+			// BehaviorDone.setBehaviorDone(true);
+			// BehaviorStateMachine.setState("standup");
+			// }else{
+			//
+			// }
+			//
+			// }else
+			// if(BehaviorStateMachine.getState().equalsIgnoreCase("standup")){
+			//
+			// if(BehaviorDone.isBehaviorDone()==true &&
+			// BehaviorDone.getName().equalsIgnoreCase("")){
+			// BehaviorDone.setBehaviorDone(false);
+			// BehaviorDone.setName("standup");
+			// sU.Act();
+			// }else if(BehaviorDone.isBehaviorDone()==true &&
+			// BehaviorDone.getName().equalsIgnoreCase("standup")){
+			// BehaviorDone.setName("");
+			// BehaviorDone.setBehaviorDone(true);
+			// BehaviorStateMachine.setState("getup");
+			// }else{
+			//
+			// }
+			//
+			// }else
+			// if(BehaviorStateMachine.getState().equalsIgnoreCase("getup")){
+			//
+			// if(BehaviorDone.isBehaviorDone()==true &&
+			// BehaviorDone.getName().equalsIgnoreCase("")){
+			// BehaviorDone.setBehaviorDone(false);
+			// BehaviorDone.setName("getup");
+			// gU.Act();
+			// }else if(BehaviorDone.isBehaviorDone()==true &&
+			// BehaviorDone.getName().equalsIgnoreCase("getup")){
+			// BehaviorDone.setName("");
+			// BehaviorDone.setBehaviorDone(true);
+			// BehaviorStateMachine.setState("KickTheBallToGoal");
+			// BehaviorStateMachine.setName("start");
+			// }else{
+			//
+			// }
+			//
+			//
+			// }
 
 		}
 
-
 	}
-
 
 }

@@ -13,31 +13,35 @@
 package localization;
 
 public class Coordinate {
-	public double X,Y;
-	public Coordinate(double x, double y){
-		X=x;
-		Y=y;
+	public double X, Y;
+
+	public Coordinate(double x, double y) {
+		X = x;
+		Y = y;
 	}
-	public  double getX() {
+
+	public double getX() {
 		return X;
 	}
+
 	public void setX(double x) {
 		X = x;
 	}
+
 	public double getY() {
 		return Y;
 	}
+
 	public void setY(double y) {
 		Y = y;
 	}
-	
-	public static Coordinate addCoordinate(Coordinate a, Coordinate b){
-		
-		Coordinate c = new Coordinate((a.X + b.X),(b.Y + b.Y));
-		
+
+	public static Coordinate addCoordinate(Coordinate a, Coordinate b) {
+
+		Coordinate c = new Coordinate((a.X + b.X), (b.Y + b.Y));
+
 		return c;
-		
-		
+
 	}
 
 }

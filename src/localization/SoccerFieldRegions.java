@@ -12,9 +12,6 @@
  ***********************************************************************************/
 package localization;
 
-
 public class SoccerFieldRegions {
-	
-	
 
 }

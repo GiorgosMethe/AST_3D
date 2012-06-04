@@ -19,61 +19,59 @@ import motion.xml.WalkLeaning;
 
 public class WalkToCoordinate {
 
-	public static boolean Act(Coordinate target){
+	public static boolean Act(Coordinate target) {
 
-		double ThetaToTarget=TriangleLocalization.FindAngle(target);
+		double ThetaToTarget = TriangleLocalization.FindAngle(target);
 
-		if(TriangleLocalization.FindDistanceToTarget(target)<0.5){		
-				
-				MotionTrigger.setMotion("");
-				return true;	
+		if (TriangleLocalization.FindDistanceToTarget(target) < 0.5) {
 
-		}else{
-			
-				
-				if(Math.abs(TriangleLocalization.FindAngleDifference(ThetaToTarget))<20){
+			MotionTrigger.setMotion("");
+			return true;
+
+		} else {
+
+			if (Math.abs(TriangleLocalization
+					.FindAngleDifference(ThetaToTarget)) < 20) {
+
+				MotionTrigger.setMotion("Forwards50");
+				WalkLeaning.setLean("");
+				return false;
+
+			} else if (Math.abs(TriangleLocalization
+					.FindAngleDifference(ThetaToTarget)) < 10) {
+
+				if (TriangleLocalization.FindAngleDifference(ThetaToTarget) < 0) {
 
 					MotionTrigger.setMotion("Forwards50");
-					WalkLeaning.setLean("");
+					WalkLeaning.setLean("right");
 					return false;
-					
-				}else if(Math.abs(TriangleLocalization.FindAngleDifference(ThetaToTarget))<10){
-					
-					if(TriangleLocalization.FindAngleDifference(ThetaToTarget)<0){
 
-						
-						MotionTrigger.setMotion("Forwards50");
-						WalkLeaning.setLean("right");
-						return false;
+				} else {
 
-					}else{
+					MotionTrigger.setMotion("Forwards50");
+					WalkLeaning.setLean("left");
+					return false;
 
-						MotionTrigger.setMotion("Forwards50");
-						WalkLeaning.setLean("left");
-						return false;
-
-					}
-					
-				}else{
-					
-					
-					if(TriangleLocalization.FindAngleDifference(ThetaToTarget)<0){
-						
-						MotionTrigger.setMotion("TurnRight40");
-						return false;
-						
-					}else{
-						
-						MotionTrigger.setMotion("TurnLeft40");
-						return false;
-						
-					}
-					
 				}
+
+			} else {
+
+				if (TriangleLocalization.FindAngleDifference(ThetaToTarget) < 0) {
+
+					MotionTrigger.setMotion("TurnRight40");
+					return false;
+
+				} else {
+
+					MotionTrigger.setMotion("TurnLeft40");
+					return false;
+
+				}
+
+			}
 
 		}
 
 	}
-
 
 }

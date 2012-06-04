@@ -9,71 +9,67 @@ import action.vision.VisionType;
 
 public class GoKickBallToTarget {
 
-	public static boolean Act(Coordinate Target){
+	public static boolean Act(Coordinate Target) {
 
-		if(GKBTTstates.getState().equalsIgnoreCase("Start")){
+		if (GKBTTstates.getState().equalsIgnoreCase("Start")) {
 
 			PKTGstates.setProperPositionToWalk(new Coordinate(0, 0));
-			if(TurnToBall.Act()){
+			if (TurnToBall.Act()) {
 				GKBTTstates.setState("CalculatePosition");
 			}
 
-		}else if(GKBTTstates.getState().equalsIgnoreCase("CalculatePosition")){
+		} else if (GKBTTstates.getState().equalsIgnoreCase("CalculatePosition")) {
 
-			if(CalculateValuesToTarget.Act(Target)){
+			if (CalculateValuesToTarget.Act(Target)) {
 				GKBTTstates.setState("WalkToPosition");
 			}
 
-		}else if(GKBTTstates.getState().equalsIgnoreCase("WalkToPosition")){
+		} else if (GKBTTstates.getState().equalsIgnoreCase("WalkToPosition")) {
 
-			System.out.println("ypologisa :"+PKTGstates.getResult());
+			System.out.println("ypologisa :" + PKTGstates.getResult());
 
 			GKBTTstates.setState("StartCycle");
 
+		} else if (GKBTTstates.getState().equalsIgnoreCase("StartCycle")) {
 
-		}else if(GKBTTstates.getState().equalsIgnoreCase("StartCycle")){
+			VisionType.setType(2);
+			if (WalkToCoordinate.Act(new Coordinate(PKTGstates.getResult().X,
+					PKTGstates.getResult().Y))) {
+				GKBTTstates.setState("GoForKick");
+				VisionType.setType(1);
+			}
 
-				VisionType.setType(2);
-				if(WalkToCoordinate.Act(new Coordinate(PKTGstates.getResult().X,PKTGstates.getResult().Y))){
-					GKBTTstates.setState("GoForKick");
-					VisionType.setType(1);
-				}
+		} else if (GKBTTstates.getState().equalsIgnoreCase("GoForKick")) {
 
-
-		}else if(GKBTTstates.getState().equalsIgnoreCase("GoForKick")){
-			
 			VisionType.setType(1);
-			if(GoKickBall.Act()){
+			if (GoKickBall.Act()) {
 				GKBTTstates.setState("EndKick");
 			}
-			
-		}else if(GKBTTstates.getState().equalsIgnoreCase("EndKick")){
-			
-			if(GKBTTstates.getTimeout()<300){
+
+		} else if (GKBTTstates.getState().equalsIgnoreCase("EndKick")) {
+
+			if (GKBTTstates.getTimeout() < 300) {
 
 				int timeout = GKBTTstates.getTimeout();
-				GKBTTstates.setTimeout((timeout+1));
+				GKBTTstates.setTimeout((timeout + 1));
 
-
-			}else{
+			} else {
 
 				GKBTTstates.setTimeout(0);
-				if(Ball.getDistance()<1.5){
+				if (Ball.getDistance() < 1.5) {
 					GKBTTstates.setState("GoForKick");
 					return true;
-				}else{
+				} else {
 					GKBTTstates.setState("Start");
 					return true;
 				}
-				
 
 			}
-			
+
 		}
 
 		return false;
 
 	}
-
 
 }

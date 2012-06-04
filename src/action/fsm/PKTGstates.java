@@ -6,7 +6,7 @@ import localization.Coordinate;
 public class PKTGstates {
 
 	public static int timeout;
-	
+
 	public static Coordinate ProperPositionToWalk;
 	public static CompleteCoordinate result;
 
@@ -33,9 +33,5 @@ public class PKTGstates {
 	public static void setResult(CompleteCoordinate result) {
 		PKTGstates.result = result;
 	}
-
-
-
-	
 
 }

@@ -13,13 +13,13 @@
 package motion.xml;
 
 public class Move {
-	
+
 	public String axis_name;
 	public float value;
-	
-	public Move(String axis_name,float value){
-		this.axis_name=axis_name;
-		this.value=value;	
+
+	public Move(String axis_name, float value) {
+		this.axis_name = axis_name;
+		this.value = value;
 	}
 
 	public Move() {

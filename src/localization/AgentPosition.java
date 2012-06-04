@@ -13,9 +13,9 @@
 package localization;
 
 public class AgentPosition {
-	
-	public static float X,Y,Theta;
-	
+
+	public static float X, Y, Theta;
+
 	public static float getX() {
 		return X;
 	}
@@ -39,7 +39,5 @@ public class AgentPosition {
 	public static void setTheta(float theta) {
 		Theta = theta;
 	}
-	
-	
 
 }

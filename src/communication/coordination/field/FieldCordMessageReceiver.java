@@ -10,89 +10,83 @@ import agent.Constraints;
 import communication.utils.MessageType;
 
 /***********************************************************************************
- * Copyright 2012, Technical University of Crete
- * Academic Year 2011-2012
- *
+ * Copyright 2012, Technical University of Crete Academic Year 2011-2012
+ * 
  * Thesis Project
- *
- * @author Methenitis Georgios Student ID:2006030085	
- *
- * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
- * Start date: 25-04-2012											 
- * End date  : xx-xx-2012
+ * 
+ * @author Methenitis Georgios Student ID:2006030085
+ * 
+ *         Abstract: Player Behavior and Team Strategy for the RoboCup 3D
+ *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
 public class FieldCordMessageReceiver {
-	
-	
-	public static void MessageHandler(String msg){
 
+	public static void MessageHandler(String msg) {
 
-		if(msg.startsWith("s,")){
+		if (msg.startsWith("s,")) {
 
 			StartMsgHandler(msg);
 			System.out.println(msg);
 
-		}else if(msg.startsWith("e,")){
+		} else if (msg.startsWith("e,")) {
 
 			EndMsgHandler(msg);
 			System.out.println(msg);
-			
-		}else if(msg.startsWith("a,")){
+
+		} else if (msg.startsWith("a,")) {
 
 			ActionMsgHandler(msg);
-			System.out.println("pairnw action"+msg);
+			System.out.println("pairnw action" + msg);
 
-		}else{
-
+		} else {
 
 		}
 
 	}
 
-
-	private static void StartMsgHandler(String msg){
+	private static void StartMsgHandler(String msg) {
 
 		String[] splittedMsg = msg.split(",");
 
 		int flag = Constraints.CoordinationPlayer;
-		boolean result = flag==(Integer.parseInt(splittedMsg[1]));
+		boolean result = flag == (Integer.parseInt(splittedMsg[1]));
 
-		if(result){
+		if (result) {
 
 			MessageType.setType(4);
 
 		}
 
 	}
-	
-	private static void EndMsgHandler(String msg){
+
+	private static void EndMsgHandler(String msg) {
 
 		String[] splittedMsg = msg.split(",");
 
 		int flag = Constraints.CoordinationPlayer;
-		boolean result = flag==(Integer.parseInt(splittedMsg[1]));
+		boolean result = flag == (Integer.parseInt(splittedMsg[1]));
 
-		if(result){
+		if (result) {
 
 			MessageType.setType(8);
 
 		}
 
 	}
-	
-	private static void ActionMsgHandler(String msg){
+
+	private static void ActionMsgHandler(String msg) {
 
 		String[] splittedMsg = msg.split(",");
 
 		int flag = AgentType.getPlayerNum();
-		boolean me = flag==(Integer.parseInt(splittedMsg[1]));
+		boolean me = flag == (Integer.parseInt(splittedMsg[1]));
 
-		if(me){
+		if (me) {
 
 			ActionHandler.HandleActionMessage(msg);
 
 		}
 
 	}
-	
+
 }

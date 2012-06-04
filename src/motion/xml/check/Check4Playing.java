@@ -4,11 +4,11 @@ import motion.xml.MotionPlaying;
 
 public class Check4Playing {
 
-	public static boolean check(String name){
+	public static boolean check(String name) {
 
-		if(MotionPlaying.getMotionName()!=null){
+		if (MotionPlaying.getMotionName() != null) {
 
-			if(MotionPlaying.getMotionName().equalsIgnoreCase(name)){
+			if (MotionPlaying.getMotionName().equalsIgnoreCase(name)) {
 
 				return true;
 
@@ -16,7 +16,7 @@ public class Check4Playing {
 
 		}
 
-		return false;	
+		return false;
 
 	}
 

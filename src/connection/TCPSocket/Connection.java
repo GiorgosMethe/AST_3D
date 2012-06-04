@@ -121,7 +121,7 @@ public class Connection {
 			System.out.println("Error writing to socket, shuting down...");
 		}
 
-		//System.out.println("Sent: " + msg);
+		// System.out.println("Sent: " + msg);
 	}
 
 	public void startReceiveLoop() {
@@ -173,7 +173,7 @@ public class Connection {
 			}
 
 			msg = new String(result, 0, length, "UTF-8");
-			//System.out.println("--" + msg + "\n");
+			// System.out.println("--" + msg + "\n");
 
 		} catch (IOException e) {
 			System.out

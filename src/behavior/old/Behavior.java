@@ -18,38 +18,30 @@ import perceptor.vision.Vision;
 
 public class Behavior {
 
+	public void Act() {
 
-	public void Act(){
+		if (Vision.isiSee() == true) {
 
-		if(Vision.isiSee()==true){
+			if (Ball.isSeeTheBall() == true) {
 
-			if(Ball.isSeeTheBall()==true){
-				
-				if(Ball.getDistance()>1){
-					
+				if (Ball.getDistance() > 1) {
+
 					MotionTrigger.setMotion("Forwards");
-				}else{
-					
+				} else {
+
 					MotionTrigger.setMotion("StopBehavior");
 				}
 
-			}else{
+			} else {
 				MotionTrigger.setMotion("");
 			}
 
-		}else{
-			
+		} else {
+
 			MotionTrigger.setMotion("");
-			
-			
+
 		}
 
-
-
-
-
 	}
-
-
 
 }

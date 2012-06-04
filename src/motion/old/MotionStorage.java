@@ -19,8 +19,7 @@ import java.io.InputStreamReader;
 import java.util.Vector;
 
 public class MotionStorage {
-	
-	
+
 	public static Vector<String> Forwards50;
 	public static Vector<String> backwards;
 	public static Vector<String> Forwards;
@@ -34,9 +33,8 @@ public class MotionStorage {
 	public static Vector<String> KickForwardLeft;
 	public static Vector<String> Init;
 	public static Vector<String> newWalk;
-	
-	
-	public void StoreMotions(){
+
+	public void StoreMotions() {
 
 		setForwards50(ReadMotions("Forwards50"));
 		System.out.print(".");
@@ -64,106 +62,103 @@ public class MotionStorage {
 		System.out.print(".");
 
 	}
-	
-	public Vector<String> ReadMotions(String motionName){
-		
+
+	public Vector<String> ReadMotions(String motionName) {
+
 		String MotionFilepath;
 		Vector<String> MotionVector = new Vector<String>();
 
+		if (motionName.equalsIgnoreCase("Forwards50")) {
 
-		if (motionName.equalsIgnoreCase("Forwards50")){
+			MotionFilepath = "motions/OldMotions/Forwards50.motion";
 
-			MotionFilepath="motions/OldMotions/Forwards50.motion";
+		} else if (motionName.equalsIgnoreCase("Forwards")) {
 
-		}else if (motionName.equalsIgnoreCase("Forwards")){
+			MotionFilepath = "motions/OldMotions/Forwards.motion";
 
-			MotionFilepath="motions/OldMotions/Forwards.motion";
+		} else if (motionName.equalsIgnoreCase("Backwards")) {
 
-		}else if (motionName.equalsIgnoreCase("Backwards")){
+			MotionFilepath = "motions/OldMotions/Backwards.motion";
 
-			MotionFilepath="motions/OldMotions/Backwards.motion";
+		} else if (motionName.equalsIgnoreCase("SideStepLeft")) {
 
-		}else if (motionName.equalsIgnoreCase("SideStepLeft")){
+			MotionFilepath = "motions/OldMotions/SideStepLeft.motion";
 
-			MotionFilepath="motions/OldMotions/SideStepLeft.motion";
+		} else if (motionName.equalsIgnoreCase("SideStepRight")) {
 
-		}else if (motionName.equalsIgnoreCase("SideStepRight")){
+			MotionFilepath = "motions/OldMotions/SideStepRight.motion";
 
-			MotionFilepath="motions/OldMotions/SideStepRight.motion";
+		} else if (motionName.equalsIgnoreCase("StandUpFromFront")) {
 
-		}else if (motionName.equalsIgnoreCase("StandUpFromFront")){
+			MotionFilepath = "motions/OldMotions/StandUpFromFront.motion";
 
-			MotionFilepath="motions/OldMotions/StandUpFromFront.motion";
+		} else if (motionName.equalsIgnoreCase("TurnLeft40")) {
 
-		}else if (motionName.equalsIgnoreCase("TurnLeft40")){
+			MotionFilepath = "motions/OldMotions/TurnLeft40.motion";
 
-			MotionFilepath="motions/OldMotions/TurnLeft40.motion";
+		} else if (motionName.equalsIgnoreCase("TurnLeft60")) {
 
-		}else if (motionName.equalsIgnoreCase("TurnLeft60")){
+			MotionFilepath = "motions/OldMotions/TurnLeft60.motion";
 
-			MotionFilepath="motions/OldMotions/TurnLeft60.motion";
+		} else if (motionName.equalsIgnoreCase("TurnLeft180")) {
 
-		}else if (motionName.equalsIgnoreCase("TurnLeft180")){
+			MotionFilepath = "motions/OldMotions/TurnLeft180.motion";
 
-			MotionFilepath="motions/OldMotions/TurnLeft180.motion";
+		} else if (motionName.equalsIgnoreCase("TurnRight40")) {
 
-		}else if (motionName.equalsIgnoreCase("TurnRight40")){
+			MotionFilepath = "motions/OldMotions/TurnRight40.motion";
 
-			MotionFilepath="motions/OldMotions/TurnRight40.motion";
+		} else if (motionName.equalsIgnoreCase("TurnRight60")) {
 
-		}else if (motionName.equalsIgnoreCase("TurnRight60")){
+			MotionFilepath = "motions/OldMotions/TurnRight60.motion";
 
-			MotionFilepath="motions/OldMotions/TurnRight60.motion";
+		} else if (motionName.equalsIgnoreCase("Init")) {
 
-		}else if (motionName.equalsIgnoreCase("Init")){
+			MotionFilepath = "motions/OldMotions/KickForwardRight.motion";
 
-			MotionFilepath="motions/OldMotions/KickForwardRight.motion";
-			
-		}else if (motionName.equalsIgnoreCase("KickForwardRight")){
+		} else if (motionName.equalsIgnoreCase("KickForwardRight")) {
 
-			MotionFilepath="motions/OldMotions/KickForwardRight.motion";
-		
-		}else if (motionName.equalsIgnoreCase("leftFall")){
+			MotionFilepath = "motions/OldMotions/KickForwardRight.motion";
 
-			MotionFilepath="motions/OldMotions/leftFall.motion";
-			
-		}else if (motionName.equalsIgnoreCase("KickSideRight")){
+		} else if (motionName.equalsIgnoreCase("leftFall")) {
 
-			MotionFilepath="motions/OldMotions/KickSideRight.motion";
-			
-		}else if (motionName.equalsIgnoreCase("TurnOver")){
+			MotionFilepath = "motions/OldMotions/leftFall.motion";
 
-			MotionFilepath="motions/OldMotions/TurnOver.motion";
-			
-		}else if (motionName.equalsIgnoreCase("KickForwardLeft")){
+		} else if (motionName.equalsIgnoreCase("KickSideRight")) {
 
-			MotionFilepath="motions/OldMotions/KickForwardLeft.motion";
-			
-		}else{
+			MotionFilepath = "motions/OldMotions/KickSideRight.motion";
 
-			MotionFilepath="";
+		} else if (motionName.equalsIgnoreCase("TurnOver")) {
+
+			MotionFilepath = "motions/OldMotions/TurnOver.motion";
+
+		} else if (motionName.equalsIgnoreCase("KickForwardLeft")) {
+
+			MotionFilepath = "motions/OldMotions/KickForwardLeft.motion";
+
+		} else {
+
+			MotionFilepath = "";
 		}
 
+		try {
 
-		
-		try{
-			
-			// Open the file that is the first 
+			// Open the file that is the first
 			// command line parameter
 			FileInputStream fstream = new FileInputStream(MotionFilepath);
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			String strLine;
-			//Read File Line By Line
+			// Read File Line By Line
 			while ((strLine = br.readLine()) != null) {
 				// Print the content on the console
-				//System.out.println (strLine);
+				// System.out.println (strLine);
 				MotionVector.add(strLine);
 			}
-			//Close the input stream
+			// Close the input stream
 			in.close();
-		}catch (Exception e){//Catch exception if any
+		} catch (Exception e) {// Catch exception if any
 			System.err.println("Error: " + e.getMessage());
 		}
 
@@ -274,12 +269,5 @@ public class MotionStorage {
 	public static void setNewWalk(Vector<String> newWalk) {
 		MotionStorage.newWalk = newWalk;
 	}
-	
-	
-	
-	
-	
-	
-		
 
 }

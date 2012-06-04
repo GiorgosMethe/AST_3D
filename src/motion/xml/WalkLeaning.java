@@ -1,7 +1,7 @@
 package motion.xml;
 
 public class WalkLeaning {
-	
+
 	public static String Lean;
 
 	public static String getLean() {
@@ -11,6 +11,5 @@ public class WalkLeaning {
 	public static void setLean(String lean) {
 		Lean = lean;
 	}
-		
 
 }

@@ -13,8 +13,7 @@
 package perceptor.vision;
 
 public class Vision {
-	
-	
+
 	public static boolean iSee;
 
 	public static boolean isiSee() {
@@ -24,7 +23,5 @@ public class Vision {
 	public static void setiSee(boolean iSee) {
 		Vision.iSee = iSee;
 	}
-	
-	
 
 }

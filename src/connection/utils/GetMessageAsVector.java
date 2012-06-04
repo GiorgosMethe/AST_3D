@@ -31,32 +31,30 @@ public class GetMessageAsVector {
 		int end = 0;
 		char[] valueOf;
 		valueOf = msg.toCharArray();
-		for (int i = 0; i < length+1; i++) {
+		for (int i = 0; i < length + 1; i++) {
 
-			if(i==length){
+			if (i == length) {
 				message.add("end");
-			}else{
-				
-			
-			
-			if (valueOf[i] == '(') {
-				start = i;
+			} else {
 
-			} else if (valueOf[i] == '(' || valueOf[i] == ' '
-					|| valueOf[i] == ')') {
+				if (valueOf[i] == '(') {
+					start = i;
 
-				end = i;
-				if (end > i - 1) {
-					if (msg.substring(start + 1, end).equalsIgnoreCase("")) {
+				} else if (valueOf[i] == '(' || valueOf[i] == ' '
+						|| valueOf[i] == ')') {
 
-					} else {
-						message.add(msg.substring(start + 1, end));
+					end = i;
+					if (end > i - 1) {
+						if (msg.substring(start + 1, end).equalsIgnoreCase("")) {
+
+						} else {
+							message.add(msg.substring(start + 1, end));
+						}
+
+						start = end;
 					}
 
-					start = end;
 				}
-
-			}
 
 			}
 		}

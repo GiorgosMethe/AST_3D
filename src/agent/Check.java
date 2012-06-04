@@ -14,15 +14,14 @@
 package agent;
 
 public class Check {
-	
-	public void Number(final int number){
 
-		if(number>11){
+	public void Number(final int number) {
+
+		if (number > 11) {
 			System.err.println("error number (1-11)");
 			System.exit(1);
 		}
-		
-		
+
 	}
 
 }

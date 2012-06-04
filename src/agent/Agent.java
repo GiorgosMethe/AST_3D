@@ -31,138 +31,134 @@ import communication.utils.SayEffector;
 import connection.TCPSocket.Connection;
 import connection.utils.ServerCyrcles;
 
-
 public class Agent {
 
-
-	public static int num=0;
+	public static int num = 0;
 	@SuppressWarnings("unused")
 	private static CurrentMotion mt;
 	@SuppressWarnings("unused")
 	private static float max;
 
-	public static String Teamname="";
-	
+	public static String Teamname = "";
+
 	public static void main(String[] args) {
 
 		UpdatePerceptors Gp = new UpdatePerceptors();
 		SeekBall Sb = new SeekBall();
 		SayEffector sm = new SayEffector();
-		//Think think=new Think();
-		isFallen iF=new isFallen();
-		MotionStorage Ms=new MotionStorage();
-		XMLMotionStorage nMs=new XMLMotionStorage();
-		XMLMovement pXML=new XMLMovement();
-		
-		///
+		// Think think=new Think();
+		isFallen iF = new isFallen();
+		MotionStorage Ms = new MotionStorage();
+		XMLMotionStorage nMs = new XMLMotionStorage();
+		XMLMovement pXML = new XMLMovement();
+
+		// /
 		GKBstates.setState("GoToBall");
 
-		//connection config
+		// connection config
 		String host = "127.0.0.1";
-		int port=3100;
-		
-		//initializes the connection
-		Connection con = new Connection(host,port);
+		int port = 3100;
 
-		//read old .motion files
+		// initializes the connection
+		Connection con = new Connection(host, port);
+
+		// read old .motion files
 		System.out.print("loading old .motion files");
 		Ms.StoreMotions();
 		System.out.println("OK");
 
-		//read new XML motion files
+		// read new XML motion files
 		System.out.print("loading new .XML files");
 		nMs.StoreMotions();
 		System.out.println("OK");
 
-
-
 		boolean isConnected = false;
-		//establish the connection between agent and server
+		// establish the connection between agent and server
 		isConnected = con.establishConnection();
-		//Creation of Nao robot
-		if(isConnected==true){
+		// Creation of Nao robot
+		if (isConnected == true) {
 			InitAgent.CreateAgent(con);
 		}
-		//server cyrcles
-		int i=0;
-		int j=0;
-		
-		//player number
-		num=11;
-		Teamname="e";
+		// server cyrcles
+		int i = 0;
+		int j = 0;
+
+		// player number
+		num = 11;
+		Teamname = "e";
 		// team name
-		
-		while(con.isConnected()){
 
-			//update server cyrcles
+		while (con.isConnected()) {
+
+			// update server cyrcles
 			i++;
-			
-			//update perceptors
+
+			// update perceptors
 			Gp.GetPerceptors(con);
-			
-			//update ball position
+
+			// update ball position
 			BallPosition.WhereIsTheBall();
-			
-			//update server cyrcles
+
+			// update server cyrcles
 			ServerCyrcles.setCyrclesNow(i);
-			
-			//init Agent
+
+			// init Agent
 			InitAgent.Init(Teamname, num, con);
-			//think
-			
-			String AgentAct="";
+			// think
+
+			String AgentAct = "";
 			String SayEffector = "";
-			if(!GameState.getGameState().equalsIgnoreCase("BeforeKickOff") && InitAgent.isPlayerInited()==true){	
-				
-				//GoKickBallToGoal.Act();
+			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
+					&& InitAgent.isPlayerInited() == true) {
+
+				// GoKickBallToGoal.Act();
 				SayEffector = sm.Say(MessageType.getType(), con);
-				
-				if(MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")){
+
+				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
 					AgentAct = pXML.execute("walk_fine");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")){
+				} else if (MotionTrigger.getMotion().equalsIgnoreCase(
+						"TurnLeft40")) {
 					AgentAct = pXML.execute("turn_left");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")){
-					AgentAct= pXML.execute("turn_right");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")){
-					AgentAct= pXML.execute("strafe_right");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")){
-					AgentAct= pXML.execute("strafe_left");
-				}else if(MotionTrigger.getMotion().equalsIgnoreCase("KickForwardRight")||MotionTrigger.getMotion().equalsIgnoreCase("KickForwardLeft")){
-					AgentAct= pXML.execute("strong_right_kick");
-				}else{
-					AgentAct= pXML.execute("");
+				} else if (MotionTrigger.getMotion().equalsIgnoreCase(
+						"TurnRight40")) {
+					AgentAct = pXML.execute("turn_right");
+				} else if (MotionTrigger.getMotion().equalsIgnoreCase(
+						"SideStepRight")) {
+					AgentAct = pXML.execute("strafe_right");
+				} else if (MotionTrigger.getMotion().equalsIgnoreCase(
+						"SideStepLeft")) {
+					AgentAct = pXML.execute("strafe_left");
+				} else if (MotionTrigger.getMotion().equalsIgnoreCase(
+						"KickForwardRight")
+						|| MotionTrigger.getMotion().equalsIgnoreCase(
+								"KickForwardLeft")) {
+					AgentAct = pXML.execute("strong_right_kick");
+				} else {
+					AgentAct = pXML.execute("");
 				}
-				
-				j=j+1;
+
+				j = j + 1;
 				ServerCyrcles.setGameCyrcles(j);
-				System.out.println("GC:"+ServerCyrcles.getGameCyrcles());
-				
+				System.out.println("GC:" + ServerCyrcles.getGameCyrcles());
+
 			}
-			
-			/****************************experiments***************************/
 
-			
-			
-			
-			
+			/**************************** experiments ***************************/
+
 			/*******************************************************************/
-			
-			
-			
-			//check if i am down
-			iF.Check();
-		
-			//get the head movement
-			String headAct=Sb.MoveHead(VisionType.getType());
-			//String headAct=Sb.MoveHead(1);
 
-			//create the hole agents actions
-			String Act=headAct+AgentAct+SayEffector;
-			
-			//Act
+			// check if i am down
+			iF.Check();
+
+			// get the head movement
+			String headAct = Sb.MoveHead(VisionType.getType());
+			// String headAct=Sb.MoveHead(1);
+
+			// create the hole agents actions
+			String Act = headAct + AgentAct + SayEffector;
+
+			// Act
 			con.sendMessage(Act);
-			
-			
 
 		}
 

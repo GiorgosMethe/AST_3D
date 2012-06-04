@@ -21,72 +21,72 @@ import action.simple.TurnToSeeBall;
 
 public class Goalie {
 
+	public void BehaviorController() {
 
-	public void BehaviorController(){
+		TurnToSeeBall tTsB = new TurnToSeeBall();
+		TurnToBall tTb = new TurnToBall();
+		Kick Kb = new Kick();
+		TakeGoaliePos tGp = new TakeGoaliePos();
 
-		TurnToSeeBall tTsB=new TurnToSeeBall();
-		TurnToBall tTb=new TurnToBall();
-		Kick Kb=new Kick();
-		TakeGoaliePos tGp=new TakeGoaliePos();
-		
+		if (BehaviorStateMachine.getName().equalsIgnoreCase("Goalie")) {
 
-		if(BehaviorStateMachine.getName().equalsIgnoreCase("Goalie")){
+			if (BehaviorStateMachine.getState().equalsIgnoreCase("start")) {
 
-			if(BehaviorStateMachine.getState().equalsIgnoreCase("start")){
+				if (Vision.isiSee() == true) {
 
-				if(Vision.isiSee()==true){
-
-					if(Ball.isSeeTheBall()==true){
+					if (Ball.isSeeTheBall() == true) {
 
 						BehaviorStateMachine.setState("iSeeBall");
 
-					}else{
+					} else {
 						BehaviorStateMachine.setState("NotSeeBall");
 					}
 
-				}else{
+				} else {
 					BehaviorStateMachine.setState("start");
 				}
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("iSeeBall")){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"iSeeBall")) {
 
-				tTb.Act();
+				TurnToBall.Act();
 				BehaviorStateMachine.setState("takeGoaliePos");
 
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"NotSeeBall")) {
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("NotSeeBall")){
-
-				
-				tTsB.Act();
+				TurnToSeeBall.Act();
 				BehaviorStateMachine.setState("start");
-				
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("takeGoaliePos")){
 
-				if(Ball.getDistance()>0.5){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase(
+					"takeGoaliePos")) {
+
+				if (Ball.getDistance() > 0.5) {
 					tGp.Act();
 					BehaviorStateMachine.setState("takeGoaliePos");
-				}else{
+				} else {
 					BehaviorStateMachine.setState("Kick");
-				}		
+				}
 
-			}else if(BehaviorStateMachine.getState().equalsIgnoreCase("Kick")){
+			} else if (BehaviorStateMachine.getState().equalsIgnoreCase("Kick")) {
 
-				if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("")){
+				if (BehaviorDone.isBehaviorDone() == true
+						&& BehaviorDone.getName().equalsIgnoreCase("")) {
 					BehaviorDone.setBehaviorDone(false);
 					BehaviorDone.setName("Kick");
-					Kb.Act();				
+					Kb.Act();
 					BehaviorStateMachine.setState("Kick");
-				}else if(BehaviorDone.isBehaviorDone()==true && BehaviorDone.getName().equalsIgnoreCase("Kick")){
+				} else if (BehaviorDone.isBehaviorDone() == true
+						&& BehaviorDone.getName().equalsIgnoreCase("Kick")) {
 					BehaviorDone.setName("");
 					BehaviorDone.setBehaviorDone(true);
 					BehaviorStateMachine.setState("start");
-				}else{
+				} else {
 
 				}
 			}
 
 		}
 	}
-
 
 }

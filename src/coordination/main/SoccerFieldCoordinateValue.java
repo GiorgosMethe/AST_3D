@@ -14,21 +14,17 @@ package coordination.main;
 
 import localization.Coordinate;
 
-
 public class SoccerFieldCoordinateValue {
 
+	public static double Calculate(Coordinate Spot) {
 
-	public static double Calculate(Coordinate Spot){
-		
 		double AxisXvalue = Math.rint(Spot.getX());
 		double AxisYvalue = Math.abs(Math.rint(Spot.getY()));
-		
-		double Value = AxisXvalue * ( 10 - AxisYvalue);
-		
+
+		double Value = AxisXvalue * (10 - AxisYvalue);
 
 		return Value;
-	
+
 	}
-	
-	
+
 }

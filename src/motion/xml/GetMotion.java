@@ -13,35 +13,33 @@
 package motion.xml;
 
 public class GetMotion {
-	
-	public static Motion Get(String name){
-		
-		if(name.equalsIgnoreCase("walk_fine")){
-			Motion mot=XMLMotionStorage.getWalk_fine();
+
+	public static Motion Get(String name) {
+
+		if (name.equalsIgnoreCase("walk_fine")) {
+			Motion mot = XMLMotionStorage.getWalk_fine();
 			return mot;
-		}else if(name.equalsIgnoreCase("strafe_left")){
-			Motion mot=XMLMotionStorage.getStrafe_left();
+		} else if (name.equalsIgnoreCase("strafe_left")) {
+			Motion mot = XMLMotionStorage.getStrafe_left();
 			return mot;
-		}else if(name.equalsIgnoreCase("strafe_right")){
-			Motion mot=XMLMotionStorage.getStrafe_right();
+		} else if (name.equalsIgnoreCase("strafe_right")) {
+			Motion mot = XMLMotionStorage.getStrafe_right();
 			return mot;
-		}else if(name.equalsIgnoreCase("turn_left")){
-			Motion mot=XMLMotionStorage.getTurn_left();
+		} else if (name.equalsIgnoreCase("turn_left")) {
+			Motion mot = XMLMotionStorage.getTurn_left();
 			return mot;
-		}else if(name.equalsIgnoreCase("turn_right")){
-			Motion mot=XMLMotionStorage.getTurn_right();
+		} else if (name.equalsIgnoreCase("turn_right")) {
+			Motion mot = XMLMotionStorage.getTurn_right();
 			return mot;
-		}else if(name.equalsIgnoreCase("rigth_front_front_kick")){
-			Motion mot=XMLMotionStorage.getRigth_front_front_kick();
+		} else if (name.equalsIgnoreCase("rigth_front_front_kick")) {
+			Motion mot = XMLMotionStorage.getRigth_front_front_kick();
 			return mot;
-		}else if(name.equalsIgnoreCase("strong_right_kick")){
-			Motion mot=XMLMotionStorage.getRight_strong_kick();
+		} else if (name.equalsIgnoreCase("strong_right_kick")) {
+			Motion mot = XMLMotionStorage.getRight_strong_kick();
 			return mot;
 		}
-		
-		
-		
-		return null;		
+
+		return null;
 	}
 
 }

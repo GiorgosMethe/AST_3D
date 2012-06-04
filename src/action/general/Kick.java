@@ -16,21 +16,16 @@ package action.general;
 import motion.old.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;
 
-
-
 public class Kick {
-	
-	public void Act(){
-		
-		
-		if(HingeJointPerceptor.getHj1()>0){
+
+	public void Act() {
+
+		if (HingeJointPerceptor.getHj1() > 0) {
 			MotionTrigger.setMotion("KickForwardLeft");
-		}else{
+		} else {
 			MotionTrigger.setMotion("KickForwardRight");
 		}
-		
-		
-	
+
 	}
 
 }

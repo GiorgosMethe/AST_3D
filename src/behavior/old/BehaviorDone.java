@@ -14,11 +14,10 @@
 package behavior.old;
 
 public class BehaviorDone {
-	
+
 	public static String name;
 	public static boolean behaviorDone;
 
-	
 	public static String getName() {
 		return name;
 	}
@@ -34,7 +33,5 @@ public class BehaviorDone {
 	public static void setBehaviorDone(boolean behaviorDone) {
 		BehaviorDone.behaviorDone = behaviorDone;
 	}
-	
-	
 
 }

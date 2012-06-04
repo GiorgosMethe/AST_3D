@@ -26,35 +26,18 @@ public class ReadXMLFile {
 
 	public Motion readMotion(String name) {
 
-		Motion mot=new Motion();
+		Motion mot = new Motion();
 
 		try {
 
-			String[] NaoJoints = {"rae1",
-					"rae2",
-					"rae3",
-					"rae4",
-					"lae1",
-					"lae2",
-					"lae3",
-					"lae4",
-					"lle1",
-					"lle2",
-					"lle3",
-					"lle4",
-					"lle5",
-					"lle6",
-					"rle1",
-					"rle2",
-					"rle3",
-					"rle4",
-					"rle5",
-			"rle6"};
+			String[] NaoJoints = { "rae1", "rae2", "rae3", "rae4", "lae1",
+					"lae2", "lae3", "lae4", "lle1", "lle2", "lle3", "lle4",
+					"lle5", "lle6", "rle1", "rle2", "rle3", "rle4", "rle5",
+					"rle6" };
 
-
-
-			File fXmlFile = new File("motions/XMLMotions/"+name+".xml");
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			File fXmlFile = new File("motions/XMLMotions/" + name + ".xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory
+					.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
 			doc.getDocumentElement().normalize();
@@ -71,54 +54,58 @@ public class ReadXMLFile {
 			NodeList phaseList = doc.getElementsByTagName("phase");
 			for (int temp = 0; temp < phaseList.getLength(); temp++) {
 
-				Phase pha=new Phase();
+				Phase pha = new Phase();
 				Node nNode = phaseList.item(temp);
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
 					Element eElement = (Element) nNode;
 					pha.setName(eElement.getAttribute("name"));
 					pha.setNextPhase(eElement.getAttribute("next"));
-					if(eElement.getAttribute("isFinal")==null){
+					if (eElement.getAttribute("isFinal") == null) {
 						pha.setFinal(false);
-					}else{
-						if(eElement.getAttribute("isFinal").equalsIgnoreCase("true")){
+					} else {
+						if (eElement.getAttribute("isFinal").equalsIgnoreCase(
+								"true")) {
 							pha.setFinal(true);
-						}else{
+						} else {
 							pha.setFinal(false);
 						}
 					}
 
-					for(int i=0;i<20;i++){
-						NodeList Joints = eElement.getElementsByTagName(NaoJoints[i]);
+					for (int i = 0; i < 20; i++) {
+						NodeList Joints = eElement
+								.getElementsByTagName(NaoJoints[i]);
 						for (int temp1 = 0; temp1 < Joints.getLength(); temp1++) {
-							Move mov=new Move();
+							Move mov = new Move();
 							Node nNode1 = Joints.item(temp1);
 							if (nNode1.getNodeType() == Node.ELEMENT_NODE) {
 								Element eElement1 = (Element) nNode1;
 								mov.setAxis_name(NaoJoints[i]);
-								mov.setValue(Float.parseFloat(eElement1.getAttribute("end")));
+								mov.setValue(Float.parseFloat(eElement1
+										.getAttribute("end")));
 								pha.movements.addElement(mov);
-								
+
 							}
 						}
 					}
 
-
 					NodeList Joints = eElement.getElementsByTagName("duration");
 					Node nNode1 = Joints.item(0);
-					if (nNode1.getNodeType() == Node.ELEMENT_NODE){
+					if (nNode1.getNodeType() == Node.ELEMENT_NODE) {
 						Element eElement1 = (Element) nNode1;
-						pha.setDuration(Integer.parseInt(eElement1.getTextContent()));
+						pha.setDuration(Integer.parseInt(eElement1
+								.getTextContent()));
 					}
 
-					NodeList Finalize = eElement.getElementsByTagName("finalize");
-					if(Finalize.getLength()!=0){
+					NodeList Finalize = eElement
+							.getElementsByTagName("finalize");
+					if (Finalize.getLength() != 0) {
 						Node nNode3 = Finalize.item(0);
-						if (nNode3.getNodeType() == Node.ELEMENT_NODE){
+						if (nNode3.getNodeType() == Node.ELEMENT_NODE) {
 							Element eElement1 = (Element) nNode3;
-							if(eElement1.getTextContent().equalsIgnoreCase("")){
+							if (eElement1.getTextContent().equalsIgnoreCase("")) {
 								pha.setFinalize("");
-							}else{
+							} else {
 								pha.setFinalize(eElement1.getTextContent());
 							}
 						}
@@ -136,9 +123,10 @@ public class ReadXMLFile {
 
 	@SuppressWarnings("unused")
 	private static String getTagValue(String sTag, Element eElement) {
-		NodeList nlList = eElement.getElementsByTagName(sTag).item(0).getChildNodes();
+		NodeList nlList = eElement.getElementsByTagName(sTag).item(0)
+				.getChildNodes();
 
-		Node nValue = (Node) nlList.item(0);
+		Node nValue = nlList.item(0);
 
 		return nValue.getNodeValue();
 	}

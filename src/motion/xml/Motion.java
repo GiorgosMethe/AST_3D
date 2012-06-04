@@ -15,10 +15,10 @@ package motion.xml;
 import java.util.Vector;
 
 public class Motion {
-	
-	public String name,firstPhase;
+
+	public String name, firstPhase;
 	public Vector<Phase> phases = new Vector<Phase>();
-	
+
 	public Motion(String name, String firstPhase, Vector<Phase> phases) {
 		this.name = name;
 		this.firstPhase = firstPhase;
@@ -52,7 +52,5 @@ public class Motion {
 	public void setPhases(Vector<Phase> phases) {
 		this.phases = phases;
 	}
-	
-	
-	
+
 }

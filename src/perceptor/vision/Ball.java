@@ -62,24 +62,26 @@ public class Ball {
 	public static void setAngleY(float angleY) {
 		Ball.angleY = angleY;
 	}
-	
-	public static float RealDistance(){
-		
-		JointPosition2D HeadPos=motion.kinematics.HeadPosition.Calculate();
-		
-		float distance = (float) Math.sqrt(Math.pow(Ball.getDistance(), 2) + Math.pow(HeadPos.PositionY, 2));
-		
+
+	public static float RealDistance() {
+
+		JointPosition2D HeadPos = motion.kinematics.HeadPosition.Calculate();
+
+		float distance = (float) Math.sqrt(Math.pow(Ball.getDistance(), 2)
+				+ Math.pow(HeadPos.PositionY, 2));
+
 		float distanceFromFoot = distance + HeadPos.PositionX;
-		
-		if(MotionPlaying.getMotionName()!=null){
-			if(MotionPlaying.getMotionName().equalsIgnoreCase("turn_left")||MotionPlaying.getMotionName().equalsIgnoreCase("turn_right")){
+
+		if (MotionPlaying.getMotionName() != null) {
+			if (MotionPlaying.getMotionName().equalsIgnoreCase("turn_left")
+					|| MotionPlaying.getMotionName().equalsIgnoreCase(
+							"turn_right")) {
 				distanceFromFoot = distanceFromFoot + 0.1f;
 			}
 		}
-		
+
 		return distanceFromFoot;
 
-		
 	}
-	
+
 }
