@@ -26,17 +26,14 @@ public class FieldCordMessageReceiver {
 		if (msg.startsWith("s,")) {
 
 			StartMsgHandler(msg);
-			System.out.println(msg);
 
 		} else if (msg.startsWith("e,")) {
 
 			EndMsgHandler(msg);
-			System.out.println(msg);
 
 		} else if (msg.startsWith("a,")) {
 
 			ActionMsgHandler(msg);
-			System.out.println("pairnw action" + msg);
 
 		} else {
 

@@ -9,7 +9,7 @@ public class CheckKickEnd {
 		if (MotionPlaying.getMotionPhase() != null) {
 
 			if (MotionPlaying.getMotionPhase().equalsIgnoreCase(
-					"rigth_front_front_kick4")) {
+					"rigth_front_front_kick5")) {
 
 				return true;
 

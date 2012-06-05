@@ -31,7 +31,6 @@ public class AdminCordMessageReceiver {
 
 		} else {
 
-			System.out.println("");
 
 		}
 

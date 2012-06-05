@@ -9,7 +9,7 @@ public class CheckStrongKickEnd {
 		if (MotionPlaying.getMotionPhase() != null) {
 
 			if (MotionPlaying.getMotionPhase().equalsIgnoreCase(
-					"rigth_high_kick5")) {
+					"rigth_high_kick8")) {
 
 				return true;
 

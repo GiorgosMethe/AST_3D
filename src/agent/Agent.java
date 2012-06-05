@@ -10,17 +10,30 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
+
+/**************************** toDO ***************************/
+/*stand up from fall
+ * goalkeeper behavior
+ * multiple kicks
+ * clear ball
+ * action values
+ * stategy for positioning
+ * 
+ */
+ 
 package agent;
 
 import localization.BallPosition;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
+import motion.xml.MotionPlaying;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
+import action.complex.GoKickBallToGoal;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
@@ -56,6 +69,7 @@ public class Agent {
 		GKBstates.setState("GoToBall");
 
 		// connection config
+		//String host = "192.168.1.1";
 		String host = "127.0.0.1";
 		int port = 3100;
 
@@ -111,7 +125,7 @@ public class Agent {
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
 					&& InitAgent.isPlayerInited() == true) {
 
-				// GoKickBallToGoal.Act();
+				GoKickBallToGoal.Act();
 				SayEffector = sm.Say(MessageType.getType(), con);
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
@@ -139,14 +153,15 @@ public class Agent {
 
 				j = j + 1;
 				ServerCyrcles.setGameCyrcles(j);
-				System.out.println("GC:" + ServerCyrcles.getGameCyrcles());
 
 			}
 
 			/**************************** experiments ***************************/
-
+		
 			/*******************************************************************/
 
+			
+			
 			// check if i am down
 			iF.Check();
 
