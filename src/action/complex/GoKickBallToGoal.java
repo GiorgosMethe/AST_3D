@@ -9,7 +9,9 @@ import localization.TriangleLocalization;
 import motion.old.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 import action.fsm.GKBGDstates;
+import action.simple.WalkToBall;
 import action.simple.WalkToBallForKick;
 import action.vision.VisionType;
 import agent.Constraints;
@@ -30,7 +32,7 @@ public class GoKickBallToGoal {
 
 		if (GKBGDstates.getState().equalsIgnoreCase("Start")) {
 
-			if (WalkToBallForKick.Act()) {
+			if (WalkToBall.Act()) {
 
 				GKBGDstates.setState("Start1");
 
@@ -40,47 +42,53 @@ public class GoKickBallToGoal {
 
 			VisionType.setType(4);
 
-			if (GKBGDstates.getTimeout() < 40) {
+			if(Vision.isiSee()){
+				if (GKBGDstates.getTimeout() < 10) {
 
-				int timeout = GKBGDstates.getTimeout();
-				GKBGDstates.setTimeout((timeout + 1));
+					int timeout = GKBGDstates.getTimeout();
+					GKBGDstates.setTimeout((timeout + 1));
 
-			} else if (GKBGDstates.getTimeout() < 41) {
+				} else if (GKBGDstates.getTimeout() < 20) {
 
-				int timeout = GKBGDstates.getTimeout();
-				GKBGDstates.setTimeout((timeout + 1));
-				GKBGDstates
-						.setAngle((GKBGDstates.getAngle() + LocalizationResults
-								.getBody_angle()));
-				GKBGDstates.setX((GKBGDstates.getX() + LocalizationResults
-						.getCurrent_location().getX()));
-				GKBGDstates.setY((GKBGDstates.getY() + LocalizationResults
-						.getCurrent_location().getY()));
+					int timeout = GKBGDstates.getTimeout();
+					GKBGDstates.setTimeout((timeout + 1));
+					GKBGDstates
+					.setAngle((GKBGDstates.getAngle() + LocalizationResults
+							.getBody_angle()));
+					GKBGDstates.setX((GKBGDstates.getX() + LocalizationResults
+							.getCurrent_location().getX()));
+					GKBGDstates.setY((GKBGDstates.getY() + LocalizationResults
+							.getCurrent_location().getY()));
 
-			} else {
+				} else {
 
-				GKBGDstates.setAngle((GKBGDstates.getAngle() / 1));
-				GKBGDstates.setX((GKBGDstates.getX() / 1));
-				GKBGDstates.setY((GKBGDstates.getY() / 1));
-				GKBGDstates.setState("Start2");
-				GKBGDstates.setTimeout(0);
+					GKBGDstates.setAngle((GKBGDstates.getAngle() / 10));
+					GKBGDstates.setX((GKBGDstates.getX() / 10));
+					GKBGDstates.setY((GKBGDstates.getY() / 10));
+					GKBGDstates.setTimeout(0);
+					GKBGDstates.setState("Start2");
+				}
 			}
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start2")) {
 
+			
+			
+			
 			Coordinate agent = new Coordinate(GKBGDstates.getX(),
 					GKBGDstates.getY());
-			double AngleFromGoal = TriangleLocalization
-					.FindAngleBetweenCoordinates(agent,
-							Constraints.OpponentGoal);
+			double AngleFromGoal = TriangleLocalization.FindAngleBetweenCoordinates(agent,Constraints.OpponentGoal);
 			GKBGDstates.setAngleFromGoal(AngleFromGoal);
 			GKBGDstates.setState("Start3");
+			
+			System.out.println("theta "+GKBGDstates.getAngle());
+			System.out.println("x "+GKBGDstates.getX());
+			System.out.println("y "+GKBGDstates.getY());
+			System.out.println("thetaklotsias "+GKBGDstates.getAngleFromGoal());
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start3")) {
 
-			System.out.println("mpala :"
-					+ (Math.abs(GKBGDstates.getAngle()
-							- GKBGDstates.getAngleFromGoal())));
+			System.out.println("move :"+ (Math.abs(GKBGDstates.getAngle()- GKBGDstates.getAngleFromGoal())));
 
 			if (Math.abs(GKBGDstates.getAngle()
 					- GKBGDstates.getAngleFromGoal()) > 20) {
@@ -122,12 +130,34 @@ public class GoKickBallToGoal {
 
 				}
 
+				//GKBGDstates.setAngle(LocalizationResults.getBody_angle());
 				GKBGDstates.setAngle(0);
 				GKBGDstates.setX(0);
 				GKBGDstates.setY(0);
 				GKBGDstates.setAngleFromGoal(0);
 				GKBGDstates.setState("Start1");
 
+			
+			}else if (Double.isNaN(Math.abs(GKBGDstates.getAngle()- GKBGDstates.getAngleFromGoal()))) {
+				
+				
+				if ((Math.abs(Ball.getAngleX()
+						+ HingeJointPerceptor.getHj1())) > 5) {
+
+					if ((Ball.getAngleX() + HingeJointPerceptor.getHj1()) > 0) {
+						MotionTrigger.setMotion("TurnLeft40");
+					} else {
+						MotionTrigger.setMotion("TurnRight40");
+					}
+
+				} else {
+
+					MotionTrigger.setMotion("SideStepLeft");
+
+				}
+			
+			
+			
 			} else {
 
 				MotionTrigger.setMotion("");
