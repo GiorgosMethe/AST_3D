@@ -52,8 +52,8 @@ public class SeekBall {
 		if (Vision.isiSee() == true) {
 			if (LocalizationResults.getLandmarks().size() <= 1) {
 
-				float realMoveX = gNjV.Get("he1", moveX) / 8;
-				float realMoveY = gNjV.Get("he2", moveY) / 8;
+				float realMoveX = gNjV.Get("he1", moveX) / 5;
+				float realMoveY = gNjV.Get("he2", moveY) / 5;
 				str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
 						+ realMoveY + ")";
 
@@ -69,7 +69,7 @@ public class SeekBall {
 				}
 
 				AngleX = AngleX / LocalizationResults.getLandmarks().size();
-				AngleY = gNjV.Get("he2", 10) / 10;
+				AngleY = gNjV.Get("he2", 10) / 5;
 				str = "(" + "he1" + " " + centerToLocateX(AngleX) + ")" + "("
 						+ "he2" + " " + centerToLocateY(AngleY) + ")";
 
@@ -142,8 +142,8 @@ public class SeekBall {
 				str = "(" + "he1" + " " + centerTheBallX() + ")" + "(" + "he2"
 						+ " " + centerTheBallY() + ")";
 			} else {
-				float realMoveX = gNjV.Get("he1", moveX) / 8;
-				float realMoveY = gNjV.Get("he2", moveY) / 8;
+				float realMoveX = gNjV.Get("he1", moveX) / 5;
+				float realMoveY = gNjV.Get("he2", moveY) / 5;
 				str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
 						+ realMoveY + ")";
 			}

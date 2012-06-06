@@ -17,6 +17,7 @@ import motion.old.CurrentMotion;
 import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
+import action.fsm.GKBGDstates;
 import action.fsm.GKBTTstates;
 import action.fsm.GKBstates;
 import action.fsm.PKTGstates;
@@ -44,20 +45,27 @@ public class InitAgent {
 		if (cyrcles >= 0 && cyrcles < 10) {
 			if (cyrcles == 1) {
 
-				if (number == 1) {
-					new BehaviorStateMachine("Goalie", "start");
-				} else {
-					new BehaviorStateMachine("goToPos", "start");
-				}
+				System.out.println("Player initialized");
 
 				// init behavior fsm
 				GKBstates.setState("Start");
+				
 				GKBTTstates.setState("Start");
 				GKBTTstates.setTimeout(0);
+				
 				PKTGstates.setProperPositionToWalk(new Coordinate(0, 0));
 				PKTGstates.setResult(null);
 				PKTGstates.setTimeout(0);
 
+				GKBGDstates.setTimeout(0);
+				GKBGDstates.setState("Start");
+				GKBGDstates.setAngle(0);
+				GKBGDstates.setX(0);
+				GKBGDstates.setY(0);
+				GKBGDstates.setDistance(0);
+				GKBGDstates.setBallAngle(0);
+				
+				
 				// Old Movement
 				CurrentMotion.setSoftChangeCounter(0);
 				InitAgent.setPlayerInited(false);

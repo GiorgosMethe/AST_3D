@@ -8,7 +8,7 @@ import action.simple.TurnToBall;
 import action.vision.VisionType;
 import agent.Constraints;
 
-public class GoKickBallToGoal {
+public class GoKickBallToGoalLocalize {
 
 	public static boolean Act() {
 
@@ -43,7 +43,7 @@ public class GoKickBallToGoal {
 		} else if (GKBTTstates.getState().equalsIgnoreCase("GoForKick")) {
 
 			VisionType.setType(1);
-			if (GoKickBall.Act()) {
+			if (GoKickBallDynamic.Act()) {
 				GKBTTstates.setState("EndKick");
 			}
 

@@ -33,7 +33,8 @@ import motion.xml.XMLMovement;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
-import action.complex.GoKickBallToGoal;
+import action.complex.GoKickBallToGoalDynamic;
+import action.complex.GoKickBallToGoalLocalize;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
@@ -125,7 +126,13 @@ public class Agent {
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
 					&& InitAgent.isPlayerInited() == true) {
 
-				GoKickBallToGoal.Act();
+				/**************************** experiments ***************************/
+				
+				GoKickBallToGoalDynamic.Act();
+				/*******************************************************************/
+				
+				
+				
 				SayEffector = sm.Say(MessageType.getType(), con);
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
@@ -156,9 +163,7 @@ public class Agent {
 
 			}
 
-			/**************************** experiments ***************************/
-		
-			/*******************************************************************/
+			
 
 			
 			

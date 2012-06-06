@@ -7,7 +7,7 @@ import action.fsm.PKTGstates;
 import action.simple.TurnToBall;
 import action.vision.VisionType;
 
-public class GoKickBallToTarget {
+public class GoKickBallToTargetLocalize {
 
 	public static boolean Act(Coordinate Target) {
 
@@ -42,7 +42,7 @@ public class GoKickBallToTarget {
 		} else if (GKBTTstates.getState().equalsIgnoreCase("GoForKick")) {
 
 			VisionType.setType(1);
-			if (GoKickBall.Act()) {
+			if (GoKickBallDynamic.Act()) {
 				GKBTTstates.setState("EndKick");
 			}
 

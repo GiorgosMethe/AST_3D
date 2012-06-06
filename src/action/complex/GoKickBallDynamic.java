@@ -9,7 +9,7 @@ import action.fsm.GKBstates;
 import action.simple.WalkToBall;
 import action.vision.KickSuccess;
 
-public class GoKickBall {
+public class GoKickBallDynamic {
 
 	public static boolean Act() {
 
