@@ -27,7 +27,7 @@ public class WalkToBall {
 
 			if (Ball.isSeeTheBall()) {
 
-				if ((Ball.RealDistance() < 0.785)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
+				if ((Ball.RealDistance() < 0.79)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
 
 					if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -10) {
 
@@ -81,13 +81,13 @@ public class WalkToBall {
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
 							MotionTrigger.setMotion("Forwards50");
-							WalkLeaning.setLean("left");
+							// WalkLeaning.setLean("left");
 							return false;
 
 						} else {
 
 							MotionTrigger.setMotion("Forwards50");
-							WalkLeaning.setLean("right");
+							// WalkLeaning.setLean("right");
 							return false;
 
 						}
@@ -96,7 +96,7 @@ public class WalkToBall {
 
 						if (Ball.getDistance() < 1) {
 							MotionTrigger.setMotion("Forwards50");
-							WalkLeaning.setLean("slow");
+							// WalkLeaning.setLean("slow");
 						} else {
 							MotionTrigger.setMotion("Forwards50");
 							WalkLeaning.setLean("");

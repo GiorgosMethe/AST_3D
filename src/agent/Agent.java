@@ -20,21 +20,19 @@
  * stategy for positioning
  * 
  */
- 
+
 package agent;
 
 import localization.BallPosition;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
-import motion.xml.MotionPlaying;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
-import action.complex.GoKickBallToGoalDynamic;
-import action.complex.GoKickBallToGoalLocalize;
+import action.complex.GoKickBallToGoal;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
@@ -70,7 +68,7 @@ public class Agent {
 		GKBstates.setState("GoToBall");
 
 		// connection config
-		//String host = "192.168.1.1";
+		// String host = "192.168.1.1";
 		String host = "127.0.0.1";
 		int port = 3100;
 
@@ -127,12 +125,10 @@ public class Agent {
 					&& InitAgent.isPlayerInited() == true) {
 
 				/**************************** experiments ***************************/
-				
-				GoKickBallToGoalDynamic.Act();
+
+				GoKickBallToGoal.Act();
 				/*******************************************************************/
-				
-				
-				
+
 				SayEffector = sm.Say(MessageType.getType(), con);
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
@@ -163,10 +159,6 @@ public class Agent {
 
 			}
 
-			
-
-			
-			
 			// check if i am down
 			iF.Check();
 
