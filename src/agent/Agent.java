@@ -24,6 +24,7 @@
 package agent;
 
 import localization.BallPosition;
+import localization.Coordinate;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
@@ -32,7 +33,7 @@ import motion.xml.XMLMovement;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
-import action.complex.GoKickBallToGoal;
+import action.complex.WalkToCompleteCoordinate;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
@@ -42,6 +43,7 @@ import communication.utils.SayEffector;
 
 import connection.TCPSocket.Connection;
 import connection.utils.ServerCyrcles;
+import coordination.strategy.OffTheBallMovement;
 
 public class Agent {
 
@@ -52,6 +54,8 @@ public class Agent {
 	private static float max;
 
 	public static String Teamname = "";
+	private static double ballx = 0;
+	private static double bally = 0;
 
 	public static void main(String[] args) {
 
@@ -97,7 +101,7 @@ public class Agent {
 		int j = 0;
 
 		// player number
-		num = 11;
+		num = 4;
 		Teamname = "e";
 		// team name
 
@@ -121,12 +125,22 @@ public class Agent {
 
 			String AgentAct = "";
 			String SayEffector = "";
+
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
 					&& InitAgent.isPlayerInited() == true) {
 
 				/**************************** experiments ***************************/
 
-				GoKickBallToGoal.Act();
+				if (j % 2000 == 0) {
+					ballx = -15;
+					bally = -7;
+					System.out.println(ballx + ":" + bally);
+				}
+
+				Coordinate ball = new Coordinate(ballx, bally);
+				WalkToCompleteCoordinate.Act(
+						OffTheBallMovement.Calculate(ball)[num - 1], 0.0f);
+
 				/*******************************************************************/
 
 				SayEffector = sm.Say(MessageType.getType(), con);

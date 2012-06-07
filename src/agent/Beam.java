@@ -13,7 +13,32 @@
 
 package agent;
 
+import localization.Coordinate;
+
 public class Beam {
+
+	public static Coordinate playersInitPositions[] = new Coordinate[] {
+
+	new Coordinate(-10.5, 0.0), new Coordinate(-8.5, -3.0),
+			new Coordinate(-8.5, 3.0), new Coordinate(-9.0, 0.0),
+			new Coordinate(-6.0, -1.0), new Coordinate(-6.0, 1.0),
+			new Coordinate(-4.0, -1.0), new Coordinate(-4.0, 1.0),
+			new Coordinate(-3, -0.0)
+
+	};
+
+	/*
+	 * rcssserver 0.6.6 11 player 30x20 soccer field
+	 * 
+	 * public static Coordinate playersInitPositions[] = new Coordinate[] {
+	 * 
+	 * new Coordinate(-10.5, 0.0), new Coordinate(-8.5, -3.0), new
+	 * Coordinate(-8.5, 3.0), new Coordinate(-9.0, 0.0), new Coordinate(-6.0,
+	 * -1.0), new Coordinate(-6.0, 1.0), new Coordinate(-4.0, -1.0), new
+	 * Coordinate(-4.0, 1.0), new Coordinate(-8.5, -3.0)
+	 * 
+	 * };
+	 */
 
 	public String Init(int number) {
 
@@ -22,49 +47,9 @@ public class Beam {
 		String beamY = null;
 		String beamTheta = null;
 
-		if (number == 1) {
-			beamX = "-14.5";
-			beamY = "0.0";
-			beamTheta = "0.0";
-		} else if (number == 2) {
-			beamX = "-12.5";
-			beamY = "-5.0";
-			beamTheta = "0.0";
-		} else if (number == 3) {
-			beamX = "-12.5";
-			beamY = "5.0";
-			beamTheta = "0.0";
-		} else if (number == 4) {
-			beamX = "-12.5";
-			beamY = "0.0";
-			beamTheta = "0.0";
-		} else if (number == 5) {
-			beamX = "-8.0";
-			beamY = "-3.0";
-			beamTheta = "0.0";
-		} else if (number == 6) {
-			beamX = "-10.0";
-			beamY = "0.0";
-			beamTheta = "0.0";
-		} else if (number == 7) {
-			beamX = "-5.0";
-			beamY = "3.0";
-			beamTheta = "0.0";
-		} else if (number == 8) {
-			beamX = "-8.0";
-			beamY = "3.0";
-			beamTheta = "0.0";
-		} else if (number == 9) {
-			beamX = "-4.0";
-			beamY = "2.0";
-			beamTheta = "0.0";
-		} else if (number == 10) {
-			beamX = "-4.0";
-			beamY = "-2.0";
-			beamTheta = "0.0";
-		} else if (number == 11) {
-			beamX = "-3.0";
-			beamY = "0.0";
+		if (number >= 1 && number <= 9) {
+			beamX = String.valueOf(playersInitPositions[(number - 1)].X);
+			beamY = String.valueOf(playersInitPositions[(number - 1)].Y);
 			beamTheta = "0.0";
 		} else {
 

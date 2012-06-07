@@ -119,7 +119,6 @@ public class SeekBall {
 		return str;
 	}
 
-
 	public String MoveHeadToLocalizeAgent() {
 
 		int cycles = ServerCyrcles.getCyrclesNow();
@@ -129,14 +128,13 @@ public class SeekBall {
 
 		float realMoveX = gNjV.Get("he1", moveX) / 8;
 		float realMoveY = gNjV.Get("he2", moveY) / 8;
-		
-		
-		if(Vision.isiSee()){
-			if(LocalizationResults.getLandmarks().size()>=2){
+
+		if (Vision.isiSee()) {
+			if (LocalizationResults.getLandmarks().size() >= 2) {
 				str = "(" + "he1" + " " + "0.0f" + ")" + "(" + "he2" + " "
 						+ "0.0f" + ")";
-			}else{
-				
+			} else {
+
 				str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
 						+ realMoveY + ")";
 			}

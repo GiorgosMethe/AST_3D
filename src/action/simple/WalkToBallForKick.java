@@ -81,13 +81,13 @@ public class WalkToBallForKick {
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
 							MotionTrigger.setMotion("Forwards50");
-							//WalkLeaning.setLean("left");
+							// WalkLeaning.setLean("left");
 							return false;
 
 						} else {
 
 							MotionTrigger.setMotion("Forwards50");
-							//WalkLeaning.setLean("right");
+							// WalkLeaning.setLean("right");
 							return false;
 
 						}
@@ -96,7 +96,7 @@ public class WalkToBallForKick {
 
 						if (Ball.getDistance() < 1) {
 							MotionTrigger.setMotion("Forwards50");
-							//WalkLeaning.setLean("slow");
+							// WalkLeaning.setLean("slow");
 						} else {
 							MotionTrigger.setMotion("Forwards50");
 							WalkLeaning.setLean("");

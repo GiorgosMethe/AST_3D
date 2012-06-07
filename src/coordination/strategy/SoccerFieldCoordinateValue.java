@@ -10,7 +10,7 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package coordination.main;
+package coordination.strategy;
 
 import localization.Coordinate;
 
@@ -21,7 +21,7 @@ public class SoccerFieldCoordinateValue {
 		double AxisXvalue = Math.rint(Spot.getX());
 		double AxisYvalue = Math.abs(Math.rint(Spot.getY()));
 
-		double Value = AxisXvalue * (10 - AxisYvalue);
+		double Value = AxisXvalue * (7 - AxisYvalue);
 
 		return Value;
 

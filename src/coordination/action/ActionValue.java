@@ -7,7 +7,7 @@ import localization.Coordinate;
 import localization.TriangleLocalization;
 import agent.Constraints;
 import coordination.communication.CoordinationMessage;
-import coordination.main.SoccerFieldCoordinateValue;
+import coordination.strategy.SoccerFieldCoordinateValue;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
