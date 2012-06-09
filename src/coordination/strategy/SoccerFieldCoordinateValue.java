@@ -13,6 +13,7 @@
 package coordination.strategy;
 
 import localization.Coordinate;
+import agent.Constraints;
 
 public class SoccerFieldCoordinateValue {
 
@@ -21,7 +22,7 @@ public class SoccerFieldCoordinateValue {
 		double AxisXvalue = Math.rint(Spot.getX());
 		double AxisYvalue = Math.abs(Math.rint(Spot.getY()));
 
-		double Value = AxisXvalue * (7 - AxisYvalue);
+		double Value = AxisXvalue * (Constraints.FieldWidth / 2 - AxisYvalue);
 
 		return Value;
 

@@ -31,4 +31,17 @@ public class Constraints {
 
 	public static int CoordinationTimeout = 10;
 
+	/*
+	 * Strategy constraints
+	 */
+	public static float FieldLength = 21;
+
+	public static float FieldWidth = 14;
+
+	public static float MaxFieldSpotValue = 73.5f;
+
+	// defence line
+	public static float defenceWideMinValue = 1;
+	public static float defenceWideMaxValue = 4;
+
 }

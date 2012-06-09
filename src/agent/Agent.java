@@ -101,7 +101,7 @@ public class Agent {
 		int j = 0;
 
 		// player number
-		num = 4;
+		num = 9;
 		Teamname = "e";
 		// team name
 
@@ -131,15 +131,15 @@ public class Agent {
 
 				/**************************** experiments ***************************/
 
-				if (j % 2000 == 0) {
-					ballx = -15;
-					bally = -7;
+				if (j % 1000 == 0) {
+					ballx = 5;
+					bally = 0;
 					System.out.println(ballx + ":" + bally);
 				}
 
 				Coordinate ball = new Coordinate(ballx, bally);
 				WalkToCompleteCoordinate.Act(
-						OffTheBallMovement.Calculate(ball)[num - 1], 0.0f);
+						OffTheBallMovement.Calculate(ball)[num], 0.0f);
 
 				/*******************************************************************/
 
@@ -172,6 +172,20 @@ public class Agent {
 				ServerCyrcles.setGameCyrcles(j);
 
 			}
+
+			// ballx = 10;
+			// bally = 6;
+			//
+			//
+			// Coordinate ball = new Coordinate(ballx, bally);
+			//
+			// for(int k=0;k<OffTheBallMovement.Calculate(ball).length;k++){
+			// if(OffTheBallMovement.Calculate(ball)[k]!= null){
+			// System.out.println("Player :"+k);
+			// System.out.println(Math.rint(OffTheBallMovement.Calculate(ball)[k].X));
+			// System.out.println(Math.rint(OffTheBallMovement.Calculate(ball)[k].Y));
+			// }
+			// }
 
 			// check if i am down
 			iF.Check();
