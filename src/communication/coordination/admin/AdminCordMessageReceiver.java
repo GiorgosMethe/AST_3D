@@ -19,8 +19,6 @@ public class AdminCordMessageReceiver {
 
 	public static void MessageHandler(String msg) {
 
-		System.out.println(msg);
-
 		if (msg.startsWith("i,")) {
 
 			InitReceiver(msg);

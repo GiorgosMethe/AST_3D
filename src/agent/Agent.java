@@ -24,7 +24,6 @@
 package agent;
 
 import localization.BallPosition;
-import localization.Coordinate;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
@@ -33,7 +32,6 @@ import motion.xml.XMLMovement;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
-import action.complex.WalkToCompleteCoordinate;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
@@ -43,7 +41,6 @@ import communication.utils.SayEffector;
 
 import connection.TCPSocket.Connection;
 import connection.utils.ServerCyrcles;
-import coordination.strategy.OffTheBallMovement;
 
 public class Agent {
 
@@ -131,15 +128,15 @@ public class Agent {
 
 				/**************************** experiments ***************************/
 
-				if (j % 1000 == 0) {
-					ballx = 5;
-					bally = 0;
-					System.out.println(ballx + ":" + bally);
-				}
-
-				Coordinate ball = new Coordinate(ballx, bally);
-				WalkToCompleteCoordinate.Act(
-						OffTheBallMovement.Calculate(ball)[num], 0.0f);
+				// if (j % 1000 == 0) {
+				// ballx = 5;
+				// bally = 0;
+				// System.out.println(ballx + ":" + bally);
+				// }
+				//
+				// Coordinate ball = new Coordinate(ballx, bally);
+				// WalkToCompleteCoordinate.Act(
+				// OffTheBallMovement.Calculate(ball)[num], 0.0f);
 
 				/*******************************************************************/
 

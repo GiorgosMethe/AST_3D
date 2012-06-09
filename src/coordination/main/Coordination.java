@@ -5,6 +5,8 @@ package coordination.main;
 
 import java.util.Vector;
 
+import localization.Coordinate;
+import localization.TriangleLocalization;
 import coordination.action.ActionObject;
 import coordination.action.ActionValue;
 import coordination.communication.CoordinationMessage;
@@ -29,11 +31,12 @@ public class Coordination {
 		 * calculates the actions which maximize team reward
 		 */
 
+		System.out.println("kanw coordinate");
+
 		double max = -100;
 		int player = 0;
 		for (int i = 0; i < coordinationVector.size(); i++) {
 
-			System.out.println(player);
 			double value4Goal = ActionValue.Calculate("GoKickBallToGoal",
 					coordinationVector.elementAt(i));
 
@@ -44,7 +47,43 @@ public class Coordination {
 
 		}
 
-		System.out.println("o " + player + "exei mikroteri value");
+		for (int i = 0; i < coordinationVector.size(); i++) {
+
+			if (!Double
+					.isNaN(coordinationVector.elementAt(i).getBallDistance())) {
+
+				if (!Double.isNaN(coordinationVector.elementAt(i)
+						.getBallTheta())) {
+
+					if (!Double.isNaN(coordinationVector.elementAt(i)
+							.getPlayerX())) {
+
+						if (!Double.isNaN(coordinationVector.elementAt(i)
+								.getPlayerY())) {
+
+							Coordinate a = TriangleLocalization
+									.get_det_with_distance_angle(
+											coordinationVector.elementAt(i)
+													.getPlayerX(),
+											coordinationVector.elementAt(i)
+													.getPlayerY(),
+											coordinationVector.elementAt(i)
+													.getBallTheta(),
+											coordinationVector.elementAt(i)
+													.getBallDistance());
+
+							BallObservationFilter.AddSample(a);
+
+						}
+					}
+
+				}
+
+			}
+
+		}
+
+		BallObservationFilter.update();
 
 		/*
 		 * This is the end of coordination function Coordination admin should

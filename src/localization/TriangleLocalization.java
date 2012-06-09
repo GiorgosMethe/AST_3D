@@ -560,4 +560,16 @@ public class TriangleLocalization {
 
 	}
 
+	public static Coordinate addCoordinates(Coordinate a, Coordinate b) {
+
+		double resultX;
+		double resultY;
+
+		resultX = a.X + b.X;
+
+		resultY = a.Y + b.Y;
+
+		return new Coordinate(resultX, resultY);
+	}
+
 }
