@@ -27,6 +27,11 @@ public class ActionValue {
 
 			double theta = player.getBallTheta();
 			double distance = player.getBallDistance();
+
+			double distanceWeight = 0.4;
+			double AngleWeight = 0.1;
+			double BallValueWeight = 0.5;
+
 			Coordinate ballPos = TriangleLocalization
 					.get_det_with_distance_angle(player.getPlayerX(),
 							player.getPlayerY(), theta, distance);
@@ -40,7 +45,35 @@ public class ActionValue {
 									player.PlayerX, player.getPlayerY()),
 									Constraints.OpponentGoal));
 
-			double finalValue = -distance - ThetaToGoal - ballValue;
+			double finalValue = -distance * distanceWeight - ThetaToGoal
+					* AngleWeight - ballValue * BallValueWeight;
+
+			return finalValue;
+
+		} else if (action.equalsIgnoreCase("ClearBall")) {
+
+			double theta = player.getBallTheta();
+			double distance = player.getBallDistance();
+
+			double distanceWeight = 0.4;
+			double AngleWeight = 0.1;
+			double BallValueWeight = 0.5;
+
+			Coordinate ballPos = TriangleLocalization
+					.get_det_with_distance_angle(player.getPlayerX(),
+							player.getPlayerY(), theta, distance);
+			double ballValue = SoccerFieldCoordinateValue.Calculate(ballPos);
+
+			double ThetaToGoal = Math.abs(TriangleLocalization
+					.FindAngleBetweenCoordinates(ballPos,
+							Constraints.OpponentGoal))
+					+ Math.abs(TriangleLocalization
+							.FindAngleBetweenCoordinates(new Coordinate(
+									player.PlayerX, player.getPlayerY()),
+									Constraints.OpponentGoal));
+
+			double finalValue = -distance * distanceWeight - ThetaToGoal
+					* AngleWeight + ballValue * BallValueWeight;
 
 			return finalValue;
 

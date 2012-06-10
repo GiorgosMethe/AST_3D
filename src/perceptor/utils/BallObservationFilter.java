@@ -1,7 +1,7 @@
 /**
  * 
  */
-package coordination.main;
+package perceptor.utils;
 
 import java.util.Vector;
 
@@ -21,48 +21,6 @@ import localization.TriangleLocalization;
 public class BallObservationFilter {
 
 	public static Vector<BallObservationSamples> BallSampleVector = new Vector<BallObservationSamples>();
-
-	public static void update() {
-
-		System.out.println("--------------");
-		int samples = 0;
-
-		for (int i = 0; i < BallSampleVector.size(); i++) {
-			BallSampleVector.elementAt(i).setBallPosition(
-					TriangleLocalization.addCoordinates(BallSampleVector
-							.elementAt(i).getBallPosition(), BallSampleVector
-							.elementAt(i).getSumOfObservations()));
-			Coordinate temp = BallSampleVector.elementAt(i).getBallPosition();
-			Coordinate avg = new Coordinate(temp.X
-					/ BallSampleVector.elementAt(i).getSamplesNum(), temp.Y
-					/ BallSampleVector.elementAt(i).getSamplesNum());
-
-			BallSampleVector.elementAt(i).setBallPosition(avg);
-
-			samples += BallSampleVector.elementAt(i).getSamplesNum();
-		}
-
-
-		Coordinate result = new Coordinate(0, 0);
-
-		for (int i = 0; i < BallSampleVector.size(); i++) {
-
-			Coordinate WeightedAvg = new Coordinate((BallSampleVector
-					.elementAt(i).getBallPosition().X
-					* BallSampleVector.elementAt(i).getSamplesNum() / samples),
-					BallSampleVector.elementAt(i).getBallPosition().Y
-							* BallSampleVector.elementAt(i).getSamplesNum()
-							/ samples);
-
-			result = TriangleLocalization.addCoordinates(result, WeightedAvg);
-
-		}
-
-		System.out.println("X :" + result.X + " Y :" + result.Y);
-
-		BallSampleVector.removeAllElements();
-
-	}
 
 	public static void AddSample(Coordinate sample) {
 
@@ -96,14 +54,58 @@ public class BallObservationFilter {
 
 				} else {
 
-					BallSampleVector.addElement(new BallObservationSamples(
-							sample, new Coordinate(0, 0), 0.0f, 1));
-					break;
+					if (i < BallSampleVector.size()) {
+
+					} else {
+						BallSampleVector.addElement(new BallObservationSamples(
+								sample, new Coordinate(0, 0), 0.0f, 1));
+						break;
+					}
 
 				}
 
 			}
 		}
+
+	}
+
+	public static Coordinate update() {
+
+		int samples = 0;
+
+		for (int i = 0; i < BallSampleVector.size(); i++) {
+			BallSampleVector.elementAt(i).setBallPosition(
+					TriangleLocalization.addCoordinates(BallSampleVector
+							.elementAt(i).getBallPosition(), BallSampleVector
+							.elementAt(i).getSumOfObservations()));
+			Coordinate temp = BallSampleVector.elementAt(i).getBallPosition();
+			Coordinate avg = new Coordinate(temp.X
+					/ BallSampleVector.elementAt(i).getSamplesNum(), temp.Y
+					/ BallSampleVector.elementAt(i).getSamplesNum());
+
+			BallSampleVector.elementAt(i).setBallPosition(avg);
+
+			samples += BallSampleVector.elementAt(i).getSamplesNum();
+		}
+
+		Coordinate result = new Coordinate(0, 0);
+
+		for (int i = 0; i < BallSampleVector.size(); i++) {
+
+			Coordinate WeightedAvg = new Coordinate((BallSampleVector
+					.elementAt(i).getBallPosition().X
+					* BallSampleVector.elementAt(i).getSamplesNum() / samples),
+					BallSampleVector.elementAt(i).getBallPosition().Y
+							* BallSampleVector.elementAt(i).getSamplesNum()
+							/ samples);
+
+			result = TriangleLocalization.addCoordinates(result, WeightedAvg);
+
+		}
+
+		BallSampleVector.removeAllElements();
+
+		return result;
 
 	}
 

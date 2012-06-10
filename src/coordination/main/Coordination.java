@@ -5,6 +5,8 @@ package coordination.main;
 
 import java.util.Vector;
 
+import perceptor.utils.BallObservationFilter;
+
 import localization.Coordinate;
 import localization.TriangleLocalization;
 import coordination.action.ActionObject;
@@ -23,16 +25,57 @@ import coordination.communication.CoordinationMessage;
  ***********************************************************************************/
 public class Coordination {
 
+	/*
+	 * Here is the main coordination function, coordination administrator
+	 * calculates the actions which maximize team reward
+	 */
+
 	public static void MakeCoordination(
 			Vector<CoordinationMessage> coordinationVector) {
 
 		/*
-		 * Here is the main coordination function, coordination administrator
-		 * calculates the actions which maximize team reward
+		 * Admin agent updates his belief for the position 
+		 * of the ball and the players' position
 		 */
-
-		System.out.println("kanw coordinate");
-
+		
+		CoordinationBeliefs.UpdateBeliefs(coordinationVector);
+		
+		
+		/*
+		 * 
+		 * 
+		 */
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		double max = -100;
 		int player = 0;
 		for (int i = 0; i < coordinationVector.size(); i++) {
@@ -46,44 +89,8 @@ public class Coordination {
 			}
 
 		}
-
-		for (int i = 0; i < coordinationVector.size(); i++) {
-
-			if (!Double
-					.isNaN(coordinationVector.elementAt(i).getBallDistance())) {
-
-				if (!Double.isNaN(coordinationVector.elementAt(i)
-						.getBallTheta())) {
-
-					if (!Double.isNaN(coordinationVector.elementAt(i)
-							.getPlayerX())) {
-
-						if (!Double.isNaN(coordinationVector.elementAt(i)
-								.getPlayerY())) {
-
-							Coordinate a = TriangleLocalization
-									.get_det_with_distance_angle(
-											coordinationVector.elementAt(i)
-													.getPlayerX(),
-											coordinationVector.elementAt(i)
-													.getPlayerY(),
-											coordinationVector.elementAt(i)
-													.getBallTheta(),
-											coordinationVector.elementAt(i)
-													.getBallDistance());
-
-							BallObservationFilter.AddSample(a);
-
-						}
-					}
-
-				}
-
-			}
-
-		}
-
-		BallObservationFilter.update();
+		
+		
 
 		/*
 		 * This is the end of coordination function Coordination admin should
