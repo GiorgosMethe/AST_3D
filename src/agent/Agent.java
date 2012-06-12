@@ -11,16 +11,6 @@
  * End date  : xx-xx-2012
  ***********************************************************************************/
 
-/**************************** toDO ***************************/
-/*stand up from fall
- * goalkeeper behavior
- * multiple kicks
- * clear ball
- * action values
- * stategy for positioning
- * 
- */
-
 package agent;
 
 import localization.BallPosition;
@@ -98,11 +88,9 @@ public class Agent {
 		int j = 0;
 
 		// player number
-<<<<<<< HEAD
+
 		num = 5;
-=======
-		num = 9;
->>>>>>> ac52bf145c43fecd7a55d9d5ea872361a180aab6
+
 		Teamname = "e";
 		// team name
 
