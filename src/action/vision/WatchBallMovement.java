@@ -1,7 +1,7 @@
 /**
  * 
  */
-package action.handler;
+package action.vision;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -13,12 +13,6 @@ package action.handler;
  *         Abstract: Player Behavior and Team Strategy for the RoboCup 3D
  *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
-public class ActionHandler {
-
-	public static void HandleActionMessage(String actionMessage) {
-
-		// String[] splittedMsg = actionMessage.split(",");
-
-	}
+public class WatchBallMovement {
 
 }

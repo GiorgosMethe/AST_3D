@@ -27,7 +27,7 @@ public class WalkToBall {
 
 			if (Ball.isSeeTheBall()) {
 
-				if ((Ball.RealDistance() < 0.785)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
+				if ((Ball.RealDistance() < 0.79)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
 
 					if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -10) {
 

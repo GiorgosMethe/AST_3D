@@ -23,7 +23,6 @@ import action.fsm.GKBstates;
 import action.fsm.PKTGstates;
 import action.vision.VisionType;
 import behavior.old.BehaviorDone;
-import behavior.old.BehaviorStateMachine;
 
 import communication.utils.MessageType;
 import communication.utils.WhoSent;
@@ -49,10 +48,10 @@ public class InitAgent {
 
 				// init behavior fsm
 				GKBstates.setState("Start");
-				
+
 				GKBTTstates.setState("Start");
 				GKBTTstates.setTimeout(0);
-				
+
 				PKTGstates.setProperPositionToWalk(new Coordinate(0, 0));
 				PKTGstates.setResult(null);
 				PKTGstates.setTimeout(0);
@@ -64,8 +63,7 @@ public class InitAgent {
 				GKBGDstates.setY(0);
 				GKBGDstates.setDistance(0);
 				GKBGDstates.setBallAngle(0);
-				
-				
+
 				// Old Movement
 				CurrentMotion.setSoftChangeCounter(0);
 				InitAgent.setPlayerInited(false);

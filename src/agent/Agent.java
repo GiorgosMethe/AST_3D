@@ -20,21 +20,18 @@
  * stategy for positioning
  * 
  */
- 
+
 package agent;
 
 import localization.BallPosition;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
-import motion.xml.MotionPlaying;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
-import action.complex.GoKickBallToGoalDynamic;
-import action.complex.GoKickBallToGoalLocalize;
 import action.fsm.GKBstates;
 import action.vision.SeekBall;
 import action.vision.VisionType;
@@ -54,6 +51,8 @@ public class Agent {
 	private static float max;
 
 	public static String Teamname = "";
+	private static double ballx = 0;
+	private static double bally = 0;
 
 	public static void main(String[] args) {
 
@@ -70,7 +69,7 @@ public class Agent {
 		GKBstates.setState("GoToBall");
 
 		// connection config
-		//String host = "192.168.1.1";
+		// String host = "192.168.1.1";
 		String host = "127.0.0.1";
 		int port = 3100;
 
@@ -99,7 +98,7 @@ public class Agent {
 		int j = 0;
 
 		// player number
-		num = 11;
+		num = 5;
 		Teamname = "e";
 		// team name
 
@@ -123,16 +122,24 @@ public class Agent {
 
 			String AgentAct = "";
 			String SayEffector = "";
+
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
 					&& InitAgent.isPlayerInited() == true) {
 
 				/**************************** experiments ***************************/
-				
-				GoKickBallToGoalDynamic.Act();
+
+				// if (j % 1000 == 0) {
+				// ballx = 5;
+				// bally = 0;
+				// System.out.println(ballx + ":" + bally);
+				// }
+				//
+				// Coordinate ball = new Coordinate(ballx, bally);
+				// WalkToCompleteCoordinate.Act(
+				// OffTheBallMovement.Calculate(ball)[num], 0.0f);
+
 				/*******************************************************************/
-				
-				
-				
+
 				SayEffector = sm.Say(MessageType.getType(), con);
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
@@ -163,10 +170,20 @@ public class Agent {
 
 			}
 
-			
+			// ballx = 10;
+			// bally = 6;
+			//
+			//
+			// Coordinate ball = new Coordinate(ballx, bally);
+			//
+			// for(int k=0;k<OffTheBallMovement.Calculate(ball).length;k++){
+			// if(OffTheBallMovement.Calculate(ball)[k]!= null){
+			// System.out.println("Player :"+k);
+			// System.out.println(Math.rint(OffTheBallMovement.Calculate(ball)[k].X));
+			// System.out.println(Math.rint(OffTheBallMovement.Calculate(ball)[k].Y));
+			// }
+			// }
 
-			
-			
 			// check if i am down
 			iF.Check();
 

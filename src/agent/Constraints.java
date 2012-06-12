@@ -7,7 +7,7 @@ public class Constraints {
 	/*
 	 * simulation static values
 	 */
-	public static int numberPlayers = 11;
+	public static int numberPlayers = 9;
 
 	/*
 	 * kinematics static values
@@ -22,13 +22,26 @@ public class Constraints {
 	 * Localization static values
 	 */
 	// 11 player rcssserver 0.6.6
-	public static Coordinate OpponentGoal = new Coordinate(15, 0);
+	public static Coordinate OpponentGoal = new Coordinate(10.5, 0);
 
 	/*
 	 * Communication and Coordination static values
 	 */
 	public static int CoordinationPlayer = 1;
 
-	public static int CoordinationTimeout = 10;
+	public static int CoordinationTimeout = 20;
+
+	/*
+	 * Strategy constraints
+	 */
+	public static float FieldLength = 21;
+
+	public static float FieldWidth = 14;
+
+	public static float MaxFieldSpotValue = 73.5f;
+
+	// defence line
+	public static float defenceWideMinValue = 1;
+	public static float defenceWideMaxValue = 4;
 
 }

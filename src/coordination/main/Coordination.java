@@ -5,6 +5,10 @@ package coordination.main;
 
 import java.util.Vector;
 
+import perceptor.utils.BallObservationFilter;
+
+import localization.Coordinate;
+import localization.TriangleLocalization;
 import coordination.action.ActionObject;
 import coordination.action.ActionValue;
 import coordination.communication.CoordinationMessage;
@@ -21,19 +25,61 @@ import coordination.communication.CoordinationMessage;
  ***********************************************************************************/
 public class Coordination {
 
+	/*
+	 * Here is the main coordination function, coordination administrator
+	 * calculates the actions which maximize team reward
+	 */
+
 	public static void MakeCoordination(
 			Vector<CoordinationMessage> coordinationVector) {
 
 		/*
-		 * Here is the main coordination function, coordination administrator
-		 * calculates the actions which maximize team reward
+		 * Admin agent updates his belief for the position 
+		 * of the ball and the players' position
 		 */
-
+		
+		CoordinationBeliefs.UpdateBeliefs(coordinationVector);
+		
+		
+		/*
+		 * 
+		 * 
+		 */
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		double max = -100;
 		int player = 0;
 		for (int i = 0; i < coordinationVector.size(); i++) {
 
-			System.out.println(player);
 			double value4Goal = ActionValue.Calculate("GoKickBallToGoal",
 					coordinationVector.elementAt(i));
 
@@ -43,8 +89,8 @@ public class Coordination {
 			}
 
 		}
-
-		System.out.println("o " + player + "exei mikroteri value");
+		
+		
 
 		/*
 		 * This is the end of coordination function Coordination admin should

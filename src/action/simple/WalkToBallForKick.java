@@ -10,27 +10,24 @@ import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 
 /***********************************************************************************
- * Copyright 2012, Technical University of Crete
- * Academic Year 2011-2012
- *
+ * Copyright 2012, Technical University of Crete Academic Year 2011-2012
+ * 
  * Thesis Project
- *
- * @author Methenitis Georgios Student ID:2006030085	
- *
- * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
- * Start date: 25-04-2012											 
- * End date  : xx-xx-2012
+ * 
+ * @author Methenitis Georgios Student ID:2006030085
+ * 
+ *         Abstract: Player Behavior and Team Strategy for the RoboCup 3D
+ *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
 public class WalkToBallForKick {
-	
-	
+
 	public static boolean Act() {
 
 		if (Vision.isiSee()) {
 
 			if (Ball.isSeeTheBall()) {
 
-				if ((Ball.RealDistance() < 0.9)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
+				if ((Ball.RealDistance() < 0.8)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
 
 					if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -10) {
 
@@ -84,13 +81,13 @@ public class WalkToBallForKick {
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
 							MotionTrigger.setMotion("Forwards50");
-							WalkLeaning.setLean("left");
+							// WalkLeaning.setLean("left");
 							return false;
 
 						} else {
 
 							MotionTrigger.setMotion("Forwards50");
-							WalkLeaning.setLean("right");
+							// WalkLeaning.setLean("right");
 							return false;
 
 						}
@@ -99,7 +96,7 @@ public class WalkToBallForKick {
 
 						if (Ball.getDistance() < 1) {
 							MotionTrigger.setMotion("Forwards50");
-							WalkLeaning.setLean("slow");
+							// WalkLeaning.setLean("slow");
 						} else {
 							MotionTrigger.setMotion("Forwards50");
 							WalkLeaning.setLean("");

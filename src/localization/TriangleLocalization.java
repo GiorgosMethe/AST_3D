@@ -15,15 +15,15 @@ package localization;
 
 public class TriangleLocalization {
 
-	// 11 players rcssserver 0.6.6
-	public static Coordinate F1L_det = new Coordinate(-15, 10);
-	public static Coordinate F1R_det = new Coordinate(15, 10);
-	public static Coordinate F2L_det = new Coordinate(-15, -10);
-	public static Coordinate F2R_det = new Coordinate(15, -10);
-	public static Coordinate G1L_det = new Coordinate(-15, 1.05);
-	public static Coordinate G2L_det = new Coordinate(-15, -1.05);
-	public static Coordinate G1R_det = new Coordinate(15, 1.05);
-	public static Coordinate G2R_det = new Coordinate(15, -1.05);
+	// 9 players rcssserver 0.6.5
+	public static Coordinate F1L_det = new Coordinate(-10.5, 7);
+	public static Coordinate F1R_det = new Coordinate(10.5, 7);
+	public static Coordinate F2L_det = new Coordinate(-10.5, -7);
+	public static Coordinate F2R_det = new Coordinate(10.5, -7);
+	public static Coordinate G1L_det = new Coordinate(-10.5, 1.05);
+	public static Coordinate G2L_det = new Coordinate(-10.5, -1.05);
+	public static Coordinate G1R_det = new Coordinate(10.5, 1.05);
+	public static Coordinate G2R_det = new Coordinate(10.5, -1.05);
 
 	public Coordinate Localize(Landmark lmark1, Landmark lmark2) {
 		String mark1 = null;
@@ -558,6 +558,18 @@ public class TriangleLocalization {
 
 		return WalkingCoordinateToKick;
 
+	}
+
+	public static Coordinate addCoordinates(Coordinate a, Coordinate b) {
+
+		double resultX;
+		double resultY;
+
+		resultX = a.X + b.X;
+
+		resultY = a.Y + b.Y;
+
+		return new Coordinate(resultX, resultY);
 	}
 
 }

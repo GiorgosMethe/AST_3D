@@ -29,7 +29,7 @@ public class MessagePerCycle {
 
 		if (MessageType.getCommunicationType() == 1) {
 
-			if (ServerCyrcles.getGameCyrcles() % 2 == 0) {
+			if (ServerCyrcles.getGameCyrcles() % 4 == 0) {
 
 				if (AgentType.getPlayerNum() == Constraints.CoordinationPlayer) {
 
