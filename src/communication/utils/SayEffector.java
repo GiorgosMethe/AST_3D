@@ -77,8 +77,10 @@ public class SayEffector {
 			message = "(say" + " " + MessageCreator.CreateCoordinationMessage()
 					+ ")";
 
+			
 			if (MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),
 					MessageType.getCommunicationType()) == true) {
+				
 				return message;
 			}
 
@@ -93,7 +95,7 @@ public class SayEffector {
 		} else if (type == 6) {
 
 			if (ActionMessages.getTimeout() == 0) {
-
+				
 				MessageType.setType(3);
 				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package perceptor.utils;
+package coordination.main;
 
 import localization.Coordinate;
 

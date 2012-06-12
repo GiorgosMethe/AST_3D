@@ -59,11 +59,20 @@ public class AdminMessageBuffer {
 
 		} else {
 
-			if (!cBuffer.contains(num)) {
+			boolean flag = false;
 
+			for(int i=0;i<cBuffer.size();i++){
+				if(cBuffer.elementAt(i)==num){
+					flag =true;
+					break;
+				}
+			}
+
+			if(flag){
+
+			}else{
 				cBuffer.addElement(num);
 				CoordinationMessageBuffer.addElement(msg);
-
 			}
 
 		}

@@ -7,7 +7,6 @@ import java.util.Vector;
 
 import localization.Coordinate;
 import localization.TriangleLocalization;
-import perceptor.utils.BallObservationFilter;
 import coordination.communication.CoordinationMessage;
 
 /***********************************************************************************
@@ -23,7 +22,6 @@ import coordination.communication.CoordinationMessage;
 public class CoordinationBeliefs {
 
 	public static Coordinate Ball;
-	public static Coordinate players[];
 
 	public static void UpdateBeliefs(
 			Vector<CoordinationMessage> coordinationVector) {
@@ -40,10 +38,6 @@ public class CoordinationBeliefs {
 
 				if (!Double.isNaN(coordinationVector.elementAt(i).getPlayerY())) {
 
-					CoordinationBeliefs.players[coordinationVector.elementAt(i)
-							.getNumber()] = new Coordinate(coordinationVector
-							.elementAt(i).getPlayerX(), coordinationVector
-							.elementAt(i).getPlayerY());
 
 					if (!Double.isNaN(coordinationVector.elementAt(i)
 							.getBallDistance())) {

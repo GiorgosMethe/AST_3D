@@ -11,6 +11,16 @@
  * End date  : xx-xx-2012
  ***********************************************************************************/
 
+/**************************** toDO ***************************/
+/*stand up from fall
+ * goalkeeper behavior
+ * multiple kicks
+ * clear ball
+ * action values
+ * stategy for positioning
+ * 
+ */
+
 package agent;
 
 import localization.BallPosition;
@@ -23,6 +33,7 @@ import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
 import action.fsm.GKBstates;
+import action.simple.WalkToBall;
 import action.vision.SeekBall;
 import action.vision.VisionType;
 
@@ -88,9 +99,7 @@ public class Agent {
 		int j = 0;
 
 		// player number
-
-		num = 5;
-
+		num = 9;
 		Teamname = "e";
 		// team name
 
@@ -120,6 +129,7 @@ public class Agent {
 
 				/**************************** experiments ***************************/
 
+				WalkToBall.Act();
 				// if (j % 1000 == 0) {
 				// ballx = 5;
 				// bally = 0;

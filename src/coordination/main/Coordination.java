@@ -5,12 +5,6 @@ package coordination.main;
 
 import java.util.Vector;
 
-import perceptor.utils.BallObservationFilter;
-
-import localization.Coordinate;
-import localization.TriangleLocalization;
-import coordination.action.ActionObject;
-import coordination.action.ActionValue;
 import coordination.communication.CoordinationMessage;
 
 /***********************************************************************************
@@ -33,85 +27,29 @@ public class Coordination {
 	public static void MakeCoordination(
 			Vector<CoordinationMessage> coordinationVector) {
 
+		long timeStart = System.currentTimeMillis();
 		/*
-		 * Admin agent updates his belief for the position 
-		 * of the ball and the players' position
+		 * Admin agent updates his belief for the position of the ball and the
+		 * players' position
 		 */
-		
+
 		CoordinationBeliefs.UpdateBeliefs(coordinationVector);
-		
+		System.out.println("Beliefs updated");
 		
 		/*
-		 * 
-		 * 
+		 * Main coordination function. This function is called 
+		 * in order to find actions for all agents which going
+		 * to cost a minimum value. 
 		 */
 		
+		CoordinateFunction.Calculate(coordinationVector);
+		System.out.println("Coordination completed");
+
+		long timeEnd = System.currentTimeMillis();
 		
+		long time = timeEnd - timeStart;
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		double max = -100;
-		int player = 0;
-		for (int i = 0; i < coordinationVector.size(); i++) {
-
-			double value4Goal = ActionValue.Calculate("GoKickBallToGoal",
-					coordinationVector.elementAt(i));
-
-			if (value4Goal > max) {
-				max = value4Goal;
-				player = coordinationVector.elementAt(i).getNumber();
-			}
-
-		}
-		
-		
-
-		/*
-		 * This is the end of coordination function Coordination admin should
-		 * have decided action for all field player; now these actions will be
-		 * sent to field players
-		 */
-		ActionTable.CoordinateActions.removeAllElements();
-		for (int j = 0; j < coordinationVector.size(); j++) {
-			ActionObject ActionObject = null;
-
-			if (coordinationVector.elementAt(j).getNumber() == player) {
-				ActionObject = new ActionObject(coordinationVector.elementAt(j)
-						.getNumber(), "GoKickBallToGoal", 0, 0, 0);
-			} else {
-				ActionObject = new ActionObject(coordinationVector.elementAt(j)
-						.getNumber(), "", 0, 0, 0);
-			}
-
-			ActionTable.CoordinateActions.add(ActionObject);
-
-		}
+		System.out.println("time: "+time+" s");
 
 	}
 

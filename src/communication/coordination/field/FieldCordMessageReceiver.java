@@ -8,6 +8,7 @@ import agent.AgentType;
 import agent.Constraints;
 
 import communication.utils.MessageType;
+import connection.utils.ServerCyrcles;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -58,17 +59,8 @@ public class FieldCordMessageReceiver {
 
 	private static void EndMsgHandler(String msg) {
 
-		String[] splittedMsg = msg.split(",");
-
-		int flag = Constraints.CoordinationPlayer;
-		boolean result = flag == (Integer.parseInt(splittedMsg[1]));
-
-		if (result) {
-
-			MessageType.setType(8);
-
-		}
-
+		MessageType.setType(8);
+		
 	}
 
 	private static void ActionMsgHandler(String msg) {

@@ -21,32 +21,31 @@ import coordination.strategy.SoccerFieldCoordinateValue;
  ***********************************************************************************/
 public class ActionValue {
 
-	public static double Calculate(String action, CoordinationMessage player) {
+	public static double Calculate(String action, CoordinationMessage player, Coordinate[] PotentialPosition) {
 
 		if (action.equalsIgnoreCase("GoKickBallToGoal")) {
 
 			double theta = player.getBallTheta();
 			double distance = player.getBallDistance();
 
-			double distanceWeight = 0.4;
-			double AngleWeight = 0.1;
-			double BallValueWeight = 0.5;
+			double distanceWeight = 0.8;
+			double AngleWeight = 0.2;
 
 			Coordinate ballPos = TriangleLocalization
 					.get_det_with_distance_angle(player.getPlayerX(),
 							player.getPlayerY(), theta, distance);
-			double ballValue = SoccerFieldCoordinateValue.Calculate(ballPos);
+			//double ballValue = SoccerFieldCoordinateValue.Calculate(ballPos);
 
 			double ThetaToGoal = Math.abs(TriangleLocalization
 					.FindAngleBetweenCoordinates(ballPos,
 							Constraints.OpponentGoal))
-					+ Math.abs(TriangleLocalization
-							.FindAngleBetweenCoordinates(new Coordinate(
-									player.PlayerX, player.getPlayerY()),
-									Constraints.OpponentGoal));
+							+ Math.abs(TriangleLocalization
+									.FindAngleBetweenCoordinates(new Coordinate(
+											player.PlayerX, player.getPlayerY()),
+											Constraints.OpponentGoal));
 
-			double finalValue = -distance * distanceWeight - ThetaToGoal
-					* AngleWeight - ballValue * BallValueWeight;
+			double finalValue = distance * distanceWeight * ThetaToGoal
+					* AngleWeight;
 
 			return finalValue;
 
@@ -55,6 +54,34 @@ public class ActionValue {
 			double theta = player.getBallTheta();
 			double distance = player.getBallDistance();
 
+			double distanceWeight = 0.8;
+			double AngleWeight = 0.2;
+
+			Coordinate ballPos = TriangleLocalization
+					.get_det_with_distance_angle(player.getPlayerX(),
+							player.getPlayerY(), theta, distance);
+			
+			//double ballValue = SoccerFieldCoordinateValue.Calculate(ballPos);
+
+			double ThetaToGoal = Math.abs(TriangleLocalization
+					.FindAngleBetweenCoordinates(ballPos,
+							Constraints.OpponentGoal))
+							+ Math.abs(TriangleLocalization
+									.FindAngleBetweenCoordinates(new Coordinate(
+											player.PlayerX, player.getPlayerY()),
+											Constraints.OpponentGoal));
+
+			double finalValue = distance * distanceWeight + ThetaToGoal
+					* AngleWeight;
+
+			return finalValue;
+
+
+		} else if (action.equalsIgnoreCase("OffTheBallMovement")) {
+
+			double theta = player.getBallTheta();
+			double distance = player.getBallDistance();
+
 			double distanceWeight = 0.4;
 			double AngleWeight = 0.1;
 			double BallValueWeight = 0.5;
@@ -67,13 +94,13 @@ public class ActionValue {
 			double ThetaToGoal = Math.abs(TriangleLocalization
 					.FindAngleBetweenCoordinates(ballPos,
 							Constraints.OpponentGoal))
-					+ Math.abs(TriangleLocalization
-							.FindAngleBetweenCoordinates(new Coordinate(
-									player.PlayerX, player.getPlayerY()),
-									Constraints.OpponentGoal));
+							+ Math.abs(TriangleLocalization
+									.FindAngleBetweenCoordinates(new Coordinate(
+											player.PlayerX, player.getPlayerY()),
+											Constraints.OpponentGoal));
 
-			double finalValue = -distance * distanceWeight - ThetaToGoal
-					* AngleWeight + ballValue * BallValueWeight;
+			double finalValue = distance * distanceWeight + ThetaToGoal
+					* AngleWeight - ballValue * BallValueWeight;
 
 			return finalValue;
 

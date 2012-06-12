@@ -27,7 +27,6 @@ public class CoordinationMessageUpdate {
 		int playerX = 0, playerY = 0;
 		int ballDistance = 0, ballTheta = 0;
 
-		System.out.println("----------------------------------------");
 		for (int i = 0; i < CoordinationMessage.size(); i++) {
 
 			String[] cmarray = CoordinationMessage.elementAt(i).split(",");
