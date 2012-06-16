@@ -11,7 +11,7 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package localization;
+package perceptor.localization;
 
 public class TriangleLocalization {
 
@@ -531,6 +531,19 @@ public class TriangleLocalization {
 		double BodyAngle = LocalizationResults.getBody_angle();
 		double DesirableAngle = ThetaToTarget;
 		double AngleDifference = DesirableAngle - BodyAngle;
+
+		if (AngleDifference > 180) {
+			AngleDifference = AngleDifference - 360;
+		}
+
+		return AngleDifference;
+
+	}
+	
+	public static double FindAngleDifference2(double ThetaToTarget, double myBodyTheta) {
+
+		double DesirableAngle = ThetaToTarget;
+		double AngleDifference = DesirableAngle - myBodyTheta;
 
 		if (AngleDifference > 180) {
 			AngleDifference = AngleDifference - 360;

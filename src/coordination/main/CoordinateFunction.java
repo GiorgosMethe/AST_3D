@@ -5,9 +5,10 @@ package coordination.main;
 
 import java.util.Vector;
 
+import perceptor.localization.Coordinate;
+
 import agent.Constraints;
 
-import localization.Coordinate;
 import coordination.action.ActionObject;
 import coordination.action.ActionValue;
 import coordination.communication.CoordinationMessage;

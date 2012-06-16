@@ -1,6 +1,6 @@
 package action.complex;
 
-import localization.Coordinate;
+import perceptor.localization.Coordinate;
 import perceptor.vision.Ball;
 import action.fsm.GKBTTstates;
 import action.fsm.PKTGstates;

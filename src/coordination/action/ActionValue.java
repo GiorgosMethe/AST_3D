@@ -3,8 +3,8 @@
  */
 package coordination.action;
 
-import localization.Coordinate;
-import localization.TriangleLocalization;
+import perceptor.localization.Coordinate;
+import perceptor.localization.TriangleLocalization;
 import agent.Constraints;
 import coordination.communication.CoordinationMessage;
 import coordination.strategy.SoccerFieldCoordinateValue;

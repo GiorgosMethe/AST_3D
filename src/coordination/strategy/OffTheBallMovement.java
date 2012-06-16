@@ -3,7 +3,7 @@
  */
 package coordination.strategy;
 
-import localization.Coordinate;
+import perceptor.localization.Coordinate;
 import agent.Beam;
 import agent.Constraints;
 

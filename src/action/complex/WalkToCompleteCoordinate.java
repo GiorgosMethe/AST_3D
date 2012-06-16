@@ -12,8 +12,8 @@
  ***********************************************************************************/
 package action.complex;
 
-import localization.Coordinate;
-import localization.TriangleLocalization;
+import perceptor.localization.Coordinate;
+import perceptor.localization.TriangleLocalization;
 import motion.old.MotionTrigger;
 import motion.xml.WalkLeaning;
 

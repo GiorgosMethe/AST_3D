@@ -1,4 +1,4 @@
-package localization;
+package perceptor.localization;
 
 public class BodyTheta {
 

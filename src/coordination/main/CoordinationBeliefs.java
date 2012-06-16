@@ -5,8 +5,9 @@ package coordination.main;
 
 import java.util.Vector;
 
-import localization.Coordinate;
-import localization.TriangleLocalization;
+import perceptor.localization.Coordinate;
+import perceptor.localization.TriangleLocalization;
+
 import coordination.communication.CoordinationMessage;
 
 /***********************************************************************************
@@ -27,10 +28,10 @@ public class CoordinationBeliefs {
 			Vector<CoordinationMessage> coordinationVector) {
 
 		/*
-		 * Here, we are making the collection of player thoughts
+		 * Here, we are making the collection of player perceptions
 		 * 
-		 * These thought will be used in order to locate the ball and the
-		 * position of every player in the field
+		 * These thought will be used in order to locate the ball
+		 * in the field
 		 */
 		for (int i = 0; i < coordinationVector.size(); i++) {
 

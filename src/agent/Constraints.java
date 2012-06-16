@@ -1,6 +1,6 @@
 package agent;
 
-import localization.Coordinate;
+import perceptor.localization.Coordinate;
 
 public class Constraints {
 

@@ -16,12 +16,12 @@ import java.util.Vector;
 
 import javax.vecmath.Vector3d;
 
-import localization.AgentPosition;
-import localization.Coordinate;
-import localization.Landmark;
-import localization.LocalizationResults;
-import localization.TriangleLocalization;
 import perceptor.joints.HingeJointPerceptor;
+import perceptor.localization.AgentPosition;
+import perceptor.localization.Coordinate;
+import perceptor.localization.Landmark;
+import perceptor.localization.LocalizationResults;
+import perceptor.localization.TriangleLocalization;
 import perceptor.sensors.Accelerometer;
 import perceptor.sensors.ForceResistancePerceptor;
 import perceptor.sensors.GyroScope;

@@ -1,6 +1,6 @@
 package action.vision;
 
-import localization.Coordinate;
+import perceptor.localization.Coordinate;
 
 public class KickSuccess {
 

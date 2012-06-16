@@ -3,7 +3,7 @@
  */
 package coordination.main;
 
-import localization.Coordinate;
+import perceptor.localization.Coordinate;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012

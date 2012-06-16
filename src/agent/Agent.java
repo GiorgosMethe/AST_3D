@@ -23,18 +23,19 @@
 
 package agent;
 
-import localization.BallPosition;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
+import perceptor.localization.BallPosition;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
+import action.complex.WalkToDirection;
 import action.fsm.GKBstates;
 import action.simple.WalkToBall;
-import action.vision.SeekBall;
+import action.vision.HeadMovement;
 import action.vision.VisionType;
 
 import communication.utils.MessageType;
@@ -58,7 +59,7 @@ public class Agent {
 	public static void main(String[] args) {
 
 		UpdatePerceptors Gp = new UpdatePerceptors();
-		SeekBall Sb = new SeekBall();
+		HeadMovement Sb = new HeadMovement();
 		SayEffector sm = new SayEffector();
 		// Think think=new Think();
 		isFallen iF = new isFallen();
@@ -129,20 +130,15 @@ public class Agent {
 
 				/**************************** experiments ***************************/
 
-				WalkToBall.Act();
-				// if (j % 1000 == 0) {
-				// ballx = 5;
-				// bally = 0;
-				// System.out.println(ballx + ":" + bally);
-				// }
-				//
-				// Coordinate ball = new Coordinate(ballx, bally);
-				// WalkToCompleteCoordinate.Act(
-				// OffTheBallMovement.Calculate(ball)[num], 0.0f);
+				WalkToDirection.Act(90);
 
-				/*******************************************************************/
 
 				SayEffector = sm.Say(MessageType.getType(), con);
+				/*******************************************************************/
+
+				
+				
+				
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
 					AgentAct = pXML.execute("walk_fine");

@@ -12,9 +12,9 @@
  ***********************************************************************************/
 package action.general;
 
-import localization.BallPosition;
 import motion.old.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;
+import perceptor.localization.BallPosition;
 
 public class GoToPos {
 

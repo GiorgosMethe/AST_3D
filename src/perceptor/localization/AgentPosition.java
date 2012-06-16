@@ -10,38 +10,34 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package localization;
+package perceptor.localization;
 
-public class Coordinate {
-	public double X, Y;
+public class AgentPosition {
 
-	public Coordinate(double x, double y) {
-		X = x;
-		Y = y;
-	}
+	public static float X, Y, Theta;
 
-	public double getX() {
+	public static float getX() {
 		return X;
 	}
 
-	public void setX(double x) {
+	public static void setX(float x) {
 		X = x;
 	}
 
-	public double getY() {
+	public static float getY() {
 		return Y;
 	}
 
-	public void setY(double y) {
+	public static void setY(float y) {
 		Y = y;
 	}
 
-	public static Coordinate addCoordinate(Coordinate a, Coordinate b) {
+	public static float getTheta() {
+		return Theta;
+	}
 
-		Coordinate c = new Coordinate((a.X + b.X), (b.Y + b.Y));
-
-		return c;
-
+	public static void setTheta(float theta) {
+		Theta = theta;
 	}
 
 }

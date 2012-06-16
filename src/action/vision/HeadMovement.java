@@ -13,14 +13,14 @@
 
 package action.vision;
 
-import localization.LocalizationResults;
 import motion.utils.GetNormalJointValue;
 import perceptor.joints.HingeJointPerceptor;
+import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 import connection.utils.ServerCyrcles;
 
-public class SeekBall {
+public class HeadMovement {
 
 	GetNormalJointValue gNjV = new GetNormalJointValue();
 

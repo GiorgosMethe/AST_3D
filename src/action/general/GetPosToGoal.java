@@ -13,11 +13,11 @@
 
 package action.general;
 
-import localization.BallPosition;
-import localization.Landmark;
-import localization.LocalizationResults;
 import motion.old.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;
+import perceptor.localization.BallPosition;
+import perceptor.localization.Landmark;
+import perceptor.localization.LocalizationResults;
 import perceptor.worldstate.TeamState;
 import behavior.old.BehaviorStateMachine;
 

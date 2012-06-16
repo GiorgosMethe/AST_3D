@@ -38,8 +38,8 @@ public class Coordination {
 		
 		/*
 		 * Main coordination function. This function is called 
-		 * in order to find actions for all agents which going
-		 * to cost a minimum value. 
+		 * in order to find actions for all agents which are
+		 * going to maximize the payoff function. 
 		 */
 		
 		CoordinateFunction.Calculate(coordinationVector);

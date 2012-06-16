@@ -3,7 +3,7 @@
  */
 package communication.utils;
 
-import localization.LocalizationResults;
+import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
 import agent.AgentType;
 import coordination.action.ActionTranslator;

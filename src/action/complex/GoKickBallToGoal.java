@@ -3,11 +3,11 @@
  */
 package action.complex;
 
-import localization.Coordinate;
-import localization.LocalizationResults;
-import localization.TriangleLocalization;
 import motion.old.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;
+import perceptor.localization.Coordinate;
+import perceptor.localization.LocalizationResults;
+import perceptor.localization.TriangleLocalization;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 import action.fsm.GKBGDstates;

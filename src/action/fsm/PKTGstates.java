@@ -1,7 +1,7 @@
 package action.fsm;
 
-import localization.CompleteCoordinate;
-import localization.Coordinate;
+import perceptor.localization.CompleteCoordinate;
+import perceptor.localization.Coordinate;
 
 public class PKTGstates {
 

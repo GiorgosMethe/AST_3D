@@ -4,9 +4,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
 
-import localization.BodyTheta;
-import localization.Landmark;
-import localization.LocalizationResults;
+import perceptor.localization.BodyTheta;
+import perceptor.localization.Landmark;
+import perceptor.localization.LocalizationResults;
+
 
 public class ObstacleAvoidance {
 

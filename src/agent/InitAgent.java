@@ -12,7 +12,7 @@
  ***********************************************************************************/
 package agent;
 
-import localization.Coordinate;
+import perceptor.localization.Coordinate;
 import motion.old.CurrentMotion;
 import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;

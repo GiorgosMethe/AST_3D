@@ -13,8 +13,8 @@
 
 package action.general;
 
-import localization.LocalizationResults;
 import motion.old.MotionTrigger;
+import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
 
 public class TakeGoaliePos {
