@@ -27,6 +27,18 @@ public class ActionTranslator {
 
 			Action = "GoKickBallToGoal";
 
+		} else if (type == 2){
+			
+			Action = "ClearBall";
+			
+		} else if (type == 3) {
+
+			Action = "WalkToDirection";
+			
+		} else {
+			
+			Action = "";
+			
 		}
 
 		return Action;
@@ -40,6 +52,14 @@ public class ActionTranslator {
 		if (name.equalsIgnoreCase("GoKickBallToGoal")) {
 
 			type = 1;
+
+		} else if (name.equalsIgnoreCase("ClearBall")) {
+
+			type = 2;
+
+		} else if (name.equalsIgnoreCase("WalkToDirection")) {
+
+			type = 3;
 
 		} else {
 

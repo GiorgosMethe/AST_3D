@@ -130,7 +130,7 @@ public class Agent {
 
 				/**************************** experiments ***************************/
 
-				WalkToDirection.Act(90);
+				
 
 
 				SayEffector = sm.Say(MessageType.getType(), con);
