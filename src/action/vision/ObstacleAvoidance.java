@@ -13,7 +13,7 @@ public class ObstacleAvoidance {
 
 	public static boolean Act() {
 
-		final Comparator<Landmark> SENIORITY_ORDER = new Comparator<Landmark>() {
+		final Comparator<Landmark> POSITIVE_ORDER = new Comparator<Landmark>() {
 			@Override
 			public int compare(Landmark e1, Landmark e2) {
 				boolean Cmp = e2.Horizontal_Angle >= (e1.Horizontal_Angle);
@@ -33,7 +33,7 @@ public class ObstacleAvoidance {
 		final float DangerDist = (float) 0.35;
 		final int Dangerzone = 2;
 		Players.addAll(RivalPlayers);
-		Collections.sort(Players, SENIORITY_ORDER);
+		Collections.sort(Players, POSITIVE_ORDER);
 
 		for (int i = 0; i < Players.size(); i++) {
 
