@@ -301,10 +301,10 @@ public class UpdatePerceptors {
 							Landmark lm = new Landmark("f1l",
 									Float.parseFloat(ReceivedMessage.elementAt(
 											j + 2).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 4).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 3).toString()));
+											Float.parseFloat(ReceivedMessage.elementAt(
+													j + 4).toString()),
+													Float.parseFloat(ReceivedMessage.elementAt(
+															j + 3).toString()));
 							landmarks.add(lm);
 							j = j + 4;
 						} else if (ReceivedMessage.elementAt(j)
@@ -312,10 +312,10 @@ public class UpdatePerceptors {
 							Landmark lm = new Landmark("f2l",
 									Float.parseFloat(ReceivedMessage.elementAt(
 											j + 2).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 4).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 3).toString()));
+											Float.parseFloat(ReceivedMessage.elementAt(
+													j + 4).toString()),
+													Float.parseFloat(ReceivedMessage.elementAt(
+															j + 3).toString()));
 							landmarks.add(lm);
 							j = j + 4;
 						} else if (ReceivedMessage.elementAt(j)
@@ -323,10 +323,10 @@ public class UpdatePerceptors {
 							Landmark lm = new Landmark("f1r",
 									Float.parseFloat(ReceivedMessage.elementAt(
 											j + 2).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 4).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 3).toString()));
+											Float.parseFloat(ReceivedMessage.elementAt(
+													j + 4).toString()),
+													Float.parseFloat(ReceivedMessage.elementAt(
+															j + 3).toString()));
 							landmarks.add(lm);
 							j = j + 4;
 						} else if (ReceivedMessage.elementAt(j)
@@ -334,10 +334,10 @@ public class UpdatePerceptors {
 							Landmark lm = new Landmark("f2r",
 									Float.parseFloat(ReceivedMessage.elementAt(
 											j + 2).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 4).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 3).toString()));
+											Float.parseFloat(ReceivedMessage.elementAt(
+													j + 4).toString()),
+													Float.parseFloat(ReceivedMessage.elementAt(
+															j + 3).toString()));
 							landmarks.add(lm);
 							j = j + 4;
 						} else if (ReceivedMessage.elementAt(j)
@@ -345,10 +345,10 @@ public class UpdatePerceptors {
 							Landmark lm = new Landmark("g1l",
 									Float.parseFloat(ReceivedMessage.elementAt(
 											j + 2).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 4).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 3).toString()));
+											Float.parseFloat(ReceivedMessage.elementAt(
+													j + 4).toString()),
+													Float.parseFloat(ReceivedMessage.elementAt(
+															j + 3).toString()));
 							landmarks.add(lm);
 							j = j + 4;
 						} else if (ReceivedMessage.elementAt(j)
@@ -356,10 +356,10 @@ public class UpdatePerceptors {
 							Landmark lm = new Landmark("g2l",
 									Float.parseFloat(ReceivedMessage.elementAt(
 											j + 2).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 4).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 3).toString()));
+											Float.parseFloat(ReceivedMessage.elementAt(
+													j + 4).toString()),
+													Float.parseFloat(ReceivedMessage.elementAt(
+															j + 3).toString()));
 							landmarks.add(lm);
 							j = j + 4;
 						} else if (ReceivedMessage.elementAt(j)
@@ -367,10 +367,10 @@ public class UpdatePerceptors {
 							Landmark lm = new Landmark("g1r",
 									Float.parseFloat(ReceivedMessage.elementAt(
 											j + 2).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 4).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 3).toString()));
+											Float.parseFloat(ReceivedMessage.elementAt(
+													j + 4).toString()),
+													Float.parseFloat(ReceivedMessage.elementAt(
+															j + 3).toString()));
 							landmarks.add(lm);
 							j = j + 4;
 						} else if (ReceivedMessage.elementAt(j)
@@ -378,10 +378,10 @@ public class UpdatePerceptors {
 							Landmark lm = new Landmark("g2r",
 									Float.parseFloat(ReceivedMessage.elementAt(
 											j + 2).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 4).toString()),
-									Float.parseFloat(ReceivedMessage.elementAt(
-											j + 3).toString()));
+											Float.parseFloat(ReceivedMessage.elementAt(
+													j + 4).toString()),
+													Float.parseFloat(ReceivedMessage.elementAt(
+															j + 3).toString()));
 							landmarks.add(lm);
 							j = j + 4;
 
@@ -389,43 +389,52 @@ public class UpdatePerceptors {
 								.equalsIgnoreCase("b")) {
 
 							iSeeTheBall = true;
+
 							float distance = Float.parseFloat(ReceivedMessage
 									.elementAt(j + 2).toString());
 							Ball.setDistance(distance);
+
 							float angleX = Float.parseFloat(ReceivedMessage
 									.elementAt(j + 3).toString());
 							Ball.setAngleX(angleX);
+
 							float angleY = Float.parseFloat(ReceivedMessage
 									.elementAt(j + 4).toString());
 							Ball.setAngleY(angleY);
-							// System.out.println("ball @ "+i);
 
 							j = j + 4;
+
 						} else if (ReceivedMessage.elementAt(j)
 								.equalsIgnoreCase("p")) {
+
 							j++;
+
 							String team_name = null;
 							String player_id = null;
+
 							double player_distance = 0;
 							double player_horizontal_angle = 0;
 							double player_vertical_angle = 0;
+
 							j++;
 							team_name = ReceivedMessage.elementAt(j);
 							j++; // message=id
 							j++;
 							player_id = ReceivedMessage.elementAt(j);
 							j++;
+
 							int k = 0;
+
 							while (ReceivedMessage.elementAt(j)
 									.equalsIgnoreCase("head")
 									|| ReceivedMessage.elementAt(j)
-											.equalsIgnoreCase("rlowerarm")
+									.equalsIgnoreCase("rlowerarm")
 									|| ReceivedMessage.elementAt(j)
-											.equalsIgnoreCase("llowerarm")
+									.equalsIgnoreCase("llowerarm")
 									|| ReceivedMessage.elementAt(j)
-											.equalsIgnoreCase("rfoot")
+									.equalsIgnoreCase("rfoot")
 									|| ReceivedMessage.elementAt(j)
-											.equalsIgnoreCase("lfoot")) {
+									.equalsIgnoreCase("lfoot")) {
 								k++;
 								j++; // message=pol
 								j++;
@@ -442,6 +451,7 @@ public class UpdatePerceptors {
 												.elementAt(j));
 								j++;
 							}
+
 							j--;
 							if (k != 0) {
 								player_distance = player_distance / k;
@@ -471,22 +481,22 @@ public class UpdatePerceptors {
 							"f1l")
 							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
 									"f2l")
-							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
-									"f2r")
-							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
-									"f1r")
-							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
-									"g1l")
-							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
-									"g2l")
-							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
-									"g1r")
-							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
-									"g2r")
-							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
-									"b")
-							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
-									"p"));
+									|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
+											"f2r")
+											|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
+													"f1r")
+													|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
+															"g1l")
+															|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
+																	"g2l")
+																	|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
+																			"g1r")
+																			|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
+																					"g2r")
+																					|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
+																							"b")
+																							|| ReceivedMessage.elementAt(j).equalsIgnoreCase(
+																									"p"));
 					Coordinate loc_buffer = new Coordinate(0, 0);
 
 					int k = 0;
@@ -556,13 +566,13 @@ public class UpdatePerceptors {
 					}
 
 					AgentPosition
-							.setTheta((float) (head_angle + HingeJointPerceptor
-									.getHj1()));
+					.setTheta((float) (head_angle + HingeJointPerceptor
+							.getHj1()));
 
 					LocalizationResults.setHead_angle(head_angle);
 					LocalizationResults
-							.setBody_angle((head_angle - HingeJointPerceptor
-									.getHj1()));
+					.setBody_angle((head_angle - HingeJointPerceptor
+							.getHj1()));
 
 					Coordinate Ball_det = localizer
 							.get_det_with_distance_angle(curloc.getX(),
@@ -579,10 +589,10 @@ public class UpdatePerceptors {
 
 						@SuppressWarnings("unused")
 						Coordinate found_player = localizer
-								.get_det_with_distance_angle(curloc.getX(),
-										curloc.getY(), (head_angle + coplayers
-												.elementAt(jj)
-												.getHorizontal_Angle()),
+						.get_det_with_distance_angle(curloc.getX(),
+								curloc.getY(), (head_angle + coplayers
+										.elementAt(jj)
+										.getHorizontal_Angle()),
 										coplayers.elementAt(jj).getDistance());
 
 					}
@@ -593,11 +603,11 @@ public class UpdatePerceptors {
 
 						@SuppressWarnings("unused")
 						Coordinate found_player = localizer
-								.get_det_with_distance_angle(curloc.getX(),
-										curloc.getY(), (head_angle + rivals
-												.elementAt(jj)
-												.getHorizontal_Angle()), rivals
-												.elementAt(jj).getDistance());
+						.get_det_with_distance_angle(curloc.getX(),
+								curloc.getY(), (head_angle + rivals
+										.elementAt(jj)
+										.getHorizontal_Angle()), rivals
+										.elementAt(jj).getDistance());
 					}
 					if (rivals.size() == 0) {
 						// System.out.println("I see no rivals");

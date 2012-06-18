@@ -34,7 +34,17 @@ public class Coordination {
 		 */
 
 		CoordinationBeliefs.UpdateBeliefs(coordinationVector);
-		System.out.println("Beliefs updated");
+				
+		/*
+		 * Players are going to be splitted in three coordination subsets.
+		 * 
+		 * Three vectors will be returned from this function. Each one of them
+		 * will have a subset of agents which is going to coordinate together. 
+		 */
+		
+		CoordinationSplitter.Split(coordinationVector);
+		
+		
 		
 		/*
 		 * Main coordination function. This function is called 

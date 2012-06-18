@@ -10,7 +10,7 @@ import perceptor.localization.Coordinate;
 import agent.Constraints;
 
 import coordination.action.ActionObject;
-import coordination.action.ActionValue;
+import coordination.action.ActiveActionValue;
 import coordination.communication.CoordinationMessage;
 import coordination.strategy.OffTheBallMovement;
 
@@ -39,7 +39,7 @@ public class CoordinateFunction {
 		int player = 0;
 		for (int i = 0; i < coordinationVector.size(); i++) {
 
-			double value4Goal = ActionValue.Calculate("GoKickBallToGoal",
+			double value4Goal = ActiveActionValue.Calculate("GoKickBallToGoal",
 					coordinationVector.elementAt(i),TeamPositions);
 
 			if(min>value4Goal){
@@ -48,33 +48,37 @@ public class CoordinateFunction {
 			}
 		}
 
-		System.out.println("GoKickBall");
-		System.out.println("num: "+player);
-		System.out.println("value :"+min);
+		//System.out.println("GoKickBall");
+		//System.out.println("num: "+player);
+		//System.out.println("value :"+min);
+
+
+		for(int i=0;i<coordinationVector.size();i++){
+			if(coordinationVector.elementAt(i).getNumber()!=player){
+			
+				
+				
+			}			
+		}
+		
+		
+		
+		
+
 
 
 		
-		for(int j=2;j<Constraints.numberPlayers;j++){
-			double min1 =1000;
-			if(TeamPositions[j]!=null){
-				
-				for(int i=0;i<coordinationVector.size();i++){		
-					if(coordinationVector!=null){
-						if(coordinationVector.elementAt(i).getNumber()!=player){
-							
-							double value4oBm = 0;
-
-
-						}
-					}
-
-				}	
-
-			}
-		}
-
-
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		/*
 		 * This is the end of coordination function Coordination admin should
 		 * have decided action for all field player; now these actions will be

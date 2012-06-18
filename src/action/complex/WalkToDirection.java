@@ -37,7 +37,6 @@ public class WalkToDirection {
 	};
 	
 	
-
 	public static void Act(double Direction) {
 
 		double ThetaToDirection;
