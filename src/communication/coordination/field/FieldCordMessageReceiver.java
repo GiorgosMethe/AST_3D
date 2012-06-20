@@ -1,15 +1,3 @@
-/**
- * 
- */
-package communication.coordination.field;
-
-import action.handler.ActionHandler;
-import agent.AgentType;
-import agent.Constraints;
-
-import communication.utils.MessageType;
-import connection.utils.ServerCyrcles;
-
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
  * 
@@ -20,6 +8,16 @@ import connection.utils.ServerCyrcles;
  *         Abstract: Player Behavior and Team Strategy for the RoboCup 3D
  *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
+
+package communication.coordination.field;
+
+import action.handler.ActionHandler;
+import agent.AgentType;
+import agent.Constraints;
+import communication.utils.MessageType;
+import connection.utils.ServerCyrcles;
+
+
 public class FieldCordMessageReceiver {
 
 	public static void MessageHandler(String msg) {
