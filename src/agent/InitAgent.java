@@ -12,11 +12,11 @@
  ***********************************************************************************/
 package agent;
 
-import perceptor.localization.Coordinate;
 import motion.old.CurrentMotion;
 import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
+import perceptor.localization.Coordinate;
 import action.fsm.GKBGDstates;
 import action.fsm.GKBTTstates;
 import action.fsm.GKBstates;

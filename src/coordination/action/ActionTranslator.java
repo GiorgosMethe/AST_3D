@@ -27,18 +27,18 @@ public class ActionTranslator {
 
 			Action = "GoKickBallToGoal";
 
-		} else if (type == 2){
-			
+		} else if (type == 2) {
+
 			Action = "ClearBall";
-			
+
 		} else if (type == 3) {
 
 			Action = "WalkToDirection";
-			
+
 		} else {
-			
+
 			Action = "";
-			
+
 		}
 
 		return Action;

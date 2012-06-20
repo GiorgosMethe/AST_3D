@@ -12,10 +12,10 @@
  ***********************************************************************************/
 package action.complex;
 
-import perceptor.localization.Coordinate;
-import perceptor.localization.TriangleLocalization;
 import motion.old.MotionTrigger;
 import motion.xml.WalkLeaning;
+import perceptor.localization.Coordinate;
+import perceptor.localization.TriangleLocalization;
 
 public class WalkToCompleteCoordinate {
 

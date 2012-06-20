@@ -49,7 +49,7 @@ public class AdminCordMessageReceiver {
 	}
 
 	public static void CoordinationReceiver(String msg) {
-		
+
 		String[] splittedMsg = msg.split(",");
 
 		boolean result = AdminMessageBuffer.addC(

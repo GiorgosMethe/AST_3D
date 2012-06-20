@@ -14,9 +14,8 @@ package communication.coordination.field;
 import action.handler.ActionHandler;
 import agent.AgentType;
 import agent.Constraints;
-import communication.utils.MessageType;
-import connection.utils.ServerCyrcles;
 
+import communication.utils.MessageType;
 
 public class FieldCordMessageReceiver {
 
@@ -58,7 +57,7 @@ public class FieldCordMessageReceiver {
 	private static void EndMsgHandler(String msg) {
 
 		MessageType.setType(8);
-		
+
 	}
 
 	private static void ActionMsgHandler(String msg) {

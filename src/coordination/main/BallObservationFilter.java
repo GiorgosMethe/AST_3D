@@ -8,7 +8,6 @@ import java.util.Vector;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
 
-
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
  * 

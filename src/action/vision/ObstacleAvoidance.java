@@ -8,7 +8,6 @@ import perceptor.localization.BodyTheta;
 import perceptor.localization.Landmark;
 import perceptor.localization.LocalizationResults;
 
-
 public class ObstacleAvoidance {
 
 	public static boolean Act() {

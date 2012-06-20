@@ -539,8 +539,9 @@ public class TriangleLocalization {
 		return AngleDifference;
 
 	}
-	
-	public static double FindAngleDifference2(double ThetaToTarget, double myBodyTheta) {
+
+	public static double FindAngleDifference2(double ThetaToTarget,
+			double myBodyTheta) {
 
 		double DesirableAngle = ThetaToTarget;
 		double AngleDifference = DesirableAngle - myBodyTheta;

@@ -4,26 +4,18 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
 
-import perceptor.localization.Coordinate;
-import perceptor.localization.Landmark;
-import perceptor.localization.TriangleLocalization;
-import coordination.action.ActionObject;
 import coordination.communication.CoordinationMessage;
 
 public class CoordinationSplitter {
-	
-	public static Vector<CoordinationMessage> coordinationSubset1 = new Vector<CoordinationMessage>();
-	public static Vector<CoordinationMessage> coordinationSubset2 = new Vector<CoordinationMessage>();
-	public static Vector<CoordinationMessage> coordinationSubset3 = new Vector<CoordinationMessage>();
 
-	
-	
-	
-	public static void Split(Vector<CoordinationMessage> coordinationVector){
-		
-		
+	public static Vector<CoordinationMessage> ActiveSubset = new Vector<CoordinationMessage>();
+	public static Vector<CoordinationMessage> PassiveSubset = new Vector<CoordinationMessage>();
+	public static Vector<CoordinationMessage> InactiveSubset = new Vector<CoordinationMessage>();
+
+	public static void Split(Vector<CoordinationMessage> coordinationVector) {
+
 		final Comparator<CoordinationMessage> POSITIVE_ORDER = new Comparator<CoordinationMessage>() {
-			
+
 			public int compare(CoordinationMessage e1, CoordinationMessage e2) {
 				boolean Cmp = e2.getBallDistance() >= (e1.getBallDistance());
 				if (Cmp != true) {
@@ -34,21 +26,45 @@ public class CoordinationSplitter {
 			}
 		};
 		
+		
+		//clear previous created subsets
+		ActiveSubset.removeAllElements();
+		PassiveSubset.removeAllElements();
+		InactiveSubset.removeAllElements();
+		
+	
+		
+		//sort coordination vector 
 		Collections.sort(coordinationVector, POSITIVE_ORDER);
+
 		
-		System.out.println("###############################");
-		for(int i=0;i<coordinationVector.size();i++){
-			System.out.println("-------");
-			System.out.println("paixths "+coordinationVector.elementAt(i).getNumber());
-			System.out.println("8esh mpalas "+CoordinationBeliefs.Ball.X+","+CoordinationBeliefs.Ball.Y);
-			System.out.println("8esh paikth "+coordinationVector.elementAt(i).getPlayerX()+","+coordinationVector.elementAt(i).getPlayerY());
-			System.out.println("ball distan "+coordinationVector.elementAt(i).getBallDistance());
-			System.out.println();
+		
+		/*
+		 * Creation of three subsets
+		 * 3 players will be added into active subset
+		 * the rest players will be added either into the
+		 * passive subset or into the inactive subset
+		 */
+		
+		ActiveSubset.addElement(coordinationVector.elementAt(0));
+		ActiveSubset.addElement(coordinationVector.elementAt(1));
+		ActiveSubset.addElement(coordinationVector.elementAt(2));
+		
+		
+		for(int i=3;i<coordinationVector.size();i++){
+			
+			if(coordinationVector.elementAt(i).getBallDistance()!=80){
+				
+				PassiveSubset.addElement(coordinationVector.elementAt(i));
+				
+			}else{
+				
+				InactiveSubset.addElement(coordinationVector.elementAt(i));
+				
+			}
 		}
-		
-		
-		
+			
 		
 	}
-
+	
 }

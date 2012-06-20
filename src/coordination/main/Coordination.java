@@ -34,32 +34,50 @@ public class Coordination {
 		 */
 
 		CoordinationBeliefs.UpdateBeliefs(coordinationVector);
-				
+
 		/*
 		 * Players are going to be splitted in three coordination subsets.
 		 * 
 		 * Three vectors will be returned from this function. Each one of them
-		 * will have a subset of agents which is going to coordinate together. 
+		 * will have a subset of agents which is going to coordinate together.
 		 */
-		
+
 		CoordinationSplitter.Split(coordinationVector);
 		
 		
+		System.out.println();
+		System.out.print("Active subset: ");
+		for(int i=0;i<CoordinationSplitter.ActiveSubset.size();i++){
+			System.out.print(CoordinationSplitter.ActiveSubset.elementAt(i).getNumber()+" ");
+		}
 		
+		System.out.println();
+		System.out.print("Passive subset: ");
+		for(int i=0;i<CoordinationSplitter.PassiveSubset.size();i++){
+			System.out.print(CoordinationSplitter.PassiveSubset.elementAt(i).getNumber()+" ");
+		}
+		
+		System.out.println();
+		System.out.print("Passive subset: ");
+		for(int i=0;i<CoordinationSplitter.InactiveSubset.size();i++){
+			System.out.print(CoordinationSplitter.InactiveSubset.elementAt(i).getNumber()+" ");
+		}
+		
+
 		/*
-		 * Main coordination function. This function is called 
-		 * in order to find actions for all agents which are
-		 * going to maximize the payoff function. 
+		 * Main coordination function. This function is called in order to find
+		 * actions for all agents which are going to maximize the payoff
+		 * function.
 		 */
-		
+
 		CoordinateFunction.Calculate(coordinationVector);
 		System.out.println("Coordination completed");
 
 		long timeEnd = System.currentTimeMillis();
-		
+
 		long time = timeEnd - timeStart;
-	
-		System.out.println("time: "+time+" s");
+
+		System.out.println("time: " + time + " s");
 
 	}
 

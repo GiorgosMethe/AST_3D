@@ -32,9 +32,7 @@ import perceptor.localization.BallPosition;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
-import action.complex.WalkToDirection;
 import action.fsm.GKBstates;
-import action.simple.WalkToBall;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
 
@@ -100,7 +98,7 @@ public class Agent {
 		int j = 0;
 
 		// player number
-		num =9;
+		num = 9;
 		Teamname = "e";
 		// team name
 
@@ -130,15 +128,8 @@ public class Agent {
 
 				/**************************** experiments ***************************/
 
-				
-
-
 				SayEffector = sm.Say(MessageType.getType(), con);
 				/*******************************************************************/
-
-				
-				
-				
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
 					AgentAct = pXML.execute("walk_fine");
