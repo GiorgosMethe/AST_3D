@@ -16,6 +16,7 @@ public class CoordinationSplitter {
 
 		final Comparator<CoordinationMessage> POSITIVE_ORDER = new Comparator<CoordinationMessage>() {
 
+			@Override
 			public int compare(CoordinationMessage e1, CoordinationMessage e2) {
 				boolean Cmp = e2.getBallDistance() >= (e1.getBallDistance());
 				if (Cmp != true) {

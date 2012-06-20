@@ -29,6 +29,7 @@ import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
 import perceptor.localization.BallPosition;
+import perceptor.localization.Coordinate;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
@@ -41,6 +42,7 @@ import communication.utils.SayEffector;
 
 import connection.TCPSocket.Connection;
 import connection.utils.ServerCyrcles;
+import coordination.strategy.SupportStrategicPositions;
 
 public class Agent {
 
@@ -54,7 +56,7 @@ public class Agent {
 	private static double ballx = 0;
 	private static double bally = 0;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		UpdatePerceptors Gp = new UpdatePerceptors();
 		HeadMovement Sb = new HeadMovement();
@@ -128,6 +130,7 @@ public class Agent {
 
 				/**************************** experiments ***************************/
 
+				
 				SayEffector = sm.Say(MessageType.getType(), con);
 				/*******************************************************************/
 
@@ -159,20 +162,22 @@ public class Agent {
 
 			}
 
-			// ballx = 10;
-			// bally = 6;
-			//
-			//
-			// Coordinate ball = new Coordinate(ballx, bally);
-			//
-			// for(int k=0;k<OffTheBallMovement.Calculate(ball).length;k++){
-			// if(OffTheBallMovement.Calculate(ball)[k]!= null){
-			// System.out.println("Player :"+k);
-			// System.out.println(Math.rint(OffTheBallMovement.Calculate(ball)[k].X));
-			// System.out.println(Math.rint(OffTheBallMovement.Calculate(ball)[k].Y));
-			// }
-			// }
+			ballx = 0.5;
+			bally = 7;
 
+
+			Coordinate ball = new Coordinate(ballx, bally);
+
+			for(int k=0;k<SupportStrategicPositions.Calculate(ball).length;k++){
+				if(SupportStrategicPositions.Calculate(ball)[k]!= null){
+					
+					System.out.println("Player :"+k);
+					System.out.println(Math.rint(SupportStrategicPositions.Calculate(ball)[k].X));
+					System.out.println(Math.rint(SupportStrategicPositions.Calculate(ball)[k].Y));
+					
+				}
+			}
+			
 			// check if i am down
 			iF.Check();
 
