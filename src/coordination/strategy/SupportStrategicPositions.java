@@ -25,65 +25,51 @@ public class SupportStrategicPositions {
 		double value = SoccerFieldCoordinateValue.Calculate(Ball);
 
 
-		double Theta=0,Theta1=0,Theta2=0,Offset1=0,Offset2=0;
+		double Theta=0,Theta1=0,Theta2=0,distance1=0,distance2=0;
 
-		if(Ball.X>=0){
+		//if(Ball.X>=0){
 
 			Theta=TriangleLocalization.FindAngleBetweenCoordinates(Ball, Constraints.OpponentGoal);
+			distance1 = 1;
+			distance2 = 2;
+			Coordinate temp = TriangleLocalization.get_det_with_distance_angle(Ball.X, Ball.Y, Theta+Theta1, distance1);
 			
-			if(Math.abs(Ball.X)>8 && Math.abs(Ball.Y)>5){
-
-				if(Theta<0){
-					
-					Theta1 = -10-(10*Math.random());
-					Theta2 = -30-(10*Math.random());
-					
-				}else{
-					
-					Theta1 = 10+(10*Math.random());
-					Theta2 = 30+(10*Math.random());
-					
-				}
-				
-				Offset1 = 4 + Math.random() * 2;
-				Offset2 = 4 + Math.random() * 2;
-				
-			}else{
-
-				Theta1 = 30 + 90*(Ball.X/(Constraints.FieldLength/2));
-				Theta2 = -30 - 90*(Ball.X/(Constraints.FieldLength/2));
-
-				Offset1 = 4 - 2*(Ball.X/(Constraints.FieldLength/2));
-				Offset2 = 4 - 2*(Ball.X/(Constraints.FieldLength/2));
-
+			Theta1=90;
+			Theta2=-90;
+			
+			while(!ProperPosition(TriangleLocalization.get_det_with_distance_angle(temp.X, temp.Y, Theta+Theta1, distance2))){
+				Theta1 -= 10;
 			}
+			
+			while(!ProperPosition(TriangleLocalization.get_det_with_distance_angle(temp.X, temp.Y, Theta+Theta2, distance2))){
+				Theta2 += 10;
+			}
+			
 
-		}
+		//}
 
-		NewCoordinates[0] = TriangleLocalization.get_det_with_distance_angle(Ball.X, Ball.Y, Theta+Theta1, Offset1);
-		NewCoordinates[1] = TriangleLocalization.get_det_with_distance_angle(Ball.X, Ball.Y, Theta+Theta2, Offset2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		NewCoordinates[0] = TriangleLocalization.get_det_with_distance_angle(temp.X, temp.Y, Theta+Theta1, distance2);
+		NewCoordinates[1] = TriangleLocalization.get_det_with_distance_angle(temp.X, temp.Y, Theta+Theta2, distance2);
 
 
 
 		return NewCoordinates;
 
+	}
+	
+	public static boolean ProperPosition(Coordinate spot){
+		
+		if(Math.abs(spot.X)<(Constraints.FieldLength/2 - 1)){		
+			if(Math.abs(spot.Y)<(Constraints.FieldWidth/2 -1)){	
+				
+				return true;
+				
+			}		
+		}
+		
+		
+		return false;	
+		
 	}
 
 }

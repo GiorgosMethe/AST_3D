@@ -152,8 +152,8 @@ public class Agent {
 
 			}
 
-			ballx = 0.5;
-			bally = 7;
+			ballx = 0;
+			bally = -7;
 
 
 			Coordinate ball = new Coordinate(ballx, bally);
@@ -162,8 +162,8 @@ public class Agent {
 				if(SupportStrategicPositions.Calculate(ball)[k]!= null){
 					
 					System.out.println("Player :"+k);
-					System.out.println(Math.rint(SupportStrategicPositions.Calculate(ball)[k].X));
-					System.out.println(Math.rint(SupportStrategicPositions.Calculate(ball)[k].Y));
+					System.out.println(SupportStrategicPositions.Calculate(ball)[k].X);
+					System.out.println(SupportStrategicPositions.Calculate(ball)[k].Y);
 					
 				}
 			}
