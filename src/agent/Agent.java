@@ -11,16 +11,6 @@
  * End date  : xx-xx-2012
  ***********************************************************************************/
 
-/**************************** toDO ***************************/
-/*stand up from fall
- * goalkeeper behavior
- * multiple kicks
- * clear ball
- * action values
- * stategy for positioning
- * 
- */
-
 package agent;
 
 import motion.old.CurrentMotion;
