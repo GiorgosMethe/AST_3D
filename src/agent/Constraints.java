@@ -24,6 +24,8 @@ public class Constraints {
 	// 11 player rcssserver 0.6.6
 	public static Coordinate OpponentGoal = new Coordinate(10.5, 0);
 
+	public static Coordinate OwnGoal = new Coordinate(-10.5, 0);
+	
 	/*
 	 * Communication and Coordination static values
 	 */
