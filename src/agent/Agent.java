@@ -13,6 +13,7 @@
 
 package agent;
 
+import geometry.GeometricUtils;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
@@ -156,17 +157,23 @@ public class Agent {
 			bally = -7;
 
 
-			Coordinate ball = new Coordinate(ballx, bally);
-
-			for(int k=0;k<SupportStrategicPositions.Calculate(ball).length;k++){
-				if(SupportStrategicPositions.Calculate(ball)[k]!= null){
-					
-					System.out.println("Player :"+k);
-					System.out.println(SupportStrategicPositions.Calculate(ball)[k].X);
-					System.out.println(SupportStrategicPositions.Calculate(ball)[k].Y);
-					
-				}
-			}
+//			Coordinate ball = new Coordinate(ballx, bally);
+//
+//			for(int k=0;k<SupportStrategicPositions.Calculate(ball).length;k++){
+//				if(SupportStrategicPositions.Calculate(ball)[k]!= null){
+//					
+//					System.out.println("Player :"+k);
+//					System.out.println(SupportStrategicPositions.Calculate(ball)[k].X);
+//					System.out.println(SupportStrategicPositions.Calculate(ball)[k].Y);
+//					
+//				}
+//			}
+			/**************************** experiments ***************************/
+			GeometricUtils.FindIntersection(new Coordinate(0, 0),
+					new Coordinate(4, 0),
+					new Coordinate(0, 4),
+					new Coordinate(4, 4));
+			/*******************************************************************/
 			
 			// check if i am down
 			iF.Check();
