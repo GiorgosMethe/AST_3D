@@ -12,17 +12,20 @@
  ***********************************************************************************/
 package coordination.strategy;
 
-import agent.Constraints;
+import java.util.Vector;
+
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import agent.Constraints;
 
-public class SupportPositions {
+public class ActivePositions {
 
-	public static Coordinate[] SupportPositions = new Coordinate[2];
+	public static Vector<Coordinate> ActivePositions = new Vector<Coordinate>();
 	
 	public static void Calculate(Coordinate Ball) {
 
 		Coordinate CoordinateOfInterest;
+		ActivePositions.removeAllElements();
 		
 		double Theta=0,Theta1=0,Theta2=0,distance1=0,distance2=0;
 
@@ -67,8 +70,9 @@ public class SupportPositions {
 			
 		}
 
-		SupportPositions[0] = TriangleLocalization.get_det_with_distance_angle(CoordinateOfInterest.X, CoordinateOfInterest.Y, Theta+Theta1, distance2);
-		SupportPositions[1] = TriangleLocalization.get_det_with_distance_angle(CoordinateOfInterest.X, CoordinateOfInterest.Y, Theta+Theta2, distance2);
+		ActivePositions.add(TriangleLocalization.get_det_with_distance_angle(CoordinateOfInterest.X, CoordinateOfInterest.Y, Theta+Theta1, distance2));
+		ActivePositions.add(TriangleLocalization.get_det_with_distance_angle(CoordinateOfInterest.X, CoordinateOfInterest.Y, Theta+Theta2, distance2));
+		ActivePositions.add(Ball);
 		
 
 	}

@@ -90,7 +90,7 @@ public class Agent {
 		int j = 0;
 
 		// player number
-		num = 1;
+		num = 9;
 		Teamname = "e";
 		// team name
 
@@ -154,10 +154,6 @@ public class Agent {
 
 			/**************************** experiments ***************************/
 			
-			GeometricUtils.FindIntersection(new Coordinate(0, 0),
-					new Coordinate(4, 0),
-					new Coordinate(0, 4),
-					new Coordinate(4, 4));
 			
 			/*******************************************************************/
 			

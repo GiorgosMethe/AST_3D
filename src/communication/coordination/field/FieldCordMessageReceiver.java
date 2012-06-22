@@ -62,16 +62,16 @@ public class FieldCordMessageReceiver {
 
 	private static void ActionMsgHandler(String msg) {
 
-		String[] splittedMsg = msg.split(",");
-
-		int flag = AgentType.getPlayerNum();
-		boolean me = flag == (Integer.parseInt(splittedMsg[1]));
-
-		if (me) {
-
-			ActionHandler.HandleActionMessage(msg);
-
-		}
+//		String[] splittedMsg = msg.split(",");
+//
+//		int flag = AgentType.getPlayerNum();
+//		boolean me = flag == (Integer.parseInt(splittedMsg[1]));
+//
+//		if (me) {
+//
+//			ActionHandler.HandleActionMessage(msg);
+//
+//		}
 
 	}
 

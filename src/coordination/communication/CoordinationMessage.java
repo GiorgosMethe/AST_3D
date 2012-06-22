@@ -3,6 +3,8 @@
  */
 package coordination.communication;
 
+import perceptor.localization.Coordinate;
+
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
  * 
@@ -18,6 +20,7 @@ public class CoordinationMessage {
 	public int number;
 	public int PlayerX, PlayerY;
 	public int BallDistance, BallTheta;
+	public Coordinate Position;
 
 	/**
 	 * @param number

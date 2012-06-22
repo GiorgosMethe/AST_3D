@@ -6,7 +6,7 @@ package coordination.main;
 import java.util.Vector;
 
 import coordination.communication.CoordinationMessage;
-import coordination.strategy.SupportPositions;
+import coordination.strategy.ActivePositions;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -53,46 +53,23 @@ public class Coordination {
 		 * 
 		 */
 		
-		SupportPositions.Calculate(CoordinationBeliefs.Ball);
+		ActivePositions.Calculate(CoordinationBeliefs.Ball);
 		
 		
 		/*
 		 * This function is called in order to find actions for all
 		 * active agents which are going to minimize the global cost.
 		 */
-		ActiveCoordination.Coordinate(coordinationVector,
-				SupportPositions.SupportPositions,
-				CoordinationBeliefs.Ball,
-				CoordinationSplitter.ActiveSubset);
+		ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
+				ActivePositions.ActivePositions,
+				CoordinationBeliefs.Ball);
 		
 		
 		
 		
+	
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		coordinationVector.removeAllElements();
 		
 //		System.out.println();
 //		System.out.print("Active subset: ");

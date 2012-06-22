@@ -1,6 +1,7 @@
 package geometry;
 
 import perceptor.localization.Coordinate;
+
 import com.vividsolutions.jts.geom.LineSegment;
 
 
