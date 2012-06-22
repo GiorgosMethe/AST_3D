@@ -24,9 +24,6 @@ public class BallObservationFilter {
 
 	public static void AddSample(Coordinate sample) {
 
-		
-		System.out.println("ball "+sample.X+" "+sample.Y);
-		
 		if (BallSampleVector.size() == 0) {
 
 			BallSampleVector.addElement(new BallObservationSamples(sample,
@@ -107,9 +104,6 @@ public class BallObservationFilter {
 		}
 
 		BallSampleVector.removeAllElements();
-
-		System.out.println("result "+result.X+" "+result.Y);
-		System.out.println("-------");
 		return result;
 
 	}

@@ -16,16 +16,22 @@ import agent.AgentType;
 import agent.Constraints;
 import connection.TCPSocket.Connection;
 import coordination.communication.ActionMessages;
+import coordination.main.ActionTable;
 
 public class SayEffector {
 
 	/*
-	 * Class creates the communication message of the agents. There are several
-	 * types of messages type 1: starts the communication between the players
-	 * type 2: (admin) sends to start coordination message 1 type 3: (admin)
-	 * sends back action messages type 4: coordination message 1 type 5: empty
-	 * type 6: (admin) sends to stop coordination messages type 7: message which
-	 * indicates fall of the player type 8: Idle
+	 * Class creates the communication message of the agents.
+	 * There are several types of messages 
+	 * 
+	 * type 1: starts the communication between the players
+	 * type 2: (admin) sends to start coordination message 1 
+	 * type 3: (admin) sends back action messages 
+	 * type 4: coordination message
+	 * type 5: empty
+	 * type 6: (admin) sends to stop coordination messages 
+	 * type 7: message which indicates fall of the player 
+	 * type 8: Idle
 	 */
 	public String Say(int type, Connection con) {
 
@@ -66,6 +72,7 @@ public class SayEffector {
 
 			} else {
 
+				ActionTable.CoordinateActions.removeAllElements();
 				MessageType.setType(2);
 				ActionMessages.setPlayer(2);
 				MessageType.setCommunicationType(0);

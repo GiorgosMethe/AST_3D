@@ -20,6 +20,7 @@ import com.vividsolutions.jts.geom.LineSegment;
 
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import coordination.action.ActionObject;
 import coordination.communication.CoordinationMessage;
 
 
@@ -123,12 +124,23 @@ public class ActiveCoordination {
 			
 		}
 		
+		for(int f=0;f<3;f++){
+			if(MinSet[f]==2){
+				
+				ActionObject a = new ActionObject(activeSubset.elementAt(f).getNumber(),
+						"GoKickBallToGoal", 0, 0, 0, 0);
+				ActionTable.CoordinateActions.addElement(a);
+				
+			}else{
+				
+				ActionObject a = new ActionObject(activeSubset.elementAt(f).getNumber(),
+						"GoToPos", ActivePositions.elementAt(MinSet[f]).X, ActivePositions.elementAt(MinSet[f]).Y, 0, 0);
+				ActionTable.CoordinateActions.addElement(a);
+				
+			}
+		}
 		
-		//System.out.println(MinSet[0]+" "+MinSet[1]+" "+MinSet[2]);
-		
-		
-		
-		
+	
 	}
 
 }

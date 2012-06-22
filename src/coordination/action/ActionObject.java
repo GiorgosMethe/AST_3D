@@ -20,6 +20,7 @@ public class ActionObject {
 	public double parametres1;
 	public double parametres2;
 	public double parametres3;
+	public double parametres4;
 
 	/**
 	 * @param number
@@ -29,13 +30,14 @@ public class ActionObject {
 	 * @param parametres3
 	 */
 	public ActionObject(int number, String action, double parametres1,
-			double parametres2, double parametres3) {
+			double parametres2, double parametres3, double parametres4) {
 
 		this.number = number;
 		this.action = action;
 		this.parametres1 = parametres1;
 		this.parametres2 = parametres2;
 		this.parametres3 = parametres3;
+		this.parametres4 = parametres4;
 	}
 
 	public int getNumber() {
@@ -78,4 +80,11 @@ public class ActionObject {
 		this.parametres3 = parametres3;
 	}
 
+	public double getParametres4() {
+		return parametres4;
+	}
+
+	public void setParametres4(double parametres4) {
+		this.parametres4 = parametres4;
+	}
 }

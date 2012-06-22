@@ -21,6 +21,7 @@ import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
 import perceptor.localization.BallPosition;
 import perceptor.localization.Coordinate;
+import perceptor.localization.LocalizationResults;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
@@ -153,7 +154,8 @@ public class Agent {
 			}
 
 			/**************************** experiments ***************************/
-			
+
+			System.out.println(LocalizationResults.getBall_location().X+" "+LocalizationResults.getBall_location().Y);
 			
 			/*******************************************************************/
 			

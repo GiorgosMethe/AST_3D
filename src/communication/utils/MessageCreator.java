@@ -52,13 +52,26 @@ public class MessageCreator {
 
 		message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
 
-		message += Integer.toString((int) Math.rint(LocalizationResults
-				.getCurrent_location().X)) + ",";
-		message += Integer.toString((int) Math.rint(LocalizationResults
-				.getCurrent_location().Y)) + ",";
-
-		message += Integer.toString((int) Math.rint(Ball.getDistance())) + ",";
-		message += Integer.toString((int) Math.rint(Ball.getAngleX()));
+		if(LocalizationResults.getLandmarks().size()>2){
+			message += Integer.toString((int) Math.rint(LocalizationResults
+					.getCurrent_location().X)) + ",";
+			message += Integer.toString((int) Math.rint(LocalizationResults
+					.getCurrent_location().Y)) + ",";
+		}else{
+			
+			message += Integer.toString((int) Math.rint(Double.NaN)) + ",";
+			message += Integer.toString((int) Math.rint(Double.NaN)) + ",";		
+			
+		}
+		
+		if(Ball.isSeeTheBall()){
+			message += Integer.toString((int) Math.rint(Ball.getDistance())) + ",";
+			message += Integer.toString((int) Math.rint(Ball.getAngleX()));
+		}else{
+			message += Integer.toString((int) Math.rint(Double.NaN)) + ",";
+			message += Integer.toString((int) Math.rint(Double.NaN));
+			
+		}
 
 		return message;
 
@@ -89,14 +102,14 @@ public class MessageCreator {
 
 				double p1 = ActionTable.CoordinateActions.elementAt(i).parametres1;
 				double p2 = ActionTable.CoordinateActions.elementAt(i).parametres1;
-				double p3 = ActionTable.CoordinateActions.elementAt(i).parametres1;
+				//double p3 = ActionTable.CoordinateActions.elementAt(i).parametres1;
 
 				String ps1 = String.valueOf((int) Math.rint(p1));
 				String ps2 = String.valueOf((int) Math.rint(p2));
-				String ps3 = String.valueOf((int) Math.rint(p3));
+				//String ps3 = String.valueOf((int) Math.rint(p3));
 
 				// parameters
-				message += ps1 + "," + ps2 + "," + ps3;
+				message += ps1 + "," + ps2;// + "," + ps3;
 
 			}
 		}

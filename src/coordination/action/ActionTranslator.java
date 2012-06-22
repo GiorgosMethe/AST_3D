@@ -1,8 +1,3 @@
-/**
- * 
- */
-package coordination.action;
-
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
  * 
@@ -13,6 +8,10 @@ package coordination.action;
  *         Abstract: Player Behavior and Team Strategy for the RoboCup 3D
  *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
+
+package coordination.action;
+
+
 public class ActionTranslator {
 
 	public static String FromIDToAction(int type) {
@@ -34,6 +33,10 @@ public class ActionTranslator {
 		} else if (type == 3) {
 
 			Action = "WalkToDirection";
+			
+		} else if (type == 4) {
+
+			Action = "WalkToPos";
 
 		} else {
 
@@ -60,6 +63,10 @@ public class ActionTranslator {
 		} else if (name.equalsIgnoreCase("WalkToDirection")) {
 
 			type = 3;
+			
+		} else if (name.equalsIgnoreCase("GoToPos")) {
+
+			type = 4;
 
 		} else {
 
