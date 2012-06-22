@@ -6,6 +6,7 @@ package coordination.main;
 import java.util.Vector;
 
 import coordination.communication.CoordinationMessage;
+import coordination.strategy.SupportPositions;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -28,6 +29,7 @@ public class Coordination {
 			Vector<CoordinationMessage> coordinationVector) {
 
 		long timeStart = System.currentTimeMillis();
+		
 		/*
 		 * Admin agent updates his belief for the position of the ball and the
 		 * players' position
@@ -45,39 +47,71 @@ public class Coordination {
 		CoordinationSplitter.Split(coordinationVector);
 		
 		
-		System.out.println();
-		System.out.print("Active subset: ");
-		for(int i=0;i<CoordinationSplitter.ActiveSubset.size();i++){
-			System.out.print(CoordinationSplitter.ActiveSubset.elementAt(i).getNumber()+" ");
-		}
-		
-		System.out.println();
-		System.out.print("Passive subset: ");
-		for(int i=0;i<CoordinationSplitter.PassiveSubset.size();i++){
-			System.out.print(CoordinationSplitter.PassiveSubset.elementAt(i).getNumber()+" ");
-		}
-		
-		System.out.println();
-		System.out.print("Passive subset: ");
-		for(int i=0;i<CoordinationSplitter.InactiveSubset.size();i++){
-			System.out.print(CoordinationSplitter.InactiveSubset.elementAt(i).getNumber()+" ");
-		}
-		
-
 		/*
-		 * Main coordination function. This function is called in order to find
-		 * actions for all agents which are going to maximize the payoff
-		 * function.
+		 * position for active players are going to be calculated 
+		 * in relation with the ball position
+		 * 
 		 */
-
-		CoordinateFunction.Calculate(coordinationVector);
-		System.out.println("Coordination completed");
-
-		long timeEnd = System.currentTimeMillis();
-
-		long time = timeEnd - timeStart;
-
-		System.out.println("time: " + time + " s");
+		
+		SupportPositions.Calculate(CoordinationBeliefs.Ball);
+		
+		
+		/*
+		 * This function is called in order to find actions for all
+		 * active agents which are going to minimize the global cost.
+		 */
+		ActiveCoordination.Coordinate(coordinationVector,
+				SupportPositions.SupportPositions,
+				CoordinationBeliefs.Ball,
+				CoordinationSplitter.ActiveSubset);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		System.out.println();
+//		System.out.print("Active subset: ");
+//		for(int i=0;i<CoordinationSplitter.ActiveSubset.size();i++){
+//			System.out.print(CoordinationSplitter.ActiveSubset.elementAt(i).getNumber()+" ");
+//		}
+//		
+//		System.out.println();
+//		System.out.print("Passive subset: ");
+//		for(int i=0;i<CoordinationSplitter.PassiveSubset.size();i++){
+//			System.out.print(CoordinationSplitter.PassiveSubset.elementAt(i).getNumber()+" ");
+//		}
+//		
+//		System.out.println();
+//		System.out.print("Passive subset: ");
+//		for(int i=0;i<CoordinationSplitter.InactiveSubset.size();i++){
+//			System.out.print(CoordinationSplitter.InactiveSubset.elementAt(i).getNumber()+" ");
+//		}
+			
 
 	}
 

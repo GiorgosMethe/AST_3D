@@ -16,14 +16,14 @@ import agent.Constraints;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
 
-public class SupportStrategicPositions {
+public class SupportPositions {
 
-	public static Coordinate[] Calculate(Coordinate Ball) {
-
-		Coordinate[] NewCoordinates = new Coordinate[10];
+	public static Coordinate[] SupportPositions = new Coordinate[2];
+	
+	public static void Calculate(Coordinate Ball) {
 
 		Coordinate CoordinateOfInterest;
-
+		
 		double Theta=0,Theta1=0,Theta2=0,distance1=0,distance2=0;
 
 		if(Ball.X>=0){
@@ -67,12 +67,9 @@ public class SupportStrategicPositions {
 			
 		}
 
-		NewCoordinates[0] = TriangleLocalization.get_det_with_distance_angle(CoordinateOfInterest.X, CoordinateOfInterest.Y, Theta+Theta1, distance2);
-		NewCoordinates[1] = TriangleLocalization.get_det_with_distance_angle(CoordinateOfInterest.X, CoordinateOfInterest.Y, Theta+Theta2, distance2);
-
-
-
-		return NewCoordinates;
+		SupportPositions[0] = TriangleLocalization.get_det_with_distance_angle(CoordinateOfInterest.X, CoordinateOfInterest.Y, Theta+Theta1, distance2);
+		SupportPositions[1] = TriangleLocalization.get_det_with_distance_angle(CoordinateOfInterest.X, CoordinateOfInterest.Y, Theta+Theta2, distance2);
+		
 
 	}
 	

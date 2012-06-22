@@ -14,6 +14,11 @@ public class CoordinationSplitter {
 
 	public static void Split(Vector<CoordinationMessage> coordinationVector) {
 
+		//clear previous created subsets
+		ActiveSubset.removeAllElements();
+		PassiveSubset.removeAllElements();
+		InactiveSubset.removeAllElements();		
+		
 		final Comparator<CoordinationMessage> POSITIVE_ORDER = new Comparator<CoordinationMessage>() {
 
 			@Override
@@ -25,16 +30,8 @@ public class CoordinationSplitter {
 					return 0;
 				}
 			}
-		};
-		
-		
-		//clear previous created subsets
-		ActiveSubset.removeAllElements();
-		PassiveSubset.removeAllElements();
-		InactiveSubset.removeAllElements();
-		
-	
-		
+		};	
+
 		//sort coordination vector 
 		Collections.sort(coordinationVector, POSITIVE_ORDER);
 
