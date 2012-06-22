@@ -27,8 +27,7 @@ public class CoordinationBeliefs {
 	private static double realDistance;
 	private static int distance1;
 
-	public static void UpdateBeliefs(
-			Vector<CoordinationMessage> coordinationVector) {
+	public static void UpdateBeliefs(Vector<CoordinationMessage> coordinationVector) {
 		
 		
 		UpdateBallBelief(coordinationVector);

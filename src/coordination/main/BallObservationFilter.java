@@ -24,6 +24,9 @@ public class BallObservationFilter {
 
 	public static void AddSample(Coordinate sample) {
 
+		
+		System.out.println("ball "+sample.X+" "+sample.Y);
+		
 		if (BallSampleVector.size() == 0) {
 
 			BallSampleVector.addElement(new BallObservationSamples(sample,
@@ -36,7 +39,7 @@ public class BallObservationFilter {
 				// samples which have value almost same values
 				if (TriangleLocalization
 						.FindDistanceAmong2Coordinates(BallSampleVector
-								.elementAt(i).getBallPosition(), sample) < 2) {
+								.elementAt(i).getBallPosition(), sample) < 1) {
 
 					// add the coordinates of the two samples
 					BallSampleVector.elementAt(i).setSumOfObservations(
@@ -105,6 +108,8 @@ public class BallObservationFilter {
 
 		BallSampleVector.removeAllElements();
 
+		System.out.println("result "+result.X+" "+result.Y);
+		System.out.println("-------");
 		return result;
 
 	}

@@ -27,13 +27,11 @@ import coordination.communication.CoordinationMessage;
 public class ActiveCoordination {
 
 	public static void Coordinate(Vector<CoordinationMessage> activeSubset, Vector<Coordinate> ActivePositions, Coordinate ball) {
-		
-		
-		int iterations=0;
+
 		int set[] = new int[3];
 		int MinSet[] = new int[3];
 		Coordinate Agent;
-		double sum;
+		double Cost;
 		double min=1000;
 		
 		
@@ -45,25 +43,28 @@ public class ActiveCoordination {
 					
 					if(k!=i && k!=j && i!=j){
 									
-						sum = 0;
+						Cost = 0;
 						
 						set[0]=i;
 						set[1]=j;
 						set[2]=k;
 						
-						System.out.println("-----");
+						//System.out.println("-----");
 						for(int agentNum=0;agentNum<activeSubset.size();agentNum++){
 							
 							Agent = new Coordinate(activeSubset.elementAt(agentNum).getPlayerX(),
 									activeSubset.elementAt(agentNum).getPlayerY());
 							
 							
-							System.out.println("paixths: "+activeSubset.elementAt(agentNum).getNumber());
-							System.out.println("8esh: "+Agent.X+" "+Agent.Y);
-							System.out.println("nea 8esh: "+ActivePositions.elementAt(set[agentNum]).X+" "+ActivePositions.elementAt(set[agentNum]).Y);
-							
-							sum += TriangleLocalization.FindDistanceAmong2Coordinates(Agent, ActivePositions.elementAt(set[agentNum]));
-							System.out.println("sum: "+sum);
+							//System.out.println("paixths: "+activeSubset.elementAt(agentNum).getNumber());
+							//System.out.println("8esh: "+Agent.X+" "+Agent.Y);
+							if(set[agentNum]==2){
+								//System.out.println("ball: "+ActivePositions.elementAt(set[agentNum]).X+" "+ActivePositions.elementAt(set[agentNum]).Y);
+							}else{
+								//System.out.println("nea 8esh: "+ActivePositions.elementAt(set[agentNum]).X+" "+ActivePositions.elementAt(set[agentNum]).Y);
+							}
+							Cost += TriangleLocalization.FindDistanceAmong2Coordinates(Agent, ActivePositions.elementAt(set[agentNum]));
+							//System.out.println("sum: "+Cost);
 						}
 						
 						
@@ -76,13 +77,25 @@ public class ActiveCoordination {
 								Coordinate Agent2 = new Coordinate(activeSubset.elementAt(r).getPlayerX(),
 										activeSubset.elementAt(r).getPlayerY());
 										
-								com.vividsolutions.jts.geom.Coordinate inter = GeometricUtils.FindIntersection(Agent1, ActivePositions.elementAt(set[q]), Agent2, ActivePositions.elementAt(set[r]));
+								com.vividsolutions.jts.geom.Coordinate interceptionPoint = GeometricUtils.FindIntersection(Agent1, ActivePositions.elementAt(set[q]), Agent2, ActivePositions.elementAt(set[r]));
 								
 								
-								if(inter != null){
+								if(interceptionPoint != null){
 									
-									System.out.println("briskoun");
-									sum +=5;
+									double distanceFromAgent1 = TriangleLocalization.FindDistanceAmong2Coordinates(
+											Agent1,
+											new Coordinate(interceptionPoint.x, interceptionPoint.y));
+									
+									double distanceFromAgent2 = TriangleLocalization.FindDistanceAmong2Coordinates(
+											Agent2,
+											new Coordinate(interceptionPoint.x, interceptionPoint.y));
+									
+									if(Math.abs(distanceFromAgent1 - distanceFromAgent2)<1.5){
+										
+										Cost += 5;
+										
+									}
+											
 									
 								}
 			
@@ -90,13 +103,13 @@ public class ActiveCoordination {
 						}
 						
 						
-						if(sum<min){
+						if(Cost<min){
 							
 							MinSet[0] = i;
 							MinSet[1] = j;
 							MinSet[2] = k;
 							
-							min=sum;
+							min=Cost;
 						}
 		
 						
@@ -109,10 +122,9 @@ public class ActiveCoordination {
 			
 			
 		}
-		System.out.println(MinSet[0]+" "+MinSet[1]+" "+MinSet[2]);
-		System.out.println("iterations :"+iterations);
 		
 		
+		//System.out.println(MinSet[0]+" "+MinSet[1]+" "+MinSet[2]);
 		
 		
 		

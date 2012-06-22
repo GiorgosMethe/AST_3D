@@ -70,24 +70,6 @@ public class Coordination {
 	
 		
 		coordinationVector.removeAllElements();
-		
-//		System.out.println();
-//		System.out.print("Active subset: ");
-//		for(int i=0;i<CoordinationSplitter.ActiveSubset.size();i++){
-//			System.out.print(CoordinationSplitter.ActiveSubset.elementAt(i).getNumber()+" ");
-//		}
-//		
-//		System.out.println();
-//		System.out.print("Passive subset: ");
-//		for(int i=0;i<CoordinationSplitter.PassiveSubset.size();i++){
-//			System.out.print(CoordinationSplitter.PassiveSubset.elementAt(i).getNumber()+" ");
-//		}
-//		
-//		System.out.println();
-//		System.out.print("Passive subset: ");
-//		for(int i=0;i<CoordinationSplitter.InactiveSubset.size();i++){
-//			System.out.print(CoordinationSplitter.InactiveSubset.elementAt(i).getNumber()+" ");
-//		}
 			
 
 	}
