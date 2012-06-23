@@ -17,66 +17,86 @@ import perceptor.localization.Coordinate;
  ***********************************************************************************/
 public class CoordinationMessage {
 
+	public int type;
 	public int number;
-	public int PlayerX, PlayerY;
+	public Coordinate Player;
+	public Coordinate ball;
 	public int BallDistance, BallTheta;
-	public Coordinate Position;
-
-	/**
-	 * @param number
-	 * @param playerX
-	 * @param playerY
-	 * @param ballDistance
-	 * @param ballTheta
-	 */
-	public CoordinationMessage(int number, int playerX, int playerY,
-			int ballDistance, int ballTheta) {
-
+	public double RealDistance;
+	
+	
+	
+	public CoordinationMessage(int type, int number, Coordinate player,
+			Coordinate ball, int ballDistance, int ballTheta, double realDistance) {
+		
+		this.type = type;
 		this.number = number;
-		PlayerX = playerX;
-		PlayerY = playerY;
+		Player = player;
+		this.ball = ball;
 		BallDistance = ballDistance;
 		BallTheta = ballTheta;
+		RealDistance = realDistance;
 	}
-
+	
+	
+	
+	public int getType() {
+		return type;
+	}
+	
+	public void setType(int type) {
+		this.type = type;
+	}
+	
 	public int getNumber() {
 		return number;
 	}
-
+	
 	public void setNumber(int number) {
 		this.number = number;
 	}
-
-	public int getPlayerX() {
-		return PlayerX;
+	
+	public Coordinate getPlayer() {
+		return Player;
 	}
-
-	public void setPlayerX(int playerX) {
-		PlayerX = playerX;
+	
+	public void setPlayer(Coordinate player) {
+		Player = player;
 	}
-
-	public int getPlayerY() {
-		return PlayerY;
+	public Coordinate getBall() {
+		return ball;
 	}
-
-	public void setPlayerY(int playerY) {
-		PlayerY = playerY;
+	
+	public void setBall(Coordinate ball) {
+		this.ball = ball;
 	}
-
+	
 	public int getBallDistance() {
 		return BallDistance;
 	}
-
+	
 	public void setBallDistance(int ballDistance) {
 		BallDistance = ballDistance;
 	}
-
+	
 	public int getBallTheta() {
 		return BallTheta;
 	}
-
+	
 	public void setBallTheta(int ballTheta) {
 		BallTheta = ballTheta;
 	}
+	
+	public double getRealDistance() {
+		return RealDistance;
+	}
+
+	public void setRealDistance(double realDistance) {
+		RealDistance = realDistance;
+	}
+	
+
+	
+	
 
 }

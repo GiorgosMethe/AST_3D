@@ -92,7 +92,7 @@ public class Agent {
 
 		// player number
 		num = 9;
-		Teamname = "e";
+		Teamname = "AST_3D";
 		// team name
 
 		while (con.isConnected()) {
@@ -155,7 +155,7 @@ public class Agent {
 
 			/**************************** experiments ***************************/
 
-			System.out.println(LocalizationResults.getBall_location().X+" "+LocalizationResults.getBall_location().Y);
+			//System.out.println(LocalizationResults.getBall_location().X+" "+LocalizationResults.getBall_location().Y);
 			
 			/*******************************************************************/
 			

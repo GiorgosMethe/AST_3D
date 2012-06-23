@@ -23,7 +23,7 @@ public class CoordinationSplitter {
 
 			@Override
 			public int compare(CoordinationMessage e1, CoordinationMessage e2) {
-				boolean Cmp = e2.getBallDistance() >= (e1.getBallDistance());
+				boolean Cmp = e2.getRealDistance() >= (e1.getRealDistance());
 				if (Cmp != true) {
 					return 1;
 				} else {
@@ -51,7 +51,7 @@ public class CoordinationSplitter {
 		
 		for(int i=3;i<coordinationVector.size();i++){
 			
-			if(coordinationVector.elementAt(i).getBallDistance()!=80){
+			if(coordinationVector.elementAt(i).getRealDistance()!=80){
 				
 				PassiveSubset.addElement(coordinationVector.elementAt(i));
 				

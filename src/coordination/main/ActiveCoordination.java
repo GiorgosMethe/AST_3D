@@ -53,8 +53,7 @@ public class ActiveCoordination {
 						//System.out.println("-----");
 						for(int agentNum=0;agentNum<activeSubset.size();agentNum++){
 							
-							Agent = new Coordinate(activeSubset.elementAt(agentNum).getPlayerX(),
-									activeSubset.elementAt(agentNum).getPlayerY());
+							Agent = activeSubset.elementAt(agentNum).getPlayer();
 							
 							
 							//System.out.println("paixths: "+activeSubset.elementAt(agentNum).getNumber());
@@ -72,11 +71,9 @@ public class ActiveCoordination {
 						for(int q=0;q<3;q++){
 							for(int r=q+1;r<3;r++){
 								
-								Coordinate Agent1 = new Coordinate(activeSubset.elementAt(q).getPlayerX(),
-										activeSubset.elementAt(q).getPlayerY());
+								Coordinate Agent1 = activeSubset.elementAt(q).getPlayer();
 								
-								Coordinate Agent2 = new Coordinate(activeSubset.elementAt(r).getPlayerX(),
-										activeSubset.elementAt(r).getPlayerY());
+								Coordinate Agent2 = activeSubset.elementAt(r).getPlayer();
 										
 								com.vividsolutions.jts.geom.Coordinate interceptionPoint = GeometricUtils.FindIntersection(Agent1, ActivePositions.elementAt(set[q]), Agent2, ActivePositions.elementAt(set[r]));
 								

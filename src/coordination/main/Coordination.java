@@ -28,14 +28,14 @@ public class Coordination {
 	public static void MakeCoordination(
 			Vector<CoordinationMessage> coordinationVector) {
 
-		long timeStart = System.currentTimeMillis();
-		
+			
 		/*
 		 * Admin agent updates his belief for the position of the ball and the
 		 * players' position
 		 */
 
 		CoordinationBeliefs.UpdateBeliefs(coordinationVector);
+
 
 		/*
 		 * Players are going to be splitted in three coordination subsets.
@@ -53,16 +53,16 @@ public class Coordination {
 		 * 
 		 */
 		
-		ActivePositions.Calculate(CoordinationBeliefs.Ball);
+		//ActivePositions.Calculate(CoordinationBeliefs.Ball);
 		
 		
 		/*
 		 * This function is called in order to find actions for all
 		 * active agents which are going to minimize the global cost.
 		 */
-		ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
-				ActivePositions.ActivePositions,
-				CoordinationBeliefs.Ball);
+		//ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
+		//		ActivePositions.ActivePositions,
+		//		CoordinationBeliefs.Ball);
 		
 		
 		

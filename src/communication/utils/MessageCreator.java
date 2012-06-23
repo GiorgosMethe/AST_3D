@@ -48,28 +48,57 @@ public class MessageCreator {
 	public static String CreateCoordinationMessage() {
 
 		String message = "";
-		String type = "c" + ",";
-
-		message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
-
-		if(LocalizationResults.getLandmarks().size()>2){
+		String type = "";
+	
+		//agent know his position and the ball position
+		if(!Double.isNaN(LocalizationResults.getBall_location().X) && 
+				!Double.isNaN(LocalizationResults.getBall_location().Y) &&
+				!Double.isNaN(LocalizationResults.getCurrent_location().X) &&
+				!Double.isNaN(LocalizationResults.getCurrent_location().Y)){
+			
+			type = "c" + ",";
+			
+			//player number
+			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+			
+			//player position
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().X)) + ",";
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().Y)) + ",";
-		}else{
 			
-			message += Integer.toString((int) Math.rint(Double.NaN)) + ",";
-			message += Integer.toString((int) Math.rint(Double.NaN)) + ",";		
+			//ball position
+			message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().X)) + ",";
+			message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().Y));
 			
-		}
-		
-		if(Ball.isSeeTheBall()){
+			
+		//agent only see the ball
+		}else if(Ball.isSeeTheBall()){
+			
+			type = "b" + ",";
+			
+			//player number
+			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+			
+			//player position
+			message += Integer.toString((int) Math.rint(LocalizationResults
+					.getCurrent_location().X)) + ",";
+			message += Integer.toString((int) Math.rint(LocalizationResults
+					.getCurrent_location().Y)) + ",";
+			
+			//ball position
 			message += Integer.toString((int) Math.rint(Ball.getDistance())) + ",";
 			message += Integer.toString((int) Math.rint(Ball.getAngleX()));
+			
+			
+		//agent has complete unawareness of his environment
 		}else{
-			message += Integer.toString((int) Math.rint(Double.NaN)) + ",";
-			message += Integer.toString((int) Math.rint(Double.NaN));
+			
+			type = "x" + ",";
+			
+			//player number
+			message += type + Integer.toString(AgentType.getPlayerNum());
+			
 			
 		}
 

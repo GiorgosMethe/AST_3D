@@ -23,7 +23,9 @@ public class AdminCordMessageReceiver {
 
 			InitReceiver(msg);
 
-		} else if (msg.startsWith("c,")) {
+		} else if ((msg.startsWith("c,")) ||
+				(msg.startsWith("b,")) ||
+				(msg.startsWith("x,"))) {
 
 			CoordinationReceiver(msg);
 

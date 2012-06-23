@@ -23,6 +23,7 @@ public class BallObservationFilter {
 	public static Vector<BallObservationSamples> BallSampleVector = new Vector<BallObservationSamples>();
 
 	public static void AddSample(Coordinate sample) {
+		
 
 		if (BallSampleVector.size() == 0) {
 
@@ -30,6 +31,8 @@ public class BallObservationFilter {
 					new Coordinate(0, 0), 0.0f, 1));
 
 		} else {
+
+			boolean flag=false;
 
 			for (int i = 0; i < BallSampleVector.size(); i++) {
 
@@ -42,29 +45,27 @@ public class BallObservationFilter {
 					BallSampleVector.elementAt(i).setSumOfObservations(
 							TriangleLocalization.addCoordinates(
 									BallSampleVector.elementAt(i)
-											.getSumOfObservations(), sample));
+									.getSumOfObservations(), sample));
 
 					// fix the counter
 					BallSampleVector.elementAt(i)
-							.setSamplesNum(
-									(BallSampleVector.elementAt(i)
-											.getSamplesNum() + 1));
+					.setSamplesNum(
+							(BallSampleVector.elementAt(i)
+									.getSamplesNum() + 1));
 
+					flag=true;
 					break;
 
-				} else {
-
-					if (i < BallSampleVector.size()) {
-
-					} else {
-						BallSampleVector.addElement(new BallObservationSamples(
-								sample, new Coordinate(0, 0), 0.0f, 1));
-						break;
-					}
-
 				}
+			}
+
+			if(!flag){
+
+				BallSampleVector.addElement(new BallObservationSamples(
+						sample, new Coordinate(0, 0), 0.0f, 1));
 
 			}
+
 		}
 
 	}
@@ -96,13 +97,13 @@ public class BallObservationFilter {
 					.elementAt(i).getBallPosition().X
 					* BallSampleVector.elementAt(i).getSamplesNum() / samples),
 					BallSampleVector.elementAt(i).getBallPosition().Y
-							* BallSampleVector.elementAt(i).getSamplesNum()
-							/ samples);
+					* BallSampleVector.elementAt(i).getSamplesNum()
+					/ samples);
 
 			result = TriangleLocalization.addCoordinates(result, WeightedAvg);
 
 		}
-
+	
 		BallSampleVector.removeAllElements();
 		return result;
 
