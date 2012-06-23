@@ -6,7 +6,6 @@ package coordination.communication;
 import java.util.Vector;
 
 import perceptor.localization.Coordinate;
-
 import coordination.main.Coordination;
 
 /***********************************************************************************
@@ -34,13 +33,13 @@ public class CoordinationMessageUpdate {
 		for (int i = 0; i < CoordinationMessage.size(); i++) {
 
 			String[] cmarray = CoordinationMessage.elementAt(i).split(",");
-			
-			if(cmarray[0].equalsIgnoreCase("c")){
-				
+
+			if (cmarray[0].equalsIgnoreCase("c")) {
+
 				try {
 
 					type = 0;
-					
+
 					number = Integer.parseInt(cmarray[1]);
 
 					playerX = Integer.parseInt(cmarray[2]);
@@ -52,12 +51,11 @@ public class CoordinationMessageUpdate {
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
-				
-				
-			}else if(cmarray[0].equalsIgnoreCase("b")){
-				
+
+			} else if (cmarray[0].equalsIgnoreCase("b")) {
+
 				try {
-					
+
 					type = 1;
 
 					number = Integer.parseInt(cmarray[1]);
@@ -71,66 +69,49 @@ public class CoordinationMessageUpdate {
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
-				
-			}else if(cmarray[0].equalsIgnoreCase("x")){
-				
+
+			} else if (cmarray[0].equalsIgnoreCase("x")) {
+
 				try {
 
 					type = 2;
-					
+
 					number = Integer.parseInt(cmarray[1]);
 
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
-				
-			}else{
+
+			} else {
 				System.out.println("Unknown coordination message");
 			}
 
-			if(type == 0){
-				
-				CoordinationMessage cm = new CoordinationMessage(
-						0,
-						number,
-						new Coordinate(playerX, playerY),
-						new Coordinate(ballX, ballY),
-						ballDistance,
-						ballTheta,
-						0);
-				
-				
+			if (type == 0) {
+
+				CoordinationMessage cm = new CoordinationMessage(0, number,
+						new Coordinate(playerX, playerY), new Coordinate(ballX,
+								ballY), ballDistance, ballTheta, 0);
+
 				CoordinationVector.addElement(cm);
-				
-				
-			}else if(type ==1){
-				
-				CoordinationMessage cm = new CoordinationMessage(
-						1,
-						number,
-						new Coordinate(Double.NaN, Double.NaN),
-						new Coordinate(Double.NaN, Double.NaN),
-						ballDistance,
-						ballTheta,
-						0);
-				
-				
+
+			} else if (type == 1) {
+
+				CoordinationMessage cm = new CoordinationMessage(1, number,
+						new Coordinate(Double.NaN, Double.NaN), new Coordinate(
+								Double.NaN, Double.NaN), ballDistance,
+						ballTheta, 0);
+
 				CoordinationVector.addElement(cm);
-				
-			}else{
-				
-				CoordinationMessage cm = new CoordinationMessage(
-						2,
-						number,
-						new Coordinate(Double.NaN, Double.NaN),
-						new Coordinate(Double.NaN, Double.NaN),
-						ballDistance,
-						ballTheta,
-						0);
-				
-				
+
+			} else {
+
+				CoordinationMessage cm = new CoordinationMessage(2, number,
+						new Coordinate(Double.NaN, Double.NaN), new Coordinate(
+								Double.NaN, Double.NaN), ballDistance,
+						ballTheta, 0);
+
 				CoordinationVector.addElement(cm);
-				
+
 			}
 
 		}

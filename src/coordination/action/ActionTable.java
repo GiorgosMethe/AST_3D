@@ -1,11 +1,9 @@
 /**
  * 
  */
-package coordination.main;
+package coordination.action;
 
 import java.util.Vector;
-
-import coordination.action.ActionObject;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012

@@ -9,13 +9,13 @@
  *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
 
-package communication.coordination.field;
+package coordination.communication.handler;
 
-import action.handler.ActionHandler;
 import agent.AgentType;
 import agent.Constraints;
 
 import communication.utils.MessageType;
+import coordination.communication.ActionMessageReceiver;
 
 public class FieldCordMessageReceiver {
 
@@ -62,17 +62,16 @@ public class FieldCordMessageReceiver {
 
 	private static void ActionMsgHandler(String msg) {
 
-		//String[] splittedMsg = msg.split(",");
+		String[] splittedMsg = msg.split(",");
 
-		//int flag = AgentType.getPlayerNum();
-		//boolean me = flag == (Integer.parseInt(splittedMsg[1]));
+		int flag = AgentType.getPlayerNum();
+		boolean me = (flag == (Integer.parseInt(splittedMsg[1])));
 
-		//if (me) {
+		if (me) {
 
-		//	System.out.println("phra mnm");
-		//	System.out.println(msg);
+			ActionMessageReceiver.HandleActionMessage(msg);
 
-		//}
+		}
 
 	}
 

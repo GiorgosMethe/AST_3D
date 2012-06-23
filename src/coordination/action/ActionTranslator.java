@@ -11,7 +11,6 @@
 
 package coordination.action;
 
-
 public class ActionTranslator {
 
 	public static String FromIDToAction(int type) {
@@ -33,10 +32,10 @@ public class ActionTranslator {
 		} else if (type == 3) {
 
 			Action = "WalkToDirection";
-			
+
 		} else if (type == 4) {
 
-			Action = "WalkToPos";
+			Action = "WalkToCoordinate";
 
 		} else {
 
@@ -63,8 +62,8 @@ public class ActionTranslator {
 		} else if (name.equalsIgnoreCase("WalkToDirection")) {
 
 			type = 3;
-			
-		} else if (name.equalsIgnoreCase("GoToPos")) {
+
+		} else if (name.equalsIgnoreCase("WalkToCoordinate")) {
 
 			type = 4;
 

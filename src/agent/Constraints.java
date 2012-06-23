@@ -25,13 +25,13 @@ public class Constraints {
 	public static Coordinate OpponentGoal = new Coordinate(10.5, 0);
 
 	public static Coordinate OwnGoal = new Coordinate(-10.5, 0);
-	
+
 	/*
 	 * Communication and Coordination static values
 	 */
 	public static int CoordinationPlayer = 1;
 
-	public static int CoordinationTimeout = 20;
+	public static int CoordinationTimeout = 5;
 
 	/*
 	 * Strategy constraints

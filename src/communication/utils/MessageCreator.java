@@ -6,8 +6,8 @@ package communication.utils;
 import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
 import agent.AgentType;
+import coordination.action.ActionTable;
 import coordination.action.ActionTranslator;
-import coordination.main.ActionTable;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -49,57 +49,57 @@ public class MessageCreator {
 
 		String message = "";
 		String type = "";
-	
-		//agent know his position and the ball position
-		if(!Double.isNaN(LocalizationResults.getBall_location().X) && 
-				!Double.isNaN(LocalizationResults.getBall_location().Y) &&
-				!Double.isNaN(LocalizationResults.getCurrent_location().X) &&
-				!Double.isNaN(LocalizationResults.getCurrent_location().Y)){
-			
+
+		// agent know his position and the ball position
+		if (!Double.isNaN(LocalizationResults.getBall_location().X)
+				&& !Double.isNaN(LocalizationResults.getBall_location().Y)
+				&& !Double.isNaN(LocalizationResults.getCurrent_location().X)
+				&& !Double.isNaN(LocalizationResults.getCurrent_location().Y)) {
+
 			type = "c" + ",";
-			
-			//player number
+
+			// player number
 			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
-			
-			//player position
+
+			// player position
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().X)) + ",";
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().Y)) + ",";
-			
-			//ball position
-			message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().X)) + ",";
-			message += Integer.toString((int) Math.rint(LocalizationResults.getBall_location().Y));
-			
-			
-		//agent only see the ball
-		}else if(Ball.isSeeTheBall()){
-			
+
+			// ball position
+			message += Integer.toString((int) Math.rint(LocalizationResults
+					.getBall_location().X)) + ",";
+			message += Integer.toString((int) Math.rint(LocalizationResults
+					.getBall_location().Y));
+
+			// agent only see the ball
+		} else if (Ball.isSeeTheBall()) {
+
 			type = "b" + ",";
-			
-			//player number
+
+			// player number
 			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
-			
-			//player position
+
+			// player position
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().X)) + ",";
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().Y)) + ",";
-			
-			//ball position
-			message += Integer.toString((int) Math.rint(Ball.getDistance())) + ",";
+
+			// ball position
+			message += Integer.toString((int) Math.rint(Ball.getDistance()))
+					+ ",";
 			message += Integer.toString((int) Math.rint(Ball.getAngleX()));
-			
-			
-		//agent has complete unawareness of his environment
-		}else{
-			
+
+			// agent has complete unawareness of his environment
+		} else {
+
 			type = "x" + ",";
-			
-			//player number
+
+			// player number
 			message += type + Integer.toString(AgentType.getPlayerNum());
-			
-			
+
 		}
 
 		return message;
@@ -116,12 +116,12 @@ public class MessageCreator {
 		String message = "";
 		message += "a" + ",";
 
+		// player number
+		message += String.valueOf(player) + ",";
+
 		for (int i = 0; i < ActionTable.CoordinateActions.size(); i++) {
 
 			if (ActionTable.CoordinateActions.elementAt(i).number == player) {
-
-				// player number
-				message += String.valueOf(player) + ",";
 
 				String ActionName = ActionTable.CoordinateActions.elementAt(i).action;
 				int type = ActionTranslator.FromActionToID(ActionName);
@@ -131,14 +131,12 @@ public class MessageCreator {
 
 				double p1 = ActionTable.CoordinateActions.elementAt(i).parametres1;
 				double p2 = ActionTable.CoordinateActions.elementAt(i).parametres1;
-				//double p3 = ActionTable.CoordinateActions.elementAt(i).parametres1;
 
 				String ps1 = String.valueOf((int) Math.rint(p1));
 				String ps2 = String.valueOf((int) Math.rint(p2));
-				//String ps3 = String.valueOf((int) Math.rint(p3));
 
 				// parameters
-				message += ps1 + "," + ps2;// + "," + ps3;
+				message += ps1 + "," + ps2;
 
 			}
 		}

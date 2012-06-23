@@ -21,6 +21,7 @@ import action.fsm.GKBGDstates;
 import action.fsm.GKBTTstates;
 import action.fsm.GKBstates;
 import action.fsm.PKTGstates;
+import action.handler.ActionPlaying;
 import action.vision.VisionType;
 import behavior.old.BehaviorDone;
 
@@ -90,6 +91,9 @@ public class InitAgent {
 				MessageType.setCommunicationType(0);
 				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
 				ActionMessages.setPlayer(2);
+				
+				//Actions
+				ActionPlaying.setActionPlaying(null);
 
 			} else if (cyrcles == 3) {
 

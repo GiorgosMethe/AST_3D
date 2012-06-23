@@ -14,11 +14,11 @@ public class CoordinationSplitter {
 
 	public static void Split(Vector<CoordinationMessage> coordinationVector) {
 
-		//clear previous created subsets
+		// clear previous created subsets
 		ActiveSubset.removeAllElements();
 		PassiveSubset.removeAllElements();
-		InactiveSubset.removeAllElements();		
-		
+		InactiveSubset.removeAllElements();
+
 		final Comparator<CoordinationMessage> POSITIVE_ORDER = new Comparator<CoordinationMessage>() {
 
 			@Override
@@ -30,39 +30,34 @@ public class CoordinationSplitter {
 					return 0;
 				}
 			}
-		};	
+		};
 
-		//sort coordination vector 
+		// sort coordination vector
 		Collections.sort(coordinationVector, POSITIVE_ORDER);
 
-		
-		
 		/*
-		 * Creation of three subsets
-		 * 3 players will be added into active subset
-		 * the rest players will be added either into the
-		 * passive subset or into the inactive subset
+		 * Creation of three subsets 3 players will be added into active subset
+		 * the rest players will be added either into the passive subset or into
+		 * the inactive subset
 		 */
-		
+
 		ActiveSubset.addElement(coordinationVector.elementAt(0));
 		ActiveSubset.addElement(coordinationVector.elementAt(1));
 		ActiveSubset.addElement(coordinationVector.elementAt(2));
-		
-		
-		for(int i=3;i<coordinationVector.size();i++){
-			
-			if(coordinationVector.elementAt(i).getRealDistance()!=80){
-				
+
+		for (int i = 3; i < coordinationVector.size(); i++) {
+
+			if (coordinationVector.elementAt(i).getRealDistance() != 80) {
+
 				PassiveSubset.addElement(coordinationVector.elementAt(i));
-				
-			}else{
-				
+
+			} else {
+
 				InactiveSubset.addElement(coordinationVector.elementAt(i));
-				
+
 			}
 		}
-			
-		
+
 	}
-	
+
 }

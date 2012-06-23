@@ -13,19 +13,17 @@
 
 package agent;
 
-import geometry.GeometricUtils;
 import motion.old.CurrentMotion;
 import motion.old.MotionStorage;
 import motion.old.MotionTrigger;
 import motion.xml.XMLMotionStorage;
 import motion.xml.XMLMovement;
 import perceptor.localization.BallPosition;
-import perceptor.localization.Coordinate;
-import perceptor.localization.LocalizationResults;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
 import action.fsm.GKBstates;
+import action.handler.ActionEffector;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
 
@@ -121,8 +119,10 @@ public class Agent {
 
 				/**************************** experiments ***************************/
 
-				
 				SayEffector = sm.Say(MessageType.getType(), con);
+				
+				ActionEffector.Act();
+				
 				/*******************************************************************/
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
@@ -153,12 +153,6 @@ public class Agent {
 
 			}
 
-			/**************************** experiments ***************************/
-
-			//System.out.println(LocalizationResults.getBall_location().X+" "+LocalizationResults.getBall_location().Y);
-			
-			/*******************************************************************/
-			
 			// check if i am down
 			iF.Check();
 

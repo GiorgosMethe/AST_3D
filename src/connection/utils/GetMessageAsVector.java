@@ -27,7 +27,7 @@ public class GetMessageAsVector {
 		int length;
 		length = msg.length();
 
-		if(length!=0){
+		if (length != 0) {
 
 			int start = 0;
 			int end = 0;
@@ -47,7 +47,8 @@ public class GetMessageAsVector {
 
 						end = i;
 						if (end > i - 1) {
-							if (msg.substring(start + 1, end).equalsIgnoreCase("")) {
+							if (msg.substring(start + 1, end).equalsIgnoreCase(
+									"")) {
 
 							} else {
 								message.add(msg.substring(start + 1, end));

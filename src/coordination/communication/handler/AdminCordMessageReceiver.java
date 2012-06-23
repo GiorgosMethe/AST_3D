@@ -1,7 +1,7 @@
 /**
  * 
  */
-package communication.coordination.admin;
+package coordination.communication.handler;
 
 import communication.utils.MessageType;
 
@@ -23,9 +23,8 @@ public class AdminCordMessageReceiver {
 
 			InitReceiver(msg);
 
-		} else if ((msg.startsWith("c,")) ||
-				(msg.startsWith("b,")) ||
-				(msg.startsWith("x,"))) {
+		} else if ((msg.startsWith("c,")) || (msg.startsWith("b,"))
+				|| (msg.startsWith("x,"))) {
 
 			CoordinationReceiver(msg);
 

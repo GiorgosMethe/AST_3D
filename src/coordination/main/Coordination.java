@@ -5,8 +5,9 @@ package coordination.main;
 
 import java.util.Vector;
 
+import coordination.active.ActiveCoordination;
+import coordination.active.ActivePositions;
 import coordination.communication.CoordinationMessage;
-import coordination.strategy.ActivePositions;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -28,14 +29,12 @@ public class Coordination {
 	public static void MakeCoordination(
 			Vector<CoordinationMessage> coordinationVector) {
 
-			
 		/*
 		 * Admin agent updates his belief for the position of the ball and the
 		 * players' position
 		 */
 
 		CoordinationBeliefs.UpdateBeliefs(coordinationVector);
-
 
 		/*
 		 * Players are going to be splitted in three coordination subsets.
@@ -45,32 +44,22 @@ public class Coordination {
 		 */
 
 		CoordinationSplitter.Split(coordinationVector);
-		
-		
+
 		/*
-		 * position for active players are going to be calculated 
-		 * in relation with the ball position
-		 * 
+		 * position for active players are going to be calculated in relation
+		 * with the ball position
 		 */
-		
-		//ActivePositions.Calculate(CoordinationBeliefs.Ball);
-		
-		
+
+		ActivePositions.Calculate(CoordinationBeliefs.Ball);
+
 		/*
-		 * This function is called in order to find actions for all
-		 * active agents which are going to minimize the global cost.
+		 * This function is called in order to find actions for all active
+		 * agents which are going to minimize the global cost.
 		 */
-		//ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
-		//		ActivePositions.ActivePositions,
-		//		CoordinationBeliefs.Ball);
-		
-		
-		
-		
-	
-		
+		ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
+				ActivePositions.ActivePositions, CoordinationBeliefs.Ball);
+
 		coordinationVector.removeAllElements();
-			
 
 	}
 

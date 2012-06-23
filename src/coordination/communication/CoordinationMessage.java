@@ -23,12 +23,11 @@ public class CoordinationMessage {
 	public Coordinate ball;
 	public int BallDistance, BallTheta;
 	public double RealDistance;
-	
-	
-	
+
 	public CoordinationMessage(int type, int number, Coordinate player,
-			Coordinate ball, int ballDistance, int ballTheta, double realDistance) {
-		
+			Coordinate ball, int ballDistance, int ballTheta,
+			double realDistance) {
+
 		this.type = type;
 		this.number = number;
 		Player = player;
@@ -37,56 +36,55 @@ public class CoordinationMessage {
 		BallTheta = ballTheta;
 		RealDistance = realDistance;
 	}
-	
-	
-	
+
 	public int getType() {
 		return type;
 	}
-	
+
 	public void setType(int type) {
 		this.type = type;
 	}
-	
+
 	public int getNumber() {
 		return number;
 	}
-	
+
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	
+
 	public Coordinate getPlayer() {
 		return Player;
 	}
-	
+
 	public void setPlayer(Coordinate player) {
 		Player = player;
 	}
+
 	public Coordinate getBall() {
 		return ball;
 	}
-	
+
 	public void setBall(Coordinate ball) {
 		this.ball = ball;
 	}
-	
+
 	public int getBallDistance() {
 		return BallDistance;
 	}
-	
+
 	public void setBallDistance(int ballDistance) {
 		BallDistance = ballDistance;
 	}
-	
+
 	public int getBallTheta() {
 		return BallTheta;
 	}
-	
+
 	public void setBallTheta(int ballTheta) {
 		BallTheta = ballTheta;
 	}
-	
+
 	public double getRealDistance() {
 		return RealDistance;
 	}
@@ -94,9 +92,5 @@ public class CoordinationMessage {
 	public void setRealDistance(double realDistance) {
 		RealDistance = realDistance;
 	}
-	
-
-	
-	
 
 }

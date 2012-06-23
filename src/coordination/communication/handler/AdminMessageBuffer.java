@@ -1,12 +1,13 @@
 /**
  * 
  */
-package communication.coordination.admin;
+package coordination.communication.handler;
 
 import java.util.Vector;
 
-import agent.Constraints;
 import coordination.communication.CoordinationMessageUpdate;
+
+import agent.Constraints;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
