@@ -12,140 +12,148 @@
  ***********************************************************************************/
 package coordination.active;
 
-import geometry.GeometricUtils;
-
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Vector;
 
+import org.apache.commons.lang.SerializationUtils;
+
 import perceptor.localization.Coordinate;
-import perceptor.localization.TriangleLocalization;
-import coordination.action.ActionObject;
-import coordination.action.ActionTable;
 import coordination.communication.CoordinationMessage;
+import coordination.strategy.PositionMapping;
+import coordination.strategy.PositionMappingCost;
+import coordination.strategy.PositionMappingValues;
+import coordination.strategy.SoccerFieldCoordinateValue;
 
 public class ActiveCoordination {
 
-	public static void Coordinate(Vector<CoordinationMessage> activeSubset,
+	static PositionMappingValues BestMap = new PositionMappingValues(null, 0);
+
+	public static void Coordinate(Vector<CoordinationMessage> ActiveSubset,
 			Vector<Coordinate> ActivePositions, Coordinate ball) {
 
-		int set[] = new int[3];
-		int MinSet[] = new int[3];
-		Coordinate Agent;
-		double Cost;
 		double min = 1000;
+		int player = 0;
+		double distance;
+		double ThetaToGoal;
+		double finalValue = 0;
 
-		for (int i = 0; i < ActivePositions.size(); i++) {
+		for (int i = 0; i < ActiveSubset.size(); i++) {
 
-			for (int j = 0; j < ActivePositions.size(); j++) {
+			if (ActiveSubset.elementAt(i).getType() == 0) {
 
-				for (int k = 0; k < ActivePositions.size(); k++) {
+				distance = ActiveSubset.elementAt(i).getRealDistance();
 
-					if (k != i && k != j && i != j) {
+				finalValue = distance;
 
-						Cost = 0;
+			} else if (ActiveSubset.elementAt(i).getType() == 1) {
 
-						set[0] = i;
-						set[1] = j;
-						set[2] = k;
+				distance = ActiveSubset.elementAt(i).getRealDistance();
 
-						// System.out.println("-----");
-						for (int agentNum = 0; agentNum < activeSubset.size(); agentNum++) {
+				finalValue = distance;
 
-							Agent = activeSubset.elementAt(agentNum)
-									.getPlayer();
+			}
 
-							// System.out.println("paixths: "+activeSubset.elementAt(agentNum).getNumber());
-							// System.out.println("8esh: "+Agent.X+" "+Agent.Y);
-							if (set[agentNum] == 2) {
-								// System.out.println("ball: "+ActivePositions.elementAt(set[agentNum]).X+" "+ActivePositions.elementAt(set[agentNum]).Y);
-							} else {
-								// System.out.println("nea 8esh: "+ActivePositions.elementAt(set[agentNum]).X+" "+ActivePositions.elementAt(set[agentNum]).Y);
-							}
-							Cost += TriangleLocalization
-									.FindDistanceAmong2Coordinates(Agent,
-											ActivePositions
-													.elementAt(set[agentNum]));
-							// System.out.println("sum: "+Cost);
-						}
+			if (finalValue < min) {
+				min = finalValue;
+				player = ActiveSubset.elementAt(i).getNumber();
+			}
 
-						for (int q = 0; q < 3; q++) {
-							for (int r = q + 1; r < 3; r++) {
+		}
 
-								Coordinate Agent1 = activeSubset.elementAt(q)
-										.getPlayer();
+		for (int i = 0; i < ActiveSubset.size(); i++) {
+			if (player == ActiveSubset.elementAt(i).getNumber()) {
+				ActiveSubset.removeElementAt(i);
+			}
+		}
 
-								Coordinate Agent2 = activeSubset.elementAt(r)
-										.getPlayer();
 
-								com.vividsolutions.jts.geom.Coordinate interceptionPoint = GeometricUtils
-										.FindIntersection(Agent1,
-												ActivePositions
-														.elementAt(set[q]),
-												Agent2, ActivePositions
-														.elementAt(set[r]));
+		int length = ActivePositions.size();
+		List<Integer> source = new LinkedList<Integer>();
 
-								if (interceptionPoint != null) {
+		// form the source list that have all the possible positions
+		for (int i = 0; i < length; i++) {
+			source.add(i);
+		}
 
-									double distanceFromAgent1 = TriangleLocalization
-											.FindDistanceAmong2Coordinates(
-													Agent1,
-													new Coordinate(
-															interceptionPoint.x,
-															interceptionPoint.y));
+		// create a target list for forming unique combinations
+		List<Integer> target = new LinkedList<Integer>();
 
-									double distanceFromAgent2 = TriangleLocalization
-											.FindDistanceAmong2Coordinates(
-													Agent2,
-													new Coordinate(
-															interceptionPoint.x,
-															interceptionPoint.y));
+		PositionCombination(source, target, ActivePositions, ActiveSubset);
 
-									if (Math.abs(distanceFromAgent1
-											- distanceFromAgent2) < 1.5) {
 
-										Cost += 5;
+		if(BestMap!=null){
 
-									}
+				for(int i=0;i<BestMap.getPosMap().size();i++){
 
-								}
+					System.out.println("player "+BestMap.getPosMap().elementAt(i).getAgent().getNumber());
+					System.out.println("x "+BestMap.getPosMap().elementAt(i).getPosition().getX());
+					System.out.println("y "+BestMap.getPosMap().elementAt(i).getPosition().getY());
 
-							}
-						}
-
-						if (Cost < min) {
-
-							MinSet[0] = i;
-							MinSet[1] = j;
-							MinSet[2] = k;
-
-							min = Cost;
-						}
-
-					}
 
 				}
-
-			}
-
+				System.out.println("cost "+BestMap.getCost());
+			
 		}
 
-		for (int f = 0; f < 3; f++) {
-			if (MinSet[f] == 2) {
+	System.out.println("-------------------------");
+	
+	
+	BestMap.setPosMap(null);
 
-				ActionObject a = new ActionObject(activeSubset.elementAt(f)
-						.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
-				ActionTable.CoordinateActions.addElement(a);
+}
 
-			} else {
+public static void PositionCombination(List<Integer> source,
+		List<Integer> target,
+		Vector<perceptor.localization.Coordinate> activePositions,
+		Vector<CoordinationMessage> activeSubset) {
 
-				ActionObject a = new ActionObject(activeSubset.elementAt(f)
-						.getNumber(), "WalkToCoordinate",
-						ActivePositions.elementAt(MinSet[f]).X,
-						ActivePositions.elementAt(MinSet[f]).Y, 0, 0);
-				ActionTable.CoordinateActions.addElement(a);
+	// break the recursion
+	if (target.size() == activeSubset.size()) {
 
-			}
+		Vector<PositionMapping> map = new Vector<PositionMapping>();
+		for (int i = 0; i < activeSubset.size(); i++) {
+
+			PositionMapping temp = new PositionMapping(
+					activeSubset.elementAt(i),
+					activePositions.elementAt(target.get(i)));
+			map.add(temp);
 		}
 
+		double cost = PositionMappingCost.calculate(map);
+
+		if(BestMap.getPosMap() != null){
+			if(BestMap.getCost() > cost){
+				BestMap.setCost(cost);
+				BestMap.setPosMap(map);
+			}
+		}else{
+			BestMap.setCost(cost);
+			BestMap.setPosMap(map);
+		}
+
+		return;
 	}
+	for (Integer position : source) {
+		// form the target combination by selecting a position from the
+		// source
+		@SuppressWarnings("unchecked")
+		List<Integer> reducedSource = (List<Integer>) SerializationUtils
+		.clone((LinkedList<Integer>) source);
+		reducedSource.remove(position);
+		@SuppressWarnings("unchecked")
+		List<Integer> combinedTarget = (List<Integer>) SerializationUtils
+		.clone((LinkedList<Integer>) target);
+		combinedTarget.add(position);
+		PositionCombination(reducedSource, combinedTarget, activePositions,
+				activeSubset);
+	}
+
+	source.clear();
+	target.clear();
+
+}
 
 }

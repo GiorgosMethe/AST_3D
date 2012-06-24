@@ -89,7 +89,7 @@ public class Agent {
 		int j = 0;
 
 		// player number
-		num = 9;
+		num =9;
 		Teamname = "AST_3D";
 		// team name
 
