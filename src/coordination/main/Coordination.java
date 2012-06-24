@@ -5,9 +5,8 @@ package coordination.main;
 
 import java.util.Vector;
 
-import coordination.active.ActiveCoordination;
-import coordination.active.ActivePositions;
 import coordination.communication.CoordinationMessage;
+import coordination.strategy.ActivePositions;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -56,10 +55,10 @@ public class Coordination {
 		 * This function is called in order to find actions for all active
 		 * agents which are going to minimize the global cost.
 		 */
-		ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
-				ActivePositions.ActivePositions, CoordinationBeliefs.Ball);
+		// ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
+		// ActivePositions.ActivePositions, CoordinationBeliefs.Ball);
 
-		coordinationVector.removeAllElements();
+		// coordinationVector.removeAllElements();
 
 	}
 

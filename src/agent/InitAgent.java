@@ -91,8 +91,8 @@ public class InitAgent {
 				MessageType.setCommunicationType(0);
 				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
 				ActionMessages.setPlayer(2);
-				
-				//Actions
+
+				// Actions
 				ActionPlaying.setActionPlaying(null);
 
 			} else if (cyrcles == 3) {

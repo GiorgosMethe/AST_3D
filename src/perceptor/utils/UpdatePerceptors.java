@@ -33,8 +33,6 @@ import perceptor.worldstate.TeamState;
 import agent.Agent;
 import agent.AgentType;
 import agent.Constraints;
-
-
 import connection.TCPSocket.Connection;
 import coordination.communication.handler.AdminCordMessageReceiver;
 import coordination.communication.handler.FieldCordMessageReceiver;
@@ -136,19 +134,17 @@ public class UpdatePerceptors {
 						float accZ = Float.parseFloat(ReceivedMessage
 								.elementAt(i + 6).toString());
 						Accelerometer.setAccX(accZ);
-						
+
 						i = i + 7;
 
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(
 							"UJ")) {
 
-						
 						i = i + 1;
 
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(
 							"TCH")) {
 
-						
 						i = i + 1;
 
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(
@@ -266,7 +262,6 @@ public class UpdatePerceptors {
 							HingeJointPerceptor.setRaj4(axis);
 						}
 
-						
 						i = i + 5;
 
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(

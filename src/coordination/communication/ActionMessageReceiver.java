@@ -24,39 +24,27 @@ public class ActionMessageReceiver {
 		String[] splittedMsg = actionMessage.split(",");
 		ActionObject Action = null;
 
-		if(splittedMsg.length>2){
+		if (splittedMsg.length > 2) {
 
-			if(splittedMsg[2] != null){
+			if (splittedMsg[2] != null) {
 
-				String action = ActionTranslator.FromIDToAction(Integer.parseInt(splittedMsg[2]));
+				String action = ActionTranslator.FromIDToAction(Integer
+						.parseInt(splittedMsg[2]));
 
+				if (action.equalsIgnoreCase("GoKickBallToGoal")) {
 
-				if(action.equalsIgnoreCase("GoKickBallToGoal")){
+					Action = new ActionObject(Integer.parseInt(splittedMsg[1]),
+							action, 0, 0, 0, 0);
 
-					Action = new ActionObject(Integer.parseInt(
-							splittedMsg[1]),
-							action,
-							0,
-							0,
-							0,
-							0);
+				} else if (action.equalsIgnoreCase("WalkToCoordinate")) {
 
-
-				}else if(action.equalsIgnoreCase("WalkToCoordinate")){
-
-					Action = new ActionObject(
-							Integer.parseInt(splittedMsg[1]),
+					Action = new ActionObject(Integer.parseInt(splittedMsg[1]),
 							action, Double.parseDouble(splittedMsg[3]),
-							Double.parseDouble(splittedMsg[4]),
-							0,
-							0);
-
-
+							Double.parseDouble(splittedMsg[4]), 0, 0);
 
 				}
 
 			}
-
 
 			ActionHandler.Handle(Action);
 

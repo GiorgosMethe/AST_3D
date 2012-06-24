@@ -13,7 +13,7 @@ package action.handler;
 import coordination.action.ActionObject;
 
 public class ActionPlaying {
-	
+
 	public static ActionObject ActionPlaying;
 
 	public static ActionObject getActionPlaying() {
@@ -23,7 +23,5 @@ public class ActionPlaying {
 	public static void setActionPlaying(ActionObject actionPlaying) {
 		ActionPlaying = actionPlaying;
 	}
-	
-
 
 }

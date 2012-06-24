@@ -15,6 +15,7 @@ import agent.AgentType;
 import agent.Constraints;
 
 import communication.utils.MessageType;
+
 import coordination.communication.ActionMessageReceiver;
 
 public class FieldCordMessageReceiver {

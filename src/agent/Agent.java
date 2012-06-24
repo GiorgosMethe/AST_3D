@@ -120,9 +120,9 @@ public class Agent {
 				/**************************** experiments ***************************/
 
 				SayEffector = sm.Say(MessageType.getType(), con);
-				
+
 				ActionEffector.Act();
-				
+
 				/*******************************************************************/
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
