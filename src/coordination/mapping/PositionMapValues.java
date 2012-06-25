@@ -2,22 +2,22 @@ package coordination.mapping;
 
 import java.util.Vector;
 
-public class PositionMappingValues {
+public class PositionMapValues {
 
-	public Vector<PositionMapping> PosMap;
+	public Vector<PositionMap> PosMap;
 	public double cost;
 
-	public PositionMappingValues(Vector<PositionMapping> posMap, double cost) {
+	public PositionMapValues(Vector<PositionMap> posMap, double cost) {
 
 		PosMap = posMap;
 		this.cost = cost;
 	}
 
-	public Vector<PositionMapping> getPosMap() {
+	public Vector<PositionMap> getPosMap() {
 		return PosMap;
 	}
 
-	public void setPosMap(Vector<PositionMapping> posMap) {
+	public void setPosMap(Vector<PositionMap> posMap) {
 		PosMap = posMap;
 	}
 

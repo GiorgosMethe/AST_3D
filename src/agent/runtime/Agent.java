@@ -13,20 +13,14 @@
 
 package agent.runtime;
 
-import motion.old.CurrentMotion;
-import motion.old.MotionStorage;
-import motion.old.MotionTrigger;
 import motion.utils.ReadMotionFiles;
 import motion.xml.RunXML;
-import motion.xml.XMLMotionStorage;
-import motion.xml.XMLMovement;
 import perceptor.localization.BallPosition;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
 import action.fsm.GKBstates;
 import action.handler.ActionEffector;
-import action.simple.WalkToBall;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
 
@@ -47,7 +41,7 @@ public class Agent {
 		UpdatePerceptors Gp = new UpdatePerceptors();
 		HeadMovement Sb = new HeadMovement();
 		SayEffector sm = new SayEffector();
-		isFallen iF = new isFallen();		
+		isFallen iF = new isFallen();
 		ReadMotionFiles.Read();
 
 		// /
@@ -60,8 +54,6 @@ public class Agent {
 
 		// initializes the connection
 		Connection con = new Connection(host, port);
-
-
 
 		boolean isConnected = false;
 		// establish the connection between agent and server
@@ -82,7 +74,6 @@ public class Agent {
 
 		while (con.isConnected()) {
 
-			
 			// update server cyrcles
 			i++;
 
@@ -96,14 +87,10 @@ public class Agent {
 			ServerCyrcles.setCyrclesNow(i);
 
 			// init Agent
-			if(!InitAgent.isPlayerInited()){
+			if (!InitAgent.isPlayerInited()) {
 				InitAgent.Init(Teamname, num, con);
 			}
-			
-			
-			
-			
-			
+
 			String AgentAct = "";
 			String SayEffector = "";
 
@@ -114,7 +101,7 @@ public class Agent {
 
 				SayEffector = sm.Say(MessageType.getType(), con);
 				Coordination.MakeCoordination();
-				
+
 				ActionEffector.Act();
 				/*******************************************************************/
 
@@ -125,11 +112,6 @@ public class Agent {
 
 			}
 
-			
-	
-			
-			
-			
 			// check if i am down
 			iF.Check();
 

@@ -18,13 +18,13 @@ import perceptor.localization.Coordinate;
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
-import coordination.mapping.PositionMapping;
-import coordination.mapping.PositionMappingCost;
-import coordination.mapping.PositionMappingValues;
+import coordination.mapping.PositionMap;
+import coordination.mapping.PositionMapCost;
+import coordination.mapping.PositionMapValues;
 
 public class ActiveCoordination {
 
-	static PositionMappingValues BestMap = new PositionMappingValues(null, 0);
+	static PositionMapValues BestMap = new PositionMapValues(null, 0);
 
 	public static void Coordinate(Vector<CoordinationMessage> ActiveSubset,
 			Vector<Coordinate> ActivePositions, Coordinate ball) {
@@ -59,45 +59,28 @@ public class ActiveCoordination {
 
 		for (int i = 0; i < ActiveSubset.size(); i++) {
 			if (player == ActiveSubset.elementAt(i).getNumber()) {
-				
-				ActionObject a = new ActionObject(
-						ActiveSubset.elementAt(i).getNumber(),
-						"GoKickBallToGoal",
-						0,
-						0,
-						0,
-						0);
-				
-				
+
+				ActionObject a = new ActionObject(ActiveSubset.elementAt(i)
+						.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
+
 				ActionTable.CoordinateActions.addElement(a);
-				
-				
+
 				ActiveSubset.removeElementAt(i);
 			}
 		}
 
 		PositionCombination(ActivePositions, ActiveSubset);
-		
-		
-		for (int i = 0; i < BestMap.getPosMap().size(); i++) {
-				
-				ActionObject a = new ActionObject(
-						BestMap.getPosMap().elementAt(i).getAgent().getNumber(),
-						"WalkToCoordinate",
-						BestMap.getPosMap().elementAt(i).getPosition().getX(),
-						BestMap.getPosMap().elementAt(i).getPosition().getY(),
-						0,
-						0);
-				
-				
-				ActionTable.CoordinateActions.addElement(a);
 
-			
+		for (int i = 0; i < BestMap.getPosMap().size(); i++) {
+
+			ActionObject a = new ActionObject(BestMap.getPosMap().elementAt(i)
+					.getAgent().getNumber(), "WalkToCoordinate", BestMap
+					.getPosMap().elementAt(i).getPosition().getX(), BestMap
+					.getPosMap().elementAt(i).getPosition().getY(), 0, 0);
+
+			ActionTable.CoordinateActions.addElement(a);
+
 		}
-		
-		
-		
-		
 
 		BestMap.setPosMap(null);
 
@@ -113,19 +96,19 @@ public class ActiveCoordination {
 
 				if (i != j) {
 
-					Vector<PositionMapping> map = new Vector<PositionMapping>();
+					Vector<PositionMap> map = new Vector<PositionMap>();
 
-					PositionMapping temp = new PositionMapping(
+					PositionMap temp = new PositionMap(
 							activeSubset.elementAt(0),
 							activePositions.elementAt(i));
 					map.add(temp);
 
-					PositionMapping temp1 = new PositionMapping(
+					PositionMap temp1 = new PositionMap(
 							activeSubset.elementAt(1),
 							activePositions.elementAt(j));
 					map.add(temp1);
 
-					double cost = PositionMappingCost.calculate(map);
+					double cost = PositionMapCost.calculate(map);
 
 					if (BestMap.getPosMap() != null) {
 						if (BestMap.getCost() > cost) {

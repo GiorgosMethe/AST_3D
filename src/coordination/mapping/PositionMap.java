@@ -3,12 +3,12 @@ package coordination.mapping;
 import perceptor.localization.Coordinate;
 import coordination.communication.message.CoordinationMessage;
 
-public class PositionMapping {
+public class PositionMap {
 
 	public CoordinationMessage Agent;
 	public Coordinate Position;
 
-	public PositionMapping(CoordinationMessage agent, Coordinate position) {
+	public PositionMap(CoordinationMessage agent, Coordinate position) {
 
 		Agent = agent;
 		Position = position;

@@ -1,3 +1,5 @@
+package agent.roboviz;
+
 /*
  *  Copyright 2011 RoboViz
  *
@@ -13,8 +15,6 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-
-package roboviz;
 
 import java.awt.Color;
 import java.nio.ByteBuffer;

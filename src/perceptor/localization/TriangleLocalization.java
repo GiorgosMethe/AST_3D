@@ -425,11 +425,16 @@ public class TriangleLocalization {
 		double dy = target.getY() - LocalizationResults.ball_location.getY();
 
 		double ThetaToTarget = Math.toDegrees(Math.atan2(dx, dy));
+
+		if (dy == 0 && dx == 0) {
+			return 0;
+		}
+
 		if (ThetaToTarget >= 0 && ThetaToTarget < 90) {
 
 			ThetaToTarget = 90 - ThetaToTarget;
 
-		} else if (ThetaToTarget >= 90 && ThetaToTarget < 180) {
+		} else if (ThetaToTarget >= 90 && ThetaToTarget <= 180) {
 
 			ThetaToTarget = -(ThetaToTarget - 90);
 
@@ -454,11 +459,16 @@ public class TriangleLocalization {
 				- LocalizationResults.getCurrent_location().getY();
 
 		double ThetaToTarget = Math.toDegrees(Math.atan2(dx, dy));
+
+		if (dy == 0 && dx == 0) {
+			return 0;
+		}
+
 		if (ThetaToTarget >= 0 && ThetaToTarget < 90) {
 
 			ThetaToTarget = 90 - ThetaToTarget;
 
-		} else if (ThetaToTarget >= 90 && ThetaToTarget < 180) {
+		} else if (ThetaToTarget >= 90 && ThetaToTarget <= 180) {
 
 			ThetaToTarget = -(ThetaToTarget - 90);
 
@@ -482,11 +492,16 @@ public class TriangleLocalization {
 		double dy = target.getY() - start.getY();
 
 		double ThetaToTarget = Math.toDegrees(Math.atan2(dx, dy));
+
+		if (dy == 0 && dx == 0) {
+			return 0;
+		}
+
 		if (ThetaToTarget >= 0 && ThetaToTarget < 90) {
 
 			ThetaToTarget = 90 - ThetaToTarget;
 
-		} else if (ThetaToTarget >= 90 && ThetaToTarget < 180) {
+		} else if (ThetaToTarget >= 90 && ThetaToTarget <= 180) {
 
 			ThetaToTarget = -(ThetaToTarget - 90);
 

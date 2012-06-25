@@ -7,9 +7,9 @@ import java.util.Vector;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
 
-public class PositionMappingCost {
+public class PositionMapCost {
 
-	public static double calculate(Vector<PositionMapping> map) {
+	public static double calculate(Vector<PositionMap> map) {
 
 		double cost = 0;
 
