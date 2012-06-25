@@ -6,7 +6,7 @@ import action.fsm.GKBTTstates;
 import action.fsm.PKTGstates;
 import action.simple.TurnToBall;
 import action.vision.VisionType;
-import agent.Constraints;
+import agent.constraints.Constraints;
 
 public class GoKickBallToGoalLocalize {
 

@@ -13,7 +13,7 @@ import perceptor.vision.Vision;
 import action.fsm.GKBGDstates;
 import action.simple.WalkToBall;
 import action.vision.VisionType;
-import agent.Constraints;
+import agent.constraints.Constraints;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012

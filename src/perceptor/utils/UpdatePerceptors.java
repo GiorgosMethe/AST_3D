@@ -30,12 +30,12 @@ import perceptor.vision.Vision;
 import perceptor.worldstate.GameState;
 import perceptor.worldstate.ServerTime;
 import perceptor.worldstate.TeamState;
-import agent.Agent;
-import agent.AgentType;
-import agent.Constraints;
+import agent.constraints.Constraints;
+import agent.runtime.Agent;
+import agent.values.AgentType;
 import connection.TCPSocket.Connection;
-import coordination.communication.handler.AdminCordMessageReceiver;
-import coordination.communication.handler.FieldCordMessageReceiver;
+import coordination.communication.admin.AdminCordMessageReceiver;
+import coordination.communication.field.FieldCordMessageReceiver;
 
 public class UpdatePerceptors {
 	Coordinate curloc = new Coordinate(0, 0);

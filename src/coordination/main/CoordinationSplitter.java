@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
 
-import coordination.communication.CoordinationMessage;
+import coordination.communication.message.CoordinationMessage;
 
 public class CoordinationSplitter {
 

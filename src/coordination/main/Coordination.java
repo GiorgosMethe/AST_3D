@@ -4,7 +4,7 @@
 package coordination.main;
 
 import coordination.active.ActiveCoordination;
-import coordination.communication.CoordinationMessageUpdate;
+import coordination.communication.message.CoordinationMessageUpdate;
 import coordination.strategy.ActivePositions;
 
 /***********************************************************************************

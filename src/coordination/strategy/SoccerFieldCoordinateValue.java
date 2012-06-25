@@ -13,7 +13,7 @@
 package coordination.strategy;
 
 import perceptor.localization.Coordinate;
-import agent.Constraints;
+import agent.constraints.Constraints;
 
 public class SoccerFieldCoordinateValue {
 

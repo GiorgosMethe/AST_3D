@@ -29,7 +29,7 @@ import java.net.UnknownHostException;
 import javax.swing.Timer;
 
 import perceptor.localization.LocalizationResults;
-import agent.AgentType;
+import agent.values.AgentType;
 
 /**
  * Program for testing network drawing on RoboVis with all shapes both animated

@@ -1,6 +1,6 @@
 package perceptor.localization;
 
-import agent.Constraints;
+import agent.constraints.Constraints;
 
 public class OutOfField {
 

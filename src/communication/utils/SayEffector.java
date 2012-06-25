@@ -12,11 +12,11 @@
  ***********************************************************************************/
 package communication.utils;
 
-import agent.AgentType;
-import agent.Constraints;
+import agent.constraints.Constraints;
+import agent.values.AgentType;
 import connection.TCPSocket.Connection;
 import coordination.action.ActionTable;
-import coordination.communication.ActionMessages;
+import coordination.communication.action.ActionMessages;
 
 public class SayEffector {
 

@@ -9,7 +9,7 @@ import perceptor.localization.Coordinate;
 import perceptor.localization.LocalizationResults;
 import perceptor.localization.TriangleLocalization;
 import perceptor.utils.BallObservationFilter;
-import coordination.communication.CoordinationMessage;
+import coordination.communication.message.CoordinationMessage;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012

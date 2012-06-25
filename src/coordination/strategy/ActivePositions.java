@@ -18,7 +18,7 @@ import java.util.Vector;
 
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
-import agent.Constraints;
+import agent.constraints.Constraints;
 import coordination.main.CoordinationBeliefs;
 
 public class ActivePositions {

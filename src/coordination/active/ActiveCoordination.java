@@ -17,10 +17,10 @@ import java.util.Vector;
 import perceptor.localization.Coordinate;
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
-import coordination.communication.CoordinationMessage;
-import coordination.strategy.PositionMapping;
-import coordination.strategy.PositionMappingCost;
-import coordination.strategy.PositionMappingValues;
+import coordination.communication.message.CoordinationMessage;
+import coordination.mapping.PositionMapping;
+import coordination.mapping.PositionMappingCost;
+import coordination.mapping.PositionMappingValues;
 
 public class ActiveCoordination {
 

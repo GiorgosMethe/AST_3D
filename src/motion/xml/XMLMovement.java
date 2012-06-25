@@ -17,17 +17,13 @@ import connection.utils.ServerCyrcles;
 
 public class XMLMovement {
 
-	public String execute(String name) {
+	public static String execute(String name) {
 
 		Motion motion = null;
 		Phase phase;
 		boolean ChangeFlag = false;
 
 		int MoveCategory = 0;
-		// int MoveCategory=1; --Starts a new motion
-		// int MoveCategory=2; --The same motion and the same phase
-		// int MoveCategory=3; --same motion different phase
-		// int MoveCategory=4; -- new motion requested
 
 		ChangeFlag = Check4Change.check(name);
 

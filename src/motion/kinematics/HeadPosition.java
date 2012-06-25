@@ -1,7 +1,7 @@
 package motion.kinematics;
 
 import perceptor.joints.HingeJointPerceptor;
-import agent.Constraints;
+import agent.constraints.Constraints;
 
 public class HeadPosition {
 
