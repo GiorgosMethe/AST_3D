@@ -187,11 +187,13 @@ public class RVTester {
 		socket.send(new DatagramPacket(buf, buf.length, address, ROBOVIS_PORT));
 	}
 
-	public static void main(String[] args) throws Exception {
+	public static Runnable Show(String[] args) throws Exception {
 		RVTester tester = new RVTester();
 		tester.runTest();
 		Thread.sleep(TEST_DURATION);
 		tester.drawAgentAnnotation(null, true, 1, Color.CYAN);
 		tester.animationTimer.stop();
+		return null;
+		
 	}
 }

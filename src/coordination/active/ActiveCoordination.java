@@ -24,7 +24,7 @@ import coordination.mapping.PositionMapValues;
 
 public class ActiveCoordination {
 
-	static PositionMapValues BestMap = new PositionMapValues(null, 0);
+	
 
 	public static void Coordinate(Vector<CoordinationMessage> ActiveSubset,
 			Vector<Coordinate> ActivePositions, Coordinate ball) {
@@ -69,27 +69,35 @@ public class ActiveCoordination {
 			}
 		}
 
-		PositionCombination(ActivePositions, ActiveSubset);
+		Vector<PositionMap> OptimizedMap = PositionCombination(ActivePositions, ActiveSubset);
 
-		for (int i = 0; i < BestMap.getPosMap().size(); i++) {
+		
+		for (int i = 0; i < OptimizedMap.size(); i++) {
 
-			ActionObject a = new ActionObject(BestMap.getPosMap().elementAt(i)
-					.getAgent().getNumber(), "WalkToCoordinate", BestMap
-					.getPosMap().elementAt(i).getPosition().getX(), BestMap
-					.getPosMap().elementAt(i).getPosition().getY(), 0, 0);
+			System.out.println("bazw paikth "+OptimizedMap.elementAt(i).getAgent().getNumber());
+			System.out.println("bazw x "+OptimizedMap.elementAt(i).getPosition().getX());
+			System.out.println("bazw y "+OptimizedMap.elementAt(i).getPosition().getY());
+			
+			ActionObject a = new ActionObject(OptimizedMap.elementAt(i)
+					.getAgent().getNumber(), "WalkToCoordinate", OptimizedMap
+					.elementAt(i).getPosition().getX(), OptimizedMap
+					.elementAt(i).getPosition().getY(), 0, 0);
 
 			ActionTable.CoordinateActions.addElement(a);
 
 		}
 
-		BestMap.setPosMap(null);
 
 	}
 
-	public static void PositionCombination(
+	public static Vector<PositionMap> PositionCombination(
 			Vector<perceptor.localization.Coordinate> activePositions,
 			Vector<CoordinationMessage> activeSubset) {
 
+		Vector<PositionMap> Bestmap = new Vector<PositionMap>();
+		
+		float min = 1000;
+		
 		for (int i = 0; i < activePositions.size(); i++) {
 
 			for (int j = 0; j < activePositions.size(); j++) {
@@ -110,20 +118,23 @@ public class ActiveCoordination {
 
 					double cost = PositionMapCost.calculate(map);
 
-					if (BestMap.getPosMap() != null) {
-						if (BestMap.getCost() > cost) {
-							BestMap.setCost(cost);
-							BestMap.setPosMap(map);
-						}
-					} else {
-						BestMap.setCost(cost);
-						BestMap.setPosMap(map);
+					if (min > cost) {
+						
+							Bestmap.removeAllElements();
+							for(int g=0;g<map.size();g++){
+								
+								Bestmap.add(map.elementAt(g));
+								
+							}
+							
 					}
-
+					
 					map.clear();
 
 				}
 			}
 		}
+		
+		return Bestmap;
 	}
 }

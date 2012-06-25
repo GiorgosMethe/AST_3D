@@ -118,7 +118,7 @@ public class MessageCreator {
 
 		// player number
 		message += String.valueOf(player) + ",";
-
+		
 		for (int i = 0; i < ActionTable.CoordinateActions.size(); i++) {
 
 			if (ActionTable.CoordinateActions.elementAt(i).number == player) {

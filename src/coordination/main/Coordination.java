@@ -23,6 +23,8 @@ public class Coordination {
 	 * Here is the main coordination function, coordination administrator
 	 * calculates the actions which maximize team reward
 	 */
+	
+	public static long a,b;
 
 	public static void MakeCoordination() {
 
@@ -33,12 +35,11 @@ public class Coordination {
 
 		if (CoordinationRun.getStep() == 1) {
 
-			long a = System.currentTimeMillis();
+			a = System.currentTimeMillis();
+			
 			CoordinationBeliefs
 					.UpdateBeliefs(CoordinationMessageUpdate.CoordinationVector);
-			long b = System.currentTimeMillis();
 
-			System.out.println("beliefs update time: " + (b - a) + "ms");
 
 			CoordinationRun.setStep(2);
 
@@ -51,12 +52,10 @@ public class Coordination {
 			 */
 		} else if (CoordinationRun.getStep() == 2) {
 
-			long a = System.currentTimeMillis();
+			
 			CoordinationSplitter
 					.Split(CoordinationMessageUpdate.CoordinationVector);
-			long b = System.currentTimeMillis();
-
-			System.out.println("splitter time: " + (b - a) + "ms");
+			
 
 			CoordinationRun.setStep(3);
 
@@ -66,11 +65,9 @@ public class Coordination {
 			 */
 		} else if (CoordinationRun.getStep() == 3) {
 
-			long a = System.currentTimeMillis();
+			
 			ActivePositions.Calculate(CoordinationBeliefs.Ball);
-			long b = System.currentTimeMillis();
-
-			System.out.println("active positions time: " + (b - a) + "ms");
+			
 
 			CoordinationRun.setStep(4);
 
@@ -81,16 +78,16 @@ public class Coordination {
 
 		} else if (CoordinationRun.getStep() == 4) {
 
-			long a = System.currentTimeMillis();
+			
 
 			ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
 					ActivePositions.ActivePositions, CoordinationBeliefs.Ball);
 
 			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
 
-			long b = System.currentTimeMillis();
+			b = System.currentTimeMillis();
 
-			System.out.println("time: " + (b - a) + "ms");
+			System.out.println("coordination time: " + (b - a) + "ms");
 
 			CoordinationRun.setStep(0);
 

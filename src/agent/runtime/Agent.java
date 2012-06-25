@@ -43,6 +43,7 @@ public class Agent {
 		SayEffector sm = new SayEffector();
 		isFallen iF = new isFallen();
 		ReadMotionFiles.Read();
+		
 
 		// /
 		GKBstates.setState("GoToBall");
@@ -61,14 +62,14 @@ public class Agent {
 		// Creation of Nao robot
 		if (isConnected == true) {
 			InitAgent.CreateAgent(con);
-			// RVTester.Roboviz(null);
+			
 		}
 		// server cyrcles
 		int i = 0;
 		int j = 0;
 
 		// player number
-		num = 9;
+		num =8;
 		Teamname = "AST_3D";
 		// team name
 
@@ -127,4 +128,5 @@ public class Agent {
 		}
 
 	}
+
 }
