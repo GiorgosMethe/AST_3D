@@ -15,6 +15,8 @@ package coordination.active;
 import java.util.Vector;
 
 import perceptor.localization.Coordinate;
+import coordination.action.ActionObject;
+import coordination.action.ActionTable;
 import coordination.communication.CoordinationMessage;
 import coordination.strategy.PositionMapping;
 import coordination.strategy.PositionMappingCost;
@@ -57,11 +59,45 @@ public class ActiveCoordination {
 
 		for (int i = 0; i < ActiveSubset.size(); i++) {
 			if (player == ActiveSubset.elementAt(i).getNumber()) {
+				
+				ActionObject a = new ActionObject(
+						ActiveSubset.elementAt(i).getNumber(),
+						"GoKickBallToGoal",
+						0,
+						0,
+						0,
+						0);
+				
+				
+				ActionTable.CoordinateActions.addElement(a);
+				
+				
 				ActiveSubset.removeElementAt(i);
 			}
 		}
 
 		PositionCombination(ActivePositions, ActiveSubset);
+		
+		
+		for (int i = 0; i < BestMap.getPosMap().size(); i++) {
+				
+				ActionObject a = new ActionObject(
+						BestMap.getPosMap().elementAt(i).getAgent().getNumber(),
+						"WalkToCoordinate",
+						BestMap.getPosMap().elementAt(i).getPosition().getX(),
+						BestMap.getPosMap().elementAt(i).getPosition().getY(),
+						0,
+						0);
+				
+				
+				ActionTable.CoordinateActions.addElement(a);
+
+			
+		}
+		
+		
+		
+		
 
 		BestMap.setPosMap(null);
 
