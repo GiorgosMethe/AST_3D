@@ -24,6 +24,7 @@ import perceptor.utils.isFallen;
 import perceptor.worldstate.GameState;
 import action.fsm.GKBstates;
 import action.handler.ActionEffector;
+import action.simple.WalkToBall;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
 
@@ -32,6 +33,7 @@ import communication.utils.SayEffector;
 
 import connection.TCPSocket.Connection;
 import connection.utils.ServerCyrcles;
+import coordination.main.Coordination;
 
 public class Agent {
 
@@ -42,8 +44,6 @@ public class Agent {
 	private static float max;
 
 	public static String Teamname = "";
-	private static double ballx = 0;
-	private static double bally = 0;
 
 	public static void main(String[] args) throws Exception {
 
@@ -83,13 +83,14 @@ public class Agent {
 		// Creation of Nao robot
 		if (isConnected == true) {
 			InitAgent.CreateAgent(con);
+			// RVTester.Roboviz(null);
 		}
 		// server cyrcles
 		int i = 0;
 		int j = 0;
 
 		// player number
-		num =9;
+		num = 9;
 		Teamname = "AST_3D";
 		// team name
 
@@ -120,9 +121,9 @@ public class Agent {
 				/**************************** experiments ***************************/
 
 				SayEffector = sm.Say(MessageType.getType(), con);
-
+				Coordination.MakeCoordination();
+				WalkToBall.Act();
 				ActionEffector.Act();
-
 				/*******************************************************************/
 
 				if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {

@@ -99,7 +99,7 @@ public class ActivePositions {
 
 		for (int i = 0; i < ActivePositions.size(); i++) {
 
-			if (i > 9) {
+			if (i > 4) {
 				ActivePositions.removeElementAt(i);
 
 			}

@@ -28,6 +28,9 @@ import java.net.UnknownHostException;
 
 import javax.swing.Timer;
 
+import perceptor.localization.LocalizationResults;
+import agent.AgentType;
+
 /**
  * Program for testing network drawing on RoboVis with all shapes both animated
  * and static
@@ -36,7 +39,7 @@ import javax.swing.Timer;
  */
 public class RVTester {
 
-	private static final int TEST_DURATION = 100000;
+	private static final int TEST_DURATION = 100;
 	private static final int ROBOVIS_PORT = 32769;
 
 	private DatagramSocket socket;
@@ -66,29 +69,35 @@ public class RVTester {
 
 	/** Method for all animated drawings */
 	private void renderAnimatedShapes() throws IOException {
-		angle += 0.05;
+		// angle += 0.05;
 
 		// draw points wave
-		for (int i = 0; i < 30; i++) {
-			float p = i / 30.0f;
-			float height = Math.max(0, (float) (Math.sin(angle + p * 18)));
-			float[] pos = new float[] { -9 + 18 * p, p * 12 - 6, height };
-			drawPoint(pos, 5, Color.BLACK, "animated.points");
-		}
+		// for (int i = 0; i < 30; i++) {
+		// float p = i / 30.0f;
+		// / float height = Math.max(0, (float) (Math.sin(angle + p * 18)));
+		// float[] pos = new float[] { -9 + 18 * p, p * 12 - 6, height };
+		// drawPoint(pos, 5, Color.BLACK, "animated.points");
+		// }
 
 		// draw spinning triangle
-		b[0] = (float) Math.cos(angle) * 2;
-		b[1] = (float) Math.sin(angle) * 2;
-		b[2] = (float) Math.cos(angle) + 1.5f;
-		float[] c = { b[0], b[1], 0 };
-		drawLine(a, b, 5.0f, Color.YELLOW, "animated.spinner");
-		drawLine(b, c, 5.0f, Color.YELLOW, "animated.spinner");
-		drawLine(a, c, 5.0f, Color.YELLOW, "animated.spinner");
+		// b[0] = (float) Math.cos(angle) * 2;
+		// b[1] = (float) Math.sin(angle) * 2;
+		// b[2] = (float) Math.cos(angle) + 1.5f;
+		// float[] c = { b[0], b[1], 0 };
+		// drawLine(a, b, 5.0f, Color.YELLOW, "animated.spinner");
+		// drawLine(b, c, 5.0f, Color.YELLOW, "animated.spinner");
+		// drawLine(a, c, 5.0f, Color.YELLOW, "animated.spinner");
+		int a = AgentType.getPlayerNum();
 
-		drawAnnotation(String.format("%.1f", b[2]), b, Color.GREEN,
-				"animated.annotation");
+		// System.out.println("dfgdfg");
+		// drawAnnotation(String.format("%.1f", a), b, Color.GREEN,
+		// "animated.annotation");
 
-		drawAgentAnnotation(String.format("%.2f", b[0]), true, 1, Color.CYAN);
+		drawAgentAnnotation(String.format("%d" + ",%.1f" + ",%.1f", a,
+				LocalizationResults.getCurrent_location().X,
+				LocalizationResults.getCurrent_location().Y), true, a,
+				Color.BLUE);
+		// drawAgentAnnotation(String.format("%d", a), true, 1, Color.BLUE);
 
 		// swap all sets starting with "animated"
 		swapBuffers("animated");
@@ -97,41 +106,45 @@ public class RVTester {
 	/** Method for all static drawings */
 	private void renderStaticShapes() throws IOException {
 		// draw 3D coordinate axes
-		drawLine(new float[] { 0, 0, 0 }, new float[] { 3, 0, 0 }, 3.0f,
-				Color.RED, "static.axes");
-		drawLine(new float[] { 0, 0, 0 }, new float[] { 0, 3, 0 }, 3.0f,
-				Color.GREEN, "static.axes");
-		drawLine(new float[] { 0, 0, 0 }, new float[] { 0, 0, 3 }, 3.0f,
-				Color.BLUE, "static.axes");
+		// drawLine(new float[] { 0, 0, 0 }, new float[] { 3, 0, 0 }, 3.0f,
+		// Color.RED, "static.axes");
+		// drawLine(new float[] { 0, 0, 0 }, new float[] { 0, 3, 0 }, 3.0f,
+		// Color.GREEN, "static.axes");
+		// drawLine(new float[] { 0, 0, 0 }, new float[] { 0, 0, 3 }, 3.0f,
+		// Color.BLUE, "static.axes");
 
 		// draw 1 meter lines on field
-		drawLine(new float[] { -9, -6, 0 }, new float[] { 9, -6, 0 }, 1.0f,
-				lightGreen, "static.lines.field");
-		drawLine(new float[] { -9, 6, 0 }, new float[] { 9, 6, 0 }, 1.0f,
-				lightGreen, "static.lines.field");
-		for (int i = 0; i <= 18; i++)
-			drawLine(new float[] { -9 + i, -6, 0 },
-					new float[] { -9 + i, 6, 0 }, 1.0f, lightGreen,
-					"static.lines.field");
+		// drawLine(new float[] { -9, -6, 0 }, new float[] { 9, -6, 0 }, 1.0f,
+		// lightGreen, "static.lines.field");
+		// drawLine(new float[] { -9, 6, 0 }, new float[] { 9, 6, 0 }, 1.0f,
+		// lightGreen, "static.lines.field");
+		// for (int i = 0; i <= 18; i++)
+		// drawLine(new float[] { -9 + i, -6, 0 },
+		// new float[] { -9 + i, 6, 0 }, 1.0f, lightGreen,
+		// "static.lines.field");
 
 		// draw some circles
-		drawCircle(new float[] { -5, 0 }, 3, 2, Color.BLUE, "static.circles");
-		drawCircle(new float[] { 5, 0 }, 3, 2, Color.BLUE, "static.circles");
+		// drawCircle(new float[] { -5, 0 }, 3, 2, Color.BLUE,
+		// "static.circles");
+		// drawCircle(new float[] { 5, 0 }, 3, 2, Color.BLUE, "static.circles");
 
 		// draw some spheres
-		drawSphere(new float[] { -5, 0, 2 }, 0.5f, Color.PINK, "static.spheres");
-		drawSphere(new float[] { 5, 0, 2 }, 0.5f, Color.PINK, "static.spheres");
+		// drawSphere(new float[] { -5, 0, 2 }, 0.5f, Color.PINK,
+		// "static.spheres");
+		// drawSphere(new float[] { 5, 0, 2 }, 0.5f, Color.PINK,
+		// "static.spheres");
 
-		drawAnnotation("hello\nworld", new float[] { 0, 0, 2 }, Color.GREEN,
-				"static.annotations");
+		// drawAnnotation("hello\nworld", new float[] { 0, 0, 2 }, Color.GREEN,
+		// "static.annotations");
 
 		// draw a polygon
-		float[][] v = { { 0, 0, 0 }, { 1, 0, 0 }, { 1, 1, 0 }, { 0, 3, 0 },
-				{ -2, -2, 0 }, };
-		drawPolygon(v, new Color(1.0f, 1.0f, 1.0f, 0.5f), "static.polygons");
+		// float[][] v = { { 0, 0, 0 }, { 1, 0, 0 }, { 1, 1, 0 }, { 0, 3, 0 },
+		// { -2, -2, 0 }, };
+		// /drawPolygon(v, new Color(1.0f, 1.0f, 1.0f, 0.5f),
+		// "static.polygons");
 
-		drawAgentAnnotation("testing", true, 1, Color.red);
-		drawAgentAnnotation("I'm agent #2", true, 2, Color.yellow);
+		// drawAgentAnnotation("testing", true, 1, Color.red);
+		// drawAgentAnnotation("I'm agent #2", true, 2, Color.yellow);
 
 		swapBuffers("static");
 	}
@@ -188,11 +201,11 @@ public class RVTester {
 		socket.send(new DatagramPacket(buf, buf.length, address, ROBOVIS_PORT));
 	}
 
-	public static void main(String[] args) throws Exception {
+	public static void Roboviz(String[] args) throws Exception {
 		RVTester tester = new RVTester();
 		tester.runTest();
-		Thread.sleep(TEST_DURATION);
-		tester.drawAgentAnnotation(null, true, 1, Color.CYAN);
-		tester.animationTimer.stop();
+		// Thread.sleep(TEST_DURATION);
+		// tester.drawAgentAnnotation(null, true, 1, Color.CYAN);
+		// tester.animationTimer.stop();
 	}
 }

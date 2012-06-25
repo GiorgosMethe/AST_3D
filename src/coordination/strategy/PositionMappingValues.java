@@ -3,13 +3,12 @@ package coordination.strategy;
 import java.util.Vector;
 
 public class PositionMappingValues {
-	
 
 	public Vector<PositionMapping> PosMap;
 	public double cost;
-	
+
 	public PositionMappingValues(Vector<PositionMapping> posMap, double cost) {
-		
+
 		PosMap = posMap;
 		this.cost = cost;
 	}

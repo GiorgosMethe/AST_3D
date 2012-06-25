@@ -6,7 +6,7 @@ package coordination.communication;
 import java.util.Vector;
 
 import perceptor.localization.Coordinate;
-import coordination.main.Coordination;
+import coordination.main.CoordinationRun;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -20,9 +20,9 @@ import coordination.main.Coordination;
  ***********************************************************************************/
 public class CoordinationMessageUpdate {
 
-	public static void update(Vector<String> CoordinationMessage) {
+	public static Vector<CoordinationMessage> CoordinationVector = new Vector<CoordinationMessage>();
 
-		Vector<CoordinationMessage> CoordinationVector = new Vector<CoordinationMessage>();
+	public static void update(Vector<String> CoordinationMessage) {
 
 		int type = 0;
 		int number = 0;
@@ -116,7 +116,7 @@ public class CoordinationMessageUpdate {
 
 		}
 
-		Coordination.MakeCoordination(CoordinationVector);
+		CoordinationRun.setStep(1);
 
 	}
 
