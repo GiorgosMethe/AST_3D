@@ -1,8 +1,9 @@
-package motion.xml;
+package motion.utils;
 
 import motion.old.MotionTrigger;
+import motion.xml.XMLMovement;
 
-public class RunXML {
+public class PerformMovement {
 
 	public static String run() {
 

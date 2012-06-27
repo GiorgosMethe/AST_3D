@@ -30,6 +30,8 @@ public class CoordinationMessageUpdate {
 		int ballX = 0, ballY = 0;
 		int ballDistance = 0, ballTheta = 0;
 
+		System.out.println("");
+
 		for (int i = 0; i < CoordinationMessage.size(); i++) {
 
 			String[] cmarray = CoordinationMessage.elementAt(i).split(",");
@@ -51,6 +53,7 @@ public class CoordinationMessageUpdate {
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
+				System.out.print(number + "c ");
 
 			} else if (cmarray[0].equalsIgnoreCase("b")) {
 
@@ -60,15 +63,14 @@ public class CoordinationMessageUpdate {
 
 					number = Integer.parseInt(cmarray[1]);
 
-					playerX = Integer.parseInt(cmarray[2]);
-					playerY = Integer.parseInt(cmarray[3]);
-
 					ballDistance = Integer.parseInt(cmarray[4]);
 					ballTheta = Integer.parseInt(cmarray[5]);
 
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
+
+				System.out.print(number + "b ");
 
 			} else if (cmarray[0].equalsIgnoreCase("x")) {
 
@@ -81,6 +83,8 @@ public class CoordinationMessageUpdate {
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
+
+				System.out.print(number + "x ");
 
 			} else {
 				System.out.println("Unknown coordination message");
@@ -115,6 +119,7 @@ public class CoordinationMessageUpdate {
 			}
 
 		}
+		System.out.println("");
 
 		CoordinationRun.setStep(1);
 

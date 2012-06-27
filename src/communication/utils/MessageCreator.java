@@ -118,7 +118,7 @@ public class MessageCreator {
 
 		// player number
 		message += String.valueOf(player) + ",";
-		
+
 		for (int i = 0; i < ActionTable.CoordinateActions.size(); i++) {
 
 			if (ActionTable.CoordinateActions.elementAt(i).number == player) {
@@ -130,7 +130,7 @@ public class MessageCreator {
 				message += type + ",";
 
 				double p1 = ActionTable.CoordinateActions.elementAt(i).parametres1;
-				double p2 = ActionTable.CoordinateActions.elementAt(i).parametres1;
+				double p2 = ActionTable.CoordinateActions.elementAt(i).parametres2;
 
 				String ps1 = String.valueOf((int) Math.rint(p1));
 				String ps2 = String.valueOf((int) Math.rint(p2));

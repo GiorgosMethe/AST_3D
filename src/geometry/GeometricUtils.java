@@ -19,7 +19,19 @@ public class GeometricUtils {
 				new com.vividsolutions.jts.geom.Coordinate(b1.X, b1.Y),
 				new com.vividsolutions.jts.geom.Coordinate(b2.X, b2.Y));
 
-		return a.intersection(b);
+		if (a != null && b != null) {
+
+			com.vividsolutions.jts.geom.Coordinate result = a.intersection(b);
+
+			if (result != null) {
+				return result;
+			} else {
+				return null;
+			}
+
+		}
+
+		return null;
 
 	}
 

@@ -79,17 +79,17 @@ public class GoKickBallToGoal {
 			GKBGDstates.setAngleFromGoal(AngleFromGoal);
 			GKBGDstates.setState("Start3");
 
-//			System.out.println("theta " + GKBGDstates.getAngle());
-//			System.out.println("x " + GKBGDstates.getX());
-//			System.out.println("y " + GKBGDstates.getY());
-//			System.out.println("thetaklotsias "
-//					+ GKBGDstates.getAngleFromGoal());
+			// System.out.println("theta " + GKBGDstates.getAngle());
+			// System.out.println("x " + GKBGDstates.getX());
+			// System.out.println("y " + GKBGDstates.getY());
+			// System.out.println("thetaklotsias "
+			// + GKBGDstates.getAngleFromGoal());
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start3")) {
 
-			//System.out.println("move :"
-			//		+ (Math.abs(GKBGDstates.getAngle()
-				//			- GKBGDstates.getAngleFromGoal())));
+			// System.out.println("move :"
+			// + (Math.abs(GKBGDstates.getAngle()
+			// - GKBGDstates.getAngleFromGoal())));
 
 			if (Math.abs(GKBGDstates.getAngle()
 					- GKBGDstates.getAngleFromGoal()) > 20) {

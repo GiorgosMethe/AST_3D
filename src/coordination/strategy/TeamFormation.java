@@ -6,9 +6,9 @@ import agent.constraints.Constraints;
 
 public class TeamFormation {
 
-	public static Coordinate[] NewCoordinates = new Coordinate[10];
+	public static Coordinate[] TeamFormation = new Coordinate[10];
 
-	public static void main(Coordinate Ball) {
+	public static void Calculate(Coordinate Ball) {
 
 		/*
 		 * Check if Ball coordination is out of field
@@ -48,15 +48,15 @@ public class TeamFormation {
 			theta = -55;
 		}
 
-		NewCoordinates[4] = TriangleLocalization.get_det_with_distance_angle(
+		TeamFormation[4] = TriangleLocalization.get_det_with_distance_angle(
 				Constraints.OwnGoal.X, Constraints.OwnGoal.Y, theta,
 				distance - 0.5);
 
-		NewCoordinates[2] = TriangleLocalization.get_det_with_distance_angle(
+		TeamFormation[3] = TriangleLocalization.get_det_with_distance_angle(
 				Constraints.OwnGoal.X, Constraints.OwnGoal.Y, theta + 30,
 				distance);
 
-		NewCoordinates[3] = TriangleLocalization.get_det_with_distance_angle(
+		TeamFormation[2] = TriangleLocalization.get_det_with_distance_angle(
 				Constraints.OwnGoal.X, Constraints.OwnGoal.Y, theta - 30,
 				distance);
 
@@ -70,60 +70,60 @@ public class TeamFormation {
 					.Calculate(Ball) / Constraints.MaxFieldSpotValue));
 			float theta3 = 120;
 			float theta4 = -120;
-			NewCoordinates[9] = new Coordinate(Ball.X - 0.5, Ball.Y);
+			TeamFormation[9] = new Coordinate(Ball.X - 0.5, Ball.Y);
 
-			NewCoordinates[7] = TriangleLocalization
-					.get_det_with_distance_angle(NewCoordinates[9].X,
-							NewCoordinates[9].Y, theta3, distance1);
+			TeamFormation[8] = TriangleLocalization
+					.get_det_with_distance_angle(TeamFormation[9].X,
+							TeamFormation[9].Y, theta3, distance1);
 
-			while (!ProperSupportPosition(NewCoordinates[7])) {
+			while (!ProperSupportPosition(TeamFormation[8])) {
 
 				distance1 = (float) (distance1 - 0.01);
-				NewCoordinates[7] = TriangleLocalization
-						.get_det_with_distance_angle(NewCoordinates[9].X,
-								NewCoordinates[9].Y, ++theta3, distance1);
+				TeamFormation[8] = TriangleLocalization
+						.get_det_with_distance_angle(TeamFormation[9].X,
+								TeamFormation[9].Y, ++theta3, distance1);
 
 			}
 
-			NewCoordinates[8] = TriangleLocalization
-					.get_det_with_distance_angle(NewCoordinates[9].X,
-							NewCoordinates[9].Y, theta4, distance1);
+			TeamFormation[7] = TriangleLocalization
+					.get_det_with_distance_angle(TeamFormation[9].X,
+							TeamFormation[9].Y, theta4, distance1);
 
-			while (!ProperSupportPosition(NewCoordinates[8])) {
+			while (!ProperSupportPosition(TeamFormation[7])) {
 
 				distance1 = (float) (distance1 - 0.01);
 
-				NewCoordinates[8] = TriangleLocalization
-						.get_det_with_distance_angle(NewCoordinates[9].X,
-								NewCoordinates[9].Y, --theta4, distance1);
+				TeamFormation[7] = TriangleLocalization
+						.get_det_with_distance_angle(TeamFormation[9].X,
+								TeamFormation[9].Y, --theta4, distance1);
 
 			}
 
-			Coordinate midfielfCenter = new Coordinate(NewCoordinates[9].X - 4,
-					NewCoordinates[9].Y);
+			Coordinate midfielfCenter = new Coordinate(TeamFormation[9].X - 4,
+					TeamFormation[9].Y);
 
-			NewCoordinates[5] = TriangleLocalization
+			TeamFormation[5] = TriangleLocalization
 					.get_det_with_distance_angle(midfielfCenter.X,
 							midfielfCenter.Y, -90, 1);
 
-			NewCoordinates[6] = TriangleLocalization
+			TeamFormation[6] = TriangleLocalization
 					.get_det_with_distance_angle(midfielfCenter.X,
 							midfielfCenter.Y, 90, 1);
 
-			while ((!ProperSupportPosition(NewCoordinates[5]))
-					|| (!ProperSupportPosition(NewCoordinates[6]))) {
+			while ((!ProperSupportPosition(TeamFormation[5]))
+					|| (!ProperSupportPosition(TeamFormation[6]))) {
 
-				if (NewCoordinates[5].Y < 0 || NewCoordinates[6].Y < 0) {
+				if (TeamFormation[5].Y < 0 || TeamFormation[6].Y < 0) {
 					midfielfCenter.setY((midfielfCenter.getY() + 1));
-				} else if (NewCoordinates[5].Y > 0 || NewCoordinates[6].Y > 0) {
+				} else if (TeamFormation[5].Y > 0 || TeamFormation[6].Y > 0) {
 					midfielfCenter.setY((midfielfCenter.getY() - 1));
 				}
 
-				NewCoordinates[5] = TriangleLocalization
+				TeamFormation[5] = TriangleLocalization
 						.get_det_with_distance_angle(midfielfCenter.X,
 								midfielfCenter.Y, -90, 1);
 
-				NewCoordinates[6] = TriangleLocalization
+				TeamFormation[6] = TriangleLocalization
 						.get_det_with_distance_angle(midfielfCenter.X,
 								midfielfCenter.Y, 90, 1);
 
@@ -140,62 +140,61 @@ public class TeamFormation {
 			float x = (float) ((float) 6 * (Ball.X / Constraints.FieldLength / 2));
 			float theta3 = 120;
 			float theta4 = -120;
-			NewCoordinates[9] = new Coordinate(x, Ball.Y);
+			TeamFormation[9] = new Coordinate(x, Ball.Y);
 
-			NewCoordinates[7] = TriangleLocalization
-					.get_det_with_distance_angle(NewCoordinates[9].X,
-							NewCoordinates[9].Y, theta3, distance1);
+			TeamFormation[8] = TriangleLocalization
+					.get_det_with_distance_angle(TeamFormation[9].X,
+							TeamFormation[9].Y, theta3, distance1);
 
-			while (!ProperSupportPosition(NewCoordinates[7])) {
+			while (!ProperSupportPosition(TeamFormation[8])) {
 
-				NewCoordinates[7] = TriangleLocalization
-						.get_det_with_distance_angle(NewCoordinates[9].X,
-								NewCoordinates[9].Y, ++theta3, distance1);
+				TeamFormation[8] = TriangleLocalization
+						.get_det_with_distance_angle(TeamFormation[9].X,
+								TeamFormation[9].Y, ++theta3, distance1);
 
 			}
 
-			NewCoordinates[8] = TriangleLocalization
-					.get_det_with_distance_angle(NewCoordinates[9].X,
-							NewCoordinates[9].Y, theta4, distance1);
+			TeamFormation[7] = TriangleLocalization
+					.get_det_with_distance_angle(TeamFormation[9].X,
+							TeamFormation[9].Y, theta4, distance1);
 
-			while (!ProperSupportPosition(NewCoordinates[8])) {
+			while (!ProperSupportPosition(TeamFormation[7])) {
 
-				NewCoordinates[8] = TriangleLocalization
-						.get_det_with_distance_angle(NewCoordinates[9].X,
-								NewCoordinates[9].Y, --theta4, distance1);
+				TeamFormation[7] = TriangleLocalization
+						.get_det_with_distance_angle(TeamFormation[9].X,
+								TeamFormation[9].Y, --theta4, distance1);
 
 			}
 
 			if (TriangleLocalization.FindDistanceAmong2Coordinates(
-					NewCoordinates[9], Ball) < TriangleLocalization
-					.FindDistanceAmong2Coordinates(NewCoordinates[4], Ball)) {
+					TeamFormation[9], Ball) < TriangleLocalization
+					.FindDistanceAmong2Coordinates(TeamFormation[4], Ball)) {
 
 				Coordinate midfielfCenter = new Coordinate(
-						NewCoordinates[9].X - 4, NewCoordinates[9].Y);
+						TeamFormation[9].X - 4, TeamFormation[9].Y);
 
-				NewCoordinates[5] = TriangleLocalization
+				TeamFormation[5] = TriangleLocalization
 						.get_det_with_distance_angle(midfielfCenter.X,
 								midfielfCenter.Y, -90, 1);
 
-				NewCoordinates[6] = TriangleLocalization
+				TeamFormation[6] = TriangleLocalization
 						.get_det_with_distance_angle(midfielfCenter.X,
 								midfielfCenter.Y, 90, 1);
 
-				while ((!ProperSupportPosition(NewCoordinates[5]))
-						|| (!ProperSupportPosition(NewCoordinates[6]))) {
+				while ((!ProperSupportPosition(TeamFormation[5]))
+						|| (!ProperSupportPosition(TeamFormation[6]))) {
 
-					if (NewCoordinates[5].Y < 0 || NewCoordinates[6].Y < 0) {
+					if (TeamFormation[5].Y < 0 || TeamFormation[6].Y < 0) {
 						midfielfCenter.setY((midfielfCenter.getY() + 1));
-					} else if (NewCoordinates[5].Y > 0
-							|| NewCoordinates[6].Y > 0) {
+					} else if (TeamFormation[5].Y > 0 || TeamFormation[6].Y > 0) {
 						midfielfCenter.setY((midfielfCenter.getY() - 1));
 					}
 
-					NewCoordinates[5] = TriangleLocalization
+					TeamFormation[5] = TriangleLocalization
 							.get_det_with_distance_angle(midfielfCenter.X,
 									midfielfCenter.Y, -90, 1);
 
-					NewCoordinates[6] = TriangleLocalization
+					TeamFormation[6] = TriangleLocalization
 							.get_det_with_distance_angle(midfielfCenter.X,
 									midfielfCenter.Y, 90, 1);
 
@@ -204,32 +203,31 @@ public class TeamFormation {
 			} else {
 
 				Coordinate midfielfCenter = new Coordinate(
-						NewCoordinates[4].X + 2,
-						(NewCoordinates[4].Y * 0.4 + Ball.Y * 0.6));
+						TeamFormation[4].X + 2,
+						(TeamFormation[4].Y * 0.4 + Ball.Y * 0.6));
 
-				NewCoordinates[5] = TriangleLocalization
+				TeamFormation[5] = TriangleLocalization
 						.get_det_with_distance_angle(midfielfCenter.X,
 								midfielfCenter.Y, -90, 1);
 
-				NewCoordinates[6] = TriangleLocalization
+				TeamFormation[6] = TriangleLocalization
 						.get_det_with_distance_angle(midfielfCenter.X,
 								midfielfCenter.Y, 90, 1);
 
-				while ((!ProperSupportPosition(NewCoordinates[5]))
-						|| (!ProperSupportPosition(NewCoordinates[6]))) {
+				while ((!ProperSupportPosition(TeamFormation[5]))
+						|| (!ProperSupportPosition(TeamFormation[6]))) {
 
-					if (NewCoordinates[5].Y < 0 || NewCoordinates[6].Y < 0) {
+					if (TeamFormation[5].Y < 0 || TeamFormation[6].Y < 0) {
 						midfielfCenter.setY((midfielfCenter.getY() + 1));
-					} else if (NewCoordinates[5].Y > 0
-							|| NewCoordinates[6].Y > 0) {
+					} else if (TeamFormation[5].Y > 0 || TeamFormation[6].Y > 0) {
 						midfielfCenter.setY((midfielfCenter.getY() - 1));
 					}
 
-					NewCoordinates[5] = TriangleLocalization
+					TeamFormation[5] = TriangleLocalization
 							.get_det_with_distance_angle(midfielfCenter.X,
 									midfielfCenter.Y, -90, 1);
 
-					NewCoordinates[6] = TriangleLocalization
+					TeamFormation[6] = TriangleLocalization
 							.get_det_with_distance_angle(midfielfCenter.X,
 									midfielfCenter.Y, 90, 1);
 

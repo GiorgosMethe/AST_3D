@@ -194,6 +194,6 @@ public class RVTester {
 		tester.drawAgentAnnotation(null, true, 1, Color.CYAN);
 		tester.animationTimer.stop();
 		return null;
-		
+
 	}
 }

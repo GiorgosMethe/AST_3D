@@ -6,6 +6,7 @@ import java.util.Vector;
 
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import coordination.strategy.SoccerFieldCoordinateValue;
 
 public class PositionMapCost {
 
@@ -20,6 +21,9 @@ public class PositionMapCost {
 			cost += TriangleLocalization.FindDistanceAmong2Coordinates(Agent,
 					map.elementAt(agentNum).getPosition());
 
+			cost -= Math.abs(SoccerFieldCoordinateValue.Calculate(map
+					.elementAt(agentNum).getPosition()));
+
 		}
 
 		for (int q = 0; q < map.size(); q++) {
@@ -27,35 +31,40 @@ public class PositionMapCost {
 
 				if (TriangleLocalization.FindDistanceAmong2Coordinates(map
 						.elementAt(q).getPosition(), map.elementAt(r)
-						.getPosition()) < 1.5) {
+						.getPosition()) < 1) {
 
-					cost += 20;
+					cost += 50;
 				}
 
-				Coordinate Agent1 = map.elementAt(q).getAgent().getPlayer();
+				if (map.elementAt(r).getAgent().getType() == 0
+						&& map.elementAt(q).getAgent().getType() == 0) {
 
-				Coordinate Agent2 = map.elementAt(r).getAgent().getPlayer();
+					Coordinate Agent1 = map.elementAt(q).getAgent().getPlayer();
 
-				com.vividsolutions.jts.geom.Coordinate interceptionPoint = GeometricUtils
-						.FindIntersection(Agent1, map.elementAt(q)
-								.getPosition(), Agent2, map.elementAt(r)
-								.getPosition());
+					Coordinate Agent2 = map.elementAt(r).getAgent().getPlayer();
 
-				if (interceptionPoint != null) {
+					com.vividsolutions.jts.geom.Coordinate interceptionPoint = GeometricUtils
+							.FindIntersection(Agent1, map.elementAt(q)
+									.getPosition(), Agent2, map.elementAt(r)
+									.getPosition());
 
-					double distanceFromAgent1 = TriangleLocalization
-							.FindDistanceAmong2Coordinates(Agent1,
-									new Coordinate(interceptionPoint.x,
-											interceptionPoint.y));
+					if (interceptionPoint != null) {
 
-					double distanceFromAgent2 = TriangleLocalization
-							.FindDistanceAmong2Coordinates(Agent2,
-									new Coordinate(interceptionPoint.x,
-											interceptionPoint.y));
+						double distanceFromAgent1 = TriangleLocalization
+								.FindDistanceAmong2Coordinates(Agent1,
+										new Coordinate(interceptionPoint.x,
+												interceptionPoint.y));
 
-					if (Math.abs(distanceFromAgent1 - distanceFromAgent2) < 1.5) {
+						double distanceFromAgent2 = TriangleLocalization
+								.FindDistanceAmong2Coordinates(Agent2,
+										new Coordinate(interceptionPoint.x,
+												interceptionPoint.y));
 
-						cost += 20;
+						if (Math.abs(distanceFromAgent1 - distanceFromAgent2) < 1.5) {
+
+							cost += 20;
+
+						}
 
 					}
 

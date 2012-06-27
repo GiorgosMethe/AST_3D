@@ -20,17 +20,16 @@ import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
 import coordination.mapping.PositionMap;
 import coordination.mapping.PositionMapCost;
-import coordination.mapping.PositionMapValues;
 
 public class ActiveCoordination {
 
-	
+	public static Vector<PositionMap> OptimizedActiveMap;
 
 	public static void Coordinate(Vector<CoordinationMessage> ActiveSubset,
 			Vector<Coordinate> ActivePositions, Coordinate ball) {
 
 		double min = 1000;
-		int player = 0;
+		int OnBallPlayer = 0;
 		double distance;
 		double finalValue = 0;
 
@@ -52,52 +51,56 @@ public class ActiveCoordination {
 
 			if (finalValue < min) {
 				min = finalValue;
-				player = ActiveSubset.elementAt(i).getNumber();
+				OnBallPlayer = ActiveSubset.elementAt(i).getNumber();
 			}
 
 		}
 
 		for (int i = 0; i < ActiveSubset.size(); i++) {
-			if (player == ActiveSubset.elementAt(i).getNumber()) {
+			if (OnBallPlayer == ActiveSubset.elementAt(i).getNumber()) {
 
 				ActionObject a = new ActionObject(ActiveSubset.elementAt(i)
 						.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
 
 				ActionTable.CoordinateActions.addElement(a);
 
-				ActiveSubset.removeElementAt(i);
 			}
 		}
 
-		Vector<PositionMap> OptimizedMap = PositionCombination(ActivePositions, ActiveSubset);
+		OptimizedActiveMap = PositionCombination(ActivePositions, ActiveSubset,
+				OnBallPlayer, ball);
 
-		
-		for (int i = 0; i < OptimizedMap.size(); i++) {
+		System.out.println("optimized positions");
+		System.out.println("-------------------");
+		for (int i = 0; i < OptimizedActiveMap.size(); i++) {
 
-			System.out.println("bazw paikth "+OptimizedMap.elementAt(i).getAgent().getNumber());
-			System.out.println("bazw x "+OptimizedMap.elementAt(i).getPosition().getX());
-			System.out.println("bazw y "+OptimizedMap.elementAt(i).getPosition().getY());
-			
-			ActionObject a = new ActionObject(OptimizedMap.elementAt(i)
-					.getAgent().getNumber(), "WalkToCoordinate", OptimizedMap
-					.elementAt(i).getPosition().getX(), OptimizedMap
-					.elementAt(i).getPosition().getY(), 0, 0);
+			System.out.println("bazw paikth "
+					+ OptimizedActiveMap.elementAt(i).getAgent().getNumber());
+			System.out.println("bazw x "
+					+ OptimizedActiveMap.elementAt(i).getPosition().getX());
+			System.out.println("bazw y "
+					+ OptimizedActiveMap.elementAt(i).getPosition().getY());
+
+			ActionObject a = new ActionObject(OptimizedActiveMap.elementAt(i)
+					.getAgent().getNumber(), "WalkToCoordinate",
+					OptimizedActiveMap.elementAt(i).getPosition().getX(),
+					OptimizedActiveMap.elementAt(i).getPosition().getY(), 0, 0);
 
 			ActionTable.CoordinateActions.addElement(a);
 
 		}
 
-
 	}
 
 	public static Vector<PositionMap> PositionCombination(
 			Vector<perceptor.localization.Coordinate> activePositions,
-			Vector<CoordinationMessage> activeSubset) {
+			Vector<CoordinationMessage> activeSubset, int onBallPlayer,
+			perceptor.localization.Coordinate ball) {
 
 		Vector<PositionMap> Bestmap = new Vector<PositionMap>();
-		
+
 		float min = 1000;
-		
+
 		for (int i = 0; i < activePositions.size(); i++) {
 
 			for (int j = 0; j < activePositions.size(); j++) {
@@ -106,35 +109,58 @@ public class ActiveCoordination {
 
 					Vector<PositionMap> map = new Vector<PositionMap>();
 
-					PositionMap temp = new PositionMap(
-							activeSubset.elementAt(0),
-							activePositions.elementAt(i));
-					map.add(temp);
+					int PlayerSelection[] = { i, j };
+					int selection = 0;
 
-					PositionMap temp1 = new PositionMap(
-							activeSubset.elementAt(1),
-							activePositions.elementAt(j));
-					map.add(temp1);
+					for (int k = 0; k < activeSubset.size(); k++) {
+
+						if (activeSubset.elementAt(k).getNumber() == onBallPlayer) {
+
+							PositionMap temp = new PositionMap(
+									activeSubset.elementAt(k), ball);
+							map.add(temp);
+
+						} else {
+
+							if (selection < PlayerSelection.length - 1) {
+
+								PositionMap temp = new PositionMap(
+										activeSubset.elementAt(k),
+										activePositions
+												.elementAt(PlayerSelection[selection++]));
+								map.add(temp);
+
+							} else {
+
+								PositionMap temp = new PositionMap(
+										activeSubset.elementAt(k),
+										activePositions
+												.elementAt(PlayerSelection[selection]));
+								map.add(temp);
+
+							}
+						}
+					}
 
 					double cost = PositionMapCost.calculate(map);
 
 					if (min > cost) {
-						
-							Bestmap.removeAllElements();
-							for(int g=0;g<map.size();g++){
-								
-								Bestmap.add(map.elementAt(g));
-								
-							}
-							
+
+						Bestmap.removeAllElements();
+						for (int g = 0; g < map.size(); g++) {
+
+							Bestmap.add(map.elementAt(g));
+
+						}
+
 					}
-					
+
 					map.clear();
 
 				}
 			}
 		}
-		
+
 		return Bestmap;
 	}
 }

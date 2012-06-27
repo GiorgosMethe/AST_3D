@@ -6,6 +6,7 @@ package coordination.main;
 import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationMessageUpdate;
 import coordination.strategy.ActivePositions;
+import coordination.support.SupportCoordination;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -23,8 +24,8 @@ public class Coordination {
 	 * Here is the main coordination function, coordination administrator
 	 * calculates the actions which maximize team reward
 	 */
-	
-	public static long a,b;
+
+	public static long a, b;
 
 	public static void MakeCoordination() {
 
@@ -36,10 +37,9 @@ public class Coordination {
 		if (CoordinationRun.getStep() == 1) {
 
 			a = System.currentTimeMillis();
-			
+
 			CoordinationBeliefs
 					.UpdateBeliefs(CoordinationMessageUpdate.CoordinationVector);
-
 
 			CoordinationRun.setStep(2);
 
@@ -52,10 +52,8 @@ public class Coordination {
 			 */
 		} else if (CoordinationRun.getStep() == 2) {
 
-			
 			CoordinationSplitter
 					.Split(CoordinationMessageUpdate.CoordinationVector);
-			
 
 			CoordinationRun.setStep(3);
 
@@ -65,9 +63,7 @@ public class Coordination {
 			 */
 		} else if (CoordinationRun.getStep() == 3) {
 
-			
 			ActivePositions.Calculate(CoordinationBeliefs.Ball);
-			
 
 			CoordinationRun.setStep(4);
 
@@ -78,10 +74,22 @@ public class Coordination {
 
 		} else if (CoordinationRun.getStep() == 4) {
 
-			
-
 			ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
 					ActivePositions.ActivePositions, CoordinationBeliefs.Ball);
+
+			b = System.currentTimeMillis();
+
+			System.out.println("coordination time: " + (b - a) + "ms");
+
+			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
+
+			CoordinationRun.setStep(0);
+
+		} else if (CoordinationRun.getStep() == 5) {
+
+			SupportCoordination.Coordinate(
+					CoordinationMessageUpdate.CoordinationVector,
+					CoordinationBeliefs.Ball);
 
 			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
 

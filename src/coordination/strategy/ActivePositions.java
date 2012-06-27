@@ -34,25 +34,10 @@ public class ActivePositions {
 
 		distance = 2;
 		Theta = 0;
-		for (int i = 0; i < 16; i++) {
+		for (int i = 0; i < 12; i++) {
 
 			Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-					Ball.X, Ball.Y, Theta, distance);
-			Theta += 30;
-
-			if (ProperSupportPosition(a)) {
-
-				ActivePositions.add(a);
-
-			}
-		}
-
-		distance = 2.5f;
-		Theta = 15;
-		for (int i = 0; i < 16; i++) {
-
-			Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-					Ball.X, Ball.Y, Theta, distance);
+					Ball.X, Ball.Y, Theta, (distance + Math.random()));
 			Theta += 30;
 
 			if (ProperSupportPosition(a)) {
@@ -97,8 +82,15 @@ public class ActivePositions {
 			Collections.sort(ActivePositions, NEGATIVE_ORDER);
 		}
 
-		for (int i = 0; i < ActivePositions.size(); i++) {
+		System.out.println("ball position");
+		System.out.println("-------------------");
+		System.out.println(Ball.X + " " + Ball.Y);
 
+		System.out.println("active positions");
+		System.out.println("-------------------");
+		for (int i = 0; i < ActivePositions.size(); i++) {
+			System.out.println("x " + ActivePositions.elementAt(i).X + " y"
+					+ ActivePositions.elementAt(i).Y);
 			if (i > 9) {
 				ActivePositions.removeElementAt(i);
 

@@ -13,8 +13,8 @@
 
 package agent.runtime;
 
+import motion.utils.PerformMovement;
 import motion.utils.ReadMotionFiles;
-import motion.xml.RunXML;
 import perceptor.localization.BallPosition;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
@@ -43,9 +43,7 @@ public class Agent {
 		SayEffector sm = new SayEffector();
 		isFallen iF = new isFallen();
 		ReadMotionFiles.Read();
-		
 
-		// /
 		GKBstates.setState("GoToBall");
 
 		// connection config
@@ -62,14 +60,14 @@ public class Agent {
 		// Creation of Nao robot
 		if (isConnected == true) {
 			InitAgent.CreateAgent(con);
-			
+
 		}
 		// server cyrcles
 		int i = 0;
 		int j = 0;
 
 		// player number
-		num =8;
+		num = 9;
 		Teamname = "AST_3D";
 		// team name
 
@@ -104,14 +102,16 @@ public class Agent {
 				Coordination.MakeCoordination();
 
 				ActionEffector.Act();
-				/*******************************************************************/
 
-				AgentAct = RunXML.run();
+				/*******************************************************************/
 
 				j = j + 1;
 				ServerCyrcles.setGameCyrcles(j);
 
 			}
+
+			// run motion
+			AgentAct = PerformMovement.run();
 
 			// check if i am down
 			iF.Check();
