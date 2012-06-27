@@ -3,9 +3,11 @@
  */
 package coordination.main;
 
+import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationMessageUpdate;
 import coordination.strategy.ActivePositions;
+import coordination.strategy.TeamFormation;
 import coordination.support.SupportCoordination;
 
 /***********************************************************************************
@@ -57,16 +59,34 @@ public class Coordination {
 
 			CoordinationRun.setStep(3);
 
+			
+			
+			
+			
+			
+			
 			/*
-			 * position for active players are going to be calculated in
+			 * positions for active players are going to be calculated in
 			 * relation with the ball position
+			 * 
+			 * Furthermore, a whole and independent team formation is going
+			 * to be calculated
 			 */
 		} else if (CoordinationRun.getStep() == 3) {
 
+			
 			ActivePositions.Calculate(CoordinationBeliefs.Ball);
 
+			TeamFormation.Calculate(CoordinationBeliefs.Ball);
+			
 			CoordinationRun.setStep(4);
 
+			
+			
+			
+			
+			
+			
 			/*
 			 * This function is called in order to find actions for all active
 			 * agents which are going to minimize the global cost.
@@ -76,21 +96,9 @@ public class Coordination {
 
 			ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
 					ActivePositions.ActivePositions, CoordinationBeliefs.Ball);
-
-			b = System.currentTimeMillis();
-
-			System.out.println("coordination time: " + (b - a) + "ms");
-
-			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
-
-			CoordinationRun.setStep(0);
-
-		} else if (CoordinationRun.getStep() == 5) {
-
-			SupportCoordination.Coordinate(
-					CoordinationMessageUpdate.CoordinationVector,
-					CoordinationBeliefs.Ball);
-
+			
+			RoleAssignmentFunction.AssignRolesForActivePlayers();
+			
 			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
 
 			b = System.currentTimeMillis();
@@ -98,6 +106,8 @@ public class Coordination {
 			System.out.println("coordination time: " + (b - a) + "ms");
 
 			CoordinationRun.setStep(0);
+			
+
 
 		} else {
 

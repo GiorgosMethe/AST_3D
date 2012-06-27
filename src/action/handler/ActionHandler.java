@@ -11,6 +11,8 @@ public class ActionHandler {
 			ActionPlaying.setActionPlaying(Action);
 
 		} else {
+			
+			ActionPlaying.setActionPlaying(null);
 
 		}
 
