@@ -42,8 +42,17 @@ public class Coordination {
 
 			CoordinationBeliefs
 					.UpdateBeliefs(CoordinationMessageUpdate.CoordinationVector);
+			
+			System.out.println("ball :"+CoordinationBeliefs.Ball.getX()+" "+CoordinationBeliefs.Ball.getY());
+			
+			
+			for(int i=0;i<CoordinationMessageUpdate.CoordinationVector.size();i++){
+				System.out.println();
+				System.out.println("player"+CoordinationMessageUpdate.CoordinationVector.elementAt(i).getNumber()+" :"+CoordinationMessageUpdate.CoordinationVector.elementAt(i).getPlayer().getX()+" "+CoordinationMessageUpdate.CoordinationVector.elementAt(i).getPlayer().getY());
+			}
 
-			CoordinationRun.setStep(2);
+			CoordinationRun.setStep(0);
+			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
 
 			/*
 			 * Players are going to be splitted in three coordination subsets.
@@ -59,12 +68,6 @@ public class Coordination {
 
 			CoordinationRun.setStep(3);
 
-			
-			
-			
-			
-			
-			
 			/*
 			 * positions for active players are going to be calculated in
 			 * relation with the ball position

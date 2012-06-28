@@ -20,18 +20,16 @@ public class CoordinationMessage {
 	public int type;
 	public int number;
 	public Coordinate Player;
-	public Coordinate ball;
 	public int BallDistance, BallTheta;
 	public double RealDistance;
 
 	public CoordinationMessage(int type, int number, Coordinate player,
-			Coordinate ball, int ballDistance, int ballTheta,
+			 int ballDistance, int ballTheta,
 			double realDistance) {
 
 		this.type = type;
 		this.number = number;
 		Player = player;
-		this.ball = ball;
 		BallDistance = ballDistance;
 		BallTheta = ballTheta;
 		RealDistance = realDistance;
@@ -59,14 +57,6 @@ public class CoordinationMessage {
 
 	public void setPlayer(Coordinate player) {
 		Player = player;
-	}
-
-	public Coordinate getBall() {
-		return ball;
-	}
-
-	public void setBall(Coordinate ball) {
-		this.ball = ball;
 	}
 
 	public int getBallDistance() {

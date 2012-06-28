@@ -47,15 +47,16 @@ public class CoordinationMessageUpdate {
 					playerX = Integer.parseInt(cmarray[2]);
 					playerY = Integer.parseInt(cmarray[3]);
 
-					ballX = Integer.parseInt(cmarray[4]);
-					ballY = Integer.parseInt(cmarray[5]);
+					ballTheta = Integer.parseInt(cmarray[4]);
+					ballDistance = Integer.parseInt(cmarray[5]);
 
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
 				System.out.print(number + "c ");
 
-			} else if (cmarray[0].equalsIgnoreCase("b")) {
+
+			}else if (cmarray[0].equalsIgnoreCase("l")) {
 
 				try {
 
@@ -63,8 +64,30 @@ public class CoordinationMessageUpdate {
 
 					number = Integer.parseInt(cmarray[1]);
 
-					ballDistance = Integer.parseInt(cmarray[4]);
-					ballTheta = Integer.parseInt(cmarray[5]);
+					playerX = Integer.parseInt(cmarray[2]);
+					playerY = Integer.parseInt(cmarray[3]);
+
+					//ballTheta = Integer.parseInt(String.valueOf(Double.NaN));
+					//ballDistance = Integer.parseInt(String.valueOf(Double.NaN));
+
+				} catch (Exception e) {
+					System.err.println("error in coordination message update");
+				}
+				System.out.print(number + "l ");
+
+			} else if (cmarray[0].equalsIgnoreCase("b")) {
+
+				try {
+
+					type = 2;
+
+					number = Integer.parseInt(cmarray[1]);
+					
+					ballTheta = Integer.parseInt(cmarray[2]);
+					ballDistance = Integer.parseInt(cmarray[3]);
+
+					//playerX = Integer.parseInt(String.valueOf(Double.NaN));
+					//playerY = Integer.parseInt(String.valueOf(Double.NaN));
 
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
@@ -76,9 +99,15 @@ public class CoordinationMessageUpdate {
 
 				try {
 
-					type = 2;
-
+					type = 3;
+					
 					number = Integer.parseInt(cmarray[1]);
+					
+					//playerX = Integer.parseInt(String.valueOf(Double.NaN));
+					//playerY = Integer.parseInt(String.valueOf(Double.NaN));
+					
+					//ballDistance = Integer.parseInt(String.valueOf(Double.NaN));
+					//ballTheta = Integer.parseInt(String.valueOf(Double.NaN));
 
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
@@ -90,33 +119,17 @@ public class CoordinationMessageUpdate {
 				System.out.println("Unknown coordination message");
 			}
 
-			if (type == 0) {
-
-				CoordinationMessage cm = new CoordinationMessage(0, number,
-						new Coordinate(playerX, playerY), new Coordinate(ballX,
-								ballY), ballDistance, ballTheta, 0);
-
-				CoordinationVector.addElement(cm);
-
-			} else if (type == 1) {
-
-				CoordinationMessage cm = new CoordinationMessage(1, number,
-						new Coordinate(Double.NaN, Double.NaN), new Coordinate(
-								Double.NaN, Double.NaN), ballDistance,
-						ballTheta, 0);
-
-				CoordinationVector.addElement(cm);
-
-			} else {
-
-				CoordinationMessage cm = new CoordinationMessage(2, number,
-						new Coordinate(Double.NaN, Double.NaN), new Coordinate(
-								Double.NaN, Double.NaN), ballDistance,
-						ballTheta, 0);
-
-				CoordinationVector.addElement(cm);
-
-			}
+			CoordinationMessage temp = new CoordinationMessage(
+					type,
+					number,
+					new Coordinate(playerX, playerY),
+					ballDistance,
+					ballTheta,
+					0);
+			
+			
+			CoordinationVector.add(temp);
+			
 
 		}
 		System.out.println("");

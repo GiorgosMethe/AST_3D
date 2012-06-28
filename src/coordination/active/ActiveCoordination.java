@@ -37,13 +37,13 @@ public class ActiveCoordination {
 
 			if (ActiveSubset.elementAt(i).getType() == 0) {
 
-				distance = ActiveSubset.elementAt(i).getRealDistance();
+				distance = ActiveSubset.elementAt(i).getBallDistance();
 
 				finalValue = distance;
 
 			} else if (ActiveSubset.elementAt(i).getType() == 1) {
 
-				distance = ActiveSubset.elementAt(i).getRealDistance();
+				distance = ActiveSubset.elementAt(i).getBallDistance();
 
 				finalValue = distance;
 

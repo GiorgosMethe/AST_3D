@@ -1,9 +1,12 @@
 package action.handler;
 
+import motion.old.MotionTrigger;
 import perceptor.localization.Coordinate;
 import action.complex.GoKickBallToGoal;
 import action.complex.WalkToCoordinate;
+import action.simple.TurnToBall;
 import action.simple.TurnToLocate;
+import action.simple.TurnToSeeBall;
 
 public class ActionEffector {
 
@@ -37,7 +40,7 @@ public class ActionEffector {
 
 		}else{
 			
-			TurnToLocate.Act();
+			TurnToBall.Act();
 			
 		}
 

@@ -23,7 +23,7 @@ public class CoordinationSplitter {
 
 			@Override
 			public int compare(CoordinationMessage e1, CoordinationMessage e2) {
-				boolean Cmp = e2.getRealDistance() >= (e1.getRealDistance());
+				boolean Cmp = e2.getBallDistance() >= (e1.getBallDistance());
 				if (Cmp != true) {
 					return 1;
 				} else {

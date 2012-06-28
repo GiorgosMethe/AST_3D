@@ -5,6 +5,7 @@ package communication.utils;
 
 import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
+import action.handler.ActionPlaying;
 import agent.values.AgentType;
 import coordination.action.ActionTable;
 import coordination.action.ActionTranslator;
@@ -50,11 +51,11 @@ public class MessageCreator {
 		String message = "";
 		String type = "";
 
+
+
 		// agent know his position and the ball position
-		if (!Double.isNaN(LocalizationResults.getBall_location().X)
-				&& !Double.isNaN(LocalizationResults.getBall_location().Y)
-				&& !Double.isNaN(LocalizationResults.getCurrent_location().X)
-				&& !Double.isNaN(LocalizationResults.getCurrent_location().Y)) {
+		if (LocalizationResults.isKnowMyPosition()
+				&& Ball.isSeeTheBall()) {
 
 			type = "c" + ",";
 
@@ -67,16 +68,15 @@ public class MessageCreator {
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().Y)) + ",";
 
-			// ball position
-			message += Integer.toString((int) Math.rint(LocalizationResults
-					.getBall_location().X)) + ",";
-			message += Integer.toString((int) Math.rint(LocalizationResults
-					.getBall_location().Y));
+			// ball position elements
+			message += Integer.toString((int) Math.rint(LocalizationResults.getBall_angle())) + ",";
+			message += Integer.toString((int) Math.rint(Ball.getDistance()));
 
 			// agent only see the ball
-		} else if (Ball.isSeeTheBall()) {
+		} else if (LocalizationResults.isKnowMyPosition()
+				&& !Ball.isSeeTheBall()) {
 
-			type = "b" + ",";
+			type = "l" + ",";
 
 			// player number
 			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
@@ -85,12 +85,21 @@ public class MessageCreator {
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().X)) + ",";
 			message += Integer.toString((int) Math.rint(LocalizationResults
-					.getCurrent_location().Y)) + ",";
+					.getCurrent_location().Y));
 
-			// ball position
-			message += Integer.toString((int) Math.rint(Ball.getDistance()))
-					+ ",";
-			message += Integer.toString((int) Math.rint(Ball.getAngleX()));
+
+		} else if (!LocalizationResults.isKnowMyPosition()
+				&& Ball.isSeeTheBall()) {
+
+			type = "b" + ",";
+
+			// player number
+			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+
+			// ball position elements
+			message += Integer.toString((int) Math.rint(Ball.getAngleX())) + ",";
+			message += Integer.toString((int) Math.rint(Ball.getDistance()));
+
 
 			// agent has complete unawareness of his environment
 		} else {

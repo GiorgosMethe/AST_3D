@@ -30,10 +30,29 @@ public class LocalizationResults {
 		LocalizationResults.ball_location = ball_location;
 	}
 
-	public static double head_angle, body_angle;
+	public static double head_angle, body_angle, ball_angle;
+	public static boolean KnowMyPosition;
 	public static Vector<Landmark> landmarks = new Vector<Landmark>();
 	public static Vector<Landmark> coplayers = new Vector<Landmark>();
 	public static Vector<Landmark> rivals = new Vector<Landmark>();
+
+
+	
+	public static boolean isKnowMyPosition() {
+		return KnowMyPosition;
+	}
+
+	public static void setKnowMyPosition(boolean knowMyPosition) {
+		KnowMyPosition = knowMyPosition;
+	}
+
+	public static double getBall_angle() {
+		return ball_angle;
+	}
+
+	public static void setBall_angle(double ball_angle) {
+		LocalizationResults.ball_angle = ball_angle;
+	}
 
 	public static Coordinate getCurrent_location() {
 		return current_location;

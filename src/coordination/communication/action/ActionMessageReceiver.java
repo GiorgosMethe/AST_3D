@@ -44,6 +44,11 @@ public class ActionMessageReceiver {
 
 				}
 
+			}else{
+				
+				Action = null;
+	
+				
 			}
 
 			ActionHandler.Handle(Action);
