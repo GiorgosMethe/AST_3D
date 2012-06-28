@@ -11,16 +11,16 @@ package action.complex;
  *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
 
-import action.vision.VisionType;
 import motion.old.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import action.vision.VisionType;
 
 public class WalkToCoordinate {
 
 	public static boolean Act(Coordinate target) {
-		
+
 		VisionType.setType(5);
 
 		double ThetaToTarget = TriangleLocalization.FindAngle(target);

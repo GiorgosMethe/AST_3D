@@ -3,16 +3,19 @@ package coordination.strategy;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
 import agent.constraints.Constraints;
+import coordination.main.CoordinationBeliefs;
 
 public class TeamFormation {
 
 	public static Coordinate[] TeamFormation = new Coordinate[10];
 
-	public static void Calculate(Coordinate Ball) {
+	public static void Calculate() {
 
 		/*
 		 * Check if Ball coordination is out of field
 		 */
+
+		Coordinate Ball = CoordinationBeliefs.Ball;
 
 		if (Ball.X > Constraints.FieldLength / 2) {
 

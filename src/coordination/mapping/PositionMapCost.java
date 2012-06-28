@@ -6,7 +6,6 @@ import java.util.Vector;
 
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
-import coordination.main.CoordinationBeliefs;
 import coordination.strategy.SoccerFieldCoordinateValue;
 
 public class PositionMapCost {
@@ -21,28 +20,23 @@ public class PositionMapCost {
 
 			cost += TriangleLocalization.FindDistanceAmong2Coordinates(Agent,
 					map.elementAt(agentNum).getPosition());
-			
-			if(Ball.getX() >= 0){
+
+			if (Ball.getX() >= 0) {
 				cost -= Math.abs(SoccerFieldCoordinateValue.Calculate(map
 						.elementAt(agentNum).getPosition()));
-			}else{
+			} else {
 				cost += Math.abs(SoccerFieldCoordinateValue.Calculate(map
 						.elementAt(agentNum).getPosition()));
 			}
-
-			
 
 		}
 
 		for (int q = 0; q < map.size(); q++) {
 			for (int r = q + 1; r < map.size(); r++) {
 
-				
-
-				cost -= 2 * TriangleLocalization.FindDistanceAmong2Coordinates(map
-						.elementAt(q).getPosition(), map.elementAt(r)
-						.getPosition());
-				
+				cost -= 2 * TriangleLocalization.FindDistanceAmong2Coordinates(
+						map.elementAt(q).getPosition(), map.elementAt(r)
+								.getPosition());
 
 				if (map.elementAt(r).getAgent().getType() == 0
 						&& map.elementAt(q).getAgent().getType() == 0) {
@@ -73,17 +67,15 @@ public class PositionMapCost {
 							cost += 100;
 
 						}
-						
 
-					}else{
-						
-						
-						double distance = GeometricUtils.FindDistance(Agent1, map.elementAt(q)
-								.getPosition(), Agent2, map.elementAt(r)
-								.getPosition());
-						
+					} else {
+
+						double distance = GeometricUtils.FindDistance(Agent1,
+								map.elementAt(q).getPosition(), Agent2, map
+										.elementAt(r).getPosition());
+
 						cost -= distance;
-						
+
 					}
 
 				}

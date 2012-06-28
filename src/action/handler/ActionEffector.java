@@ -1,12 +1,9 @@
 package action.handler;
 
-import motion.old.MotionTrigger;
 import perceptor.localization.Coordinate;
 import action.complex.GoKickBallToGoal;
 import action.complex.WalkToCoordinate;
 import action.simple.TurnToBall;
-import action.simple.TurnToLocate;
-import action.simple.TurnToSeeBall;
 
 public class ActionEffector {
 
@@ -14,14 +11,12 @@ public class ActionEffector {
 
 		if (ActionPlaying.getActionPlaying() != null) {
 
-
 			boolean playing = false;
-			
+
 			if (ActionPlaying.getActionPlaying().getAction()
 					.equalsIgnoreCase("GoKickBallToGoal")) {
 
 				playing = GoKickBallToGoal.Act();
-				
 
 			} else if (ActionPlaying.getActionPlaying().getAction()
 					.equalsIgnoreCase("WalkToCoordinate")) {
@@ -33,15 +28,13 @@ public class ActionEffector {
 				playing = WalkToCoordinate.Act(target);
 
 			}
-			
-			
-			
+
 			ActionPlaying.setEnd(playing);
 
-		}else{
-			
+		} else {
+
 			TurnToBall.Act();
-			
+
 		}
 
 	}

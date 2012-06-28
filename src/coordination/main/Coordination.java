@@ -5,10 +5,9 @@ package coordination.main;
 
 import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
-import coordination.communication.message.CoordinationMessageUpdate;
+import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.strategy.ActivePositions;
 import coordination.strategy.TeamFormation;
-import coordination.support.SupportCoordination;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -40,19 +39,9 @@ public class Coordination {
 
 			a = System.currentTimeMillis();
 
-			CoordinationBeliefs
-					.UpdateBeliefs(CoordinationMessageUpdate.CoordinationVector);
-			
-			System.out.println("ball :"+CoordinationBeliefs.Ball.getX()+" "+CoordinationBeliefs.Ball.getY());
-			
-			
-			for(int i=0;i<CoordinationMessageUpdate.CoordinationVector.size();i++){
-				System.out.println();
-				System.out.println("player"+CoordinationMessageUpdate.CoordinationVector.elementAt(i).getNumber()+" :"+CoordinationMessageUpdate.CoordinationVector.elementAt(i).getPlayer().getX()+" "+CoordinationMessageUpdate.CoordinationVector.elementAt(i).getPlayer().getY());
-			}
+			CoordinationBeliefs.UpdateBeliefs();
 
-			CoordinationRun.setStep(0);
-			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
+			CoordinationRun.setStep(2);
 
 			/*
 			 * Players are going to be splitted in three coordination subsets.
@@ -63,8 +52,7 @@ public class Coordination {
 			 */
 		} else if (CoordinationRun.getStep() == 2) {
 
-			CoordinationSplitter
-					.Split(CoordinationMessageUpdate.CoordinationVector);
+			CoordinationSplitter.Split();
 
 			CoordinationRun.setStep(3);
 
@@ -72,24 +60,15 @@ public class Coordination {
 			 * positions for active players are going to be calculated in
 			 * relation with the ball position
 			 * 
-			 * Furthermore, a whole and independent team formation is going
-			 * to be calculated
+			 * Furthermore, a whole and independent team formation is going to
+			 * be calculated
 			 */
 		} else if (CoordinationRun.getStep() == 3) {
 
-			
-			ActivePositions.Calculate(CoordinationBeliefs.Ball);
+			ActivePositions.Calculate();
 
-			TeamFormation.Calculate(CoordinationBeliefs.Ball);
-			
 			CoordinationRun.setStep(4);
 
-			
-			
-			
-			
-			
-			
 			/*
 			 * This function is called in order to find actions for all active
 			 * agents which are going to minimize the global cost.
@@ -97,20 +76,23 @@ public class Coordination {
 
 		} else if (CoordinationRun.getStep() == 4) {
 
-			ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
-					ActivePositions.ActivePositions, CoordinationBeliefs.Ball);
-			
-			//RoleAssignmentFunction.AssignRolesForActivePlayers();
-			
-			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
+			ActiveCoordination.Coordinate();
 
 			b = System.currentTimeMillis();
 
-			System.out.println("coordination time: " + (b - a) + "ms");
+			System.out.println("Active coordination time: " + (b - a) + "ms");
+
+			CoordinationRun.setStep(5);
+
+		} else if (CoordinationRun.getStep() == 5) {
+
+			TeamFormation.Calculate();
+
+			RoleAssignmentFunction.AssignRolesForActivePlayers();
+
+			CoordinationVectorUpdate.CoordinationVector.clear();
 
 			CoordinationRun.setStep(0);
-			
-
 
 		} else {
 

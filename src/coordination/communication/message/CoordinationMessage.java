@@ -24,8 +24,7 @@ public class CoordinationMessage {
 	public double RealDistance;
 
 	public CoordinationMessage(int type, int number, Coordinate player,
-			 int ballDistance, int ballTheta,
-			double realDistance) {
+			int ballDistance, int ballTheta, double realDistance) {
 
 		this.type = type;
 		this.number = number;

@@ -2,31 +2,27 @@ package action.simple;
 
 import motion.old.MotionTrigger;
 import perceptor.localization.LocalizationResults;
-import perceptor.vision.Vision;
+import perceptor.vision.Ball;
+import action.vision.VisionType;
 
 public class TurnToLocate {
 
 	public static boolean Act() {
 
-		if (Vision.isiSee() == true) {
+		if (LocalizationResults.isKnowMyPosition() && Ball.isSeeTheBall()) {
 
-			if ((!Double.isNaN(LocalizationResults.getBody_angle()))
-					&& (!Double.isNaN(LocalizationResults.getCurrent_location()
-							.getX()))
-					&& (!Double.isNaN(LocalizationResults.getCurrent_location()
-							.getY()))) {
+			VisionType.setType(4);
+			MotionTrigger.setMotion("");
+			return true;
 
-				MotionTrigger.setMotion("");
-				return true;
+		} else {
 
-			} else {
+			VisionType.setType(4);
+			MotionTrigger.setMotion("TurnRight40");
+			return false;
 
-				MotionTrigger.setMotion("TurnRight40");
-				return false;
-
-			}
 		}
-		return false;
+
 	}
 
 }

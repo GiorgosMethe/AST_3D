@@ -5,7 +5,6 @@ package communication.utils;
 
 import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
-import action.handler.ActionPlaying;
 import agent.values.AgentType;
 import coordination.action.ActionTable;
 import coordination.action.ActionTranslator;
@@ -51,11 +50,8 @@ public class MessageCreator {
 		String message = "";
 		String type = "";
 
-
-
 		// agent know his position and the ball position
-		if (LocalizationResults.isKnowMyPosition()
-				&& Ball.isSeeTheBall()) {
+		if (LocalizationResults.isKnowMyPosition() && Ball.isSeeTheBall()) {
 
 			type = "c" + ",";
 
@@ -69,7 +65,8 @@ public class MessageCreator {
 					.getCurrent_location().Y)) + ",";
 
 			// ball position elements
-			message += Integer.toString((int) Math.rint(LocalizationResults.getBall_angle())) + ",";
+			message += Integer.toString((int) Math.rint(LocalizationResults
+					.getBall_angle())) + ",";
 			message += Integer.toString((int) Math.rint(Ball.getDistance()));
 
 			// agent only see the ball
@@ -87,7 +84,6 @@ public class MessageCreator {
 			message += Integer.toString((int) Math.rint(LocalizationResults
 					.getCurrent_location().Y));
 
-
 		} else if (!LocalizationResults.isKnowMyPosition()
 				&& Ball.isSeeTheBall()) {
 
@@ -97,9 +93,9 @@ public class MessageCreator {
 			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
 
 			// ball position elements
-			message += Integer.toString((int) Math.rint(Ball.getAngleX())) + ",";
+			message += Integer.toString((int) Math.rint(Ball.getAngleX()))
+					+ ",";
 			message += Integer.toString((int) Math.rint(Ball.getDistance()));
-
 
 			// agent has complete unawareness of his environment
 		} else {

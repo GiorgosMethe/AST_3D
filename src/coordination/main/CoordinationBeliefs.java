@@ -3,13 +3,11 @@
  */
 package coordination.main;
 
-import java.util.Vector;
-
 import perceptor.localization.Coordinate;
 import perceptor.localization.LocalizationResults;
 import perceptor.localization.TriangleLocalization;
 import perceptor.utils.BallObservationFilter;
-import coordination.communication.message.CoordinationMessage;
+import coordination.communication.message.CoordinationVectorUpdate;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -29,19 +27,15 @@ public class CoordinationBeliefs {
 	private static double realDistance;
 	private static int distance1;
 
-	public static void UpdateBeliefs(
-			Vector<CoordinationMessage> coordinationVector) {
+	public static void UpdateBeliefs() {
 
-		UpdateBallBelief(coordinationVector);
-		
-		
+		UpdateBallBelief();
 
-		UpdateDistancesBelief(coordinationVector);
+		UpdateDistancesBelief();
 
 	}
 
-	public static void UpdateBallBelief(
-			Vector<CoordinationMessage> coordinationVector) {
+	public static void UpdateBallBelief() {
 
 		/*
 		 * Here, we are making the collection of player perceptions
@@ -49,27 +43,33 @@ public class CoordinationBeliefs {
 		 * These thought will be used in order to locate the ball in the field
 		 */
 
-		if (LocalizationResults.isKnowMyPosition() &&
-				perceptor.vision.Ball.isSeeTheBall()) {
+		if (LocalizationResults.isKnowMyPosition()
+				&& perceptor.vision.Ball.isSeeTheBall()) {
 
-			BallObservationFilter.AddSample(TriangleLocalization.get_det_with_distance_angle(
-					LocalizationResults.getCurrent_location().getX(),
-					LocalizationResults.getCurrent_location().getY(),
-					LocalizationResults.getBall_angle(),
-					perceptor.vision.Ball.getDistance()));
+			BallObservationFilter.AddSample(TriangleLocalization
+					.get_det_with_distance_angle(LocalizationResults
+							.getCurrent_location().getX(), LocalizationResults
+							.getCurrent_location().getY(), LocalizationResults
+							.getBall_angle(), perceptor.vision.Ball
+							.getDistance()));
 
 		}
 
-		for (int i = 0; i < coordinationVector.size(); i++) {
+		for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector.size(); i++) {
 
-			if (coordinationVector.elementAt(i).getType() == 0) {
+			if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+					.getType() == 0) {
 
-				Coordinate ballSample = 
-						TriangleLocalization.get_det_with_distance_angle(
-						coordinationVector.elementAt(i).getPlayer().getX(),
-						coordinationVector.elementAt(i).getPlayer().getY(),
-						coordinationVector.elementAt(i).getBallTheta(),
-						coordinationVector.elementAt(i).getBallDistance());
+				Coordinate ballSample = TriangleLocalization
+						.get_det_with_distance_angle(
+								CoordinationVectorUpdate.CoordinationVector
+										.elementAt(i).getPlayer().getX(),
+								CoordinationVectorUpdate.CoordinationVector
+										.elementAt(i).getPlayer().getY(),
+								CoordinationVectorUpdate.CoordinationVector
+										.elementAt(i).getBallTheta(),
+								CoordinationVectorUpdate.CoordinationVector
+										.elementAt(i).getBallDistance());
 
 				BallObservationFilter.AddSample(ballSample);
 
@@ -81,33 +81,37 @@ public class CoordinationBeliefs {
 
 	}
 
-	public static void UpdateDistancesBelief(
-			Vector<CoordinationMessage> coordinationVector) {
+	public static void UpdateDistancesBelief() {
 
 		/*
 		 * We have to find the agent's real distance from the ball
 		 */
 
-		for (int i = 0; i < coordinationVector.size(); i++) {
+		for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector.size(); i++) {
 
 			// agent sees the ball directly
-			if (coordinationVector.elementAt(i).getType() == 0 ||
-					coordinationVector.elementAt(i).getType() == 2	) {
+			if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+					.getType() == 0
+					|| CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+							.getType() == 2) {
 
-				distance1 = coordinationVector.elementAt(i).getBallDistance();
+				distance1 = CoordinationVectorUpdate.CoordinationVector
+						.elementAt(i).getBallDistance();
 
-				realDistance = distance2;
+				realDistance = distance1;
 
 				// agent doesn't see the ball directly
-			} else if (coordinationVector.elementAt(i).getType() == 1) {
+			} else if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+					.getType() == 1) {
 
 				// distance can be only calculated indirectly
 
 				distance2 = TriangleLocalization.FindDistanceAmong2Coordinates(
 						CoordinationBeliefs.Ball,
-						coordinationVector.elementAt(i).getPlayer());
+						CoordinationVectorUpdate.CoordinationVector
+								.elementAt(i).getPlayer());
 
-				realDistance = distance1;
+				realDistance = distance2;
 
 			} else {
 
@@ -115,7 +119,8 @@ public class CoordinationBeliefs {
 
 			}
 
-			coordinationVector.elementAt(i).setRealDistance(realDistance);
+			CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+					.setRealDistance(realDistance);
 
 		}
 

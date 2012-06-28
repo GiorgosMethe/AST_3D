@@ -6,7 +6,7 @@ package coordination.communication.admin;
 import java.util.Vector;
 
 import agent.constraints.Constraints;
-import coordination.communication.message.CoordinationMessageUpdate;
+import coordination.communication.message.CoordinationVectorUpdate;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -51,7 +51,7 @@ public class AdminMessageBuffer {
 
 		if (cBuffer.size() == Constraints.numberPlayers - 1) {
 
-			CoordinationMessageUpdate.update(CoordinationMessageBuffer);
+			CoordinationVectorUpdate.update(CoordinationMessageBuffer);
 			CoordinationMessageBuffer.removeAllElements();
 			cBuffer.removeAllElements();
 

@@ -4,64 +4,68 @@ import java.util.Vector;
 
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
-
-import coordination.active.ActiveCoordination;
+import coordination.main.CoordinationBeliefs;
+import coordination.main.CoordinationSplitter;
 import coordination.strategy.TeamFormation;
 
 public class RoleAssignmentFunction {
 
 	public static Vector<Role> ActiveRoles = new Vector<Role>();
+	public static Vector<Role> SupportRoles = new Vector<Role>();
 
 	public static void AssignRolesForActivePlayers() {
 
+		ActiveRoles.clear();
+		SupportRoles.clear();
 
-		int roleArray[] = {0,0,0};
+		int roleArray[] = { 0, 0, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-		Coordinate agent = ActiveCoordination.OptimizedActiveMap.elementAt(0).getPosition();
-		Coordinate agent1 = ActiveCoordination.OptimizedActiveMap.elementAt(1).getPosition();
-		Coordinate agent2 = ActiveCoordination.OptimizedActiveMap.elementAt(2).getPosition();		
+		Coordinate Ball = CoordinationBeliefs.Ball;
 
-
-		double min = 1000;
-		for(int i=2;i<10;i++){
-			for(int j=2;j<10;j++){
-				for(int q=2;q<10;q++){
-
-					if(i !=j && j!=q && i!=q){
-
-
-						Coordinate role = TeamFormation.TeamFormation[i];
-						Coordinate role1 = TeamFormation.TeamFormation[j];
-						Coordinate role2 = TeamFormation.TeamFormation[q];
-
-						double distance = TriangleLocalization.FindDistanceAmong2Coordinates(agent,role) +
-								TriangleLocalization.FindDistanceAmong2Coordinates(agent1,role1) +
-								TriangleLocalization.FindDistanceAmong2Coordinates(agent1,role1);
-
-
-						if(distance < min){
-
-							min = distance;
-							roleArray[0]=i;
-							roleArray[1]=j;
-							roleArray[2]=q;
-
-
-						}
-
-					}
-
+		for (int i = 2; i < TeamFormation.TeamFormation.length; i++) {
+			for (int j = i; j > 2; j--) {
+				if (TriangleLocalization.FindDistanceAmong2Coordinates(
+						TeamFormation.TeamFormation[j - 1], Ball) > TriangleLocalization
+						.FindDistanceAmong2Coordinates(
+								TeamFormation.TeamFormation[j], Ball)) {
+					Coordinate swap = TeamFormation.TeamFormation[j];
+					int swap1 = roleArray[j];
+					TeamFormation.TeamFormation[j] = TeamFormation.TeamFormation[j - 1];
+					roleArray[j] = roleArray[j - 1];
+					TeamFormation.TeamFormation[j - 1] = swap;
+					roleArray[j - 1] = swap1;
 				}
-
 			}
 		}
 
+		int role = 2;
+		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
+			ActiveRoles.add(new Role(CoordinationSplitter.ActiveSubset
+					.elementAt(i), roleArray[role]));
+			role++;
 
+		}
 
-		for(int r=0;r<ActiveCoordination.OptimizedActiveMap.size();r++){
-			System.out.println("paixths :"+ActiveCoordination.OptimizedActiveMap.elementAt(r).getAgent().getNumber());
-			System.out.println("rolos :"+roleArray[r]);
+		for (int i = 0; i < CoordinationSplitter.SupportSubset.size(); i++) {
+
+			SupportRoles.add(new Role(CoordinationSplitter.ActiveSubset
+					.elementAt(i), roleArray[role]));
+			role++;
+
+		}
+
+		if (role == 9) {
+
+		} else {
+
+			for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++) {
+
+				SupportRoles.add(new Role(CoordinationSplitter.InactiveSubset
+						.elementAt(i), roleArray[role]));
+				role++;
+
+			}
 		}
 
 	}

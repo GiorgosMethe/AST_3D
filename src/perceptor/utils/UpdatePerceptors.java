@@ -300,7 +300,7 @@ public class UpdatePerceptors {
 
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(
 							"See")) {
-						
+
 						Ball.setSeeTheBall(false);
 						j = i;
 						j++;
@@ -411,7 +411,7 @@ public class UpdatePerceptors {
 								float angleY = Float.parseFloat(ReceivedMessage
 										.elementAt(j + 4).toString());
 								Ball.setAngleY(angleY);
-								
+
 								Ball.setSeeTheBall(true);
 
 								j = j + 4;
@@ -516,13 +516,13 @@ public class UpdatePerceptors {
 						double y = 0;
 
 						if (landmarks.size() >= 2) {
-							
+
 							LocalizationResults.setKnowMyPosition(true);
-							
-						}else{
-							
+
+						} else {
+
 							LocalizationResults.setKnowMyPosition(false);
-							
+
 						}
 
 						for (int ii = 0; ii < landmarks.size(); ii++) {
@@ -597,8 +597,9 @@ public class UpdatePerceptors {
 										curloc.getY(),
 										(head_angle + Ball.getAngleX()),
 										Ball.getDistance());
-						
-						LocalizationResults.setBall_angle((head_angle + Ball.getAngleX()));
+
+						LocalizationResults.setBall_angle((head_angle + Ball
+								.getAngleX()));
 
 						LocalizationResults.setBall_location(Ball_det);
 						LocalizationResults.setLandmarks(landmarks);
@@ -637,7 +638,7 @@ public class UpdatePerceptors {
 
 						i = j;
 						j = 0;
-						
+
 						see = true;
 
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(

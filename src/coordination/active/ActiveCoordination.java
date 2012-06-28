@@ -14,36 +14,39 @@ package coordination.active;
 
 import java.util.Vector;
 
-import perceptor.localization.Coordinate;
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
+import coordination.main.CoordinationBeliefs;
+import coordination.main.CoordinationSplitter;
 import coordination.mapping.PositionMap;
 import coordination.mapping.PositionMapCost;
+import coordination.strategy.ActivePositions;
 
 public class ActiveCoordination {
 
 	public static Vector<PositionMap> OptimizedActiveMap;
 
-	public static void Coordinate(Vector<CoordinationMessage> ActiveSubset,
-			Vector<Coordinate> ActivePositions, Coordinate ball) {
+	public static void Coordinate() {
 
 		double min = 1000;
 		int OnBallPlayer = 0;
 		double distance;
 		double finalValue = 0;
 
-		for (int i = 0; i < ActiveSubset.size(); i++) {
+		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
-			if (ActiveSubset.elementAt(i).getType() == 0) {
+			if (CoordinationSplitter.ActiveSubset.elementAt(i).getType() == 0) {
 
-				distance = ActiveSubset.elementAt(i).getBallDistance();
+				distance = CoordinationSplitter.ActiveSubset.elementAt(i)
+						.getBallDistance();
 
 				finalValue = distance;
 
-			} else if (ActiveSubset.elementAt(i).getType() == 1) {
+			} else if (CoordinationSplitter.ActiveSubset.elementAt(i).getType() == 1) {
 
-				distance = ActiveSubset.elementAt(i).getBallDistance();
+				distance = CoordinationSplitter.ActiveSubset.elementAt(i)
+						.getBallDistance();
 
 				finalValue = distance;
 
@@ -51,24 +54,29 @@ public class ActiveCoordination {
 
 			if (finalValue < min) {
 				min = finalValue;
-				OnBallPlayer = ActiveSubset.elementAt(i).getNumber();
+				OnBallPlayer = CoordinationSplitter.ActiveSubset.elementAt(i)
+						.getNumber();
 			}
 
 		}
 
-		for (int i = 0; i < ActiveSubset.size(); i++) {
-			if (OnBallPlayer == ActiveSubset.elementAt(i).getNumber()) {
+		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
+			if (OnBallPlayer == CoordinationSplitter.ActiveSubset.elementAt(i)
+					.getNumber()) {
 
-				ActionObject a = new ActionObject(ActiveSubset.elementAt(i)
-						.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
+				ActionObject a = new ActionObject(
+						CoordinationSplitter.ActiveSubset.elementAt(i)
+								.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
 
 				ActionTable.CoordinateActions.addElement(a);
 
 			}
 		}
 
-		OptimizedActiveMap = PositionCombination(ActivePositions, ActiveSubset,
-				OnBallPlayer, ball);
+		OptimizedActiveMap = PositionCombination(
+				ActivePositions.ActivePositions,
+				CoordinationSplitter.ActiveSubset, OnBallPlayer,
+				CoordinationBeliefs.Ball);
 
 		System.out.println("optimized positions");
 		System.out.println("-------------------");
@@ -140,15 +148,10 @@ public class ActiveCoordination {
 
 							}
 						}
-						
-						
-						
+
 					}
-					
 
-				
-					double cost = PositionMapCost.calculate(map,ball);
-
+					double cost = PositionMapCost.calculate(map, ball);
 
 					if (min > cost) {
 

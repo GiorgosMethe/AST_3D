@@ -23,10 +23,8 @@ public class AdminCordMessageReceiver {
 
 			InitReceiver(msg);
 
-		} else if ((msg.startsWith("c,"))
-				|| (msg.startsWith("l,"))
-				|| (msg.startsWith("b,"))
-				|| (msg.startsWith("x,"))) {
+		} else if ((msg.startsWith("c,")) || (msg.startsWith("l,"))
+				|| (msg.startsWith("b,")) || (msg.startsWith("x,"))) {
 
 			CoordinationReceiver(msg);
 

@@ -36,8 +36,6 @@ public class LocalizationResults {
 	public static Vector<Landmark> coplayers = new Vector<Landmark>();
 	public static Vector<Landmark> rivals = new Vector<Landmark>();
 
-
-	
 	public static boolean isKnowMyPosition() {
 		return KnowMyPosition;
 	}

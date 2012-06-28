@@ -1,29 +1,25 @@
 package coordination.support;
 
-import java.util.Vector;
-
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
-import coordination.communication.message.CoordinationMessage;
+import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.strategy.TeamFormation;
 
 public class SupportCoordination {
 
-	public static void Coordinate(
-			Vector<CoordinationMessage> coordinationVector,
-			perceptor.localization.Coordinate ball) {
+	public static void Coordinate() {
 
-		TeamFormation.Calculate(ball);
-
-		for (int i = 0; i < coordinationVector.size(); i++) {
+		for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector.size(); i++) {
 
 			ActionObject a = new ActionObject(
 
-			coordinationVector.elementAt(i).getNumber(), "WalkToCoordinate",
-					TeamFormation.TeamFormation[coordinationVector.elementAt(i)
-							.getNumber()].getX(),
-					TeamFormation.TeamFormation[coordinationVector.elementAt(i)
-							.getNumber()].getY(), 0, 0);
+					CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+							.getNumber(),
+					"WalkToCoordinate",
+					TeamFormation.TeamFormation[CoordinationVectorUpdate.CoordinationVector
+							.elementAt(i).getNumber()].getX(),
+					TeamFormation.TeamFormation[CoordinationVectorUpdate.CoordinationVector
+							.elementAt(i).getNumber()].getY(), 0, 0);
 
 			ActionTable.CoordinateActions.addElement(a);
 

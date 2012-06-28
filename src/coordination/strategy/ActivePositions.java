@@ -25,11 +25,10 @@ public class ActivePositions {
 
 	public static Vector<Coordinate> ActivePositions = new Vector<Coordinate>();
 
-	public static void Calculate(Coordinate Ball) {
+	public static void Calculate() {
 
 		ActivePositions.removeAllElements();
-		
-		
+
 		Vector<Coordinate> ActivePositionsTemp = new Vector<Coordinate>();
 
 		float distance;
@@ -40,7 +39,8 @@ public class ActivePositions {
 		for (int i = 0; i < 12; i++) {
 
 			Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-					Ball.X, Ball.Y, Theta, (distance));
+					CoordinationBeliefs.Ball.X, CoordinationBeliefs.Ball.Y,
+					Theta, (distance));
 			Theta += 30;
 
 			if (ProperSupportPosition(a)) {
@@ -79,7 +79,7 @@ public class ActivePositions {
 		};
 
 		// sort ActivePositions
-		if (Ball.X >= 0) {
+		if (CoordinationBeliefs.Ball.X >= 0) {
 			Collections.sort(ActivePositionsTemp, POSITIVE_ORDER);
 		} else {
 			Collections.sort(ActivePositionsTemp, NEGATIVE_ORDER);
@@ -87,17 +87,18 @@ public class ActivePositions {
 
 		System.out.println("ball position");
 		System.out.println("-------------------");
-		System.out.println(Ball.X + " " + Ball.Y);
+		System.out.println(CoordinationBeliefs.Ball.X + " "
+				+ CoordinationBeliefs.Ball.Y);
 
 		System.out.println("active positions");
 		System.out.println("-------------------");
 		for (int i = 0; i < ActivePositionsTemp.size(); i++) {
-			
+
 			if (i > 8) {
 				ActivePositionsTemp.removeAllElements();
 				break;
-				
-			}else{
+
+			} else {
 				ActivePositions.add(ActivePositionsTemp.elementAt(i));
 				System.out.println("x " + ActivePositions.elementAt(i).X + " y"
 						+ ActivePositions.elementAt(i).Y);

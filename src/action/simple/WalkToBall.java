@@ -13,19 +13,19 @@
 
 package action.simple;
 
-import action.vision.VisionType;
 import motion.old.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
+import action.vision.VisionType;
 
 public class WalkToBall {
 
 	public static boolean Act() {
-		
+
 		VisionType.setType(1);
-		
+
 		if (Vision.isiSee()) {
 
 			if (Ball.isSeeTheBall()) {

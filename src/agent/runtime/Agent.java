@@ -16,15 +16,9 @@ package agent.runtime;
 import motion.utils.PerformMovement;
 import motion.utils.ReadMotionFiles;
 import perceptor.localization.BallPosition;
-import perceptor.localization.Coordinate;
-import perceptor.localization.LocalizationResults;
 import perceptor.utils.UpdatePerceptors;
 import perceptor.utils.isFallen;
-import perceptor.vision.Ball;
-import perceptor.vision.Vision;
 import perceptor.worldstate.GameState;
-import action.complex.GoKickBallToGoal;
-import action.complex.WalkToCoordinate;
 import action.fsm.GKBstates;
 import action.handler.ActionEffector;
 import action.vision.HeadMovement;
@@ -74,8 +68,8 @@ public class Agent {
 
 		// player number
 		num = 9;
-		Teamname = "AST_3D";
 		// team name
+		Teamname = "AST_3D";
 
 		while (con.isConnected()) {
 
@@ -107,8 +101,9 @@ public class Agent {
 				SayEffector = sm.Say(MessageType.getType(), con);
 				Coordination.MakeCoordination();
 
-				//ActionEffector.Act();
-				
+				ActionEffector.Act();
+
+				// TurnToLocate.Act();
 
 				/*******************************************************************/
 
@@ -124,10 +119,10 @@ public class Agent {
 			iF.Check();
 
 			// get the head movement
-			//String headAct = Sb.MoveHead(VisionType.getType());
+			String headAct = Sb.MoveHead(VisionType.getType());
 
 			// create the hole agents actions
-			String Act = "" + AgentAct + SayEffector;
+			String Act = headAct + AgentAct + SayEffector;
 
 			// Act
 			con.sendMessage(Act);

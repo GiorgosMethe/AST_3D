@@ -34,10 +34,9 @@ public class GeometricUtils {
 		return null;
 
 	}
-	
-	
-	public static double FindDistance(
-			Coordinate a1, Coordinate a2, Coordinate b1, Coordinate b2) {
+
+	public static double FindDistance(Coordinate a1, Coordinate a2,
+			Coordinate b1, Coordinate b2) {
 
 		LineSegment a = new LineSegment();
 		a.setCoordinates(
@@ -53,15 +52,13 @@ public class GeometricUtils {
 
 			double result = a.distance(b);
 
-
 			return result;
-			
-		}else{
-			
+
+		} else {
+
 			return 0;
-			
+
 		}
-		
 
 	}
 
