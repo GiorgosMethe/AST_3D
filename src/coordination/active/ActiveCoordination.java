@@ -140,12 +140,19 @@ public class ActiveCoordination {
 
 							}
 						}
+						
+						
+						
 					}
+					
 
-					double cost = PositionMapCost.calculate(map);
+				
+					double cost = PositionMapCost.calculate(map,ball);
+
 
 					if (min > cost) {
 
+						min = (float) cost;
 						Bestmap.removeAllElements();
 						for (int g = 0; g < map.size(); g++) {
 

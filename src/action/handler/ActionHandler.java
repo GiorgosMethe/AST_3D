@@ -8,7 +8,16 @@ public class ActionHandler {
 
 		if (Action != null) {
 
-			ActionPlaying.setActionPlaying(Action);
+			if(ActionPlaying.isEnd()){
+				
+				ActionPlaying.setActionPlaying(Action);
+			
+			}else{
+			
+				
+			
+			}
+				
 
 		} else {
 			

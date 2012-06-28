@@ -11,10 +11,14 @@ public class ActionEffector {
 
 		if (ActionPlaying.getActionPlaying() != null) {
 
+
+			boolean playing = false;
+			
 			if (ActionPlaying.getActionPlaying().getAction()
 					.equalsIgnoreCase("GoKickBallToGoal")) {
 
-				GoKickBallToGoal.Act();
+				playing = GoKickBallToGoal.Act();
+				
 
 			} else if (ActionPlaying.getActionPlaying().getAction()
 					.equalsIgnoreCase("WalkToCoordinate")) {
@@ -23,9 +27,13 @@ public class ActionEffector {
 						.getActionPlaying().getParametres1(), ActionPlaying
 						.getActionPlaying().getParametres2());
 
-				WalkToCoordinate.Act(target);
+				playing = WalkToCoordinate.Act(target);
 
 			}
+			
+			
+			
+			ActionPlaying.setEnd(playing);
 
 		}else{
 			

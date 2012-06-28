@@ -96,6 +96,7 @@ public class InitAgent {
 
 				// Actions
 				ActionPlaying.setActionPlaying(null);
+				ActionPlaying.setEnd(true);
 
 			} else if (cyrcles == 3) {
 

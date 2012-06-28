@@ -28,6 +28,9 @@ public class ActivePositions {
 	public static void Calculate(Coordinate Ball) {
 
 		ActivePositions.removeAllElements();
+		
+		
+		Vector<Coordinate> ActivePositionsTemp = new Vector<Coordinate>();
 
 		float distance;
 		float Theta = 0;
@@ -37,12 +40,12 @@ public class ActivePositions {
 		for (int i = 0; i < 12; i++) {
 
 			Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-					Ball.X, Ball.Y, Theta, (distance + Math.random()));
+					Ball.X, Ball.Y, Theta, (distance));
 			Theta += 30;
 
 			if (ProperSupportPosition(a)) {
 
-				ActivePositions.add(a);
+				ActivePositionsTemp.add(a);
 
 			}
 		}
@@ -76,10 +79,10 @@ public class ActivePositions {
 		};
 
 		// sort ActivePositions
-		if (CoordinationBeliefs.Ball.X >= 0) {
-			Collections.sort(ActivePositions, POSITIVE_ORDER);
+		if (Ball.X >= 0) {
+			Collections.sort(ActivePositionsTemp, POSITIVE_ORDER);
 		} else {
-			Collections.sort(ActivePositions, NEGATIVE_ORDER);
+			Collections.sort(ActivePositionsTemp, NEGATIVE_ORDER);
 		}
 
 		System.out.println("ball position");
@@ -88,12 +91,16 @@ public class ActivePositions {
 
 		System.out.println("active positions");
 		System.out.println("-------------------");
-		for (int i = 0; i < ActivePositions.size(); i++) {
-			System.out.println("x " + ActivePositions.elementAt(i).X + " y"
-					+ ActivePositions.elementAt(i).Y);
-			if (i > 9) {
-				ActivePositions.removeElementAt(i);
-
+		for (int i = 0; i < ActivePositionsTemp.size(); i++) {
+			
+			if (i > 8) {
+				ActivePositionsTemp.removeAllElements();
+				break;
+				
+			}else{
+				ActivePositions.add(ActivePositionsTemp.elementAt(i));
+				System.out.println("x " + ActivePositions.elementAt(i).X + " y"
+						+ ActivePositions.elementAt(i).Y);
 			}
 		}
 

@@ -97,7 +97,7 @@ public class Coordination {
 			ActiveCoordination.Coordinate(CoordinationSplitter.ActiveSubset,
 					ActivePositions.ActivePositions, CoordinationBeliefs.Ball);
 			
-			RoleAssignmentFunction.AssignRolesForActivePlayers();
+			//RoleAssignmentFunction.AssignRolesForActivePlayers();
 			
 			CoordinationMessageUpdate.CoordinationVector.removeAllElements();
 

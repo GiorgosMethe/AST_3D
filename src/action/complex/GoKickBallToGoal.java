@@ -205,6 +205,7 @@ public class GoKickBallToGoal {
 			} else {
 				GKBGDstates.setTimeout(0);
 				GKBGDstates.setState("Start");
+				return true;
 			}
 
 		}
