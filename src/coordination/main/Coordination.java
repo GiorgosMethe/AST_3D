@@ -7,7 +7,9 @@ import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.strategy.ActivePositions;
+import coordination.strategy.SupportPositions;
 import coordination.strategy.TeamFormation;
+import coordination.support.SupportCoordination;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -78,21 +80,30 @@ public class Coordination {
 
 			ActiveCoordination.Coordinate();
 
-			b = System.currentTimeMillis();
-
-			System.out.println("Active coordination time: " + (b - a) + "ms");
-
 			CoordinationRun.setStep(5);
 
 		} else if (CoordinationRun.getStep() == 5) {
 
 			TeamFormation.Calculate();
 
-			RoleAssignmentFunction.AssignRolesForActivePlayers();
+			RoleAssignmentFunction.AssignRolesForPlayers();
+			
+			SupportPositions.Calculate();
 
+			CoordinationRun.setStep(6);
+			
+			
+		} else if (CoordinationRun.getStep() == 6) {
+
+			SupportCoordination.Coordinate();
+			
 			CoordinationVectorUpdate.CoordinationVector.clear();
 
 			CoordinationRun.setStep(0);
+			
+			b = System.currentTimeMillis();
+
+			System.out.println("Active coordination time: " + (b - a) + "ms");
 
 		} else {
 

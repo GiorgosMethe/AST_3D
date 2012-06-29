@@ -1,14 +1,14 @@
 package coordination.mapping;
 
-import geometry.GeometricUtils;
 
 import java.util.Vector;
 
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import utils.geometry.GeometricUtils;
 import coordination.strategy.SoccerFieldCoordinateValue;
 
-public class PositionMapCost {
+public class ActivePositionMapCost {
 
 	public static double calculate(Vector<PositionMap> map, Coordinate Ball) {
 

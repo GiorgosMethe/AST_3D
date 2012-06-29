@@ -16,9 +16,9 @@ public class CoordinationSplitter {
 	public static void Split() {
 
 		// clear previous created subsets
-		ActiveSubset.removeAllElements();
-		SupportSubset.removeAllElements();
-		InactiveSubset.removeAllElements();
+		ActiveSubset.clear();
+		SupportSubset.clear();
+		InactiveSubset.clear();
 
 		final Comparator<CoordinationMessage> POSITIVE_ORDER = new Comparator<CoordinationMessage>() {
 
@@ -67,6 +67,10 @@ public class CoordinationSplitter {
 
 			}
 		}
+		
+		System.out.println("Active Subset player #:"+ActiveSubset.size());
+		System.out.println("SupportSubset player #:"+SupportSubset.size());
+		System.out.println("InactiveSubsetplayer #:"+InactiveSubset.size());
 
 	}
 

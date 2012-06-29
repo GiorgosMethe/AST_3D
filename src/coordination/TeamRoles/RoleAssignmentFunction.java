@@ -13,7 +13,7 @@ public class RoleAssignmentFunction {
 	public static Vector<Role> ActiveRoles = new Vector<Role>();
 	public static Vector<Role> SupportRoles = new Vector<Role>();
 
-	public static void AssignRolesForActivePlayers() {
+	public static void AssignRolesForPlayers() {
 
 		ActiveRoles.clear();
 		SupportRoles.clear();
@@ -41,6 +41,9 @@ public class RoleAssignmentFunction {
 		int role = 2;
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
+			System.out.println("act paixths: "+CoordinationSplitter.ActiveSubset.elementAt(i).getNumber());
+			System.out.println("rolos: "+roleArray[role]);
+			
 			ActiveRoles.add(new Role(CoordinationSplitter.ActiveSubset
 					.elementAt(i), roleArray[role]));
 			role++;
@@ -49,24 +52,27 @@ public class RoleAssignmentFunction {
 
 		for (int i = 0; i < CoordinationSplitter.SupportSubset.size(); i++) {
 
-			SupportRoles.add(new Role(CoordinationSplitter.ActiveSubset
+			System.out.println("su paixths: "+CoordinationSplitter.SupportSubset.elementAt(i).getNumber());
+			System.out.println("rolos: "+roleArray[role]);
+			
+			SupportRoles.add(new Role(CoordinationSplitter.SupportSubset
 					.elementAt(i), roleArray[role]));
 			role++;
 
 		}
 
-		if (role == 9) {
 
-		} else {
+		for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++) {
 
-			for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++) {
+			System.out.println("in paixths: "+CoordinationSplitter.InactiveSubset.elementAt(i).getNumber());
+			System.out.println("rolos: "+roleArray[role]);
+			
+			SupportRoles.add(new Role(CoordinationSplitter.InactiveSubset
+					.elementAt(i), roleArray[role]));
+			role++;
 
-				SupportRoles.add(new Role(CoordinationSplitter.InactiveSubset
-						.elementAt(i), roleArray[role]));
-				role++;
-
-			}
 		}
+
 
 	}
 
