@@ -67,10 +67,10 @@ public class CoordinationSplitter {
 
 			}
 		}
-		
-		System.out.println("Active Subset player #:"+ActiveSubset.size());
-		System.out.println("SupportSubset player #:"+SupportSubset.size());
-		System.out.println("InactiveSubsetplayer #:"+InactiveSubset.size());
+
+		System.out.println("Active Subset player #:" + ActiveSubset.size());
+		System.out.println("SupportSubset player #:" + SupportSubset.size());
+		System.out.println("InactiveSubsetplayer #:" + InactiveSubset.size());
 
 	}
 

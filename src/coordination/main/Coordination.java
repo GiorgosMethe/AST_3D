@@ -87,20 +87,19 @@ public class Coordination {
 			TeamFormation.Calculate();
 
 			RoleAssignmentFunction.AssignRolesForPlayers();
-			
+
 			SupportPositions.Calculate();
 
 			CoordinationRun.setStep(6);
-			
-			
+
 		} else if (CoordinationRun.getStep() == 6) {
 
 			SupportCoordination.Coordinate();
-			
+
 			CoordinationVectorUpdate.CoordinationVector.clear();
 
 			CoordinationRun.setStep(0);
-			
+
 			b = System.currentTimeMillis();
 
 			System.out.println("Active coordination time: " + (b - a) + "ms");

@@ -137,7 +137,6 @@ public class TeamFormation {
 			 */
 		} else {
 
-			double theta1 = 0;
 			float distance1 = (float) (3 - 2 * (SoccerFieldCoordinateValue
 					.Calculate(Ball) / Constraints.MaxFieldSpotValue));
 			float x = (float) ((float) 6 * (Ball.X / Constraints.FieldLength / 2));

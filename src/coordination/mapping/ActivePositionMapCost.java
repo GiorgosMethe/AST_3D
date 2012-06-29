@@ -1,6 +1,5 @@
 package coordination.mapping;
 
-
 import java.util.Vector;
 
 import perceptor.localization.Coordinate;

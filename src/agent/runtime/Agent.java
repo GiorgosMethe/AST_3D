@@ -1,5 +1,5 @@
 /***********************************************************************************
- * Copyright 2012, Technical University of Crete
+ * Technical University of Crete
  * Academic Year 2011-2012
  *
  * Thesis Project

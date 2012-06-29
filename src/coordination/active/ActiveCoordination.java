@@ -19,8 +19,8 @@ import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
 import coordination.main.CoordinationBeliefs;
 import coordination.main.CoordinationSplitter;
-import coordination.mapping.PositionMap;
 import coordination.mapping.ActivePositionMapCost;
+import coordination.mapping.PositionMap;
 import coordination.strategy.ActivePositions;
 
 public class ActiveCoordination {
@@ -78,16 +78,16 @@ public class ActiveCoordination {
 				CoordinationSplitter.ActiveSubset, OnBallPlayer,
 				CoordinationBeliefs.Ball);
 
-//		System.out.println("optimized positions");
-//		System.out.println("-------------------");
+		// System.out.println("optimized positions");
+		// System.out.println("-------------------");
 		for (int i = 0; i < OptimizedActiveMap.size(); i++) {
 
-//			System.out.println("bazw paikth "
-//					+ OptimizedActiveMap.elementAt(i).getAgent().getNumber());
-//			System.out.println("bazw x "
-//					+ OptimizedActiveMap.elementAt(i).getPosition().getX());
-//			System.out.println("bazw y "
-//					+ OptimizedActiveMap.elementAt(i).getPosition().getY());
+			// System.out.println("bazw paikth "
+			// + OptimizedActiveMap.elementAt(i).getAgent().getNumber());
+			// System.out.println("bazw x "
+			// + OptimizedActiveMap.elementAt(i).getPosition().getX());
+			// System.out.println("bazw y "
+			// + OptimizedActiveMap.elementAt(i).getPosition().getY());
 
 			ActionObject a = new ActionObject(OptimizedActiveMap.elementAt(i)
 					.getAgent().getNumber(), "WalkToCoordinate",

@@ -27,7 +27,6 @@ public class CoordinationVectorUpdate {
 		int type = 0;
 		int number = 0;
 		int playerX = 0, playerY = 0;
-		int ballX = 0, ballY = 0;
 		int ballDistance = 0, ballTheta = 0;
 
 		System.out.println("");

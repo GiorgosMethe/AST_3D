@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Vector;
 
 import utils.math.Permutations;
-
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
@@ -13,19 +12,17 @@ import coordination.main.CoordinationBeliefs;
 import coordination.main.CoordinationSplitter;
 import coordination.mapping.ActivePositionMapCost;
 import coordination.mapping.PositionMap;
-import coordination.strategy.ActivePositions;
 import coordination.strategy.SupportPositions;
 
 public class SupportCoordination {
 
 	public static Vector<PositionMap> OptimizedSupportMap;
 
-	public static void Coordinate(){
+	public static void Coordinate() {
 
 		OptimizedSupportMap = PositionCombination(
 				SupportPositions.SupportPositionsVector,
-				CoordinationSplitter.SupportSubset,
-				CoordinationBeliefs.Ball);
+				CoordinationSplitter.SupportSubset, CoordinationBeliefs.Ball);
 
 		System.out.println("optimized Support positions");
 		System.out.println("-------------------");
@@ -58,11 +55,12 @@ public class SupportCoordination {
 
 		float min = 1000;
 
-		Integer[] PosiblePositions =new Integer[] {0,1,2,3,4};
+		Integer[] PosiblePositions = new Integer[] { 0, 1, 2, 3, 4 };
 
 		List<Integer> aList = Arrays.asList(PosiblePositions);
 
-		Permutations<Integer> c = new Permutations<Integer>(aList,SupportSubset.size());
+		Permutations<Integer> c = new Permutations<Integer>(aList,
+				SupportSubset.size());
 
 		while (c.hasNext()) {
 
@@ -71,10 +69,8 @@ public class SupportCoordination {
 
 			for (int i = 0; i < perm.size(); i++) {
 
-				PositionMap temp = new PositionMap(
-						SupportSubset.elementAt(i),
-						SupportPositionsVector
-						.elementAt(perm.get(i)));
+				PositionMap temp = new PositionMap(SupportSubset.elementAt(i),
+						SupportPositionsVector.elementAt(perm.get(i)));
 				map.add(temp);
 
 			}
