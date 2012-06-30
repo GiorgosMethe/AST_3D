@@ -21,15 +21,15 @@ public class RoleAssignmentFunction {
 		int roleArray[] = { 0, 0, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 		Coordinate Ball = CoordinationBeliefs.Ball;
-		
-		Coordinate[] TeamFormationTemp= TeamFormation.TeamFormation.clone();
+
+		Coordinate[] TeamFormationTemp = TeamFormation.TeamFormation.clone();
 
 		for (int i = 2; i < TeamFormationTemp.length; i++) {
 			for (int j = i; j > 2; j--) {
 				if (TriangleLocalization.FindDistanceAmong2Coordinates(
 						TeamFormationTemp[j - 1], Ball) > TriangleLocalization
-						.FindDistanceAmong2Coordinates(
-								TeamFormationTemp[j], Ball)) {
+						.FindDistanceAmong2Coordinates(TeamFormationTemp[j],
+								Ball)) {
 					Coordinate swap = TeamFormationTemp[j];
 					int swap1 = roleArray[j];
 					TeamFormationTemp[j] = TeamFormationTemp[j - 1];

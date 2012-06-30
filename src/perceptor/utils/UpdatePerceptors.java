@@ -31,26 +31,21 @@ import perceptor.worldstate.GameState;
 import perceptor.worldstate.ServerTime;
 import perceptor.worldstate.TeamState;
 import agent.constraints.Constraints;
-import agent.runtime.Agent;
+import agent.runtime.AgentRuntime;
 import agent.values.AgentType;
 import connection.TCPSocket.Connection;
 import coordination.communication.admin.AdminCordMessageReceiver;
 import coordination.communication.field.FieldCordMessageReceiver;
 
 public class UpdatePerceptors {
-	Coordinate curloc = new Coordinate(0, 0);
-
-	public UpdatePerceptors() {
-
-	}
-
-	int k = 0;
 
 	@SuppressWarnings("static-access")
 	/*
 	 * This class takes the messages from server and updates every perceptor
 	 */
-	public void GetPerceptors(Connection con) {
+	public static void GetPerceptors(Connection con) {
+
+		Coordinate curloc = new Coordinate(0, 0);
 
 		Vector<String> ReceivedMessage = con.GetVector();
 		Vector<Landmark> landmarks = new Vector<Landmark>();
@@ -475,9 +470,10 @@ public class UpdatePerceptors {
 								Landmark player = new Landmark(player_id,
 										player_distance, player_vertical_angle,
 										player_horizontal_angle);
-								if (team_name.equalsIgnoreCase(Agent.Teamname)) {
+								if (team_name
+										.equalsIgnoreCase(AgentRuntime.Teamname)) {
 									if (!player.getName().equalsIgnoreCase(
-											Agent.num + "")) {
+											AgentRuntime.num + "")) {
 										coplayers.add(player);
 									}
 								} else {

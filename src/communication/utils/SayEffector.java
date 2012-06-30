@@ -14,7 +14,6 @@ package communication.utils;
 
 import agent.constraints.Constraints;
 import agent.values.AgentType;
-import connection.TCPSocket.Connection;
 import coordination.action.ActionTable;
 import coordination.communication.action.ActionMessages;
 
@@ -30,7 +29,7 @@ public class SayEffector {
 	 * to stop coordination messages type 7: message which indicates fall of the
 	 * player type 8: Idle
 	 */
-	public String Say(int type, Connection con) {
+	public static String Say(int type) {
 
 		String message = "";
 

@@ -22,9 +22,9 @@ import connection.utils.ServerCyrcles;
 
 public class HeadMovement {
 
-	GetNormalJointValue gNjV = new GetNormalJointValue();
+	static GetNormalJointValue gNjV = new GetNormalJointValue();
 
-	public String MoveHead(int type) {
+	public static String MoveHead(int type) {
 
 		String Action = "";
 
@@ -44,7 +44,7 @@ public class HeadMovement {
 
 	}
 
-	public String MoveHeadToLocalize() {
+	public static String MoveHeadToLocalize() {
 
 		int cycles = ServerCyrcles.getCyrclesNow();
 		float moveX = (float) (2.09 * Math.sin(cycles / 15));
@@ -80,7 +80,7 @@ public class HeadMovement {
 		return str;
 	}
 
-	public String MoveHeadToLocalizeBall() {
+	public static String MoveHeadToLocalizeBall() {
 
 		int cycles = ServerCyrcles.getCyrclesNow();
 		float moveX = (float) (2.09 * Math.sin(cycles / 15));
@@ -119,7 +119,7 @@ public class HeadMovement {
 		return str;
 	}
 
-	public String MoveHeadToLocalizeAgent() {
+	public static String MoveHeadToLocalizeAgent() {
 
 		int cycles = ServerCyrcles.getCyrclesNow();
 		float moveX = (float) (2.09 * Math.sin(cycles / 15));
@@ -143,7 +143,7 @@ public class HeadMovement {
 		return str;
 	}
 
-	public String MoveHeadStraight() {
+	public static String MoveHeadStraight() {
 
 		String str = "";
 
@@ -155,7 +155,7 @@ public class HeadMovement {
 		return str;
 	}
 
-	public String MoveHeadToBall() {
+	public static String MoveHeadToBall() {
 
 		int cycles = ServerCyrcles.getCyrclesNow();
 		float moveX = (float) (2.09 * Math.sin(cycles / 15));
@@ -178,7 +178,7 @@ public class HeadMovement {
 		return str;
 	}
 
-	public float centerTheBallX() {
+	public static float centerTheBallX() {
 		float x = 0;
 		if (Math.abs(HingeJointPerceptor.getHj1()) < 125) {
 
@@ -194,7 +194,7 @@ public class HeadMovement {
 		return x;
 	}
 
-	public float centerTheBallY() {
+	public static float centerTheBallY() {
 		float x = 0;
 		if (Math.abs(HingeJointPerceptor.getHj2()) < 45) {
 
@@ -210,7 +210,7 @@ public class HeadMovement {
 		return x;
 	}
 
-	public float centerToLocateX(double AngleX) {
+	public static float centerToLocateX(double AngleX) {
 
 		float x = 0;
 		if (Math.abs(AngleX) < 125) {
@@ -227,7 +227,7 @@ public class HeadMovement {
 		return x;
 	}
 
-	public float centerToLocateY(double AngleY) {
+	public static float centerToLocateY(double AngleY) {
 
 		float x = 0;
 		if (Math.abs(AngleY) < 45) {
