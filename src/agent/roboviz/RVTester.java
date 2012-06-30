@@ -28,6 +28,10 @@ import java.net.UnknownHostException;
 
 import javax.swing.Timer;
 
+import coordination.TeamRoles.RoleAssignmentFunction;
+import coordination.communication.message.CoordinationVectorUpdate;
+import coordination.main.CoordinationBeliefs;
+
 /**
  * Program for testing network drawing on RoboVis with all shapes both animated
  * and static
@@ -36,7 +40,7 @@ import javax.swing.Timer;
  */
 public class RVTester {
 
-	private static final int TEST_DURATION = 10000;
+	private static final int TEST_DURATION = 100000000;
 	private static final int ROBOVIS_PORT = 32769;
 
 	private DatagramSocket socket;
@@ -65,29 +69,81 @@ public class RVTester {
 
 	/** Method for all animated drawings */
 	private void renderAnimatedShapes() throws IOException {
-		angle += 0.05;
 
-		// draw points wave
-		for (int i = 0; i < 30; i++) {
-			float p = i / 30.0f;
-			float height = Math.max(0, (float) (Math.sin(angle + p * 18)));
-			float[] pos = new float[] { -9 + 18 * p, p * 12 - 6, height };
-			drawPoint(pos, 5, Color.BLACK, "animated.points");
+		if (CoordinationBeliefs.Ball != null) {
+
+			drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
+					(float) CoordinationBeliefs.Ball.getY() }, 0.1f, 2,
+					Color.RED, "animated.circles");
+
 		}
 
-		// draw spinning triangle
-		b[0] = (float) Math.cos(angle) * 2;
-		b[1] = (float) Math.sin(angle) * 2;
-		b[2] = (float) Math.cos(angle) + 1.5f;
-		float[] c = { b[0], b[1], 0 };
-		drawLine(a, b, 5.0f, Color.YELLOW, "animated.spinner");
-		drawLine(b, c, 5.0f, Color.YELLOW, "animated.spinner");
-		drawLine(a, c, 5.0f, Color.YELLOW, "animated.spinner");
+		if (CoordinationVectorUpdate.CoordinationVector != null) {
 
-		drawAnnotation(String.format("%.1f", b[2]), b, Color.GREEN,
-				"animated.annotation");
+			for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector
+					.size(); i++) {
 
-		drawAgentAnnotation(String.format("%.2f", b[0]), true, 1, Color.CYAN);
+				if (RoleAssignmentFunction.ActiveRoles != null) {
+					for (int j = 0; j < RoleAssignmentFunction.ActiveRoles
+							.size(); j++) {
+						if (RoleAssignmentFunction.ActiveRoles.elementAt(j)
+								.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
+								.elementAt(i).getNumber()) {
+
+							drawAgentAnnotation(String.format("n:%d,r:%d,c:%d",
+									CoordinationVectorUpdate.CoordinationVector
+											.elementAt(i).getNumber(),
+									RoleAssignmentFunction.ActiveRoles
+											.elementAt(j).getRole(),
+									CoordinationVectorUpdate.CoordinationVector
+											.elementAt(i).getType()), true,
+									CoordinationVectorUpdate.CoordinationVector
+											.elementAt(i).getNumber(),
+									Color.CYAN);
+
+						}
+					}
+				}
+
+				if (RoleAssignmentFunction.SupportRoles != null) {
+					for (int j = 0; j < RoleAssignmentFunction.SupportRoles
+							.size(); j++) {
+						if (RoleAssignmentFunction.SupportRoles.elementAt(j)
+								.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
+								.elementAt(i).getNumber()) {
+
+							drawAgentAnnotation(String.format("n:%d,r:%d,c:%d",
+									CoordinationVectorUpdate.CoordinationVector
+											.elementAt(i).getNumber(),
+									RoleAssignmentFunction.SupportRoles
+											.elementAt(j).getRole(),
+									CoordinationVectorUpdate.CoordinationVector
+											.elementAt(i).getType()), true,
+									CoordinationVectorUpdate.CoordinationVector
+											.elementAt(i).getNumber(),
+									Color.CYAN);
+
+						}
+					}
+				}
+
+				if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+						.getType() == 0
+						|| CoordinationVectorUpdate.CoordinationVector
+								.elementAt(i).getType() == 1) {
+
+					drawCircle(new float[] {
+							(float) CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i).getPlayer().getX(),
+							(float) CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i).getPlayer().getY() }, 0.2f,
+							2, Color.CYAN, "animated.circles");
+
+				}
+
+			}
+
+		}
 
 		// swap all sets starting with "animated"
 		swapBuffers("animated");
@@ -137,7 +193,7 @@ public class RVTester {
 
 	public void runTest() throws IOException {
 		animationTimer.start();
-		renderStaticShapes();
+		// renderStaticShapes();
 	}
 
 	private void swapBuffers(String group) throws IOException {
@@ -187,13 +243,8 @@ public class RVTester {
 		socket.send(new DatagramPacket(buf, buf.length, address, ROBOVIS_PORT));
 	}
 
-	public static Runnable Show(String[] args) throws Exception {
+	public static void run(String[] args) throws Exception {
 		RVTester tester = new RVTester();
 		tester.runTest();
-		Thread.sleep(TEST_DURATION);
-		tester.drawAgentAnnotation(null, true, 1, Color.CYAN);
-		tester.animationTimer.stop();
-		return null;
-
 	}
 }

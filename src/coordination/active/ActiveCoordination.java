@@ -27,6 +27,10 @@ public class ActiveCoordination {
 
 	public static Vector<PositionMap> OptimizedActiveMap;
 
+	/*
+	 * This is the function which makes the coordination of the active players
+	 */
+
 	public static void Coordinate() {
 
 		double min = 1000;
@@ -78,16 +82,16 @@ public class ActiveCoordination {
 				CoordinationSplitter.ActiveSubset, OnBallPlayer,
 				CoordinationBeliefs.Ball);
 
-		// System.out.println("optimized positions");
-		// System.out.println("-------------------");
+		System.out.println("optimized active positions");
+		System.out.println("-------------------");
 		for (int i = 0; i < OptimizedActiveMap.size(); i++) {
 
-			// System.out.println("bazw paikth "
-			// + OptimizedActiveMap.elementAt(i).getAgent().getNumber());
-			// System.out.println("bazw x "
-			// + OptimizedActiveMap.elementAt(i).getPosition().getX());
-			// System.out.println("bazw y "
-			// + OptimizedActiveMap.elementAt(i).getPosition().getY());
+			System.out.println("bazw paikth "
+					+ OptimizedActiveMap.elementAt(i).getAgent().getNumber());
+			System.out.println("bazw x "
+					+ OptimizedActiveMap.elementAt(i).getPosition().getX());
+			System.out.println("bazw y "
+					+ OptimizedActiveMap.elementAt(i).getPosition().getY());
 
 			ActionObject a = new ActionObject(OptimizedActiveMap.elementAt(i)
 					.getAgent().getNumber(), "WalkToCoordinate",
@@ -99,6 +103,12 @@ public class ActiveCoordination {
 		}
 
 	}
+
+	/*
+	 * This is the function which calculate the cost of every mapping the three
+	 * active player can have. The mapping with the minimun cost will be return
+	 * to the above function.
+	 */
 
 	public static Vector<PositionMap> PositionCombination(
 			Vector<perceptor.localization.Coordinate> activePositions,

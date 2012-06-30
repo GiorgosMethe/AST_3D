@@ -18,6 +18,10 @@ public class SupportCoordination {
 
 	public static Vector<PositionMap> OptimizedSupportMap;
 
+	/*
+	 * This is the function which makes the coordination of the support players
+	 */
+
 	public static void Coordinate() {
 
 		OptimizedSupportMap = PositionCombination(
@@ -46,6 +50,12 @@ public class SupportCoordination {
 
 	}
 
+	/*
+	 * This is the function which calculate the cost of every mapping the player
+	 * of the support sub set can have. The mapping with the minimun cost will
+	 * be return to the above function.
+	 */
+
 	public static Vector<PositionMap> PositionCombination(
 			Vector<perceptor.localization.Coordinate> SupportPositionsVector,
 			Vector<CoordinationMessage> SupportSubset,
@@ -66,6 +76,11 @@ public class SupportCoordination {
 
 			List<Integer> perm = c.next();
 			Vector<PositionMap> map = new Vector<PositionMap>();
+
+			/*
+			 * players of the support subset will assigned different positions
+			 * each time in order to find an optimized mapping.
+			 */
 
 			for (int i = 0; i < perm.size(); i++) {
 

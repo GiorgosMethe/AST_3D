@@ -15,6 +15,8 @@ package agent.runtime;
 
 import motion.utils.ReadMotionFiles;
 import perceptor.utils.UpdatePerceptors;
+import agent.constraints.Constraints;
+import agent.roboviz.RVTester;
 import connection.TCPSocket.Connection;
 import connection.utils.ServerCyrcles;
 
@@ -31,19 +33,18 @@ public class AgentRuntime {
 
 	public static void main(String[] args) throws Exception {
 
-
-		if(args.length == 0){
+		if (args.length == 0) {
 			host = "127.0.0.1";
 			port = 3100;
-			num = 3;
+			num = 9;
 			Teamname = "AST_3D";
-		}else{
+		} else {
 			host = args[0];
 			port = Integer.parseInt(args[1]);
 			Teamname = args[2];
 			num = Integer.parseInt(args[3]);
 		}
-		
+
 		/*
 		 * This method reads every motion file neccessary
 		 */
@@ -61,16 +62,19 @@ public class AgentRuntime {
 
 		isConnected = connection.establishConnection();
 
-
 		if (isConnected == true) {
 			InitAgent.CreateAgent(connection);
 
 		}
-		
+
 		/*
 		 * This method is the main-loop of the AST 3D agent
 		 */
-		
+
+		if (num == Constraints.CoordinationPlayer) {
+			RVTester.run(null);
+		}
+
 		while (connection.isConnected()) {
 
 			update(connection);
@@ -89,7 +93,6 @@ public class AgentRuntime {
 	 * 
 	 */
 	public static void update(Connection connection) {
-
 
 		/*
 		 * Update server cycles. This is an important function for the agent
@@ -127,14 +130,5 @@ public class AgentRuntime {
 		connection.sendMessage(Action);
 
 	}
-	
-	public static void wait (int n){
-        long t0,t1;
-        t0=System.currentTimeMillis();
-        do{
-            t1=System.currentTimeMillis();
-        }
-        while (t1-t0<1000);
-}
 
 }

@@ -21,11 +21,11 @@ public class ActivePositionMapCost {
 					map.elementAt(agentNum).getPosition());
 
 			if (Ball.getX() >= 0) {
-				cost -= Math.abs(SoccerFieldCoordinateValue.Calculate(map
-						.elementAt(agentNum).getPosition()));
+				cost -= SoccerFieldCoordinateValue.Calculate(map.elementAt(
+						agentNum).getPosition()) / 10;
 			} else {
-				cost += Math.abs(SoccerFieldCoordinateValue.Calculate(map
-						.elementAt(agentNum).getPosition()));
+				cost += SoccerFieldCoordinateValue.Calculate(map.elementAt(
+						agentNum).getPosition()) / 10;
 			}
 
 		}
@@ -60,6 +60,8 @@ public class ActivePositionMapCost {
 								.FindDistanceAmong2Coordinates(Agent2,
 										new Coordinate(interceptionPoint.x,
 												interceptionPoint.y));
+
+						cost += 2;
 
 						if (Math.abs(distanceFromAgent1 - distanceFromAgent2) < 1.5) {
 

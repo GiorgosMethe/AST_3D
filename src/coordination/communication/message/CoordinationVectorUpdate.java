@@ -24,6 +24,8 @@ public class CoordinationVectorUpdate {
 
 	public static void update(Vector<String> CoordinationMessage) {
 
+		CoordinationVector.clear();
+
 		int type = 0;
 		int number = 0;
 		int playerX = 0, playerY = 0;

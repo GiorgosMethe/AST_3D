@@ -5,7 +5,6 @@ package coordination.main;
 
 import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
-import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.strategy.ActivePositions;
 import coordination.strategy.SupportPositions;
 import coordination.strategy.TeamFormation;
@@ -95,8 +94,6 @@ public class Coordination {
 		} else if (CoordinationRun.getStep() == 6) {
 
 			SupportCoordination.Coordinate();
-
-			CoordinationVectorUpdate.CoordinationVector.clear();
 
 			CoordinationRun.setStep(0);
 
