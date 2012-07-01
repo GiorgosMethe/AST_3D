@@ -3,7 +3,7 @@ package action.handler;
 import perceptor.localization.Coordinate;
 import action.complex.GoKickBallToGoal;
 import action.complex.WalkToCoordinate;
-import action.simple.TurnToBall;
+import action.simple.TurnToLocate;
 
 public class ActionEffector {
 
@@ -33,7 +33,7 @@ public class ActionEffector {
 
 		} else {
 
-			TurnToBall.Act();
+			TurnToLocate.Act();
 
 		}
 

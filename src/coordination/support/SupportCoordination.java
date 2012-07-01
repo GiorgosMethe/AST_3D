@@ -10,8 +10,8 @@ import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
 import coordination.main.CoordinationBeliefs;
 import coordination.main.CoordinationSplitter;
-import coordination.mapping.ActivePositionMapCost;
 import coordination.mapping.PositionMap;
+import coordination.mapping.SupportPositionMapCost;
 import coordination.strategy.SupportPositions;
 
 public class SupportCoordination {
@@ -90,7 +90,7 @@ public class SupportCoordination {
 
 			}
 
-			double cost = ActivePositionMapCost.calculate(map, ball);
+			double cost = SupportPositionMapCost.calculate(map, ball);
 
 			if (min > cost) {
 

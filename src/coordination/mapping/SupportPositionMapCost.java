@@ -7,7 +7,7 @@ import perceptor.localization.TriangleLocalization;
 import utils.geometry.GeometricUtils;
 import coordination.strategy.SoccerFieldCoordinateValue;
 
-public class ActivePositionMapCost {
+public class SupportPositionMapCost {
 
 	public static double calculate(Vector<PositionMap> map, Coordinate Ball) {
 
@@ -22,10 +22,10 @@ public class ActivePositionMapCost {
 
 			if (Ball.getX() >= 0) {
 				cost -= SoccerFieldCoordinateValue.Calculate(map.elementAt(
-						agentNum).getPosition()) / 10;
+						agentNum).getPosition());
 			} else {
 				cost += SoccerFieldCoordinateValue.Calculate(map.elementAt(
-						agentNum).getPosition()) / 10;
+						agentNum).getPosition());
 			}
 
 		}
@@ -36,9 +36,6 @@ public class ActivePositionMapCost {
 				cost -= 2 * TriangleLocalization.FindDistanceAmong2Coordinates(
 						map.elementAt(q).getPosition(), map.elementAt(r)
 								.getPosition());
-
-				cost -= 2 * Math.abs(map.elementAt(q).getPosition().getY()
-						- map.elementAt(r).getPosition().getY());
 
 				if (map.elementAt(r).getAgent().getType() == 0
 						&& map.elementAt(q).getAgent().getType() == 0) {

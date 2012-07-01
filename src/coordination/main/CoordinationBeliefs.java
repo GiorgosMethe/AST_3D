@@ -42,6 +42,7 @@ public class CoordinationBeliefs {
 		 * 
 		 * These thought will be used in order to locate the ball in the field
 		 */
+		boolean atLeastOneAgentSeeBall = false;
 
 		if (LocalizationResults.isKnowMyPosition()
 				&& perceptor.vision.Ball.isSeeTheBall()) {
@@ -77,7 +78,15 @@ public class CoordinationBeliefs {
 
 		}
 
-		CoordinationBeliefs.Ball = BallObservationFilter.update();
+		Coordinate Ball = BallObservationFilter.update();
+
+		if (Double.isNaN(Ball.X) || Double.isNaN(Ball.X)) {
+
+		} else {
+
+			CoordinationBeliefs.Ball = Ball;
+
+		}
 
 	}
 

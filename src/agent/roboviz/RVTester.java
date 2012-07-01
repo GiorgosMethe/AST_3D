@@ -29,8 +29,10 @@ import java.net.UnknownHostException;
 import javax.swing.Timer;
 
 import coordination.TeamRoles.RoleAssignmentFunction;
+import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.main.CoordinationBeliefs;
+import coordination.support.SupportCoordination;
 
 /**
  * Program for testing network drawing on RoboVis with all shapes both animated
@@ -40,16 +42,13 @@ import coordination.main.CoordinationBeliefs;
  */
 public class RVTester {
 
-	private static final int TEST_DURATION = 100000000;
+	// private static final int TEST_DURATION = 100000000;
 	private static final int ROBOVIS_PORT = 32769;
 
 	private DatagramSocket socket;
 	private InetAddress address;
 	private Color lightGreen = new Color(0.6f, 0.9f, 0.6f);
 	private Timer animationTimer;
-	private float[] a = { 0, 0, 0 };
-	private float[] b = { 0, 0, 1 };
-	private double angle = 0;
 
 	public RVTester() throws SocketException, UnknownHostException {
 		socket = new DatagramSocket();
@@ -70,6 +69,36 @@ public class RVTester {
 	/** Method for all animated drawings */
 	private void renderAnimatedShapes() throws IOException {
 
+		if (ActiveCoordination.OptimizedActiveMap != null) {
+
+			for (int i = 0; i < ActiveCoordination.OptimizedActiveMap.size(); i++) {
+
+				drawCircle(new float[] {
+						(float) ActiveCoordination.OptimizedActiveMap
+								.elementAt(i).getPosition().getX(),
+						(float) ActiveCoordination.OptimizedActiveMap
+								.elementAt(i).getPosition().getY() }, 0.2f, 2,
+						Color.YELLOW, "animated.circles");
+
+			}
+
+		}
+
+		if (SupportCoordination.OptimizedSupportMap != null) {
+
+			for (int i = 0; i < SupportCoordination.OptimizedSupportMap.size(); i++) {
+
+				drawCircle(new float[] {
+						(float) SupportCoordination.OptimizedSupportMap
+								.elementAt(i).getPosition().getX(),
+						(float) SupportCoordination.OptimizedSupportMap
+								.elementAt(i).getPosition().getY() }, 0.2f, 2,
+						Color.YELLOW, "animated.circles");
+
+			}
+
+		}
+
 		if (CoordinationBeliefs.Ball != null) {
 
 			drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
@@ -77,6 +106,16 @@ public class RVTester {
 					Color.RED, "animated.circles");
 
 		}
+
+		// if (!Double.isNaN(LocalizationResults.getBall_location().X) &&
+		// !Double.isNaN(LocalizationResults.getBall_location().Y)) {
+		//
+		// drawCircle(new float[] { (float)
+		// LocalizationResults.getBall_location().X,
+		// (float) LocalizationResults.getBall_location().Y }, 0.1f, 2,
+		// Color.CYAN, "animated.circles");
+		//
+		// }
 
 		if (CoordinationVectorUpdate.CoordinationVector != null) {
 
@@ -90,7 +129,8 @@ public class RVTester {
 								.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
 								.elementAt(i).getNumber()) {
 
-							drawAgentAnnotation(String.format("n:%d,r:%d,c:%d",
+							drawAgentAnnotation(String.format(
+									"A n:%d,r:%d,c:%d",
 									CoordinationVectorUpdate.CoordinationVector
 											.elementAt(i).getNumber(),
 									RoleAssignmentFunction.ActiveRoles
@@ -99,7 +139,7 @@ public class RVTester {
 											.elementAt(i).getType()), true,
 									CoordinationVectorUpdate.CoordinationVector
 											.elementAt(i).getNumber(),
-									Color.CYAN);
+									Color.LIGHT_GRAY);
 
 						}
 					}
@@ -112,7 +152,8 @@ public class RVTester {
 								.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
 								.elementAt(i).getNumber()) {
 
-							drawAgentAnnotation(String.format("n:%d,r:%d,c:%d",
+							drawAgentAnnotation(String.format(
+									"S n:%d,r:%d,c:%d",
 									CoordinationVectorUpdate.CoordinationVector
 											.elementAt(i).getNumber(),
 									RoleAssignmentFunction.SupportRoles
@@ -121,7 +162,7 @@ public class RVTester {
 											.elementAt(i).getType()), true,
 									CoordinationVectorUpdate.CoordinationVector
 											.elementAt(i).getNumber(),
-									Color.CYAN);
+									Color.LIGHT_GRAY);
 
 						}
 					}
@@ -137,7 +178,7 @@ public class RVTester {
 									.elementAt(i).getPlayer().getX(),
 							(float) CoordinationVectorUpdate.CoordinationVector
 									.elementAt(i).getPlayer().getY() }, 0.2f,
-							2, Color.CYAN, "animated.circles");
+							2, Color.BLUE, "animated.circles");
 
 				}
 
@@ -150,6 +191,7 @@ public class RVTester {
 	}
 
 	/** Method for all static drawings */
+	@SuppressWarnings("unused")
 	private void renderStaticShapes() throws IOException {
 		// draw 3D coordinate axes
 		drawLine(new float[] { 0, 0, 0 }, new float[] { 3, 0, 0 }, 3.0f,
@@ -247,4 +289,5 @@ public class RVTester {
 		RVTester tester = new RVTester();
 		tester.runTest();
 	}
+
 }
