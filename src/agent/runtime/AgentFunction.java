@@ -1,7 +1,8 @@
 package agent.runtime;
 
+import motion.old.MotionTrigger;
 import motion.utils.PerformMovement;
-import perceptor.utils.isFallen;
+import perceptor.utils.CheckIfFall;
 import perceptor.worldstate.GameState;
 import action.handler.ActionEffector;
 import action.vision.HeadMovement;
@@ -26,7 +27,7 @@ public class AgentFunction {
 		 * understand through this function the his fall, and then he will try
 		 * to get up.
 		 */
-		isFallen.Check();
+		//CheckIfFall.Check();
 
 		if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
 				&& InitAgent.isPlayerInited() == true) {
@@ -40,7 +41,7 @@ public class AgentFunction {
 			ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
 
 		}
-
+		
 		Act = PerformMovement.run();
 
 		Head = HeadMovement.MoveHead(VisionType.getType());

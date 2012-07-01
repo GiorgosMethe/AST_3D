@@ -19,6 +19,10 @@ public class PerformMovement {
 			AgentAct = XMLMovement.execute("strafe_right");
 		} else if (MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")) {
 			AgentAct = XMLMovement.execute("strafe_left");
+		} else if (MotionTrigger.getMotion().equalsIgnoreCase("stand_back")) {
+			AgentAct = XMLMovement.execute("stand_back");
+		} else if (MotionTrigger.getMotion().equalsIgnoreCase("stand_front")) {
+			AgentAct = XMLMovement.execute("stand_front");
 		} else if (MotionTrigger.getMotion().equalsIgnoreCase(
 				"KickForwardRight")
 				|| MotionTrigger.getMotion()

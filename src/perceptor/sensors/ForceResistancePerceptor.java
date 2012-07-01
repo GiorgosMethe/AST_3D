@@ -12,56 +12,55 @@
  ***********************************************************************************/
 package perceptor.sensors;
 
-//import javax.vecmath.Vector3d;
+import java.util.Vector;
 
 import javax.vecmath.Vector3d;
 
-//import org.apache.commons.math.geometry.Vector3D;
-
 public class ForceResistancePerceptor {
+	
+	public static Vector<ForceResistancePerceptor> ForcePerceptors = new Vector<ForceResistancePerceptor>();
+	
 	// point where the force acts
-	public static Vector3d forceOrigin;
-
+	public Vector3d forceOrigin;
 	// the force itself
-	public static Vector3d force;
+	public Vector3d force;
 
-	public static String name;
+	public String name;
+	
 
-	/**
-	 * Default constructor, initializes origin and force to (0.0, 0.0, 0.0)
-	 * 
-	 * @param name
-	 *            the name of the sensor
-	 */
-	public ForceResistancePerceptor(String name, float fox, float foy,
-			float foz, float fx, float fy, float fz) {
-		name = ForceResistancePerceptor.name;
-		forceOrigin = new Vector3d(fox, foy, foz);
-		force = new Vector3d(fx, fy, fz);
+	public ForceResistancePerceptor(Vector3d forceOrigin, Vector3d force,
+			String name) {
+		
+		this.forceOrigin = forceOrigin;
+		this.force = force;
+		this.name = name;
 	}
 
 	public Vector3d getForceOrigin() {
 		return forceOrigin;
 	}
 
+	public void setForceOrigin(Vector3d forceOrigin) {
+		this.forceOrigin = forceOrigin;
+	}
+
 	public Vector3d getForce() {
 		return force;
 	}
 
-	public static void setForceOrigin(Vector3d forceOr) {
-		ForceResistancePerceptor.forceOrigin = forceOr;
+	public void setForce(Vector3d force) {
+		this.force = force;
 	}
 
-	public static void setForce(Vector3d force) {
-		ForceResistancePerceptor.force = force;
-	}
-
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 
-	public static void setName(String name) {
-		ForceResistancePerceptor.name = name;
+	public void setName(String name) {
+		this.name = name;
 	}
+
+	
+	
 
 }

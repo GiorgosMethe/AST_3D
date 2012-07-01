@@ -32,6 +32,7 @@ public class MoveJoints {
 			for (int i = 0; i < pha.movements.size(); i++) {
 
 				String joint = pha.movements.elementAt(i).axis_name;
+
 				if (WalkLeaning.getLean().equalsIgnoreCase("left")
 						|| WalkLeaning.getLean().equalsIgnoreCase("right")) {
 
@@ -80,6 +81,7 @@ public class MoveJoints {
 						}
 					}
 
+					//////////
 					Float velocity = gNjVd.Get(joint, move)
 							/ (pha.duration / 20);
 					String value2str = Float.toString(velocity);
@@ -94,6 +96,7 @@ public class MoveJoints {
 					}
 
 					Float move = pha.movements.elementAt(i).value;
+					/////////
 					Float velocity = gNjVd.Get(joint, move)
 							/ (pha.duration / 20);
 					String value2str = Float.toString(velocity);

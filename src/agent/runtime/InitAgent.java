@@ -45,7 +45,7 @@ public class InitAgent {
 		int cyrcles = ServerCyrcles.getCyrclesNow();
 		// boolean AgentInitialized=false;
 		if (cyrcles >= 0 && cyrcles < 10) {
-			if (cyrcles == 1) {
+			if (cyrcles == 0) {
 
 				System.out.println("Player initialized");
 
@@ -97,8 +97,10 @@ public class InitAgent {
 				// Actions
 				ActionPlaying.setActionPlaying(null);
 				ActionPlaying.setEnd(true);
+				
+				
 
-			} else if (cyrcles == 3) {
+			} else if (cyrcles == 2) {
 
 				con.sendMessage("(beam " + beam + ")");
 

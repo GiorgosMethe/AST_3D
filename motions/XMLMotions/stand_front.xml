@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xsi:noNamespaceSchemaLocation="moves.xsd">
+	<low_skills>
+		<low_skill name="stand_front" firstPhase="stand_front_start" />
+	</low_skills>
+
+	<phases>
+		<phase name="stand_front_prepare" next="stand_front_start">
+			<effectors>
+				<rle5 end="75" />
+				<lle5 end="75" />
+			</effectors>
+			<duration>500</duration>
+		</phase>
+		<phase name="stand_front_start" next="stand_front2" skipIfFlag="rollbacked">
+			<effectors>
+				<rle5 end="0" />
+				<lle5 end="0" />
+			</effectors>
+			<duration>500</duration>
+		</phase>
+		<phase name="stand_front2" next="stand_frontw3" skipIfFlag="rollbacked">
+			<effectors>
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="0" />
+				<lle2 end="0" />
+				<rle3 end="0" />
+				<lle3 end="0" />
+				<rle4 end="0" />
+				<lle4 end="0" />
+				<rle5 end="0" />
+				<lle5 end="0" />
+				<rle6 end="0" />
+				<lle6 end="0" />
+				<rae1 end="-90"/>
+				<lae1 end="-90"/>
+				<rae2 end="0"/>
+				<lae2 end="0"/>
+				<rae3 end="0"/>
+				<lae3 end="0"/>
+				<rae4 end="0"/>
+				<lae4 end="0"/>
+			</effectors>
+			<duration>500</duration>
+		</phase>
+		<phase name="stand_frontw3" next="stand_front3" skipIfFlag="rollbacked">
+			<effectors>
+			</effectors>
+			<duration>500</duration>
+		</phase>
+		<phase name="stand_front3" next="stand_front4" setFlagFalse="rollbacked">
+			<effectors>
+			    <rle1 end="-90" />
+				<lle1 end="-90" />
+				<rle2 end="-45" />
+				<lle2 end="45" />
+				<rle3 end="100" />
+				<lle3 end="100" />
+				<rle4 end="-130" />
+				<lle4 end="-130" />
+				<rle5 end="75" />
+				<lle5 end="75" />
+			</effectors>
+			<duration>1000</duration>
+		</phase>
+		<phase name="stand_front4" next="stand_front5">
+			<effectors>
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="-45" />
+				<lle2 end="45" />
+			</effectors>
+			<duration>200</duration>
+		</phase>
+		<phase name="stand_front5" next="stand_front_start" isFinal="true">
+			<effectors>
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="7" />
+				<lle2 end="-7" />
+				<rle3 end="55" />
+				<lle3 end="55" />
+				<rle4 end="-60" />
+				<lle4 end="-60" />
+				<rle5 end="30" />
+				<lle5 end="30" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
+				<rae1 end="-90"/>
+				<lae1 end="-90"/>
+				<rae2 end="-10"/>
+				<lae2 end="10"/>
+				<rae3 end="90"/>
+				<lae3 end="-90"/>
+				<rae4 end="45"/>
+				<lae4 end="-45"/>
+			</effectors>
+			<duration>800</duration>
+			<finalize>stand_front6</finalize>
+		</phase>
+		<phase name="stand_front6" isFinal="true">
+			<effectors></effectors>
+			<duration>600</duration>
+			<finalize>stand_front6</finalize>
+		</phase>
+	</phases>
+</robot>

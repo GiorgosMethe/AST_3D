@@ -52,6 +52,7 @@ public class UpdatePerceptors {
 		Vector<Landmark> coplayers = new Vector<Landmark>();
 		Vector<Landmark> rivals = new Vector<Landmark>();
 		TriangleLocalization localizer = new TriangleLocalization();
+		ForceResistancePerceptor.ForcePerceptors.clear();
 
 		boolean iSeeTheBall = false;
 		boolean see = false;
@@ -640,28 +641,31 @@ public class UpdatePerceptors {
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(
 							"FRP")) {
 
-						ForceResistancePerceptor.setName(ReceivedMessage
-								.elementAt(i + 2).toString());
-
-						Vector3d forceOr = new Vector3d();
-						Vector3d force = new Vector3d();
-
-						forceOr.x = Float.parseFloat(ReceivedMessage.elementAt(
+						
+						String name = ReceivedMessage
+								.elementAt(i + 2).toString();
+						
+						double forceOrX = Float.parseFloat(ReceivedMessage.elementAt(
 								i + 4).toString());
-						forceOr.y = Float.parseFloat(ReceivedMessage.elementAt(
+						double forceOrY = Float.parseFloat(ReceivedMessage.elementAt(
 								i + 5).toString());
-						forceOr.z = Float.parseFloat(ReceivedMessage.elementAt(
+						double forceOrZ = Float.parseFloat(ReceivedMessage.elementAt(
 								i + 6).toString());
 
-						force.x = Float.parseFloat(ReceivedMessage.elementAt(
+						double forcex = Float.parseFloat(ReceivedMessage.elementAt(
 								i + 8).toString());
-						force.y = Float.parseFloat(ReceivedMessage.elementAt(
+						double forcey = Float.parseFloat(ReceivedMessage.elementAt(
 								i + 9).toString());
-						force.z = Float.parseFloat(ReceivedMessage.elementAt(
+						double forcez = Float.parseFloat(ReceivedMessage.elementAt(
 								i + 10).toString());
-
-						ForceResistancePerceptor.setForceOrigin(forceOr);
-						ForceResistancePerceptor.setForce(force);
+						
+						
+						ForceResistancePerceptor newForcePerceptor = new ForceResistancePerceptor(
+								new Vector3d(forceOrX, forceOrY, forceOrZ), 
+								new Vector3d(forcex,forcey,forcez), 
+								name);
+						
+						ForceResistancePerceptor.ForcePerceptors.add(newForcePerceptor);
 
 						i = i + 11;
 

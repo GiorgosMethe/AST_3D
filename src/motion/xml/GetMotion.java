@@ -37,6 +37,12 @@ public class GetMotion {
 		} else if (name.equalsIgnoreCase("strong_right_kick")) {
 			Motion mot = XMLMotionStorage.getRight_strong_kick();
 			return mot;
+		} else if (name.equalsIgnoreCase("stand_back")) {
+			Motion mot = XMLMotionStorage.getStand_back();
+			return mot;
+		} else if (name.equalsIgnoreCase("stand_front")) {
+			Motion mot = XMLMotionStorage.getStand_front();
+			return mot;
 		}
 
 		return null;
