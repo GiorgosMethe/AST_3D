@@ -87,6 +87,7 @@ public class Connection {
 							+ port
 							+ " refused the connection. Is rcssserver3d running? Are you using an IPv6-enabled"
 							+ " system and the host name translates to an IPv6 address?");
+			System.exit(0);
 			e.printStackTrace();
 			return false;
 		} catch (IOException e) {
@@ -119,6 +120,7 @@ public class Connection {
 		} catch (IOException e) {
 			shutDown = true;
 			System.out.println("Error writing to socket, shuting down...");
+			System.exit(0);
 		}
 
 		// System.out.println("Sent: " + msg);
@@ -173,12 +175,13 @@ public class Connection {
 			}
 
 			msg = new String(result, 0, length, "UTF-8");
-			System.out.println("--" + msg + "\n");
+			// System.out.println("--" + msg + "\n");
 
 		} catch (IOException e) {
 			System.out
 					.println("Error when reading from socket, closing down...");
 			shutDown = true;
+			System.exit(0);
 			return null;
 		}
 		return msg;

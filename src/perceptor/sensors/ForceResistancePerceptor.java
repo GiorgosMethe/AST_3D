@@ -17,20 +17,19 @@ import java.util.Vector;
 import javax.vecmath.Vector3d;
 
 public class ForceResistancePerceptor {
-	
+
 	public static Vector<ForceResistancePerceptor> ForcePerceptors = new Vector<ForceResistancePerceptor>();
-	
+
 	// point where the force acts
 	public Vector3d forceOrigin;
 	// the force itself
 	public Vector3d force;
 
 	public String name;
-	
 
 	public ForceResistancePerceptor(Vector3d forceOrigin, Vector3d force,
 			String name) {
-		
+
 		this.forceOrigin = forceOrigin;
 		this.force = force;
 		this.name = name;
@@ -59,8 +58,5 @@ public class ForceResistancePerceptor {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	
-	
 
 }

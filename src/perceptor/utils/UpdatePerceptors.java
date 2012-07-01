@@ -641,31 +641,29 @@ public class UpdatePerceptors {
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(
 							"FRP")) {
 
-						
-						String name = ReceivedMessage
-								.elementAt(i + 2).toString();
-						
-						double forceOrX = Float.parseFloat(ReceivedMessage.elementAt(
-								i + 4).toString());
-						double forceOrY = Float.parseFloat(ReceivedMessage.elementAt(
-								i + 5).toString());
-						double forceOrZ = Float.parseFloat(ReceivedMessage.elementAt(
-								i + 6).toString());
+						String name = ReceivedMessage.elementAt(i + 2)
+								.toString();
 
-						double forcex = Float.parseFloat(ReceivedMessage.elementAt(
-								i + 8).toString());
-						double forcey = Float.parseFloat(ReceivedMessage.elementAt(
-								i + 9).toString());
-						double forcez = Float.parseFloat(ReceivedMessage.elementAt(
-								i + 10).toString());
-						
-						
+						double forceOrX = Float.parseFloat(ReceivedMessage
+								.elementAt(i + 4).toString());
+						double forceOrY = Float.parseFloat(ReceivedMessage
+								.elementAt(i + 5).toString());
+						double forceOrZ = Float.parseFloat(ReceivedMessage
+								.elementAt(i + 6).toString());
+
+						double forcex = Float.parseFloat(ReceivedMessage
+								.elementAt(i + 8).toString());
+						double forcey = Float.parseFloat(ReceivedMessage
+								.elementAt(i + 9).toString());
+						double forcez = Float.parseFloat(ReceivedMessage
+								.elementAt(i + 10).toString());
+
 						ForceResistancePerceptor newForcePerceptor = new ForceResistancePerceptor(
-								new Vector3d(forceOrX, forceOrY, forceOrZ), 
-								new Vector3d(forcex,forcey,forcez), 
-								name);
-						
-						ForceResistancePerceptor.ForcePerceptors.add(newForcePerceptor);
+								new Vector3d(forceOrX, forceOrY, forceOrZ),
+								new Vector3d(forcex, forcey, forcez), name);
+
+						ForceResistancePerceptor.ForcePerceptors
+								.add(newForcePerceptor);
 
 						i = i + 11;
 

@@ -54,15 +54,14 @@ public class XMLMotionStorage {
 		right_strong_kick = rXMLf.readMotion("strong_right_kick");
 		setRight_strong_kick(right_strong_kick);
 		System.out.print(".");
-		
+
 		stand_front = rXMLf.readMotion("stand_front");
 		setStand_front(stand_front);
 		System.out.print(".");
-		
+
 		stand_back = rXMLf.readMotion("stand_back");
 		setStand_back(stand_back);
 		System.out.print(".");
-		
 
 	}
 
@@ -137,6 +136,5 @@ public class XMLMotionStorage {
 	public static void setStand_back(Motion stand_back) {
 		XMLMotionStorage.stand_back = stand_back;
 	}
-
 
 }

@@ -81,7 +81,7 @@ public class MoveJoints {
 						}
 					}
 
-					//////////
+					// ////////
 					Float velocity = gNjVd.Get(joint, move)
 							/ (pha.duration / 20);
 					String value2str = Float.toString(velocity);
@@ -96,7 +96,7 @@ public class MoveJoints {
 					}
 
 					Float move = pha.movements.elementAt(i).value;
-					/////////
+					// ///////
 					Float velocity = gNjVd.Get(joint, move)
 							/ (pha.duration / 20);
 					String value2str = Float.toString(velocity);

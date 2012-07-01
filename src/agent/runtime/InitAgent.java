@@ -17,10 +17,12 @@ import motion.old.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
 import perceptor.localization.Coordinate;
+import action.fsm.CFstates;
 import action.fsm.GKBGDstates;
 import action.fsm.GKBTTstates;
 import action.fsm.GKBstates;
 import action.fsm.PKTGstates;
+import action.fsm.SUstates;
 import action.handler.ActionPlaying;
 import action.vision.VisionType;
 import agent.constraints.Beam;
@@ -58,6 +60,10 @@ public class InitAgent {
 				PKTGstates.setProperPositionToWalk(new Coordinate(0, 0));
 				PKTGstates.setResult(null);
 				PKTGstates.setTimeout(0);
+
+				CFstates.setState("Start");
+				CFstates.setCheckFRPtimer(0);
+				SUstates.setState("Start");
 
 				GKBGDstates.setTimeout(0);
 				GKBGDstates.setState("Start");
@@ -97,8 +103,6 @@ public class InitAgent {
 				// Actions
 				ActionPlaying.setActionPlaying(null);
 				ActionPlaying.setEnd(true);
-				
-				
 
 			} else if (cyrcles == 2) {
 

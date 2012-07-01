@@ -2,17 +2,10 @@ package agent.runtime;
 
 import motion.old.MotionTrigger;
 import motion.utils.PerformMovement;
-import perceptor.utils.CheckIfFall;
-import perceptor.worldstate.GameState;
-import action.handler.ActionEffector;
+import action.fsm.CFstates;
+import action.sensor.CheckIfFall;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
-
-import communication.utils.MessageType;
-import communication.utils.SayEffector;
-
-import connection.utils.ServerCyrcles;
-import coordination.main.Coordination;
 
 public class AgentFunction {
 
@@ -27,21 +20,25 @@ public class AgentFunction {
 		 * understand through this function the his fall, and then he will try
 		 * to get up.
 		 */
-		//CheckIfFall.Check();
+		CheckIfFall.Check();
+		//
+		// if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
+		// && InitAgent.isPlayerInited() == true) {
+		//
+		// Say = SayEffector.Say(MessageType.getType());
+		//
+		// Coordination.MakeCoordination();
+		//
+		// ActionEffector.Act();
+		//
+		// ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
+		//
+		// }
 
-		if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
-				&& InitAgent.isPlayerInited() == true) {
-
-			Say = SayEffector.Say(MessageType.getType());
-
-			Coordination.MakeCoordination();
-
-			ActionEffector.Act();
-
-			ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
-
+		if (CFstates.getState().equalsIgnoreCase("Start")) {
+			MotionTrigger.setMotion("Forwards50");
 		}
-		
+
 		Act = PerformMovement.run();
 
 		Head = HeadMovement.MoveHead(VisionType.getType());
