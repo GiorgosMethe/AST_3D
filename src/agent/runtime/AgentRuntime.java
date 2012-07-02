@@ -39,7 +39,7 @@ public class AgentRuntime {
 		if (args.length == 0) {
 			host = "127.0.0.1";
 			port = 3100;
-			num = 7;
+			num = 9;
 			Teamname = "AST_3D";
 		} else {
 			host = args[0];

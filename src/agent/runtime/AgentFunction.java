@@ -1,8 +1,15 @@
 package agent.runtime;
 
+import communication.utils.MessageType;
+import communication.utils.SayEffector;
+import connection.utils.ServerCyrcles;
+import coordination.main.Coordination;
+
+import perceptor.worldstate.GameState;
 import motion.old.MotionTrigger;
 import motion.utils.PerformMovement;
 import action.fsm.CFstates;
+import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
@@ -21,23 +28,22 @@ public class AgentFunction {
 		 * to get up.
 		 */
 		CheckIfFall.Check();
-		//
-		// if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
-		// && InitAgent.isPlayerInited() == true) {
-		//
-		// Say = SayEffector.Say(MessageType.getType());
-		//
-		// Coordination.MakeCoordination();
-		//
-		// ActionEffector.Act();
-		//
-		// ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
-		//
-		// }
 
-		if (CFstates.getState().equalsIgnoreCase("Start")) {
-			MotionTrigger.setMotion("Forwards50");
+		if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
+				&& InitAgent.isPlayerInited() == true) {
+
+			Say = SayEffector.Say(MessageType.getType());
+
+			Coordination.MakeCoordination();
+
+			if (CFstates.getState().equalsIgnoreCase("Start")) {
+				ActionEffector.Act();
+			}
+
+			ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
+
 		}
+
 
 		Act = PerformMovement.run();
 

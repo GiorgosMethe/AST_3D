@@ -18,7 +18,7 @@ public class CheckIfFall {
 		if (CFstates.getState().equalsIgnoreCase("Start")) {
 
 			if ((Math.abs(GyroScope.getAngleY()) + Math.abs(GyroScope
-					.getAngleZ())) > 200) {
+					.getAngleZ())) > 150) {
 
 				CFstates.setState("w82stop");
 				System.err.println("EPESA");
@@ -41,7 +41,7 @@ public class CheckIfFall {
 
 			if (CFstates.getCheckFRPtimer() == 20) {
 
-				if (sumDown > 100) {
+				if (sumDown > 200) {
 
 					CFstates.setState("Start");
 
@@ -88,7 +88,7 @@ public class CheckIfFall {
 
 			if (CFstates.getCheckFRPtimer() == 20) {
 
-				if (sumUp > 100) {
+				if (sumUp > 200) {
 
 					CFstates.setState("Start");
 
