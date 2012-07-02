@@ -22,10 +22,10 @@ public class ActivePositionMapCost {
 
 			if (Ball.getX() >= 0) {
 				cost -= SoccerFieldCoordinateValue.Calculate(map.elementAt(
-						agentNum).getPosition()) / 10;
+						agentNum).getPosition()) / 7;
 			} else {
 				cost += SoccerFieldCoordinateValue.Calculate(map.elementAt(
-						agentNum).getPosition()) / 10;
+						agentNum).getPosition()) / 7;
 			}
 
 		}

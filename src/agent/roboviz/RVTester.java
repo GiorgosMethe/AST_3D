@@ -78,7 +78,7 @@ public class RVTester {
 								.elementAt(i).getPosition().getX(),
 						(float) ActiveCoordination.OptimizedActiveMap
 								.elementAt(i).getPosition().getY() }, 0.2f, 2,
-						Color.YELLOW, "animated.circles");
+						Color.RED, "animated.circles");
 
 			}
 
@@ -103,7 +103,7 @@ public class RVTester {
 
 			drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
 					(float) CoordinationBeliefs.Ball.getY() }, 0.1f, 2,
-					Color.RED, "animated.circles");
+					Color.CYAN, "animated.circles");
 
 		}
 
@@ -139,7 +139,7 @@ public class RVTester {
 											.elementAt(i).getType()), true,
 									CoordinationVectorUpdate.CoordinationVector
 											.elementAt(i).getNumber(),
-									Color.LIGHT_GRAY);
+									Color.RED);
 
 						}
 					}
@@ -162,7 +162,7 @@ public class RVTester {
 											.elementAt(i).getType()), true,
 									CoordinationVectorUpdate.CoordinationVector
 											.elementAt(i).getNumber(),
-									Color.LIGHT_GRAY);
+									Color.YELLOW);
 
 						}
 					}

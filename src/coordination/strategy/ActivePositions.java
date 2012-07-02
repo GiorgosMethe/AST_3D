@@ -50,6 +50,30 @@ public class ActivePositions {
 			}
 		}
 
+		if(CoordinationBeliefs.Ball.getX()>0){
+			
+			distance = 3.5f;
+			Theta = 60;
+			
+			for (int i = 0; i < 6; i++) {
+
+				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
+						CoordinationBeliefs.Ball.X, CoordinationBeliefs.Ball.Y,
+						Theta, (distance));
+				Theta += 30;
+
+				if (ProperSupportPosition(a)) {
+
+					ActivePositionsTemp.add(a);
+
+				}
+			}
+		}
+
+
+
+
+
 		final Comparator<Coordinate> POSITIVE_ORDER = new Comparator<Coordinate>() {
 
 			@Override
