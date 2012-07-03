@@ -28,6 +28,8 @@ import java.net.UnknownHostException;
 
 import javax.swing.Timer;
 
+import perceptor.localization.LocalizationResults;
+
 import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationVectorUpdate;
@@ -107,15 +109,15 @@ public class RVTester {
 
 		}
 
-		// if (!Double.isNaN(LocalizationResults.getBall_location().X) &&
-		// !Double.isNaN(LocalizationResults.getBall_location().Y)) {
-		//
-		// drawCircle(new float[] { (float)
-		// LocalizationResults.getBall_location().X,
-		// (float) LocalizationResults.getBall_location().Y }, 0.1f, 2,
-		// Color.CYAN, "animated.circles");
-		//
-		// }
+		 if (!Double.isNaN(LocalizationResults.getBall_location().X) &&
+		 !Double.isNaN(LocalizationResults.getBall_location().Y)) {
+		
+		 drawCircle(new float[] { (float)
+		 LocalizationResults.getBall_location().X,
+		 (float) LocalizationResults.getBall_location().Y }, 0.1f, 2,
+		 Color.CYAN, "animated.circles");
+		
+		 }
 
 		if (CoordinationVectorUpdate.CoordinationVector != null) {
 
