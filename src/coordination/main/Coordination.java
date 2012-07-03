@@ -35,13 +35,12 @@ public class Coordination {
 		 * Admin agent updates his belief for the position of the ball and the
 		 * players' position
 		 */
-		
+
 		/*
 		 * Players are going to be splitted in three coordination subsets.
 		 * 
-		 * Three vectors will be returned from this function. Each one of
-		 * them will have a subset of agents which is going to coordinate
-		 * together.
+		 * Three vectors will be returned from this function. Each one of them
+		 * will have a subset of agents which is going to coordinate together.
 		 */
 
 		if (CoordinationRun.getStep() == 1) {

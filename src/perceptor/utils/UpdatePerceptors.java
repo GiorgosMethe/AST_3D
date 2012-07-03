@@ -552,21 +552,22 @@ public class UpdatePerceptors {
 						AgentPosition.setY((float) curloc.getY());
 						LocalizationResults.setCurrent_location(curloc);
 
-						double xxx=0;
-						double yyy=0;
+						double xxx = 0;
+						double yyy = 0;
 						double head_angle = 0;
-						
+
 						for (int ii = 0; ii < landmarks.size(); ii++) {
 
-							xxx += Math.cos(Math.toRadians(localizer.universal_angle(
-												landmarks.elementAt(ii), curloc)));
-									
-							yyy +=  Math.sin(Math.toRadians(localizer.universal_angle(
-												landmarks.elementAt(ii), curloc)));
+							xxx += Math.cos(Math.toRadians(localizer
+									.universal_angle(landmarks.elementAt(ii),
+											curloc)));
+
+							yyy += Math.sin(Math.toRadians(localizer
+									.universal_angle(landmarks.elementAt(ii),
+											curloc)));
 
 						}
 						head_angle = Math.toDegrees(Math.atan2(yyy, xxx));
-						
 
 						AgentPosition
 								.setTheta((float) (head_angle + HingeJointPerceptor

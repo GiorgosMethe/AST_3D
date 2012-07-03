@@ -1,3 +1,5 @@
+package coordination.test;
+
 /***********************************************************************************
  * Technical University of Crete
  * Academic Year 2011-2012
@@ -10,18 +12,20 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
-package coordination.strategy;
+
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
 
 import perceptor.localization.Coordinate;
+import perceptor.localization.LocalizationResults;
 import perceptor.localization.TriangleLocalization;
 import agent.constraints.Constraints;
 import coordination.main.CoordinationBeliefs;
+import coordination.strategy.SoccerFieldCoordinateValue;
 
-public class ActivePositions {
+public class ActivPositions {
 
 	public static Vector<Coordinate> ActivePositions = new Vector<Coordinate>();
 
@@ -35,15 +39,15 @@ public class ActivePositions {
 		float Theta = 0;
 
 
-		if(CoordinationBeliefs.Ball.X >=0){
+		if(LocalizationResults.getBall_location().X >=0){
 
 			distance = 2;
-			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(CoordinationBeliefs.Ball, Constraints.OpponentGoal);
+			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(LocalizationResults.getBall_location(), Constraints.OpponentGoal);
 			for (int i = 0; i < 11; i++) {
 
 				Theta += 30;
 				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-						CoordinationBeliefs.Ball.X, CoordinationBeliefs.Ball.Y,
+						LocalizationResults.getBall_location().X, LocalizationResults.getBall_location().Y,
 						Theta, (distance));
 
 				if (ProperSupportPosition(a)) {
@@ -54,12 +58,12 @@ public class ActivePositions {
 			}
 			
 			distance = 3.5f;
-			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(CoordinationBeliefs.Ball, Constraints.OpponentGoal);
+			Theta = Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(LocalizationResults.getBall_location(), Constraints.OpponentGoal);
 			for (int i = 0; i < 17; i++) {
 
 				Theta += 20;
 				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-						CoordinationBeliefs.Ball.X, CoordinationBeliefs.Ball.Y,
+						LocalizationResults.getBall_location().X, LocalizationResults.getBall_location().Y,
 						Theta, (distance));
 				
 
@@ -71,12 +75,12 @@ public class ActivePositions {
 			}
 
 			distance = 5;
-			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(CoordinationBeliefs.Ball, Constraints.OpponentGoal);
+			Theta = Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(LocalizationResults.getBall_location(), Constraints.OpponentGoal);
 			for (int i = 0; i < 17; i++) {
 
 				Theta += 20;
 				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-						CoordinationBeliefs.Ball.X, CoordinationBeliefs.Ball.Y,
+						LocalizationResults.getBall_location().X, LocalizationResults.getBall_location().Y,
 						Theta, (distance));
 				
 
@@ -90,15 +94,13 @@ public class ActivePositions {
 		}else{
 			
 			distance = 2;
-			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(CoordinationBeliefs.Ball, Constraints.OpponentGoal);
-			
-			for (int i = 0; i < 11; i++) {
-
-				Theta += 30;
+			Theta = 0;
+			for (int i = 0; i < 12; i++) {
 
 				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-						CoordinationBeliefs.Ball.X, CoordinationBeliefs.Ball.Y,
+						LocalizationResults.getBall_location().X, LocalizationResults.getBall_location().Y,
 						Theta, (distance));
+				Theta += 30;
 
 				if (ProperSupportPosition(a)) {
 
@@ -139,7 +141,7 @@ public class ActivePositions {
 		};
 
 		// sort ActivePositions
-		if (CoordinationBeliefs.Ball.X >= 0) {
+		if (LocalizationResults.getBall_location().X >= 0) {
 			Collections.sort(ActivePositionsTemp, POSITIVE_ORDER);
 		} else {
 			Collections.sort(ActivePositionsTemp, NEGATIVE_ORDER);
@@ -149,14 +151,13 @@ public class ActivePositions {
 		for (int i = 0; i < ActivePositionsTemp.size(); i++) {
 
 			if(i<9){
-				
 				ActivePositions.add(ActivePositionsTemp.elementAt(i));
-	
+				System.out.println("x " + ActivePositions.elementAt(i).X + " y"
+						+ ActivePositions.elementAt(i).Y);
 			}else{
 
 				ActivePositionsTemp.removeAllElements();
 				break;
-				
 			}
 
 		}

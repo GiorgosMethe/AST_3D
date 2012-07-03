@@ -47,7 +47,7 @@ public class MessagePerCycle {
 
 		} else {
 
-			if (ServerCyrcles.getGameCyrcles() % 3 == 0) {
+			if (ServerCyrcles.getGameCyrcles() % 10 == 0) {
 
 				if (WhoSent.getCounter() > MaxNum - 1) {
 					WhoSent.setCounter(1);

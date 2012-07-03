@@ -1,19 +1,20 @@
 package agent.runtime;
 
-import communication.utils.MessageType;
-import communication.utils.SayEffector;
-import connection.utils.ServerCyrcles;
-import coordination.main.Coordination;
-
-import perceptor.worldstate.GameState;
-import motion.old.MotionTrigger;
 import motion.utils.PerformMovement;
+import perceptor.worldstate.GameState;
 import action.fsm.CFstates;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
 import action.simple.TurnToLocate;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
+
+import communication.utils.MessageType;
+import communication.utils.SayEffector;
+
+import connection.utils.ServerCyrcles;
+import coordination.main.Coordination;
+import coordination.test.ActivPositions;
 
 public class AgentFunction {
 
@@ -30,32 +31,30 @@ public class AgentFunction {
 		 */
 		CheckIfFall.Check();
 
-		
-		if(InitAgent.isPlayerInited()){
-			
+		if (InitAgent.isPlayerInited()) {
+
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
 
 				Say = SayEffector.Say(MessageType.getType());
 
 				Coordination.MakeCoordination();
 
-				if (CFstates.getState().equalsIgnoreCase("Start") ||
-						CFstates.getState().equalsIgnoreCase("CheckFRP")) {
+				if (CFstates.getState().equalsIgnoreCase("Start")
+						|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
 					ActionEffector.Act();
 				}
 
 				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
 
-			}else{
-				
-				if (CFstates.getState().equalsIgnoreCase("Start") ||
-						CFstates.getState().equalsIgnoreCase("CheckFRP")) {
+			} else {
+
+				if (CFstates.getState().equalsIgnoreCase("Start")
+						|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
 					TurnToLocate.Act();
 				}
-	
+
 			}
-			
-			
+
 		}
 
 		Act = PerformMovement.run();

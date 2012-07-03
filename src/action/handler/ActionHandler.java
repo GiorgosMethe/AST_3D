@@ -9,37 +9,32 @@ public class ActionHandler {
 
 		if (Action != null) {
 
-			if(ActionPlaying.getActionPlaying()!=null){
-				
-				System.out.println("mou stelnei "+Action.getAction());
-				System.out.println("ActionPlaying"+ActionPlaying.getActionPlaying().getAction());
+			if (ActionPlaying.getActionPlaying() != null) {
 
-				if(ActionPlaying.getActionPlaying().getAction().equalsIgnoreCase("GoKickBallToGoal")){
 
-					if(!Action.getAction().equalsIgnoreCase("GoKickBallToGoal")){
+				if (ActionPlaying.getActionPlaying().getAction()
+						.equalsIgnoreCase("GoKickBallToGoal")) {
 
-						System.out.println("mhdenizw to kick");
+					if (!Action.getAction()
+							.equalsIgnoreCase("GoKickBallToGoal")) {
+
 						ActionPlaying.setActionPlaying(Action);
 						GKBGDstates.setState("Start");
 					}
 
-				}else{
+				} else {
 
-					System.out.println("den kanw kick");
 					ActionPlaying.setActionPlaying(Action);
 
 				}
-			}else{
-				
-				System.out.println("den kanw tipota");
+			} else {
+
 				ActionPlaying.setActionPlaying(Action);
-				
+
 			}
 
-
 		} else {
-			
-			System.out.println("den mou stelnei tpt");
+
 			ActionPlaying.setActionPlaying(null);
 
 		}

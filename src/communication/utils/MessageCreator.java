@@ -51,19 +51,17 @@ public class MessageCreator {
 		String message = "";
 		String type = "";
 
+		if (CFstates.getState().equalsIgnoreCase("Start")
+				|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
 
-
-
-		if(CFstates.getState().equalsIgnoreCase("Start") ||
-				CFstates.getState().equalsIgnoreCase("CheckFRP")){
-
-			// agent know his position and the ball position	
+			// agent know his position and the ball position
 			if (LocalizationResults.isKnowMyPosition() && Ball.isSeeTheBall()) {
 
 				type = "c" + ",";
 
 				// player number
-				message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+				message += type + Integer.toString(AgentType.getPlayerNum())
+						+ ",";
 
 				// player position
 				message += Integer.toString((int) Math.rint(LocalizationResults
@@ -74,7 +72,8 @@ public class MessageCreator {
 				// ball position elements
 				message += Integer.toString((int) Math.rint(LocalizationResults
 						.getBall_angle())) + ",";
-				message += Integer.toString((int) Math.rint(Ball.getDistance()));
+				message += Integer
+						.toString((int) Math.rint(Ball.getDistance()));
 
 				// agent only see the ball
 			} else if (LocalizationResults.isKnowMyPosition()
@@ -83,7 +82,8 @@ public class MessageCreator {
 				type = "l" + ",";
 
 				// player number
-				message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+				message += type + Integer.toString(AgentType.getPlayerNum())
+						+ ",";
 
 				// player position
 				message += Integer.toString((int) Math.rint(LocalizationResults
@@ -97,12 +97,14 @@ public class MessageCreator {
 				type = "b" + ",";
 
 				// player number
-				message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+				message += type + Integer.toString(AgentType.getPlayerNum())
+						+ ",";
 
 				// ball position elements
 				message += Integer.toString((int) Math.rint(Ball.getAngleX()))
 						+ ",";
-				message += Integer.toString((int) Math.rint(Ball.getDistance()));
+				message += Integer
+						.toString((int) Math.rint(Ball.getDistance()));
 
 				// agent has complete unawareness of his environment
 			} else {
@@ -114,25 +116,18 @@ public class MessageCreator {
 
 			}
 
-
-
-		}else{
-
+		} else {
 
 			/*
-			 * Agent probably is fallen down. He is going to send error messages in order
-			 * coordination admin not to include him in coordination
+			 * Agent probably is fallen down. He is going to send error messages
+			 * in order coordination admin not to include him in coordination
 			 */
 			type = "x" + ",";
 
 			// player number
 			message += type + Integer.toString(AgentType.getPlayerNum());
 
-
 		}
-
-
-
 
 		return message;
 

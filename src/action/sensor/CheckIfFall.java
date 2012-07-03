@@ -1,7 +1,5 @@
 package action.sensor;
 
-import motion.old.MotionTrigger;
-import motion.xml.MotionPlaying;
 import perceptor.sensors.ForceResistancePerceptor;
 import perceptor.sensors.GyroScope;
 import action.fsm.CFstates;

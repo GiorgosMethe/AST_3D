@@ -29,12 +29,13 @@ import java.net.UnknownHostException;
 import javax.swing.Timer;
 
 import perceptor.localization.LocalizationResults;
-
 import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.main.CoordinationBeliefs;
+import coordination.strategy.ActivePositions;
 import coordination.support.SupportCoordination;
+import coordination.test.ActivPositions;
 
 /**
  * Program for testing network drawing on RoboVis with all shapes both animated
@@ -71,6 +72,27 @@ public class RVTester {
 	/** Method for all animated drawings */
 	private void renderAnimatedShapes() throws IOException {
 
+		
+		
+		
+		if(ActivePositions.ActivePositions !=null){
+			
+			
+			for (int i = 0; i < ActivePositions.ActivePositions.size(); i++) {
+				
+				drawCircle(new float[] {
+						(float) ActivePositions.ActivePositions
+								.elementAt(i).getX(),
+						(float) ActivePositions.ActivePositions
+								.elementAt(i).getY() }, 0.2f, 2,
+						Color.pink, "animated.circles");
+
+			}
+	
+		}
+		
+		
+		
 		if (ActiveCoordination.OptimizedActiveMap != null) {
 
 			for (int i = 0; i < ActiveCoordination.OptimizedActiveMap.size(); i++) {
@@ -109,15 +131,27 @@ public class RVTester {
 
 		}
 
-		 if (!Double.isNaN(LocalizationResults.getBall_location().X) &&
-		 !Double.isNaN(LocalizationResults.getBall_location().Y)) {
-		
-		 drawCircle(new float[] { (float)
-		 LocalizationResults.getBall_location().X,
-		 (float) LocalizationResults.getBall_location().Y }, 0.1f, 2,
-		 Color.CYAN, "animated.circles");
-		
-		 }
+//		if (!Double.isNaN(LocalizationResults.getBall_location().X)
+//				&& !Double.isNaN(LocalizationResults.getBall_location().Y)) {
+//
+//			drawCircle(
+//					new float[] {
+//							(float) LocalizationResults.getBall_location().X,
+//							(float) LocalizationResults.getBall_location().Y },
+//					0.1f, 2, Color.CYAN, "animated.circles");
+//
+//		}
+
+//		if (!Double.isNaN(LocalizationResults.getCurrent_location().X)
+//				&& !Double.isNaN(LocalizationResults.getCurrent_location().Y)) {
+//
+//			drawCircle(
+//					new float[] {
+//							(float) LocalizationResults.getCurrent_location().X,
+//							(float) LocalizationResults.getCurrent_location().Y },
+//					0.1f, 2, Color.CYAN, "animated.circles");
+//
+//		}
 
 		if (CoordinationVectorUpdate.CoordinationVector != null) {
 

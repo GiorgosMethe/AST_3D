@@ -19,7 +19,7 @@ public class Beam {
 
 	public static Coordinate playersInitPositions[] = new Coordinate[] {
 
-	new Coordinate(-10.5, 0.0), new Coordinate(-8.5, -3.0),
+	new Coordinate(-10.4, 0.0), new Coordinate(-8.5, -3.0),
 			new Coordinate(-8.5, 3.0), new Coordinate(-9.0, 0.0),
 			new Coordinate(-6.0, -1.0), new Coordinate(-6.0, 1.0),
 			new Coordinate(-4.0, -2), new Coordinate(-4.0, 2),
