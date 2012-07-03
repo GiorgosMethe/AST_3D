@@ -26,6 +26,7 @@ import coordination.strategy.ActivePositions;
 public class ActiveCoordination {
 
 	public static Vector<PositionMap> OptimizedActiveMap;
+	public static int OnBallPlayer;
 
 	/*
 	 * This is the function which makes the coordination of the active players
@@ -34,7 +35,7 @@ public class ActiveCoordination {
 	public static void Coordinate() {
 
 		double min = 1000;
-		int OnBallPlayer = 0;
+		OnBallPlayer = 0;
 		double distance;
 		double finalValue = 0;
 

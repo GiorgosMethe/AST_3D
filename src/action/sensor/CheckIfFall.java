@@ -18,30 +18,18 @@ public class CheckIfFall {
 		if (CFstates.getState().equalsIgnoreCase("Start")) {
 
 			if ((Math.abs(GyroScope.getAngleY()) + Math.abs(GyroScope
-					.getAngleZ())) > 300) {
-
-				CFstates.setState("w82stop");
-				System.err.println("EPESA");
-
-			}
-
-		} else if (CFstates.getState().equalsIgnoreCase("w82stop")) {
-
-			if (MotionPlaying.getMotionName() == null) {
+					.getAngleZ())) > 250) {
 
 				CFstates.setState("CheckFRP");
-
-			} else {
-
-				MotionTrigger.setMotion("");
+				System.err.println("EPESA");
 
 			}
 
 		} else if (CFstates.getState().equalsIgnoreCase("CheckFRP")) {
 
-			if (CFstates.getCheckFRPtimer() == 20) {
+			if (CFstates.getCheckFRPtimer() == 50) {
 
-				if (sumDown > 200) {
+				if (sumDown > 400) {
 
 					CFstates.setState("Start");
 

@@ -11,6 +11,7 @@ import motion.utils.PerformMovement;
 import action.fsm.CFstates;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
+import action.simple.TurnToLocate;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
 
@@ -29,21 +30,33 @@ public class AgentFunction {
 		 */
 		CheckIfFall.Check();
 
-		if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")
-				&& InitAgent.isPlayerInited() == true) {
+		
+		if(InitAgent.isPlayerInited()){
+			
+			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
 
-			Say = SayEffector.Say(MessageType.getType());
+				Say = SayEffector.Say(MessageType.getType());
 
-			Coordination.MakeCoordination();
+				Coordination.MakeCoordination();
 
-			if (CFstates.getState().equalsIgnoreCase("Start")) {
-				ActionEffector.Act();
+				if (CFstates.getState().equalsIgnoreCase("Start") ||
+						CFstates.getState().equalsIgnoreCase("CheckFRP")) {
+					ActionEffector.Act();
+				}
+
+				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
+
+			}else{
+				
+				if (CFstates.getState().equalsIgnoreCase("Start") ||
+						CFstates.getState().equalsIgnoreCase("CheckFRP")) {
+					TurnToLocate.Act();
+				}
+	
 			}
-
-			ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
-
+			
+			
 		}
-
 
 		Act = PerformMovement.run();
 

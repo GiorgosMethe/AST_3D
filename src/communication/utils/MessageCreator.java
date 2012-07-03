@@ -5,6 +5,7 @@ package communication.utils;
 
 import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
+import action.fsm.CFstates;
 import agent.values.AgentType;
 import coordination.action.ActionTable;
 import coordination.action.ActionTranslator;
@@ -50,62 +51,88 @@ public class MessageCreator {
 		String message = "";
 		String type = "";
 
-		// agent know his position and the ball position
-		if (LocalizationResults.isKnowMyPosition() && Ball.isSeeTheBall()) {
 
-			type = "c" + ",";
 
-			// player number
-			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
 
-			// player position
-			message += Integer.toString((int) Math.rint(LocalizationResults
-					.getCurrent_location().X)) + ",";
-			message += Integer.toString((int) Math.rint(LocalizationResults
-					.getCurrent_location().Y)) + ",";
+		if(CFstates.getState().equalsIgnoreCase("Start") ||
+				CFstates.getState().equalsIgnoreCase("CheckFRP")){
 
-			// ball position elements
-			message += Integer.toString((int) Math.rint(LocalizationResults
-					.getBall_angle())) + ",";
-			message += Integer.toString((int) Math.rint(Ball.getDistance()));
+			// agent know his position and the ball position	
+			if (LocalizationResults.isKnowMyPosition() && Ball.isSeeTheBall()) {
 
-			// agent only see the ball
-		} else if (LocalizationResults.isKnowMyPosition()
-				&& !Ball.isSeeTheBall()) {
+				type = "c" + ",";
 
-			type = "l" + ",";
+				// player number
+				message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
 
-			// player number
-			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+				// player position
+				message += Integer.toString((int) Math.rint(LocalizationResults
+						.getCurrent_location().X)) + ",";
+				message += Integer.toString((int) Math.rint(LocalizationResults
+						.getCurrent_location().Y)) + ",";
 
-			// player position
-			message += Integer.toString((int) Math.rint(LocalizationResults
-					.getCurrent_location().X)) + ",";
-			message += Integer.toString((int) Math.rint(LocalizationResults
-					.getCurrent_location().Y));
+				// ball position elements
+				message += Integer.toString((int) Math.rint(LocalizationResults
+						.getBall_angle())) + ",";
+				message += Integer.toString((int) Math.rint(Ball.getDistance()));
 
-		} else if (!LocalizationResults.isKnowMyPosition()
-				&& Ball.isSeeTheBall()) {
+				// agent only see the ball
+			} else if (LocalizationResults.isKnowMyPosition()
+					&& !Ball.isSeeTheBall()) {
 
-			type = "b" + ",";
+				type = "l" + ",";
 
-			// player number
-			message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+				// player number
+				message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
 
-			// ball position elements
-			message += Integer.toString((int) Math.rint(Ball.getAngleX()))
-					+ ",";
-			message += Integer.toString((int) Math.rint(Ball.getDistance()));
+				// player position
+				message += Integer.toString((int) Math.rint(LocalizationResults
+						.getCurrent_location().X)) + ",";
+				message += Integer.toString((int) Math.rint(LocalizationResults
+						.getCurrent_location().Y));
 
-			// agent has complete unawareness of his environment
-		} else {
+			} else if (!LocalizationResults.isKnowMyPosition()
+					&& Ball.isSeeTheBall()) {
 
+				type = "b" + ",";
+
+				// player number
+				message += type + Integer.toString(AgentType.getPlayerNum()) + ",";
+
+				// ball position elements
+				message += Integer.toString((int) Math.rint(Ball.getAngleX()))
+						+ ",";
+				message += Integer.toString((int) Math.rint(Ball.getDistance()));
+
+				// agent has complete unawareness of his environment
+			} else {
+
+				type = "x" + ",";
+
+				// player number
+				message += type + Integer.toString(AgentType.getPlayerNum());
+
+			}
+
+
+
+		}else{
+
+
+			/*
+			 * Agent probably is fallen down. He is going to send error messages in order
+			 * coordination admin not to include him in coordination
+			 */
 			type = "x" + ",";
 
 			// player number
 			message += type + Integer.toString(AgentType.getPlayerNum());
 
+
 		}
+
+
+
 
 		return message;
 
