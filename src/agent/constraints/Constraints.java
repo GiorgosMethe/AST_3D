@@ -31,7 +31,7 @@ public class Constraints {
 	 */
 	public static int CoordinationPlayer = 1;
 
-	public static int CoordinationTimeout = 10;
+	public static int CoordinationTimeout = 20;
 
 	/*
 	 * Strategy constraints

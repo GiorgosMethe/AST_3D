@@ -6,6 +6,7 @@ package coordination.communication.message;
 import java.util.Vector;
 
 import perceptor.localization.Coordinate;
+import coordination.main.Coordination;
 import coordination.main.CoordinationRun;
 
 /***********************************************************************************
@@ -24,6 +25,8 @@ public class CoordinationVectorUpdate {
 
 	public static void update(Vector<String> CoordinationMessage) {
 
+		Coordination.roboviz = false;
+		
 		CoordinationVector.clear();
 
 		int type = 0;

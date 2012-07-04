@@ -72,153 +72,129 @@ public class RVTester {
 	private void renderAnimatedShapes() throws IOException {
 
 
-		if(Coordination.roboviz){
-			if(ActivePositions.ActivePositions !=null){
+		if (ActiveCoordination.OptimizedActiveMap != null) {
 
+			for (int i = 0; i < ActiveCoordination.OptimizedActiveMap.size(); i++) {
 
-				for (int i = 0; i < ActivePositions.ActivePositions.size(); i++) {
+				drawCircle(new float[] {
+						(float) ActiveCoordination.OptimizedActiveMap
+						.elementAt(i).getPosition().getX(),
+						(float) ActiveCoordination.OptimizedActiveMap
+						.elementAt(i).getPosition().getY() }, 0.2f, 2,
+						Color.RED, "animated.circles");
 
-					drawCircle(new float[] {
-							(float) ActivePositions.ActivePositions
-							.elementAt(i).getX(),
-							(float) ActivePositions.ActivePositions
-							.elementAt(i).getY() }, 0.2f, 2,
-							Color.pink, "animated.circles");
-
-				}
-
-			}
-
-
-
-			if (ActiveCoordination.OptimizedActiveMap != null) {
-
-				for (int i = 0; i < ActiveCoordination.OptimizedActiveMap.size(); i++) {
-
-					drawCircle(new float[] {
-							(float) ActiveCoordination.OptimizedActiveMap
-							.elementAt(i).getPosition().getX(),
-							(float) ActiveCoordination.OptimizedActiveMap
-							.elementAt(i).getPosition().getY() }, 0.2f, 2,
-							Color.RED, "animated.circles");
-
-					drawLine(new float[] { 
-							(float) ActiveCoordination.OptimizedActiveMap.elementAt(i).getAgent().getPlayer().X,
-							(float) ActiveCoordination.OptimizedActiveMap.elementAt(i).getAgent().getPlayer().Y, 0 },
-							new float[] { (float) ActiveCoordination.OptimizedActiveMap.elementAt(i).getPosition().getX(),
-							(float) ActiveCoordination.OptimizedActiveMap.elementAt(i).getPosition().getY(), 0 }, 1.0f,
-							lightGreen, "animated.lines.field");
-
-				}
+				drawLine(new float[] { 
+						(float) ActiveCoordination.OptimizedActiveMap.elementAt(i).getAgent().getPlayer().X,
+						(float) ActiveCoordination.OptimizedActiveMap.elementAt(i).getAgent().getPlayer().Y, 0 },
+						new float[] { (float) ActiveCoordination.OptimizedActiveMap.elementAt(i).getPosition().getX(),
+						(float) ActiveCoordination.OptimizedActiveMap.elementAt(i).getPosition().getY(), 0 }, 1.0f,
+						lightGreen, "animated.lines.field");
 
 			}
 
-			if (SupportCoordination.OptimizedSupportMap != null) {
+		}
 
-				for (int i = 0; i < SupportCoordination.OptimizedSupportMap.size(); i++) {
+		if (SupportCoordination.OptimizedSupportMap != null) {
 
-					drawCircle(new float[] {
-							(float) SupportCoordination.OptimizedSupportMap
-							.elementAt(i).getPosition().getX(),
-							(float) SupportCoordination.OptimizedSupportMap
-							.elementAt(i).getPosition().getY() }, 0.2f, 2,
-							Color.YELLOW, "animated.circles");
+			for (int i = 0; i < SupportCoordination.OptimizedSupportMap.size(); i++) {
 
-					drawLine(new float[] { 
-							(float) SupportCoordination.OptimizedSupportMap.elementAt(i).getAgent().getPlayer().X,
-							(float) SupportCoordination.OptimizedSupportMap.elementAt(i).getAgent().getPlayer().Y, 0 },
-							new float[] { (float) SupportCoordination.OptimizedSupportMap.elementAt(i).getPosition().getX(),
-							(float) SupportCoordination.OptimizedSupportMap.elementAt(i).getPosition().getY(), 0 }, 1.0f,
-							Color.YELLOW, "animated.lines.field");
+				drawCircle(new float[] {
+						(float) SupportCoordination.OptimizedSupportMap
+						.elementAt(i).getPosition().getX(),
+						(float) SupportCoordination.OptimizedSupportMap
+						.elementAt(i).getPosition().getY() }, 0.2f, 2,
+						Color.YELLOW, "animated.circles");
 
-				}
-
-			}
-
-			if (CoordinationBeliefs.Ball != null) {
-
-				drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
-						(float) CoordinationBeliefs.Ball.getY() }, 0.1f, 2,
-						Color.CYAN, "animated.circles");
+				drawLine(new float[] { 
+						(float) SupportCoordination.OptimizedSupportMap.elementAt(i).getAgent().getPlayer().X,
+						(float) SupportCoordination.OptimizedSupportMap.elementAt(i).getAgent().getPlayer().Y, 0 },
+						new float[] { (float) SupportCoordination.OptimizedSupportMap.elementAt(i).getPosition().getX(),
+						(float) SupportCoordination.OptimizedSupportMap.elementAt(i).getPosition().getY(), 0 }, 1.0f,
+						Color.YELLOW, "animated.lines.field");
 
 			}
 
+		}
 
-			if (CoordinationVectorUpdate.CoordinationVector != null) {
+		if (CoordinationBeliefs.Ball != null) {
 
-				if(CoordinationVectorUpdate.CoordinationVector
-						.size() == 8){
+			drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
+					(float) CoordinationBeliefs.Ball.getY() }, 0.1f, 2,
+					Color.CYAN, "animated.circles");
 
-					for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector
-							.size(); i++) {
+		}
 
-						if (RoleAssignmentFunction.ActiveRoles != null) {
-							for (int j = 0; j < RoleAssignmentFunction.ActiveRoles
-									.size(); j++) {
-								if (RoleAssignmentFunction.ActiveRoles.elementAt(j)
-										.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
-										.elementAt(i).getNumber()) {
 
-									drawAgentAnnotation(String.format(
-											"A n:%d,r:%d,c:%d",
-											CoordinationVectorUpdate.CoordinationVector
-											.elementAt(i).getNumber(),
-											RoleAssignmentFunction.ActiveRoles
-											.elementAt(j).getRole(),
-											CoordinationVectorUpdate.CoordinationVector
-											.elementAt(i).getType()), true,
-											CoordinationVectorUpdate.CoordinationVector
-											.elementAt(i).getNumber(),
-											Color.RED);
+		if (CoordinationVectorUpdate.CoordinationVector != null) {
 
-								}
-							}
-						}
+			for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector
+					.size(); i++) {
 
-						if (RoleAssignmentFunction.SupportRoles != null) {
-							for (int j = 0; j < RoleAssignmentFunction.SupportRoles
-									.size(); j++) {
-								if (RoleAssignmentFunction.SupportRoles.elementAt(j)
-										.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
-										.elementAt(i).getNumber()) {
+				if (RoleAssignmentFunction.ActiveRoles != null) {
+					for (int j = 0; j < RoleAssignmentFunction.ActiveRoles
+							.size(); j++) {
+						if (RoleAssignmentFunction.ActiveRoles.elementAt(j)
+								.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
+								.elementAt(i).getNumber()) {
 
-									drawAgentAnnotation(String.format(
-											"S n:%d,r:%d,c:%d",
-											CoordinationVectorUpdate.CoordinationVector
-											.elementAt(i).getNumber(),
-											RoleAssignmentFunction.SupportRoles
-											.elementAt(j).getRole(),
-											CoordinationVectorUpdate.CoordinationVector
-											.elementAt(i).getType()), true,
-											CoordinationVectorUpdate.CoordinationVector
-											.elementAt(i).getNumber(),
-											Color.YELLOW);
-
-								}
-							}
-						}
-
-						if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
-								.getType() == 0
-								|| CoordinationVectorUpdate.CoordinationVector
-								.elementAt(i).getType() == 1) {
-
-							drawCircle(new float[] {
-									(float) CoordinationVectorUpdate.CoordinationVector
-									.elementAt(i).getPlayer().getX(),
-									(float) CoordinationVectorUpdate.CoordinationVector
-									.elementAt(i).getPlayer().getY() }, 0.2f,
-									2, Color.BLUE, "animated.circles");
+							drawAgentAnnotation(String.format(
+									"A n:%d,r:%d,c:%d",
+									CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i).getNumber(),
+									RoleAssignmentFunction.ActiveRoles
+									.elementAt(j).getRole(),
+									CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i).getType()), true,
+									CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i).getNumber(),
+									Color.RED);
 
 						}
-
 					}
+				}
+
+				if (RoleAssignmentFunction.SupportRoles != null) {
+					for (int j = 0; j < RoleAssignmentFunction.SupportRoles
+							.size(); j++) {
+						if (RoleAssignmentFunction.SupportRoles.elementAt(j)
+								.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
+								.elementAt(i).getNumber()) {
+
+							drawAgentAnnotation(String.format(
+									"S n:%d,r:%d,c:%d",
+									CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i).getNumber(),
+									RoleAssignmentFunction.SupportRoles
+									.elementAt(j).getRole(),
+									CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i).getType()), true,
+									CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i).getNumber(),
+									Color.YELLOW);
+
+						}
+					}
+				}
+
+				if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+						.getType() == 0
+						|| CoordinationVectorUpdate.CoordinationVector
+						.elementAt(i).getType() == 1) {
+
+					drawCircle(new float[] {
+							(float) CoordinationVectorUpdate.CoordinationVector
+							.elementAt(i).getPlayer().getX(),
+							(float) CoordinationVectorUpdate.CoordinationVector
+							.elementAt(i).getPlayer().getY() }, 0.2f,
+							2, Color.BLUE, "animated.circles");
 
 				}
 
 			}
 
 		}
+
+
 
 		// swap all sets starting with "animated"
 		swapBuffers("animated");

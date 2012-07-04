@@ -14,16 +14,35 @@ public class CheckIfFall {
 	public static void Check() {
 
 		if (CFstates.getState().equalsIgnoreCase("Start")) {
+			
+			fallen = false;
 
-			if ((Math.abs(GyroScope.getAngleY()) + Math.abs(GyroScope
-					.getAngleZ())) > 250) {
+			if (Math.abs(GyroScope.getAngleY()) > 200 || Math.abs(GyroScope
+					.getAngleZ()) > 200) {
 
-				CFstates.setState("CheckFRP");
+				CFstates.setState("WaitForFRP");
 				System.err.println("EPESA");
 
 			}
 
+		} else if (CFstates.getState().equalsIgnoreCase("WaitForFRP")) {
+			
+			fallen = false;
+			
+			if (CFstates.getCheckFRPtimer() == 150) {
+				
+				CFstates.setState("CheckFRP");
+				CFstates.setCheckFRPtimer(0);
+				
+			}else{
+				
+				CFstates.setCheckFRPtimer(CFstates.getCheckFRPtimer() + 1);
+				
+			}
+	
 		} else if (CFstates.getState().equalsIgnoreCase("CheckFRP")) {
+			
+			fallen = false;
 
 			if (CFstates.getCheckFRPtimer() == 50) {
 
@@ -38,7 +57,7 @@ public class CheckIfFall {
 				}
 
 				CFstates.setCheckFRPtimer(0);
-				System.out.println("Sum Down--" + sumDown);
+				System.out.println("Sum Down " + sumDown);
 				sumDown = 0;
 
 			} else {
@@ -61,6 +80,8 @@ public class CheckIfFall {
 			}
 
 		} else if (CFstates.getState().equalsIgnoreCase("StandUp")) {
+			
+			fallen = true;
 
 			if (StandUp.Act()) {
 
@@ -71,6 +92,8 @@ public class CheckIfFall {
 			}
 
 		} else if (CFstates.getState().equalsIgnoreCase("CheckIfUp")) {
+			
+			fallen = true;
 
 			if (CFstates.getCheckFRPtimer() == 20) {
 

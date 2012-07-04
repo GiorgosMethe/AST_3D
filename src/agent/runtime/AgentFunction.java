@@ -38,20 +38,18 @@ public class AgentFunction {
 
 				Coordination.MakeCoordination();
 
-				TurnToLocate.Act();
-//				if (CFstates.getState().equalsIgnoreCase("Start")
-//						|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
-//					ActionEffector.Act();
-//				}
+				
+				if (!CheckIfFall.fallen) {
+					ActionEffector.Act();
+				}
 
 				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
 
 			} else {
 
-//				if (CFstates.getState().equalsIgnoreCase("Start")
-//						|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
-//					TurnToLocate.Act();
-//				}
+				if (!CheckIfFall.fallen) {
+					TurnToLocate.Act();
+				}
 
 			}
 
