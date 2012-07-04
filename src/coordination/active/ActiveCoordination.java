@@ -26,7 +26,7 @@ import coordination.strategy.ActivePositions;
 public class ActiveCoordination {
 
 	public static Vector<PositionMap> OptimizedActiveMap;
-	public static int OnBallPlayer;
+	public static int PreviousOnBallPlayer = 0;
 
 	/*
 	 * This is the function which makes the coordination of the active players
@@ -35,27 +35,17 @@ public class ActiveCoordination {
 	public static void Coordinate() {
 
 		double min = 1000;
-		OnBallPlayer = 0;
+		int OnBallPlayer = 0;
 		double distance;
 		double finalValue = 0;
 
+
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
-			if (CoordinationSplitter.ActiveSubset.elementAt(i).getType() == 0) {
+			distance = CoordinationSplitter.ActiveSubset.elementAt(i)
+					.getRealDistance();
 
-				distance = CoordinationSplitter.ActiveSubset.elementAt(i)
-						.getBallDistance();
-
-				finalValue = distance;
-
-			} else if (CoordinationSplitter.ActiveSubset.elementAt(i).getType() == 1) {
-
-				distance = CoordinationSplitter.ActiveSubset.elementAt(i)
-						.getBallDistance();
-
-				finalValue = distance;
-
-			}
+			finalValue = distance;
 
 			if (finalValue < min) {
 				min = finalValue;
@@ -65,15 +55,43 @@ public class ActiveCoordination {
 
 		}
 
+		boolean needlessChange = false;
+		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
+
+			if(PreviousOnBallPlayer!=0){
+				if (PreviousOnBallPlayer == CoordinationSplitter.ActiveSubset.elementAt(i)
+						.getNumber()) {
+					
+					if(min > CoordinationSplitter.ActiveSubset.elementAt(i)
+							.getNumber() - 1){
+						
+						
+						needlessChange = true;
+						
+					}
+
+				}
+
+			}
+
+		}
+		
+		if(needlessChange){
+			OnBallPlayer = PreviousOnBallPlayer;
+		}
+
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 			if (OnBallPlayer == CoordinationSplitter.ActiveSubset.elementAt(i)
 					.getNumber()) {
 
 				ActionObject a = new ActionObject(
 						CoordinationSplitter.ActiveSubset.elementAt(i)
-								.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
+						.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
 
 				ActionTable.CoordinateActions.addElement(a);
+				
+				
+				PreviousOnBallPlayer = OnBallPlayer;
 
 			}
 		}
@@ -146,7 +164,7 @@ public class ActiveCoordination {
 								PositionMap temp = new PositionMap(
 										activeSubset.elementAt(k),
 										activePositions
-												.elementAt(PlayerSelection[selection++]));
+										.elementAt(PlayerSelection[selection++]));
 								map.add(temp);
 
 							} else {
@@ -154,7 +172,7 @@ public class ActiveCoordination {
 								PositionMap temp = new PositionMap(
 										activeSubset.elementAt(k),
 										activePositions
-												.elementAt(PlayerSelection[selection]));
+										.elementAt(PlayerSelection[selection]));
 								map.add(temp);
 
 							}

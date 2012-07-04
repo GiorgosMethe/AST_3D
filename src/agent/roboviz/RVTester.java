@@ -73,7 +73,13 @@ public class RVTester {
 	private void renderAnimatedShapes() throws IOException {
 
 		
-		
+		if (ActivPositions.Ball != null) {
+
+			drawCircle(new float[] { (float) ActivPositions.Ball.getX(),
+					(float) ActivPositions.Ball.getY() }, 0.1f, 2,
+					Color.CYAN, "animated.circles");
+
+		}
 		
 		if(ActivePositions.ActivePositions !=null){
 			
@@ -84,6 +90,22 @@ public class RVTester {
 						(float) ActivePositions.ActivePositions
 								.elementAt(i).getX(),
 						(float) ActivePositions.ActivePositions
+								.elementAt(i).getY() }, 0.2f, 2,
+						Color.pink, "animated.circles");
+
+			}
+	
+		}
+		
+		if(ActivPositions.ActivePositions !=null){
+			
+			
+			for (int i = 0; i < ActivPositions.ActivePositions.size(); i++) {
+				
+				drawCircle(new float[] {
+						(float) ActivPositions.ActivePositions
+								.elementAt(i).getX(),
+						(float) ActivPositions.ActivePositions
 								.elementAt(i).getY() }, 0.2f, 2,
 						Color.pink, "animated.circles");
 
