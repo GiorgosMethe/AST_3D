@@ -14,7 +14,6 @@ import communication.utils.SayEffector;
 
 import connection.utils.ServerCyrcles;
 import coordination.main.Coordination;
-import coordination.test.ActivPositions;
 
 public class AgentFunction {
 
@@ -39,19 +38,20 @@ public class AgentFunction {
 
 				Coordination.MakeCoordination();
 
-				if (CFstates.getState().equalsIgnoreCase("Start")
-						|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
-					ActionEffector.Act();
-				}
+				TurnToLocate.Act();
+//				if (CFstates.getState().equalsIgnoreCase("Start")
+//						|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
+//					ActionEffector.Act();
+//				}
 
 				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
 
 			} else {
 
-				if (CFstates.getState().equalsIgnoreCase("Start")
-						|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
-					TurnToLocate.Act();
-				}
+//				if (CFstates.getState().equalsIgnoreCase("Start")
+//						|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
+//					TurnToLocate.Act();
+//				}
 
 			}
 

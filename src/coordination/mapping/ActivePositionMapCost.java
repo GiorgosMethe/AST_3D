@@ -17,9 +17,29 @@ public class ActivePositionMapCost {
 
 			Coordinate Agent = map.elementAt(agentNum).getAgent().getPlayer();
 
+			/*
+			 * -Total distance agents are going to travel
+			 * 
+			 * -Positive cost
+			 * 
+			 * -Agents will try to minimize this cost 
+			 * 
+			 */
+			
 			cost += TriangleLocalization.FindDistanceAmong2Coordinates(Agent,
 					map.elementAt(agentNum).getPosition());
 
+			
+			/*
+			 * - Is good for agents to go to positions which have 
+			 * a better soccer field value
+			 * 
+			 * - Negative cost
+			 * 
+			 * - Agents will try to maximize this cost 
+			 * 
+			 */
+			
 			if (Ball.getX() >= 0) {
 				cost -= SoccerFieldCoordinateValue.Calculate(map.elementAt(
 						agentNum).getPosition()) / 7;
@@ -33,16 +53,48 @@ public class ActivePositionMapCost {
 		for (int q = 0; q < map.size(); q++) {
 			for (int r = q + 1; r < map.size(); r++) {
 
-				cost -= 2 * TriangleLocalization.FindDistanceAmong2Coordinates(
+				
+				/*
+				 * - Is good for agents to go to positions which not have 
+				 * a short distance with each other agents
+				 * 
+				 * - Negative cost
+				 * 
+				 * - Agents will try to maximize this cost 
+				 * 
+				 */
+				
+				cost -= TriangleLocalization.FindDistanceAmong2Coordinates(
 						map.elementAt(q).getPosition(), map.elementAt(r)
 								.getPosition());
 
-				cost -= 2 * Math.abs(map.elementAt(q).getPosition().getY()
+				/*
+				 * - Is good for agents to go to positions which not have 
+				 * the same Y axis value. We want agents to be stretch into 
+				 * the field
+				 * 
+				 * - Negative cost
+				 * 
+				 * - Agents will try to maximize this cost 
+				 * 
+				 */
+				cost -= Math.abs(map.elementAt(q).getPosition().getY()
 						- map.elementAt(r).getPosition().getY());
 
 				if (map.elementAt(r).getAgent().getType() == 0
-						&& map.elementAt(q).getAgent().getType() == 0) {
+						&& map.elementAt(q).getAgent().getType() == 1) {
 
+					/*
+					 * - Is good for agents to follow roots which have not
+					 * any intreceptions with other agent's routes 
+					 * 
+					 * - Positive cost
+					 * 
+					 * - Agents will try to minimize or not eliminate this cost
+					 * completely 
+					 * 
+					 */
+					
 					Coordinate Agent1 = map.elementAt(q).getAgent().getPlayer();
 
 					Coordinate Agent2 = map.elementAt(r).getAgent().getPlayer();
@@ -64,9 +116,22 @@ public class ActivePositionMapCost {
 										new Coordinate(interceptionPoint.x,
 												interceptionPoint.y));
 
-						cost += 2;
+						/*
+						 * There is an interception but is not sure that will 
+						 * cause any collision
+						 */
+						cost +=2;
+
 
 						if (Math.abs(distanceFromAgent1 - distanceFromAgent2) < 1.5) {
+							
+
+							/*
+							 * Intereception point propably will cause collision
+							 * We give plenty of cost to this situation in order not to 
+							 * be selected by agants.
+							 */
+
 
 							cost += 100;
 
@@ -74,6 +139,17 @@ public class ActivePositionMapCost {
 
 					} else {
 
+						
+						/*
+						 * - Is good for agents to follow routes which have enough space
+						 * beteween other agents' routes
+						 * 
+						 * - Negative cost
+						 * 
+						 * - Agents will try to maximize this cost 
+						 * 
+						 */
+						
 						double distance = GeometricUtils.FindDistance(Agent1,
 								map.elementAt(q).getPosition(), Agent2, map
 										.elementAt(r).getPosition());
