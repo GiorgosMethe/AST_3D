@@ -14,6 +14,9 @@ public class StandUp {
 
 				SUstates.setState("StandUp");
 
+			} else {
+
+				MotionTrigger.setMotion("");
 			}
 
 		} else if (SUstates.getState().equalsIgnoreCase("StandUp")) {

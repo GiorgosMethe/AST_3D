@@ -6,6 +6,7 @@ package communication.utils;
 import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
 import action.fsm.CFstates;
+import action.sensor.CheckIfFall;
 import agent.values.AgentType;
 import coordination.action.ActionTable;
 import coordination.action.ActionTranslator;
@@ -51,8 +52,7 @@ public class MessageCreator {
 		String message = "";
 		String type = "";
 
-		if (CFstates.getState().equalsIgnoreCase("Start")
-				|| CFstates.getState().equalsIgnoreCase("CheckFRP")) {
+		if (!CheckIfFall.fallen) {
 
 			// agent know his position and the ball position
 			if (LocalizationResults.isKnowMyPosition() && Ball.isSeeTheBall()) {

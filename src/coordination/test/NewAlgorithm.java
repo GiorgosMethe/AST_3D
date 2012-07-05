@@ -7,19 +7,22 @@ public class NewAlgorithm {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Integer[] position = new Integer[] { 1, 2, 3, 4, 5 };
-		Integer[] agent = new Integer[] { 1, 2, 3, 4, 5 };
+		int counter = 0;
+		Integer[] position = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+		Integer[] agent = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8 };
 
 		Vector<Vector<Vector<Mapping>>>[] BestRoleMap = (Vector<Vector<Vector<Mapping>>>[]) java.lang.reflect.Array
-				.newInstance(Vector.class, 5);
+				.newInstance(Vector.class, 8);
 
 		for (int i = 0; i < position.length; i++) {
-
+			System.out.println("POSITION  " + position[i]);
 			BestRoleMap[i] = new Vector<Vector<Vector<Mapping>>>();
 			Vector<Vector<Mapping>> Map = new Vector<Vector<Mapping>>();
 			for (int j = 0; j < agent.length; j++) {
-
+				System.out.println("AGENT  " + agent[j]);
 				Vector<Mapping> RoleMap = new Vector<Mapping>();
+				Vector<Mapping> BestMapMinCost = new Vector<Mapping>();
+				double min = 1000;
 
 				if (i >= 1) {
 
@@ -64,7 +67,6 @@ public class NewAlgorithm {
 							} else if (BestRoleMap[i - 1].elementAt(rr)
 									.elementAt(h).size() > 1) {
 
-								Vector<Mapping> RoleMap1 = new Vector<Mapping>();
 								boolean isSubset = true;
 								for (int h1 = 0; h1 < BestRoleMap[i - 1]
 										.elementAt(rr).elementAt(h).size(); h1++) {
@@ -84,6 +86,7 @@ public class NewAlgorithm {
 
 								if (isSubset) {
 
+									Vector<Mapping> RoleMap1 = new Vector<Mapping>();
 									RoleMap1.add(new Mapping(agent[j],
 											position[i]));
 									for (int h1 = 0; h1 < BestRoleMap[i - 1]
@@ -101,16 +104,29 @@ public class NewAlgorithm {
 														.elementAt(h1)
 														.getPosition()));
 
+										counter++;
+
+									}
+
+									double cost = Math.random() * 1000;
+									counter++;
+									if (cost < min) {
+
+										min = cost;
+										BestMapMinCost.removeAllElements();
+										BestMapMinCost = RoleMap1;
+
 									}
 
 								}
 
-								System.out.println(RoleMap1.size());
-								Map.add(RoleMap1);
-
 							}
+
 						}
+
 					}
+
+					Map.add(BestMapMinCost);
 
 				} else {
 
@@ -120,8 +136,7 @@ public class NewAlgorithm {
 				}
 
 			}
-			
-			
+
 			BestRoleMap[i].add(Map);
 
 		}
@@ -146,6 +161,8 @@ public class NewAlgorithm {
 
 			}
 		}
+
+		System.out.println("Iterations:" + counter);
 
 	}
 
