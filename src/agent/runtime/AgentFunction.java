@@ -2,7 +2,6 @@ package agent.runtime;
 
 import motion.utils.PerformMovement;
 import perceptor.worldstate.GameState;
-import action.fsm.CFstates;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
 import action.simple.TurnToLocate;
@@ -38,7 +37,6 @@ public class AgentFunction {
 
 				Coordination.MakeCoordination();
 
-				
 				if (!CheckIfFall.fallen) {
 					ActionEffector.Act();
 				}

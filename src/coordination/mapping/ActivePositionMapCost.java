@@ -22,24 +22,21 @@ public class ActivePositionMapCost {
 			 * 
 			 * -Positive cost
 			 * 
-			 * -Agents will try to minimize this cost 
-			 * 
+			 * -Agents will try to minimize this cost
 			 */
-			
+
 			cost += TriangleLocalization.FindDistanceAmong2Coordinates(Agent,
 					map.elementAt(agentNum).getPosition());
 
-			
 			/*
-			 * - Is good for agents to go to positions which have 
-			 * a better soccer field value
+			 * - Is good for agents to go to positions which have a better
+			 * soccer field value
 			 * 
 			 * - Negative cost
 			 * 
-			 * - Agents will try to maximize this cost 
-			 * 
+			 * - Agents will try to maximize this cost
 			 */
-			
+
 			if (Ball.getX() >= 0) {
 				cost -= SoccerFieldCoordinateValue.Calculate(map.elementAt(
 						agentNum).getPosition()) / 7;
@@ -53,30 +50,27 @@ public class ActivePositionMapCost {
 		for (int q = 0; q < map.size(); q++) {
 			for (int r = q + 1; r < map.size(); r++) {
 
-				
 				/*
-				 * - Is good for agents to go to positions which not have 
-				 * a short distance with each other agents
+				 * - Is good for agents to go to positions which not have a
+				 * short distance with each other agents
 				 * 
 				 * - Negative cost
 				 * 
-				 * - Agents will try to maximize this cost 
-				 * 
+				 * - Agents will try to maximize this cost
 				 */
-				
-				cost -= TriangleLocalization.FindDistanceAmong2Coordinates(
-						map.elementAt(q).getPosition(), map.elementAt(r)
-								.getPosition());
+
+				cost -= TriangleLocalization.FindDistanceAmong2Coordinates(map
+						.elementAt(q).getPosition(), map.elementAt(r)
+						.getPosition());
 
 				/*
-				 * - Is good for agents to go to positions which not have 
-				 * the same Y axis value. We want agents to be stretch into 
-				 * the field
+				 * - Is good for agents to go to positions which not have the
+				 * same Y axis value. We want agents to be stretch into the
+				 * field
 				 * 
 				 * - Negative cost
 				 * 
-				 * - Agents will try to maximize this cost 
-				 * 
+				 * - Agents will try to maximize this cost
 				 */
 				cost -= Math.abs(map.elementAt(q).getPosition().getY()
 						- map.elementAt(r).getPosition().getY());
@@ -85,16 +79,15 @@ public class ActivePositionMapCost {
 						&& map.elementAt(q).getAgent().getType() == 1) {
 
 					/*
-					 * - Is good for agents to follow roots which have not
-					 * any intreceptions with other agent's routes 
+					 * - Is good for agents to follow roots which have not any
+					 * intreceptions with other agent's routes
 					 * 
 					 * - Positive cost
 					 * 
 					 * - Agents will try to minimize or not eliminate this cost
-					 * completely 
-					 * 
+					 * completely
 					 */
-					
+
 					Coordinate Agent1 = map.elementAt(q).getAgent().getPlayer();
 
 					Coordinate Agent2 = map.elementAt(r).getAgent().getPlayer();
@@ -117,21 +110,18 @@ public class ActivePositionMapCost {
 												interceptionPoint.y));
 
 						/*
-						 * There is an interception but is not sure that will 
+						 * There is an interception but is not sure that will
 						 * cause any collision
 						 */
-						cost +=2;
-
+						cost += 2;
 
 						if (Math.abs(distanceFromAgent1 - distanceFromAgent2) < 1.5) {
-							
 
 							/*
 							 * Intereception point propably will cause collision
-							 * We give plenty of cost to this situation in order not to 
-							 * be selected by agants.
+							 * We give plenty of cost to this situation in order
+							 * not to be selected by agants.
 							 */
-
 
 							cost += 100;
 
@@ -139,17 +129,15 @@ public class ActivePositionMapCost {
 
 					} else {
 
-						
 						/*
-						 * - Is good for agents to follow routes which have enough space
-						 * beteween other agents' routes
+						 * - Is good for agents to follow routes which have
+						 * enough space beteween other agents' routes
 						 * 
 						 * - Negative cost
 						 * 
-						 * - Agents will try to maximize this cost 
-						 * 
+						 * - Agents will try to maximize this cost
 						 */
-						
+
 						double distance = GeometricUtils.FindDistance(Agent1,
 								map.elementAt(q).getPosition(), Agent2, map
 										.elementAt(r).getPosition());

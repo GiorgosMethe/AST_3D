@@ -37,17 +37,15 @@ public class TeamFormation {
 			Ball.setY((-Constraints.FieldWidth / 2));
 		}
 
-		
-		if(TeamState.getTeamSide().equalsIgnoreCase("left")){
-			
-			CalculateLeft(Ball);
-			
-		}else{
-			
-			CalculateRight(Ball);
-			
-		}
+		if (TeamState.getTeamSide().equalsIgnoreCase("left")) {
 
+			CalculateLeft(Ball);
+
+		} else {
+
+			CalculateRight(Ball);
+
+		}
 
 	}
 
@@ -63,14 +61,12 @@ public class TeamFormation {
 		return false;
 
 	}
-	
 
 	/*
 	 * Team dynamic formation is calculated for the right side of the pitch
 	 */
-	
-	
-	public static void CalculateRight(Coordinate Ball){
+
+	public static void CalculateRight(Coordinate Ball) {
 
 		/*
 		 * defenders positioning
@@ -83,13 +79,12 @@ public class TeamFormation {
 
 		System.out.println(theta);
 
-		
 		if (theta == 0) {
-			theta =180;
+			theta = 180;
 		}
-		if (theta < 125 && theta >0) {
-			theta = 125;	
-		}else if(theta > -125 && theta <0) {
+		if (theta < 125 && theta > 0) {
+			theta = 125;
+		} else if (theta > -125 && theta < 0) {
 			theta = -125;
 		}
 
@@ -173,7 +168,6 @@ public class TeamFormation {
 								midfielfCenter.Y, 90, 1);
 
 			}
-
 
 			/*
 			 * attackers and midfielders positioning for defence
@@ -282,11 +276,10 @@ public class TeamFormation {
 
 		}
 
-
 	}
-	
-public static void CalculateLeft(Coordinate Ball){
-		
+
+	public static void CalculateLeft(Coordinate Ball) {
+
 		/*
 		 * defenders positioning
 		 */
@@ -490,7 +483,6 @@ public static void CalculateLeft(Coordinate Ball){
 
 		}
 
-		
 	}
 
 }

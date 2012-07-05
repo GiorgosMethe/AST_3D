@@ -11,7 +11,6 @@ public class ActionHandler {
 
 			if (ActionPlaying.getActionPlaying() != null) {
 
-
 				if (ActionPlaying.getActionPlaying().getAction()
 						.equalsIgnoreCase("GoKickBallToGoal")) {
 

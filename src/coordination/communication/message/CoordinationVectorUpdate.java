@@ -26,7 +26,7 @@ public class CoordinationVectorUpdate {
 	public static void update(Vector<String> CoordinationMessage) {
 
 		Coordination.roboviz = false;
-		
+
 		CoordinationVector.clear();
 
 		int type = 0;

@@ -12,10 +12,10 @@
  ***********************************************************************************/
 package perceptor.vision;
 
-import perceptor.localization.Coordinate;
-import perceptor.worldstate.TeamState;
 import motion.kinematics.JointPosition2D;
 import motion.xml.MotionPlaying;
+import perceptor.localization.Coordinate;
+import perceptor.worldstate.TeamState;
 
 public class Ball {
 
@@ -85,33 +85,33 @@ public class Ball {
 		return distanceFromFoot;
 
 	}
-	
+
 	public static Boolean BallAtOpponentsHalf(Coordinate Ball) {
 
-		if(Ball.X >= 0){
-			
-			if(TeamState.getTeamSide().equalsIgnoreCase("left")){
+		if (Ball.X >= 0) {
+
+			if (TeamState.getTeamSide().equalsIgnoreCase("left")) {
 
 				return true;
-				
-			}else{
-				
-				return false;
-				
-			}
-			
-		}else{
-			
-			if(TeamState.getTeamSide().equalsIgnoreCase("left")){
+
+			} else {
 
 				return false;
-				
-			}else{
-				
-				return true;
-				
+
 			}
-	
+
+		} else {
+
+			if (TeamState.getTeamSide().equalsIgnoreCase("left")) {
+
+				return false;
+
+			} else {
+
+				return true;
+
+			}
+
 		}
 
 	}

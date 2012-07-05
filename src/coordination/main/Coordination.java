@@ -45,7 +45,7 @@ public class Coordination {
 		 */
 
 		if (CoordinationRun.getStep() == 1) {
-			
+
 			roboviz = false;
 
 			a = System.currentTimeMillis();
@@ -110,7 +110,7 @@ public class Coordination {
 			b = System.currentTimeMillis();
 
 			System.out.println("Active coordination time: " + (b - a) + "ms");
-			
+
 			roboviz = true;
 
 		} else {

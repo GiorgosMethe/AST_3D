@@ -39,7 +39,6 @@ public class ActiveCoordination {
 		double distance;
 		double finalValue = 0;
 
-
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
 			distance = CoordinationSplitter.ActiveSubset.elementAt(i)
@@ -58,11 +57,11 @@ public class ActiveCoordination {
 		boolean needlessChange = false;
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
-			if (PreviousOnBallPlayer == CoordinationSplitter.ActiveSubset.elementAt(i)
-					.getNumber()) {
+			if (PreviousOnBallPlayer == CoordinationSplitter.ActiveSubset
+					.elementAt(i).getNumber()) {
 
-				if(min > CoordinationSplitter.ActiveSubset.elementAt(i).getRealDistance() - 1){
-
+				if (min > CoordinationSplitter.ActiveSubset.elementAt(i)
+						.getRealDistance() - 1) {
 
 					needlessChange = true;
 
@@ -72,7 +71,7 @@ public class ActiveCoordination {
 
 		}
 
-		if(needlessChange){
+		if (needlessChange) {
 			OnBallPlayer = PreviousOnBallPlayer;
 		}
 
@@ -82,7 +81,7 @@ public class ActiveCoordination {
 
 				ActionObject a = new ActionObject(
 						CoordinationSplitter.ActiveSubset.elementAt(i)
-						.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
+								.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
 
 				ActionTable.CoordinateActions.addElement(a);
 
@@ -159,7 +158,7 @@ public class ActiveCoordination {
 								PositionMap temp = new PositionMap(
 										activeSubset.elementAt(k),
 										activePositions
-										.elementAt(PlayerSelection[selection++]));
+												.elementAt(PlayerSelection[selection++]));
 								map.add(temp);
 
 							} else {
@@ -167,7 +166,7 @@ public class ActiveCoordination {
 								PositionMap temp = new PositionMap(
 										activeSubset.elementAt(k),
 										activePositions
-										.elementAt(PlayerSelection[selection]));
+												.elementAt(PlayerSelection[selection]));
 								map.add(temp);
 
 							}

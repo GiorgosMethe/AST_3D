@@ -600,9 +600,8 @@ public class TriangleLocalization {
 
 		return new Coordinate(resultX, resultY);
 	}
-	
-	public static Coordinate getOpposite(Coordinate a) {
 
+	public static Coordinate getOpposite(Coordinate a) {
 
 		Coordinate result = new Coordinate(-a.X, a.Y);
 

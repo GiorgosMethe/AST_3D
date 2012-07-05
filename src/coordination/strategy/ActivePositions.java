@@ -36,7 +36,6 @@ public class ActivePositions {
 
 		Coordinate Ball = CoordinationBeliefs.Ball;
 
-
 		if (Ball.X > Constraints.FieldLength / 2) {
 
 			Ball.setX(Constraints.FieldLength / 2);
@@ -56,18 +55,17 @@ public class ActivePositions {
 			Ball.setY((-Constraints.FieldWidth / 2));
 		}
 
-
-
-		if(perceptor.vision.Ball.BallAtOpponentsHalf(Ball)){
+		if (perceptor.vision.Ball.BallAtOpponentsHalf(Ball)) {
 
 			distance = 2;
-			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(Ball, Constraints.OpponentGoal);
+			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(
+					Ball, Constraints.OpponentGoal);
 			for (int i = 0; i < 11; i++) {
 
 				Theta += 30;
-				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-						Ball.X, Ball.Y,
-						Theta, (distance));
+				Coordinate a = TriangleLocalization
+						.get_det_with_distance_angle(Ball.X, Ball.Y, Theta,
+								(distance));
 
 				if (ProperSupportPosition(a)) {
 
@@ -76,20 +74,23 @@ public class ActivePositions {
 				}
 			}
 
-			distance = (float) TriangleLocalization.FindDistanceAmong2Coordinates(Ball, Constraints.OpponentGoal);
-			distance = distance * (float) ((Math.abs(Ball.X)+Math.abs(Ball.Y))/((Constraints.FieldLength/2) + (Constraints.FieldLength/2)));
+			distance = (float) TriangleLocalization
+					.FindDistanceAmong2Coordinates(Ball,
+							Constraints.OpponentGoal);
+			distance = distance
+					* (float) ((Math.abs(Ball.X) + Math.abs(Ball.Y)) / ((Constraints.FieldLength / 2) + (Constraints.FieldLength / 2)));
 
-			if(distance < 2){
+			if (distance < 2) {
 				distance = 3;
 			}
-			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(Ball, Constraints.OpponentGoal);
+			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(
+					Ball, Constraints.OpponentGoal);
 			for (int i = 0; i < 24; i++) {
 
 				Theta += 15;
-				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-						Ball.X, Ball.Y,
-						Theta, (distance));
-
+				Coordinate a = TriangleLocalization
+						.get_det_with_distance_angle(Ball.X, Ball.Y, Theta,
+								(distance));
 
 				if (ProperSupportPosition(a)) {
 
@@ -98,15 +99,16 @@ public class ActivePositions {
 				}
 			}
 
-		}else{
+		} else {
 
 			distance = 1.5f;
-			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(Ball, Constraints.OwnGoal);
+			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(
+					Ball, Constraints.OwnGoal);
 			for (int i = 0; i < 12; i++) {
 
-				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-						Ball.X, Ball.Y,
-						Theta, (distance));
+				Coordinate a = TriangleLocalization
+						.get_det_with_distance_angle(Ball.X, Ball.Y, Theta,
+								(distance));
 				Theta += 30;
 
 				if (ProperSupportPosition(a)) {
@@ -117,12 +119,13 @@ public class ActivePositions {
 			}
 
 			distance = 1;
-			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(Ball, Constraints.OwnGoal);
+			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(
+					Ball, Constraints.OwnGoal);
 			for (int i = 0; i < 12; i++) {
 
-				Coordinate a = TriangleLocalization.get_det_with_distance_angle(
-						Ball.X, Ball.Y,
-						(Theta+15), (distance));
+				Coordinate a = TriangleLocalization
+						.get_det_with_distance_angle(Ball.X, Ball.Y,
+								(Theta + 15), (distance));
 				Theta += 30;
 
 				if (ProperSupportPosition(a)) {
@@ -133,7 +136,6 @@ public class ActivePositions {
 			}
 
 		}
-
 
 		final Comparator<Coordinate> POSITIVE_ORDER = new Comparator<Coordinate>() {
 
@@ -170,14 +172,14 @@ public class ActivePositions {
 			Collections.sort(ActivePositionsTemp, NEGATIVE_ORDER);
 		}
 
-
 		for (int i = 0; i < ActivePositionsTemp.size(); i++) {
 
-			if(i<9){
+			if (i < 9) {
 				ActivePositions.add(ActivePositionsTemp.elementAt(i));
-				//	System.out.println("x " + ActivePositions.elementAt(i).X + " y"
-				//			+ ActivePositions.elementAt(i).Y);
-			}else{
+				// System.out.println("x " + ActivePositions.elementAt(i).X +
+				// " y"
+				// + ActivePositions.elementAt(i).Y);
+			} else {
 
 				ActivePositionsTemp.removeAllElements();
 				break;
@@ -189,8 +191,8 @@ public class ActivePositions {
 
 	public static boolean ProperSupportPosition(Coordinate spot) {
 
-		if ((Math.abs(spot.X) < ((Constraints.FieldLength / 2)-0.5f))
-				&& (Math.abs(spot.Y) < (Constraints.FieldWidth / 2)-0.5f)) {
+		if ((Math.abs(spot.X) < ((Constraints.FieldLength / 2) - 0.5f))
+				&& (Math.abs(spot.Y) < (Constraints.FieldWidth / 2) - 0.5f)) {
 
 			return true;
 
@@ -199,7 +201,5 @@ public class ActivePositions {
 		return false;
 
 	}
-
-
 
 }
