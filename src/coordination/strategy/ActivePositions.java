@@ -58,7 +58,7 @@ public class ActivePositions {
 
 
 
-		if(Ball.X >=0){
+		if(perceptor.vision.Ball.BallAtOpponentsHalf(Ball)){
 
 			distance = 2;
 			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(Ball, Constraints.OpponentGoal);
@@ -164,7 +164,7 @@ public class ActivePositions {
 		};
 
 		// sort ActivePositions
-		if (Ball.X >= 0) {
+		if (perceptor.vision.Ball.BallAtOpponentsHalf(Ball)) {
 			Collections.sort(ActivePositionsTemp, POSITIVE_ORDER);
 		} else {
 			Collections.sort(ActivePositionsTemp, NEGATIVE_ORDER);

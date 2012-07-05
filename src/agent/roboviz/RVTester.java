@@ -34,7 +34,6 @@ import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.main.Coordination;
 import coordination.main.CoordinationBeliefs;
 import coordination.strategy.ActivePositions;
-import coordination.strategy.TeamFormationTest;
 import coordination.support.SupportCoordination;
 
 /**
@@ -72,17 +71,7 @@ public class RVTester {
 	/** Method for all animated drawings */
 	private void renderAnimatedShapes() throws IOException {
 		
-		
-		for(int i=2;i<10;i++){
-			
-			drawCircle(new float[] {
-					(float) TeamFormationTest.TeamFormation[i].getX(),
-					(float) TeamFormationTest.TeamFormation[i].getY() }, 0.2f, 2,
-					Color.RED, "animated.circles");
-			
-		}
-
-
+	
 		if (ActiveCoordination.OptimizedActiveMap != null) {
 
 			for (int i = 0; i < ActiveCoordination.OptimizedActiveMap.size(); i++) {
