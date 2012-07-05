@@ -27,6 +27,7 @@ public class ActiveCoordination {
 
 	public static Vector<PositionMap> OptimizedActiveMap;
 	public static int PreviousOnBallPlayer = 0;
+	public static int OnBallPlayer = 0;
 
 	/*
 	 * This is the function which makes the coordination of the active players
@@ -35,7 +36,6 @@ public class ActiveCoordination {
 	public static void Coordinate() {
 
 		double min = 1000;
-		int OnBallPlayer = 0;
 		double distance;
 		double finalValue = 0;
 
@@ -58,24 +58,20 @@ public class ActiveCoordination {
 		boolean needlessChange = false;
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
-			if(PreviousOnBallPlayer!=0){
-				if (PreviousOnBallPlayer == CoordinationSplitter.ActiveSubset.elementAt(i)
-						.getNumber()) {
-					
-					if(min > CoordinationSplitter.ActiveSubset.elementAt(i)
-							.getNumber() - 1){
-						
-						
-						needlessChange = true;
-						
-					}
+			if (PreviousOnBallPlayer == CoordinationSplitter.ActiveSubset.elementAt(i)
+					.getNumber()) {
+
+				if(min > CoordinationSplitter.ActiveSubset.elementAt(i).getRealDistance() - 1){
+
+
+					needlessChange = true;
 
 				}
 
 			}
 
 		}
-		
+
 		if(needlessChange){
 			OnBallPlayer = PreviousOnBallPlayer;
 		}
@@ -89,8 +85,7 @@ public class ActiveCoordination {
 						.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
 
 				ActionTable.CoordinateActions.addElement(a);
-				
-				
+
 				PreviousOnBallPlayer = OnBallPlayer;
 
 			}

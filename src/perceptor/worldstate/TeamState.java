@@ -13,6 +13,10 @@
 
 package perceptor.worldstate;
 
+import perceptor.localization.Coordinate;
+import perceptor.localization.TriangleLocalization;
+import agent.constraints.Constraints;
+
 public class TeamState {
 
 	public static String TeamSide;
@@ -23,13 +27,19 @@ public class TeamState {
 	}
 
 	public static void setTeamSide(String teamSide) {
-		if (teamSide.equalsIgnoreCase("left")) {
-			setOppGoal1("g1r");
-			setOppGoal2("g2r");
-		} else if (teamSide.equalsIgnoreCase("right")) {
-			setOppGoal1("g1l");
-			setOppGoal2("g2l");
+		
+		if(teamSide.equalsIgnoreCase("right")){
+		
+			Constraints.OwnGoal = new Coordinate(Constraints.FieldLength/2, 0);
+			Constraints.OpponentGoal = new Coordinate(-Constraints.FieldLength/2, 0);
+			
+		}else{
+			
+			Constraints.OwnGoal = new Coordinate(-Constraints.FieldLength/2, 0);
+			Constraints.OpponentGoal = new Coordinate(Constraints.FieldLength/2, 0);
+			
 		}
+		
 		TeamSide = teamSide;
 	}
 
