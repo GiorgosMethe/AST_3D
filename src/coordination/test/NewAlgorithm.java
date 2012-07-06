@@ -1,10 +1,6 @@
 package coordination.test;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Vector;
-
-import coordination.strategy.SoccerFieldCoordinateValue;
 
 import perceptor.localization.Coordinate;
 

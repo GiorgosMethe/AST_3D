@@ -608,4 +608,14 @@ public class TriangleLocalization {
 		return result;
 	}
 
+	public static boolean equal(Coordinate a, Coordinate b) {
+
+		if (a.X == b.X && a.Y == b.Y) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
 }

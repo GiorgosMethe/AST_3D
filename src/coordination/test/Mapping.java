@@ -5,7 +5,6 @@ public class Mapping {
 	public int agent;
 	public int position;
 
-
 	public Mapping(int agent, int position) {
 
 		this.agent = agent;

@@ -5,7 +5,6 @@ package communication.utils;
 
 import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
-import action.fsm.CFstates;
 import action.sensor.CheckIfFall;
 import agent.values.AgentType;
 import coordination.action.ActionTable;
