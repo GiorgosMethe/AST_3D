@@ -1,27 +1,47 @@
 package coordination.test;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Vector;
 
+import coordination.strategy.SoccerFieldCoordinateValue;
+
+import perceptor.localization.Coordinate;
+
 public class NewAlgorithm {
+
+	public static Coordinate[] agentPosition = new Coordinate[] {
+			new Coordinate(-8.5, -3.0), new Coordinate(-8.5, 3.0),
+			new Coordinate(-9.0, 0.0), new Coordinate(-6.0, -1.0),
+			new Coordinate(-6.0, 1.0), new Coordinate(-4.0, -2),
+			new Coordinate(-4.0, 2), new Coordinate(-3, -0.0) };
+
+	public static Coordinate[] Position = new Coordinate[] {
+			new Coordinate(8.5, 3.0), new Coordinate(8.5, -3.0),
+			new Coordinate(9.0, 0.0), new Coordinate(6.0, 1.0),
+			new Coordinate(6.0, -1.0), new Coordinate(4.0, 2),
+			new Coordinate(4.0, -2), new Coordinate(3, -0.0) };
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		int counter = 0;
-		Integer[] position = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8 };
-		Integer[] agent = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+		Integer[] position = new Integer[] { 2, 3, 4, 5, 6, 7, 8, 9 };
+		Integer[] agent = new Integer[] { 2, 3, 4, 5, 6, 7, 8, 9 };
 
 		Vector<Vector<Vector<Mapping>>>[] BestRoleMap = (Vector<Vector<Vector<Mapping>>>[]) java.lang.reflect.Array
 				.newInstance(Vector.class, 8);
 
 		for (int i = 0; i < position.length; i++) {
-			System.out.println("POSITION  " + position[i]);
+
 			BestRoleMap[i] = new Vector<Vector<Vector<Mapping>>>();
 			Vector<Vector<Mapping>> Map = new Vector<Vector<Mapping>>();
 			for (int j = 0; j < agent.length; j++) {
-				System.out.println("AGENT  " + agent[j]);
+
 				Vector<Mapping> RoleMap = new Vector<Mapping>();
 				Vector<Mapping> BestMapMinCost = new Vector<Mapping>();
+				Vector<Mapping> BestMapMinCost1 = new Vector<Mapping>();
 				double min = 1000;
 
 				if (i >= 1) {
@@ -34,6 +54,7 @@ public class NewAlgorithm {
 							if (BestRoleMap[i - 1].elementAt(rr).elementAt(h)
 									.size() == 1) {
 
+								Vector<Mapping> RoleMap1 = new Vector<Mapping>();
 								for (int h1 = 0; h1 < BestRoleMap[i - 1]
 										.elementAt(rr).elementAt(h).size(); h1++) {
 
@@ -43,8 +64,6 @@ public class NewAlgorithm {
 											&& BestRoleMap[i - 1].elementAt(rr)
 													.elementAt(h).elementAt(h1)
 													.getPosition() != position[i]) {
-
-										Vector<Mapping> RoleMap1 = new Vector<Mapping>();
 
 										RoleMap1.add(new Mapping(agent[j],
 												position[i]));
@@ -62,6 +81,16 @@ public class NewAlgorithm {
 										Map.add(RoleMap1);
 
 									}
+								}
+
+								double cost = MappingCost.calculate(RoleMap1);
+								counter++;
+								if (cost < min) {
+
+									min = cost;
+									BestMapMinCost.removeAllElements();
+									BestMapMinCost = RoleMap1;
+
 								}
 
 							} else if (BestRoleMap[i - 1].elementAt(rr)
@@ -108,7 +137,8 @@ public class NewAlgorithm {
 
 									}
 
-									double cost = Math.random() * 1000;
+									double cost = MappingCost
+											.calculate(RoleMap1);
 									counter++;
 									if (cost < min) {
 
@@ -126,6 +156,7 @@ public class NewAlgorithm {
 
 					}
 
+					Map.add(BestMapMinCost1);
 					Map.add(BestMapMinCost);
 
 				} else {
@@ -141,25 +172,36 @@ public class NewAlgorithm {
 
 		}
 
-		for (int k = 0; k < BestRoleMap.length; k++) {
-			for (int i = 0; i < BestRoleMap[k].size(); i++) {
+		int k = BestRoleMap.length - 1;
+		Vector<Mapping> OptimizedSupportVector = null;
+		double min = 1000;
+		for (int i = 0; i < BestRoleMap[k].size(); i++) {
+			for (int ii = 0; ii < BestRoleMap[k].elementAt(i).size(); ii++) {
 
-				for (int ii = 0; ii < BestRoleMap[k].elementAt(i).size(); ii++) {
-					System.out.println();
-					for (int h = 0; h < BestRoleMap[k].elementAt(i)
-							.elementAt(ii).size(); h++) {
-						System.out.print("A "
-								+ BestRoleMap[k].elementAt(i).elementAt(ii)
-										.elementAt(h).getAgent());
-						System.out.print(" --> P "
-								+ BestRoleMap[k].elementAt(i).elementAt(ii)
-										.elementAt(h).getPosition() + " , ");
+				if (BestRoleMap[k].elementAt(i).elementAt(ii).size() != 0) {
 
+					double cost = MappingCost.calculate(BestRoleMap[k]
+							.elementAt(i).elementAt(ii));
+					if (cost < min) {
+						min = cost;
+						OptimizedSupportVector = new Vector<Mapping>();
+						OptimizedSupportVector.addAll(BestRoleMap[k].elementAt(
+								i).elementAt(ii));
 					}
-
 				}
 
 			}
+		}
+
+		for (int h = 0; h < OptimizedSupportVector.size(); h++) {
+
+			System.out.print("A "
+					+ OptimizedSupportVector.elementAt(h).getAgent());
+			System.out
+					.print(" --> P "
+							+ OptimizedSupportVector.elementAt(h).getPosition()
+							+ " , ");
+
 		}
 
 		System.out.println("Iterations:" + counter);
