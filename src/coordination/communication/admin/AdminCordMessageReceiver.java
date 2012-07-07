@@ -43,6 +43,7 @@ public class AdminCordMessageReceiver {
 
 		if (result) {
 
+			System.out.println("phra ta init messages");
 			MessageType.setType(2);
 
 		}
@@ -57,6 +58,8 @@ public class AdminCordMessageReceiver {
 				Integer.parseInt(splittedMsg[1]), msg);
 
 		if (result) {
+
+			System.out.println("phra ta coord messages");
 
 			// coordination end message
 			MessageType.setType(6);

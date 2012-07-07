@@ -22,6 +22,7 @@ import connection.utils.ServerCyrcles;
 
 public class HeadMovement {
 
+	public static boolean HeadAtBall;
 	static GetNormalJointValue gNjV = new GetNormalJointValue();
 
 	public static String MoveHead(int type) {
@@ -29,6 +30,7 @@ public class HeadMovement {
 		String Action = "";
 
 		if (type == 1) {
+			HeadAtBall = false;
 			Action = MoveHeadToBall();
 		} else if (type == 2) {
 			Action = MoveHeadToLocalize();
@@ -38,10 +40,27 @@ public class HeadMovement {
 			Action = MoveHeadStraight();
 		} else if (type == 5) {
 			Action = MoveHeadToLocalizeAgent();
+		} else if (type == 6) {
+			Action = Observe();
 		}
 
 		return Action;
 
+	}
+
+	public static String Observe() {
+
+		int cycles = ServerCyrcles.getCyrclesNow();
+		float moveX = (float) (2.09 * Math.sin(cycles / 15));
+		float moveY = (float) (0.59 * Math.sin(cycles / 8) - 0.078);
+		String str = "";
+
+		float realMoveX = gNjV.Get("he1", moveX) / 5;
+		float realMoveY = gNjV.Get("he2", moveY) / 5;
+		str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
+				+ realMoveY + ")";
+
+		return str;
 	}
 
 	public static String MoveHeadToLocalize() {
@@ -184,12 +203,18 @@ public class HeadMovement {
 
 			if (Ball.getAngleX() > 5) {
 				x = 1;
+				HeadAtBall = false;
 			}
 			if (Ball.getAngleX() < -5) {
 				x = -1;
+				HeadAtBall = false;
 			}
 		} else {
 
+		}
+
+		if (x == 0) {
+			HeadAtBall = true;
 		}
 		return x;
 	}
@@ -200,9 +225,11 @@ public class HeadMovement {
 
 			if (Ball.getAngleY() > 5) {
 				x = 1;
+
 			}
 			if (Ball.getAngleY() < -5) {
 				x = -1;
+
 			}
 		} else {
 

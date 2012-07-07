@@ -618,4 +618,18 @@ public class TriangleLocalization {
 
 	}
 
+	public static double FindAngleAVG(double angle1, double angle2) {
+
+		double xxx = Math.cos(Math.toRadians(angle1))
+				+ Math.cos(Math.toRadians(angle2));
+
+		double yyy = Math.sin(Math.toRadians(angle1))
+				+ Math.sin(Math.toRadians(angle2));
+
+		double result = Math.toDegrees(Math.atan2(yyy, xxx));
+
+		return result;
+
+	}
+
 }

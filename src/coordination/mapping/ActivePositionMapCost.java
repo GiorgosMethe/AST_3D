@@ -37,7 +37,7 @@ public class ActivePositionMapCost {
 			 * - Agents will try to maximize this cost
 			 */
 
-			if (Ball.getX() >= 0) {
+			if (perceptor.vision.Ball.BallAtOpponentsHalf(Ball)) {
 				cost -= SoccerFieldCoordinateValue.Calculate(map.elementAt(
 						agentNum).getPosition()) / 7;
 			} else {

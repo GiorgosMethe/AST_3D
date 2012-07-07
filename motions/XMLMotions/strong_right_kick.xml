@@ -50,7 +50,7 @@
 				<rle6 end="-7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>1000</duration>
+			<duration>400</duration>
 		</phase>
 		<phase name="rigth_high_kick3"  next="rigth_high_kick35">
 			<effectors>
@@ -67,7 +67,7 @@
 				<rle6 end="-7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>1000</duration>
+			<duration>700</duration>
 		</phase>
 		<phase name="rigth_high_kick35"  next="rigth_high_kick4">
 			<effectors>
@@ -84,7 +84,7 @@
 				<rle6 end="-7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>1000</duration>
+			<duration>400</duration>
 		</phase>
 		<phase name="rigth_high_kick4"  next="rigth_high_kick5">
 			<effectors>
@@ -101,7 +101,7 @@
 				<rle6 end="7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>5000</duration>
+			<duration>1500</duration>
 		</phase>
 		<phase name="rigth_high_kick5" next="rigth_high_kick7">
 			<effectors>

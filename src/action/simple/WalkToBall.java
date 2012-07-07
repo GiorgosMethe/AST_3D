@@ -30,7 +30,8 @@ public class WalkToBall {
 
 			if (Ball.isSeeTheBall()) {
 
-				if ((Ball.RealDistance() < 0.79)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
+				// 0.79
+				if ((Ball.RealDistance() < 0.8)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
 
 					if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -10) {
 
@@ -54,7 +55,7 @@ public class WalkToBall {
 					float AngleThresholdWalkLeaningTurn;
 					if (Ball.getDistance() < 1) {
 
-						AngleThresholdBigTurn = 10;
+						AngleThresholdBigTurn = 5;
 						AngleThresholdWalkLeaningTurn = 2;
 
 					} else {

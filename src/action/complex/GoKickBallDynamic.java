@@ -1,6 +1,7 @@
 package action.complex;
 
 import motion.old.MotionTrigger;
+import motion.xml.check.CheckKickEnd;
 import motion.xml.check.CheckStrongKickEnd;
 import perceptor.localization.Coordinate;
 import perceptor.localization.LocalizationResults;
@@ -24,6 +25,14 @@ public class GoKickBallDynamic {
 		} else if (GKBstates.getState().equalsIgnoreCase("Kick")) {
 
 			if (CheckStrongKickEnd.Check()) {
+				KickSuccess.setEnd(new Coordinate(
+						LocalizationResults.ball_location.X,
+						LocalizationResults.ball_location.Y));
+				GKBstates.setState("Start");
+				MotionTrigger.setMotion("");
+				return true;
+
+			} else if (CheckKickEnd.Check()) {
 				KickSuccess.setEnd(new Coordinate(
 						LocalizationResults.ball_location.X,
 						LocalizationResults.ball_location.Y));

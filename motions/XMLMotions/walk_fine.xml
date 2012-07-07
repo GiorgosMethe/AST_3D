@@ -13,8 +13,8 @@
 				<lle1 end="0" />
 				<rle2 end="7" />
 				<lle2 end="-7" />
-				<rle3 end="55" />
-				<lle3 end="55" />
+				<rle3 end="46" />
+				<lle3 end="46" />
 				<rle4 end="-60" />
 				<lle4 end="-60" />
 				<rle5 end="30" />
@@ -30,14 +30,14 @@
 				<rae4 end="45" />
 				<lae4 end="-45" />
 			</effectors>
-			<duration>700</duration>
+			<duration>500</duration>
 		</phase>
 		<phase name="walk_attempt_wait" next="walk_attempt3" skipIfFlag="in_walk_position">
 			<effectors>
 				<he1 end="0" computed="headAngle1" />
 				<he2 end="0" computed="headAngle2" />
 			</effectors>
-			<duration>1000</duration>
+			<duration>300</duration>
 		</phase>
 		<phase name="walk_attempt3" next="walk_attempt4" setFlagFalse="in_walk_position">
 			<effectors>
@@ -52,7 +52,7 @@
 				<rae1 end="-90" />
 				<lae1 end="-90" />
 			</effectors>
-			<duration>150</duration>
+			<duration>100</duration>
 		</phase>
 		<phase name="walk_attempt4" next="walk_attempt5">
 			<effectors>
@@ -67,7 +67,7 @@
 				<rae1 end="-100" />
 				<lae1 end="-80" />
 			</effectors>
-			<duration>150</duration>
+			<duration>100</duration>
 		</phase>
 		<phase name="walk_attempt5" next="walk_attempt6">
 			<effectors>
@@ -82,7 +82,7 @@
 				<rae1 end="-90" />
 				<lae1 end="-90" />
 			</effectors>
-			<duration>150</duration>
+			<duration>100</duration>
 		</phase>
 		<phase name="walk_attempt6" next="walk_attempt3" isFinal="true">
 			<effectors>
@@ -97,7 +97,7 @@
 				<rae1 end="-80" />
 				<lae1 end="-100" />
 			</effectors>
-			<duration>150</duration>
+			<duration>100</duration>
 			<finalize>walk_fine_final</finalize>
 		</phase>
 		<phase name="walk_fine_final" next="walk_fine_final2">
@@ -125,7 +125,7 @@
 				<rae4 end="45" />
 				<lae4 end="-45" />
 			</effectors>
-			<duration>500</duration>
+			<duration>800</duration>
 		</phase>
 		<phase name="walk_fine_final2" next="walk_fine_final3">
 			<effectors>
@@ -152,7 +152,7 @@
 				<rae4 end="45" />
 				<lae4 end="-45" />
 			</effectors>
-			<duration>700</duration>
+			<duration>800</duration>
 			<finalize>walk_fine_final2</finalize>
 		</phase>
 		<phase name="walk_fine_final3" isFinal="true">
@@ -160,7 +160,7 @@
 				<he1 end="0" computed="headAngle1" />
 				<he2 end="0" computed="headAngle2" />
 			</effectors>
-			<duration>700</duration>
+			<duration>0</duration>
 			<finalize>walk_fine_final3</finalize>
 		</phase>
 	</phases>

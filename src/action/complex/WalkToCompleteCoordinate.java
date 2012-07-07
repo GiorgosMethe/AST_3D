@@ -16,12 +16,14 @@ import motion.old.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import action.vision.VisionType;
 
 public class WalkToCompleteCoordinate {
 
 	public static boolean Act(Coordinate target, float Theta) {
 
 		double ThetaToTarget = TriangleLocalization.FindAngle(target);
+		VisionType.setType(2);
 
 		if (TriangleLocalization.FindDistanceToTarget(target) < 0.5) {
 

@@ -160,7 +160,7 @@ public class RVTester {
 
 		}
 
-		if (CoordinationVectorUpdate.CoordinationVector != null) {
+		if (CoordinationVectorUpdate.CoordinationVector.size() != 0) {
 
 			for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector
 					.size(); i++) {

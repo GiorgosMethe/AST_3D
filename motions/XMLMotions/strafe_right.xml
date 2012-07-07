@@ -29,7 +29,7 @@
 				<rle6 end="0"/>
 				<lle6 end="0"/>
 			</effectors>
-			<duration>1000</duration>
+			<duration>700</duration>
 			<finalize>strafe_right_worse_stance</finalize>
 		</phase>
 		
@@ -44,7 +44,7 @@
 				
 				
 			</effectors>
-			<duration>250</duration>
+			<duration>200</duration>
 			<finalize>strafe_right_worse_stance</finalize>
 		</phase>
 		<phase name="strafing_right_worse3" next="strafing_right_worse4">
@@ -58,7 +58,7 @@
 				
 				
 			</effectors>
-			<duration>250</duration>
+			<duration>200</duration>
 		</phase>
 		
 		<phase name="strafing_right_worse4" next="strafing_right_worse5">
@@ -72,7 +72,7 @@
 				
 				
 			</effectors>
-			<duration>250</duration>
+			<duration>200</duration>
 			<finalize>strafe_right_worse_stance</finalize>
 		</phase>
 		<phase name="strafing_right_worse5" next="strafing_right_worse" isFinal="true">
@@ -86,7 +86,7 @@
 				
 				
 			</effectors>
-			<duration>240</duration>
+			<duration>190</duration>
 			<finalize>strafe_right_worse_stance</finalize>
 		</phase>
 	</phases>

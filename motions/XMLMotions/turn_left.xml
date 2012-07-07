@@ -30,7 +30,7 @@
 				<lae4 end="-45" />
 				<rae4 end="45" />
 			</effectors>
-			<duration>800</duration>
+			<duration>700</duration>
 		</phase>
 		<phase name="turn_left_big_stance" next="start_big_turning_left">
 			<effectors>
@@ -49,7 +49,7 @@
 				<lae4 end="-45" />
 				<rae4 end="45" />
 			</effectors>
-			<duration>1000</duration>
+			<duration>700</duration>
 		</phase>
 		<phase name="start_big_turning_left" next="start_big_turning_left3">
 			<effectors>
@@ -60,7 +60,7 @@
 				<lle6 end="-3" />
 				<rle6 end="0" />
 			</effectors>
-			<duration>250</duration>
+			<duration>200</duration>
 		</phase>
 		<phase name="start_big_turning_left3" next="start_big_turning_left4">
 			<effectors>
@@ -71,7 +71,7 @@
 				<lle6 end="0" />
 				<rle6 end="0" />
 			</effectors>
-			<duration>250</duration>
+			<duration>200</duration>
 		</phase>
 		<phase name="start_big_turning_left4" next="start_big_turning_left5">
 			<effectors>
@@ -82,7 +82,7 @@
 				<lle6 end="0" />
 				<rle6 end="2" />
 			</effectors>
-			<duration>250</duration>
+			<duration>200</duration>
 		</phase>
 		<phase name="start_big_turning_left5" next="start_big_turning_left" isFinal="true">
 			<effectors>
@@ -93,7 +93,7 @@
 				<lle6 end="0" />
 				<rle6 end="0" />
 			</effectors>
-			<duration>240</duration>
+			<duration>200</duration>
 			<finalize>stop_big_turning_left</finalize>
 		</phase>
 		<phase name="stop_big_turning_left" isFinal="true">
@@ -121,7 +121,7 @@
 				<lae4 end="45" />
 				<rae4 end="-45" />
 			</effectors>
-			<duration>1000</duration>
+			<duration>700</duration>
 			<finalize>stop_big_turning_left</finalize>
 		</phase>
 	</phases>
