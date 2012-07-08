@@ -76,7 +76,7 @@ public class GoKickBallToGoal {
 
 				} else {
 
-					if (GKBGDstates.getTimeout() == 80) {
+					if (GKBGDstates.getTimeout() > 80) {
 						VisionType.setType(1);
 						GKBGDstates.setState("Start2");
 						if (!Double.isNaN(GKBGDstates.getAngleFromPost1())) {
@@ -97,7 +97,7 @@ public class GoKickBallToGoal {
 
 			} else {
 
-				if (GKBGDstates.getTimeout() == 80) {
+				if (GKBGDstates.getTimeout() > 80) {
 					VisionType.setType(1);
 					GKBGDstates.setState("Start2");
 					GKBGDstates.setAngle(180);
@@ -113,6 +113,13 @@ public class GoKickBallToGoal {
 
 			if (HeadMovement.HeadAtBall) {
 
+				if (Math.abs(GKBGDstates.getAngle()) < 45) {
+					GKBGDstates.setMoveTimeout(50);
+				} else if (Math.abs(GKBGDstates.getAngle()) < 90) {
+					GKBGDstates.setMoveTimeout(70);
+				} else {
+					GKBGDstates.setMoveTimeout(100);
+				}
 				System.out.println("stamathse");
 				GKBGDstates.setState("Start3");
 
@@ -167,7 +174,7 @@ public class GoKickBallToGoal {
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start4")) {
 
-			if (GKBGDstates.getTimeout() == 50) {
+			if (GKBGDstates.getTimeout() > GKBGDstates.getMoveTimeout()) {
 
 				if (MotionPlaying.getMotionName() == null) {
 
@@ -181,6 +188,7 @@ public class GoKickBallToGoal {
 
 			} else {
 
+				GKBGDstates.setState("Start3");
 				GKBGDstates.setTimeout((GKBGDstates.getTimeout() + 1));
 
 			}

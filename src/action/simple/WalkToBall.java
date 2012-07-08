@@ -1,16 +1,3 @@
-/***********************************************************************************
- * Copyright 2012, Technical University of Crete
- * Academic Year 2011-2012
- *
- * Thesis Project
- *
- * @author Methenitis Georgios Student ID:2006030085	
- *
- * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
- * Start date: 25-04-2012											 
- * End date  : xx-xx-2012
- ***********************************************************************************/
-
 package action.simple;
 
 import motion.old.MotionTrigger;
@@ -30,15 +17,14 @@ public class WalkToBall {
 
 			if (Ball.isSeeTheBall()) {
 
-				// 0.79
-				if ((Ball.RealDistance() < 0.8)) {// &&(Math.abs(HingeJointPerceptor.getHj1()+Math.abs(Ball.getAngleX())))<15){
+				if ((Ball.RealDistance() < 0.79)) {
 
-					if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -10) {
+					if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -5) {
 
 						MotionTrigger.setMotion("SideStepRight");
 						return false;
 
-					} else if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > -5) {
+					} else if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 5) {
 
 						MotionTrigger.setMotion("SideStepLeft");
 						return false;
@@ -84,21 +70,18 @@ public class WalkToBall {
 
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
-							MotionTrigger.setMotion("Forwards50");
 							WalkLeaning.setLean("left");
 							return false;
 
 						} else {
 
-							MotionTrigger.setMotion("Forwards50");
 							WalkLeaning.setLean("right");
 							return false;
-
 						}
 
 					} else {
 
-						if (Ball.getDistance() < 1) {
+						if (Ball.getDistance() < 2) {
 							MotionTrigger.setMotion("Forwards50");
 							WalkLeaning.setLean("slow");
 						} else {

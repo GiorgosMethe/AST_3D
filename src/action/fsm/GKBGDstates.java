@@ -16,7 +16,7 @@ package action.fsm;
 public class GKBGDstates {
 
 	public static String State;
-	public static int timeout;
+	public static int timeout, moveTimeout;
 	public static double angle, X, Y, distance, ballAngle, angleFromGoal,
 			angleFromPost1, angleFromPost2;
 
@@ -98,6 +98,14 @@ public class GKBGDstates {
 
 	public static void setAngleFromPost2(double angleFromPost2) {
 		GKBGDstates.angleFromPost2 = angleFromPost2;
+	}
+
+	public static int getMoveTimeout() {
+		return moveTimeout;
+	}
+
+	public static void setMoveTimeout(int moveTimeout) {
+		GKBGDstates.moveTimeout = moveTimeout;
 	}
 
 }

@@ -52,7 +52,7 @@
 				<rae1 end="-90" />
 				<lae1 end="-90" />
 			</effectors>
-			<duration>100</duration>
+			<duration>80</duration>
 		</phase>
 		<phase name="walk_attempt4" next="walk_attempt5">
 			<effectors>
@@ -67,7 +67,7 @@
 				<rae1 end="-100" />
 				<lae1 end="-80" />
 			</effectors>
-			<duration>100</duration>
+			<duration>80</duration>
 		</phase>
 		<phase name="walk_attempt5" next="walk_attempt6">
 			<effectors>
@@ -82,7 +82,7 @@
 				<rae1 end="-90" />
 				<lae1 end="-90" />
 			</effectors>
-			<duration>100</duration>
+			<duration>80</duration>
 		</phase>
 		<phase name="walk_attempt6" next="walk_attempt3" isFinal="true">
 			<effectors>
@@ -97,7 +97,7 @@
 				<rae1 end="-80" />
 				<lae1 end="-100" />
 			</effectors>
-			<duration>100</duration>
+			<duration>80</duration>
 			<finalize>walk_fine_final</finalize>
 		</phase>
 		<phase name="walk_fine_final" next="walk_fine_final2">
@@ -108,8 +108,8 @@
 				<lle1 end="0" />
 				<rle2 end="0" />
 				<lle2 end="0" />
-				<rle3 end="55" />
-				<lle3 end="55" />
+				<rle3 end="47" />
+				<lle3 end="47" />
 				<rle4 end="-60" />
 				<lle4 end="-60" />
 				<rle5 end="30" />
@@ -135,8 +135,8 @@
 				<lle1 end="0" />
 				<rle2 end="7" />
 				<lle2 end="-7" />
-				<rle3 end="55" />
-				<lle3 end="55" />
+				<rle3 end="47" />
+				<lle3 end="47" />
 				<rle4 end="-60" />
 				<lle4 end="-60" />
 				<rle5 end="30" />

@@ -33,14 +33,14 @@ public class MoveJoints {
 
 				String joint = pha.movements.elementAt(i).axis_name;
 
-				if (WalkLeaning.getLean().equalsIgnoreCase("left")
-						|| WalkLeaning.getLean().equalsIgnoreCase("right")) {
+				if ((MotionPlaying.getMotionName()
+						.equalsIgnoreCase("walk_fine"))
+						&& (WalkLeaning.getLean().equalsIgnoreCase("left") || WalkLeaning
+								.getLean().equalsIgnoreCase("right"))) {
 
 					Float move = pha.movements.elementAt(i).value;
 
 					if (WalkLeaning.getLean().equalsIgnoreCase("left")
-							&& MotionPlaying.getMotionName().equalsIgnoreCase(
-									"walk_fine")
 							&& pha.getName().equalsIgnoreCase("walk_attempt4")) {
 						if (joint.equalsIgnoreCase("lle3")) {
 							move = (float) 53;
@@ -48,33 +48,14 @@ public class MoveJoints {
 							move = (float) 32;
 						}
 					} else if (WalkLeaning.getLean().equalsIgnoreCase("right")
-							&& MotionPlaying.getMotionName().equalsIgnoreCase(
-									"walk_fine")
 							&& pha.getName().equalsIgnoreCase("walk_attempt6")) {
 						if (joint.equalsIgnoreCase("rle3")) {
 							move = (float) 53;
 						} else if (joint.equalsIgnoreCase("rle5")) {
 							move = (float) 32;
 						}
-					} else if (WalkLeaning.getLean().equalsIgnoreCase("slow")
-							&& MotionPlaying.getMotionName().equalsIgnoreCase(
-									"walk_fine")
-							&& pha.getName().equalsIgnoreCase("walk_attempt4")) {
-						if (joint.equalsIgnoreCase("lle3")) {
-							move = (float) 44;
-							System.out.println("allagh");
-						}
-
-					} else if (WalkLeaning.getLean().equalsIgnoreCase("slow")
-							&& MotionPlaying.getMotionName().equalsIgnoreCase(
-									"walk_fine")
-							&& pha.getName().equalsIgnoreCase("walk_attempt6")) {
-						if (joint.equalsIgnoreCase("rle3")) {
-							move = (float) 44;
-							System.out.println("allagh");
-						}
-
 					}
+
 					for (int j = 0; j < NaoJoints.length; j++) {
 						if (NaoJoints[j].equalsIgnoreCase(joint)) {
 							Move[j] = true;

@@ -15,6 +15,7 @@ package motion.xml;
 public class XMLMotionStorage {
 
 	public static Motion walk_fine;
+	public static Motion walk_fine_s;
 	public static Motion strafe_left;
 	public static Motion strafe_right;
 	public static Motion turn_left;
@@ -135,6 +136,14 @@ public class XMLMotionStorage {
 
 	public static void setStand_back(Motion stand_back) {
 		XMLMotionStorage.stand_back = stand_back;
+	}
+
+	public static Motion getWalk_fine_s() {
+		return walk_fine_s;
+	}
+
+	public static void setWalk_fine_s(Motion walk_fine_s) {
+		XMLMotionStorage.walk_fine_s = walk_fine_s;
 	}
 
 }

@@ -204,7 +204,7 @@ public class RVTester {
 										true,
 										CoordinationVectorUpdate.CoordinationVector
 												.elementAt(i).getNumber(),
-										Color.CYAN);
+										Color.ORANGE);
 
 							}
 

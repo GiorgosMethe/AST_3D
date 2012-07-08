@@ -1,8 +1,10 @@
 package coordination.support;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Vector;
 
-import perceptor.localization.TriangleLocalization;
+import utils.math.Permutations;
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
@@ -64,194 +66,54 @@ public class SupportCoordination {
 			Vector<CoordinationMessage> SupportSubset,
 			perceptor.localization.Coordinate ball) {
 
-		Vector<Vector<Vector<PositionMap>>>[] BestRoleMap = (Vector<Vector<Vector<PositionMap>>>[]) java.lang.reflect.Array
-				.newInstance(Vector.class, SupportSubset.size());
+		Vector<PositionMap> Bestmap = new Vector<PositionMap>();
 
-		for (int i = 0; i < SupportPositionsVector.size(); i++) {
+		float min = 1000;
 
-			BestRoleMap[i] = new Vector<Vector<Vector<PositionMap>>>();
-			Vector<Vector<PositionMap>> Map = new Vector<Vector<PositionMap>>();
-			for (int j = 0; j < SupportSubset.size(); j++) {
+		Integer[] PosiblePositions = new Integer[] { 0, 1, 2, 3, 4 };
 
-				Vector<PositionMap> RoleMap = new Vector<PositionMap>();
-				Vector<PositionMap> BestMapMinCost = new Vector<PositionMap>();
-				Vector<PositionMap> BestMapMinCost1 = new Vector<PositionMap>();
-				double min = 1000;
+		List<Integer> aList = Arrays.asList(PosiblePositions);
 
-				if (i >= 1) {
+		Permutations<Integer> c = new Permutations<Integer>(aList,
+				SupportSubset.size());
 
-					for (int rr = 0; rr < BestRoleMap[i - 1].size(); rr++) {
+		while (c.hasNext()) {
 
-						for (int h = 0; h < BestRoleMap[i - 1].elementAt(rr)
-								.size(); h++) {
+			List<Integer> perm = c.next();
+			Vector<PositionMap> map = new Vector<PositionMap>();
 
-							if (BestRoleMap[i - 1].elementAt(rr).elementAt(h)
-									.size() == 1) {
+			/*
+			 * players of the support subset will assigned different positions
+			 * each time in order to find an optimized mapping.
+			 */
 
-								Vector<PositionMap> RoleMap1 = new Vector<PositionMap>();
-								for (int h1 = 0; h1 < BestRoleMap[i - 1]
-										.elementAt(rr).elementAt(h).size(); h1++) {
+			for (int i = 0; i < perm.size(); i++) {
 
-									if (BestRoleMap[i - 1].elementAt(rr)
-											.elementAt(h).elementAt(h1)
-											.getAgent().getNumber() != SupportSubset
-											.elementAt(j).getNumber()
-											&& !TriangleLocalization.equal(
-													BestRoleMap[i - 1]
-															.elementAt(rr)
-															.elementAt(h)
-															.elementAt(h1)
-															.getPosition(),
-													SupportPositionsVector
-															.elementAt(i))) {
+				PositionMap temp = new PositionMap(SupportSubset.elementAt(i),
+						SupportPositionsVector.elementAt(perm.get(i)));
+				map.add(temp);
 
-										RoleMap1.add(new PositionMap(
-												SupportSubset.elementAt(j),
-												SupportPositionsVector
-														.elementAt(i)));
-										RoleMap1.add(new PositionMap(
-												BestRoleMap[i - 1]
-														.elementAt(rr)
-														.elementAt(h)
-														.elementAt(h1)
-														.getAgent(),
-												BestRoleMap[i - 1]
-														.elementAt(rr)
-														.elementAt(h)
-														.elementAt(h1)
-														.getPosition()));
-										Map.add(RoleMap1);
+			}
 
-									}
-								}
+			double cost = SupportPositionMapCost.calculate(map, ball);
 
-								double cost = SupportPositionMapCost.calculate(
-										RoleMap1, CoordinationBeliefs.Ball);
+			if (min > cost) {
 
-								if (cost < min) {
+				min = (float) cost;
+				Bestmap.removeAllElements();
+				for (int g = 0; g < map.size(); g++) {
 
-									min = cost;
-									BestMapMinCost.removeAllElements();
-									BestMapMinCost = RoleMap1;
-
-								}
-
-							} else if (BestRoleMap[i - 1].elementAt(rr)
-									.elementAt(h).size() > 1) {
-
-								boolean isSubset = true;
-								for (int h1 = 0; h1 < BestRoleMap[i - 1]
-										.elementAt(rr).elementAt(h).size(); h1++) {
-
-									if (BestRoleMap[i - 1].elementAt(rr)
-											.elementAt(h).elementAt(h1)
-											.getAgent() == SupportSubset
-											.elementAt(j)
-											|| BestRoleMap[i - 1].elementAt(rr)
-													.elementAt(h).elementAt(h1)
-													.getPosition() == SupportPositionsVector
-													.elementAt(i)) {
-
-										isSubset = false;
-
-									}
-
-								}
-
-								if (isSubset) {
-
-									Vector<PositionMap> RoleMap1 = new Vector<PositionMap>();
-									RoleMap1.add(new PositionMap(SupportSubset
-											.elementAt(j),
-											SupportPositionsVector.elementAt(i)));
-									for (int h1 = 0; h1 < BestRoleMap[i - 1]
-											.elementAt(rr).elementAt(h).size(); h1++) {
-
-										RoleMap1.add(new PositionMap(
-												BestRoleMap[i - 1]
-														.elementAt(rr)
-														.elementAt(h)
-														.elementAt(h1)
-														.getAgent(),
-												BestRoleMap[i - 1]
-														.elementAt(rr)
-														.elementAt(h)
-														.elementAt(h1)
-														.getPosition()));
-
-									}
-
-									double cost = SupportPositionMapCost
-											.calculate(RoleMap1,
-													CoordinationBeliefs.Ball);
-
-									if (cost < min) {
-
-										min = cost;
-										BestMapMinCost.removeAllElements();
-										BestMapMinCost = RoleMap1;
-
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
-					Map.add(BestMapMinCost1);
-					Map.add(BestMapMinCost);
-
-				} else {
-
-					RoleMap.add(new PositionMap(SupportSubset.elementAt(j),
-							SupportPositionsVector.elementAt(i)));
-					Map.add(RoleMap);
+					Bestmap.add(map.elementAt(g));
 
 				}
 
 			}
 
-			BestRoleMap[i].add(Map);
+			map.clear();
 
 		}
 
-		int k = BestRoleMap.length - 1;
-		Vector<PositionMap> OptimizedSupportVector = null;
-		double min = 1000;
-		for (int i = 0; i < BestRoleMap[k].size(); i++) {
-			for (int ii = 0; ii < BestRoleMap[k].elementAt(i).size(); ii++) {
-
-				if (BestRoleMap[k].elementAt(i).elementAt(ii).size() != 0) {
-
-					double cost = SupportPositionMapCost.calculate(
-							BestRoleMap[k].elementAt(i).elementAt(ii),
-							CoordinationBeliefs.Ball);
-					if (cost < min) {
-						min = cost;
-						OptimizedSupportVector = new Vector<PositionMap>();
-						OptimizedSupportVector.addAll(BestRoleMap[k].elementAt(
-								i).elementAt(ii));
-					}
-				}
-
-			}
-		}
-
-		for (int h = 0; h < OptimizedSupportVector.size(); h++) {
-
-			System.out.print("A "
-					+ OptimizedSupportVector.elementAt(h).getAgent());
-			System.out
-					.print(" --> P "
-							+ OptimizedSupportVector.elementAt(h).getPosition()
-							+ " , ");
-
-		}
-
-		return OptimizedSupportVector;
+		return Bestmap;
 	}
 
 }

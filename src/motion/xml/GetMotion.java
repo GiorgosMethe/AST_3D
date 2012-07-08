@@ -43,6 +43,9 @@ public class GetMotion {
 		} else if (name.equalsIgnoreCase("stand_front")) {
 			Motion mot = XMLMotionStorage.getStand_front();
 			return mot;
+		} else if (name.equalsIgnoreCase("walk_fine_s")) {
+			Motion mot = XMLMotionStorage.getWalk_fine_s();
+			return mot;
 		}
 
 		return null;
