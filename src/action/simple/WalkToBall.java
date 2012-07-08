@@ -41,7 +41,7 @@ public class WalkToBall {
 					float AngleThresholdWalkLeaningTurn;
 					if (Ball.getDistance() < 1) {
 
-						AngleThresholdBigTurn = 5;
+						AngleThresholdBigTurn = 8;
 						AngleThresholdWalkLeaningTurn = 2;
 
 					} else {

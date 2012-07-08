@@ -17,8 +17,8 @@ public class CheckIfFall {
 
 			fallen = false;
 
-			if (Math.abs(GyroScope.getAngleY()) > 100
-					|| Math.abs(GyroScope.getAngleZ()) > 100) {
+			if (Math.abs(GyroScope.getAngleY())
+					+ Math.abs(GyroScope.getAngleZ()) > 100) {
 
 				CFstates.setState("WaitForFRP");
 

@@ -14,22 +14,24 @@ public class GoKickBallDynamic {
 	public static boolean Act() {
 
 		if (GKBstates.getState().equalsIgnoreCase("Start")) {
+			
 			if (WalkToBall.Act()) {
-				GKBstates.setState("Start1");
+				GKBstates.setState("PrepareKick");
 				KickSuccess.setStart(new Coordinate(
 						LocalizationResults.ball_location.X,
 						LocalizationResults.ball_location.Y));
 			} else {
 				GKBstates.setState("Start");
 			}
-
-		} else if (GKBstates.getState().equalsIgnoreCase("Start1")) {
-
-			if (PrepareKick.Act()) {
+			
+		} else if (GKBstates.getState().equalsIgnoreCase("PrepareKick")) {
+			
+			if(PrepareKick.Act()){
+				
 				GKBstates.setState("Kick");
-			} else {
-				GKBstates.setState("Start1");
+				
 			}
+			
 
 		} else if (GKBstates.getState().equalsIgnoreCase("Kick")) {
 

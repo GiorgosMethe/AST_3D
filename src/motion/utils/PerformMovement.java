@@ -11,8 +11,6 @@ public class PerformMovement {
 
 		if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
 			AgentAct = XMLMovement.execute("walk_fine");
-		} else if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50s")) {
-			AgentAct = XMLMovement.execute("walk_fine_s");
 		} else if (MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")) {
 			AgentAct = XMLMovement.execute("turn_left");
 		} else if (MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")) {

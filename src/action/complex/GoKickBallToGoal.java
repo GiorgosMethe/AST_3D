@@ -28,13 +28,20 @@ public class GoKickBallToGoal {
 
 	public static boolean Act() {
 
+
+
+
 		if (GKBGDstates.getState().equalsIgnoreCase("Start")) {
 
 			if (WalkToBall.Act()) {
 
 				GKBGDstates.setAngleFromPost1(Double.NaN);
 				GKBGDstates.setAngleFromPost2(Double.NaN);
+				GKBGDstates.setTimeout(0);
+				GKBGDstates.setMoveTimeout(0);
 				GKBGDstates.setState("Start1");
+
+				System.out.println("phga sthn mpala");
 
 			}
 
@@ -42,7 +49,7 @@ public class GoKickBallToGoal {
 
 			double a = FindOpponentsGoal.Act()[0];
 			double b = FindOpponentsGoal.Act()[1];
-			VisionType.setType(6);
+
 
 			if (!Double.isNaN(a) || !Double.isNaN(b)) {
 
@@ -97,6 +104,8 @@ public class GoKickBallToGoal {
 
 			} else {
 
+				VisionType.setType(6);
+
 				if (GKBGDstates.getTimeout() > 80) {
 					VisionType.setType(1);
 					GKBGDstates.setState("Start2");
@@ -116,81 +125,93 @@ public class GoKickBallToGoal {
 				if (Math.abs(GKBGDstates.getAngle()) < 45) {
 					GKBGDstates.setMoveTimeout(50);
 				} else if (Math.abs(GKBGDstates.getAngle()) < 90) {
-					GKBGDstates.setMoveTimeout(70);
+					GKBGDstates.setMoveTimeout(120);
 				} else {
-					GKBGDstates.setMoveTimeout(100);
+					GKBGDstates.setMoveTimeout(200);
 				}
+
 				System.out.println("stamathse");
 				GKBGDstates.setState("Start3");
+				GKBGDstates.setTimeout(0);
 
 			}
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start3")) {
 
-			if (Math.abs(GKBGDstates.getAngle()) > 10) {
 
-				if (GKBGDstates.getAngle() < 0) {
+			System.out.println("GKBGDstates.getTimeout()"+GKBGDstates.getTimeout());
+			System.out.println("GKBGDstates.getMoveTimeout()"+GKBGDstates.getMoveTimeout());
+			if (GKBGDstates.getTimeout() < GKBGDstates.getMoveTimeout()) {
 
-					if ((Math.abs(Ball.getAngleX()
-							+ HingeJointPerceptor.getHj1())) > 5) {
+				if(Ball.getDistance()>1){
 
-						if ((Ball.getAngleX() + HingeJointPerceptor.getHj1()) > 0) {
-							MotionTrigger.setMotion("TurnLeft40");
+					GKBGDstates.setState("Start");
+
+				}else{
+					if (Math.abs(GKBGDstates.getAngle()) > 10) {
+
+						if (GKBGDstates.getAngle() < 0) {
+
+							if ((Math.abs(Ball.getAngleX()
+									+ HingeJointPerceptor.getHj1())) > 5) {
+
+								MotionTrigger.setMotion("TurnRight40");		
+
+							} else {
+
+								MotionTrigger.setMotion("SideStepLeft");
+
+							}
 						} else {
-							MotionTrigger.setMotion("TurnRight40");
+
+							if ((Math.abs(Ball.getAngleX()
+									+ HingeJointPerceptor.getHj1())) > 5) {
+
+								MotionTrigger.setMotion("TurnLeft40");
+
+							} else {
+
+								MotionTrigger.setMotion("SideStepRight");
+
+							}
+
 						}
+
+						GKBGDstates.setState("Start3");
 
 					} else {
 
-						MotionTrigger.setMotion("SideStepLeft");
+						GKBGDstates.setState("Start5");
 
 					}
-				} else {
-
-					if ((Math.abs(Ball.getAngleX()
-							+ HingeJointPerceptor.getHj1())) > 5) {
-
-						if ((Ball.getAngleX() + HingeJointPerceptor.getHj1()) > 0) {
-							MotionTrigger.setMotion("TurnLeft40");
-						} else {
-							MotionTrigger.setMotion("TurnRight40");
-						}
-
-					} else {
-
-						MotionTrigger.setMotion("SideStepRight");
-
-					}
-
 				}
 
+				GKBGDstates.setTimeout((GKBGDstates.getTimeout() + 1));
+
+			}else{
+
+				MotionTrigger.setMotion("");
 				GKBGDstates.setState("Start4");
-
-			} else {
-
-				GKBGDstates.setState("Start5");
 
 			}
 
+
+
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start4")) {
 
-			if (GKBGDstates.getTimeout() > GKBGDstates.getMoveTimeout()) {
 
-				if (MotionPlaying.getMotionName() == null) {
 
-					GKBGDstates.setTimeout(0);
-					GKBGDstates.setState("Start1");
+			if (MotionPlaying.getMotionName() == null) {
 
-				} else {
-
-					MotionTrigger.setMotion("");
-				}
+				GKBGDstates.setTimeout(0);
+				GKBGDstates.setMoveTimeout(0);
+				GKBGDstates.setAngleFromPost1(Double.NaN);
+				GKBGDstates.setAngleFromPost2(Double.NaN);
+				GKBGDstates.setState("Start1");
 
 			} else {
 
-				GKBGDstates.setState("Start3");
-				GKBGDstates.setTimeout((GKBGDstates.getTimeout() + 1));
-
+				MotionTrigger.setMotion("");
 			}
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start5")) {
@@ -198,6 +219,7 @@ public class GoKickBallToGoal {
 			if (GoKickBallDynamic.Act()) {
 
 				GKBGDstates.setState("Start");
+
 			}
 
 		}
