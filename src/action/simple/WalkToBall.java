@@ -8,8 +8,8 @@ import perceptor.vision.Vision;
 import action.vision.VisionType;
 
 public class WalkToBall {
-	
-	public static int TrueCounter = 0; 
+
+	public static int TrueCounter = 0;
 
 	public static boolean Act() {
 
@@ -34,7 +34,7 @@ public class WalkToBall {
 					} else {
 
 						WalkToBall.TrueCounter++;
-						if(WalkToBall.TrueCounter == 10){
+						if (WalkToBall.TrueCounter == 10) {
 							WalkToBall.TrueCounter = 0;
 							return true;
 						}

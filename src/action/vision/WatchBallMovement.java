@@ -36,8 +36,9 @@ public class WatchBallMovement {
 			if (timer < 5) {
 
 				BallObservationsPrevious.add(TriangleLocalization
-						.get_det_with_distance_angle(0, 0, (Ball.getAngleX()+HingeJointPerceptor.getHj1()),
-								Ball.getDistance()));
+						.get_det_with_distance_angle(0, 0,
+								(Ball.getAngleX() + HingeJointPerceptor
+										.getHj1()), Ball.getDistance()));
 
 				timer++;
 
@@ -48,8 +49,9 @@ public class WatchBallMovement {
 			} else if (timer >= 10 && timer < 15) {
 
 				BallObservationsNow.add(TriangleLocalization
-						.get_det_with_distance_angle(0, 0, (Ball.getAngleX()+HingeJointPerceptor.getHj1()),
-								Ball.getDistance()));
+						.get_det_with_distance_angle(0, 0,
+								(Ball.getAngleX() + HingeJointPerceptor
+										.getHj1()), Ball.getDistance()));
 
 				timer++;
 
@@ -83,14 +85,13 @@ public class WatchBallMovement {
 				ballNow.setX((ballNow.getX() / 5));
 				ballNow.setY((ballNow.getY() / 5));
 
-				movingAngle = (float) TriangleLocalization.FindAngleBetweenCoordinates(
-						ballPrevious, ballNow);
-				speed = (float) (TriangleLocalization.FindDistanceAmong2Coordinates(
-						ballPrevious, ballNow)/0.2);
+				movingAngle = (float) TriangleLocalization
+						.FindAngleBetweenCoordinates(ballPrevious, ballNow);
+				speed = (float) (TriangleLocalization
+						.FindDistanceAmong2Coordinates(ballPrevious, ballNow) / 0.2);
 
 				MovingBall = new MovingObject(ballNow, movingAngle, speed);
 
-				
 				BallObservationsPrevious.removeAllElements();
 				BallObservationsNow.removeAllElements();
 				return MovingBall;

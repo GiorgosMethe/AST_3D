@@ -7,6 +7,7 @@ import motion.utils.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.localization.TriangleLocalization;
 import perceptor.vision.Ball;
+import perceptor.vision.Vision;
 import action.fsm.GKBGDstates;
 import action.simple.WalkToBall;
 import action.vision.FindOpponentsGoal;
@@ -26,20 +27,27 @@ import action.vision.VisionType;
 public class GoKickBallToGoal {
 
 	public static boolean Act() {
-		
-		System.out.println("eketeleia   "+GKBGDstates.getState());
 
-		if (Ball.getDistance() > GKBGDstates.getDistance() + 0.05
-				&& !GKBGDstates.getState().equalsIgnoreCase("Start") &&
-				!GKBGDstates.getState().equalsIgnoreCase("Start4")) {
-			GKBGDstates.setState("Start");
+		System.out.println("eketeleia   " + GKBGDstates.getState());
+
+		if (Vision.isiSee()) {
+
+			if (Ball.isSeeTheBall()) {
+				if (Ball.RealDistance() > GKBGDstates.getDistance() + 0.05
+						&& !GKBGDstates.getState().equalsIgnoreCase("Start")
+						&& !GKBGDstates.getState().equalsIgnoreCase("Start4")) {
+					GKBGDstates.setState("Start");
+				}
+
+			}
+
 		}
 
 		if (GKBGDstates.getState().equalsIgnoreCase("Start")) {
 
 			if (WalkToBall.Act()) {
 
-				GKBGDstates.setDistance(Ball.getDistance());
+				GKBGDstates.setDistance(Ball.RealDistance());
 				GKBGDstates.setAngleFromPost1(Double.NaN);
 				GKBGDstates.setAngleFromPost2(Double.NaN);
 				GKBGDstates.setAngle(180);

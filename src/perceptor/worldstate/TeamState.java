@@ -29,7 +29,8 @@ public class TeamState {
 
 		if (teamSide.equalsIgnoreCase("right")) {
 
-			Constraints.OwnGoal = new Coordinate(Constraints.FieldLength / 2 - 0.5f, 0);
+			Constraints.OwnGoal = new Coordinate(
+					Constraints.FieldLength / 2 - 0.5f, 0);
 			Constraints.OpponentGoal = new Coordinate(
 					-Constraints.FieldLength / 2, 0);
 
