@@ -21,7 +21,7 @@ public class WalkToCoordinate {
 
 	public static boolean Act(Coordinate target) {
 
-		VisionType.setType(2);
+		VisionType.setType(6);
 
 		double ThetaToTarget = TriangleLocalization.FindAngle(target);
 

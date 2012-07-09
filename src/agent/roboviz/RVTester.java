@@ -28,6 +28,8 @@ import java.net.UnknownHostException;
 
 import javax.swing.Timer;
 
+import perceptor.localization.LocalizationResults;
+
 import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationVectorUpdate;
@@ -68,6 +70,19 @@ public class RVTester {
 
 	/** Method for all animated drawings */
 	private void renderAnimatedShapes() throws IOException {
+		
+		if(!Double.isNaN(LocalizationResults.getCurrent_location().getX()) &&
+				!Double.isNaN(LocalizationResults.getCurrent_location().getY())){
+			
+			
+			drawCircle(new float[] {
+					(float) LocalizationResults.getCurrent_location().getX(),
+					(float) LocalizationResults.getCurrent_location().getY() }, 0.2f, 2,
+					Color.YELLOW, "animated.circles");
+			
+			
+		}
+		
 
 		if (ActiveCoordination.OptimizedActiveMap != null) {
 

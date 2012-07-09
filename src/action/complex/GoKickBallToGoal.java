@@ -26,9 +26,12 @@ import action.vision.VisionType;
 public class GoKickBallToGoal {
 
 	public static boolean Act() {
+		
+		System.out.println("eketeleia   "+GKBGDstates.getState());
 
 		if (Ball.getDistance() > GKBGDstates.getDistance() + 0.05
-				&& !GKBGDstates.getState().equalsIgnoreCase("Start")) {
+				&& !GKBGDstates.getState().equalsIgnoreCase("Start") &&
+				!GKBGDstates.getState().equalsIgnoreCase("Start4")) {
 			GKBGDstates.setState("Start");
 		}
 

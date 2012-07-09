@@ -5,10 +5,10 @@ import perceptor.localization.Coordinate;
 public class MovingObject {
 
 	public Coordinate Object;
-	public double MovingAngle;
-	public double Speed;
+	public float MovingAngle;
+	public float Speed;
 
-	public MovingObject(Coordinate object, double movingAngle, double speed) {
+	public MovingObject(Coordinate object, float movingAngle, float speed) {
 		Object = object;
 		MovingAngle = movingAngle;
 		Speed = speed;
@@ -26,7 +26,7 @@ public class MovingObject {
 		return MovingAngle;
 	}
 
-	public void setMovingAngle(double movingAngle) {
+	public void setMovingAngle(float movingAngle) {
 		MovingAngle = movingAngle;
 	}
 
@@ -34,7 +34,7 @@ public class MovingObject {
 		return Speed;
 	}
 
-	public void setSpeed(double speed) {
+	public void setSpeed(float speed) {
 		Speed = speed;
 	}
 

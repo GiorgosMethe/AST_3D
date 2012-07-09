@@ -19,20 +19,27 @@ import perceptor.localization.TriangleLocalization;
 import action.vision.VisionType;
 
 public class WalkToCompleteCoordinate {
+	
+	public static int Correct = 0;
 
 	public static boolean Act(Coordinate target, float Theta) {
 
 		double ThetaToTarget = TriangleLocalization.FindAngle(target);
 		VisionType.setType(2);
 
-		if (TriangleLocalization.FindDistanceToTarget(target) < 0.5) {
+		if (TriangleLocalization.FindDistanceToTarget(target) < 0.2) {
 
 			if (Math.abs(TriangleLocalization.FindAngleDifference(Theta)) < 20) {
 
 				MotionTrigger.setMotion("");
-				return true;
-
+				Correct++;
+				if(Correct == 10){
+					Correct = 0;
+					return true;
+				}
 			} else {
+				
+				Correct = 0;
 
 				if (TriangleLocalization.FindAngleDifference(Theta) < 0) {
 
@@ -49,6 +56,8 @@ public class WalkToCompleteCoordinate {
 			}
 
 		} else {
+			
+			Correct = 0;
 
 			if (Math.abs(TriangleLocalization
 					.FindAngleDifference(ThetaToTarget)) < 20) {
@@ -91,6 +100,7 @@ public class WalkToCompleteCoordinate {
 			}
 
 		}
+		return false;
 
 	}
 

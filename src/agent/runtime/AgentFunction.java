@@ -1,5 +1,6 @@
 package agent.runtime;
 
+import behavior.goalie.Goalie;
 import communication.utils.MessageType;
 import communication.utils.SayEffector;
 import connection.utils.ServerCyrcles;
@@ -7,6 +8,7 @@ import coordination.main.Coordination;
 
 import perceptor.worldstate.GameState;
 import motion.utils.PerformMovement;
+import action.complex.GoKickBallToGoal;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
 import action.simple.TurnToLocate;
@@ -29,31 +31,37 @@ public class AgentFunction {
 		 */
 		CheckIfFall.Check();
 
-		//Goalie.Act();
-
 		if (InitAgent.isPlayerInited()) {
 
-			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
-
-				Say = SayEffector.Say(MessageType.getType());
-
-				Coordination.MakeCoordination();
-
-				if (!CheckIfFall.fallen) {
-					ActionEffector.Act();
-				}
-
-				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
-
-			} else {
-
-				if (!CheckIfFall.fallen) {
-					TurnToLocate.Act();
-				}
-
+			if (!CheckIfFall.fallen) {
+				Goalie.Act();
 			}
-
 		}
+
+
+		//		if (InitAgent.isPlayerInited()) {
+		//
+		//			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
+		//
+		//				Say = SayEffector.Say(MessageType.getType());
+		//
+		//				Coordination.MakeCoordination();
+		//
+		//				if (!CheckIfFall.fallen) {
+		//					ActionEffector.Act();
+		//				}
+		//
+		//				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
+		//
+		//			} else {
+		//
+		//				if (!CheckIfFall.fallen) {
+		//					TurnToLocate.Act();
+		//				}
+		//
+		//			}
+		//
+		//		}
 
 		Act = PerformMovement.run();
 

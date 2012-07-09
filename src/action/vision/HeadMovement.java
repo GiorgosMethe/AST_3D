@@ -71,7 +71,7 @@ public class HeadMovement {
 		String str = "";
 
 		if (Vision.isiSee() == true) {
-			if (LocalizationResults.getLandmarks().size() <= 1) {
+			if (LocalizationResults.getLandmarks().size() <= 3) {
 
 				float realMoveX = gNjV.Get("he1", moveX) / 5;
 				float realMoveY = gNjV.Get("he2", moveY) / 5;
