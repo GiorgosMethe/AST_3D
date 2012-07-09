@@ -5,10 +5,37 @@
 	</low_skills>
 	
 	<phases>
-		<phase name="rigth_high_kick" next="rigth_high_kick1">
+		<phase name="rigth_high_kick" next="walk_attempt_start">
 			<effectors>
 			</effectors>
 			<duration>100</duration>
+		</phase>
+		<phase name="walk_attempt_start" next="rigth_high_kick1" skipIfFlag="in_walk_position">
+			<effectors>
+				<he1 end="0" computed="headAngle1" />
+				<he2 end="0" computed="headAngle2" />
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="7" />
+				<lle2 end="-7" />
+				<rle3 end="46" />
+				<lle3 end="46" />
+				<rle4 end="-60" />
+				<lle4 end="-60" />
+				<rle5 end="30" />
+				<lle5 end="30" />
+				<rle6 end="-7" />
+				<lle6 end="7" />
+				<rae1 end="-90" />
+				<lae1 end="-90" />
+				<rae2 end="-10" />
+				<lae2 end="10" />
+				<rae3 end="90" />
+				<lae3 end="-90" />
+				<rae4 end="45" />
+				<lae4 end="-45" />
+			</effectors>
+			<duration>700</duration>
 		</phase>
 		<phase name="rigth_high_kick1" next="rigth_high_kick2">
 			<effectors>

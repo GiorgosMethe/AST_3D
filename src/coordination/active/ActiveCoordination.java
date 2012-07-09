@@ -14,6 +14,7 @@ package coordination.active;
 
 import java.util.Vector;
 
+import perceptor.localization.TriangleLocalization;
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
@@ -109,7 +110,10 @@ public class ActiveCoordination {
 			ActionObject a = new ActionObject(OptimizedActiveMap.elementAt(i)
 					.getAgent().getNumber(), "WalkToCoordinate",
 					OptimizedActiveMap.elementAt(i).getPosition().getX(),
-					OptimizedActiveMap.elementAt(i).getPosition().getY(), 0, 0);
+					OptimizedActiveMap.elementAt(i).getPosition().getY(),
+					TriangleLocalization.FindAngleBetweenCoordinates(
+							OptimizedActiveMap.elementAt(i).getPosition(),
+							CoordinationBeliefs.Ball), 0);
 
 			ActionTable.CoordinateActions.addElement(a);
 

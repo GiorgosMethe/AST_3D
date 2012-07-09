@@ -14,7 +14,7 @@ public class GoKickBallDynamic {
 	public static boolean Act() {
 
 		if (GKBstates.getState().equalsIgnoreCase("Start")) {
-			
+
 			if (WalkToBall.Act()) {
 				GKBstates.setState("PrepareKick");
 				KickSuccess.setStart(new Coordinate(
@@ -23,15 +23,14 @@ public class GoKickBallDynamic {
 			} else {
 				GKBstates.setState("Start");
 			}
-			
+
 		} else if (GKBstates.getState().equalsIgnoreCase("PrepareKick")) {
-			
-			if(PrepareKick.Act()){
-				
+
+			if (PrepareKick.Act()) {
+
 				GKBstates.setState("Kick");
-				
+
 			}
-			
 
 		} else if (GKBstates.getState().equalsIgnoreCase("Kick")) {
 

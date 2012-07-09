@@ -157,12 +157,14 @@ public class MessageCreator {
 
 				double p1 = ActionTable.CoordinateActions.elementAt(i).parametres1;
 				double p2 = ActionTable.CoordinateActions.elementAt(i).parametres2;
+				double p3 = ActionTable.CoordinateActions.elementAt(i).parametres3;
 
 				String ps1 = String.valueOf((int) Math.rint(p1));
 				String ps2 = String.valueOf((int) Math.rint(p2));
+				String ps3 = String.valueOf((int) Math.rint(p2));
 
 				// parameters
-				message += ps1 + "," + ps2;
+				message += ps1 + "," + ps2 + "," + ps3;
 
 			}
 		}

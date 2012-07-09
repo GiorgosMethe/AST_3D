@@ -2,7 +2,7 @@ package action.handler;
 
 import perceptor.localization.Coordinate;
 import action.complex.GoKickBallToGoal;
-import action.complex.WalkToCoordinate;
+import action.complex.WalkToCompleteCoordinate;
 import action.simple.TurnToLocate;
 
 public class ActionEffector {
@@ -25,7 +25,10 @@ public class ActionEffector {
 						.getActionPlaying().getParametres1(), ActionPlaying
 						.getActionPlaying().getParametres2());
 
-				playing = WalkToCoordinate.Act(target);
+				float Theta = (float) ActionPlaying.getActionPlaying()
+						.getParametres3();
+
+				playing = WalkToCompleteCoordinate.Act(target, Theta);
 
 			}
 

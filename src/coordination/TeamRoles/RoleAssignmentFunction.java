@@ -67,18 +67,19 @@ public class RoleAssignmentFunction {
 
 		}
 
-//		for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++) {
-//
-//			System.out.println("in paixths: "
-//					+ CoordinationSplitter.InactiveSubset.elementAt(i)
-//							.getNumber());
-//			System.out.println("rolos: " + roleArray[role]);
-//
-//			SupportRoles.add(new Role(CoordinationSplitter.InactiveSubset
-//					.elementAt(i), roleArray[role]));
-//			role++;
-//
-//		}
+		// for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++)
+		// {
+		//
+		// System.out.println("in paixths: "
+		// + CoordinationSplitter.InactiveSubset.elementAt(i)
+		// .getNumber());
+		// System.out.println("rolos: " + roleArray[role]);
+		//
+		// SupportRoles.add(new Role(CoordinationSplitter.InactiveSubset
+		// .elementAt(i), roleArray[role]));
+		// role++;
+		//
+		// }
 
 	}
 

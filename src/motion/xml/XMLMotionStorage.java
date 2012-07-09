@@ -24,12 +24,22 @@ public class XMLMotionStorage {
 	public static Motion right_strong_kick;
 	public static Motion stand_front;
 	public static Motion stand_back;
+	public static Motion fall_right;
+	public static Motion fall_left;
 	ReadXMLFile rXMLf = new ReadXMLFile();
 
 	public void StoreMotions() {
 
 		walk_fine = rXMLf.readMotion("walk_fine");
 		setWalk_fine(walk_fine);
+		System.out.print(".");
+
+		fall_left = rXMLf.readMotion("fall_left");
+		setFall_left(fall_left);
+		System.out.print(".");
+
+		fall_right = rXMLf.readMotion("fall_right");
+		setFall_right(fall_right);
 		System.out.print(".");
 
 		strafe_left = rXMLf.readMotion("strafe_left");
@@ -144,6 +154,22 @@ public class XMLMotionStorage {
 
 	public static void setWalk_fine_s(Motion walk_fine_s) {
 		XMLMotionStorage.walk_fine_s = walk_fine_s;
+	}
+
+	public static Motion getFall_right() {
+		return fall_right;
+	}
+
+	public static void setFall_right(Motion fall_right) {
+		XMLMotionStorage.fall_right = fall_right;
+	}
+
+	public static Motion getFall_left() {
+		return fall_left;
+	}
+
+	public static void setFall_left(Motion fall_left) {
+		XMLMotionStorage.fall_left = fall_left;
 	}
 
 }

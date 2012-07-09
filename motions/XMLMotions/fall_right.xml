@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xsi:noNamespaceSchemaLocation="moves.xsd">
+	<constants>
+		<constant name="strafe_leg_crouch" value="30" />
+		<constant name="strafe_leg_span" value="7" />
+		<constant name="strafe_step_length" value="15" />
+	</constants>
+
+	<low_skills>
+		<low_skill name="fall_right" firstPhase="fall_right_stance" />
+	</low_skills>
+	<phases>
+		<phase name="fall_right_stance" next="start_falling_right" setFlagTrue="in_walk_position">
+			<effectors>
+				<rle3 end="40" />
+				<rle4 end="-60"/>
+				<rle5 end="30" />
+				
+				<lle3 end="40" />
+				<lle4 end="-60"/>
+				<lle5 end="30" />
+				
+				
+				<rae1 end="-90"/>
+				<lae1 end="-90"/>
+				<rae2 end="-10"/>
+				<lae2 end="10"/>
+				<rae3 end="90"/>
+				<lae3 end="-90"/>
+				<rae4 end="45"/>
+				<lae4 end="-45"/>
+			</effectors>
+			<duration>1000</duration>
+		</phase>
+		<phase name="start_falling_right" next="start_falling_right_2">
+			<effectors>
+				<rle3 end="50"/>
+				<rle4 end="-80"/>
+				<rle5 end="40"/>
+				<lle2 end="0"/>
+				<rle2 end="0"/>
+				<rle6 end="0"/>
+				<lle6 end="0"/>
+				
+				<lle3 end="30"/>
+				<lle4 end="-40"/>
+				<lle5 end="20"/>
+			</effectors>
+			<duration>260</duration>
+		</phase>
+		<phase name="start_falling_right_2" next="straighten">
+			<effectors>
+				<rle3 end="50"/>
+				<rle4 end="-80"/>
+				<rle5 end="40"/>
+				<rle2 end="0"/>
+				<lle2 end="0"/>
+				<rle6 end="0"/>
+				<lle6 end="-45"/>
+				<rae1 end="90"/>
+				<lae1 end="90"/>
+				
+				
+				
+				<lle3 end="30"/>
+				<lle4 end="-40"/>
+				<lle5 end="20"/>
+			</effectors>
+			<duration>200</duration>
+			
+		</phase>
+		<phase name="straighten" isFinal="true">
+			<effectors>
+				<he1 end="0" />
+				<he2 end="0" />
+				<rae1 end="90" />
+				<lae1 end="90" />
+				<rae2 end="0" />
+				<lae2 end="0" />
+				<rae3 end="0" />
+				<lae3 end="0" />
+				<rae4 end="0" />
+				<lae4 end="0" />
+				<rle1 end="0" />
+				<lle1 end="0" />
+				<rle2 end="0" />
+				<lle2 end="0" />
+				<rle3 end="0" />
+				<lle3 end="0" />
+				<rle4 end="0" />
+				<lle4 end="0" />
+				<rle5 end="0" />
+				<lle5 end="0" />
+				<rle6 end="0" />
+				<lle6 end="0" />
+			</effectors>
+			<duration>1000</duration>
+			<finalize>straighten</finalize>
+		</phase>
+	</phases>
+</robot>

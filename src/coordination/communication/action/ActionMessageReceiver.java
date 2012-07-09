@@ -40,7 +40,8 @@ public class ActionMessageReceiver {
 
 					Action = new ActionObject(Integer.parseInt(splittedMsg[1]),
 							action, Double.parseDouble(splittedMsg[3]),
-							Double.parseDouble(splittedMsg[4]), 0, 0);
+							Double.parseDouble(splittedMsg[4]),
+							Double.parseDouble(splittedMsg[5]), 0);
 
 				}
 

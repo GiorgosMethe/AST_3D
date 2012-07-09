@@ -1,12 +1,8 @@
 package coordination.support;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Vector;
 
 import perceptor.localization.TriangleLocalization;
-
-import utils.math.Permutations;
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
 import coordination.communication.message.CoordinationMessage;
@@ -49,7 +45,10 @@ public class SupportCoordination {
 			ActionObject a = new ActionObject(OptimizedSupportMap.elementAt(i)
 					.getAgent().getNumber(), "WalkToCoordinate",
 					OptimizedSupportMap.elementAt(i).getPosition().getX(),
-					OptimizedSupportMap.elementAt(i).getPosition().getY(), 0, 0);
+					OptimizedSupportMap.elementAt(i).getPosition().getY(),
+					TriangleLocalization.FindAngleBetweenCoordinates(
+							OptimizedSupportMap.elementAt(i).getPosition(),
+							CoordinationBeliefs.Ball), 0);
 
 			ActionTable.CoordinateActions.addElement(a);
 

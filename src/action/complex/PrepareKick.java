@@ -3,25 +3,31 @@ package action.complex;
 import motion.old.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;
+import action.vision.HeadMovement;
 
 public class PrepareKick {
 
 	public static boolean Act() {
 
-		if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -10) {
+		if (HeadMovement.HeadAtBall) {
 
-			MotionTrigger.setMotion("SideStepRight");
-			return false;
+			if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -12) {
 
-		} else if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > -5) {
+				MotionTrigger.setMotion("SideStepRight");
+				return false;
 
-			MotionTrigger.setMotion("SideStepLeft");
-			return false;
+			} else if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > -5) {
 
+				MotionTrigger.setMotion("SideStepLeft");
+				return false;
+
+			} else {
+
+				MotionTrigger.setMotion("");
+				return true;
+			}
 		} else {
-
-			MotionTrigger.setMotion("");
-			return true;
+			return false;
 		}
 
 	}

@@ -66,12 +66,11 @@ public class InitAgent {
 				SUstates.setState("Start");
 
 				GKBGDstates.setTimeout(0);
-				GKBGDstates.setState("Start");
+				GKBGDstates.setMoveTimeout(0);
+				GKBGDstates.setAngleFromPost1(Double.NaN);
+				GKBGDstates.setAngleFromPost2(Double.NaN);
 				GKBGDstates.setAngle(0);
-				GKBGDstates.setX(0);
-				GKBGDstates.setY(0);
-				GKBGDstates.setDistance(0);
-				GKBGDstates.setBallAngle(0);
+				GKBGDstates.setState("Start");
 
 				// Old Movement
 				CurrentMotion.setSoftChangeCounter(0);

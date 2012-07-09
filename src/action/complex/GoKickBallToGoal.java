@@ -4,7 +4,6 @@
 package action.complex;
 
 import motion.old.MotionTrigger;
-import motion.xml.MotionPlaying;
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.localization.TriangleLocalization;
 import perceptor.vision.Ball;
@@ -28,20 +27,22 @@ public class GoKickBallToGoal {
 
 	public static boolean Act() {
 
-
-
+		if (Ball.getDistance() > GKBGDstates.getDistance() + 0.05
+				&& !GKBGDstates.getState().equalsIgnoreCase("Start")) {
+			GKBGDstates.setState("Start");
+		}
 
 		if (GKBGDstates.getState().equalsIgnoreCase("Start")) {
 
 			if (WalkToBall.Act()) {
 
+				GKBGDstates.setDistance(Ball.getDistance());
 				GKBGDstates.setAngleFromPost1(Double.NaN);
 				GKBGDstates.setAngleFromPost2(Double.NaN);
+				GKBGDstates.setAngle(180);
 				GKBGDstates.setTimeout(0);
 				GKBGDstates.setMoveTimeout(0);
 				GKBGDstates.setState("Start1");
-
-				System.out.println("phga sthn mpala");
 
 			}
 
@@ -49,7 +50,6 @@ public class GoKickBallToGoal {
 
 			double a = FindOpponentsGoal.Act()[0];
 			double b = FindOpponentsGoal.Act()[1];
-
 
 			if (!Double.isNaN(a) || !Double.isNaN(b)) {
 
@@ -68,22 +68,16 @@ public class GoKickBallToGoal {
 				if (!Double.isNaN(GKBGDstates.getAngleFromPost1())
 						&& !Double.isNaN(GKBGDstates.getAngleFromPost2())) {
 
-					System.out.println("den einai nan kamia");
 					VisionType.setType(1);
 					GKBGDstates.setState("Start2");
 					GKBGDstates.setTimeout(0);
 					GKBGDstates.setAngle(TriangleLocalization.FindAngleAVG(
 							GKBGDstates.getAngleFromPost1(),
 							GKBGDstates.getAngleFromPost2()));
-					System.out.println("a " + GKBGDstates.getAngleFromPost1()
-							+ "   b " + GKBGDstates.getAngleFromPost2());
-					System.out.println(TriangleLocalization.FindAngleAVG(
-							GKBGDstates.getAngleFromPost1(),
-							GKBGDstates.getAngleFromPost2()));
 
 				} else {
 
-					if (GKBGDstates.getTimeout() > 80) {
+					if (GKBGDstates.getTimeout() > 50) {
 						VisionType.setType(1);
 						GKBGDstates.setState("Start2");
 						if (!Double.isNaN(GKBGDstates.getAngleFromPost1())) {
@@ -106,7 +100,7 @@ public class GoKickBallToGoal {
 
 				VisionType.setType(6);
 
-				if (GKBGDstates.getTimeout() > 80) {
+				if (GKBGDstates.getTimeout() > 50) {
 					VisionType.setType(1);
 					GKBGDstates.setState("Start2");
 					GKBGDstates.setAngle(180);
@@ -122,86 +116,41 @@ public class GoKickBallToGoal {
 
 			if (HeadMovement.HeadAtBall) {
 
-				if (Math.abs(GKBGDstates.getAngle()) < 45) {
-					GKBGDstates.setMoveTimeout(50);
-				} else if (Math.abs(GKBGDstates.getAngle()) < 90) {
-					GKBGDstates.setMoveTimeout(120);
-				} else {
-					GKBGDstates.setMoveTimeout(200);
-				}
-
-				System.out.println("stamathse");
 				GKBGDstates.setState("Start3");
-				GKBGDstates.setTimeout(0);
+				System.out.println(GKBGDstates.getAngle());
 
 			}
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start3")) {
 
+			if (Math.abs(GKBGDstates.getAngle()) > 13) {
 
-			System.out.println("GKBGDstates.getTimeout()"+GKBGDstates.getTimeout());
-			System.out.println("GKBGDstates.getMoveTimeout()"+GKBGDstates.getMoveTimeout());
-			if (GKBGDstates.getTimeout() < GKBGDstates.getMoveTimeout()) {
+				if (GKBGDstates.getAngle() < 0) {
 
-				if(Ball.getDistance()>1){
+					if ((Math.abs(Ball.getAngleX()
+							+ HingeJointPerceptor.getHj1())) > 5) {
 
-					GKBGDstates.setState("Start");
-
-				}else{
-					if (Math.abs(GKBGDstates.getAngle()) > 10) {
-
-						if (GKBGDstates.getAngle() < 0) {
-
-							if ((Math.abs(Ball.getAngleX()
-									+ HingeJointPerceptor.getHj1())) > 5) {
-
-								MotionTrigger.setMotion("TurnRight40");		
-
-							} else {
-
-								MotionTrigger.setMotion("SideStepLeft");
-
-							}
-						} else {
-
-							if ((Math.abs(Ball.getAngleX()
-									+ HingeJointPerceptor.getHj1())) > 5) {
-
-								MotionTrigger.setMotion("TurnLeft40");
-
-							} else {
-
-								MotionTrigger.setMotion("SideStepRight");
-
-							}
-
-						}
-
-						GKBGDstates.setState("Start3");
+						MotionTrigger.setMotion("TurnRight40");
 
 					} else {
 
-						GKBGDstates.setState("Start5");
+						MotionTrigger.setMotion("SideStepLeft");
 
 					}
+				} else {
+
+					if ((Math.abs(Ball.getAngleX()
+							+ HingeJointPerceptor.getHj1())) > 5) {
+
+						MotionTrigger.setMotion("TurnLeft40");
+
+					} else {
+
+						MotionTrigger.setMotion("SideStepRight");
+
+					}
+
 				}
-
-				GKBGDstates.setTimeout((GKBGDstates.getTimeout() + 1));
-
-			}else{
-
-				MotionTrigger.setMotion("");
-				GKBGDstates.setState("Start4");
-
-			}
-
-
-
-		} else if (GKBGDstates.getState().equalsIgnoreCase("Start4")) {
-
-
-
-			if (MotionPlaying.getMotionName() == null) {
 
 				GKBGDstates.setTimeout(0);
 				GKBGDstates.setMoveTimeout(0);
@@ -211,20 +160,24 @@ public class GoKickBallToGoal {
 
 			} else {
 
+				GKBGDstates.setTimeout(0);
+				GKBGDstates.setMoveTimeout(0);
+				GKBGDstates.setAngleFromPost1(Double.NaN);
+				GKBGDstates.setAngleFromPost2(Double.NaN);
 				MotionTrigger.setMotion("");
+				GKBGDstates.setState("Start4");
+
 			}
 
-		} else if (GKBGDstates.getState().equalsIgnoreCase("Start5")) {
+		} else if (GKBGDstates.getState().equalsIgnoreCase("Start4")) {
 
 			if (GoKickBallDynamic.Act()) {
-
 				GKBGDstates.setState("Start");
-
+				return true;
 			}
 
 		}
 
 		return false;
 	}
-
 }
