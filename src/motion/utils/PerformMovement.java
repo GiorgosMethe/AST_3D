@@ -1,6 +1,5 @@
 package motion.utils;
 
-import motion.old.MotionTrigger;
 import motion.xml.XMLMovement;
 
 public class PerformMovement {

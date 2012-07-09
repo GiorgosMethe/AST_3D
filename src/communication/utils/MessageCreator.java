@@ -161,7 +161,7 @@ public class MessageCreator {
 
 				String ps1 = String.valueOf((int) Math.rint(p1));
 				String ps2 = String.valueOf((int) Math.rint(p2));
-				String ps3 = String.valueOf((int) Math.rint(p2));
+				String ps3 = String.valueOf((int) Math.rint(p3));
 
 				// parameters
 				message += ps1 + "," + ps2 + "," + ps3;

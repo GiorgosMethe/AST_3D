@@ -12,7 +12,6 @@ public class FindOpponentsGoal {
 		OppGoal[0] = Double.NaN;
 		OppGoal[1] = Double.NaN;
 
-		boolean IseeGoal = false;
 		if (TeamState.getTeamSide().equalsIgnoreCase("left")) {
 			for (int i = 0; i < LocalizationResults.getLandmarks().size(); i++) {
 

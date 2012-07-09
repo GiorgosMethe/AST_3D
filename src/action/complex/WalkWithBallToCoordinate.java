@@ -13,7 +13,7 @@
 
 package action.complex;
 
-import motion.old.MotionTrigger;
+import motion.utils.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.vision.Ball;

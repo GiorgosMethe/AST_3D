@@ -1,6 +1,6 @@
 package action.simple;
 
-import motion.old.MotionTrigger;
+import motion.utils.MotionTrigger;
 import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
 import action.vision.VisionType;

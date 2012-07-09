@@ -13,7 +13,7 @@
 
 package action.simple;
 
-import motion.old.MotionTrigger;
+import motion.utils.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.localization.BallPosition;
 

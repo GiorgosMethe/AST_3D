@@ -1,11 +1,18 @@
 package agent.runtime;
 
-import motion.old.MotionTrigger;
+import communication.utils.MessageType;
+import communication.utils.SayEffector;
+import connection.utils.ServerCyrcles;
+import coordination.main.Coordination;
+
+import perceptor.worldstate.GameState;
 import motion.utils.PerformMovement;
+import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
+import action.simple.TurnToLocate;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
-import connection.utils.ServerCyrcles;
+
 
 public class AgentFunction {
 
@@ -22,35 +29,31 @@ public class AgentFunction {
 		 */
 		CheckIfFall.Check();
 
-		if (ServerCyrcles.getCyrclesNow() < 200) {
-			MotionTrigger.setMotion("turnLeft40");
-		} else {
-			MotionTrigger.setMotion("KickForwardRight");
-		}
+		//Goalie.Act();
 
-		// if (InitAgent.isPlayerInited()) {
-		//
-		// if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
-		//
-		// Say = SayEffector.Say(MessageType.getType());
-		//
-		// Coordination.MakeCoordination();
-		//
-		// if (!CheckIfFall.fallen) {
-		// ActionEffector.Act();
-		// }
-		//
-		// ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
-		//
-		// } else {
-		//
-		// if (!CheckIfFall.fallen) {
-		// TurnToLocate.Act();
-		// }
-		//
-		// }
-		//
-		// }
+		if (InitAgent.isPlayerInited()) {
+
+			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
+
+				Say = SayEffector.Say(MessageType.getType());
+
+				Coordination.MakeCoordination();
+
+				if (!CheckIfFall.fallen) {
+					ActionEffector.Act();
+				}
+
+				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
+
+			} else {
+
+				if (!CheckIfFall.fallen) {
+					TurnToLocate.Act();
+				}
+
+			}
+
+		}
 
 		Act = PerformMovement.run();
 

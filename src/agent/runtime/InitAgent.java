@@ -12,8 +12,7 @@
  ***********************************************************************************/
 package agent.runtime;
 
-import motion.old.CurrentMotion;
-import motion.old.MotionTrigger;
+import motion.utils.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
 import perceptor.localization.Coordinate;
@@ -27,7 +26,6 @@ import action.handler.ActionPlaying;
 import action.vision.VisionType;
 import agent.constraints.Beam;
 import agent.constraints.Constraints;
-import behavior.old.BehaviorDone;
 
 import communication.utils.MessageType;
 import communication.utils.WhoSent;
@@ -73,10 +71,7 @@ public class InitAgent {
 				GKBGDstates.setState("Start");
 
 				// Old Movement
-				CurrentMotion.setSoftChangeCounter(0);
 				InitAgent.setPlayerInited(false);
-				BehaviorDone.setName("");
-				BehaviorDone.setBehaviorDone(true);
 				MotionTrigger.setMotion("");
 
 				// XML movement
@@ -88,7 +83,6 @@ public class InitAgent {
 				// Vision Type
 				VisionType.setType(1);
 
-				CurrentMotion.setCurrentMotionPlaying("");
 				con.sendMessage("(init(unum " + number + ")(teamname "
 						+ Teamname + "))");
 

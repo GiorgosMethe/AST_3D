@@ -11,7 +11,7 @@ package action.complex;
  *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
  ***********************************************************************************/
 
-import motion.old.MotionTrigger;
+import motion.utils.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;

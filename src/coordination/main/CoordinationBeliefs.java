@@ -42,7 +42,6 @@ public class CoordinationBeliefs {
 		 * 
 		 * These thought will be used in order to locate the ball in the field
 		 */
-		boolean atLeastOneAgentSeeBall = false;
 
 		if (LocalizationResults.isKnowMyPosition()
 				&& perceptor.vision.Ball.isSeeTheBall()) {

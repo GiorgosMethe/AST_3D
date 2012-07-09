@@ -408,7 +408,7 @@ public class UpdatePerceptors {
 										.elementAt(j + 4).toString());
 								Ball.setAngleY(angleY);
 
-								Ball.setSeeTheBall(true);
+								Ball.setSeeTheBall(iSeeTheBall);
 
 								j = j + 4;
 

@@ -1,6 +1,6 @@
 package action.simple;
 
-import motion.old.MotionTrigger;
+import motion.utils.MotionTrigger;
 import motion.xml.MotionPlaying;
 import action.fsm.SUstates;
 

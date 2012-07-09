@@ -1,6 +1,6 @@
 package action.complex;
 
-import motion.old.MotionTrigger;
+import motion.utils.MotionTrigger;
 import motion.xml.check.CheckKickEnd;
 import motion.xml.check.CheckStrongKickEnd;
 import perceptor.localization.Coordinate;

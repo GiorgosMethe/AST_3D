@@ -62,6 +62,7 @@ public class SupportCoordination {
 	 * be return to the above function.
 	 */
 
+	@SuppressWarnings("unchecked")
 	public static Vector<PositionMap> PositionCombination(
 			Vector<perceptor.localization.Coordinate> SupportPositionsVector,
 			Vector<CoordinationMessage> SupportSubset,

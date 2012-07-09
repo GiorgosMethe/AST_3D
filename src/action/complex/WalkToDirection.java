@@ -3,7 +3,7 @@
  */
 package action.complex;
 
-import motion.old.MotionTrigger;
+import motion.utils.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.localization.LocalizationResults;
 import perceptor.localization.ReturnMyPosition;

@@ -6,9 +6,8 @@ package action.vision;
 import java.util.Vector;
 
 import perceptor.localization.Coordinate;
-import perceptor.localization.LocalizationResults;
 import perceptor.localization.TriangleLocalization;
-import connection.utils.ServerCyrcles;
+import perceptor.vision.Ball;
 
 /***********************************************************************************
  * Copyright 2012, Technical University of Crete Academic Year 2011-2012
@@ -26,80 +25,75 @@ public class WatchBallMovement {
 	public static Vector<Integer> TimesPrevious = new Vector<Integer>();
 	public static Vector<Integer> TimesNow = new Vector<Integer>();
 	public static Vector<Coordinate> BallObservationsNow = new Vector<Coordinate>();
+	public static MovingObject MovingBall;
+	public static int timer = 0;
 
-	public static void Watch() {
+	public static MovingObject Watch() {
 
-		if (BallObservationsPrevious.size() < 30) {
+		if (Ball.isSeeTheBall())
 
-			// System.out.println("BallObservationsPrevious");
+			if (timer < 10) {
 
-			BallObservationsPrevious
-					.add(LocalizationResults.getBall_location());
-			TimesPrevious.add(ServerCyrcles.getCyrclesNow());
+				BallObservationsPrevious.add(TriangleLocalization
+						.get_det_with_distance_angle(0, 0, Ball.getAngleX(),
+								Ball.getDistance()));
 
-		} else if (BallObservationsNow.size() < 30) {
+				timer++;
 
-			// System.out.println("BallObservationsNow");
+			} else if (timer >= 10 && timer < 20) {
 
-			BallObservationsNow.add(LocalizationResults.getBall_location());
-			TimesNow.add(ServerCyrcles.getCyrclesNow());
+				timer++;
 
-		} else {
+			} else if (timer >= 20 && timer < 30) {
 
-			double PreviousX = 0;
-			double PreviousY = 0;
-			double NowX = 0;
-			double NowY = 0;
-			int PreviousTime = 0;
-			int NowTime = 0;
+				BallObservationsNow.add(TriangleLocalization
+						.get_det_with_distance_angle(0, 0, Ball.getAngleX(),
+								Ball.getDistance()));
 
-			for (int i = 0; i < BallObservationsNow.size(); i++) {
+				timer++;
 
-				PreviousX += BallObservationsPrevious.elementAt(i).getX();
-				PreviousY += BallObservationsPrevious.elementAt(i).getY();
-				NowX += BallObservationsNow.elementAt(i).getX();
-				NowY += BallObservationsNow.elementAt(i).getY();
-				PreviousTime += TimesPrevious.elementAt(i);
-				NowTime += TimesNow.elementAt(i);
+			} else {
+
+				timer = 0;
+
+				Coordinate ballPrevious = new Coordinate(0, 0);
+				Coordinate ballNow = new Coordinate(0, 0);
+
+				double movingAngle;
+				double speed;
+
+				for (int i = 0; i < BallObservationsPrevious.size(); i++) {
+
+					ballPrevious.setX(ballPrevious.getX()
+							+ BallObservationsPrevious.elementAt(i).getX());
+					ballPrevious.setY(ballPrevious.getY()
+							+ BallObservationsPrevious.elementAt(i).getY());
+
+					ballNow.setX(ballNow.getX()
+							+ BallObservationsNow.elementAt(i).getX());
+					ballNow.setY(ballNow.getY()
+							+ BallObservationsNow.elementAt(i).getY());
+
+				}
+
+				ballPrevious.setX((ballPrevious.getX() / 10));
+				ballPrevious.setY((ballPrevious.getY() / 10));
+
+				ballNow.setX((ballNow.getX() / 10));
+				ballNow.setY((ballNow.getY() / 10));
+
+				movingAngle = TriangleLocalization.FindAngleBetweenCoordinates(
+						ballPrevious, ballNow);
+				speed = TriangleLocalization.FindDistanceAmong2Coordinates(
+						ballPrevious, ballNow);
+
+				MovingBall = new MovingObject(ballNow, movingAngle, speed);
+
+				return MovingBall;
 
 			}
 
-			BallObservationsPrevious.removeAllElements();
-			BallObservationsNow.removeAllElements();
-
-			PreviousX = PreviousX / 30;
-			PreviousY = PreviousY / 30;
-
-			NowX = NowX / 30;
-			NowY = NowY / 30;
-
-			PreviousTime = PreviousTime / 30;
-			NowTime = NowTime / 30;
-
-			System.out.println("x  " + PreviousX);
-			System.out.println("x'  " + NowX);
-
-			System.out.println("y  " + PreviousY);
-			System.out.println("y'  " + NowY);
-
-			System.out.println("PreviousTime  " + PreviousTime);
-			System.out.println("NowTime  " + NowTime);
-
-			Coordinate a = new Coordinate(PreviousX, PreviousY);
-			Coordinate b = new Coordinate(NowX, NowY);
-
-			double distance = TriangleLocalization
-					.FindDistanceAmong2Coordinates(a, b);
-			double angle = TriangleLocalization.FindAngleBetweenCoordinates(a,
-					b);
-
-			double speed = distance / ((NowTime - PreviousTime) / 50);
-
-			System.out.println("angle  " + angle);
-			System.out.println("distance  " + distance);
-			System.out.println("speed  " + speed);
-
-		}
+		return null;
 
 	}
 

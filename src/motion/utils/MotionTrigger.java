@@ -10,17 +10,18 @@
  * Start date: 25-04-2012											 
  * End date  : xx-xx-2012
  ***********************************************************************************/
+package motion.utils;
 
-package action.general;
+public class MotionTrigger {
 
-import motion.old.MotionTrigger;
+	public static String Motion;
 
-public class TurnOver {
+	public static String getMotion() {
+		return Motion;
+	}
 
-	public void Act() {
-
-		MotionTrigger.setMotion("TurnOver");
-
+	public static void setMotion(String motion) {
+		Motion = motion;
 	}
 
 }
