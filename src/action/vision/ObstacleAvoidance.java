@@ -10,6 +10,9 @@ import perceptor.localization.LocalizationResults;
 
 public class ObstacleAvoidance {
 
+	public static Vector<Landmark> Obstacles = new Vector<Landmark>();
+	
+	
 	public static boolean Act() {
 
 		final Comparator<Landmark> POSITIVE_ORDER = new Comparator<Landmark>() {
@@ -37,6 +40,10 @@ public class ObstacleAvoidance {
 		for (int i = 0; i < Players.size(); i++) {
 
 			if (Players.elementAt(i).Distance < Dangerzone) {
+				
+				
+				Obstacles.add(Players.elementAt(i));
+				
 
 				float DistanceFromObstacleWhenClose = (float) (Math.sin(Math
 						.toRadians(Players.elementAt(i).Horizontal_Angle)) * Players
@@ -69,6 +76,7 @@ public class ObstacleAvoidance {
 			DangerousAngles.removeAllElements();
 			Players.removeAllElements();
 			RivalPlayers.removeAllElements();
+			
 
 			// find best angle to avoid obstacle
 			float WayOutBest = FindBestWayOut(WayOutAngles);

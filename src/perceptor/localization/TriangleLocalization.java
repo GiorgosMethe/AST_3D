@@ -604,11 +604,16 @@ public class TriangleLocalization {
 	public static double FindAngleDifference(double ThetaToTarget) {
 
 		double BodyAngle = LocalizationFilter.MyFilteredPosition.getTheta();
+
 		double DesirableAngle = ThetaToTarget;
+
 		double AngleDifference = DesirableAngle - BodyAngle;
+		
 
 		if (AngleDifference > 180) {
 			AngleDifference = AngleDifference - 360;
+		}else if(AngleDifference < -180) {
+			AngleDifference = AngleDifference + 360;
 		}
 
 		return AngleDifference;

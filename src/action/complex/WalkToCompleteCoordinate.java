@@ -16,6 +16,7 @@ import motion.utils.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import action.vision.ObstacleAvoidance;
 import action.vision.VisionType;
 
 public class WalkToCompleteCoordinate {
@@ -24,9 +25,13 @@ public class WalkToCompleteCoordinate {
 
 	public static boolean Act(Coordinate target, float Theta) {
 
-		double ThetaToTarget = TriangleLocalization.FindAngle(target);
 		VisionType.setType(6);
-
+		
+		ObstacleAvoidance.Act();
+		
+		
+		double ThetaToTarget = TriangleLocalization.FindAngle(target);
+		
 		if (TriangleLocalization.FindDistanceToTarget(target) < 0.3) {
 
 			if (Math.abs(TriangleLocalization.FindAngleDifference(Theta)) < 20) {

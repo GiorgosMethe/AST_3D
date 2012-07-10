@@ -27,6 +27,7 @@ public class AgentRuntime {
 	public static int GameCycles = 0;
 	public static String host;
 	public static int port;
+	public static boolean test = false;
 	public static boolean isConnected = false;
 	public static Connection connection;
 
@@ -38,8 +39,9 @@ public class AgentRuntime {
 		if (args.length == 0) {
 			host = "127.0.0.1";
 			port = 3100;
-			num = 9;
+			num = 1;
 			Teamname = "AST_3D";
+			test = false;
 		} else {
 			host = args[0];
 			port = Integer.parseInt(args[1]);
@@ -78,7 +80,9 @@ public class AgentRuntime {
 		 * This method drawing information in the monitor
 		 */
 		// if (num == Constraints.CoordinationPlayer) {
+		if(!test){
 		RVTester.run(null);
+		}
 		// }
 
 		/**
@@ -125,8 +129,9 @@ public class AgentRuntime {
 		 * Main function agent through communication coordinate with other
 		 * agents and plan his behavior
 		 */
-		AgentFunction.Act();
-
+		if(!test){
+			AgentFunction.Act();
+		}
 		/**
 		 * At the end of each cycle call the action to send the actual
 		 * motor-string (all effector-values) to the server. This string

@@ -308,10 +308,10 @@ public class UpdatePerceptors {
 								Landmark lm = new Landmark("f1l",
 										Float.parseFloat(ReceivedMessage
 												.elementAt(j + 2).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 4).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 3).toString()));
+												Float.parseFloat(ReceivedMessage
+														.elementAt(j + 4).toString()),
+														Float.parseFloat(ReceivedMessage
+																.elementAt(j + 3).toString()));
 								landmarks.add(lm);
 								j = j + 4;
 							} else if (ReceivedMessage.elementAt(j)
@@ -319,10 +319,10 @@ public class UpdatePerceptors {
 								Landmark lm = new Landmark("f2l",
 										Float.parseFloat(ReceivedMessage
 												.elementAt(j + 2).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 4).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 3).toString()));
+												Float.parseFloat(ReceivedMessage
+														.elementAt(j + 4).toString()),
+														Float.parseFloat(ReceivedMessage
+																.elementAt(j + 3).toString()));
 								landmarks.add(lm);
 								j = j + 4;
 							} else if (ReceivedMessage.elementAt(j)
@@ -330,10 +330,10 @@ public class UpdatePerceptors {
 								Landmark lm = new Landmark("f1r",
 										Float.parseFloat(ReceivedMessage
 												.elementAt(j + 2).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 4).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 3).toString()));
+												Float.parseFloat(ReceivedMessage
+														.elementAt(j + 4).toString()),
+														Float.parseFloat(ReceivedMessage
+																.elementAt(j + 3).toString()));
 								landmarks.add(lm);
 								j = j + 4;
 							} else if (ReceivedMessage.elementAt(j)
@@ -341,10 +341,10 @@ public class UpdatePerceptors {
 								Landmark lm = new Landmark("f2r",
 										Float.parseFloat(ReceivedMessage
 												.elementAt(j + 2).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 4).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 3).toString()));
+												Float.parseFloat(ReceivedMessage
+														.elementAt(j + 4).toString()),
+														Float.parseFloat(ReceivedMessage
+																.elementAt(j + 3).toString()));
 								landmarks.add(lm);
 								j = j + 4;
 							} else if (ReceivedMessage.elementAt(j)
@@ -352,10 +352,10 @@ public class UpdatePerceptors {
 								Landmark lm = new Landmark("g1l",
 										Float.parseFloat(ReceivedMessage
 												.elementAt(j + 2).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 4).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 3).toString()));
+												Float.parseFloat(ReceivedMessage
+														.elementAt(j + 4).toString()),
+														Float.parseFloat(ReceivedMessage
+																.elementAt(j + 3).toString()));
 								landmarks.add(lm);
 								j = j + 4;
 							} else if (ReceivedMessage.elementAt(j)
@@ -363,10 +363,10 @@ public class UpdatePerceptors {
 								Landmark lm = new Landmark("g2l",
 										Float.parseFloat(ReceivedMessage
 												.elementAt(j + 2).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 4).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 3).toString()));
+												Float.parseFloat(ReceivedMessage
+														.elementAt(j + 4).toString()),
+														Float.parseFloat(ReceivedMessage
+																.elementAt(j + 3).toString()));
 								landmarks.add(lm);
 								j = j + 4;
 							} else if (ReceivedMessage.elementAt(j)
@@ -374,10 +374,10 @@ public class UpdatePerceptors {
 								Landmark lm = new Landmark("g1r",
 										Float.parseFloat(ReceivedMessage
 												.elementAt(j + 2).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 4).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 3).toString()));
+												Float.parseFloat(ReceivedMessage
+														.elementAt(j + 4).toString()),
+														Float.parseFloat(ReceivedMessage
+																.elementAt(j + 3).toString()));
 								landmarks.add(lm);
 								j = j + 4;
 							} else if (ReceivedMessage.elementAt(j)
@@ -385,10 +385,10 @@ public class UpdatePerceptors {
 								Landmark lm = new Landmark("g2r",
 										Float.parseFloat(ReceivedMessage
 												.elementAt(j + 2).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 4).toString()),
-										Float.parseFloat(ReceivedMessage
-												.elementAt(j + 3).toString()));
+												Float.parseFloat(ReceivedMessage
+														.elementAt(j + 4).toString()),
+														Float.parseFloat(ReceivedMessage
+																.elementAt(j + 3).toString()));
 								landmarks.add(lm);
 								j = j + 4;
 
@@ -438,13 +438,13 @@ public class UpdatePerceptors {
 								while (ReceivedMessage.elementAt(j)
 										.equalsIgnoreCase("head")
 										|| ReceivedMessage.elementAt(j)
-												.equalsIgnoreCase("rlowerarm")
+										.equalsIgnoreCase("rlowerarm")
 										|| ReceivedMessage.elementAt(j)
-												.equalsIgnoreCase("llowerarm")
+										.equalsIgnoreCase("llowerarm")
 										|| ReceivedMessage.elementAt(j)
-												.equalsIgnoreCase("rfoot")
+										.equalsIgnoreCase("rfoot")
 										|| ReceivedMessage.elementAt(j)
-												.equalsIgnoreCase("lfoot")) {
+										.equalsIgnoreCase("lfoot")) {
 									k++;
 									j++; // message=pol
 									j++;
@@ -491,23 +491,23 @@ public class UpdatePerceptors {
 						} while (ReceivedMessage.elementAt(j).equalsIgnoreCase(
 								"f1l")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("f2l")
+								.equalsIgnoreCase("f2l")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("f2r")
+								.equalsIgnoreCase("f2r")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("f1r")
+								.equalsIgnoreCase("f1r")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("g1l")
+								.equalsIgnoreCase("g1l")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("g2l")
+								.equalsIgnoreCase("g2l")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("g1r")
+								.equalsIgnoreCase("g1r")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("g2r")
+								.equalsIgnoreCase("g2r")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("b")
+								.equalsIgnoreCase("b")
 								|| ReceivedMessage.elementAt(j)
-										.equalsIgnoreCase("p"));
+								.equalsIgnoreCase("p"));
 						Coordinate loc_buffer = new Coordinate(0, 0);
 
 						int k = 0;
@@ -518,130 +518,139 @@ public class UpdatePerceptors {
 
 							LocalizationResults.setKnowMyPosition(true);
 
-							for (int ii = 0; ii < landmarks.size(); ii++) {
-
-								for (int jj = ii + 1; jj < landmarks.size(); jj++) {
-
-									loc_buffer = localizer.Localize(
-											landmarks.elementAt(ii),
-											landmarks.elementAt(jj));
-									x = x + loc_buffer.X;
-									y = y + loc_buffer.Y;
-									k++;
-
-								}
-							}
-
-							if (x != 0 && y != 0) {
-								if (k != 0) {
-
-									curloc = new Coordinate(x / k, y / k);
-
-								} else {
-
-									curloc = new Coordinate(x, y);
-
-								}
-							}
-
-							if (Math.abs(curloc.X) > (Constraints.FieldLength / 2) + 1
-									|| Math.abs(curloc.Y) > (Constraints.FieldWidth / 2) + 1) {
-
-							} else {
-
-								AgentPosition.setX((float) curloc.getX());
-								AgentPosition.setY((float) curloc.getY());
-								LocalizationResults.setCurrent_location(curloc);
-
-							}
-
-							double xxx = 0;
-							double yyy = 0;
-							double head_angle = 0;
-
-							for (int ii = 0; ii < landmarks.size(); ii++) {
-
-								xxx += Math
-										.cos(Math.toRadians(localizer.universal_angle(
-												landmarks.elementAt(ii), curloc)));
-
-								yyy += Math
-										.sin(Math.toRadians(localizer.universal_angle(
-												landmarks.elementAt(ii), curloc)));
-
-							}
-							head_angle = Math.toDegrees(Math.atan2(yyy, xxx));
-
-							AgentPosition
-									.setTheta((float) (head_angle + HingeJointPerceptor
-											.getHj1()));
-
-							LocalizationResults.setHead_angle(head_angle);
-							LocalizationResults
-									.setBody_angle((head_angle - HingeJointPerceptor
-											.getHj1()));
-
-							Coordinate Ball_det = localizer
-									.get_det_with_distance_angle(curloc.getX(),
-											curloc.getY(),
-											(head_angle + Ball.getAngleX()),
-											Ball.getDistance());
-
-							LocalizationResults
-									.setBall_angle((head_angle + Ball
-											.getAngleX()));
-
-							LocalizationResults.setBall_location(Ball_det);
-							LocalizationResults.setLandmarks(landmarks);
-							LocalizationResults.setCoplayers(coplayers);
-							LocalizationResults.setRivals(rivals);
-
-							for (int jj = 0; jj < coplayers.size(); jj++) {
-
-								@SuppressWarnings("unused")
-								Coordinate found_player = localizer
-										.get_det_with_distance_angle(
-												curloc.getX(),
-												curloc.getY(),
-												(head_angle + coplayers
-														.elementAt(jj)
-														.getHorizontal_Angle()),
-												coplayers.elementAt(jj)
-														.getDistance());
-
-							}
-							if (coplayers.size() == 0) {
-
-							}
-							for (int jj = 0; jj < rivals.size(); jj++) {
-
-								@SuppressWarnings("unused")
-								Coordinate found_player = localizer
-										.get_det_with_distance_angle(
-												curloc.getX(),
-												curloc.getY(),
-												(head_angle + rivals.elementAt(
-														jj)
-														.getHorizontal_Angle()),
-												rivals.elementAt(jj)
-														.getDistance());
-							}
-							if (rivals.size() == 0) {
-
-							}
-
-							CompleteCoordinate a = new CompleteCoordinate(
-									LocalizationResults.getCurrent_location()
-											.getX(), LocalizationResults
-											.getCurrent_location().getY(),
-									LocalizationResults.getBody_angle());
-							LocalizationFilter.filter(a);
+							
 
 						} else {
 
 							LocalizationResults.setKnowMyPosition(false);
 
 						}
+
+						for (int ii = 0; ii < landmarks.size(); ii++) {
+
+							for (int jj = ii + 1; jj < landmarks.size(); jj++) {
+
+								loc_buffer = localizer.Localize(
+										landmarks.elementAt(ii),
+										landmarks.elementAt(jj));
+								x = x + loc_buffer.X;
+								y = y + loc_buffer.Y;
+								k++;
+
+							}
+						}
+
+						if (x != 0 && y != 0) {
+							if (k != 0) {
+
+								curloc = new Coordinate(x / k, y / k);
+
+							} else {
+
+								curloc = new Coordinate(x, y);
+
+							}
+						}
+
+						if (Math.abs(curloc.X) > (Constraints.FieldLength / 2) + 1
+								|| Math.abs(curloc.Y) > (Constraints.FieldWidth / 2) + 1) {
+
+						} else {
+
+							AgentPosition.setX((float) curloc.getX());
+							AgentPosition.setY((float) curloc.getY());
+							LocalizationResults.setCurrent_location(curloc);
+
+						}
+
+						double xxx = 0;
+						double yyy = 0;
+						double head_angle = 0;
+
+						for (int ii = 0; ii < landmarks.size(); ii++) {
+
+							xxx += Math
+									.cos(Math.toRadians(localizer.universal_angle(
+											landmarks.elementAt(ii), curloc)));
+
+							yyy += Math
+									.sin(Math.toRadians(localizer.universal_angle(
+											landmarks.elementAt(ii), curloc)));
+
+						}
+						head_angle = Math.toDegrees(Math.atan2(yyy, xxx));
+
+						AgentPosition
+						.setTheta((float) (head_angle + HingeJointPerceptor
+								.getHj1()));
+
+						LocalizationResults.setHead_angle(head_angle);
+						LocalizationResults
+						.setBody_angle((head_angle - HingeJointPerceptor
+								.getHj1()));
+
+						Coordinate Ball_det = localizer
+								.get_det_with_distance_angle(curloc.getX(),
+										curloc.getY(),
+										(head_angle + Ball.getAngleX()),
+										Ball.getDistance());
+
+						LocalizationResults
+						.setBall_angle((head_angle + Ball
+								.getAngleX()));
+						
+						
+						for(int ii=0;ii<landmarks.size();ii++){
+							landmarks.elementAt(ii).setHorizontal_Angle(HingeJointPerceptor.getHj1()+landmarks.elementAt(ii).getHorizontal_Angle());
+						}
+
+						LocalizationResults.setBall_location(Ball_det);
+						LocalizationResults.setLandmarks(landmarks);
+						LocalizationResults.setCoplayers(coplayers);
+						LocalizationResults.setRivals(rivals);
+
+						for (int jj = 0; jj < coplayers.size(); jj++) {
+
+							@SuppressWarnings("unused")
+							Coordinate found_player = localizer
+							.get_det_with_distance_angle(
+									curloc.getX(),
+									curloc.getY(),
+									(head_angle + coplayers
+											.elementAt(jj)
+											.getHorizontal_Angle()),
+											coplayers.elementAt(jj)
+											.getDistance());
+
+						}
+						if (coplayers.size() == 0) {
+
+						}
+						for (int jj = 0; jj < rivals.size(); jj++) {
+
+							@SuppressWarnings("unused")
+							Coordinate found_player = localizer
+							.get_det_with_distance_angle(
+									curloc.getX(),
+									curloc.getY(),
+									(head_angle + rivals.elementAt(
+											jj)
+											.getHorizontal_Angle()),
+											rivals.elementAt(jj)
+											.getDistance());
+						}
+						if (rivals.size() == 0) {
+
+						}
+
+						CompleteCoordinate a = new CompleteCoordinate(
+								LocalizationResults.getCurrent_location()
+								.getX(), LocalizationResults
+								.getCurrent_location().getY(),
+								LocalizationResults.getBody_angle());
+						LocalizationFilter.filter(a);
+						
+						
 
 						i = j;
 						j = 0;
@@ -673,7 +682,7 @@ public class UpdatePerceptors {
 								new Vector3d(forcex, forcey, forcez), name);
 
 						ForceResistancePerceptor.ForcePerceptors
-								.add(newForcePerceptor);
+						.add(newForcePerceptor);
 
 						i = i + 11;
 

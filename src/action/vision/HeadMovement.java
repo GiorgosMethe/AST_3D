@@ -22,7 +22,10 @@ import connection.utils.ServerCyrcles;
 
 public class HeadMovement {
 
+	public static int moveX = 6;
 	public static boolean HeadAtBall;
+	public static boolean HeadAtLeft = false;
+	public static boolean HeadAtRight = false;
 	static GetNormalJointValue gNjV = new GetNormalJointValue();
 
 	public static String MoveHead(int type) {
@@ -53,14 +56,24 @@ public class HeadMovement {
 	public static String Observe() {
 
 		int cycles = ServerCyrcles.getCyrclesNow();
-		float moveX = (float) (2.09 * Math.sin(cycles / 15));
-		float moveY = (float) (0.59 * Math.sin(cycles / 8) - 0.078);
+		HeadMovement.HeadAtLeft = false;
+		HeadMovement.HeadAtRight = false;
+		
+		if(HingeJointPerceptor.getHj1()>120){
+			HeadMovement.moveX = HeadMovement.moveX * (-1);
+			HeadMovement.HeadAtLeft = true;
+		}else if(HingeJointPerceptor.getHj1()<-120){
+			HeadMovement.moveX = HeadMovement.moveX * (-1);
+			HeadMovement.HeadAtRight = true;
+		}
+		
+		
+
 		String str = "";
 
-		float realMoveX = gNjV.Get("he1", moveX) / 5;
 		float realMoveY = gNjV.Get("he2", 0 - HingeJointPerceptor.getHj2()) / 5;
-		str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
-				+ realMoveY + ")";
+		str = "(" + "he1" + " " + HeadMovement.moveX + ")" + "(" + "he2" + " "
+				+ 0 + ")";
 
 		return str;
 	}
