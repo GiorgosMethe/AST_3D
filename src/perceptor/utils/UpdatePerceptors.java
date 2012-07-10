@@ -18,8 +18,10 @@ import javax.vecmath.Vector3d;
 
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.localization.AgentPosition;
+import perceptor.localization.CompleteCoordinate;
 import perceptor.localization.Coordinate;
 import perceptor.localization.Landmark;
+import perceptor.localization.LocalizationFilter;
 import perceptor.localization.LocalizationResults;
 import perceptor.localization.TriangleLocalization;
 import perceptor.sensors.Accelerometer;
@@ -73,7 +75,7 @@ public class UpdatePerceptors {
 						float time = Float.parseFloat(ReceivedMessage
 								.elementAt(i + 2).toString());
 						ServerTime.setTime(time);
-						// System.out.println("time @ "+i);
+
 						i = i + 3;
 
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(
@@ -86,7 +88,7 @@ public class UpdatePerceptors {
 							GameState.setGameTime(time);
 							GameState.setGameState(ReceivedMessage.elementAt(
 									i + 4).toString());
-							// System.out.println("game state @ "+i);
+
 							i = i + 5;
 						} else if (ReceivedMessage.elementAt(i + 1)
 								.equalsIgnoreCase("unum")) {
@@ -115,7 +117,7 @@ public class UpdatePerceptors {
 						float anglez = Float.parseFloat(ReceivedMessage
 								.elementAt(i + 6).toString());
 						GyroScope.setAngleZ(anglez);
-						// System.out.println("gyroscope @ "+i);
+
 						i = i + 7;
 
 					} else if (ReceivedMessage.elementAt(i).equalsIgnoreCase(
@@ -482,7 +484,7 @@ public class UpdatePerceptors {
 								}
 
 							} else {
-								// System.out.println("WHAT THE FUCK!!!");
+
 							}
 							j++;
 
@@ -516,110 +518,129 @@ public class UpdatePerceptors {
 
 							LocalizationResults.setKnowMyPosition(true);
 
+							for (int ii = 0; ii < landmarks.size(); ii++) {
+
+								for (int jj = ii + 1; jj < landmarks.size(); jj++) {
+
+									loc_buffer = localizer.Localize(
+											landmarks.elementAt(ii),
+											landmarks.elementAt(jj));
+									x = x + loc_buffer.X;
+									y = y + loc_buffer.Y;
+									k++;
+
+								}
+							}
+
+							if (x != 0 && y != 0) {
+								if (k != 0) {
+
+									curloc = new Coordinate(x / k, y / k);
+
+								} else {
+
+									curloc = new Coordinate(x, y);
+
+								}
+							}
+
+							if (Math.abs(curloc.X) > (Constraints.FieldLength / 2) + 1
+									|| Math.abs(curloc.Y) > (Constraints.FieldWidth / 2) + 1) {
+
+							} else {
+
+								AgentPosition.setX((float) curloc.getX());
+								AgentPosition.setY((float) curloc.getY());
+								LocalizationResults.setCurrent_location(curloc);
+
+							}
+
+							double xxx = 0;
+							double yyy = 0;
+							double head_angle = 0;
+
+							for (int ii = 0; ii < landmarks.size(); ii++) {
+
+								xxx += Math
+										.cos(Math.toRadians(localizer.universal_angle(
+												landmarks.elementAt(ii), curloc)));
+
+								yyy += Math
+										.sin(Math.toRadians(localizer.universal_angle(
+												landmarks.elementAt(ii), curloc)));
+
+							}
+							head_angle = Math.toDegrees(Math.atan2(yyy, xxx));
+
+							AgentPosition
+									.setTheta((float) (head_angle + HingeJointPerceptor
+											.getHj1()));
+
+							LocalizationResults.setHead_angle(head_angle);
+							LocalizationResults
+									.setBody_angle((head_angle - HingeJointPerceptor
+											.getHj1()));
+
+							Coordinate Ball_det = localizer
+									.get_det_with_distance_angle(curloc.getX(),
+											curloc.getY(),
+											(head_angle + Ball.getAngleX()),
+											Ball.getDistance());
+
+							LocalizationResults
+									.setBall_angle((head_angle + Ball
+											.getAngleX()));
+
+							LocalizationResults.setBall_location(Ball_det);
+							LocalizationResults.setLandmarks(landmarks);
+							LocalizationResults.setCoplayers(coplayers);
+							LocalizationResults.setRivals(rivals);
+
+							for (int jj = 0; jj < coplayers.size(); jj++) {
+
+								@SuppressWarnings("unused")
+								Coordinate found_player = localizer
+										.get_det_with_distance_angle(
+												curloc.getX(),
+												curloc.getY(),
+												(head_angle + coplayers
+														.elementAt(jj)
+														.getHorizontal_Angle()),
+												coplayers.elementAt(jj)
+														.getDistance());
+
+							}
+							if (coplayers.size() == 0) {
+
+							}
+							for (int jj = 0; jj < rivals.size(); jj++) {
+
+								@SuppressWarnings("unused")
+								Coordinate found_player = localizer
+										.get_det_with_distance_angle(
+												curloc.getX(),
+												curloc.getY(),
+												(head_angle + rivals.elementAt(
+														jj)
+														.getHorizontal_Angle()),
+												rivals.elementAt(jj)
+														.getDistance());
+							}
+							if (rivals.size() == 0) {
+
+							}
+
+							CompleteCoordinate a = new CompleteCoordinate(
+									LocalizationResults.getCurrent_location()
+											.getX(), LocalizationResults
+											.getCurrent_location().getY(),
+									LocalizationResults.getBody_angle());
+							LocalizationFilter.filter(a);
+
 						} else {
 
 							LocalizationResults.setKnowMyPosition(false);
 
-						}
-
-						for (int ii = 0; ii < landmarks.size(); ii++) {
-
-							for (int jj = ii + 1; jj < landmarks.size(); jj++) {
-
-								loc_buffer = localizer.Localize(
-										landmarks.elementAt(ii),
-										landmarks.elementAt(jj));
-								x = x + loc_buffer.X;
-								y = y + loc_buffer.Y;
-								k++;
-
-							}
-						}
-
-						if (x != 0 && y != 0) {
-							if (k != 0) {
-
-								curloc = new Coordinate(x / k, y / k);
-
-							} else {
-
-								curloc = new Coordinate(x, y);
-
-							}
-						}
-
-						AgentPosition.setX((float) curloc.getX());
-						AgentPosition.setY((float) curloc.getY());
-						LocalizationResults.setCurrent_location(curloc);
-
-						double xxx = 0;
-						double yyy = 0;
-						double head_angle = 0;
-
-						for (int ii = 0; ii < landmarks.size(); ii++) {
-
-							xxx += Math.cos(Math.toRadians(localizer
-									.universal_angle(landmarks.elementAt(ii),
-											curloc)));
-
-							yyy += Math.sin(Math.toRadians(localizer
-									.universal_angle(landmarks.elementAt(ii),
-											curloc)));
-
-						}
-						head_angle = Math.toDegrees(Math.atan2(yyy, xxx));
-
-						AgentPosition
-								.setTheta((float) (head_angle + HingeJointPerceptor
-										.getHj1()));
-
-						LocalizationResults.setHead_angle(head_angle);
-						LocalizationResults
-								.setBody_angle((head_angle - HingeJointPerceptor
-										.getHj1()));
-
-						Coordinate Ball_det = localizer
-								.get_det_with_distance_angle(curloc.getX(),
-										curloc.getY(),
-										(head_angle + Ball.getAngleX()),
-										Ball.getDistance());
-
-						LocalizationResults.setBall_angle((head_angle + Ball
-								.getAngleX()));
-
-						LocalizationResults.setBall_location(Ball_det);
-						LocalizationResults.setLandmarks(landmarks);
-						LocalizationResults.setCoplayers(coplayers);
-						LocalizationResults.setRivals(rivals);
-
-						for (int jj = 0; jj < coplayers.size(); jj++) {
-
-							@SuppressWarnings("unused")
-							Coordinate found_player = localizer
-									.get_det_with_distance_angle(
-											curloc.getX(),
-											curloc.getY(),
-											(head_angle + coplayers.elementAt(
-													jj).getHorizontal_Angle()),
-											coplayers.elementAt(jj)
-													.getDistance());
-
-						}
-						if (coplayers.size() == 0) {
-
-						}
-						for (int jj = 0; jj < rivals.size(); jj++) {
-
-							@SuppressWarnings("unused")
-							Coordinate found_player = localizer
-									.get_det_with_distance_angle(curloc.getX(),
-											curloc.getY(), (head_angle + rivals
-													.elementAt(jj)
-													.getHorizontal_Angle()),
-											rivals.elementAt(jj).getDistance());
-						}
-						if (rivals.size() == 0) {
-							// System.out.println("I see no rivals");
 						}
 
 						i = j;

@@ -1,10 +1,11 @@
 package agent.runtime;
 
 import motion.utils.PerformMovement;
+import perceptor.localization.Coordinate;
+import action.complex.WalkToCompleteCoordinate;
 import action.sensor.CheckIfFall;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
-import behavior.goalie.Goalie;
 
 public class AgentFunction {
 
@@ -21,12 +22,14 @@ public class AgentFunction {
 		 */
 		CheckIfFall.Check();
 
-		if (InitAgent.isPlayerInited()) {
+		WalkToCompleteCoordinate.Act(new Coordinate(-10, 0), 0);
 
-			if (!CheckIfFall.fallen) {
-				Goalie.Act();
-			}
-		}
+		// if (InitAgent.isPlayerInited()) {
+		//
+		// if (!CheckIfFall.fallen) {
+		// Goalie.Act();
+		// }
+		// }
 
 		// if (InitAgent.isPlayerInited()) {
 		//

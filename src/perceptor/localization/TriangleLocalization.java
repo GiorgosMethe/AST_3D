@@ -321,7 +321,7 @@ public class TriangleLocalization {
 		double x = cx - (by - ay) * u / D;
 		double y = cy + (bx - ax) * u / D;
 
-		if ((x >= 10.5) || (x <= -10.5) || (y >= 7) || (y <= -7)) {
+		if ((x >= 11.5) || (x <= -11.5) || (y >= 8) || (y <= -8)) {
 			x = cx + (by - ay) * u / D;
 			y = cy - (bx - ax) * u / D;
 		}
@@ -451,12 +451,46 @@ public class TriangleLocalization {
 		return ThetaToTarget;
 	}
 
+	// public static double FindAngle(Coordinate target) {
+	//
+	// double dx = target.getX()
+	// - LocalizationResults.getCurrent_location().getX();
+	// double dy = target.getY()
+	// - LocalizationResults.getCurrent_location().getY();
+	//
+	// double ThetaToTarget = Math.toDegrees(Math.atan2(dx, dy));
+	//
+	// if (dy == 0 && dx == 0) {
+	// return 0;
+	// }
+	//
+	// if (ThetaToTarget >= 0 && ThetaToTarget < 90) {
+	//
+	// ThetaToTarget = 90 - ThetaToTarget;
+	//
+	// } else if (ThetaToTarget >= 90 && ThetaToTarget <= 180) {
+	//
+	// ThetaToTarget = -(ThetaToTarget - 90);
+	//
+	// } else if (ThetaToTarget < -90 && ThetaToTarget >= -180) {
+	//
+	// ThetaToTarget = -(ThetaToTarget + 270);
+	//
+	// } else if (ThetaToTarget >= -90 && ThetaToTarget < -0) {
+	//
+	// ThetaToTarget = -(ThetaToTarget - 90);
+	//
+	// }
+	//
+	// return ThetaToTarget;
+	// }
+
 	public static double FindAngle(Coordinate target) {
 
 		double dx = target.getX()
-				- LocalizationResults.getCurrent_location().getX();
+				- LocalizationFilter.MyFilteredPosition.getX();
 		double dy = target.getY()
-				- LocalizationResults.getCurrent_location().getY();
+				- LocalizationFilter.MyFilteredPosition.getY();
 
 		double ThetaToTarget = Math.toDegrees(Math.atan2(dx, dy));
 
@@ -518,12 +552,24 @@ public class TriangleLocalization {
 		return ThetaToTarget;
 	}
 
+	// public static double FindDistanceToTarget(Coordinate target) {
+	//
+	// double dx = target.getX()
+	// - LocalizationResults.getCurrent_location().getX();
+	// double dy = target.getY()
+	// - LocalizationResults.getCurrent_location().getY();
+	// double DistanceToTarget = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+	//
+	// return DistanceToTarget;
+	//
+	// }
+
 	public static double FindDistanceToTarget(Coordinate target) {
 
 		double dx = target.getX()
-				- LocalizationResults.getCurrent_location().getX();
+				- LocalizationFilter.MyFilteredPosition.getX();
 		double dy = target.getY()
-				- LocalizationResults.getCurrent_location().getY();
+				- LocalizationFilter.MyFilteredPosition.getY();
 		double DistanceToTarget = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
 
 		return DistanceToTarget;
@@ -541,9 +587,23 @@ public class TriangleLocalization {
 
 	}
 
+	// public static double FindAngleDifference(double ThetaToTarget) {
+	//
+	// double BodyAngle = LocalizationResults.getBody_angle();
+	// double DesirableAngle = ThetaToTarget;
+	// double AngleDifference = DesirableAngle - BodyAngle;
+	//
+	// if (AngleDifference > 180) {
+	// AngleDifference = AngleDifference - 360;
+	// }
+	//
+	// return AngleDifference;
+	//
+	// }
+
 	public static double FindAngleDifference(double ThetaToTarget) {
 
-		double BodyAngle = LocalizationResults.getBody_angle();
+		double BodyAngle = LocalizationFilter.MyFilteredPosition.getTheta();
 		double DesirableAngle = ThetaToTarget;
 		double AngleDifference = DesirableAngle - BodyAngle;
 

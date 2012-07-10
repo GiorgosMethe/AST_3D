@@ -42,6 +42,8 @@ public class HeadMovement {
 			Action = MoveHeadToLocalizeAgent();
 		} else if (type == 6) {
 			Action = Observe();
+		} else if (type == 7) {
+			Action = ObserveUntilLoc();
 		}
 
 		return Action;
@@ -56,9 +58,27 @@ public class HeadMovement {
 		String str = "";
 
 		float realMoveX = gNjV.Get("he1", moveX) / 5;
-		float realMoveY = gNjV.Get("he2", moveY) / 5;
+		float realMoveY = gNjV.Get("he2", 0 - HingeJointPerceptor.getHj2()) / 5;
 		str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
 				+ realMoveY + ")";
+
+		return str;
+	}
+
+	public static String ObserveUntilLoc() {
+
+		int cycles = ServerCyrcles.getCyrclesNow();
+		float moveX = (float) (2.09 * Math.sin(cycles / 15));
+		String str = "";
+
+		if (LocalizationResults.getLandmarks().size() >= 4) {
+
+		} else {
+			float realMoveX = gNjV.Get("he1", moveX) / 5;
+			float realMoveY = gNjV.Get("he2", 0 - HingeJointPerceptor.getHj2()) / 5;
+			str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
+					+ realMoveY + ")";
+		}
 
 		return str;
 	}

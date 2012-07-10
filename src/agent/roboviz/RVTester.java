@@ -28,7 +28,9 @@ import java.net.UnknownHostException;
 
 import javax.swing.Timer;
 
+import perceptor.localization.LocalizationFilter;
 import perceptor.localization.LocalizationResults;
+import perceptor.localization.TriangleLocalization;
 import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationVectorUpdate;
@@ -78,6 +80,69 @@ public class RVTester {
 					(float) LocalizationResults.getCurrent_location().getX(),
 					(float) LocalizationResults.getCurrent_location().getY() },
 					0.2f, 2, Color.YELLOW, "animated.circles");
+
+			drawLine(
+					new float[] {
+							(float) LocalizationResults.getCurrent_location()
+									.getX(),
+							(float) LocalizationResults.getCurrent_location()
+									.getY(), 0 },
+					new float[] {
+							(float) TriangleLocalization
+									.get_det_with_distance_angle(
+											LocalizationResults
+													.getCurrent_location()
+													.getX(),
+											LocalizationResults
+													.getCurrent_location()
+													.getY(),
+											LocalizationResults.getBody_angle(),
+											1).getX(),
+							(float) TriangleLocalization
+									.get_det_with_distance_angle(
+											LocalizationResults
+													.getCurrent_location()
+													.getX(),
+											LocalizationResults
+													.getCurrent_location()
+													.getY(),
+											LocalizationResults.getBody_angle(),
+											1).getY(), 0 }, 1.0f, Color.YELLOW,
+					"animated.lines.field");
+
+		}
+
+		if (LocalizationFilter.MyFilteredPosition != null) {
+
+			drawCircle(new float[] {
+					(float) LocalizationFilter.MyFilteredPosition.getX(),
+					(float) LocalizationFilter.MyFilteredPosition.getY() },
+					0.2f, 2, Color.RED, "animated.circles");
+
+			drawLine(
+					new float[] {
+							(float) LocalizationFilter.MyFilteredPosition
+									.getX(),
+							(float) LocalizationFilter.MyFilteredPosition
+									.getY(), 0 },
+					new float[] {
+							(float) TriangleLocalization
+									.get_det_with_distance_angle(
+											LocalizationFilter.MyFilteredPosition
+													.getX(),
+											LocalizationFilter.MyFilteredPosition
+													.getY(),
+											LocalizationFilter.MyFilteredPosition
+													.getTheta(), 1).getX(),
+							(float) TriangleLocalization
+									.get_det_with_distance_angle(
+											LocalizationFilter.MyFilteredPosition
+													.getX(),
+											LocalizationFilter.MyFilteredPosition
+													.getY(),
+											LocalizationFilter.MyFilteredPosition
+													.getTheta(), 1).getY(), 0 },
+					1.0f, Color.RED, "animated.lines.field");
 
 		}
 

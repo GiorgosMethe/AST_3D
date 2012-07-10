@@ -25,9 +25,9 @@ public class WalkToCompleteCoordinate {
 	public static boolean Act(Coordinate target, float Theta) {
 
 		double ThetaToTarget = TriangleLocalization.FindAngle(target);
-		VisionType.setType(2);
+		VisionType.setType(6);
 
-		if (TriangleLocalization.FindDistanceToTarget(target) < 0.2) {
+		if (TriangleLocalization.FindDistanceToTarget(target) < 0.3) {
 
 			if (Math.abs(TriangleLocalization.FindAngleDifference(Theta)) < 20) {
 

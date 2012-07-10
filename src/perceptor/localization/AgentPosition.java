@@ -16,6 +16,10 @@ public class AgentPosition {
 
 	public static float X, Y, Theta;
 
+	public AgentPosition(double d, double e, double theta2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public static float getX() {
 		return X;
 	}
