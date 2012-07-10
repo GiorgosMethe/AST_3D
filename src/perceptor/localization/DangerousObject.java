@@ -1,13 +1,16 @@
 package perceptor.localization;
 
-public class BodyTheta {
+public class DangerousObject {
 
 	public float ThetaStart;
 	public float ThetaEnd;
+	public float Distance;
 
-	public BodyTheta(float thetaStart, float thetaEnd) {
+	public DangerousObject(float thetaStart, float thetaEnd, float distance) {
+		super();
 		ThetaStart = thetaStart;
 		ThetaEnd = thetaEnd;
+		Distance = distance;
 	}
 
 	public float getThetaStart() {
@@ -24,6 +27,14 @@ public class BodyTheta {
 
 	public void setThetaEnd(float thetaEnd) {
 		ThetaEnd = thetaEnd;
+	}
+
+	public float getDistance() {
+		return Distance;
+	}
+
+	public void setDistance(float distance) {
+		Distance = distance;
 	}
 
 }

@@ -1,173 +1,173 @@
 package action.vision;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Vector;
 
-import perceptor.localization.BodyTheta;
+import perceptor.localization.Coordinate;
+import perceptor.localization.DangerousObject;
 import perceptor.localization.Landmark;
-import perceptor.localization.LocalizationResults;
+import perceptor.localization.LocalizationFilter;
+import perceptor.localization.TriangleLocalization;
 
 public class ObstacleAvoidance {
 
-	public static Vector<Landmark> Obstacles = new Vector<Landmark>();
-	
-	
-	public static boolean Act() {
+	public static Vector<Coordinate> Alternatives = new Vector<Coordinate>();
+	public static Coordinate BestAlternative;
 
-		final Comparator<Landmark> POSITIVE_ORDER = new Comparator<Landmark>() {
-			@Override
-			public int compare(Landmark e1, Landmark e2) {
-				boolean Cmp = e2.Horizontal_Angle >= (e1.Horizontal_Angle);
-				if (Cmp != true) {
-					return 1;
-				} else {
-					return 0;
-				}
-			}
-		};
+	public static Coordinate CheckForObstacle(Coordinate Target) {
 
-		final Vector<Landmark> Players = LocalizationResults.coplayers;
-		final Vector<Landmark> RivalPlayers = LocalizationResults.rivals;
-		final Vector<BodyTheta> DangerousAngles = new Vector<BodyTheta>();
-		Vector<Float> WayOutAngles = new Vector<Float>();
+		Coordinate MyPosition = new Coordinate(
+				LocalizationFilter.MyFilteredPosition.getX(),
+				LocalizationFilter.MyFilteredPosition.getY());
 
-		final float DangerDist = (float) 0.35;
-		final int Dangerzone = 2;
-		Players.addAll(RivalPlayers);
-		Collections.sort(Players, POSITIVE_ORDER);
+		double distance = TriangleLocalization.FindDistanceAmong2Coordinates(
+				MyPosition, Target);
+		double Angle = TriangleLocalization.FindAngleBetweenCoordinates(
+				MyPosition, Target);
 
-		for (int i = 0; i < Players.size(); i++) {
+		Vector<Landmark> Obstacles = ObstaclePerceptor.Obstacles;
 
-			if (Players.elementAt(i).Distance < Dangerzone) {
-				
-				
-				Obstacles.add(Players.elementAt(i));
-				
+		final float DangerDist = (float) 0.6f;
+		final Vector<DangerousObject> DangerousObjects = new Vector<DangerousObject>();
 
-				float DistanceFromObstacleWhenClose = (float) (Math.sin(Math
-						.toRadians(Players.elementAt(i).Horizontal_Angle)) * Players
-						.elementAt(i).Distance);
+		// find every pair of angles which are dangerous for the agent
+		for (int i = 0; i < Obstacles.size(); i++) {
 
-				if (Math.abs(DistanceFromObstacleWhenClose) < DangerDist) {
+			float theta = (float) Math.toDegrees(Math.asin(DangerDist
+					/ Obstacles.elementAt(i).getDistance()));
 
-					float theta = (float) Math.toDegrees(Math.asin(DangerDist
-							/ Players.elementAt(i).Distance));
-					BodyTheta bt = new BodyTheta(
-							(float) (Players.elementAt(i).Horizontal_Angle - theta),
-							(float) (Players.elementAt(i).Horizontal_Angle + theta));
-					DangerousAngles.addElement(bt);
+			DangerousObject bt = new DangerousObject(
+					(float) (LocalizationFilter.MyFilteredPosition.getTheta()
+							+ Obstacles.elementAt(i).getHorizontal_Angle() - theta),
+					(float) (LocalizationFilter.MyFilteredPosition.getTheta()
+							+ Obstacles.elementAt(i).getHorizontal_Angle() + theta),
+					(float) Obstacles.elementAt(i).getDistance());
 
-				}
+			DangerousObjects.addElement(bt);
+		}
+
+		boolean InMyWay = false;
+		// check if an obstacle block our route
+		for (int i = 0; i < DangerousObjects.size(); i++) {
+
+			// There is an obstacle in agent's way
+			if ((Angle > DangerousObjects.elementAt(i).getThetaStart())
+					&& (Angle < DangerousObjects.elementAt(i).getThetaEnd() && distance > DangerousObjects
+							.elementAt(i).getDistance())) {
+
+				InMyWay = true;
+
 			}
 
 		}
 
-		// No obstacle in my way
-		if (DangerousAngles.size() == 0) {
-			System.out.println("No obstacle in my way");
-			// MotionTrigger.setMotion("Forwards50");
+		if (InMyWay) {
+
+			Vector<WayOut> WayOutAngles = WayOut(DangerousObjects);
+
+			ObstacleAvoidance.Alternatives.removeAllElements();
+			for (int i = 0; i < WayOutAngles.size(); i++) {
+
+				Coordinate temp1 = TriangleLocalization
+						.get_det_with_distance_angle(
+								LocalizationFilter.MyFilteredPosition.getX(),
+								LocalizationFilter.MyFilteredPosition.getY(),
+								WayOutAngles.elementAt(i).getAngle(),
+								WayOutAngles.elementAt(i).getDistance());
+
+				ObstacleAvoidance.Alternatives.add(temp1);
+
+			}
+			double min = 1000;
+			int PosMin = 0;
+			for (int i = 0; i < ObstacleAvoidance.Alternatives.size(); i++) {
+
+				if (TriangleLocalization.FindDistanceAmong2Coordinates(Target,
+						ObstacleAvoidance.Alternatives.elementAt(i)) < min) {
+
+					min = TriangleLocalization
+							.FindDistanceAmong2Coordinates(Target,
+									ObstacleAvoidance.Alternatives.elementAt(i));
+					PosMin = i;
+				}
+
+			}
+			ObstacleAvoidance.BestAlternative = ObstacleAvoidance.Alternatives
+					.elementAt(PosMin);
+			ObstacleAvoidance.Alternatives.removeElementAt(PosMin);
+
+			return ObstacleAvoidance.BestAlternative;
 		} else {
 
-			// find angles which are suitable for exit
-			WayOutAngles = WayOut(DangerousAngles);
-
-			// clear vectors which are not needed any more
-			DangerousAngles.removeAllElements();
-			Players.removeAllElements();
-			RivalPlayers.removeAllElements();
-			
-
-			// find best angle to avoid obstacle
-			float WayOutBest = FindBestWayOut(WayOutAngles);
-			System.out.println(WayOutBest);
-			// MotionTrigger.setMotion("TurnRight40");
+			return null;
 		}
-
-		return true;
 
 	}
 
-	public static int compare(Landmark a, Landmark b) {
+	public static Vector<WayOut> WayOut(Vector<DangerousObject> DangerousObjects) {
 
-		if (a.Horizontal_Angle < b.Horizontal_Angle) {
-			return 1;
-		}
-
-		return 0;
-
-	}
-
-	public static Vector<Float> WayOut(Vector<BodyTheta> dangerousAngles) {
-
-		Vector<Float> WayOutAngles = new Vector<Float>();
+		Vector<WayOut> WayOutAngles = new Vector<WayOut>();
 
 		// there is only one obstacle
-		if (dangerousAngles.size() == 1) {
+		if (DangerousObjects.size() == 1) {
 
-			WayOutAngles.add(dangerousAngles.elementAt(0).ThetaStart);
-			WayOutAngles.add(dangerousAngles.elementAt(0).ThetaEnd);
+			WayOutAngles.add(new WayOut(
+					DangerousObjects.elementAt(0).ThetaStart, DangerousObjects
+							.elementAt(0).getDistance()));
+			WayOutAngles.add(new WayOut(
+					DangerousObjects.elementAt(0).ThetaStart, DangerousObjects
+							.elementAt(0).getDistance()));
 
 			// there are more than one obstacles
 		} else {
-			for (int i = 0; i < dangerousAngles.size(); i++) {
+			for (int i = 0; i < DangerousObjects.size(); i++) {
 
 				boolean flagStart = true;
 				boolean flagEnd = true;
-				for (int j = 0; j < dangerousAngles.size(); j++) {
+				for (int j = 0; j < DangerousObjects.size(); j++) {
 
 					if (i != j) {
 
-						if ((dangerousAngles.elementAt(i).ThetaStart > dangerousAngles
+						if ((DangerousObjects.elementAt(i).ThetaStart > DangerousObjects
 								.elementAt(j).ThetaStart)
-								&& (dangerousAngles.elementAt(i).ThetaStart < dangerousAngles
+								&& (DangerousObjects.elementAt(i).ThetaStart < DangerousObjects
 										.elementAt(j).ThetaEnd)) {
 
 							flagStart = false;
 
 						}
 
-						if ((dangerousAngles.elementAt(i).ThetaEnd > dangerousAngles
+						if ((DangerousObjects.elementAt(i).ThetaEnd > DangerousObjects
 								.elementAt(j).ThetaStart)
-								&& (dangerousAngles.elementAt(i).ThetaEnd < dangerousAngles
+								&& (DangerousObjects.elementAt(i).ThetaEnd < DangerousObjects
 										.elementAt(j).ThetaEnd)) {
 
 							flagEnd = false;
 
 						}
 
-						if (flagEnd) {
-
-							WayOutAngles
-									.add(dangerousAngles.elementAt(0).ThetaEnd);
-
-						}
-
-						if (flagStart) {
-
-							WayOutAngles
-									.add(dangerousAngles.elementAt(0).ThetaStart);
-
-						}
 					}
+
+				}
+
+				if (flagEnd) {
+
+					WayOutAngles.add(new WayOut(
+							DangerousObjects.elementAt(i).ThetaEnd,
+							DangerousObjects.elementAt(i).getDistance()));
+
+				}
+
+				if (flagStart) {
+
+					WayOutAngles.add(new WayOut(
+							DangerousObjects.elementAt(i).ThetaStart,
+							DangerousObjects.elementAt(i).getDistance()));
 
 				}
 			}
 		}
 
 		return WayOutAngles;
-
-	}
-
-	public static float FindBestWayOut(Vector<Float> WayOutAngles) {
-
-		float bestAngle = 1000;
-		for (int k = 0; k < WayOutAngles.size(); k++) {
-			if (Math.abs(WayOutAngles.elementAt(k)) < bestAngle) {
-				bestAngle = WayOutAngles.elementAt(k);
-			}
-		}
-		return bestAngle;
 
 	}
 

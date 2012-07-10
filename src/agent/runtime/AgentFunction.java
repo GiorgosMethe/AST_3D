@@ -1,7 +1,6 @@
 package agent.runtime;
 
 import motion.utils.PerformMovement;
-import perceptor.joints.HingeJointPerceptor;
 import perceptor.localization.Coordinate;
 import action.complex.WalkToCompleteCoordinate;
 import action.sensor.CheckIfFall;
@@ -25,8 +24,7 @@ public class AgentFunction {
 		CheckIfFall.Check();
 		ObstaclePerceptor.Percept();
 		VisionType.setType(6);
-		
-		//WalkToCompleteCoordinate.Act(new Coordinate(-10, 0), 0);
+		WalkToCompleteCoordinate.Act(new Coordinate(0, 0), 0);
 
 		// if (InitAgent.isPlayerInited()) {
 		//

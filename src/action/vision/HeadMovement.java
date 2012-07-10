@@ -58,16 +58,14 @@ public class HeadMovement {
 		int cycles = ServerCyrcles.getCyrclesNow();
 		HeadMovement.HeadAtLeft = false;
 		HeadMovement.HeadAtRight = false;
-		
-		if(HingeJointPerceptor.getHj1()>120){
+
+		if (HingeJointPerceptor.getHj1() > 120) {
 			HeadMovement.moveX = HeadMovement.moveX * (-1);
 			HeadMovement.HeadAtLeft = true;
-		}else if(HingeJointPerceptor.getHj1()<-120){
+		} else if (HingeJointPerceptor.getHj1() < -120) {
 			HeadMovement.moveX = HeadMovement.moveX * (-1);
 			HeadMovement.HeadAtRight = true;
 		}
-		
-		
 
 		String str = "";
 

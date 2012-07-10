@@ -26,12 +26,20 @@ public class WalkToCompleteCoordinate {
 	public static boolean Act(Coordinate target, float Theta) {
 
 		VisionType.setType(6);
-		
-		ObstacleAvoidance.Act();
-		
-		
+
+		Coordinate ObstacleAlternateRoute = ObstacleAvoidance
+				.CheckForObstacle(target);
+
+		if (ObstacleAlternateRoute != null) {
+
+			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(
+					ObstacleAlternateRoute, target);
+			target = ObstacleAlternateRoute;
+
+		}
+
 		double ThetaToTarget = TriangleLocalization.FindAngle(target);
-		
+
 		if (TriangleLocalization.FindDistanceToTarget(target) < 0.3) {
 
 			if (Math.abs(TriangleLocalization.FindAngleDifference(Theta)) < 20) {

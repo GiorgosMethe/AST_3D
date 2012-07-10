@@ -80,8 +80,8 @@ public class AgentRuntime {
 		 * This method drawing information in the monitor
 		 */
 		// if (num == Constraints.CoordinationPlayer) {
-		if(!test){
-		RVTester.run(null);
+		if (!test) {
+			RVTester.run(null);
 		}
 		// }
 
@@ -129,7 +129,7 @@ public class AgentRuntime {
 		 * Main function agent through communication coordinate with other
 		 * agents and plan his behavior
 		 */
-		if(!test){
+		if (!test) {
 			AgentFunction.Act();
 		}
 		/**
