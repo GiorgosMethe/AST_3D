@@ -22,7 +22,7 @@ import connection.utils.ServerCyrcles;
 
 public class HeadMovement {
 
-	public static int moveX = 6;
+	public static int moveX = 8;
 	public static boolean HeadAtBall;
 	public static boolean HeadAtLeft = false;
 	public static boolean HeadAtRight = false;

@@ -339,19 +339,19 @@ public class TriangleLocalization {
 		// distance from mark d
 		double univer_angle = 400;
 		double angle_y = Math.asin(Math.sqrt(Math.pow(ay - y, 2)) / d); // ///prepei
-																		// na dw
-																		// poio
-																		// einai
-																		// to x
-																		// k
-																		// poio
-																		// to y
-																		// sto
-																		// gipedo
+		// na dw
+		// poio
+		// einai
+		// to x
+		// k
+		// poio
+		// to y
+		// sto
+		// gipedo
 		if (f > 0 && y < ay) { // //an to kefali koitaei aristera apo tin simaia
 			univer_angle = 180 - (Math.toDegrees(angle_y) + f);
 		} else if (f < 0 && y > ay) { // // an to kefali koitaei deksia apo tin
-										// simaia
+			// simaia
 			univer_angle = -180 + (Math.abs(f) + Math.toDegrees(angle_y));
 		} else if (f > 0 && y > ay) {
 			univer_angle = -180 + (Math.toDegrees(angle_y) - f);
@@ -377,19 +377,19 @@ public class TriangleLocalization {
 		// distance from mark d
 		double univer_angle = 400;
 		double angle_y = Math.asin(Math.sqrt(Math.pow(ay - y, 2)) / d); // ///prepei
-																		// na dw
-																		// poio
-																		// einai
-																		// to x
-																		// k
-																		// poio
-																		// to y
-																		// sto
-																		// gipedo
+		// na dw
+		// poio
+		// einai
+		// to x
+		// k
+		// poio
+		// to y
+		// sto
+		// gipedo
 		if (f > 0 && y < ay) { // //an to kefali koitaei aristera apo tin simaia
 			univer_angle = Math.toDegrees(angle_y) - f;
 		} else if (f < 0 && y > ay) { // // an to kefali koitaei deksia apo tin
-										// simaia
+			// simaia
 			univer_angle = Math.abs(f) - Math.toDegrees(angle_y);
 		} else if (f > 0 && y > ay) {
 			univer_angle = -(Math.toDegrees(angle_y) + f);
@@ -694,6 +694,62 @@ public class TriangleLocalization {
 
 		return result;
 
+	}
+
+	public static double NormalizeAngle(double angle) {
+
+		if (angle < -180) {
+			angle = angle + 360;
+		} else if (angle > 180) {
+			angle = angle - 360;
+		}
+
+		return angle;
+	}
+
+	public static boolean CheckIfContained(double start, double end,
+			double theta) {
+
+		if (start > 0 && end > 0) {
+
+			if (theta > start && theta < end) {
+
+				return true;
+			}
+
+		} else if (start < 0 && end < 0) {
+
+			if (theta > start && theta < end) {
+
+				return true;
+			}
+
+		} else if (start > 0 && end < 0) {
+
+			if (theta > 0) {
+
+				if (theta > start && theta > end) {
+
+					return true;
+				}
+
+			} else {
+
+				if (theta < start && theta < end) {
+
+					return true;
+				}
+
+			}
+		} else if (start < 0 && end > 0) {
+
+			if (theta > start && theta < end) {
+
+				return true;
+			}
+
+		}
+		return false;
 	}
 
 }

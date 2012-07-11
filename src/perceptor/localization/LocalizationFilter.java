@@ -7,6 +7,7 @@ import java.util.Queue;
 public class LocalizationFilter {
 
 	public static CompleteCoordinate MyFilteredPosition;
+	public static Coordinate MyPosition;
 
 	public static Queue<CompleteCoordinate> qe = new LinkedList<CompleteCoordinate>();
 
@@ -20,10 +21,14 @@ public class LocalizationFilter {
 
 				qe.add(LocalizationSample);
 				MyFilteredPosition = VectorAVG();
+				MyPosition = new Coordinate(MyFilteredPosition.getX(),
+						MyFilteredPosition.getY());
 
 			} else if (qe.size() < 10) {
 
 				MyFilteredPosition = VectorAVG();
+				MyPosition = new Coordinate(MyFilteredPosition.getX(),
+						MyFilteredPosition.getY());
 				if (TriangleLocalization.FindDistanceAmong2Coordinates(
 						new Coordinate(MyFilteredPosition.getX(),
 								MyFilteredPosition.getY()),
@@ -41,6 +46,8 @@ public class LocalizationFilter {
 			} else {
 
 				MyFilteredPosition = VectorAVG();
+				MyPosition = new Coordinate(MyFilteredPosition.getX(),
+						MyFilteredPosition.getY());
 				qe.remove();
 
 			}

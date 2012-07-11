@@ -1,9 +1,18 @@
 package agent.runtime;
 
-import motion.utils.PerformMovement;
+import behavior.goalie.Goalie;
+import communication.utils.MessageType;
+import communication.utils.SayEffector;
+import connection.utils.ServerCyrcles;
+import coordination.main.Coordination;
+
 import perceptor.localization.Coordinate;
+import perceptor.worldstate.GameState;
+import motion.utils.PerformMovement;
 import action.complex.WalkToCompleteCoordinate;
+import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
+import action.simple.TurnToLocate;
 import action.vision.HeadMovement;
 import action.vision.ObstaclePerceptor;
 import action.vision.VisionType;
@@ -22,40 +31,35 @@ public class AgentFunction {
 		 * to get up.
 		 */
 		CheckIfFall.Check();
-		ObstaclePerceptor.Percept();
-		VisionType.setType(6);
-		WalkToCompleteCoordinate.Act(new Coordinate(0, 0), 0);
 
-		// if (InitAgent.isPlayerInited()) {
-		//
-		// if (!CheckIfFall.fallen) {
-		// Goalie.Act();
-		// }
-		// }
+		if (InitAgent.isPlayerInited()) {
 
-		// if (InitAgent.isPlayerInited()) {
-		//
-		// if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
-		//
-		// Say = SayEffector.Say(MessageType.getType());
-		//
-		// Coordination.MakeCoordination();
-		//
-		// if (!CheckIfFall.fallen) {
-		// ActionEffector.Act();
-		// }
-		//
-		// ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
-		//
-		// } else {
-		//
-		// if (!CheckIfFall.fallen) {
-		// TurnToLocate.Act();
-		// }
-		//
-		// }
-		//
-		// }
+			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
+
+				Say = SayEffector.Say(MessageType.getType());
+
+				Coordination.MakeCoordination();
+
+				if (!CheckIfFall.fallen) {
+					if (AgentRuntime.num ==1) {
+
+						Goalie.Act();
+					}
+					ActionEffector.Act();
+				}
+
+				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
+
+			} else {
+
+				if (!CheckIfFall.fallen) {
+					TurnToLocate.Act();
+				}
+
+			}
+
+		}
+
 
 		Act = PerformMovement.run();
 

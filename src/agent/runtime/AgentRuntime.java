@@ -15,6 +15,7 @@ package agent.runtime;
 
 import motion.utils.ReadMotionFiles;
 import perceptor.utils.UpdatePerceptors;
+import agent.constraints.Constraints;
 import agent.roboviz.RVTester;
 import connection.TCPSocket.Connection;
 import connection.utils.ServerCyrcles;
@@ -39,9 +40,8 @@ public class AgentRuntime {
 		if (args.length == 0) {
 			host = "127.0.0.1";
 			port = 3100;
-			num = 1;
+			num = 9;
 			Teamname = "AST_3D";
-			test = false;
 		} else {
 			host = args[0];
 			port = Integer.parseInt(args[1]);
@@ -79,11 +79,11 @@ public class AgentRuntime {
 		/**
 		 * This method drawing information in the monitor
 		 */
-		// if (num == Constraints.CoordinationPlayer) {
-		if (!test) {
+		 if (num == Constraints.CoordinationPlayer) {
+
 			RVTester.run(null);
-		}
-		// }
+	
+		 }
 
 		/**
 		 * This method is the main-loop of the AST 3D agent
@@ -129,9 +129,9 @@ public class AgentRuntime {
 		 * Main function agent through communication coordinate with other
 		 * agents and plan his behavior
 		 */
-		if (!test) {
-			AgentFunction.Act();
-		}
+
+		AgentFunction.Act();
+	
 		/**
 		 * At the end of each cycle call the action to send the actual
 		 * motor-string (all effector-values) to the server. This string

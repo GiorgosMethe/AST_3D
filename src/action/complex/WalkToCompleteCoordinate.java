@@ -16,25 +16,26 @@ import motion.utils.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
-import action.vision.ObstacleAvoidance;
+import action.vision.ObstaclePerceptor;
 import action.vision.VisionType;
 
 public class WalkToCompleteCoordinate {
 
 	public static int Correct = 0;
+	public static Coordinate ObstacleAlternateRoute = null;
+
 
 	public static boolean Act(Coordinate target, float Theta) {
 
 		VisionType.setType(6);
 
-		Coordinate ObstacleAlternateRoute = ObstacleAvoidance
-				.CheckForObstacle(target);
+		WalkToCompleteCoordinate.ObstacleAlternateRoute = ObstaclePerceptor.Percept(target);
 
-		if (ObstacleAlternateRoute != null) {
+		if (WalkToCompleteCoordinate.ObstacleAlternateRoute != null) {
 
 			Theta = (float) TriangleLocalization.FindAngleBetweenCoordinates(
-					ObstacleAlternateRoute, target);
-			target = ObstacleAlternateRoute;
+					WalkToCompleteCoordinate.ObstacleAlternateRoute, target);
+			target = WalkToCompleteCoordinate.ObstacleAlternateRoute;
 
 		}
 

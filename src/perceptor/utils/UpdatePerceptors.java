@@ -514,16 +514,6 @@ public class UpdatePerceptors {
 						double x = 0;
 						double y = 0;
 
-						if (landmarks.size() >= 2) {
-
-							LocalizationResults.setKnowMyPosition(true);
-
-						} else {
-
-							LocalizationResults.setKnowMyPosition(false);
-
-						}
-
 						for (int ii = 0; ii < landmarks.size(); ii++) {
 
 							for (int jj = ii + 1; jj < landmarks.size(); jj++) {
@@ -638,12 +628,21 @@ public class UpdatePerceptors {
 
 						}
 
-						CompleteCoordinate a = new CompleteCoordinate(
-								LocalizationResults.getCurrent_location()
-										.getX(), LocalizationResults
-										.getCurrent_location().getY(),
-								LocalizationResults.getBody_angle());
-						LocalizationFilter.filter(a);
+						if (landmarks.size() >= 2) {
+
+							LocalizationResults.setKnowMyPosition(true);
+							CompleteCoordinate a = new CompleteCoordinate(
+									LocalizationResults.getCurrent_location()
+											.getX(), LocalizationResults
+											.getCurrent_location().getY(),
+									LocalizationResults.getBody_angle());
+							LocalizationFilter.filter(a);
+
+						} else {
+
+							LocalizationResults.setKnowMyPosition(false);
+
+						}
 
 						i = j;
 						j = 0;
