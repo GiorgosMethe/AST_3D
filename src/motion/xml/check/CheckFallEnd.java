@@ -6,14 +6,18 @@ public class CheckFallEnd {
 
 	public static boolean Check() {
 
-		if (MotionPlaying.getMotionName().equalsIgnoreCase("fall_right")
-				|| MotionPlaying.getMotionName().equalsIgnoreCase("fall_left")) {
+		if (MotionPlaying.getMotionName() != null){
 
-			if (MotionPlaying.getMotionPhase().equalsIgnoreCase("straighten")) {
+			if (MotionPlaying.getMotionName().equalsIgnoreCase("fall_right")
+					|| MotionPlaying.getMotionName().equalsIgnoreCase("fall_left")) {
 
-				return true;
+				if (MotionPlaying.getMotionPhase().equalsIgnoreCase("straighten")) {
 
+					return true;
+
+				}
 			}
+
 		}
 		return false;
 	}

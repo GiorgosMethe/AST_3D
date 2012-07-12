@@ -24,12 +24,12 @@ public class WalkToCompleteCoordinate {
 	public static int Correct = 0;
 	public static Coordinate ObstacleAlternateRoute = null;
 
-
 	public static boolean Act(Coordinate target, float Theta) {
 
 		VisionType.setType(6);
 
-		WalkToCompleteCoordinate.ObstacleAlternateRoute = ObstaclePerceptor.Percept(target);
+		WalkToCompleteCoordinate.ObstacleAlternateRoute = ObstaclePerceptor
+				.Percept(target);
 
 		if (WalkToCompleteCoordinate.ObstacleAlternateRoute != null) {
 

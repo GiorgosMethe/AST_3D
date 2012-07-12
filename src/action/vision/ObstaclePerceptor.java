@@ -34,7 +34,8 @@ public class ObstaclePerceptor {
 			ObstaclePerceptor.Obstacles.addAll(ObstaclePerceptor.CoPlayers);
 			ObstaclePerceptor.Obstacles.addAll(ObstaclePerceptor.OpPlayers);
 			ObstaclePerceptor.Obstacles.addAll(ObstaclePerceptor.Posts);
-			ObstaclePerceptor.alternative = ObstacleAvoidance.CheckForObstacle(Target,ObstaclePerceptor.Obstacles);
+			ObstaclePerceptor.alternative = ObstacleAvoidance.CheckForObstacle(
+					Target, ObstaclePerceptor.Obstacles);
 			ObstaclePerceptor.CoPlayers.removeAllElements();
 			ObstaclePerceptor.OpPlayers.removeAllElements();
 			ObstaclePerceptor.Posts.removeAllElements();
@@ -270,8 +271,7 @@ public class ObstaclePerceptor {
 
 			}
 		}
-		
-		
+
 		return ObstaclePerceptor.alternative;
 
 	}

@@ -3,6 +3,7 @@
  */
 package communication.utils;
 
+import perceptor.localization.LocalizationFilter;
 import perceptor.localization.LocalizationResults;
 import perceptor.vision.Ball;
 import action.sensor.CheckIfFall;
@@ -54,7 +55,7 @@ public class MessageCreator {
 		if (!CheckIfFall.fallen) {
 
 			// agent know his position and the ball position
-			if (LocalizationResults.isKnowMyPosition() && Ball.isSeeTheBall()) {
+			if (Ball.isSeeTheBall()) {
 
 				type = "c" + ",";
 
@@ -63,10 +64,10 @@ public class MessageCreator {
 						+ ",";
 
 				// player position
-				message += Integer.toString((int) Math.rint(LocalizationResults
-						.getCurrent_location().X)) + ",";
-				message += Integer.toString((int) Math.rint(LocalizationResults
-						.getCurrent_location().Y)) + ",";
+				message += Integer.toString((int) Math
+						.rint(LocalizationFilter.MyPosition.getX())) + ",";
+				message += Integer.toString((int) Math
+						.rint(LocalizationFilter.MyPosition.getY())) + ",";
 
 				// ball position elements
 				message += Integer.toString((int) Math.rint(LocalizationResults
@@ -75,8 +76,7 @@ public class MessageCreator {
 						.toString((int) Math.rint(Ball.getDistance()));
 
 				// agent only see the ball
-			} else if (LocalizationResults.isKnowMyPosition()
-					&& !Ball.isSeeTheBall()) {
+			} else if (!Ball.isSeeTheBall()) {
 
 				type = "l" + ",";
 
@@ -85,25 +85,24 @@ public class MessageCreator {
 						+ ",";
 
 				// player position
-				message += Integer.toString((int) Math.rint(LocalizationResults
-						.getCurrent_location().X)) + ",";
-				message += Integer.toString((int) Math.rint(LocalizationResults
-						.getCurrent_location().Y));
+				message += Integer.toString((int) Math
+						.rint(LocalizationFilter.MyPosition.getX())) + ",";
+				message += Integer.toString((int) Math
+						.rint(LocalizationFilter.MyPosition.getY()));
 
-			} else if (!LocalizationResults.isKnowMyPosition()
-					&& Ball.isSeeTheBall()) {
-
-				type = "b" + ",";
-
-				// player number
-				message += type + Integer.toString(AgentType.getPlayerNum())
-						+ ",";
-
-				// ball position elements
-				message += Integer.toString((int) Math.rint(Ball.getAngleX()))
-						+ ",";
-				message += Integer
-						.toString((int) Math.rint(Ball.getDistance()));
+//			} else if (Ball.isSeeTheBall()) {
+//
+//				type = "b" + ",";
+//
+//				// player number
+//				message += type + Integer.toString(AgentType.getPlayerNum())
+//						+ ",";
+//
+//				// ball position elements
+//				message += Integer.toString((int) Math.rint(Ball.getAngleX()))
+//						+ ",";
+//				message += Integer
+//						.toString((int) Math.rint(Ball.getDistance()));
 
 				// agent has complete unawareness of his environment
 			} else {

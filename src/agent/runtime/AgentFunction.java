@@ -1,21 +1,19 @@
 package agent.runtime;
 
-import behavior.goalie.Goalie;
-import communication.utils.MessageType;
-import communication.utils.SayEffector;
-import connection.utils.ServerCyrcles;
-import coordination.main.Coordination;
-
-import perceptor.localization.Coordinate;
-import perceptor.worldstate.GameState;
 import motion.utils.PerformMovement;
-import action.complex.WalkToCompleteCoordinate;
+import perceptor.worldstate.GameState;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
 import action.simple.TurnToLocate;
 import action.vision.HeadMovement;
-import action.vision.ObstaclePerceptor;
 import action.vision.VisionType;
+import behavior.goalie.Goalie;
+
+import communication.utils.MessageType;
+import communication.utils.SayEffector;
+
+import connection.utils.ServerCyrcles;
+import coordination.main.Coordination;
 
 public class AgentFunction {
 
@@ -41,7 +39,7 @@ public class AgentFunction {
 				Coordination.MakeCoordination();
 
 				if (!CheckIfFall.fallen) {
-					if (AgentRuntime.num ==1) {
+					if (AgentRuntime.num == 1) {
 
 						Goalie.Act();
 					}
@@ -59,7 +57,6 @@ public class AgentFunction {
 			}
 
 		}
-
 
 		Act = PerformMovement.run();
 

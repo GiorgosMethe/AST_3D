@@ -129,16 +129,16 @@ public class SupportCoordination {
 									}
 								}
 
-								double cost = SupportPositionMapCost.calculate(
-										RoleMap1, CoordinationBeliefs.Ball);
-
-								if (cost < min) {
-
-									min = cost;
-									BestMapMinCost.removeAllElements();
-									BestMapMinCost = RoleMap1;
-
-								}
+//								double cost = SupportPositionMapCost.calculate(
+//										RoleMap1, CoordinationBeliefs.Ball);
+//
+//								if (cost < min) {
+//
+//									min = cost;
+//									BestMapMinCost.removeAllElements();
+//									BestMapMinCost = RoleMap1;
+//
+//								}
 
 							} else if (BestRoleMap[i - 1].elementAt(rr)
 									.elementAt(h).size() > 1) {

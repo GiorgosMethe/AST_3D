@@ -28,11 +28,6 @@ import java.net.UnknownHostException;
 
 import javax.swing.Timer;
 
-import perceptor.localization.LocalizationFilter;
-import perceptor.localization.TriangleLocalization;
-import action.vision.HeadMovement;
-import action.vision.ObstacleAvoidance;
-import action.vision.ObstaclePerceptor;
 import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
 import coordination.communication.message.CoordinationVectorUpdate;
@@ -73,51 +68,51 @@ public class RVTester {
 
 	/** Method for all animated drawings */
 	private void renderAnimatedShapes() throws IOException {
-//
-//		if (((!HeadMovement.HeadAtRight) || (!HeadMovement.HeadAtLeft))) {
-//			if (ObstaclePerceptor.Obstacles != null) {
-//
-//				for (int i = 0; i < ObstaclePerceptor.Obstacles.size(); i++) {
-//
-//					drawCircle(
-//							new float[] {
-//									(float) TriangleLocalization
-//											.get_det_with_distance_angle(
-//													LocalizationFilter.MyFilteredPosition
-//															.getX(),
-//													LocalizationFilter.MyFilteredPosition
-//															.getY(),
-//													LocalizationFilter.MyFilteredPosition
-//															.getTheta()
-//															+ ObstaclePerceptor.Obstacles
-//																	.elementAt(
-//																			i)
-//																	.getHorizontal_Angle(),
-//													ObstaclePerceptor.Obstacles
-//															.elementAt(i)
-//															.getDistance())
-//											.getX(),
-//									(float) TriangleLocalization
-//											.get_det_with_distance_angle(
-//													LocalizationFilter.MyFilteredPosition
-//															.getX(),
-//													LocalizationFilter.MyFilteredPosition
-//															.getY(),
-//													LocalizationFilter.MyFilteredPosition
-//															.getTheta()
-//															+ ObstaclePerceptor.Obstacles
-//																	.elementAt(
-//																			i)
-//																	.getHorizontal_Angle(),
-//													ObstaclePerceptor.Obstacles
-//															.elementAt(i)
-//															.getDistance())
-//											.getY() }, 0.2f, 3, Color.BLACK,
-//							"animated.circles");
-//
-//				}
-//			}
-//		}
+		//
+		// if (((!HeadMovement.HeadAtRight) || (!HeadMovement.HeadAtLeft))) {
+		// if (ObstaclePerceptor.Obstacles != null) {
+		//
+		// for (int i = 0; i < ObstaclePerceptor.Obstacles.size(); i++) {
+		//
+		// drawCircle(
+		// new float[] {
+		// (float) TriangleLocalization
+		// .get_det_with_distance_angle(
+		// LocalizationFilter.MyFilteredPosition
+		// .getX(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getY(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getTheta()
+		// + ObstaclePerceptor.Obstacles
+		// .elementAt(
+		// i)
+		// .getHorizontal_Angle(),
+		// ObstaclePerceptor.Obstacles
+		// .elementAt(i)
+		// .getDistance())
+		// .getX(),
+		// (float) TriangleLocalization
+		// .get_det_with_distance_angle(
+		// LocalizationFilter.MyFilteredPosition
+		// .getX(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getY(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getTheta()
+		// + ObstaclePerceptor.Obstacles
+		// .elementAt(
+		// i)
+		// .getHorizontal_Angle(),
+		// ObstaclePerceptor.Obstacles
+		// .elementAt(i)
+		// .getDistance())
+		// .getY() }, 0.2f, 3, Color.BLACK,
+		// "animated.circles");
+		//
+		// }
+		// }
+		// }
 
 		// this draws agent position and position through localization filter
 		// if (!Double.isNaN(LocalizationResults.getCurrent_location().getX())
@@ -160,64 +155,64 @@ public class RVTester {
 		//
 		// }
 
-//		if (LocalizationFilter.MyFilteredPosition != null) {
-//
-//			drawCircle(new float[] {
-//					(float) LocalizationFilter.MyFilteredPosition.getX(),
-//					(float) LocalizationFilter.MyFilteredPosition.getY() },
-//					0.2f, 2, Color.RED, "animated.circles");
-//
-//			drawLine(
-//					new float[] {
-//							(float) LocalizationFilter.MyFilteredPosition
-//									.getX(),
-//							(float) LocalizationFilter.MyFilteredPosition
-//									.getY(), 0 },
-//					new float[] {
-//							(float) TriangleLocalization
-//									.get_det_with_distance_angle(
-//											LocalizationFilter.MyFilteredPosition
-//													.getX(),
-//											LocalizationFilter.MyFilteredPosition
-//													.getY(),
-//											LocalizationFilter.MyFilteredPosition
-//													.getTheta(), 1).getX(),
-//							(float) TriangleLocalization
-//									.get_det_with_distance_angle(
-//											LocalizationFilter.MyFilteredPosition
-//													.getX(),
-//											LocalizationFilter.MyFilteredPosition
-//													.getY(),
-//											LocalizationFilter.MyFilteredPosition
-//													.getTheta(), 1).getY(), 0 },
-//					1.0f, Color.RED, "animated.lines.field");
-//
-//		}
+		// if (LocalizationFilter.MyFilteredPosition != null) {
+		//
+		// drawCircle(new float[] {
+		// (float) LocalizationFilter.MyFilteredPosition.getX(),
+		// (float) LocalizationFilter.MyFilteredPosition.getY() },
+		// 0.2f, 2, Color.RED, "animated.circles");
+		//
+		// drawLine(
+		// new float[] {
+		// (float) LocalizationFilter.MyFilteredPosition
+		// .getX(),
+		// (float) LocalizationFilter.MyFilteredPosition
+		// .getY(), 0 },
+		// new float[] {
+		// (float) TriangleLocalization
+		// .get_det_with_distance_angle(
+		// LocalizationFilter.MyFilteredPosition
+		// .getX(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getY(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getTheta(), 1).getX(),
+		// (float) TriangleLocalization
+		// .get_det_with_distance_angle(
+		// LocalizationFilter.MyFilteredPosition
+		// .getX(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getY(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getTheta(), 1).getY(), 0 },
+		// 1.0f, Color.RED, "animated.lines.field");
+		//
+		// }
 
-//		if (ObstacleAvoidance.BestAlternative != null) {
-//
-//			drawCircle(
-//					new float[] {
-//							(float) ObstacleAvoidance.BestAlternative.getX(),
-//							(float) ObstacleAvoidance.BestAlternative.getY() },
-//					0.1f, 3, Color.RED, "animated.circles");
-//
-//		}
-//
-//		if (ObstacleAvoidance.Alternatives != null) {
-//
-//			for (int i = 0; i < ObstacleAvoidance.Alternatives.size(); i++) {
-//
-//				drawCircle(new float[] {
-//						(float) ObstacleAvoidance.Alternatives.elementAt(i)
-//								.getX(),
-//						(float) ObstacleAvoidance.Alternatives.elementAt(i)
-//								.getY() }, 0.1f, 3, Color.cyan,
-//						"animated.circles");
-//
-//			}
-//
-//		}
+		// if (ObstacleAvoidance.BestAlternative != null) {
+		//
+		// drawCircle(
+		// new float[] {
+		// (float) ObstacleAvoidance.BestAlternative.getX(),
+		// (float) ObstacleAvoidance.BestAlternative.getY() },
+		// 0.1f, 3, Color.RED, "animated.circles");
+		//
+		// }
+		//
+		// if (ObstacleAvoidance.Alternatives != null) {
+		//
+		// for (int i = 0; i < ObstacleAvoidance.Alternatives.size(); i++) {
+		//
+		// drawCircle(new float[] {
+		// (float) ObstacleAvoidance.Alternatives.elementAt(i)
+		// .getX(),
+		// (float) ObstacleAvoidance.Alternatives.elementAt(i)
+		// .getY() }, 0.1f, 3, Color.cyan,
+		// "animated.circles");
+		//
+		// }
+		//
+		// }
 
 		if (ActiveCoordination.OptimizedActiveMap != null) {
 

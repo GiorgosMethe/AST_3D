@@ -43,14 +43,14 @@ public class CoordinationSplitter {
 		 * the inactive subset
 		 */
 
-		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
-				.elementAt(0));
-		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
-				.elementAt(1));
-		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
-				.elementAt(2));
+//		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
+//				.elementAt(0));
+//		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
+//				.elementAt(1));
+//		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
+//				.elementAt(2));
 
-		for (int i = 3; i < CoordinationVectorUpdate.CoordinationVector.size(); i++) {
+		for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector.size(); i++) {
 
 			if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
 					.getType() != 3) {

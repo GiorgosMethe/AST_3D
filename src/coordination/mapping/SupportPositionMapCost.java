@@ -16,7 +16,7 @@ public class SupportPositionMapCost {
 
 			Coordinate Agent = map.elementAt(agentNum).getAgent().getPlayer();
 
-			cost += TriangleLocalization.FindDistanceAmong2Coordinates(Agent,
+			cost += 10 * TriangleLocalization.FindDistanceAmong2Coordinates(Agent,
 					map.elementAt(agentNum).getPosition());
 
 		}
