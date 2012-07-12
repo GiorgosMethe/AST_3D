@@ -50,6 +50,8 @@ public class Coordination {
 
 			a = System.currentTimeMillis();
 
+			CoordinationType.AssignCoordinationType();
+
 			CoordinationBeliefs.UpdateBeliefs();
 
 			CoordinationRun.setStep(2);
@@ -109,7 +111,8 @@ public class Coordination {
 
 			b = System.currentTimeMillis();
 
-			System.out.println("Active coordination time: " + (b - a) + "ms");
+			System.out.println("Coordination time: " + (b - a) + "ms"
+					+ " (in 6 Simulation Cycles)");
 
 			roboviz = true;
 

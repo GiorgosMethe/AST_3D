@@ -28,7 +28,7 @@ public class GoKickBallToGoal {
 
 	public static boolean Act() {
 
-		System.out.println("eketeleia   " + GKBGDstates.getState());
+		// System.out.println("eketeleia   " + GKBGDstates.getState());
 
 		if (Vision.isiSee()) {
 
@@ -128,7 +128,7 @@ public class GoKickBallToGoal {
 			if (HeadMovement.HeadAtBall) {
 
 				GKBGDstates.setState("Start3");
-				System.out.println(GKBGDstates.getAngle());
+				// System.out.println(GKBGDstates.getAngle());
 
 			}
 

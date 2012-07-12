@@ -43,34 +43,79 @@ public class CoordinationSplitter {
 		 * the inactive subset
 		 */
 
-//		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
-//				.elementAt(0));
-//		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
-//				.elementAt(1));
-//		ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
-//				.elementAt(2));
+		if (CoordinationType.Type.equalsIgnoreCase("Active")) {
 
-		for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector.size(); i++) {
+			ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
+					.elementAt(0));
+			ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
+					.elementAt(1));
+			ActiveSubset.addElement(CoordinationVectorUpdate.CoordinationVector
+					.elementAt(2));
 
-			if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
-					.getType() != 3) {
+			for (int i = 3; i < CoordinationVectorUpdate.CoordinationVector
+					.size(); i++) {
 
-				SupportSubset
-						.addElement(CoordinationVectorUpdate.CoordinationVector
-								.elementAt(i));
+				if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+						.getType() != 3) {
 
-			} else {
+					SupportSubset
+							.addElement(CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i));
 
-				InactiveSubset
-						.addElement(CoordinationVectorUpdate.CoordinationVector
-								.elementAt(i));
+				} else {
 
+					InactiveSubset
+							.addElement(CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i));
+
+				}
 			}
-		}
 
-		System.out.println("Active Subset player #:" + ActiveSubset.size());
-		System.out.println("SupportSubset player #:" + SupportSubset.size());
-		System.out.println("InactiveSubsetplayer #:" + InactiveSubset.size());
+		} else if (CoordinationType.Type.equalsIgnoreCase("Support")) {
+
+			for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector
+					.size(); i++) {
+
+				if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+						.getType() != 3) {
+
+					SupportSubset
+							.addElement(CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i));
+
+				} else {
+
+					InactiveSubset
+							.addElement(CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i));
+
+				}
+			}
+
+		} else if (CoordinationType.Type.equalsIgnoreCase("PassiveWait")) {
+
+			for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector
+					.size(); i++) {
+
+				if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+						.getType() != 3) {
+
+					SupportSubset
+							.addElement(CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i));
+
+				} else {
+
+					InactiveSubset
+							.addElement(CoordinationVectorUpdate.CoordinationVector
+									.elementAt(i));
+
+				}
+			}
+
+		} else {
+			System.err.println("ERROR UNKNOWN COORDINATION TYPE");
+		}
 
 	}
 

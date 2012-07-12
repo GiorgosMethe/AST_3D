@@ -43,10 +43,10 @@ public class RoleAssignmentFunction {
 		int role = 2;
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
-			System.out.println("act paixths: "
-					+ CoordinationSplitter.ActiveSubset.elementAt(i)
-							.getNumber());
-			System.out.println("rolos: " + roleArray[role]);
+			// System.out.println("act paixths: "
+			// + CoordinationSplitter.ActiveSubset.elementAt(i)
+			// .getNumber());
+			// System.out.println("rolos: " + roleArray[role]);
 
 			ActiveRoles.add(new Role(CoordinationSplitter.ActiveSubset
 					.elementAt(i), roleArray[role]));
@@ -56,10 +56,10 @@ public class RoleAssignmentFunction {
 
 		for (int i = 0; i < CoordinationSplitter.SupportSubset.size(); i++) {
 
-			System.out.println("su paixths: "
-					+ CoordinationSplitter.SupportSubset.elementAt(i)
-							.getNumber());
-			System.out.println("rolos: " + roleArray[role]);
+			// System.out.println("su paixths: "
+			// + CoordinationSplitter.SupportSubset.elementAt(i)
+			// .getNumber());
+			// System.out.println("rolos: " + roleArray[role]);
 
 			SupportRoles.add(new Role(CoordinationSplitter.SupportSubset
 					.elementAt(i), roleArray[role]));

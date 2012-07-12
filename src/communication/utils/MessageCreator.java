@@ -90,19 +90,20 @@ public class MessageCreator {
 				message += Integer.toString((int) Math
 						.rint(LocalizationFilter.MyPosition.getY()));
 
-//			} else if (Ball.isSeeTheBall()) {
-//
-//				type = "b" + ",";
-//
-//				// player number
-//				message += type + Integer.toString(AgentType.getPlayerNum())
-//						+ ",";
-//
-//				// ball position elements
-//				message += Integer.toString((int) Math.rint(Ball.getAngleX()))
-//						+ ",";
-//				message += Integer
-//						.toString((int) Math.rint(Ball.getDistance()));
+				// } else if (Ball.isSeeTheBall()) {
+				//
+				// type = "b" + ",";
+				//
+				// // player number
+				// message += type + Integer.toString(AgentType.getPlayerNum())
+				// + ",";
+				//
+				// // ball position elements
+				// message += Integer.toString((int)
+				// Math.rint(Ball.getAngleX()))
+				// + ",";
+				// message += Integer
+				// .toString((int) Math.rint(Ball.getDistance()));
 
 				// agent has complete unawareness of his environment
 			} else {

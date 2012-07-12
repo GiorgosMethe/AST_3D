@@ -175,10 +175,9 @@ public class ActivePositions {
 		for (int i = 0; i < ActivePositionsTemp.size(); i++) {
 
 			if (i < 9) {
+
 				ActivePositions.add(ActivePositionsTemp.elementAt(i));
-				// System.out.println("x " + ActivePositions.elementAt(i).X +
-				// " y"
-				// + ActivePositions.elementAt(i).Y);
+
 			} else {
 
 				ActivePositionsTemp.removeAllElements();

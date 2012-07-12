@@ -22,25 +22,25 @@ public class SupportCoordination {
 
 	public static void Coordinate() {
 
-		System.out.println("@@@@@@@@@ paixtes "
-				+ CoordinationSplitter.SupportSubset.size());
-		System.out.println("@@@@@@@@@ theseis "
-				+ SupportPositions.SupportPositionsVector.size());
+		// System.out.println("@@@@@@@@@ paixtes "
+		// + CoordinationSplitter.SupportSubset.size());
+		// System.out.println("@@@@@@@@@ theseis "
+		// + SupportPositions.SupportPositionsVector.size());
 
 		OptimizedSupportMap = PositionCombination(
 				SupportPositions.SupportPositionsVector,
 				CoordinationSplitter.SupportSubset, CoordinationBeliefs.Ball);
 
-		System.out.println("optimized Support positions");
-		System.out.println("-------------------");
+		// System.out.println("optimized Support positions");
+		// System.out.println("-------------------");
 		for (int i = 0; i < OptimizedSupportMap.size(); i++) {
 
-			System.out.println("bazw paikth "
-					+ OptimizedSupportMap.elementAt(i).getAgent().getNumber());
-			System.out.println("bazw x "
-					+ OptimizedSupportMap.elementAt(i).getPosition().getX());
-			System.out.println("bazw y "
-					+ OptimizedSupportMap.elementAt(i).getPosition().getY());
+			// System.out.println("bazw paikth "
+			// + OptimizedSupportMap.elementAt(i).getAgent().getNumber());
+			// System.out.println("bazw x "
+			// + OptimizedSupportMap.elementAt(i).getPosition().getX());
+			// System.out.println("bazw y "
+			// + OptimizedSupportMap.elementAt(i).getPosition().getY());
 
 			ActionObject a = new ActionObject(OptimizedSupportMap.elementAt(i)
 					.getAgent().getNumber(), "WalkToCoordinate",
@@ -128,17 +128,6 @@ public class SupportCoordination {
 
 									}
 								}
-
-//								double cost = SupportPositionMapCost.calculate(
-//										RoleMap1, CoordinationBeliefs.Ball);
-//
-//								if (cost < min) {
-//
-//									min = cost;
-//									BestMapMinCost.removeAllElements();
-//									BestMapMinCost = RoleMap1;
-//
-//								}
 
 							} else if (BestRoleMap[i - 1].elementAt(rr)
 									.elementAt(h).size() > 1) {
@@ -244,16 +233,16 @@ public class SupportCoordination {
 			}
 		}
 
-		for (int h = 0; h < OptimizedSupportVector.size(); h++) {
-
-			System.out.print("A "
-					+ OptimizedSupportVector.elementAt(h).getAgent());
-			System.out
-					.print(" --> P "
-							+ OptimizedSupportVector.elementAt(h).getPosition()
-							+ " , ");
-
-		}
+		// for (int h = 0; h < OptimizedSupportVector.size(); h++) {
+		//
+		// System.out.print("A "
+		// + OptimizedSupportVector.elementAt(h).getAgent());
+		// System.out
+		// .print(" --> P "
+		// + OptimizedSupportVector.elementAt(h).getPosition()
+		// + " , ");
+		//
+		// }
 
 		return OptimizedSupportVector;
 	}
