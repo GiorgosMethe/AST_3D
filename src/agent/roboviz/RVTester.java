@@ -189,6 +189,28 @@ public class RVTester {
 		//
 		// }
 
+		// if (LocalizationResults.getBall_location()!=null){
+		//
+		// drawCircle(new float[] {
+		// (float) LocalizationResults.getBall_location().getX(),
+		// (float) LocalizationResults.getBall_location().getY() }, 0.1f, 3,
+		// Color.yellow,
+		// "animated.circles");
+		//
+		// }
+		//
+		//
+		//
+		// if(BallLocalizationFilter.MyFilteredBallPosition!=null){
+		// drawCircle(new float[] {
+		// (float) BallLocalizationFilter.MyFilteredBallPosition.getX(),
+		// (float) BallLocalizationFilter.MyFilteredBallPosition.getY() }, 0.1f,
+		// 3, Color.red,
+		// "animated.circles");
+		//
+		//
+		// }
+
 		// if (ObstacleAvoidance.BestAlternative != null) {
 		//
 		// drawCircle(

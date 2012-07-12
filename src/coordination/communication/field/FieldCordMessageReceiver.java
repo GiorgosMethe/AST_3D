@@ -12,7 +12,7 @@
 package coordination.communication.field;
 
 import agent.constraints.Constraints;
-import agent.values.AgentType;
+import agent.type.AgentType;
 
 import communication.utils.MessageType;
 

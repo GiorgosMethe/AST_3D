@@ -18,6 +18,7 @@ import javax.vecmath.Vector3d;
 
 import perceptor.joints.HingeJointPerceptor;
 import perceptor.localization.AgentPosition;
+import perceptor.localization.BallLocalizationFilter;
 import perceptor.localization.CompleteCoordinate;
 import perceptor.localization.Coordinate;
 import perceptor.localization.Landmark;
@@ -34,7 +35,7 @@ import perceptor.worldstate.ServerTime;
 import perceptor.worldstate.TeamState;
 import agent.constraints.Constraints;
 import agent.runtime.AgentRuntime;
-import agent.values.AgentType;
+import agent.type.AgentType;
 import connection.TCPSocket.Connection;
 import coordination.communication.admin.AdminCordMessageReceiver;
 import coordination.communication.field.FieldCordMessageReceiver;
@@ -628,6 +629,8 @@ public class UpdatePerceptors {
 
 						}
 
+						BallLocalizationFilter.filter();
+
 						if (landmarks.size() >= 2) {
 
 							LocalizationResults.setKnowMyPosition(true);
@@ -640,6 +643,9 @@ public class UpdatePerceptors {
 
 						} else {
 
+							if (LocalizationFilter.qe.size() > 0) {
+								LocalizationFilter.qe.remove();
+							}
 							LocalizationResults.setKnowMyPosition(false);
 
 						}

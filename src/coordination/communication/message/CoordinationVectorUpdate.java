@@ -31,6 +31,7 @@ public class CoordinationVectorUpdate {
 
 		int type = 0;
 		int number = 0;
+		int ballX = 0, ballY = 0;
 		int playerX = 0, playerY = 0;
 		int ballDistance = 0, ballTheta = 0;
 
@@ -51,8 +52,8 @@ public class CoordinationVectorUpdate {
 					playerX = Integer.parseInt(cmarray[2]);
 					playerY = Integer.parseInt(cmarray[3]);
 
-					ballTheta = Integer.parseInt(cmarray[4]);
-					ballDistance = Integer.parseInt(cmarray[5]);
+					ballX = Integer.parseInt(cmarray[4]);
+					ballY = Integer.parseInt(cmarray[5]);
 
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
@@ -70,10 +71,6 @@ public class CoordinationVectorUpdate {
 					playerX = Integer.parseInt(cmarray[2]);
 					playerY = Integer.parseInt(cmarray[3]);
 
-					// ballTheta = Integer.parseInt(String.valueOf(Double.NaN));
-					// ballDistance =
-					// Integer.parseInt(String.valueOf(Double.NaN));
-
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
@@ -90,9 +87,6 @@ public class CoordinationVectorUpdate {
 					ballTheta = Integer.parseInt(cmarray[2]);
 					ballDistance = Integer.parseInt(cmarray[3]);
 
-					// playerX = Integer.parseInt(String.valueOf(Double.NaN));
-					// playerY = Integer.parseInt(String.valueOf(Double.NaN));
-
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
@@ -107,13 +101,6 @@ public class CoordinationVectorUpdate {
 
 					number = Integer.parseInt(cmarray[1]);
 
-					// playerX = Integer.parseInt(String.valueOf(Double.NaN));
-					// playerY = Integer.parseInt(String.valueOf(Double.NaN));
-
-					// ballDistance =
-					// Integer.parseInt(String.valueOf(Double.NaN));
-					// ballTheta = Integer.parseInt(String.valueOf(Double.NaN));
-
 				} catch (Exception e) {
 					System.err.println("error in coordination message update");
 				}
@@ -125,8 +112,8 @@ public class CoordinationVectorUpdate {
 			}
 
 			CoordinationMessage temp = new CoordinationMessage(type, number,
-					new Coordinate(playerX, playerY), ballDistance, ballTheta,
-					0);
+					new Coordinate(playerX, playerY), new Coordinate(ballX,
+							ballY), ballDistance, ballTheta, 0);
 
 			CoordinationVector.add(temp);
 

@@ -24,8 +24,10 @@ public class SupportPositionMapCost {
 		for (int q = 0; q < map.size(); q++) {
 			for (int r = q + 1; r < map.size(); r++) {
 
-				if (map.elementAt(r).getAgent().getType() == 0
-						&& map.elementAt(q).getAgent().getType() == 1) {
+				if ((map.elementAt(r).getAgent().getType() == 0 || map
+						.elementAt(r).getAgent().getType() == 1)
+						&& (map.elementAt(q).getAgent().getType() == 0 || map
+								.elementAt(q).getAgent().getType() == 1)) {
 
 					Coordinate Agent1 = map.elementAt(q).getAgent().getPlayer();
 

@@ -13,7 +13,7 @@
 package communication.utils;
 
 import agent.constraints.Constraints;
-import agent.values.AgentType;
+import agent.type.AgentType;
 import connection.utils.ServerCyrcles;
 
 public class MessagePerCycle {

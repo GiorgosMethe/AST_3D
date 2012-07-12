@@ -13,7 +13,7 @@
 package communication.utils;
 
 import agent.constraints.Constraints;
-import agent.values.AgentType;
+import agent.type.AgentType;
 import coordination.action.ActionTable;
 import coordination.communication.action.ActionMessages;
 

@@ -75,8 +75,10 @@ public class ActivePositionMapCost {
 				cost -= Math.abs(map.elementAt(q).getPosition().getY()
 						- map.elementAt(r).getPosition().getY());
 
-				if (map.elementAt(r).getAgent().getType() == 0
-						&& map.elementAt(q).getAgent().getType() == 1) {
+				if ((map.elementAt(r).getAgent().getType() == 0 || map
+						.elementAt(r).getAgent().getType() == 1)
+						&& (map.elementAt(q).getAgent().getType() == 0 || map
+								.elementAt(q).getAgent().getType() == 1)) {
 
 					/*
 					 * - Is good for agents to follow roots which have not any

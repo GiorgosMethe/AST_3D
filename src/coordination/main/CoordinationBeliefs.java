@@ -3,8 +3,9 @@
  */
 package coordination.main;
 
+import perceptor.localization.BallLocalizationFilter;
 import perceptor.localization.Coordinate;
-import perceptor.localization.LocalizationResults;
+import perceptor.localization.LocalizationFilter;
 import perceptor.localization.TriangleLocalization;
 import perceptor.utils.BallObservationFilter;
 import coordination.communication.message.CoordinationVectorUpdate;
@@ -43,15 +44,11 @@ public class CoordinationBeliefs {
 		 * These thought will be used in order to locate the ball in the field
 		 */
 
-		if (LocalizationResults.isKnowMyPosition()
-				&& perceptor.vision.Ball.isSeeTheBall()) {
+		if (LocalizationFilter.qe.size() >= 5
+				&& BallLocalizationFilter.qe.size() >= 5) {
 
-			BallObservationFilter.AddSample(TriangleLocalization
-					.get_det_with_distance_angle(LocalizationResults
-							.getCurrent_location().getX(), LocalizationResults
-							.getCurrent_location().getY(), LocalizationResults
-							.getBall_angle(), perceptor.vision.Ball
-							.getDistance()));
+			BallObservationFilter
+					.AddSample(BallLocalizationFilter.MyFilteredBallPosition);
 
 		}
 
@@ -60,17 +57,8 @@ public class CoordinationBeliefs {
 			if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
 					.getType() == 0) {
 
-				Coordinate ballSample = TriangleLocalization
-						.get_det_with_distance_angle(
-								CoordinationVectorUpdate.CoordinationVector
-										.elementAt(i).getPlayer().getX(),
-								CoordinationVectorUpdate.CoordinationVector
-										.elementAt(i).getPlayer().getY(),
-								CoordinationVectorUpdate.CoordinationVector
-										.elementAt(i).getBallTheta(),
-								CoordinationVectorUpdate.CoordinationVector
-										.elementAt(i).getBallDistance());
-
+				Coordinate ballSample = CoordinationVectorUpdate.CoordinationVector
+						.elementAt(i).getBall();
 				BallObservationFilter.AddSample(ballSample);
 
 			}
@@ -99,9 +87,7 @@ public class CoordinationBeliefs {
 
 			// agent sees the ball directly
 			if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
-					.getType() == 0
-					|| CoordinationVectorUpdate.CoordinationVector.elementAt(i)
-							.getType() == 2) {
+					.getType() == 2) {
 
 				distance1 = CoordinationVectorUpdate.CoordinationVector
 						.elementAt(i).getBallDistance();
@@ -110,7 +96,9 @@ public class CoordinationBeliefs {
 
 				// agent doesn't see the ball directly
 			} else if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
-					.getType() == 1) {
+					.getType() == 0
+					|| CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+							.getType() == 1) {
 
 				// distance can be only calculated indirectly
 

@@ -62,7 +62,7 @@ public class ActiveCoordination {
 					.elementAt(i).getNumber()) {
 
 				if (min > CoordinationSplitter.ActiveSubset.elementAt(i)
-						.getRealDistance() - 1) {
+						.getRealDistance() - 2) {
 
 					needlessChange = true;
 
