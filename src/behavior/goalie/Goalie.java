@@ -2,6 +2,7 @@ package behavior.goalie;
 
 import motion.utils.MotionTrigger;
 import motion.xml.check.CheckFallEnd;
+import perceptor.localization.BallLocalizationFilter;
 import perceptor.localization.Coordinate;
 import perceptor.localization.LocalizationResults;
 import perceptor.localization.TriangleLocalization;
@@ -20,9 +21,8 @@ public class Goalie {
 
 	public static void Act() {
 
-		
 		System.out.println(Goalie.state);
-		
+
 		if (Goalie.state.equalsIgnoreCase("Start")) {
 
 			if (returnToInitPosition()) {
@@ -65,28 +65,20 @@ public class Goalie {
 
 		} else if (Goalie.state.equalsIgnoreCase("Libero")) {
 
+			if (!BallAtBoxRealCoordinationMap(BallLocalizationFilter.MyFilteredBallPosition)) {
+
+				Goalie.state = "Start";
+
+			}
+
 			if (GoKickBallToGoal.Act()) {
 
 				System.out
 						.println("telos klotsia @@@@@@@@@@@@@@@@@@@@@@!!!!!!!!!!!!!!!!");
 
-				Goalie.state = "BallCleared";
-
-			}
-
-		} else if (Goalie.state.equalsIgnoreCase("BallCleared")) {
-
-			if (!BallAtBoxRealCoordinationMap(LocalizationResults
-					.getBall_location())) {
-
-				Goalie.state = "Start";
-
-			} else {
-
 				Goalie.state = "Libero";
 
 			}
-
 		}
 
 	}
@@ -121,7 +113,7 @@ public class Goalie {
 
 				System.out.println("Ball at box");
 
-				if (movingBall.getSpeed() > 1) {
+				if (movingBall.getSpeed() > 2) {
 
 					System.out.println("Ball moving fast");
 
@@ -258,7 +250,8 @@ public class Goalie {
 	public static boolean returnToInitPosition() {
 
 		if (TeamState.getTeamSide().equalsIgnoreCase("left")) {
-			return WalkToCompleteCoordinate.Act(new Coordinate(Constraints.OwnGoal.X+0.5f,Constraints.OwnGoal.Y), 0);
+			return WalkToCompleteCoordinate.Act(new Coordinate(
+					Constraints.OwnGoal.X + 0.5f, Constraints.OwnGoal.Y), 0);
 		} else {
 			return WalkToCompleteCoordinate.Act(Constraints.OwnGoal, 180);
 		}
