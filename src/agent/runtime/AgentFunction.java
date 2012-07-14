@@ -1,10 +1,18 @@
 package agent.runtime;
 
+import motion.utils.MotionTrigger;
 import motion.utils.PerformMovement;
+import perceptor.joints.HingeJointPerceptor;
+import perceptor.vision.Ball;
 import perceptor.worldstate.GameState;
+import perceptor.worldstate.TeamState;
+import action.complex.GoKickBallDynamic;
+import action.complex.GoKickBallToGoal;
+import action.complex.GoKickBallToGoal;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
 import action.simple.TurnToLocate;
+import action.simple.WalkToBall;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
 import behavior.goalie.Goalie;
@@ -29,6 +37,7 @@ public class AgentFunction {
 		 * to get up.
 		 */
 		CheckIfFall.Check();
+
 
 		if (InitAgent.isPlayerInited()) {
 

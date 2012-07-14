@@ -11,24 +11,31 @@ public class PrepareKick {
 
 		if (HeadMovement.HeadAtBall) {
 
-			if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -12) {
+			if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -15) {
 
 				MotionTrigger.setMotion("SideStepRight");
 				return false;
 
-			} else if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > -5) {
+			} else if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > -10) {
 
 				MotionTrigger.setMotion("SideStepLeft");
 				return false;
 
 			} else {
 
-				MotionTrigger.setMotion("");
-				return true;
+				if((Ball.RealDistance() > 0.79)){
+
+					MotionTrigger.setMotion("Forwards50");
+					return false;
+				}else{
+
+					MotionTrigger.setMotion("");
+					return true;
+				}
 			}
-		} else {
-			return false;
+
 		}
+		return false;
 
 	}
 

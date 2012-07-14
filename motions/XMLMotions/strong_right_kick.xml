@@ -35,7 +35,7 @@
 				<rae4 end="45" />
 				<lae4 end="-45" />
 			</effectors>
-			<duration>700</duration>
+			<duration>250</duration>
 		</phase>
 		<phase name="rigth_high_kick1" next="rigth_high_kick2">
 			<effectors>
@@ -60,7 +60,7 @@
 				<rae4 end="45"/>
 				<lae4 end="-45"/>
 			</effectors>
-			<duration>500</duration>
+			<duration>250</duration>
 		</phase>
 		<phase name="rigth_high_kick2"  next="rigth_high_kick3">
 			<effectors>
@@ -77,7 +77,7 @@
 				<rle6 end="-7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>400</duration>
+			<duration>250</duration>
 		</phase>
 		<phase name="rigth_high_kick3"  next="rigth_high_kick35">
 			<effectors>
@@ -94,7 +94,7 @@
 				<rle6 end="-7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>700</duration>
+			<duration>250</duration>
 		</phase>
 		<phase name="rigth_high_kick35"  next="rigth_high_kick4">
 			<effectors>
@@ -111,7 +111,7 @@
 				<rle6 end="-7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>400</duration>
+			<duration>250</duration>
 		</phase>
 		<phase name="rigth_high_kick4"  next="rigth_high_kick5">
 			<effectors>
@@ -128,7 +128,7 @@
 				<rle6 end="7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>1500</duration>
+			<duration>1200</duration>
 		</phase>
 		<phase name="rigth_high_kick5" next="rigth_high_kick7">
 			<effectors>
@@ -136,7 +136,7 @@
 				<lle1 end="0" />
 				<rle2 end="-7" />
 				<lle2 end="-7" />
-				<rle3 end="42" />
+				<rle3 end="62" />
 				<lle3 end="-21" />
 				<rle4 end="-28" />
 				<lle4 end="0" />
@@ -145,7 +145,7 @@
 				<rle6 end="7" />
 				<lle6 end="7" />
 			</effectors>
-			<duration>120</duration>
+			<duration>140</duration>
 		</phase>
 		<phase name="rigth_high_kick7" next="rigth_high_kick8">
 			<effectors>

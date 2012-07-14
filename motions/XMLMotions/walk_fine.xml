@@ -30,14 +30,14 @@
 				<rae4 end="45" />
 				<lae4 end="-45" />
 			</effectors>
-			<duration>700</duration>
+			<duration>400</duration>
 		</phase>
 		<phase name="walk_attempt_wait" next="walk_attempt3" skipIfFlag="in_walk_position">
 			<effectors>
 				<he1 end="0" computed="headAngle1" />
 				<he2 end="0" computed="headAngle2" />
 			</effectors>
-			<duration>700</duration>
+			<duration>400</duration>
 		</phase>
 		<phase name="walk_attempt3" next="walk_attempt4" setFlagFalse="in_walk_position">
 			<effectors>
@@ -152,7 +152,7 @@
 				<rae4 end="45" />
 				<lae4 end="-45" />
 			</effectors>
-			<duration>700</duration>
+			<duration>600</duration>
 			<finalize>walk_fine_final2</finalize>
 		</phase>
 		<phase name="walk_fine_final3" isFinal="true">

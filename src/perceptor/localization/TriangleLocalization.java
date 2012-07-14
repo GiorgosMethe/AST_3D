@@ -684,6 +684,12 @@ public class TriangleLocalization {
 
 	public static double FindAngleAVG(double angle1, double angle2) {
 
+		if(Double.isNaN(angle1) || Double.isNaN(angle1)){
+			
+			return Double.NaN;
+			
+		}
+		
 		double xxx = Math.cos(Math.toRadians(angle1))
 				+ Math.cos(Math.toRadians(angle2));
 

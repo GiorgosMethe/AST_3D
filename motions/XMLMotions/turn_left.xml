@@ -15,10 +15,10 @@
 			<effectors>
 				<he1 end="0" computed="headAngle1" />
 				<he2 end="0" computed="headAngle2" />
-				<lle3 end="80" />
+				<lle3 end="75" />
 				<lle4 end="-60" />
 				<lle5 end="30" />
-				<rle3 end="80" />
+				<rle3 end="75" />
 				<rle4 end="-60" />
 				<rle5 end="30" />
 				<lae1 end="-90" />
@@ -30,14 +30,14 @@
 				<lae4 end="-45" />
 				<rae4 end="45" />
 			</effectors>
-			<duration>700</duration>
+			<duration>600</duration>
 		</phase>
 		<phase name="turn_left_big_stance" next="start_big_turning_left">
 			<effectors>
-				<lle3 end="80" />
+				<lle3 end="75" />
 				<lle4 end="-60" />
 				<lle5 end="30" />
-				<rle3 end="80" />
+				<rle3 end="75" />
 				<rle4 end="-60" />
 				<rle5 end="30" />
 				<lae1 end="-90" />
@@ -49,7 +49,7 @@
 				<lae4 end="-45" />
 				<rae4 end="45" />
 			</effectors>
-			<duration>700</duration>
+			<duration>400</duration>
 		</phase>
 		<phase name="start_big_turning_left" next="start_big_turning_left3">
 			<effectors>
@@ -121,7 +121,7 @@
 				<lae4 end="45" />
 				<rae4 end="-45" />
 			</effectors>
-			<duration>700</duration>
+			<duration>400</duration>
 			<finalize>stop_big_turning_left</finalize>
 		</phase>
 	</phases>
