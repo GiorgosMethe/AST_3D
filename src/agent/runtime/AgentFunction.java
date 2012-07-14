@@ -37,8 +37,7 @@ public class AgentFunction {
 		 * to get up.
 		 */
 		CheckIfFall.Check();
-
-
+				
 		if (InitAgent.isPlayerInited()) {
 
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
@@ -51,8 +50,9 @@ public class AgentFunction {
 					if (AgentRuntime.num == 1) {
 
 						Goalie.Act();
+					}else{
+						ActionEffector.Act();
 					}
-					ActionEffector.Act();
 				}
 
 				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);

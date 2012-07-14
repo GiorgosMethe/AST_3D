@@ -15,16 +15,31 @@ public class WalkToBall {
 
 		VisionType.setType(1);
 
-
 		if (Vision.isiSee()) {
 
 			if (Ball.isSeeTheBall()) {
 
 				if ((Ball.RealDistance() < 0.805) && (Ball.getDistance() < 0.8)) {
 
-					MotionTrigger.setMotion("");
-					return true;
+					if ((Math.abs(HingeJointPerceptor.getHj1()
+							+ Math.abs(Ball.getAngleX()))) > 159) {
 
+						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
+
+							MotionTrigger.setMotion("TurnLeft40");
+							return false;
+
+						} else {
+
+							MotionTrigger.setMotion("TurnRight40");
+							return false;
+
+						}
+
+					} else {
+						MotionTrigger.setMotion("");
+						return true;
+					}
 
 				} else {
 
@@ -87,8 +102,6 @@ public class WalkToBall {
 			}
 		}
 		return false;
-
-
 
 	}
 }

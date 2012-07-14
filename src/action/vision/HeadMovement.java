@@ -47,6 +47,8 @@ public class HeadMovement {
 			Action = Observe();
 		} else if (type == 7) {
 			Action = ObserveUntilLoc();
+		} else if (type == 8) {
+			Action = Observe2();
 		}
 
 		return Action;
@@ -70,6 +72,31 @@ public class HeadMovement {
 		String str = "";
 
 		float realMoveY = gNjV.Get("he2", 0 - HingeJointPerceptor.getHj2()) / 5;
+		str = "(" + "he1" + " " + HeadMovement.moveX + ")" + "(" + "he2" + " "
+				+ 0 + ")";
+
+		return str;
+	}
+	
+	public static String Observe2() {
+
+		int cycles = ServerCyrcles.getCyrclesNow();
+		HeadMovement.HeadAtLeft = false;
+		HeadMovement.HeadAtRight = false;
+
+		if (HingeJointPerceptor.getHj1() > 120) {
+			HeadMovement.moveX = HeadMovement.moveX * (-1);
+			HeadMovement.HeadAtLeft = true;
+		} else if (HingeJointPerceptor.getHj1() < -120) {
+			HeadMovement.moveX = HeadMovement.moveX * (-1);
+			HeadMovement.HeadAtRight = true;
+		}
+		
+		float moveY = (float) (0.59 * Math.sin(cycles / 8) - 0.078);
+
+		String str = "";
+
+		float realMoveY = gNjV.Get("he2", 0 - moveY) / 5;
 		str = "(" + "he1" + " " + HeadMovement.moveX + ")" + "(" + "he2" + " "
 				+ 0 + ")";
 

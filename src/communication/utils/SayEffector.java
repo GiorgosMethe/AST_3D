@@ -54,7 +54,7 @@ public class SayEffector {
 
 		} else if (type == 3) {
 
-			if (ActionMessages.getPlayer() < Constraints.numberPlayers + 1) {
+			if (ActionMessages.getPlayer() < ActionTable.CoordinateActions.size()) {
 
 				if (MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),
 						MessageType.getCommunicationType()) == true) {
@@ -70,7 +70,7 @@ public class SayEffector {
 
 				ActionTable.CoordinateActions.removeAllElements();
 				MessageType.setType(2);
-				ActionMessages.setPlayer(2);
+				ActionMessages.setPlayer(0);
 				MessageType.setCommunicationType(0);
 
 			}

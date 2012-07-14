@@ -14,6 +14,8 @@ package coordination.active;
 
 import java.util.Vector;
 
+import javax.print.attribute.standard.MediaSize.Other;
+
 import perceptor.localization.TriangleLocalization;
 import coordination.action.ActionObject;
 import coordination.action.ActionTable;
@@ -23,6 +25,7 @@ import coordination.main.CoordinationSplitter;
 import coordination.mapping.ActivePositionMapCost;
 import coordination.mapping.PositionMap;
 import coordination.strategy.ActivePositions;
+import coordination.strategy.SoccerFieldCoordinateValue;
 
 public class ActiveCoordination {
 
@@ -62,7 +65,7 @@ public class ActiveCoordination {
 					.elementAt(i).getNumber()) {
 
 				if (min > CoordinationSplitter.ActiveSubset.elementAt(i)
-						.getRealDistance() - 2) {
+						.getRealDistance() - 1) {
 
 					needlessChange = true;
 
@@ -76,36 +79,60 @@ public class ActiveCoordination {
 			OnBallPlayer = PreviousOnBallPlayer;
 		}
 
+		OptimizedActiveMap = PositionCombination(
+				ActivePositions.ActivePositions,
+				CoordinationSplitter.ActiveSubset, OnBallPlayer,
+				CoordinationBeliefs.Ball);
+		
+		
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
+			
 			if (OnBallPlayer == CoordinationSplitter.ActiveSubset.elementAt(i)
 					.getNumber()) {
+				
 
-				ActionObject a = new ActionObject(
-						CoordinationSplitter.ActiveSubset.elementAt(i)
-								.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
+				double max = -1000;
+				perceptor.localization.Coordinate BestAlternative = null;
+				for(int j=0;j<OptimizedActiveMap.size();j++){
+					if(OptimizedActiveMap.elementAt(i).getAgent().getNumber() != OnBallPlayer){
 
-				ActionTable.CoordinateActions.addElement(a);
+						double value = SoccerFieldCoordinateValue.Calculate(OptimizedActiveMap.elementAt(i).getPosition());
+						
+						if(value > max){
+							
+							max = value;
+							BestAlternative = OptimizedActiveMap.elementAt(i).getPosition();
+
+						}	
+					}
+				}
+				
+				ActionObject OnBallCoordinateAction;
+				if(BestAlternative != null){
+					
+					OnBallCoordinateAction = new ActionObject(
+							CoordinationSplitter.ActiveSubset.elementAt(i)
+									.getNumber(), "GoKickBallToGoal", BestAlternative.getX(), BestAlternative.getY(), 0, 0);
+					
+				}else{
+					
+					OnBallCoordinateAction = new ActionObject(
+							CoordinationSplitter.ActiveSubset.elementAt(i)
+									.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
+					
+				}
+				
+
+				ActionTable.CoordinateActions.addElement(OnBallCoordinateAction);
 
 				PreviousOnBallPlayer = OnBallPlayer;
 
 			}
 		}
 
-		OptimizedActiveMap = PositionCombination(
-				ActivePositions.ActivePositions,
-				CoordinationSplitter.ActiveSubset, OnBallPlayer,
-				CoordinationBeliefs.Ball);
-
-		System.out.println("optimized active positions");
-		System.out.println("-------------------");
 		for (int i = 0; i < OptimizedActiveMap.size(); i++) {
-
-			System.out.println("bazw paikth "
-					+ OptimizedActiveMap.elementAt(i).getAgent().getNumber());
-			System.out.println("bazw x "
-					+ OptimizedActiveMap.elementAt(i).getPosition().getX());
-			System.out.println("bazw y "
-					+ OptimizedActiveMap.elementAt(i).getPosition().getY());
+			
+			if(OptimizedActiveMap.elementAt(i).getAgent().getNumber() != OnBallPlayer){
 
 			ActionObject a = new ActionObject(OptimizedActiveMap.elementAt(i)
 					.getAgent().getNumber(), "WalkToCoordinate",
@@ -116,6 +143,7 @@ public class ActiveCoordination {
 							CoordinationBeliefs.Ball), 0);
 
 			ActionTable.CoordinateActions.addElement(a);
+			}
 
 		}
 
@@ -162,7 +190,7 @@ public class ActiveCoordination {
 								PositionMap temp = new PositionMap(
 										activeSubset.elementAt(k),
 										activePositions
-												.elementAt(PlayerSelection[selection++]));
+										.elementAt(PlayerSelection[selection++]));
 								map.add(temp);
 
 							} else {
@@ -170,7 +198,7 @@ public class ActiveCoordination {
 								PositionMap temp = new PositionMap(
 										activeSubset.elementAt(k),
 										activePositions
-												.elementAt(PlayerSelection[selection]));
+										.elementAt(PlayerSelection[selection]));
 								map.add(temp);
 
 							}

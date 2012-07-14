@@ -34,7 +34,8 @@ public class ActionMessageReceiver {
 				if (action.equalsIgnoreCase("GoKickBallToGoal")) {
 
 					Action = new ActionObject(Integer.parseInt(splittedMsg[1]),
-							action, 0, 0, 0, 0);
+							action, Double.parseDouble(splittedMsg[3]),
+							Double.parseDouble(splittedMsg[4]), 0, 0);
 
 				} else if (action.equalsIgnoreCase("WalkToCoordinate")) {
 

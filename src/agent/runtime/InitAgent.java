@@ -91,7 +91,7 @@ public class InitAgent {
 				MessageType.setType(1);
 				MessageType.setCommunicationType(0);
 				ActionMessages.setTimeout(Constraints.CoordinationTimeout);
-				ActionMessages.setPlayer(2);
+				ActionMessages.setPlayer(0);
 
 				// Actions
 				ActionPlaying.setActionPlaying(null);

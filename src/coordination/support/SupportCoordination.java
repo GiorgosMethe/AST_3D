@@ -31,26 +31,33 @@ public class SupportCoordination {
 				SupportPositions.SupportPositionsVector,
 				CoordinationSplitter.SupportSubset, CoordinationBeliefs.Ball);
 
-		// System.out.println("optimized Support positions");
-		// System.out.println("-------------------");
-		for (int i = 0; i < OptimizedSupportMap.size(); i++) {
+		if(OptimizedSupportMap == null){
 
-			// System.out.println("bazw paikth "
-			// + OptimizedSupportMap.elementAt(i).getAgent().getNumber());
-			// System.out.println("bazw x "
-			// + OptimizedSupportMap.elementAt(i).getPosition().getX());
-			// System.out.println("bazw y "
-			// + OptimizedSupportMap.elementAt(i).getPosition().getY());
 
-			ActionObject a = new ActionObject(OptimizedSupportMap.elementAt(i)
-					.getAgent().getNumber(), "WalkToCoordinate",
-					OptimizedSupportMap.elementAt(i).getPosition().getX(),
-					OptimizedSupportMap.elementAt(i).getPosition().getY(),
-					TriangleLocalization.FindAngleBetweenCoordinates(
-							OptimizedSupportMap.elementAt(i).getPosition(),
-							CoordinationBeliefs.Ball), 0);
+		}else{
 
-			ActionTable.CoordinateActions.addElement(a);
+			// System.out.println("optimized Support positions");
+			// System.out.println("-------------------");
+			for (int i = 0; i < OptimizedSupportMap.size(); i++) {
+
+				// System.out.println("bazw paikth "
+				// + OptimizedSupportMap.elementAt(i).getAgent().getNumber());
+				// System.out.println("bazw x "
+				// + OptimizedSupportMap.elementAt(i).getPosition().getX());
+				// System.out.println("bazw y "
+				// + OptimizedSupportMap.elementAt(i).getPosition().getY());
+
+				ActionObject a = new ActionObject(OptimizedSupportMap.elementAt(i)
+						.getAgent().getNumber(), "WalkToCoordinate",
+						OptimizedSupportMap.elementAt(i).getPosition().getX(),
+						OptimizedSupportMap.elementAt(i).getPosition().getY(),
+						TriangleLocalization.FindAngleBetweenCoordinates(
+								OptimizedSupportMap.elementAt(i).getPosition(),
+								CoordinationBeliefs.Ball), 0);
+
+				ActionTable.CoordinateActions.addElement(a);
+
+			}
 
 		}
 
@@ -106,24 +113,24 @@ public class SupportCoordination {
 															.elementAt(h)
 															.elementAt(h1)
 															.getPosition(),
-													SupportPositionsVector
+															SupportPositionsVector
 															.elementAt(i))) {
 
 										RoleMap1.add(new PositionMap(
 												SupportSubset.elementAt(j),
 												SupportPositionsVector
-														.elementAt(i)));
+												.elementAt(i)));
 										RoleMap1.add(new PositionMap(
 												BestRoleMap[i - 1]
 														.elementAt(rr)
 														.elementAt(h)
 														.elementAt(h1)
 														.getAgent(),
-												BestRoleMap[i - 1]
-														.elementAt(rr)
-														.elementAt(h)
-														.elementAt(h1)
-														.getPosition()));
+														BestRoleMap[i - 1]
+																.elementAt(rr)
+																.elementAt(h)
+																.elementAt(h1)
+																.getPosition()));
 										Map.add(RoleMap1);
 
 									}
@@ -141,9 +148,9 @@ public class SupportCoordination {
 											.getAgent() == SupportSubset
 											.elementAt(j)
 											|| BestRoleMap[i - 1].elementAt(rr)
-													.elementAt(h).elementAt(h1)
-													.getPosition() == SupportPositionsVector
-													.elementAt(i)) {
+											.elementAt(h).elementAt(h1)
+											.getPosition() == SupportPositionsVector
+											.elementAt(i)) {
 
 										isSubset = false;
 
@@ -166,11 +173,11 @@ public class SupportCoordination {
 														.elementAt(h)
 														.elementAt(h1)
 														.getAgent(),
-												BestRoleMap[i - 1]
-														.elementAt(rr)
-														.elementAt(h)
-														.elementAt(h1)
-														.getPosition()));
+														BestRoleMap[i - 1]
+																.elementAt(rr)
+																.elementAt(h)
+																.elementAt(h1)
+																.getPosition()));
 
 									}
 
@@ -212,39 +219,37 @@ public class SupportCoordination {
 		}
 
 		int k = BestRoleMap.length - 1;
-		Vector<PositionMap> OptimizedSupportVector = null;
-		double min = 1000;
-		for (int i = 0; i < BestRoleMap[k].size(); i++) {
-			for (int ii = 0; ii < BestRoleMap[k].elementAt(i).size(); ii++) {
+		if(k==-1){
 
-				if (BestRoleMap[k].elementAt(i).elementAt(ii).size() != 0) {
+			return null;
 
-					double cost = SupportPositionMapCost.calculate(
-							BestRoleMap[k].elementAt(i).elementAt(ii),
-							CoordinationBeliefs.Ball);
-					if (cost < min) {
-						min = cost;
-						OptimizedSupportVector = new Vector<PositionMap>();
-						OptimizedSupportVector.addAll(BestRoleMap[k].elementAt(
-								i).elementAt(ii));
+		}else{
+			Vector<PositionMap> OptimizedSupportVector = null;
+			double min = 1000;
+			for (int i = 0; i < BestRoleMap[k].size(); i++) {
+				for (int ii = 0; ii < BestRoleMap[k].elementAt(i).size(); ii++) {
+
+					if (BestRoleMap[k].elementAt(i).elementAt(ii).size() != 0) {
+
+						double cost = SupportPositionMapCost.calculate(
+								BestRoleMap[k].elementAt(i).elementAt(ii),
+								CoordinationBeliefs.Ball);
+						if (cost < min) {
+							min = cost;
+							OptimizedSupportVector = new Vector<PositionMap>();
+							OptimizedSupportVector.addAll(BestRoleMap[k].elementAt(
+									i).elementAt(ii));
+						}
 					}
-				}
 
+				}
 			}
+			return OptimizedSupportVector;
+
 		}
 
-		// for (int h = 0; h < OptimizedSupportVector.size(); h++) {
-		//
-		// System.out.print("A "
-		// + OptimizedSupportVector.elementAt(h).getAgent());
-		// System.out
-		// .print(" --> P "
-		// + OptimizedSupportVector.elementAt(h).getPosition()
-		// + " , ");
-		//
-		// }
 
-		return OptimizedSupportVector;
+
 	}
 
 }

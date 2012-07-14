@@ -60,7 +60,7 @@ public class GoKickBallToGoal {
 			
 			}else{
 				
-				VisionType.setType(6);
+				VisionType.setType(7);
 				
 				double[] OppGoal = FindOpponentsGoal.Act();	
 				if(!Double.isNaN(OppGoal[0])){
@@ -86,9 +86,6 @@ public class GoKickBallToGoal {
 
 			if (HeadMovement.HeadAtBall) {
 
-				System.out.println("sdf "+GKBGDstates.getAngle());
-				System.out.println("sd1 "+GKBGDstates.getAngleFromPost1());
-				System.out.println("sd2 "+GKBGDstates.getAngleFromPost2());
 				angleSum=0;
 				GKBGDstates.setState("Start3");
 
@@ -100,18 +97,24 @@ public class GoKickBallToGoal {
 			if(MotionPlaying.getMotionName() != null){
 				if(MotionPlaying.getMotionName().equalsIgnoreCase("turn_left")||
 						MotionPlaying.getMotionName().equalsIgnoreCase("turn_right")){
-
+					
+					if(MotionPlaying.getMotionPhase().equalsIgnoreCase("start_big_turning_right") ||
+							MotionPlaying.getMotionPhase().equalsIgnoreCase("start_big_turning_left")	){
+					
 						angleSum += 1;
+					
+						
+					}
 						
 				}
 			}
 
-			if (Math.abs(GKBGDstates.getAngle())-angleSum/4.2 > 10) {
+			if (Math.abs(GKBGDstates.getAngle())-angleSum*1.5 > 10) {
 
 				if (GKBGDstates.getAngle() < 0) {
 
 					if ((Math.abs(Ball.getAngleX()
-							+ HingeJointPerceptor.getHj1())) > 3) {
+							+ HingeJointPerceptor.getHj1())) > 2) {
 
 						MotionTrigger.setMotion("TurnRight40");
 
@@ -124,7 +127,7 @@ public class GoKickBallToGoal {
 				} else {
 
 					if ((Math.abs(Ball.getAngleX()
-							+ HingeJointPerceptor.getHj1())) > 3) {
+							+ HingeJointPerceptor.getHj1())) > 2) {
 
 						MotionTrigger.setMotion("TurnLeft40");
 

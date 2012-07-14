@@ -20,6 +20,9 @@ public class Goalie {
 
 	public static void Act() {
 
+		
+		System.out.println(Goalie.state);
+		
 		if (Goalie.state.equalsIgnoreCase("Start")) {
 
 			if (returnToInitPosition()) {
@@ -255,7 +258,7 @@ public class Goalie {
 	public static boolean returnToInitPosition() {
 
 		if (TeamState.getTeamSide().equalsIgnoreCase("left")) {
-			return WalkToCompleteCoordinate.Act(Constraints.OwnGoal, 0);
+			return WalkToCompleteCoordinate.Act(new Coordinate(Constraints.OwnGoal.X+0.5f,Constraints.OwnGoal.Y), 0);
 		} else {
 			return WalkToCompleteCoordinate.Act(Constraints.OwnGoal, 180);
 		}
