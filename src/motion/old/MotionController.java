@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Technical University of Crete
+ * 
+ * Thesis Project
+ * 
+ * Author:	Methenitis K. Georgios
+ * 
+ * Abstract  : Player Behavior and Team Strategy 
+ * 			for the RoboCup 3D Simulation League
+ * 
+ * Date:  		July 2012
+ ******************************************************************************/
 package motion.old;
 
 import behavior.old.BehaviorDone;
@@ -43,15 +55,15 @@ public class MotionController {
 		} else if (Motion.equalsIgnoreCase("TurnRight40")) {
 
 			endMotionPose = 72;
-			speed = 3;
-			speedControl = 10;
+			speed = 1;
+			speedControl = 140;
 			poseOffset = 2;
 
 		} else if (Motion.equalsIgnoreCase("TurnLeft40")) {
 
 			endMotionPose = 72;
-			speed = 4;
-			speedControl = 15;
+			speed = 1;
+			speedControl = 10;
 			poseOffset = 1;
 
 		} else if (Motion.equalsIgnoreCase("SideStepLeft")) {

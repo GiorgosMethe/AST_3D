@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Technical University of Crete
+ * 
+ * Thesis Project
+ * 
+ * Author:	Methenitis K. Georgios
+ * 
+ * Abstract  : Player Behavior and Team Strategy 
+ * 			for the RoboCup 3D Simulation League
+ * 
+ * Date:  		July 2012
+ ******************************************************************************/
 package perceptor.localization;
 
 import java.util.Iterator;
@@ -60,7 +72,7 @@ public class LocalizationFilter {
 
 		double x = 0, y = 0, theta = 0, sinSum = 0, cosSum = 0;
 
-		Iterator it = qe.iterator();
+		Iterator<CompleteCoordinate> it = qe.iterator();
 
 		while (it.hasNext()) {
 

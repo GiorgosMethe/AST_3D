@@ -1,0 +1,12 @@
+\chapter{Future Work}
+\label{future}
+This is just a small , but well founded step towards our notion of the ideal communication framework for robotic teams and other similar distributed systems. Thus, there are plans for extending, adding and optimizing further the proposed framework.
+\section{Alternative Channels}
+The typical communication channel is certainly the one that utilizes the network adapter as both sensor and actuator and this is the only communication channel currently implemented in Narukom. However, other communication channels can be realized using other pairings, for example messages encoded into motions using the sender's joints and decoded through the receiver's camera  or messages encoded into sounds using the sender's speakers and decoded through the receiver's microphones. Narukom can treat all these channels transparently as long as appropriate coders/decoders (drivers) for these channels are provided. Despite the great difficulty associated with the implementation of such interfaces, their importance to true human-like robot autonomy is clearly high.
+
+\section{Narukom outside robocup}
+The use of Narukom outside the context of Robocup is also an important goal for us. During the implementation of Narukom, decisions were made in order to develop a robust communication system for a robocup team, however it is possible to alter some implementation decisions in order to make Narukom a more suitable candidate for other distributed environments. To achieve this, a wider range of network channels should be implemented. Moreover a basic query-like language could be used to access the blackboard.
+
+\section{Optimization and Debugging}
+
+Every project, no matter how well it is tested optimized during the development phase after it is released bugs, bottlenecks are found. Our intention and desire is to continue to actively develop Narukom in order to meet the needs of as many people as possible. As a result a constant procedure of optimizing , debgugin and testing is needed to ensure that Narukom is a robust, easy to use framework.

@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Technical University of Crete
+ * 
+ * Thesis Project
+ * 
+ * Author:	Methenitis K. Georgios
+ * 
+ * Abstract  : Player Behavior and Team Strategy 
+ * 			for the RoboCup 3D Simulation League
+ * 
+ * Date:  		July 2012
+ ******************************************************************************/
 package agent.runtime;
 
 import motion.utils.ReadMotionFiles;
@@ -28,7 +40,7 @@ public class AgentRuntime {
 
 			host = "127.0.0.1";
 			port = 3100;
-			num = 9;
+			num = 8;
 			Teamname = "AST_3D";
 
 		} else {

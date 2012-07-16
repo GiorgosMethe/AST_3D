@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Technical University of Crete
+ * 
+ * Thesis Project
+ * 
+ * Author:	Methenitis K. Georgios
+ * 
+ * Abstract  : Player Behavior and Team Strategy 
+ * 			for the RoboCup 3D Simulation League
+ * 
+ * Date:  		July 2012
+ ******************************************************************************/
 package action.vision;
 
 import motion.utils.GetNormalJointValue;
@@ -44,7 +56,7 @@ public class HeadMovement {
 
 	public static String Observe() {
 
-		int cycles = ServerCyrcles.getCyrclesNow();
+		// int cycles = ServerCyrcles.getCyrclesNow();
 		HeadMovement.HeadAtLeft = false;
 		HeadMovement.HeadAtRight = false;
 
@@ -58,7 +70,8 @@ public class HeadMovement {
 
 		String str = "";
 
-		float realMoveY = gNjV.Get("he2", 0 - HingeJointPerceptor.getHj2()) / 5;
+		// float realMoveY = gNjV.Get("he2", 0 - HingeJointPerceptor.getHj2()) /
+		// 5;
 		str = "(" + "he1" + " " + HeadMovement.moveX + ")" + "(" + "he2" + " "
 				+ 0 + ")";
 
@@ -67,7 +80,7 @@ public class HeadMovement {
 
 	public static String Observe2() {
 
-		int cycles = ServerCyrcles.getCyrclesNow();
+		// int cycles = ServerCyrcles.getCyrclesNow();
 		HeadMovement.HeadAtLeft = false;
 		HeadMovement.HeadAtRight = false;
 
@@ -79,11 +92,11 @@ public class HeadMovement {
 			HeadMovement.HeadAtRight = true;
 		}
 
-		float moveY = (float) (0.59 * Math.sin(cycles / 8) - 0.078);
+		// float moveY = (float) (0.59 * Math.sin(cycles / 8) - 0.078);
 
 		String str = "";
 
-		float realMoveY = gNjV.Get("he2", 0 - moveY) / 5;
+		// float realMoveY = gNjV.Get("he2", 0 - moveY) / 5;
 		str = "(" + "he1" + " " + HeadMovement.moveX + ")" + "(" + "he2" + " "
 				+ 0 + ")";
 

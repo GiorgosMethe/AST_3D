@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Technical University of Crete
+ * 
+ * Thesis Project
+ * 
+ * Author:	Methenitis K. Georgios
+ * 
+ * Abstract  : Player Behavior and Team Strategy 
+ * 			for the RoboCup 3D Simulation League
+ * 
+ * Date:  		July 2012
+ ******************************************************************************/
 package action.complex;
 
 import motion.utils.MotionTrigger;
@@ -68,7 +80,7 @@ public class GoKickBallToGoal {
 				VisionType.setType(7);
 
 				double[] OppGoal = FindOpponentsGoal.Act();
-				
+
 				if (!Double.isNaN(OppGoal[0])) {
 					GKBGDstates.setAngleFromPost1(OppGoal[0]);
 					GKBGDstates.setDistance(OppGoal[2]);
@@ -94,7 +106,7 @@ public class GoKickBallToGoal {
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start2")) {
 
 			if (HeadMovement.HeadAtBall) {
-				
+
 				angleSum = 0;
 				GKBGDstates.setState("Start3");
 
@@ -119,7 +131,7 @@ public class GoKickBallToGoal {
 				}
 			}
 
-			if (Math.abs(GKBGDstates.getAngle())> 10) {
+			if (Math.abs(GKBGDstates.getAngle()) > 10) {
 
 				if (GKBGDstates.getAngle() < 0) {
 
@@ -148,7 +160,7 @@ public class GoKickBallToGoal {
 					}
 
 				}
-				
+
 				GKBGDstates.setState("Start1");
 				GKBGDstates.setAngleFromPost1(Double.NaN);
 				GKBGDstates.setAngleFromPost2(Double.NaN);

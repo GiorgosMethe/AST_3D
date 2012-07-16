@@ -1,0 +1,41 @@
+\chapter{Results}
+\label{results}
+The evaluation of the proposed approach was made on the following subjects:
+\begin{itemize}
+\item {\tt Validation}: to validate that Narukom works properly we carried out experiments testing both inter-process and intra-process communication,
+\item {\tt Metrics}: A variety of tests to measure the performance of Narukom,
+\item {\tt Synchronization}: In order to test the synchronization capabilities of Narukom a simple application was developed, last but not least,
+\item {\tt User friendliness}: A very small group of developers was asked to create a simple chat application to assess the user-friendliness of our framework.
+\end{itemize}
+
+\section{Validation}
+Narukom has been tested successfully for both inter-process communication on a single node and multiple nodes using a
+simple threaded application which simulates a ping-pong (table tennis) game. There are two threads for the two
+players and two message types ({\tt Ping} and {\tt Pong}), one for each player.
+These two threads communicate through Narukom's publish/subscribe infrastructure, which is used to deliver the {\tt
+Ping} and
+{\tt Pong} messages between them. Apart from the two players there is a scorekeeper, another thread which is responsible
+for keeping the score, as its name
+suggests. The player who has the ball picks randomly a side (left or right) to which the ball should be sent and
+publishes a message to declare the completion of his move. On the other
+side of the table, the other player picks the side where his racket will be placed (left or right) and listens for the
+opponent's move (he subscribes to opponent messages). If the side he chose for the racket matches the side to which the
+opponent sent the ball, the game continues with the next move. If the sides of the racket and the ball do not match, a
+point is awarded to the player who sent the ball and the game continues with the next move. The scorekeeper subscribes
+to both types of messages and continuously prints out the current score. 
+
+\section{Metrics}
+Narukom to the extreme, in order to measure the performance of Narukom various tests were carried out such an approximate calculation of average time for message delivery, measuring network throughput under high traffic, framework's reliability over udp multicast. 
+%% Hopefully, till Tuesday, I will have completed these simple expermients if not we just take them out...
+
+\section{Synchronization}
+In order to ensures that Narukom's synchronization capabilities are adequate to used in SPL we developed an application where two threads running on different frequencies demand previous published data from each other. In more detail, there is one  thread (Fast) running approximately every 10 milliseconds and another one (Slow), which is run every second and asks for data that has already been created.
+
+\section{User Friendliness}
+Nowadays, ease of use plays an important role of in the adoption of a product, thus we decided to conduct a limited  (in terms of the number of people) survey to assess the level of user friendliness of our framework. After a short presentation of Narukom , we asked a small group of developers to create a simple chat application. Afterwards , we asked them to write a brief description of their thoughts working with Narukom.
+% ------------------------------------------------------------------------
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End:

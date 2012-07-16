@@ -1,0 +1,76 @@
+\BOOKMARK [0][]{chapter.1}{1 Introduction}{}
+\BOOKMARK [1][]{section.1.1}{1.1 Thesis Outline}{chapter.1}
+\BOOKMARK [0][]{chapter.2}{2 Background}{}
+\BOOKMARK [1][]{section.2.1}{2.1 RoboCup Competition}{chapter.2}
+\BOOKMARK [1][]{section.2.2}{2.2 RoboCup Leagues}{chapter.2}
+\BOOKMARK [1][]{section.2.3}{2.3 RoboRescue}{chapter.2}
+\BOOKMARK [1][]{section.2.4}{2.4 RoboCup@Home}{chapter.2}
+\BOOKMARK [1][]{section.2.5}{2.5 RoboCup Junior}{chapter.2}
+\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Dance}{section.2.5}
+\BOOKMARK [2][]{subsection.2.5.2}{2.5.2 Rescue}{section.2.5}
+\BOOKMARK [2][]{subsection.2.5.3}{2.5.3 Soccer}{section.2.5}
+\BOOKMARK [1][]{section.2.6}{2.6 RoboCup Soccer League}{chapter.2}
+\BOOKMARK [2][]{subsection.2.6.1}{2.6.1 The Standard Platform League}{section.2.6}
+\BOOKMARK [2][]{subsection.2.6.2}{2.6.2 Simulation League}{section.2.6}
+\BOOKMARK [2][]{subsection.2.6.3}{2.6.3 Small Size League}{section.2.6}
+\BOOKMARK [2][]{subsection.2.6.4}{2.6.4 Middle Size League}{section.2.6}
+\BOOKMARK [2][]{subsection.2.6.5}{2.6.5 Humanoid League}{section.2.6}
+\BOOKMARK [1][]{section.2.7}{2.7 Kouretes Team}{chapter.2}
+\BOOKMARK [1][]{section.2.8}{2.8 NAO Robot}{chapter.2}
+\BOOKMARK [2][]{subsection.2.8.1}{2.8.1 Cameras}{section.2.8}
+\BOOKMARK [2][]{subsection.2.8.2}{2.8.2 Connectivity}{section.2.8}
+\BOOKMARK [2][]{subsection.2.8.3}{2.8.3 Audio, Sensors, Various}{section.2.8}
+\BOOKMARK [2][]{subsection.2.8.4}{2.8.4 NaoQi}{section.2.8}
+\BOOKMARK [1][]{section.2.9}{2.9 General Overview}{chapter.2}
+\BOOKMARK [1][]{section.2.10}{2.10 Communication Technology Background}{chapter.2}
+\BOOKMARK [2][]{subsection.2.10.1}{2.10.1 UDP}{section.2.10}
+\BOOKMARK [2][]{subsection.2.10.2}{2.10.2 The Publish/Subscribe Paradigm}{section.2.10}
+\BOOKMARK [2][]{subsection.2.10.3}{2.10.3 Google Protocol Buffers}{section.2.10}
+\BOOKMARK [2][]{subsection.2.10.4}{2.10.4 Blackboard}{section.2.10}
+\BOOKMARK [2][]{subsection.2.10.5}{2.10.5 Boost Cplusplus Libraries}{section.2.10}
+\BOOKMARK [0][]{chapter.3}{3 Commmunication}{}
+\BOOKMARK [1][]{section.3.1}{3.1 Need for Communication}{chapter.3}
+\BOOKMARK [1][]{section.3.2}{3.2 Communication in a team }{chapter.3}
+\BOOKMARK [1][]{section.3.3}{3.3 Communication across robots}{chapter.3}
+\BOOKMARK [1][]{section.3.4}{3.4 Communication in Robocup}{chapter.3}
+\BOOKMARK [0][]{chapter.4}{4 Narukom}{}
+\BOOKMARK [1][]{section.4.1}{4.1 Name}{chapter.4}
+\BOOKMARK [1][]{section.4.2}{4.2 The Concept}{chapter.4}
+\BOOKMARK [1][]{section.4.3}{4.3 Architecture}{chapter.4}
+\BOOKMARK [2][]{subsection.4.3.1}{4.3.1 Overview}{section.4.3}
+\BOOKMARK [2][]{subsection.4.3.2}{4.3.2 Narukom in Robocup}{section.4.3}
+\BOOKMARK [2][]{subsection.4.3.3}{4.3.3 Blackboard}{section.4.3}
+\BOOKMARK [1][]{section.4.4}{4.4 Data Serialization}{chapter.4}
+\BOOKMARK [1][]{section.4.5}{4.5 Synchronization}{chapter.4}
+\BOOKMARK [1][]{section.4.6}{4.6 Communication within and across nodes}{chapter.4}
+\BOOKMARK [2][]{subsection.4.6.1}{4.6.1 Channels}{section.4.6}
+\BOOKMARK [0][]{chapter.5}{5 From Theory To Practice}{}
+\BOOKMARK [1][]{section.5.1}{5.1 Understanding the basics}{chapter.5}
+\BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Messages}{section.5.1}
+\BOOKMARK [2][]{subsection.5.1.2}{5.1.2 MessageBuffer}{section.5.1}
+\BOOKMARK [1][]{section.5.2}{5.2 Publish/Subscribe system in Narukom }{chapter.5}
+\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 Message Queue}{section.5.2}
+\BOOKMARK [1][]{section.5.3}{5.3 Blackboard and Synchronization}{chapter.5}
+\BOOKMARK [1][]{section.5.4}{5.4 Communication across nodes}{chapter.5}
+\BOOKMARK [1][]{section.5.5}{5.5 Catalog Module}{chapter.5}
+\BOOKMARK [1][]{section.5.6}{5.6 Network Communication}{chapter.5}
+\BOOKMARK [2][]{subsection.5.6.1}{5.6.1 NetworkChannel}{section.5.6}
+\BOOKMARK [2][]{subsection.5.6.2}{5.6.2 UpdMulticastChannel}{section.5.6}
+\BOOKMARK [0][]{chapter.6}{6 Results}{}
+\BOOKMARK [1][]{section.6.1}{6.1 Validation}{chapter.6}
+\BOOKMARK [1][]{section.6.2}{6.2 Metrics}{chapter.6}
+\BOOKMARK [1][]{section.6.3}{6.3 Synchronization}{chapter.6}
+\BOOKMARK [1][]{section.6.4}{6.4 User Friendliness}{chapter.6}
+\BOOKMARK [0][]{chapter.7}{7 Related Work}{}
+\BOOKMARK [1][]{section.7.1}{7.1 Shared Memory}{chapter.7}
+\BOOKMARK [2][]{subsection.7.1.1}{7.1.1 Blackboard/Shared World Model}{section.7.1}
+\BOOKMARK [2][]{subsection.7.1.2}{7.1.2 Message queue and Streams}{section.7.1}
+\BOOKMARK [2][]{subsection.7.1.3}{7.1.3 Publisher/Subscribe}{section.7.1}
+\BOOKMARK [1][]{section.7.2}{7.2 Overview}{chapter.7}
+\BOOKMARK [0][]{chapter.8}{8 Future Work}{}
+\BOOKMARK [1][]{section.8.1}{8.1 Alternative Channels}{chapter.8}
+\BOOKMARK [1][]{section.8.2}{8.2 Narukom outside robocup}{chapter.8}
+\BOOKMARK [1][]{section.8.3}{8.3 Optimization and Debugging}{chapter.8}
+\BOOKMARK [0][]{chapter.9}{9 Conclusion}{}
+\BOOKMARK [1][]{section.9.1}{9.1 Out To The Real World}{chapter.9}
+\BOOKMARK [0][]{chapter*.3}{References}{}

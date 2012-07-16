@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Technical University of Crete
+ * 
+ * Thesis Project
+ * 
+ * Author:	Methenitis K. Georgios
+ * 
+ * Abstract  : Player Behavior and Team Strategy 
+ * 			for the RoboCup 3D Simulation League
+ * 
+ * Date:  		July 2012
+ ******************************************************************************/
 package perceptor.localization;
 
 import java.util.Iterator;
@@ -78,9 +90,9 @@ public class BallLocalizationFilter {
 
 	public static Coordinate VectorAVG() {
 
-		double x = 0, y = 0, theta = 0, sinSum = 0, cosSum = 0;
+		double x = 0, y = 0;
 
-		Iterator it = qe.iterator();
+		Iterator<Coordinate> it = qe.iterator();
 
 		while (it.hasNext()) {
 
@@ -90,8 +102,6 @@ public class BallLocalizationFilter {
 			y += a.getY();
 
 		}
-
-		theta = Math.toDegrees(Math.atan2(sinSum, cosSum));
 
 		Coordinate MyAvgPosition = new Coordinate((x / qe.size()),
 				(y / qe.size()));

@@ -1,8 +1,19 @@
+/*******************************************************************************
+ * Technical University of Crete
+ * 
+ * Thesis Project
+ * 
+ * Author:	Methenitis K. Georgios
+ * 
+ * Abstract  : Player Behavior and Team Strategy 
+ * 			for the RoboCup 3D Simulation League
+ * 
+ * Date:  		July 2012
+ ******************************************************************************/
 package agent.runtime;
 
 import motion.utils.PerformMovement;
 import perceptor.worldstate.GameState;
-import action.complex.GoKickBallToGoal;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
 import action.simple.TurnToLocate;
@@ -26,8 +37,8 @@ public class AgentFunction {
 
 		/*
 		 * Agent check if he is fallen on the ground. If yes, he will manage to
-		 * understand through this function the he is fallen, and then he will try
-		 * to get up.
+		 * understand through this function the he is fallen, and then he will
+		 * try to get up.
 		 */
 		CheckIfFall.Check();
 		if (InitAgent.isPlayerInited()) {
@@ -42,11 +53,11 @@ public class AgentFunction {
 					if (AgentRuntime.num == 1) {
 
 						Goalie.Act();
-						
+
 					} else {
-						
+
 						ActionEffector.Act();
-						
+
 					}
 				}
 
