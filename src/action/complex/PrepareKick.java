@@ -23,11 +23,11 @@ public class PrepareKick {
 
 			} else {
 
-				if((Ball.RealDistance() > 0.79)){
+				if ((Ball.RealDistance() > 0.79)) {
 
 					MotionTrigger.setMotion("Forwards50");
 					return false;
-				}else{
+				} else {
 
 					MotionTrigger.setMotion("");
 					return true;

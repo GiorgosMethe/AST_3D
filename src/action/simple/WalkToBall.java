@@ -22,7 +22,7 @@ public class WalkToBall {
 				if ((Ball.RealDistance() < 0.805) && (Ball.getDistance() < 0.8)) {
 
 					if ((Math.abs(HingeJointPerceptor.getHj1()
-							+ Math.abs(Ball.getAngleX()))) > 159) {
+							+ Math.abs(Ball.getAngleX()))) > 15) {
 
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 

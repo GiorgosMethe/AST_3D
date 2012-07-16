@@ -5,7 +5,6 @@ import motion.xml.check.CheckKickEnd;
 import motion.xml.check.CheckStrongKickEnd;
 import perceptor.localization.Coordinate;
 import perceptor.localization.LocalizationResults;
-import perceptor.vision.Ball;
 import action.fsm.GKBstates;
 import action.simple.WalkToBall;
 import action.vision.KickSuccess;

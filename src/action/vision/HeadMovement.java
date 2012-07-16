@@ -1,16 +1,3 @@
-/***********************************************************************************
- * Copyright 2012, Technical University of Crete
- * Academic Year 2011-2012
- *
- * Thesis Project
- *
- * @author Methenitis Georgios Student ID:2006030085	
- *
- * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
- * Start date: 25-04-2012											 
- * End date  : xx-xx-2012
- ***********************************************************************************/
-
 package action.vision;
 
 import motion.utils.GetNormalJointValue;
@@ -77,7 +64,7 @@ public class HeadMovement {
 
 		return str;
 	}
-	
+
 	public static String Observe2() {
 
 		int cycles = ServerCyrcles.getCyrclesNow();
@@ -91,7 +78,7 @@ public class HeadMovement {
 			HeadMovement.moveX = HeadMovement.moveX * (-1);
 			HeadMovement.HeadAtRight = true;
 		}
-		
+
 		float moveY = (float) (0.59 * Math.sin(cycles / 8) - 0.078);
 
 		String str = "";

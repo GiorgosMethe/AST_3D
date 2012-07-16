@@ -96,7 +96,7 @@ public class ObstacleAvoidance {
 			double min = 1000;
 			double cost = 0;
 			int PosMin = 0;
-			if( ObstacleAvoidance.Alternatives.size() == 0){
+			if (ObstacleAvoidance.Alternatives.size() == 0) {
 				return null;
 			}
 			for (int i = 0; i < ObstacleAvoidance.Alternatives.size(); i++) {

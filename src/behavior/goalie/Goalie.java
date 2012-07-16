@@ -21,8 +21,6 @@ public class Goalie {
 
 	public static void Act() {
 
-		System.out.println(Goalie.state);
-
 		if (Goalie.state.equalsIgnoreCase("Start")) {
 
 			if (returnToInitPosition()) {
@@ -111,11 +109,7 @@ public class Goalie {
 
 			if (BallAtBox(movingBall.getObject())) {
 
-				System.out.println("Ball at box");
-
 				if (movingBall.getSpeed() > 2) {
-
-					System.out.println("Ball moving fast");
 
 					if (interceptionPoint.y > 0 && interceptionPoint.y < 2) {
 
@@ -162,7 +156,6 @@ public class Goalie {
 					}
 
 					// Ball in our box and opponent agent probably close to the
-					// ball
 					if (min < 1) {
 
 						System.out.println("Opponent near");

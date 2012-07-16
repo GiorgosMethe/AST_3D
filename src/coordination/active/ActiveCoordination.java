@@ -1,20 +1,6 @@
-/***********************************************************************************
- * Technical University of Crete Academic Year 2011-2012
- * 
- * Thesis Project
- * 
- * @author Methenitis Georgios Student ID:2006030085
- * 
- * Abstract: Player Behavior and Team Strategy for the RoboCup 3D
- * Simulation League 
- * 
- * Start date: 25-04-2012 End date : xx-xx-2012
- ***********************************************************************************/
 package coordination.active;
 
 import java.util.Vector;
-
-import javax.print.attribute.standard.MediaSize.Other;
 
 import perceptor.localization.TriangleLocalization;
 import coordination.action.ActionObject;
@@ -83,47 +69,51 @@ public class ActiveCoordination {
 				ActivePositions.ActivePositions,
 				CoordinationSplitter.ActiveSubset, OnBallPlayer,
 				CoordinationBeliefs.Ball);
-		
-		
+
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
-			
+
 			if (OnBallPlayer == CoordinationSplitter.ActiveSubset.elementAt(i)
 					.getNumber()) {
-				
 
 				double max = -1000;
 				perceptor.localization.Coordinate BestAlternative = null;
-				for(int j=0;j<OptimizedActiveMap.size();j++){
-					if(OptimizedActiveMap.elementAt(i).getAgent().getNumber() != OnBallPlayer){
+				for (int j = 0; j < OptimizedActiveMap.size(); j++) {
+					if (OptimizedActiveMap.elementAt(i).getAgent().getNumber() != OnBallPlayer) {
 
-						double value = SoccerFieldCoordinateValue.Calculate(OptimizedActiveMap.elementAt(i).getPosition());
-						
-						if(value > max){
-							
+						double value = SoccerFieldCoordinateValue
+								.Calculate(OptimizedActiveMap.elementAt(i)
+										.getPosition());
+
+						if (value > max) {
+
 							max = value;
-							BestAlternative = OptimizedActiveMap.elementAt(i).getPosition();
+							BestAlternative = OptimizedActiveMap.elementAt(i)
+									.getPosition();
 
-						}	
+						}
 					}
 				}
-				
-				ActionObject OnBallCoordinateAction;
-				if(BestAlternative != null){
-					
-					OnBallCoordinateAction = new ActionObject(
-							CoordinationSplitter.ActiveSubset.elementAt(i)
-									.getNumber(), "GoKickBallToGoal", BestAlternative.getX(), BestAlternative.getY(), 0, 0);
-					
-				}else{
-					
-					OnBallCoordinateAction = new ActionObject(
-							CoordinationSplitter.ActiveSubset.elementAt(i)
-									.getNumber(), "GoKickBallToGoal", 0, 0, 0, 0);
-					
-				}
-				
 
-				ActionTable.CoordinateActions.addElement(OnBallCoordinateAction);
+				ActionObject OnBallCoordinateAction;
+				if (BestAlternative != null) {
+
+					OnBallCoordinateAction = new ActionObject(
+							CoordinationSplitter.ActiveSubset.elementAt(i)
+									.getNumber(), "GoKickBallToGoal",
+							BestAlternative.getX(), BestAlternative.getY(), 0,
+							0);
+
+				} else {
+
+					OnBallCoordinateAction = new ActionObject(
+							CoordinationSplitter.ActiveSubset.elementAt(i)
+									.getNumber(), "GoKickBallToGoal", 0, 0, 0,
+							0);
+
+				}
+
+				ActionTable.CoordinateActions
+						.addElement(OnBallCoordinateAction);
 
 				PreviousOnBallPlayer = OnBallPlayer;
 
@@ -131,18 +121,19 @@ public class ActiveCoordination {
 		}
 
 		for (int i = 0; i < OptimizedActiveMap.size(); i++) {
-			
-			if(OptimizedActiveMap.elementAt(i).getAgent().getNumber() != OnBallPlayer){
 
-			ActionObject a = new ActionObject(OptimizedActiveMap.elementAt(i)
-					.getAgent().getNumber(), "WalkToCoordinate",
-					OptimizedActiveMap.elementAt(i).getPosition().getX(),
-					OptimizedActiveMap.elementAt(i).getPosition().getY(),
-					TriangleLocalization.FindAngleBetweenCoordinates(
-							OptimizedActiveMap.elementAt(i).getPosition(),
-							CoordinationBeliefs.Ball), 0);
+			if (OptimizedActiveMap.elementAt(i).getAgent().getNumber() != OnBallPlayer) {
 
-			ActionTable.CoordinateActions.addElement(a);
+				ActionObject a = new ActionObject(OptimizedActiveMap
+						.elementAt(i).getAgent().getNumber(),
+						"WalkToCoordinate", OptimizedActiveMap.elementAt(i)
+								.getPosition().getX(), OptimizedActiveMap
+								.elementAt(i).getPosition().getY(),
+						TriangleLocalization.FindAngleBetweenCoordinates(
+								OptimizedActiveMap.elementAt(i).getPosition(),
+								CoordinationBeliefs.Ball), 0);
+
+				ActionTable.CoordinateActions.addElement(a);
 			}
 
 		}
@@ -190,7 +181,7 @@ public class ActiveCoordination {
 								PositionMap temp = new PositionMap(
 										activeSubset.elementAt(k),
 										activePositions
-										.elementAt(PlayerSelection[selection++]));
+												.elementAt(PlayerSelection[selection++]));
 								map.add(temp);
 
 							} else {
@@ -198,7 +189,7 @@ public class ActiveCoordination {
 								PositionMap temp = new PositionMap(
 										activeSubset.elementAt(k),
 										activePositions
-										.elementAt(PlayerSelection[selection]));
+												.elementAt(PlayerSelection[selection]));
 								map.add(temp);
 
 							}

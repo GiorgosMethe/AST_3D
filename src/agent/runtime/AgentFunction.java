@@ -1,18 +1,11 @@
 package agent.runtime;
 
-import motion.utils.MotionTrigger;
 import motion.utils.PerformMovement;
-import perceptor.joints.HingeJointPerceptor;
-import perceptor.vision.Ball;
 import perceptor.worldstate.GameState;
-import perceptor.worldstate.TeamState;
-import action.complex.GoKickBallDynamic;
-import action.complex.GoKickBallToGoal;
 import action.complex.GoKickBallToGoal;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
 import action.simple.TurnToLocate;
-import action.simple.WalkToBall;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
 import behavior.goalie.Goalie;
@@ -33,11 +26,10 @@ public class AgentFunction {
 
 		/*
 		 * Agent check if he is fallen on the ground. If yes, he will manage to
-		 * understand through this function the his fall, and then he will try
+		 * understand through this function the he is fallen, and then he will try
 		 * to get up.
 		 */
 		CheckIfFall.Check();
-				
 		if (InitAgent.isPlayerInited()) {
 
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
@@ -50,8 +42,11 @@ public class AgentFunction {
 					if (AgentRuntime.num == 1) {
 
 						Goalie.Act();
-					}else{
+						
+					} else {
+						
 						ActionEffector.Act();
+						
 					}
 				}
 

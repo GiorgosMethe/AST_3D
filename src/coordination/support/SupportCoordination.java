@@ -31,10 +31,9 @@ public class SupportCoordination {
 				SupportPositions.SupportPositionsVector,
 				CoordinationSplitter.SupportSubset, CoordinationBeliefs.Ball);
 
-		if(OptimizedSupportMap == null){
+		if (OptimizedSupportMap == null) {
 
-
-		}else{
+		} else {
 
 			// System.out.println("optimized Support positions");
 			// System.out.println("-------------------");
@@ -47,10 +46,11 @@ public class SupportCoordination {
 				// System.out.println("bazw y "
 				// + OptimizedSupportMap.elementAt(i).getPosition().getY());
 
-				ActionObject a = new ActionObject(OptimizedSupportMap.elementAt(i)
-						.getAgent().getNumber(), "WalkToCoordinate",
-						OptimizedSupportMap.elementAt(i).getPosition().getX(),
-						OptimizedSupportMap.elementAt(i).getPosition().getY(),
+				ActionObject a = new ActionObject(OptimizedSupportMap
+						.elementAt(i).getAgent().getNumber(),
+						"WalkToCoordinate", OptimizedSupportMap.elementAt(i)
+								.getPosition().getX(), OptimizedSupportMap
+								.elementAt(i).getPosition().getY(),
 						TriangleLocalization.FindAngleBetweenCoordinates(
 								OptimizedSupportMap.elementAt(i).getPosition(),
 								CoordinationBeliefs.Ball), 0);
@@ -113,24 +113,24 @@ public class SupportCoordination {
 															.elementAt(h)
 															.elementAt(h1)
 															.getPosition(),
-															SupportPositionsVector
+													SupportPositionsVector
 															.elementAt(i))) {
 
 										RoleMap1.add(new PositionMap(
 												SupportSubset.elementAt(j),
 												SupportPositionsVector
-												.elementAt(i)));
+														.elementAt(i)));
 										RoleMap1.add(new PositionMap(
 												BestRoleMap[i - 1]
 														.elementAt(rr)
 														.elementAt(h)
 														.elementAt(h1)
 														.getAgent(),
-														BestRoleMap[i - 1]
-																.elementAt(rr)
-																.elementAt(h)
-																.elementAt(h1)
-																.getPosition()));
+												BestRoleMap[i - 1]
+														.elementAt(rr)
+														.elementAt(h)
+														.elementAt(h1)
+														.getPosition()));
 										Map.add(RoleMap1);
 
 									}
@@ -148,9 +148,9 @@ public class SupportCoordination {
 											.getAgent() == SupportSubset
 											.elementAt(j)
 											|| BestRoleMap[i - 1].elementAt(rr)
-											.elementAt(h).elementAt(h1)
-											.getPosition() == SupportPositionsVector
-											.elementAt(i)) {
+													.elementAt(h).elementAt(h1)
+													.getPosition() == SupportPositionsVector
+													.elementAt(i)) {
 
 										isSubset = false;
 
@@ -173,11 +173,11 @@ public class SupportCoordination {
 														.elementAt(h)
 														.elementAt(h1)
 														.getAgent(),
-														BestRoleMap[i - 1]
-																.elementAt(rr)
-																.elementAt(h)
-																.elementAt(h1)
-																.getPosition()));
+												BestRoleMap[i - 1]
+														.elementAt(rr)
+														.elementAt(h)
+														.elementAt(h1)
+														.getPosition()));
 
 									}
 
@@ -219,11 +219,11 @@ public class SupportCoordination {
 		}
 
 		int k = BestRoleMap.length - 1;
-		if(k==-1){
+		if (k == -1) {
 
 			return null;
 
-		}else{
+		} else {
 			Vector<PositionMap> OptimizedSupportVector = null;
 			double min = 1000;
 			for (int i = 0; i < BestRoleMap[k].size(); i++) {
@@ -237,8 +237,8 @@ public class SupportCoordination {
 						if (cost < min) {
 							min = cost;
 							OptimizedSupportVector = new Vector<PositionMap>();
-							OptimizedSupportVector.addAll(BestRoleMap[k].elementAt(
-									i).elementAt(ii));
+							OptimizedSupportVector.addAll(BestRoleMap[k]
+									.elementAt(i).elementAt(ii));
 						}
 					}
 
@@ -247,8 +247,6 @@ public class SupportCoordination {
 			return OptimizedSupportVector;
 
 		}
-
-
 
 	}
 

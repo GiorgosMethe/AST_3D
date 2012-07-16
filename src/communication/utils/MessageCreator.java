@@ -1,6 +1,3 @@
-/**
- * 
- */
 package communication.utils;
 
 import perceptor.localization.BallLocalizationFilter;
@@ -11,16 +8,6 @@ import agent.type.AgentType;
 import coordination.action.ActionTable;
 import coordination.action.ActionTranslator;
 
-/***********************************************************************************
- * Copyright 2012, Technical University of Crete Academic Year 2011-2012
- * 
- * Thesis Project
- * 
- * @author Methenitis Georgios Student ID:2006030085
- * 
- *         Abstract: Player Behavior and Team Strategy for the RoboCup 3D
- *         Simulation League Start date: 25-04-2012 End date : xx-xx-2012
- ***********************************************************************************/
 public class MessageCreator {
 
 	public static String CreateStartMessage() {
@@ -74,7 +61,7 @@ public class MessageCreator {
 				message += Integer.toString((int) Math
 						.rint(BallLocalizationFilter.MyFilteredBallPosition
 								.getX()))
-								+ ",";
+						+ ",";
 				message += Integer.toString((int) Math
 						.rint(BallLocalizationFilter.MyFilteredBallPosition
 								.getY()));
@@ -143,42 +130,42 @@ public class MessageCreator {
 	 * 
 	 * @player admin wants to create the action message for this player
 	 */
-//		public static String CreateActionMessage(int player) {
-//	
-//			String message = "";
-//			message += "a" + ",";
-//	
-//			// player number
-//			message += String.valueOf(player) + ",";
-//	
-//			for (int i = 0; i < ActionTable.CoordinateActions.size(); i++) {
-//	
-//				if (ActionTable.CoordinateActions.elementAt(i).number == player) {
-//	
-//					String ActionName = ActionTable.CoordinateActions.elementAt(i).action;
-//					int type = ActionTranslator.FromActionToID(ActionName);
-//	
-//					// action id
-//					message += type + ",";
-//	
-//					double p1 = ActionTable.CoordinateActions.elementAt(i).parametres1;
-//					double p2 = ActionTable.CoordinateActions.elementAt(i).parametres2;
-//					double p3 = ActionTable.CoordinateActions.elementAt(i).parametres3;
-//	
-//					String ps1 = String.valueOf((int) Math.rint(p1));
-//					String ps2 = String.valueOf((int) Math.rint(p2));
-//					String ps3 = String.valueOf((int) Math.rint(p3));
-//	
-//					// parameters
-//					message += ps1 + "," + ps2 + "," + ps3;
-//					System.out.println("--msg: "+message);
-//	
-//				}
-//			}
-//	
-//			return message;
-//	
-//		}
+	// public static String CreateActionMessage(int player) {
+	//
+	// String message = "";
+	// message += "a" + ",";
+	//
+	// // player number
+	// message += String.valueOf(player) + ",";
+	//
+	// for (int i = 0; i < ActionTable.CoordinateActions.size(); i++) {
+	//
+	// if (ActionTable.CoordinateActions.elementAt(i).number == player) {
+	//
+	// String ActionName = ActionTable.CoordinateActions.elementAt(i).action;
+	// int type = ActionTranslator.FromActionToID(ActionName);
+	//
+	// // action id
+	// message += type + ",";
+	//
+	// double p1 = ActionTable.CoordinateActions.elementAt(i).parametres1;
+	// double p2 = ActionTable.CoordinateActions.elementAt(i).parametres2;
+	// double p3 = ActionTable.CoordinateActions.elementAt(i).parametres3;
+	//
+	// String ps1 = String.valueOf((int) Math.rint(p1));
+	// String ps2 = String.valueOf((int) Math.rint(p2));
+	// String ps3 = String.valueOf((int) Math.rint(p3));
+	//
+	// // parameters
+	// message += ps1 + "," + ps2 + "," + ps3;
+	// System.out.println("--msg: "+message);
+	//
+	// }
+	// }
+	//
+	// return message;
+	//
+	// }
 
 	public static String CreateActionMessage(int player) {
 
@@ -186,8 +173,8 @@ public class MessageCreator {
 		message += "a" + ",";
 
 		// player number
-		message += String.valueOf(ActionTable.CoordinateActions.elementAt(player).number) + ",";
-
+		message += String.valueOf(ActionTable.CoordinateActions
+				.elementAt(player).number) + ",";
 
 		String ActionName = ActionTable.CoordinateActions.elementAt(player).action;
 		int type = ActionTranslator.FromActionToID(ActionName);
@@ -205,8 +192,8 @@ public class MessageCreator {
 
 		// parameters
 		message += ps1 + "," + ps2 + "," + ps3;
-		
-		System.out.println("--msg: "+message);
+
+		System.out.println("--msg: " + message);
 
 		return message;
 

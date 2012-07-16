@@ -1,17 +1,6 @@
-/***********************************************************************************
- * Copyright 2012, Technical University of Crete
- * Academic Year 2011-2012
- *
- * Thesis Project
- *
- * @author Methenitis Georgios Student ID:2006030085	
- *
- * Abstract: Player Behavior and Team Strategy for the RoboCup 3D Simulation League
- * Start date: 25-04-2012											 
- * End date  : xx-xx-2012
- ***********************************************************************************/
 package agent.runtime;
 
+import motion.old.CurrentMotion;
 import motion.utils.MotionTrigger;
 import motion.xml.MotionPlaying;
 import motion.xml.WalkLeaning;
@@ -26,6 +15,7 @@ import action.handler.ActionPlaying;
 import action.vision.VisionType;
 import agent.constraints.Beam;
 import agent.constraints.Constraints;
+import behavior.old.BehaviorDone;
 
 import communication.utils.MessageType;
 import communication.utils.WhoSent;
@@ -71,7 +61,11 @@ public class InitAgent {
 				GKBGDstates.setState("Start");
 
 				// Old Movement
+				CurrentMotion.setSoftChangeCounter(0);
+				CurrentMotion.setCurrentMotionPlaying("");
 				InitAgent.setPlayerInited(false);
+				BehaviorDone.setName("");
+				BehaviorDone.setBehaviorDone(true);
 				MotionTrigger.setMotion("");
 
 				// XML movement
