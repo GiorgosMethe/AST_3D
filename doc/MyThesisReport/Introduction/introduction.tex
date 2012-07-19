@@ -1,0 +1,45 @@
+\chapter{Introduction}
+\label{intro}
+What will happen if a robot be put into a soccer field? It is obvious for everyone to understand that nothing is going to happen. This occurs due to the fact that a machine such as a robot should be programmed to percept its surroundings and act just like a human soccer player. Therefore, everything in the robot's world, start from the absolute zero.
+
+
+
+
+
+Communication is a much need skill, which is met everywhere around us from a human cell and micro-organisms to vastly advanced animals as humans. Even the nature itself reinvents itself if a communication channel is broken down. Humans since the advent of their history form all kinds of groups striving to achieve a common goal, especially , in our time and age ,
+%Communication among team members is a crucial ability for any kind of team striving to achieve a common goal, especially
+for teams participating in games, where success can only be achieved through collaborative and coordinated efforts.
+Teams lacking means of communication are doomed to act simply as a collection of individuals with no added benefit,
+other than the multiplicity of individual skills. For human teams, communication is second nature; it is used not only
+for teamwork in games, but also in all aspects of life, and takes a multitude of different forms (oral, written,
+gestural, visual, auditory). Robots can hardly replicate all human communication means, since these would require
+extremely accurate and robust perceptual and action abilities on each robot. Fortunately, most modern robots are capable
+of communicating over data networks, an ability which is not available to their human counterparts. However, exploiting
+such networking means for team communication purposes in an efficient manner that does not drain the underlying
+resources and provides transparent exchange of information in real time is a rather challenging problem. 
+
+
+This thesis describes a distributed communication framework for robotic teams, which was originally developed for the
+Standard Platform League (SPL) of the RoboCup (robotic soccer) competition, but can easily serve any other domain with
+similar communication needs. During a RoboCup game, robot players occasionally need to share perceptual, strategic, and
+other team-related information with their team-mates in order to coordinate their efforts. In addition, during
+development and debugging, human researchers need to be in direct contact with their robots for monitoring and
+modification purposes. Typically, these kinds of communication take place over a wireless network. The naive solution of
+maintaining a synchronized copy of each robot's data on each node on the network is both inefficient and unrealistic for
+such real-time systems. 
+
+Our proposal suggests a distributed and transparent communication framework, called \textit{Narukom}, whereby any node
+of the network (robot or remote computer) can access on demand any data available on some other node in a natural and
+straightforward way. The framework is based on the publish/subscribe paradigm and provides maximal decoupling not only
+between nodes, but also between threads running on the same node. As a result, \textit{Narukom} offers a uniform communication
+mechanism between different threads of execution on the same or on different machines. The data shared between the nodes
+of the team are stored on local blackboards which are transparently accessible from all nodes. In real-time systems,
+such as robotic teams, data come in streams and are being refreshed regularly, therefore it is important to communicate
+the latest data or data with a particular time stamp among the robots. To address such synchronization needs, we have
+integrated temporal information into the meta-data of the underlying messages exchanged over the network. \textit{Narukom}'s
+distributed nature and platform independence make it an ideal base for the development of complex team strategies that
+require tight coordination, but also for the distribution of resource-intensive computations, such as learning
+experiments, over several (robot and non-robot) nodes.
+
+\section{Thesis Outline}
+Chapter~\ref{background} provides some background information on the RoboCup Competition and the underlying technologies used to developed \textit{Narukom}. In Chapter~\ref{communication} we demonstrate some important aspects of the problem of communication across robots. Continuing to chapter~\ref{Narukom}, where the core ideas and an outline of the architecture of our proposal is discussed. Moving on to chapter~\ref{implementation}, a thorough discussion about optimization, implementation design and decisions taken during  the development of \textit{Narukom}. In Chapter \ref{results} a discussion on the results is taking place by providing several experiments in order to evaluate our work. The following chapter ~\ref{related}, presents similar systems developed by other robocup teams including a brief comparison between those systems and ours. Future work and proposals on extending and improving our framework are  the subject of the chapter ~\ref{future}. The final chapter~\ref{conclusion} serves as an epilogue to this thesis, including  a small overview of the system and some long terms plans about \textit{Narukom}.
