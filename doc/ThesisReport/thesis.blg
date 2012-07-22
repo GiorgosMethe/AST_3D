@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Introduction/introduction.aux
+A level-1 auxiliary file: Chapter1/chapter1.aux
+A level-1 auxiliary file: Chapter2/chapter2.aux
+A level-1 auxiliary file: Chapter3/chapter3.aux
+A level-1 auxiliary file: Chapter4/chapter4.aux
+A level-1 auxiliary file: Chapter5/chapter5.aux
+A level-1 auxiliary file: Chapter6/chapter6.aux
+A level-1 auxiliary file: Chapter7/chapter7.aux
+A level-1 auxiliary file: Chapter8/chapter8.aux
+The style file: StyleFiles/splncs.bst
+Database file #1: thesis.bib
+Warning--I didn't find a database entry for "GTCMU"
+Warning--I didn't find a database entry for "rUNSWift"
+You've used 6 entries,
+            2087 wiz_defined-function locations,
+            540 strings with 6071 characters,
+and the built_in function-call counts, 1451 in all, are:
+= -- 66
+> -- 177
+< -- 0
++ -- 61
+- -- 55
+* -- 136
+:= -- 272
+add.period$ -- 6
+call.type$ -- 6
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 36
+empty$ -- 109
+format.name$ -- 55
+if$ -- 291
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 0
+newline$ -- 27
+num.names$ -- 6
+pop$ -- 36
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 18
+stack$ -- 0
+substring$ -- 0
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 6
+width$ -- 7
+write$ -- 56
+(There were 2 warnings)

@@ -1,0 +1,84 @@
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Thesis Outline}{2}{section.1.1}
+\contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}RoboCup Competition}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}RoboCup Soccer}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Humanoid}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Middle Size}{4}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Simulation}{4}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Small Size}{4}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Standard Platform}{5}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}RoboCup Rescue}{5}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Robot League}{5}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Simulation League}{5}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}RoboCup @Home}{6}{section.2.4}
+\contentsline {section}{\numberline {2.5}RoboCup Junior}{6}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Soccer}{6}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Dance}{6}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Rescue}{7}{subsection.2.5.3}
+\contentsline {chapter}{\numberline {3}SimSpark}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Soccer simulation}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Server}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Simulation Update Loop}{11}{section.3.3}
+\contentsline {section}{\numberline {3.4}Network Protocol}{11}{section.3.4}
+\contentsline {section}{\numberline {3.5}Monitor}{11}{section.3.5}
+\contentsline {section}{\numberline {3.6}Perceptors}{12}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}General perceptors}{12}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}General perceptors}{14}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}Effectors}{15}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}General Effectors}{16}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Soccer Effectors}{17}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}Model}{18}{section.3.8}
+\contentsline {chapter}{\numberline {4}Agent}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Agent Architecture}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Connection}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Perceptions}{21}{section.4.3}
+\contentsline {section}{\numberline {4.4}Localization}{22}{section.4.4}
+\contentsline {section}{\numberline {4.5}Localization Filtering}{24}{section.4.5}
+\contentsline {section}{\numberline {4.6}Motions}{25}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}XML Based Motions}{27}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}XML Based Motion Controller}{28}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Text Based Motions}{30}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.4}Text Based Motion Controller}{31}{subsection.4.6.4}
+\contentsline {section}{\numberline {4.7}Actions}{31}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Simple}{31}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Complex}{32}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}Vision}{32}{subsection.4.7.3}
+\contentsline {section}{\numberline {4.8}Communication}{32}{section.4.8}
+\contentsline {chapter}{\numberline {5}Coordination}{33}{chapter.5}
+\contentsline {section}{\numberline {5.1}Messages}{33}{section.5.1}
+\contentsline {section}{\numberline {5.2}Beliefs}{33}{section.5.2}
+\contentsline {section}{\numberline {5.3}Splitter}{33}{section.5.3}
+\contentsline {section}{\numberline {5.4}Active Positions}{33}{section.5.4}
+\contentsline {section}{\numberline {5.5}Active Coordination}{33}{section.5.5}
+\contentsline {section}{\numberline {5.6}Team Formation}{33}{section.5.6}
+\contentsline {section}{\numberline {5.7}Role Assignment}{33}{section.5.7}
+\contentsline {section}{\numberline {5.8}Support Positions}{33}{section.5.8}
+\contentsline {section}{\numberline {5.9}Support Coordination}{33}{section.5.9}
+\contentsline {section}{\numberline {5.10}Mapping Cost}{33}{section.5.10}
+\contentsline {chapter}{\numberline {6}Results}{35}{chapter.6}
+\contentsline {chapter}{\numberline {7}Related Work}{37}{chapter.7}
+\contentsline {section}{\numberline {7.1}Shared Memory}{37}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Blackboard/Shared World Model}{38}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Message queue and Streams}{38}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Publisher/Subscribe}{39}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Overview}{39}{section.7.2}
+\contentsline {chapter}{\numberline {8}Future Work}{41}{chapter.8}
+\contentsline {section}{\numberline {8.1}Alternative Channels}{41}{section.8.1}
+\contentsline {section}{\numberline {8.2}Narukom outside robocup}{41}{section.8.2}
+\contentsline {section}{\numberline {8.3}Optimization and Debugging}{41}{section.8.3}
+\contentsline {chapter}{\numberline {9}Conclusion}{43}{chapter.9}
+\contentsline {section}{\numberline {9.1}Out To The Real World}{43}{section.9.1}
+\contentsline {chapter}{References}{45}{chapter*.3}
