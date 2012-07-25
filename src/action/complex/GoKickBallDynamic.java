@@ -18,6 +18,7 @@ import motion.xml.check.CheckStrongKickEnd;
 import perceptor.localization.Coordinate;
 import perceptor.localization.LocalizationResults;
 import action.fsm.GKBstates;
+import action.simple.PrepareKick;
 import action.simple.WalkToBall;
 import action.vision.KickSuccess;
 

@@ -10,7 +10,7 @@
  * 
  * Date:  		July 2012
  ******************************************************************************/
-package action.complex;
+package action.simple;
 
 import motion.utils.MotionTrigger;
 import perceptor.joints.HingeJointPerceptor;

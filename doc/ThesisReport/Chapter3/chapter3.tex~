@@ -1,14 +1,13 @@
 \chapter{Agent}
-\label{Agent}
 In this chapter we are going to understand how the agent functions. Each agent consists from several parts which are described in detail.
 
 \section{Agent Architecture}
-Before seeing each part of the agent's software separately, it is time to describe the framework's architecture.  Soccer Simulation Server known as rcssserver3d is responsible for sending to our agent perception messages. Communication layer is the one that handles all the received messages and pass them to the agent. In agent layer, these messages are handled by a message parser which is responsible for updating all beliefs of the agent. Consequently, all functions that require new perceptions start then. Now, agent is able to do what the behavior tells him.
-In our approach, only goalkeeper ''runs'' an independent behavior, the other eight field players start a communication procedure in order to inform the goalkeeper about the worldstate and their attributes. Goalkeeper is going to decide about the actions that every field player should do. So, we can realize that field players do not execute any behavior. We are going to describe coordination procedure later in a separate chapter.
-Communication controller and motion controller are responsible for handling the agent's requests for sending a message to the his team mates or a movement that he has to execute. These two controllers send in every cycle effection messages to the connection layer which will send them back to soccer simulation server.\\
+Before seeing each part of the agent's software separately, it is time to describe the framework's architecture.  Soccer Simulation Server known as rcssserver3d is responsible for sending to our agent perception messages. Communication layer is the one that handles all the received messages and pass them to the agent. In agent layer, these messages are handled by a message parser which is responsible for updating all beliefs of the agent. Consequently, all functions that require new perceptions start then. Now, agent is free to do what the behavior tells him.
+In our approach, only goalkeeper is running an independent behavior, the other eight field players start a communication procedure in order to inform the goalkeeper about the worldstate and their attributes. So, we can realize that field players do not execute any behavior. We are going to describe coordination procedure later in a separate chapter.
+Communication controller and motion controller are responsible for handling the agent's requests for a message that he has to say or a movement that he has to execute. These two controller are sending in every cycle effection messages to the connection layer which will send them back to soccer simulation server.\\
 \begin{figure}[htb!]
 \centering
-  \includegraphics[trim=0cm 12cm 0cm 0cm, clip=true,scale=0.5]{Chapter3/figures/Architecture.jpg}
+  \includegraphics[trim=1cm 2cm 1cm 2cm, clip=true,scale=0.7]{Chapter3/figures/Architecture.pdf}
   \caption{Agent's Architecture.}
   \label{fig:Architecture}
 \end{figure}
@@ -58,7 +57,7 @@ Once we have all the necessary beliefs updated, it is time for us to use them in
 \\
 {\bf Localization Process}\\
 \\
-Localization process is executed every three cycles (60ms) and when we receive observations from the vision perceptor. If we have visible objects in our sight we organize them in terms of their type. There are three types: Landmarks, Co-Players and Opponent Players. We make use of the Landmarks to find our position in the field.
+Localization process is executed every three cycles and when we receive observations from the vision perceptor. If we have visible objects in our sight we organize them in terms of their type. There are three types: Landmarks, Co-Players and Opponent Players. We make use of the Landmarks to find our position in the field.
 The Nao's restricted vision perceptor limits the field of view to 120 degrees.
 \begin{figure}[htb!]
 \centering
@@ -272,10 +271,10 @@ With these calculations our agent is always aware of the distance and the direct
   \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true,scale=0.3]{Chapter3/figures/WalkToCoordinate.png}
   \caption{WalkToCoordinate.}
   \label{fig:WalkToCoordinate}
-\end{figure}
+\end{figure} 
  \item[WalkToDirection]
  With this action agent walks towards a specific direction.
- \item[WalkWithBallToDirection]
+ \item[WalkWithBallToDirection}
  As far as agent reaches the ball, he will try to keep the ball in front of him and walk towards a direction keeping into mind that the ball has to be always in front of him.
 \end{description}
 
@@ -327,7 +326,7 @@ Once we have all the qualified angle sets from the algorithm, it is time to find
 
 
 \subsection{Other Sensors}
-Other Sensors related actions are created to collect data from gyroscope, accelerometer and force resistance perceptors. In this category there is only one action. This action is called {\bf CheckIfFall} and is responsible to check if our agent is fallen on the ground. In a multi-agent environment like this we should be aware about possible collisions with other agents or falls because the instability of movement. First of all, incoming perceptual inputs related to both gyroscope and accelerometer values are used to detect whether the robot has become subject of a big turmoil. Taking values  above a threshold from these two perceptors, it is possible that the robot has fallen, but not completely sure to perform a stand up action yet. It is not unusual to receive values above threshold due to a collision without a fall. So, we have to check the force resistance perceptors which are located on the sole of agent's feet. If these perceptors imply that the legs do not touch the ground then we are pretty sure to perform a stand up action.Foot pressure value is also used to determine whether the stand up action is succeeded.
+Other Sensors related actions are created to collect data from gyroscope, accelerometer and force resistance perceptors. In this category there is only one action. This action is called {\bf CheckIfFall} and is responsible to check if our agent is fallen on the ground. In a multi-agent environment like this we should be aware about possible collisions with other agents or falls because the instability of movement. First of all, incoming perceptual inputs related to both gyroscope and accelerometer values are used to detect whether the robot has become subject of a big turmoil. Taking values  above a threshold from these two perceptors, it is possible that the robot has fallen, but not completely sure to perform a stand up action yet. It is not unusual to receive values above threshold due to a collision without a fall. So, we have to check the force resistance perceptors which are located under agent's feet. If these perceptors imply that the legs do not touch the ground then we are pretty sure to perform a stand up action.Foot pressure value is also used to determine whether the stand up action is succeeded.
 
 
 \section{Communication}

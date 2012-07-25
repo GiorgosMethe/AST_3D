@@ -61,22 +61,6 @@ Professor Miron Garofalakis (ECE)
  \renewcommand\baselinestretch{1.2}
 \baselineskip=18pt plus1pt
 
-% A page with the abstract on including title and author etc may be
-% required to be handed in separately. If this is not so, then comment
-% the below 3 lines (between '\begin{abstractseparte}' and 
-% 'end{abstractseparate}'), normally like a declaration ... needs some more
-% work, mind as environment abstracts creates a new page!
-% \begin{abstractseparate}
-%   \input{Abstract/abstract}
-% \end{abstractseparate}
-
-
-
-
-% Using the watermark package which is in StyleFiles/
-% and to remove DRAFT COPY ONLY appearing on the top of all pages comment out below line
-%\watermark{DRAFT COPY ONLY}
-
  % English Title Page
 \maketitle
     \cleardoublepage
@@ -109,15 +93,12 @@ Professor Miron Garofalakis (ECE)
 \setcounter{tocdepth}{2}
 
 \frontmatter
-% \include{Dedication/dedication}
-% \include{Acknowledgement/acknowledgement}
+
  \include{Abstract/abstract}
 
 \tableofcontents
 \listoffigures
-%\printglossary  %% Print the nomenclature
-%\addcontentsline{toc}{chapter}{Nomenclature}
-
+\listofalgorithms
 
 \mainmatter
 

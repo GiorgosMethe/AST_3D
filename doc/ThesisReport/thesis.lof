@@ -14,16 +14,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Simulation Soccer Field}}{10}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Nao in simulation screen}}{18}{figure.3.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Nao in simulation screen}}{17}{figure.3.2}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Agent's Architecture.}}{20}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Simulation Update Loop.}}{21}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Beliefs Update.}}{22}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Nao's field of view.}}{23}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Localization.}}{24}{figure.4.5}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Localization.}}{23}{figure.4.5}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Localization Results.}}{25}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Motion Controller.}}{28}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Phase Sequence.}}{29}{figure.4.8}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Motion Controller.}}{29}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Phase Sequence.}}{30}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces GoKickBallToGoal Action.}}{33}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces WalkToCoordinate.}}{34}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Obstacle Avoidance.}}{36}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Time Slices.}}{39}{figure.4.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

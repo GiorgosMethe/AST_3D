@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  22 JUL 2012 20:47
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  25 JUL 2012 03:23
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -476,7 +476,7 @@ LaTeX Info: Redefining \pageref on input line 56.
 \openout5 = `thesis.out'.
 
 \AtBeginShipoutBox=\box30
- <ThesisFigs/TUClogocolor.jpg, id=293, 113.7048pt x 182.1204pt>
+ <ThesisFigs/TUClogocolor.jpg, id=277, 113.7048pt x 182.1204pt>
 File: ThesisFigs/TUClogocolor.jpg Graphic file (type jpg)
 
 <use ThesisFigs/TUClogocolor.jpg> [1
@@ -496,7 +496,10 @@ File: ThesisFigs/TUClogocolor.jpg Graphic file (type jpg)
 
 
 ] [2]
-[3]) [4] (./thesis.toc
+[3] [4]) [5] [6
+
+
+] (./thesis.toc
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 14.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -533,360 +536,490 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [5
-
-
-] [6])
+) [7] [8])
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [7] [8
+ [9] [10
 
 ]
 (./thesis.lof)
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [9] [10
+ [11] [12
+
+] (./thesis.loa)
+\tf@loa=\write8
+\openout8 = `thesis.loa'.
+
+ [13] [14
 
 ]
 \openout2 = `Introduction/introduction.aux'.
 
- (./Introduction/introduction.tex
+
+(./Introduction/introduction.tex
 Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.6 
-     [1
+l.20 
+      [1
 
 
-])pdfTeX warning (ext4): destination with the same identifier (name{page.2}) ha
-s been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.104  \include{Introduction/introduction}
-                                           [2]
-\openout2 = `Chapter1/chapter1.aux'.
-
- (./Chapter1/chapter1.tex
-Chapter 2.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.9 \subsection
-               {Humanoid} [3
-
-
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.17 \subsection
-                {Standard Platform} [4] [5]) [6] [7]
-\openout2 = `Chapter2/chapter2.aux'.
+l.20 
+      [2])pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.106  \include{Introduction/introduction}
+                                           [3]
+\openout2 = `Chapter1/chapter1.aux'.
 
- (./Chapter2/chapter2.tex
-[8
+ (./Chapter1/chapter1.texpdfTeX warning (ext4): destination with the same ident
+ifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Background} [4
 
 
 
 ]
+Chapter 2.
+[5] [6] [7]) [8]
+\openout2 = `Chapter2/chapter2.aux'.
+
+ (./Chapter2/chapter2.tex
 Chapter 3.
 
-<Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png, id=487, 256.96pt x 177
+<Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png, id=507, 256.96pt x 177
 .66376pt>
 File: Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png Graphic file (type
  png)
- <use Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png> [9]
+ <use Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png> [9
+
+
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png>] [11]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 38.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 46.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [12] [13] [14] [15] [16]
-<Chapter2/figures/629px-Models-nao.jpg, id=524, 631.35875pt x 601.24625pt>
+) [12] [13] [14] [15]
+<Chapter2/figures/629px-Models-nao.jpg, id=540, 631.35875pt x 601.24625pt>
 File: Chapter2/figures/629px-Models-nao.jpg Graphic file (type jpg)
 
-<use Chapter2/figures/629px-Models-nao.jpg>) [17] [18 <./Chapter2/figures/629px
+<use Chapter2/figures/629px-Models-nao.jpg>) [16] [17 <./Chapter2/figures/629px
 -Models-nao.jpg>]
 \openout2 = `Chapter3/chapter3.aux'.
 
- (./Chapter3/chapter3.tex
+ (./Chapter3/chapter3.tex [18
+
+
+
+]
 Chapter 4.
-<Chapter3/figures/Architecture.pdf, id=534, 614.295pt x 794.97pt>
-File: Chapter3/figures/Architecture.pdf Graphic file (type pdf)
+<Chapter3/figures/Architecture.jpg, id=553, 819.06pt x 1059.96pt>
+File: Chapter3/figures/Architecture.jpg Graphic file (type jpg)
 
-<use Chapter3/figures/Architecture.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
+<use Chapter3/figures/Architecture.jpg> [19]
 <Chapter2/figures/800px-SimulationUpdateLoopSynchronizationBetweenSimSparkAndAg
-ent.png, id=538, 803.0pt x 284.06125pt>
+ent.png, id=561, 803.0pt x 284.06125pt>
 File: Chapter2/figures/800px-SimulationUpdateLoopSynchronizationBetweenSimSpark
 AndAgent.png Graphic file (type png)
 
 <use Chapter2/figures/800px-SimulationUpdateLoopSynchronizationBetweenSimSparkA
-ndAgent.png> [19
-
-
-
-] [20 <./Chapter3/figures/Architecture.pdf>]
-<Chapter3/figures/MessagesBeliefs.jpg, id=554, 653.44125pt x 287.0725pt>
+ndAgent.png> [20 <./Chapter3/figures/Architecture.jpg>]
+<Chapter3/figures/MessagesBeliefs.jpg, id=567, 653.44125pt x 287.0725pt>
 File: Chapter3/figures/MessagesBeliefs.jpg Graphic file (type jpg)
 
 <use Chapter3/figures/MessagesBeliefs.jpg> [21 <./Chapter2/figures/800px-Simula
 tionUpdateLoopSynchronizationBetweenSimSparkAndAgent.png (PNG copy)>]
-<Chapter3/figures/Localization1.png, id=559, 927.465pt x 659.46375pt>
+<Chapter3/figures/Localization1.png, id=572, 927.465pt x 659.46375pt>
 File: Chapter3/figures/Localization1.png Graphic file (type png)
 
 <use Chapter3/figures/Localization1.png>
-<Chapter3/figures/Localization3.png, id=562, 1160.335pt x 750.805pt>
+<Chapter3/figures/Localization3.png, id=575, 1160.335pt x 750.805pt>
 File: Chapter3/figures/Localization3.png Graphic file (type png)
 
 <use Chapter3/figures/Localization3.png> [22 <./Chapter3/figures/MessagesBelief
-s.jpg>] [23 <./Chapter3/figures/Localization1.png (PNG copy)>]
-<Chapter3/figures/Localization.png, id=573, 1056.94875pt x 698.61pt>
+s.jpg>] [23 <./Chapter3/figures/Localization1.png (PNG copy)> <./Chapter3/figur
+es/Localization3.png (PNG copy)>]
+<Chapter3/figures/Localization.png, id=585, 1056.94875pt x 698.61pt>
 File: Chapter3/figures/Localization.png Graphic file (type png)
 
 <use Chapter3/figures/Localization.png>
+Overfull \hbox (10.20705pt too wide) in paragraph at lines 87--88
+ [][] 
+ []
+
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 95.
+put line 96.
+[24]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[24 <./Chapter3/figures/Localization3.png (PNG copy)>] [25 <./Chapter3/figures/
-Localization.png (PNG copy)>] [26pdfTeX warning (ext4): destination with the sa
-me identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+ [25 <./Chapter3/figures/Localization.png (PNG copy)>] [26pdfTeX warning (ext4)
+: destination with the same identifier (name{ALC@rem.1}) has been already used,
+ duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.131 
       pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
-      ] [27] <Chapter3/figures/motions.jpg, id=619, 575.14874pt x 396.48125pt>
-File: Chapter3/figures/motions.jpg Graphic file (type jpg)
+l.131 
+      pdfTeX warning (ext4): destination with the same identifier (name{ALC@rem
+.1}) has been already used, duplicate ignored
 
-<use Chapter3/figures/motions.jpg>
-<Chapter3/figures/XMLMotions.pdf, id=621, 614.295pt x 794.97pt>
-File: Chapter3/figures/XMLMotions.pdf Graphic file (type pdf)
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.131 
+      ] [27]
+<Chapter3/figures/MotionController.jpg, id=630, 819.06pt x 1059.96pt>
+File: Chapter3/figures/MotionController.jpg Graphic file (type jpg)
 
-<use Chapter3/figures/XMLMotions.pdf> [28 <./Chapter3/figures/motions.jpg>]
-[29 <./Chapter3/figures/XMLMotions.pdf>] [30] [31]) [32]
+<use Chapter3/figures/MotionController.jpg>
+<Chapter3/figures/MotionSequence.jpg, id=633, 819.06pt x 1059.96pt>
+File: Chapter3/figures/MotionSequence.jpg Graphic file (type jpg)
+
+<use Chapter3/figures/MotionSequence.jpg> [28] [29 <./Chapter3/figures/MotionCo
+ntroller.jpg>] [30 <./Chapter3/figures/MotionSequence.jpg>] [31]
+<Chapter3/figures/KickFsm.jpg, id=656, 819.06pt x 1059.96pt>
+File: Chapter3/figures/KickFsm.jpg Graphic file (type jpg)
+
+<use Chapter3/figures/KickFsm.jpg> [32]
+<Chapter3/figures/WalkToCoordinate.png, id=664, 1284.8pt x 888.31876pt>
+File: Chapter3/figures/WalkToCoordinate.png Graphic file (type png)
+
+<use Chapter3/figures/WalkToCoordinate.png> [33 <./Chapter3/figures/KickFsm.jpg
+>] [34 <./Chapter3/figures/WalkToCoordinate.png (PNG copy)>] [35]
+<Chapter3/figures/ObstacleAvoidance.png, id=680, 528.55093pt x 433.00754pt>
+File: Chapter3/figures/ObstacleAvoidance.png Graphic file (type png)
+
+<use Chapter3/figures/ObstacleAvoidance.png>pdfTeX warning (ext4): destination 
+with the same identifier (name{ALC@line.1}) has been already used, duplicate ig
+nored
+<to be read again> 
+                   \relax 
+l.313 \STATE
+             $Obstacles = \lbrace O_{1},O_{2},...,O_{n} \rbrace $pdfTeX warning
+ (ext4): destination with the same identifier (name{ALC@rem.1}) has been alread
+y used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.313 \STATE
+             $Obstacles = \lbrace O_{1},O_{2},...,O_{n} \rbrace $pdfTeX warning
+ (ext4): destination with the same identifier (name{ALC@line.2}) has been alrea
+dy used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.314 \FOR{{\bf each} i in Obstacles}
+                                     pdfTeX warning (ext4): destination with th
+e same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.314 \FOR{{\bf each} i in Obstacles}
+                                     pdfTeX warning (ext4): destination with th
+e same identifier (name{ALC@line.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.315 \STATE
+             $WayOutSet.Add(Calculate(O_{a},t))$pdfTeX warning (ext4): destinat
+ion with the same identifier (name{ALC@rem.1}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.315 \STATE
+             $WayOutSet.Add(Calculate(O_{a},t))$pdfTeX warning (ext4): destinat
+ion with the same identifier (name{ALC@line.4}) has been already used, duplicat
+e ignored
+<to be read again> 
+                   \relax 
+l.316 \ENDFOR
+             pdfTeX warning (ext4): destination with the same identifier (name{
+ALC@rem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.316 \ENDFOR
+             pdfTeX warning (ext4): destination with the same identifier (name{
+ALC@line.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 \FOR{{\bf each} j in WayOutSet}
+                                     pdfTeX warning (ext4): destination with th
+e same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 \FOR{{\bf each} j in WayOutSet}
+                                     pdfTeX warning (ext4): destination with th
+e same identifier (name{ALC@line.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.318 \FOR{{\bf each} t in $\lbrace r, l \rbrace$}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{ALC@rem.1}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.318 \FOR{{\bf each} t in $\lbrace r, l \rbrace$}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{ALC@line.7}) has been already used, duplic
+ate ignored
+<to be read again> 
+                   \relax 
+l.319 ...n \lbrace 1,2 \ast n \rbrace , k \neq j$}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{ALC@rem.1}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.319 ...n \lbrace 1,2 \ast n \rbrace , k \neq j$}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{ALC@line.8}) has been already used, duplic
+ate ignored
+<to be read again> 
+                   \relax 
+l.320 \STATE
+             $WayOutSet.Remove(j,t)$pdfTeX warning (ext4): destination with the
+ same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.320 \STATE
+             $WayOutSet.Remove(j,t)$pdfTeX warning (ext4): destination with the
+ same identifier (name{ALC@line.9}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.321 \ENDIF
+            pdfTeX warning (ext4): destination with the same identifier (name{A
+LC@rem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.321 \ENDIF
+            pdfTeX warning (ext4): destination with the same identifier (name{A
+LC@line.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.322 \ENDFOR
+             pdfTeX warning (ext4): destination with the same identifier (name{
+ALC@rem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.322 \ENDFOR
+             pdfTeX warning (ext4): destination with the same identifier (name{
+ALC@line.11}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.323 \ENDFOR
+             pdfTeX warning (ext4): destination with the same identifier (name{
+ALC@rem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.323 \ENDFOR
+              [36 <./Chapter3/figures/ObstacleAvoidance.png>] [37]
+<Chapter3/figures/TimeSlicing.png, id=696, 3699.8225pt x 175.65625pt>
+File: Chapter3/figures/TimeSlicing.png Graphic file (type png)
+
+<use Chapter3/figures/TimeSlicing.png>) [38] [39 <./Chapter3/figures/TimeSlicin
+g.png>]
 \openout2 = `Chapter4/chapter4.aux'.
 
-
-(./Chapter4/chapter4.tex
-Chapter 5.
-) [33
+ (./Chapter4/chapter4.tex [40
 
 
 
 ]
+Chapter 5.
+) [41]
 \openout2 = `Chapter5/chapter5.aux'.
 
- (./Chapter5/chapter5.tex [34
+ (./Chapter5/chapter5.tex [42
 
 
 
 ]
 Chapter 6.
-) [35]
+) [43]
 \openout2 = `Chapter6/chapter6.aux'.
 
- (./Chapter6/chapter6.tex [36
+ (./Chapter6/chapter6.tex [44
 
 
 
 ]
 Chapter 7.
-
-LaTeX Warning: Citation `GTCMU' on page 37 undefined on input line 10.
-
-
-LaTeX Warning: Citation `rUNSWift' on page 37 undefined on input line 10.
-
-
-Underfull \vbox (badness 2119) has occurred while \output is active []
-
- [37]
-[38]) [39]
+) [45]
 \openout2 = `Chapter7/chapter7.aux'.
 
- (./Chapter7/chapter7.tex [40
+ (./Chapter7/chapter7.tex [46
 
 
 
 ]
 Chapter 8.
-) [41]
+) [47] [48]
 \openout2 = `Chapter8/chapter8.aux'.
 
- (./Chapter8/chapter8.tex [42
+ (./Chapter8/chapter8.tex
+Chapter 9.
+) [49
 
+
+
+] (./thesis.bbl (./thesis.brf)
+\tf@brf=\write9
+\openout9 = `thesis.brf'.
+
+ [50
 
 
 ]
-Chapter 9.
-) [43] (./thesis.bbl (./thesis.brf)
-\tf@brf=\write8
-\openout8 = `thesis.brf'.
 
- [44
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-
-]) [45] (./thesis.aux
-(./Abstract/abstract.aux) (./Introduction/introduction.aux)
-(./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux) (./Chapter3/chapter3.aux)
+) [51] (./thesis.aux (./Abstract/abstract.aux) (./Introduction/introduction.aux
+) (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux) (./Chapter3/chapter3.aux)
 (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux) (./Chapter6/chapter6.aux)
-(./Chapter7/chapter7.aux) (./Chapter8/chapter8.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./Chapter7/chapter7.aux) (./Chapter8/chapter8.aux)) ) 
 Here is how much of TeX's memory you used:
- 7279 strings out of 494985
- 106496 string characters out of 1181034
- 181308 words of memory out of 3000000
- 10015 multiletter control sequences out of 15000+50000
+ 7263 strings out of 494985
+ 106657 string characters out of 1181034
+ 181324 words of memory out of 3000000
+ 9985 multiletter control sequences out of 15000+50000
  51471 words of font info for 49 fonts, out of 3000000 for 9000
  73 hyphenation exceptions out of 8191
- 45i,12n,48p,3555b,660s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf-texlive/fonts/type1/p
-ublic/cbfonts/grmc1200.pfb></usr/share/texmf-texlive/fonts/type1/public/cbfonts
-/grmn1200.pfb></usr/share/texmf-texlive/fonts/type1/public/cbfonts/grmn1728.pfb
-></usr/share/texmf-texlive/fonts/type1/public/cbfonts/grxn1728.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (59 pages, 1083997 bytes).
+ 45i,12n,48p,2199b,662s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/
+usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/
+lm/lm-ec.enc}</usr/share/texmf-texlive/fonts/type1/public/cbfonts/grmc1200.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/cbfonts/grmn1200.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/cbfonts/grmn1728.pfb></usr/share/texmf-texlive/
+fonts/type1/public/cbfonts/grxn1728.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmm
+i8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on thesis.pdf (69 pages, 1538650 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 168 named destinations out of 1000 (max. 500000)
- 644 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 850 PDF objects out of 1000 (max. 8388607)
+ 175 named destinations out of 1000 (max. 500000)
+ 662 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -16,7 +16,7 @@ import agent.constraints.Constraints;
 import agent.type.AgentType;
 import connection.utils.ServerCyrcles;
 
-public class MessagePerCycle {
+public class CommProtocol {
 
 	/*
 	 * @number, who tries to send

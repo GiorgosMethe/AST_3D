@@ -37,7 +37,7 @@ public class SayEffector {
 
 			message = "(say" + " " + MessageCreator.CreateStartMessage() + ")";
 
-			if (MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),
+			if (CommProtocol.PerNumCircles(AgentType.getPlayerNum(),
 					MessageType.getCommunicationType()) == true) {
 				return message;
 			}
@@ -47,7 +47,7 @@ public class SayEffector {
 			message = "(say" + " "
 					+ MessageCreator.CreateStartCoordinationMessage() + ")";
 
-			if (MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),
+			if (CommProtocol.PerNumCircles(AgentType.getPlayerNum(),
 					MessageType.getCommunicationType()) == true) {
 				return message;
 			}
@@ -57,7 +57,7 @@ public class SayEffector {
 			if (ActionMessages.getPlayer() < ActionTable.CoordinateActions
 					.size()) {
 
-				if (MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),
+				if (CommProtocol.PerNumCircles(AgentType.getPlayerNum(),
 						MessageType.getCommunicationType()) == true) {
 					message = "(say"
 							+ " "
@@ -81,7 +81,7 @@ public class SayEffector {
 			message = "(say" + " " + MessageCreator.CreateCoordinationMessage()
 					+ ")";
 
-			if (MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),
+			if (CommProtocol.PerNumCircles(AgentType.getPlayerNum(),
 					MessageType.getCommunicationType()) == true) {
 
 				return message;
@@ -104,7 +104,7 @@ public class SayEffector {
 
 			} else {
 
-				if (MessagePerCycle.PerNumCircles(AgentType.getPlayerNum(),
+				if (CommProtocol.PerNumCircles(AgentType.getPlayerNum(),
 						MessageType.getCommunicationType()) == true) {
 					ActionMessages
 							.setTimeout((ActionMessages.getTimeout() - 1));
