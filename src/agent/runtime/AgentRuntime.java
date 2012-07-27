@@ -40,7 +40,7 @@ public class AgentRuntime {
 
 			host = "127.0.0.1";
 			port = 3100;
-			num = 8;
+			num = 9;
 			Teamname = "AST_3D";
 
 		} else {
