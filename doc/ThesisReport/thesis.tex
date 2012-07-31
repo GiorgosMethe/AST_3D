@@ -1,0 +1,124 @@
+\documentclass[report,12pt]{Classes/CUEDthesisPSnPDF}
+
+\ifpdf
+    \pdfinfo { /Title  (Thesis)
+               /Creator (TeX)
+               /Producer (pdfTeX)
+               /Author (Georgios Methenitis giorgosmethe@gmail.com)
+               /CreationDate (D:20120820000000)  %format D:YYYYMMDDhhmmss
+               /ModDate (D:20120820000000)
+               /Subject (Player Behavior and Team Strategy in SimSpark Soccer Simulation 3D)
+               /Keywords (Robocup, Methenitis, Simulation Soccer, Coordination, Thesis)}
+    \pdfcatalog { /PageMode (/UseOutlines)
+                  /OpenAction (fitbh)  }
+\fi
+
+\title{Player Behavior and Team Strategy in SimSpark Soccer Simulation 3D}
+
+\ifpdf
+  \author{Georgios Methenitis}
+  \collegeordept{\href{http://www.ece.tuc.gr}{Department of Electronic and Computer Engineering}}
+  \university{\href{http://www.tuc.gr}{Technical University of Crete, Greece}}
+  \crest{\includegraphics[height=40mm]{TUClogocolor.jpg}}
+\else
+  \author{Georgios Methenitis}
+  \collegeordept{Department of Electronic and Computer Engineering}
+  \university{Technical University of Crete, Greece}
+  \crest{\includegraphics[width=40mm]{TUClogocolor.eps}}
+\fi
+
+\committee{
+\begin{normalsize}Thesis Committee\end{normalsize}\\
+Assistant Professor Michail G. Lagoudakis (ECE)\\
+Assistant Professor Georgios Chalkiadakis (ECE)\\
+Professor Minos Garofalakis (ECE)
+}
+\degreedate{Chania, August 2012}
+
+\rfoot{August 2012}
+\cfoot{\thepage}
+\lfoot{Georgios Methenitis}
+
+
+% turn of those nasty overfull and underfull hboxes
+\hbadness=10000
+\hfuzz=50pt
+
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
+\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
+
+\usepackage{subfigure}
+
+% Put all the style files you want in the directory StyleFiles and usepackage like this:
+%\usepackage{StyleFiles/watermark}
+
+\begin{document}
+
+%\language{english}
+\en
+
+ \renewcommand\baselinestretch{1.2}
+\baselineskip=18pt plus1pt
+
+ % English Title Page
+\maketitle
+    \cleardoublepage
+ % Greek Title Page
+ {\gr
+     \thispagestyle{empty}
+  \begin{center}
+    \setlength{\parskip}{0pt}
+    {\large \sc {\href{http://www.tuc.gr}{Πολυτεχνείο Κρήτης}} \par}
+      \vspace*{1ex}
+    {\large \sc {\href{http://www.ece.tuc.gr}{Τμήμα Ηλεκτρονικών Μηχανικών και Μηχανικών Υπολογιστών}} \par}
+      \vspace*{20mm}
+    { \Large {\bfseries {Συμπεριφορά Παικτών και Στρατηγική Ομάδας για το Πρωτάθλημα {\en RoboCup 3D Simulation}}} \par}
+	{\large \vspace*{10mm} {\includegraphics[height=40mm]{TUClogocolor.jpg} \par} \vspace*{15mm}}	
+    {{\Large Γεώργιος Μεθενίτης} \par}
+	\vspace*{15mm}
+    {\large {\begin{normalsize}Εξεταστική Επιτροπή\end{normalsize}\\
+Επίκουρος Καθηγητής Μιχαήλ Γ. Λαγουδάκης (ΗΜΜΥ)\\
+Επίκουρος Καθηγητής Γεώργιος Χαλκιαδάκης (ΗΜΜΥ)\\
+Καθηγητής Μίνως Γαροφαλάκης (ΗΜΜΥ)\\} \par}
+	\vfill
+    {\large Χανιά, Αύγουστος 2012}
+  \end{center}
+  \null\vfill
+}
+    \cleardoublepage
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+\frontmatter
+
+ \include{Abstract/abstract}
+
+\tableofcontents
+\listoffigures
+\listofalgorithms
+
+
+\mainmatter
+
+ \include{Introduction/introduction}
+ \include{Chapter1/chapter1}
+ \include{Chapter2/chapter2}
+ \include{Chapter3/chapter3}
+ \include{Chapter4/chapter4}
+ \include{Chapter5/chapter5}
+ \include{Chapter6/chapter6}
+ \include{Chapter7/chapter7}
+ \include{Chapter8/chapter8}
+
+
+
+\bibliographystyle{StyleFiles/splncs}
+\renewcommand{\bibname}{References} % changes default name Bibliography to References
+\bibliography{thesis}
+\addcontentsline{toc}{chapter}{References} %adds References to contents page
+
+
+\end{document}

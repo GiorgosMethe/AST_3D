@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {2}{Lists}{3}{0}{1}
+\beamer@sectionintoc {3}{Graphics}{7}{0}{2}
+\beamer@sectionintoc {4}{Hyperlinks}{10}{0}{3}

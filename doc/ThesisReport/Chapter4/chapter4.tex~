@@ -1,0 +1,60 @@
+\chapter{Coordination}
+\label{Coordination}
+Until now, we have discussed all parts that agent is going to need in order to be functional into the soccer field.
+With all these functionalities agents are able to locate themselves in the field, communicate with each other and execute
+actions combining movements through motion controller. 
+However, agents miss a thinking process which will be able to decide about what action the should do for them and for their team's benefit. For example, imagine a human soccer player who is able to do all the things needed in a football match but he has not the ability to choose what to do.
+Therefore, there must be presented a high-level process which will combine all these skills, motions,
+communication ability and actions having as a result a complete agent's behavior. As a behavior we could define the thinking process in which each agent scans his beliefs and decides what he will do. In this chapter, we are going to discuss the most important, exciting and time consuming part of this thesis. 
+
+\section{Messages}
+
+
+
+
+\section{Beliefs}
+
+
+
+
+\section{Players Splitter}
+
+
+
+
+\section{Active Positions}
+
+
+
+
+\section{Active Coordination}
+
+
+
+
+
+\section{Team Formation}
+
+
+
+
+
+\section{Role Assignment}
+
+
+
+
+
+\section{Support Positions}
+
+
+
+
+
+\section{Support Coordination}
+
+
+
+
+
+\section{Mapping Cost}

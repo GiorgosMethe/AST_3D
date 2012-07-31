@@ -1,0 +1,71 @@
+\BOOKMARK [0][]{chapter.1}{1 Introduction}{}
+\BOOKMARK [1][]{section.1.1}{1.1 Thesis Outline}{chapter.1}
+\BOOKMARK [0][]{chapter.2}{2 Background}{}
+\BOOKMARK [1][]{section.2.1}{2.1 RoboCup Competition}{chapter.2}
+\BOOKMARK [1][]{section.2.2}{2.2 RoboCup Soccer}{chapter.2}
+\BOOKMARK [1][]{section.2.3}{2.3 RoboCup Rescue}{chapter.2}
+\BOOKMARK [1][]{section.2.4}{2.4 RoboCup @Home}{chapter.2}
+\BOOKMARK [1][]{section.2.5}{2.5 RoboCup Junior}{chapter.2}
+\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Soccer}{section.2.5}
+\BOOKMARK [0][]{chapter.3}{3 Soccer Simulation League 3D}{}
+\BOOKMARK [1][]{section.3.1}{3.1 SimSpark}{chapter.3}
+\BOOKMARK [1][]{section.3.2}{3.2 Soccer simulation}{chapter.3}
+\BOOKMARK [1][]{section.3.3}{3.3 Server}{chapter.3}
+\BOOKMARK [1][]{section.3.4}{3.4 Simulation Update Loop}{chapter.3}
+\BOOKMARK [1][]{section.3.5}{3.5 Network Protocol}{chapter.3}
+\BOOKMARK [1][]{section.3.6}{3.6 Monitor}{chapter.3}
+\BOOKMARK [1][]{section.3.7}{3.7 Perceptors}{chapter.3}
+\BOOKMARK [2][]{subsection.3.7.1}{3.7.1 General perceptors}{section.3.7}
+\BOOKMARK [2][]{subsection.3.7.2}{3.7.2 General perceptors}{section.3.7}
+\BOOKMARK [1][]{section.3.8}{3.8 Effectors}{chapter.3}
+\BOOKMARK [2][]{subsection.3.8.1}{3.8.1 General Effectors}{section.3.8}
+\BOOKMARK [2][]{subsection.3.8.2}{3.8.2 Soccer Effectors}{section.3.8}
+\BOOKMARK [1][]{section.3.9}{3.9 Model}{chapter.3}
+\BOOKMARK [0][]{chapter.4}{4 Agent}{}
+\BOOKMARK [1][]{section.4.1}{4.1 Agent Architecture}{chapter.4}
+\BOOKMARK [1][]{section.4.2}{4.2 Connection}{chapter.4}
+\BOOKMARK [1][]{section.4.3}{4.3 Perceptions}{chapter.4}
+\BOOKMARK [1][]{section.4.4}{4.4 Localization}{chapter.4}
+\BOOKMARK [1][]{section.4.5}{4.5 Localization Filtering}{chapter.4}
+\BOOKMARK [1][]{section.4.6}{4.6 Motions}{chapter.4}
+\BOOKMARK [2][]{subsection.4.6.1}{4.6.1 XML Based Motions}{section.4.6}
+\BOOKMARK [2][]{subsection.4.6.2}{4.6.2 XML Based Motion Controller}{section.4.6}
+\BOOKMARK [2][]{subsection.4.6.3}{4.6.3 Text Based Motions}{section.4.6}
+\BOOKMARK [2][]{subsection.4.6.4}{4.6.4 Text Based Motion Controller}{section.4.6}
+\BOOKMARK [1][]{section.4.7}{4.7 Actions}{chapter.4}
+\BOOKMARK [2][]{subsection.4.7.1}{4.7.1 Simple}{section.4.7}
+\BOOKMARK [2][]{subsection.4.7.2}{4.7.2 Complex}{section.4.7}
+\BOOKMARK [2][]{subsection.4.7.3}{4.7.3 Vision}{section.4.7}
+\BOOKMARK [2][]{subsection.4.7.4}{4.7.4 Other Sensors}{section.4.7}
+\BOOKMARK [1][]{section.4.8}{4.8 Communication}{chapter.4}
+\BOOKMARK [0][]{chapter.5}{5 Coordination}{}
+\BOOKMARK [1][]{section.5.1}{5.1 Messages \046 Communication}{chapter.5}
+\BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Message types and formats}{section.5.1}
+\BOOKMARK [1][]{section.5.2}{5.2 Beliefs}{chapter.5}
+\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 Ball Position}{section.5.2}
+\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 Agents' Distance from Ball}{section.5.2}
+\BOOKMARK [1][]{section.5.3}{5.3 Coordination Subsets}{chapter.5}
+\BOOKMARK [1][]{section.5.4}{5.4 Coordination Splitter}{chapter.5}
+\BOOKMARK [1][]{section.5.5}{5.5 Soccer Field Value}{chapter.5}
+\BOOKMARK [1][]{section.5.6}{5.6 Active Positions}{chapter.5}
+\BOOKMARK [1][]{section.5.7}{5.7 Active Coordination}{chapter.5}
+\BOOKMARK [2][]{subsection.5.7.1}{5.7.1 On Ball Player}{section.5.7}
+\BOOKMARK [2][]{subsection.5.7.2}{5.7.2 Active Players Mapping}{section.5.7}
+\BOOKMARK [1][]{section.5.8}{5.8 Team Formation}{chapter.5}
+\BOOKMARK [2][]{subsection.5.8.1}{5.8.1 9-Players Server Version \(0.6.5\)}{section.5.8}
+\BOOKMARK [2][]{subsection.5.8.2}{5.8.2 11-Players Server Version \(0.6.6\)}{section.5.8}
+\BOOKMARK [1][]{section.5.9}{5.9 Role Assignment}{chapter.5}
+\BOOKMARK [1][]{section.5.10}{5.10 Support Positions}{chapter.5}
+\BOOKMARK [1][]{section.5.11}{5.11 Support Coordination}{chapter.5}
+\BOOKMARK [1][]{section.5.12}{5.12 Mapping Cost}{chapter.5}
+\BOOKMARK [2][]{subsection.5.12.1}{5.12.1 Properties for Support's Mapping Cost}{section.5.12}
+\BOOKMARK [2][]{subsection.5.12.2}{5.12.2 Properties for Active's Mapping Cost}{section.5.12}
+\BOOKMARK [0][]{chapter.6}{6 Results}{}
+\BOOKMARK [0][]{chapter.7}{7 Related Work}{}
+\BOOKMARK [0][]{chapter.8}{8 Future Work}{}
+\BOOKMARK [1][]{section.8.1}{8.1 Software's Conversion}{chapter.8}
+\BOOKMARK [1][]{section.8.2}{8.2 Participation in Robocup}{chapter.8}
+\BOOKMARK [1][]{section.8.3}{8.3 Dynamic Movement}{chapter.8}
+\BOOKMARK [1][]{section.8.4}{8.4 Optimization and Debugging}{chapter.8}
+\BOOKMARK [0][]{chapter.9}{9 Conclusion}{}
+\BOOKMARK [0][]{chapter*.13}{References}{}

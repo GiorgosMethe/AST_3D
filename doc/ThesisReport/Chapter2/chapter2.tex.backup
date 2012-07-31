@@ -1,0 +1,74 @@
+\chapter{Agent}
+In this chapter we are going to understand how the agent functions. Each agent consists from several parts which are described in detail.
+\label{agent}
+
+\section{Connection}
+The SimSpark server hosts the simulation process that manages the simulation. It is responsible for advancing the simulation. So, each agent
+connects to this server. Agents receives messages from the server every 20ms; These messages includes information about all agent's perceptions.As we can see in the figure \ref{fig:Simulation-Update-Loop}, SimSpark Server send to agents sense messages in the beggining of every cycle. Each agent who is willing to send an action message, can send it in the end of his cycle, Server is going to receive at the same time it will send the next sense message.
+\begin{figure}[ht!]
+\centering
+  \includegraphics[scale=0.4]{Chapter2/figures/800px-SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png}
+  \caption{Simulation Update Loop.} 
+  \label{fig:Simulation-Update-Loop}
+\end{figure}
+
+
+
+\section{Perceptions}
+Perceptions in simulation soccer are quite different in comparison with a real robots' competition. We do not receive data from agent's sensors but from the server, which send them to us in every cycle. These messages have this form:\\
+\begin{verbatim}
+(time (now 46.20))(GS (t 0.00) (pm BeforeKickOff))(GYR (n torso)
+(rt 0.00 0.00 0.00))(ACC (n torso) (a 0.00 -0.00 9.81))(HJ (n hj1)
+(ax 0.00))(HJ (n hj2) (ax 0.01))(See (G2R (pol 14.83 -11.81 1.08))
+(G1R (pol 14.54 -3.66 1.12)) (F1R (pol 15.36 19.12 -1.91))(F2R (
+pol 17.07 -31.86 -1.83)) (B (pol 4.51 -26.40 -6.15)) (P (team AST_3D)
+(id 8)(rlowerarm (pol 0.18 -35.78 -21.65)) (llowerarm (pol 0.19 34.94
+-21.49)))(L (pol 8.01 -60.03 -3.87) (pol 6.42 51.14 -4.93)) (L (pol 
+17.08 -31.77 -1.75)(pol 15.32 18.78 -2.20)) (L (pol 15.35 19.09 -1.94)
+(pol 5.81 60.24 -5.09))(L (pol 17.08 -31.78 -1.77) (pol 10.42 -59.88
+-2.86)) (L (pol 12.69 -0.46 -2.61)(pol 13.32 -17.19 -2.23)) (L (pol
+12.71 -0.21 -2.40) (pol 14.50 -0.26 -2.16))(L (pol 13.31 -17.26 -2.29)
+(pol 15.05 -15.14 -1.96)) (L (pol 6.16 -18.96 -4.92)(pol 5.57 -9.65
+-5.39)) (L (pol 5.56 -9.81 -5.53) (pol 4.59 -3.88 -6.89))(L (pol 4.60
+-3.43 -6.52) (pol 3.50 -4.77 -8.78)) (L (pol 3.50 -4.74 -8.75)(pol
+2.77 -20.25 -11.08)) (L (pol 2.77 -20.20 -11.04) (pol 3.01 -42.66
+-10.50))(L (pol 3.02 -42.40 -10.28) (pol 4.01 -50.25 -7.66)) (L (
+pol 4.01 -50.30 -7.70)(pol 5.10 -46.99 -5.90)) (L (pol 5.09 -47.12
+-6.01) (pol 5.90 -39.13 -5.17))(L (pol 5.91 -39.06 -5.11) (pol 6.28
+-29.26 -4.88)) (L (pol 6.28 -29.34 -4.95)(pol 6.16 -19.05 -5.00)))(HJ
+(n raj1) (ax -0.01))(HJ (n raj2) (ax -0.00))(HJ (n raj3)(ax -0.00))(HJ
+(n raj4) (ax 0.00))(HJ (n laj1) (ax -0.01))(HJ (n laj2) (ax 0.00))
+\end{verbatim}
+
+%\subsection{Sensors}
+%\subsection{Localization}
+
+
+
+%\section{Motions}
+%\subsection{XML Motions}
+%\subsection{Text Based Motions}
+%\subsection{Motion Controller}
+
+
+%\section{Actions}
+%\subsection{Simple}
+%\subsection{Complex}
+%\subsection{Vision}
+
+%\section{Communication}
+
+%\section{Coordination}
+%\subsection{Messages}
+%\subsection{Beliefs}
+%\subsection{Splitter}
+%\subsection{Active Positions}
+%\subsection{Active Coordination}
+%\subsection{Team Formation}
+%\subsection{Role Assignment}
+%\subsection{Support Positions}
+%\subsection{Support Coordination}
+%\subsection{Mapping Cost}
+%\subsection{Action Handler}
+
+

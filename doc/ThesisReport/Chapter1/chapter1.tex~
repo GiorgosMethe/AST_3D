@@ -1,0 +1,66 @@
+\chapter{Background}
+\label{background}
+
+\section{RoboCup Competition}
+In the history of artificial intelligence and robotics, the year 1997 will be remembered as a turning point. In May 1997, IBM Deep Blue defeated the human world champion in chess. Forty years of challenge in the AI community came to a successful conclusion. On July 4, 1997, NASA¢s pathfinder mission made a successful landing and the first autonomous robotics system, Sojourner, was deployed on the surface of Mars. Together with these accomplishments, RoboCup is an international robotics competition founded in 1997. The aim is to promote robotics and AI research, by offering a publicly appealing, but formidable challenge. The name RoboCup is a contraction of the competition's full name, "Robot Soccer World Cup". The official goal of the project: ''By mid-21st century, a team of fully autonomous humanoid robot soccer players shall win the soccer game, complying with the official rule of the FIFA, against the winner of the most recent World Cup.'' Something that may seem impossible with today's technology. I would say that a feasible goal is to make a team of robots playing soccer like humans and not better than them.
+
+\section{RoboCup Soccer}
+The main focus of the RoboCup competitions is the game of football/soccer, where the research goals concern cooperative multi-robot and multi-agent systems in dynamic adversarial environments. All robots in this league are fully autonomous. 
+\subsection{Humanoid}
+In the Humanoid League, autonomous robots with a human-like body plan and human-like senses play soccer against each other. Dynamic walking, running, and kicking the ball while maintaining balance, visual perception of the ball, other players, and the field, self-localization, and team play are among the many research issues investigated in the league. 
+\subsection{Middle Size}
+Middle-sized robots of no more than 50 cm diameter play soccer in teams of up to 6 robots with regular size FIFA soccer ball on a field similar to a scaled human soccer field. All sensors are on-board. Robots can use wireless networking to communicate. The research focus is on full autonomy and cooperation at plan and perception levels.
+\subsection{Simulation}
+This is one of the oldest leagues in RoboCupSoccer. The Simulation League focus on artificial intelligence and team strategy. Independently moving software players (agents) play soccer on a virtual field inside a computer. There are 2 subleagues: 2D and 3D.
+\subsection{Small Size}
+The Small Size league or F180 league as it is otherwise known, is one of the oldest RoboCup Soccer leagues. It focuses on the problem of intelligent multi-robot/agent cooperation and control in a highly dynamic environment with a hybrid centralized/distributed system.
+\subsection{Standard Platform}
+In this league all teams use identical (i.e. standard) robots. Therefore the teams concentrate on software development only, while still using state-of-the-art robots. Omnidirectional vision is not allowed, forcing decision-making to trade vision resources for self-localization and ball localization. The league is based on Aldebaran¢s Nao humanoids. Technical University of Crete is proud of the continuous participation of the team Kouretes in this league.
+\section{RoboCup Rescue}
+\subsection{Robot League}
+The goal of the urban search and rescue (USAR) robot competitions is to increase awareness of the challenges involved in search and rescue applications, provide objective evaluation of robotic implementations in representative environments, and promote collaboration between researchers. It requires robots to demonstrate their capabilities in mobility, sensory perception, planning, mapping, and practical operator interfaces, while searching for simulated victims in unstructured environments.
+Greece has also a participation (2009) in this league by the Aristotle University's team called ''P.A.N.D.O.R.A''.
+\subsection{Simulation League}
+The purpose of the RoboCup Rescue Simulation league is twofold. First, it aims to develop develop simulators that form the infrastructure of the simulation system and emulate realistic phenomena predominant in disasters. Second, it aims to develop intelligent agents and robots that are given the capabilities of the main actors in a disaster response scenario.
+\section{RoboCup @Home}
+The RoboCup @Home league aims to develop service and assistive robot technology with high relevance for future personal domestic applications. It is the largest international annual competition for autonomous service robots and is part of the RoboCup initiative. A set of benchmark tests is used to evaluate the robots¢ abilities and performance in a realistic non-standardized home environment setting. Focus lies on the following domains but is not limited to: Human-Robot-Interaction and Cooperation, Navigation and Mapping in dynamic environments, Computer Vision and Object Recognition under natural light conditions, Object Manipulation, Adaptive Behaviors, Behavior Integration, Ambient Intelligence, Standardization and System Integration. It is colocated with the RoboCup symposium.
+\section{RoboCup Junior}
+RoboCupJunior is a project-oriented educational initiative that sponsors local, regional and international robotic events for young students. It is designed to introduce RoboCup to primary and secondary school children, as well as undergraduates who do not have the resources to get involved in the senior leagues yet. 
+\subsection{Soccer}
+2-on-2 teams of autonomous mobile robots play in a highly dynamic environment, tracking a special light-emitting ball in an enclosed, landmarked field.
+\subsection{Dance}
+One or more robots come together with music, dressed in costume and moving in creative harmony.
+\subsection{Rescue}
+Robots identify victims within re-created disaster scenarios, varying in complexity from line-following on a flat surface to negotiating paths through obstacles on uneven terrain.
+\section{SimSpark}
+SimSpark is a generic physical multiagent simulator system for agents in three-dimensional environments. It builds on the flexible Spark application framework.
+It is used as the official Robocup 3D simulation server. In comparison to specialized simulators, users can create new simulations by using a scene description language. SimSpark is a powerful tool to state different multi-agent research questions.
+\subsection{Soccer simulation}
+RoboCup is an initiative to foster artificial intelligence and robotics research by providing a standard problem in the form of robot soccer competitions. { \bf rcssserver3d} is the official competition environment for the 3D Soccer Simulation League at RoboCup. It implements a soccer simulation where two teams of up to eleven humanoid robots play against each other. This seemingly simple setup poses a challenge to agent implementers on several levels.
+The robot model used in the simulation at the competitions is Aldebaran Nao.
+\subsection{Server}
+The SimSpark server hosts the simulation process that manages the simulation. It is responsible for advancing the simulation. The simulation state is constantly modified during the Simulation Update Loop.
+Objects in the scene change their state, i.e. one ore more of their properties like position, speed or angular velocity changes due to several influences. They are under the control of a rigid body physical simulation, that resolves collisions, applies drag, gravity etc. Agents that take part in the simulation also modify objects with the help of their effectors.
+Another responsibility of the server is to keep track of connected agent processes. Each simulation cycle the server collects and reports sensor information for each of the sensors of all connected agents. It further carries out received action sequences that an agent triggers using its available effectors.
+The server can, depending upon its config, renders the simulation itself. It implements an internal monitor that omits the network overhead. Additionally, it supports streaming data to remote monitor processes which take responsibility for rendering the 3D scene.
+\subsection{Simulation Update Loop}
+SimSpark implements a simple internal event model that immediately executes every action received from an agent. It does not try to compensate any network latency or compensate for different computing resources available to the connected agents.A consequence is that SimSpark currently does not guarantee that events are reproducible. This means repeated simulations may have a different outcome, depending on network delays or load variations on the machines hosting the agents and the server.
+\subsection{Network Protocol}
+The server exposes a network interface to all agents, on TCP port 3100 by default.
+When an agent connects to the server the agent must first send a CreateEffector message followed by a InitEffector message.
+Once established, the server sends groups of messages to the agent that contain the output of the agent's perceptors, including any hinge positions of the model, any heard messages, seen objects, etc. The exact messages sent depend upon the model created for the agent. Details of effector messages are given on the perceptors page. In response to these perceptor messages, the agent may influence the simulation by sending effector messages. These perform tasks such as moving hinges in the model. Details of effector messages are given on the effectors section.
+\subsection{Monitor}
+The SimSpark monitor is responsible for rendering the current simulation. It connects to a running server instance from which it continuously receives a stream of updates that describe the simulation state either as full snapshots or as incremental updates.
+The format of the data stream that the server sends to the monitor is called Monitor Format. It is a customizable language used to describe the simulation state.
+Apart from describing the pure simulation state each monitor format may provide a mechanism to transfer additional game specific state. For the soccer simulation this means for example current play mode and goals scored so far.
+The monitor client itself only renders the pure scene and defers the rendering of the game state to plugins. These plugins are intended to parse the game state and display it as an overlay, e.g. print out playmode and scores on screen.
+\subsection{Perceptors}
+Perceptors are the senses of an agent, allowing awareness of the agent's model state and the environment.
+The server sends perceptor messages to agents, via the network protocol, for every cycle of the simulation.
+Perceptor messages are sent via the network protocol.There are both general perceptors that apply to all simulations, and soccer perceptors that are specific to the soccer simulation.
+\subsection{Effectors}
+Effectors allow agents to perform actions within the simulation. Agents control them by sending messages to the server, and the server changes the game state accordingly. Effectors are the logical dual of perceptors.
+Effector control messages are sent via the network protocol. Details of each message type are shown in each section below.
+There are both general effectors that apply to all simulations, and soccer effectors that are specific to the soccer simulation.
+\subsection{Model}
+SimSpark comes with Nao robot model for use by agents. The physical representation of each model is stored in an .rsg file.The Nao humanoid robot manufactured by Aldebaran Robotics. Its height is about 57cm and its weight is around 4.5kg. Its biped architecture with 22 degrees of freedom allows Nao to have great mobility. { \bf rcssserver3d} simulates Nao nicely.

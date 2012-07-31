@@ -56,8 +56,8 @@ public class MotionController {
 
 			endMotionPose = 72;
 			speed = 1;
-			speedControl = 140;
-			poseOffset = 2;
+			speedControl = 10;
+			poseOffset = 1;
 
 		} else if (Motion.equalsIgnoreCase("TurnLeft40")) {
 
