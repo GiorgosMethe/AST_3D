@@ -43,44 +43,39 @@ public class AgentFunction {
 		 * try to get up.
 		 */
 		CheckIfFall.Check();
-		
-		if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
 
-			MotionTrigger.setMotion("Forwards50");
+		if (InitAgent.isPlayerInited()) {
+
+			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
+
+				MotionTrigger.setMotion("Forards50");
+								Say = SayEffector.Say(MessageType.getType());
+				
+								Coordination.MakeCoordination();
+				
+								if (!CheckIfFall.fallen) {
+									if (AgentRuntime.num == 1) {
+				
+										Goalie.Act();
+				
+									} else {
+				
+										ActionEffector.Act();
+				
+									}
+								}
+				
+								ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
+				
+							} else {
+				
+								if (!CheckIfFall.fallen) {
+									TurnToLocate.Act();
+								}
+				
+			}
+
 		}
-
-//		if (InitAgent.isPlayerInited()) {
-//
-//			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
-//
-//				MotionTrigger.setMotion("Forards50");
-//								Say = SayEffector.Say(MessageType.getType());
-//				
-//								Coordination.MakeCoordination();
-//				
-//								if (!CheckIfFall.fallen) {
-//									if (AgentRuntime.num == 1) {
-//				
-//										Goalie.Act();
-//				
-//									} else {
-//				
-//										ActionEffector.Act();
-//				
-//									}
-//								}
-//				
-//								ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
-//				
-//							} else {
-//				
-//								if (!CheckIfFall.fallen) {
-//									TurnToLocate.Act();
-//								}
-//				
-//			}
-//
-//		}
 
 		Act = PerformMovement.run();
 
