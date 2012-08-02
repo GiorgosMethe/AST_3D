@@ -58,6 +58,7 @@ public class MotionController {
 			speed = 1;
 			speedControl = 10;
 			poseOffset = 1;
+			hardness = 0.7;
 
 		} else if (Motion.equalsIgnoreCase("TurnLeft40")) {
 
@@ -65,7 +66,8 @@ public class MotionController {
 			speed = 1;
 			speedControl = 10;
 			poseOffset = 1;
-
+			hardness = 0.7;
+			
 		} else if (Motion.equalsIgnoreCase("SideStepLeft")) {
 
 			endMotionPose = 124;

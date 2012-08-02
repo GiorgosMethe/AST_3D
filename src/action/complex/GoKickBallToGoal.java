@@ -61,7 +61,7 @@ public class GoKickBallToGoal {
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start1")) {
 
 			if (LocalizationResults.isKnowMyPosition()
-					&& LocalizationFilter.qe.size() >= 5) {
+					&& LocalizationFilter.qe.size() >= 8) {
 
 				VisionType.setType(1);
 				GKBGDstates.setState("Start2");
