@@ -80,19 +80,22 @@
 \contentsline {section}{\numberline {5.11}Support Coordination}{61}{section.5.11}
 \contentsline {section}{\numberline {5.12}Mapping Cost Calculation}{65}{section.5.12}
 \contentsline {subsection}{\numberline {5.12.1}Properties for Support's Mapping Cost}{65}{subsection.5.12.1}
-\contentsline {subsection}{\numberline {5.12.2}Properties for Active's Mapping Cost}{65}{subsection.5.12.2}
-\contentsline {chapter}{\numberline {6}Results}{67}{chapter.6}
-\contentsline {section}{\numberline {6.1}Movement}{67}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Walking}{67}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Kicking}{67}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Coordination}{67}{section.6.2}
-\contentsline {chapter}{\numberline {7}Related Work}{69}{chapter.7}
-\contentsline {section}{\numberline {7.1}UT Austin Villa}{69}{section.7.1}
-\contentsline {section}{\numberline {7.2}RoboCanes}{69}{section.7.2}
-\contentsline {section}{\numberline {7.3}BeeStanbul}{69}{section.7.3}
-\contentsline {chapter}{\numberline {8}Future Work}{71}{chapter.8}
-\contentsline {section}{\numberline {8.1}Testing and Debugging in New Server's version}{71}{section.8.1}
-\contentsline {section}{\numberline {8.2}Participation in Robocup}{71}{section.8.2}
-\contentsline {section}{\numberline {8.3}Dynamic Movement}{71}{section.8.3}
-\contentsline {chapter}{\numberline {9}Conclusion}{73}{chapter.9}
-\contentsline {chapter}{References}{75}{chapter*.14}
+\contentsline {subsection}{\numberline {5.12.2}Properties for Active's Mapping Cost}{66}{subsection.5.12.2}
+\contentsline {chapter}{\numberline {6}Results}{69}{chapter.6}
+\contentsline {section}{\numberline {6.1}Movement}{69}{section.6.1}
+\contentsline {section}{\numberline {6.2}Communication}{70}{section.6.2}
+\contentsline {section}{\numberline {6.3}Coordination}{70}{section.6.3}
+\contentsline {section}{\numberline {6.4}Overview}{70}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Full Game Results}{70}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Mini Tournament ( Tough Opponents )}{70}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Mini Tournament ( Easy Opponents )}{70}{subsection.6.4.3}
+\contentsline {chapter}{\numberline {7}Related Work}{73}{chapter.7}
+\contentsline {section}{\numberline {7.1}UT Austin Villa}{73}{section.7.1}
+\contentsline {section}{\numberline {7.2}BeeStanbul}{74}{section.7.2}
+\contentsline {section}{\numberline {7.3}RoboCanes}{74}{section.7.3}
+\contentsline {chapter}{\numberline {8}Future Work}{75}{chapter.8}
+\contentsline {section}{\numberline {8.1}Testing and Debugging in New Server's version}{75}{section.8.1}
+\contentsline {section}{\numberline {8.2}Participation in Robocup}{75}{section.8.2}
+\contentsline {section}{\numberline {8.3}Dynamic Movement}{75}{section.8.3}
+\contentsline {chapter}{\numberline {9}Conclusion}{77}{chapter.9}
+\contentsline {chapter}{References}{79}{chapter*.14}

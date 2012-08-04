@@ -5,26 +5,11 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
-\title[A Simple Presentation using the Beamer Class]{Simple~Presentation
-Using~the~Beamer~Class}
-\author[Georgios Methenitis]{%
-  Clayton~Webster\inst{1} \and
-  Max Gunzburger\inst{2}}
-\institute[Florida State University]{
-  \inst{1}%
-  Department of Mathematics and School for Computational Science\\
-  Florida State University
-  \and
-  \inst{2}%
-  School for Computational Science\\
-  Florida State University}
-\date[DLT 2004]{SIAM Conference, 2004}
+\title[Player Behavior and Team Strategy in Robocup's Simulation League 3D]{Player Behavior and Team Strategy in Robocup's Simulation League 3D}
+\author[Georgios Methenitis]{Georgios Methenitis}
+\institute[Technical University of Crete]{Technical University of Crete}
+\date[DLT 2004]{Chania, August, 2012}
 \subject{Computational Sciences}
-
-\pgfdeclaremask{fsu}{fsu_logo_ybkgrd}
-\pgfdeclareimage[mask=fsu,width=1cm]{fsu-logo}{fsu_logo_ybkgrd}
-
-\logo{\vbox{\vskip0.1cm\hbox{\pgfuseimage{fsu-logo}}}}
 
 \begin{document}
 
@@ -33,7 +18,7 @@ Using~the~Beamer~Class}
     \titlepage
   }
 
-  \section*{Outline}
+  \section{Outline}
 
   \frame
   {
@@ -42,65 +27,232 @@ Using~the~Beamer~Class}
     \tableofcontents
   }
 
-  \section{Lists}
+  \section{Background}
 
   \frame
   {
-    \frametitle{"Dynamic" Lists}
+    \frametitle{Robocup Competition}
 
-    With a few extra marks, you can have Beamer march
-    through each item on a list one at a time.
   }
 
   \frame
   {
-    \frametitle{A Sample List}
+    \frametitle{Soccer Simulation League}
 
-    \begin{itemize}
-    \item<1-> Normal LaTeX class.
-    \item<2-> Easy overlays.
-    \item<3-> No external programs needed.      
-    \end{itemize}
   }
 
-  \section{Graphics}
+  \section{Agent}
 
   \frame
   {
-    \frametitle{Including Graphics}
+    \frametitle{Connection}
 
-    Most graphics files can be converted to {\bf .png} format.
-    Such files are then easily included in your presentation.
+    
   }
-
+  
   \frame
   {
-    \frametitle{PNG Graphics}
+    \frametitle{Perception}
 
-    A graphics file is included by using the {\bf figure} environment,
-    and inside of that the {\bf includegraphics} command.
     
   }
 
   \frame
   {
-    \frametitle{PNG Graphics}
+    \frametitle{Localization}
 
-    The previous graphic had a background that almost matched the
-    slide.  A more typical case is shown here.
-    The graphics figure simply shows up as a rectangle imposed on
-    the slide.
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{Localization Filtering}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{Motions and Movement}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{XML Based Motions}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{TEXT Based Motions}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{Actions}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{Simple Actions}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{Complex Actions}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{Vision Actions}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{Other Sensors' Actions}
+
+   
+    
+  }
+  
+  
+  \frame
+  {
+    \frametitle{Communication}
+
+   
+    
+  }
+  
+  \section{Coordination}
+
+  \frame
+  {
+    \frametitle{Messages and Communication}
+
     
   }
 
-  \section{Hyperlinks}
+  \frame
+  {
+    \frametitle{Coordination¢s Beliefs}
+
+   
+    
+  }
+  
+  \frame
+  {
+    \frametitle{Subsets in Coordination}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Coordination Splitter}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Soccer Field Value}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Active Positions}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Active Coordination}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Team Formation}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Role Assignment Function}
+ 
+  }
+  
+  
+  \frame
+  {
+    \frametitle{Positions for Support Subset}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Support Coordination}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Mapping Cost}
+ 
+  }
+
+  \section{Results}
 
   \frame
   {
     \frametitle{Want More Information?}
+    
+    \begin{table}
+		\begin{center}
+			\begin{tabular}{l*{6}{c}r}
+				Team              & P & W & D & L & F  & A & Pts \\ \hline
+				\textbf{AST3D} & - & - & - & - & - & - & -  \\
+				NomoFC            & - & - & - & - &  - & - &  -  \\
+				OxBlue           & - & - & - & - &  - & - &  -  \\
+				FUTK3D     & - & - & - & - &  - & - &  - \\
+				L3M-SIM     & - & - & - & - &  - & - &  - \\
+				FARZANEGAN     & - & - & - & - &  - & - &  - \\
+			\end{tabular}
+		\end{center}
+	\label{EasyTournament}
+	\caption{Easy Mini Tournament}
+	\end{table}
 
-    For more information on the Beamer Class, click on
-    \href{latex-beamer.sourceforge.net/index.html}{{\bf the Beamer web site}}.
+  }
+
+  \section{Conclusion}
+
+  \frame
+  {
+    \frametitle{Want More Information?}
 
   }
 

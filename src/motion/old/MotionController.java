@@ -56,17 +56,17 @@ public class MotionController {
 
 			endMotionPose = 72;
 			speed = 1;
-			speedControl = 10;
+			speedControl = 9;
 			poseOffset = 1;
-			hardness = 0.7;
+
 
 		} else if (Motion.equalsIgnoreCase("TurnLeft40")) {
 
 			endMotionPose = 72;
 			speed = 1;
-			speedControl = 10;
+			speedControl = 9;
 			poseOffset = 1;
-			hardness = 0.7;
+
 			
 		} else if (Motion.equalsIgnoreCase("SideStepLeft")) {
 

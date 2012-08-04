@@ -341,9 +341,9 @@ In this section, we are going to discuss about which position will assigned to t
 \end{figure}
 
 \section{Support Coordination}
-This is the final phase of the coordination process. Until, now we have calculated the optimal mapping of the active agents' subset. So it's time to find a mapping which will give as an optimal solution for the support agents as well. Given a support position set which has been discussed in the previous two sections we have to assign a position of this set to each and every agent of the support subset. Using a greedy algorithm which would calculate all possible mapping to find the optimal solution was the first solution to this problem. However, a brute force approach would only be applicable for the previous server's version in which each team consists of nine players, in which we would have to calculate all mappings only for the support subset which consists of five players at maximum. This means a factorial complexity about: $\leqslant 5! \Leftrightarrow  {{5}\choose{5}} = 120$ mappings. Unfortunately, moving from nine to eleven eleven players this would be a problem as having to calculate at worst case $ 7! \Leftrightarrow  {{7}\choose{7}} = 5040$ mappings it would be difficult for an agent to calculate all these mappings in real-time without any delay in sending effector messages to the server. We find the solution in a UT Austin Villa's paper which was appeared in the RoboCup international Symposium. A dynamic programming implementation which is able to compute an optimal solution within the time constraints imposed by the decision cycle's length ($\approx$ 20ms ).
+This is the final phase of the coordination process. Until, now we have calculated the optimal mapping of the active agents' subset. So it's time to find a mapping which will give as an optimal solution for the support agents as well. Given a support position set which has been discussed in the previous two sections we have to assign a position of this set to each and every agent of the support subset. Using a greedy algorithm which would calculate all possible mapping to find the optimal solution was the first solution to this problem. However, a brute force approach would only be applicable for the previous server's version in which each team consists of nine players, in which we would have to calculate all mappings only for the support subset which consists of five players at maximum. This means a factorial complexity about: $\leqslant 5! \Leftrightarrow  {{5}\choose{5}} = 120$ mappings. Unfortunately, moving from nine to eleven eleven players this would be a problem as having to calculate at worst case $ 7! \Leftrightarrow  {{7}\choose{7}} = 5040$ mappings it would be difficult for an agent to calculate all these mappings in real-time without any delay in sending effector messages to the server. We find the solution in a UT Austin Villa's paper \cite{UtAustinVillaPaper} which was appeared in the RoboCup international Symposium. A dynamic programming implementation which is able to compute an optimal solution within the time constraints imposed by the decision cycle's length ($\approx$ 20ms ).
 \begin{algorithm}[htb!]
-\caption{Dynamic programming implementation}
+\caption{Dynamic programming implementation \cite{UtAustinVillaPaper}}
 \label{alg3}
 \begin{algorithmic}[1]
 \STATE {\bf Inputs: }$SupportPlayers = \lbrace A_{1},A_{2},...,A_{n} $
@@ -383,7 +383,7 @@ This dynamic Algorithm \ref{alg3} is based on a key recursive property, theorem 
 
     \end{tabular}
     
-    \caption{Mappings Evaluated During Dynamic Algorithm.}    
+    \caption{Mappings Evaluated During Dynamic Algorithm \cite{UtAustinVillaPaper}.}    
 \end{table}
 
 Remind that in the \textit{Kth} iteration of the algorithm, each agent will be assigned to the $P_{K}$ position. Then the possible positions K-1 will be assigned to the other n-1 agents. These assignments result in a total of $ {{n-1}\choose{k-1}} $ mappings to be evaluated each in each iteration. Summing to $\sum\limits_{i=1}^N{{n-1}\choose{k-1}}$ possible mappings.\\
@@ -399,7 +399,7 @@ In this section we are going to present how each mapping's cost is calculated. T
 For support players things were easy. In support coordination we have same number of agents and positions. So these properties are:  
 \begin{enumerate}
 \item \textbf{Total distance }$C_{d}$ - Total distance agents have to travel in order to reach in their optimized mapping positions. It is a positive cost, so agents will try to minimize this cost.
-\item \textbf{Possible Collisions }$C_{c}$ - In each mapping we check every combination of two agents and their assigned position if are to collide. If the lines between agents and their target positions are intersecting in a point which has almost the same distance from the agents then we add a big cost in this mapping. It is a positive cost and agents will try to minimize it. Figure \ref{fig:AvoidCollision} shows the idea behind the detection of a possible collision between two agents.
+\item \textbf{Possible Collisions }$C_{c}$ - In each mapping we check every combination of two agents and their assigned position if are to collide. If the lines between agents and their target positions are intersecting in a point which has almost the same distance from the agents then we add a big cost in this mapping. It is a positive cost and agents will try to minimize it. Figure \ref{fig:AvoidCollision} shows the idea behind the detection of a possible collision between two agents. In order to detect a possible collision these two distances $d_{1}$,$d_{2}$ have to have a small difference between them.
 \begin{figure}[htb!]
 \centering
   \includegraphics[width=0.5\textwidth]{Chapter4/figures/AvoidCollision.pdf}
@@ -410,6 +410,7 @@ For support players things were easy. In support coordination we have same numbe
 \begin{center}
 $Total cost = C_{d}+C_{c}$
 \end{center}
+As you can realize, the mapping with the smallest cost will be chosen by coordination's executor.
 
 \subsection{Properties for Active's Mapping Cost}
 In active coordination we have two agents and a maximum of nine positions. It is obvious that we have to take into consideration more properties. Using the same support's properties will force our players to go always to the nearest positions. So, we had to think about other properties in order to assign target positions for our players which will be valuable for the team's defensive and offensive movement without the ball. These properties are shown below:
@@ -424,3 +425,4 @@ In active coordination we have two agents and a maximum of nine positions. It is
 \begin{center}
 $Total cost = C_{d}-C_{v}+C_{c}-C_{r}-C_{p}-C_{a}$
 \end{center}
+The same principle applies here too, the mapping with the smallest cost will be chosen by coordination's executor.

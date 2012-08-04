@@ -15,6 +15,7 @@ package agent.runtime;
 import motion.utils.MotionTrigger;
 import motion.utils.PerformMovement;
 import perceptor.worldstate.GameState;
+import action.complex.GoKickBallDynamic;
 import action.complex.GoKickBallToGoal;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
@@ -43,7 +44,7 @@ public class AgentFunction {
 		 * try to get up.
 		 */
 		CheckIfFall.Check();
-
+		
 		if (InitAgent.isPlayerInited()) {
 
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {

@@ -17,6 +17,8 @@ import communication.utils.MessageType;
 public class AdminCordMessageReceiver {
 
 	public static void MessageHandler(String msg) {
+		
+		System.out.println("message "+msg);
 
 		if (msg.startsWith("i,")) {
 

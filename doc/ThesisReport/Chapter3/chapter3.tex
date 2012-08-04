@@ -310,11 +310,13 @@ Complex actions are created to make use of more than one simple actions and moti
  \item[Clear Ball] This action uses Walk To Ball in order the agent to reach the ball. In this action we use the agent's belief about his location in the field to help us find the direction in which the agent should not kick the ball.
  \item[Walk To Coordinate]
  This action takes the agent to a specific coordinate in the soccer field. To achieve this action we need to know our position in the field and the target coordinate. Agent is able to know his position so it is easy for us to calculate in which direction agent has to walk in order to get in the specific coordinate. Figure \ref{fig:WalkToCoordinate} shows us that agent should travel from the point $(X_{start},Y_{start})$, to the point $(X_{target},Y_{target})$. It is easy to find $\vartheta_{target}^{\circ}$:\\
+\begin{center}
 $d_{X} = X_{target} - X_{start}$\\
 $d_{Y} = Y_{target} - Y_{start}$\\
 $\vartheta_{target}^{\circ} = atan2(d_{X},d_{Y})$\\
-$d_{target} = \sqrt{d_{X}^2 + d_{Y}^2}$\\
-\\
+$d_{target} = \sqrt{d_{X}^2 + d_{Y}^2}$
+\end{center}
+
 Been helped from the above calculations agent is always aware of the distance and the direction he has to travel towards his target position. 
  \begin{figure}[!h]
 \centering
@@ -360,7 +362,7 @@ Figure \ref{fig:ObstacleAvoidance} shows an example in which there are two obsta
 \label{AngleSet}
 \begin{algorithmic}[1]
 \STATE {\bf Inputs: }$Obstacles = \lbrace O_{1},O_{2},...,O_{n} \rbrace $
-\STATE {\bf Outputs: }$WayOutSet[]$
+\STATE {\bf Outputs: }$WayOutSet[ ]$
 \FOR{{\bf each} i in Obstacles}
 \STATE $WayOutSet.Add(Calculate(O_{a},t))$
 \ENDFOR
@@ -381,7 +383,7 @@ Other Sensors related actions are created to collect data from gyroscope, accele
 
 
 \section{Communication}
-Communication in Simspark is not ideal. There are not restrictions about the say effector and every player can use it in every cycle. However, the hear perceptor comes up with some restrictions. Messages should not have a length more than twenty characters from the ASCII subset [0x21; 0x7E] excluding [0x28; 0x29] which are the parenthesis characters, ( and ). Messages shouted from beyond a maximal distance (currently 50 meters) cannot be heard. Note that as the field is currently only 20x30 meters (36 diagonally), this does not turn out to be a limit in practice. Most importsant restriction is that the number of messages which can be heard at the same time is bounded. Finally, each player has the maximal capacity of one heard message by a specific team every two simulation cycles (thus every 0.04 seconds per team). Due to the limited communication bandwidth we utilize the communication channel in the following way, making sure that every message which is sent from an agent will be heard by other agents in time. A simple communication protocol is created in which time is sliced into pieces each one of them lasts for one cycle (2ms) and repeats every three cycles (6ms). Figure \ref{fig:TimeSlicing} shows how time is sliced. Every three cycles there is one of these pieces in which only one agent is able to send his message to the others. Every one of these slices has an integer label on it which states the uniform number of the player which is able to send his message. This label grows by one in every time a player send his message until it reaches the maximum uniform number, then it returns to the number one. Agents are not permitted to use a common chronometer for this task but we make sure that each player is synchronized with the others making use of the changing game states. By using this simple protocol we achieve that every player can receive the other eight agents' messages in just 54ms!
+Communication in Simspark is not ideal. There are not restrictions about the say effector and every player can use it in every cycle. However, the hear perceptor comes up with some restrictions. Messages should not have a length more than twenty characters from the ASCII subset [0x21; 0x7E] excluding [0x28; 0x29] which are the parenthesis characters, ( and ). Messages shouted from beyond a maximal distance (currently 50 meters) cannot be heard. Note that as the field is currently only 20x30 meters (36 diagonally), this does not turn out to be a limit in practice. Most importsant restriction is that the number of messages which can be heard at the same time is bounded. Finally, each player has the maximal capacity of one heard message by a specific team every two simulation cycles (thus every 0.04 seconds per team). Due to the limited communication bandwidth we utilize the communication channel in the following way, making sure that every message which is sent from an agent will be heard by other agents in time. A simple communication protocol is created in which time is sliced into pieces each one of them lasts for one cycle (20ms) and repeats every three cycles (60ms). Figure \ref{fig:TimeSlicing} shows how time is sliced. Every three cycles there is one of these pieces in which only one agent is able to send his message to the others. Every one of these slices has an integer label on it which states the uniform number of the player which is able to send his message. This label grows by one in every time a player send his message until it reaches the maximum uniform number, then it returns to the number one. Agents are not permitted to use a common chronometer for this task but we make sure that each player is synchronized with the others making use of the changing game states. By using this simple protocol we achieve that every player can receive the other eight agents' messages in 540ms!
 \begin{figure}[!h]
 \centering
   \includegraphics[scale=0.7]{Chapter3/figures/MAC.pdf}  

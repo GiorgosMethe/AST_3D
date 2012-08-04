@@ -6,4 +6,16 @@ MacAlpine, P., Barrera, F., Stone, P.:
   positioning system.
 \newblock In: Proceedings of the RoboCup International Symposium. (2012)
 
+\bibitem{UTAustinVillaRobotSoccerTeam}
+{UT Austin Villa}:
+\newblock Ut austin villa (2012) Only available online:
+  \url{http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/}.
+
+\bibitem{BeeStanbulTDP}
+{Baris Demirdelen and Berkay Toku and Onuralp Ulusoy and Tuna Sonmez and Kubra
+  Ayvaz and Elif Senyurek and Sanem Sariel-Talay}:
+\newblock beestanbul robocup 3d simulation league team description paper 2012
+  (2012) Only available online:
+  \url{http://air.cs.itu.edu.tr/publications-1/beeStanbul_TDP2012.pdf}.
+
 \end{thebibliography}

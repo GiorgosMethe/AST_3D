@@ -14,8 +14,11 @@ package coordination.communication.admin;
 
 import java.util.Vector;
 
+import connection.utils.ServerCyrcles;
+
 import agent.constraints.Constraints;
 import coordination.communication.message.CoordinationVectorUpdate;
+import coordination.main.CoordinationRun;
 
 public class AdminMessageBuffer {
 
@@ -36,6 +39,8 @@ public class AdminMessageBuffer {
 
 			if (!InitBuffer.contains(num)) {
 
+				System.out.println("init message "+ServerCyrcles.getCyrclesNow());
+
 				InitBuffer.addElement(num);
 
 			}
@@ -48,34 +53,41 @@ public class AdminMessageBuffer {
 
 	public static boolean addC(int num, String msg) {
 
-		if (cBuffer.size() == Constraints.numberPlayers - 1) {
+		if(CoordinationRun.getStep() == 0){
 
-			CoordinationVectorUpdate.update(CoordinationMessageBuffer);
-			CoordinationMessageBuffer.removeAllElements();
-			cBuffer.removeAllElements();
+			if (cBuffer.size() == Constraints.numberPlayers - 1) {
 
-			return true;
+				CoordinationVectorUpdate.update(CoordinationMessageBuffer);
+				CoordinationMessageBuffer.removeAllElements();
+				cBuffer.removeAllElements();
 
-		} else {
-
-			boolean flag = false;
-
-			for (int i = 0; i < cBuffer.size(); i++) {
-				if (cBuffer.elementAt(i) == num) {
-					flag = true;
-					break;
-				}
-			}
-
-			if (flag) {
+				return true;
 
 			} else {
-				cBuffer.addElement(num);
-				CoordinationMessageBuffer.addElement(msg);
+
+				boolean flag = false;
+
+				for (int i = 0; i < cBuffer.size(); i++) {
+					if (cBuffer.elementAt(i) == num) {
+						flag = true;
+						break;
+					}
+				}
+
+				if (flag) {
+
+				} else {
+					System.out.println("cBuffer message "+ServerCyrcles.getCyrclesNow());
+					cBuffer.addElement(num);
+					CoordinationMessageBuffer.addElement(msg);
+				}
+
 			}
 
-		}
+			
 
+		}
+		
 		return false;
 
 	}

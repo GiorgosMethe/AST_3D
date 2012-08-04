@@ -1,12 +1,84 @@
 \chapter{Results}
 \label{results}
+In this Chapter are presented the results of our approach in every part of our work. We are going to see what we achieve in motions part, in communication part, in coordination part and finally and most important the overall results which is the real competitive soccer matches against other teams which participated in Robocup competition of 2011 held in Istanbul.
 
 \section{Movement}
+This section presents the improvements we have done in the movements part of this thesis. In general, as we have said above motions files are not created by us but from other teams or other platforms such as Webots Simulator. The only thing that we could do is to try improving these motions until we have reached an adequate result for our team.
+\begin{table}
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l |}
+    \hline
+    \textbf{Motion Version} & \textbf{Walk}(m/s) & \textbf{Turn}(degrees/s) & \textbf{Kick}(meters) & \textbf{S. Kick}(meters) \\ \hline
+    Webots (Text-Based) & 0.11 			& 21 			& 3 			& - \\ \hline	
+    FIIT (XML)			& 0.22 			& 25 			& 3 (4 sec) 	& 4 (5 sec) \\ \hline
+    Webots Opt. 		& - 			& \textbf{30} 	& - 			& - \\ \hline
+    FIIT Opt. 			& \textbf{0.45} & 24 			& \textbf{3} (2 sec) 	& \textbf{5.5} (2 sec) \\
+    \hline
+    \end{tabular}
+\end{center}
+\label{MotionImprovements}
+\caption{Motion's Performance Improvement}
+\end{table}
 
-\subsection{Walking}
 
-\subsection{Kicking}
-
-
+\section{Communication}
 
 \section{Coordination}
+
+\section{Overview}
+
+\subsection{Full Game Results}
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{ | l | l | l | }
+    \hline
+    Team & Goal Difference & Games   \\ \hline
+    UTAustinVilla 	& -4.6 			& 3 			\\ \hline	
+    Robocanes 		& -				& 0 			\\ \hline
+    BeeStanbul		& -4.0			& 3				\\ \hline
+    NomoFC 			& - 			& - 			\\ \hline
+    Rail 			& 0.0 			& 2 			\\ \hline
+    OxBlue 			& - 			& - 			\\ \hline
+    FUTK3D 			& - 			& - 			\\ \hline
+    FARZANEGAN 		& - 			& - 			\\ \hline
+    L3M-SIM			& +0.5 			& 4 			\\     
+    \hline
+    \end{tabular}
+\end{center}
+\label{GameResults}
+\caption{Full-Game Results}
+\end{table}
+
+\subsection{Mini Tournament ( Tough Opponents )}
+\begin{table}
+\begin{center}
+\begin{tabular}{l*{6}{c}r}
+Team              & P & W & D & L & F  & A & Pts \\ \hline
+\textbf{AST3D} & - & - & - & - & - & - & -  \\
+UTAustinVilla            & - & - & - & - &  - & - &  -  \\
+Robocanes           & - & - & - & - &  - & - &  -  \\
+BeeStanbul     & - & - & - & - &  - & - &  - \\
+\end{tabular}
+\end{center}
+\label{ToughTournament}
+\caption{Tough Mini Tournament}
+\end{table}
+
+\subsection{Mini Tournament ( Easy Opponents )}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l*{6}{c}r}
+Team              & P & W & D & L & F  & A & Pts \\ \hline
+\textbf{AST3D} & - & - & - & - & - & - & -  \\
+NomoFC            & - & - & - & - &  - & - &  -  \\
+OxBlue           & - & - & - & - &  - & - &  -  \\
+FUTK3D     & - & - & - & - &  - & - &  - \\
+L3M-SIM     & - & - & - & - &  - & - &  - \\
+FARZANEGAN     & - & - & - & - &  - & - &  - \\
+\end{tabular}
+\end{center}
+\label{EasyTournament}
+\caption{Easy Mini Tournament}
+\end{table}

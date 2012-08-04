@@ -1,4 +1,7 @@
 \beamer@endinputifotherversion {3.07pt}
-\beamer@sectionintoc {2}{Lists}{3}{0}{1}
-\beamer@sectionintoc {3}{Graphics}{7}{0}{2}
-\beamer@sectionintoc {4}{Hyperlinks}{10}{0}{3}
+\beamer@sectionintoc {1}{Outline}{2}{0}{1}
+\beamer@sectionintoc {2}{Background}{3}{0}{2}
+\beamer@sectionintoc {3}{Agent}{5}{0}{3}
+\beamer@sectionintoc {4}{Coordination}{18}{0}{4}
+\beamer@sectionintoc {5}{Results}{30}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{31}{0}{6}
