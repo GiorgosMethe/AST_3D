@@ -60,6 +60,7 @@ public class CommProtocol {
 				} else {
 					return false;
 				}
+				
 			} else {
 
 				return false;

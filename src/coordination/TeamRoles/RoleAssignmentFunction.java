@@ -16,6 +16,8 @@ import java.util.Vector;
 
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import coordination.action.ActionObject;
+import coordination.action.ActionTable;
 import coordination.main.CoordinationBeliefs;
 import coordination.main.CoordinationSplitter;
 import coordination.strategy.TeamFormation;
@@ -55,11 +57,6 @@ public class RoleAssignmentFunction {
 		int role = 2;
 		for (int i = 0; i < CoordinationSplitter.ActiveSubset.size(); i++) {
 
-			// System.out.println("act paixths: "
-			// + CoordinationSplitter.ActiveSubset.elementAt(i)
-			// .getNumber());
-			// System.out.println("rolos: " + roleArray[role]);
-
 			ActiveRoles.add(new Role(CoordinationSplitter.ActiveSubset
 					.elementAt(i), roleArray[role]));
 			role++;
@@ -68,30 +65,20 @@ public class RoleAssignmentFunction {
 
 		for (int i = 0; i < CoordinationSplitter.SupportSubset.size(); i++) {
 
-			// System.out.println("su paixths: "
-			// + CoordinationSplitter.SupportSubset.elementAt(i)
-			// .getNumber());
-			// System.out.println("rolos: " + roleArray[role]);
-
 			SupportRoles.add(new Role(CoordinationSplitter.SupportSubset
 					.elementAt(i), roleArray[role]));
 			role++;
 
 		}
 
-		// for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++)
-		// {
-		//
-		// System.out.println("in paixths: "
-		// + CoordinationSplitter.InactiveSubset.elementAt(i)
-		// .getNumber());
-		// System.out.println("rolos: " + roleArray[role]);
-		//
-		// SupportRoles.add(new Role(CoordinationSplitter.InactiveSubset
-		// .elementAt(i), roleArray[role]));
-		// role++;
-		//
-		// }
+		 for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++){
+
+			 ActionObject a = new ActionObject(CoordinationSplitter.InactiveSubset.elementAt(i).getNumber(),
+					 "TurnToLocate", 0, 0, 0, 0);
+			 
+			 ActionTable.CoordinateActions.addElement(a);
+
+		 }
 
 	}
 

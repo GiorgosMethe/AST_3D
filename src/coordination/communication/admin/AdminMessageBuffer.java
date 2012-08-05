@@ -50,11 +50,11 @@ public class AdminMessageBuffer {
 	}
 
 	public static boolean addC(int num, String msg) {
-
+				
 		if(CoordinationRun.getStep() == 0){
-
+			
 			if (cBuffer.size() == Constraints.numberPlayers - 1) {
-
+				
 				CoordinationVectorUpdate.update(CoordinationMessageBuffer);
 				CoordinationMessageBuffer.removeAllElements();
 				cBuffer.removeAllElements();

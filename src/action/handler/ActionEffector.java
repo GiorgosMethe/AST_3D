@@ -42,6 +42,12 @@ public class ActionEffector {
 
 				playing = WalkToCompleteCoordinate.Act(target, Theta);
 
+			} else if (ActionPlaying.getActionPlaying().getAction()
+					.equalsIgnoreCase("TurnToLocate")) {
+				
+				
+				playing = TurnToLocate.Act();
+				
 			}
 
 			ActionPlaying.setEnd(playing);

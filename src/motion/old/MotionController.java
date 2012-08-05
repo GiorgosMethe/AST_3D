@@ -58,7 +58,7 @@ public class MotionController {
 
 		// there is no any motion in progress
 		if (CurrentMotion.getCurrentMotionPlaying().equalsIgnoreCase("")) {
-			System.out.println("there is no any motion in progress");
+
 			CurrentMotion.setCurrentMotionPlaying(Motion);
 			CurrentMotion.setInitCyrcles(0);
 			CurrentMotion.setCurrentMotionPlaying(Motion);
@@ -69,8 +69,6 @@ public class MotionController {
 
 		} else {
 			
-			System.out.println("play");
-
 			if ((Current - CurrentMotion.getStartMotionCyrcles()) % speed == 0) {
 				
 				int previousPose = CurrentMotion.getMotionPose();

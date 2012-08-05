@@ -1,21 +1,33 @@
 Technical University of Crete
-Academic Year 2011-2012
 
 Thesis Project
 
-Author    : Methenitis Georgios 
-Student ID: 2006030085	
-Abstract  : Player Behavior and Team Strategy for the RoboCup 3D Simulation League
-Start date: 25-04-2012											 
-End date  : xx-xx-2012
+Author     : Methenitis Georgios (giorgosmethe@gmail.com)
+Student ID : 2006030085	
+Abstract   : Player Behavior and Team Strategy for the RoboCup 3D Simulation League
+StartDate  : 25-04-2012
+End date   : 24-08-2012
 
-How to run:
+This binary was compiled and tested on a 64-bit Ubuntu 11.04 - the Natty Narwhal - system.
 
+Compatibility:
+rcssserver3d 0.6.5
+simspark 0.2.2
 
+Third Party Libraries:
+commons-lang-2.6.jar (Apache Commons)
+jts-1.8.jar (com.vividsolutions)
+vecmath.jar (Java3D Team)
 
+-- Instructions for running agent --
+Run full team:
+./start.sh <host>
+
+Kill team:
+./kill.sh
 
 *************************************************************************************
-*XML Motion files have been taken from FIIT RoboCup 3D team.
+*XML Motion files are created by FIIT RoboCup 3D team.
 *Classic Motion files from WEBOTS SoccerStadium simulator and from TUC's Kuretes SPL team.
 *************************************************************************************
  

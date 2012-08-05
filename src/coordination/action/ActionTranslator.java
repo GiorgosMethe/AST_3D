@@ -37,6 +37,10 @@ public class ActionTranslator {
 		} else if (type == 4) {
 
 			Action = "WalkToCoordinate";
+			
+		} else if (type == 5) {
+
+			Action = "TurnToLocate";
 
 		} else {
 
@@ -67,6 +71,10 @@ public class ActionTranslator {
 		} else if (name.equalsIgnoreCase("WalkToCoordinate")) {
 
 			type = 4;
+			
+		} else if (name.equalsIgnoreCase("TurnToLocate")) {
+
+			type = 5;
 
 		} else {
 
