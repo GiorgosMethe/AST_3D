@@ -12,6 +12,7 @@
  ******************************************************************************/
 package agent.runtime;
 
+import motion.old.CurrentMotion;
 import motion.utils.MotionTrigger;
 import motion.utils.PerformMovement;
 import perceptor.worldstate.GameState;
@@ -23,6 +24,7 @@ import action.simple.TurnToLocate;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
 import behavior.goalie.Goalie;
+import behavior.old.BehaviorDone;
 
 import communication.utils.MessageType;
 import communication.utils.SayEffector;
@@ -44,40 +46,41 @@ public class AgentFunction {
 		 * try to get up.
 		 */
 		CheckIfFall.Check();
-		
+
 		if (InitAgent.isPlayerInited()) {
 
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
 
-				MotionTrigger.setMotion("Forards50");
-								Say = SayEffector.Say(MessageType.getType());
-				
-								Coordination.MakeCoordination();
-				
-								if (!CheckIfFall.fallen) {
-									if (AgentRuntime.num == 1) {
-				
-										Goalie.Act();
-				
-									} else {
-				
-										ActionEffector.Act();
-				
-									}
-								}
-				
-								ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
-				
-							} else {
-				
-								if (!CheckIfFall.fallen) {
-									TurnToLocate.Act();
-								}
-				
+				Say = SayEffector.Say(MessageType.getType());
+
+				Coordination.MakeCoordination();
+
+				if (!CheckIfFall.fallen) {
+					if (AgentRuntime.num == 1) {
+
+						Goalie.Act();
+
+					} else {
+
+						ActionEffector.Act();
+
+					}
+				}
+
+				ServerCyrcles.setGameCyrcles(AgentRuntime.GameCycles++);
+
+			} else {
+
+				if (!CheckIfFall.fallen) {
+					TurnToLocate.Act();
+				}
+
 			}
 
 		}
-
+		
+	
+		
 		Act = PerformMovement.run();
 
 		Head = HeadMovement.MoveHead(VisionType.getType());

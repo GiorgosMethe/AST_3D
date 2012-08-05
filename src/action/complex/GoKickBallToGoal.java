@@ -32,7 +32,7 @@ public class GoKickBallToGoal {
 	public static float angle = 0, angleSum = 0;
 
 	public static boolean Act() {
-
+		
 		if (Vision.isiSee()) {
 
 			if (Ball.isSeeTheBall()) {
@@ -60,57 +60,44 @@ public class GoKickBallToGoal {
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start1")) {
 
-			if (LocalizationResults.isKnowMyPosition()
-					&& LocalizationFilter.qe.size() >= 8) {
 
-				VisionType.setType(1);
-				GKBGDstates.setState("Start2");
-				GKBGDstates.setAngle(TriangleLocalization
-						.FindAngleBetweenCoordinates(
-								LocalizationFilter.MyPosition,
-								Constraints.OpponentGoal)
-						- LocalizationFilter.MyFilteredPosition.getTheta());
-				GKBGDstates.setDistance(TriangleLocalization
-						.FindDistanceAmong2Coordinates(
-								LocalizationFilter.MyPosition,
-								Constraints.OpponentGoal));
+			VisionType.setType(6);
 
-			} else {
+			double[] OppGoal = FindOpponentsGoal.Act();
 
-				VisionType.setType(7);
-
-				double[] OppGoal = FindOpponentsGoal.Act();
-
-				if (!Double.isNaN(OppGoal[0])) {
-					GKBGDstates.setAngleFromPost1(OppGoal[0]);
-					GKBGDstates.setDistance(OppGoal[2]);
-
-				}
-				if (!Double.isNaN(OppGoal[1])) {
-					GKBGDstates.setAngleFromPost2(OppGoal[1]);
-					GKBGDstates.setDistance(OppGoal[2]);
-				}
-
-				if (!Double.isNaN(GKBGDstates.getAngleFromPost1())
-						&& !Double.isNaN(GKBGDstates.getAngleFromPost2())) {
-
-					GKBGDstates.setAngle(TriangleLocalization.FindAngleAVG(
-							GKBGDstates.getAngleFromPost1(),
-							GKBGDstates.getAngleFromPost2()));
-					GKBGDstates.setState("Start2");
-					VisionType.setType(1);
-				}
+			if (!Double.isNaN(OppGoal[0])) {
+				
+				GKBGDstates.setAngleFromPost1(OppGoal[0]);
+				GKBGDstates.setDistance(OppGoal[2]);
 
 			}
+			if (!Double.isNaN(OppGoal[1])) {
+			
+				GKBGDstates.setAngleFromPost2(OppGoal[1]);
+				GKBGDstates.setDistance(OppGoal[2]);
+			}
+
+			if (!Double.isNaN(GKBGDstates.getAngleFromPost1())
+					&& !Double.isNaN(GKBGDstates.getAngleFromPost2())) {
+
+				GKBGDstates.setAngle(TriangleLocalization.FindAngleAVG(
+						GKBGDstates.getAngleFromPost1(),
+						GKBGDstates.getAngleFromPost2()));
+				GKBGDstates.setState("Start2");
+				VisionType.setType(1);
+			}
+
+
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start2")) {
 
 			if (HeadMovement.HeadAtBall) {
-
+				
 				angleSum = 0;
 				GKBGDstates.setState("Start3");
 
 			}
+			
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start3")) {
 
@@ -135,28 +122,40 @@ public class GoKickBallToGoal {
 
 				if (GKBGDstates.getAngle() < 0) {
 
-					if ((Math.abs(Ball.getAngleX()
-							+ HingeJointPerceptor.getHj1())) > 2) {
+					if(Math.abs((HingeJointPerceptor.getHj1()+Ball.getAngleX()))>20){
 
-						MotionTrigger.setMotion("TurnRight40");
+						if(HingeJointPerceptor.getHj1()>0){
+							MotionTrigger.setMotion("TurnLeft40");
+							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
 
-					} else {
+						}else{
+							MotionTrigger.setMotion("TurnRight40");
+							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
 
+						}
+
+
+					}else{
 						MotionTrigger.setMotion("SideStepLeft");
-
 					}
 
 				} else {
 
-					if ((Math.abs(Ball.getAngleX()
-							+ HingeJointPerceptor.getHj1())) > 2) {
+					if(Math.abs((HingeJointPerceptor.getHj1()+Ball.getAngleX()))>20){
 
-						MotionTrigger.setMotion("TurnLeft40");
+						if(HingeJointPerceptor.getHj1()>0){
+							MotionTrigger.setMotion("TurnLeft40");
+							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
 
-					} else {
+						}else{
+							MotionTrigger.setMotion("TurnRight40");
+							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
 
+						}
+
+
+					}else{
 						MotionTrigger.setMotion("SideStepRight");
-
 					}
 
 				}
@@ -166,6 +165,7 @@ public class GoKickBallToGoal {
 				GKBGDstates.setAngleFromPost2(Double.NaN);
 
 			} else {
+				
 				GKBGDstates.setState("Start4");
 
 			}

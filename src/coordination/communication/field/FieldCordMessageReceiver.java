@@ -12,10 +12,12 @@
  ******************************************************************************/
 package coordination.communication.field;
 
+import perceptor.worldstate.GameState;
 import agent.constraints.Constraints;
 import agent.type.AgentType;
 
 import communication.utils.MessageType;
+import connection.utils.ServerCyrcles;
 
 import coordination.communication.action.ActionMessageReceiver;
 

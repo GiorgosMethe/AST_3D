@@ -15,6 +15,7 @@ package motion.utils;
 public class MotionTrigger {
 
 	public static String Motion;
+	public static float Turn;
 
 	public static String getMotion() {
 		return Motion;
@@ -23,5 +24,17 @@ public class MotionTrigger {
 	public static void setMotion(String motion) {
 		Motion = motion;
 	}
+
+	public static float getTurn() {
+		return Turn;
+	}
+
+	public static void setTurn(float turn) {
+		Turn = turn;
+	}
+	
+	
+	
+	
 
 }

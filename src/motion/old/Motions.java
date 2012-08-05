@@ -14,14 +14,16 @@ package motion.old;
 
 import java.util.Vector;
 
+import connection.utils.ServerCyrcles;
+
 import motion.utils.GetNormalJointValue;
 import motion.utils.GetNormalJointValueDegrees;
 
 public class Motions {
 
-	private int motionOffsetValues;
+	private static int motionOffsetValues;
 
-	public String Motion(String motionName, int i, int SpeedControl,
+	public static String Motion(String motionName, int i, int SpeedControl,
 			double hardness) {
 
 		boolean xml = false;
@@ -108,7 +110,7 @@ public class Motions {
 						.trim()) * hardness);
 				float a1 = gNjVd.Get(jointReal, a);
 
-				float a2 = (a1 / SpeedControl);
+				float a2 = (a1 / SpeedControl) * (ServerCyrcles.ServerStep/20);
 
 				String str = Float.toString(a2);
 
@@ -120,7 +122,7 @@ public class Motions {
 						.trim()) * hardness);
 				float a1 = gNjV.Get(jointReal, a);
 
-				float a2 = (a1 / SpeedControl);
+				float a2 = (a1 / SpeedControl) * (ServerCyrcles.ServerStep/20);
 
 				String str = Float.toString(a2);
 
@@ -133,7 +135,7 @@ public class Motions {
 		return msg;
 	}
 
-	public Vector<String> readMotion(String motionName) {
+	public static Vector<String> readMotion(String motionName) {
 
 		if (motionName.equalsIgnoreCase("Forwards50")) {
 
@@ -194,7 +196,7 @@ public class Motions {
 
 	}
 
-	public String StopBehavior() {
+	public static String StopBehavior() {
 
 		String str = "(lae4 0)(rae4 0)(lae3 0)(rae3 0)(lae2 0)(rae2 0)(lae1 0)(rae1 0)(rle1 0)(rle2 0)(rle3 0)(rle4 0)(rle5 0)(rle6 0)(lle1 0)(lle2 0)(lle3 0)(lle4 0)(lle5 0)(lle6 0)";
 		return str;

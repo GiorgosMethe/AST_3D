@@ -84,7 +84,7 @@ public class TeamFormation {
 		 * defenders positioning
 		 */
 
-		float distance = (float) (4 - 2 * (Ball.X / (Constraints.FieldLength / 2)));
+		float distance = (float) (3.5 - 1 * (Ball.X / (Constraints.FieldLength / 2)));
 
 		double theta = TriangleLocalization.FindAngleBetweenCoordinates(
 				Constraints.OwnGoal, Ball);
@@ -151,7 +151,7 @@ public class TeamFormation {
 
 			}
 
-			Coordinate midfielfCenter = new Coordinate(TeamFormation[9].X + 4,
+			Coordinate midfielfCenter = new Coordinate(TeamFormation[9].X + 3,
 					TeamFormation[9].Y);
 
 			TeamFormation[5] = TriangleLocalization
@@ -296,7 +296,7 @@ public class TeamFormation {
 		 * defenders positioning
 		 */
 
-		float distance = (float) (4 + 2 * (Ball.X / (Constraints.FieldLength / 2)));
+		float distance = (float) (3.5 + 1 * (Ball.X / (Constraints.FieldLength / 2)));
 
 		double theta = TriangleLocalization.FindAngleBetweenCoordinates(
 				Constraints.OwnGoal, Ball);
@@ -358,7 +358,7 @@ public class TeamFormation {
 
 			}
 
-			Coordinate midfielfCenter = new Coordinate(TeamFormation[9].X - 4,
+			Coordinate midfielfCenter = new Coordinate(TeamFormation[9].X - 3,
 					TeamFormation[9].Y);
 
 			TeamFormation[5] = TriangleLocalization

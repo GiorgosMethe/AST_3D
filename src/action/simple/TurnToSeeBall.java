@@ -28,6 +28,7 @@ public class TurnToSeeBall {
 			} else {
 
 				MotionTrigger.setMotion("TurnRight40");
+				MotionTrigger.setTurn(40);
 				return false;
 			}
 

@@ -32,6 +32,7 @@ public class WalkToBall {
 			if (Ball.isSeeTheBall()) {
 
 				if ((Ball.RealDistance() < 0.805) && (Ball.getDistance() < 0.8)) {
+				
 
 					if ((Math.abs(HingeJointPerceptor.getHj1()
 							+ Math.abs(Ball.getAngleX()))) > 15) {
@@ -39,11 +40,14 @@ public class WalkToBall {
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
 							MotionTrigger.setMotion("TurnLeft40");
+							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
+							
 							return false;
 
 						} else {
 
 							MotionTrigger.setMotion("TurnRight40");
+							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
 							return false;
 
 						}
@@ -59,7 +63,7 @@ public class WalkToBall {
 					float AngleThresholdWalkLeaningTurn;
 					if (Ball.getDistance() < 1) {
 
-						AngleThresholdBigTurn = 8;
+						AngleThresholdBigTurn = 10;
 						AngleThresholdWalkLeaningTurn = 2;
 
 					} else {
@@ -74,11 +78,13 @@ public class WalkToBall {
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
 							MotionTrigger.setMotion("TurnLeft40");
+							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
 							return false;
 
 						} else {
 
 							MotionTrigger.setMotion("TurnRight40");
+							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
 							return false;
 
 						}

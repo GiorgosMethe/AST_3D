@@ -14,8 +14,10 @@ package action.complex;
 
 import motion.utils.MotionTrigger;
 import motion.xml.WalkLeaning;
+import perceptor.joints.HingeJointPerceptor;
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
+import perceptor.vision.Ball;
 import action.vision.ObstaclePerceptor;
 import action.vision.VisionType;
 
@@ -58,11 +60,13 @@ public class WalkToCompleteCoordinate {
 				if (TriangleLocalization.FindAngleDifference(Theta) < 0) {
 
 					MotionTrigger.setMotion("TurnRight40");
+					MotionTrigger.setTurn((float) TriangleLocalization.FindAngleDifference(Theta));
 					return false;
 
 				} else {
 
 					MotionTrigger.setMotion("TurnLeft40");
+					MotionTrigger.setTurn((float) TriangleLocalization.FindAngleDifference(Theta));
 					return false;
 
 				}
@@ -102,11 +106,13 @@ public class WalkToCompleteCoordinate {
 				if (TriangleLocalization.FindAngleDifference(ThetaToTarget) < 0) {
 
 					MotionTrigger.setMotion("TurnRight40");
+					MotionTrigger.setTurn((float) TriangleLocalization.FindAngleDifference(ThetaToTarget));
 					return false;
 
 				} else {
 
 					MotionTrigger.setMotion("TurnLeft40");
+					MotionTrigger.setTurn((float) TriangleLocalization.FindAngleDifference(ThetaToTarget));
 					return false;
 
 				}

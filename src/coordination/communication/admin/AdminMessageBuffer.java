@@ -39,8 +39,6 @@ public class AdminMessageBuffer {
 
 			if (!InitBuffer.contains(num)) {
 
-				System.out.println("init message "+ServerCyrcles.getCyrclesNow());
-
 				InitBuffer.addElement(num);
 
 			}
@@ -77,9 +75,10 @@ public class AdminMessageBuffer {
 				if (flag) {
 
 				} else {
-					System.out.println("cBuffer message "+ServerCyrcles.getCyrclesNow());
+
 					cBuffer.addElement(num);
 					CoordinationMessageBuffer.addElement(msg);
+					
 				}
 
 			}

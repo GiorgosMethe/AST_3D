@@ -87,7 +87,7 @@ public class InitAgent {
 				WalkLeaning.setLean("");
 
 				// Vision Type
-				VisionType.setType(1);
+				VisionType.setType(6);
 
 				con.sendMessage("(init(unum " + number + ")(teamname "
 						+ Teamname + "))");
@@ -109,7 +109,7 @@ public class InitAgent {
 
 			}
 
-			MotionTrigger.setMotion("Init");
+			
 			if (cyrcles == 9) {
 				InitAgent.setPlayerInited(true);
 			}
