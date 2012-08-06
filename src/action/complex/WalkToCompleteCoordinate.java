@@ -43,7 +43,7 @@ public class WalkToCompleteCoordinate {
 
 		if (TriangleLocalization.FindDistanceToTarget(target) < 0.3) {
 
-			if (Math.abs(TriangleLocalization.FindAngleDifference(Theta)) < 20) {
+			if (Math.abs(TriangleLocalization.FindAngleDifference(Theta)) < 10) {
 
 				MotionTrigger.setMotion("");
 				Correct++;

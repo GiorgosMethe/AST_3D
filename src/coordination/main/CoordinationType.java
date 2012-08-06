@@ -14,6 +14,7 @@ package coordination.main;
 
 import perceptor.worldstate.GameState;
 import perceptor.worldstate.TeamState;
+import behavior.goalie.Goalie;
 
 public class CoordinationType {
 
@@ -30,6 +31,10 @@ public class CoordinationType {
 			} else if (GameState.getGameState().equalsIgnoreCase("PlayOn")) {
 
 				CoordinationType.Type = "Active";
+
+				if (Goalie.state.equalsIgnoreCase("Libero")) {
+					CoordinationType.Type = "Support";
+				}
 
 			} else if (GameState.getGameState().equalsIgnoreCase("Goal_Left")) {
 

@@ -31,25 +31,27 @@
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Nao's anatomy.}}{28}{figure.4.7}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Motion Controller.}}{30}{figure.4.8}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Phase Sequence.}}{31}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Ball Distance from Agent's Foot.}}{34}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Nao Before Kick Ball.}}{35}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Kick Ball to Goal Action Logic Sequence.}}{36}{figure.4.12}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Walk To Coordinate Action.}}{37}{figure.4.13}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Ball Distance from Agent's Foot.}}{35}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Nao Before Kick Ball.}}{36}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces On Ball Action Logic Sequence.}}{37}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Walk To Coordinate Action.}}{38}{figure.4.13}
 \contentsline {figure}{\numberline {4.14}{\ignorespaces Obstacle Avoidance.}}{39}{figure.4.14}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Time Slicing Communication.}}{42}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Goalkeeper Fall Function.}}{43}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{44}{figure.4.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Coordination cycle.}}{44}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Communication Process in Coordination.}}{48}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Ball's Position Observations.}}{50}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Coordination Splitter.}}{53}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Soccer Field Value.}}{54}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Active positions before elimination.}}{54}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Active positions after elimination.}}{55}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Formation Role Positions for 9 vs 9.}}{59}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Formation Role Positions for 11 vs 11.}}{60}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Role Assignment Function.}}{62}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Support Positions.}}{63}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Collision Detection Approach.}}{66}{figure.5.12}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Coordination cycle.}}{46}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Communication Process in Coordination.}}{50}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ball's Position Observations.}}{52}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Coordination Splitter.}}{55}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Soccer Field Value.}}{56}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Active positions before elimination.}}{56}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Active positions after elimination.}}{57}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Formation Role Positions for 9 vs 9.}}{61}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Formation Role Positions for 11 vs 11.}}{62}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Role Assignment Function.}}{64}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Support Positions.}}{65}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Collision Detection Approach.}}{68}{figure.5.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

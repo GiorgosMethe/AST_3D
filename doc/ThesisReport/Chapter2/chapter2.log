@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  6 AUG 2012 04:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  6 AUG 2012 16:35
 entering extended mode
  %&-line parsing enabled.
 **chapter2.tex
@@ -3096,26 +3096,28 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
 l.27 \subsection
-                {rcssmonitor3d}
+                {SimSpark Monitor}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no r in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no s in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no i in font nullfont!
 Missing character: There is no m in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no M in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no d in font nullfont!
 Missing character: There is no T in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
@@ -3857,20 +3859,44 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 l.31 \subsection
-                {roboviz}
+                {Roboviz Monitor}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no r in font nullfont!
+Missing character: There is no R in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no b in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no v in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no z in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{roboviz}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.32 \cite{roboviz}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `roboviz' on page  undefined on input line 32.
+
+Missing character: There is no ] in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no b in font nullfont!
@@ -4571,7 +4597,7 @@ Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
 <write> ...ference `fig:Roboviz' on page \thepage 
                                                   \space undefined\on@line .
-l.33 ...mSpark monitor in Figure \ref{fig:Roboviz}
+l.34 ...mSpark monitor in Figure \ref{fig:Roboviz}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4580,7 +4606,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Roboviz' on page  undefined on input line 33.
+LaTeX Warning: Reference `fig:Roboviz' on page  undefined on input line 34.
 
 Missing character: There is no . in font nullfont!
 
@@ -4590,7 +4616,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.34 \begin{figure}
+l.35 \begin{figure}
                    [ht!]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4602,7 +4628,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no ! in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.36   \includegraphics
+l.37   \includegraphics
                        [width=0.8\textwidth]{Chapter2/figures/comp2.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4623,7 +4649,7 @@ Missing character: There is no 8 in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.36   \includegraphics[width=0.8\textwidth]
+l.37   \includegraphics[width=0.8\textwidth]
                                             {Chapter2/figures/comp2.png}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4632,7 +4658,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.36   \includegraphics[width=0.8\textwidth]
+l.37   \includegraphics[width=0.8\textwidth]
                                             {Chapter2/figures/comp2.png}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4675,8 +4701,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.37   \caption
-               {Roboviz(left) vs SimSpark(right) Monitors.}
+l.38   \caption
+               {Roboviz(left) vs SimSpark(right) Monitors.\cite{roboviz}}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4719,6 +4745,23 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{roboviz}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.38 ...vs SimSpark(right) Monitors.\cite{roboviz}
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `roboviz' on page  undefined on input line 38.
+
+Missing character: There is no ] in font nullfont!
 
 ! LaTeX Error: \begin{document} ended by \end{figure}.
 
@@ -4726,34 +4769,44 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.39 \end{figure}
+l.40 \end{figure}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 4--40
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--41
 []
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 4--40
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 4--41
 []
  []
 
 
-Overfull \hbox (169.3455pt too wide) in paragraph at lines 4--40
+Overfull \hbox (169.3455pt too wide) in paragraph at lines 4--41
 []\OML/cmm/m/it/10 ieldPlan:png[][]$
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 4--40
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 4--41
+[]
+ []
+
+
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 4--41
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 4--41
 []
  []
 
 ! Undefined control sequence.
-l.41 \section
+l.42 \section
              {Perceptors}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4768,7 +4821,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.41 \section{P
+l.42 \section{P
                erceptors}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5121,12 +5174,12 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 41--45
+Overfull \hbox (20.0pt too wide) in paragraph at lines 42--46
 []
  []
 
 ! Undefined control sequence.
-l.48 \subsection
+l.49 \subsection
                 {General perceptors}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5141,7 +5194,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.48 \subsection{G
+l.49 \subsection{G
                   eneral perceptors}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5164,7 +5217,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no s in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 48--49
+Overfull \hbox (20.0pt too wide) in paragraph at lines 49--50
 []
  []
 
@@ -5175,7 +5228,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.50 \begin{description}
+l.51 \begin{description}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5188,7 +5241,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.54   \item [GyroRate Perceptor]
+l.52   \item [GyroRate Perceptor]
                                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5657,7 +5710,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.56   \begin{description}
+l.54   \begin{description}
                           
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5670,18 +5723,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57   \item[{\bf Message format:}]
+l.55   \item[{\bf Message format:}]
                                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (183.7484pt too wide) in paragraph at lines 60--60
+Overfull \hbox (183.7484pt too wide) in paragraph at lines 58--58
 []  \OT1/cmtt/m/n/10 (GYR (n <name>) (rt <x> <y> <z>))[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 60--60
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 58--58
 [] [] 
  []
 
@@ -5692,7 +5745,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61   \item[{\bf Frequency:}]
+l.59   \item[{\bf Frequency:}]
                               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5714,7 +5767,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63   \end{description}
+l.61   \end{description}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5727,7 +5780,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.68   \item [HingeJoint Perceptor]
+l.66   \item [HingeJoint Perceptor]
                                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6139,7 +6192,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 ...the model being used.  \begin{description}
+l.68 ...the model being used.  \begin{description}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6152,18 +6205,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71   \item[{\bf Message format:}]
+l.69   \item[{\bf Message format:}]
                                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (141.74876pt too wide) in paragraph at lines 74--74
+Overfull \hbox (141.74876pt too wide) in paragraph at lines 72--72
 []  \OT1/cmtt/m/n/10 (HJ (n <name>) (ax <ax>))[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 74--74
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 72--72
 [] [] 
  []
 
@@ -6174,7 +6227,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.75   \item[{\bf Frequency:}]
+l.73   \item[{\bf Frequency:}]
                               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6196,7 +6249,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77   \end{description}
+l.75   \end{description}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6209,7 +6262,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81   \item [ForceResistance Perceptor]
+l.79   \item [ForceResistance Perceptor]
                                         
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6865,7 +6918,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83  \begin{description}
+l.81  \begin{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6878,23 +6931,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.84   \item[{\bf Message format:}]
+l.82   \item[{\bf Message format:}]
                                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (173.24849pt too wide) in paragraph at lines 87--87
+Overfull \hbox (173.24849pt too wide) in paragraph at lines 85--85
 []\OT1/cmtt/m/n/10 (FRP (n <name>) (c <px> <py><pz>) 
  []
 
 
-Overfull \hbox (104.99908pt too wide) in paragraph at lines 87--87
+Overfull \hbox (104.99908pt too wide) in paragraph at lines 85--85
 []   \OT1/cmtt/m/n/10 (f <fx><fy><fz>))[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 87--87
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 85--85
 [] [] 
  []
 
@@ -6905,7 +6958,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88   \item[{\bf Frequency:}]
+l.86   \item[{\bf Frequency:}]
                               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6961,7 +7014,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.90   \end{description}
+l.88   \end{description}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6974,7 +7027,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.95   \item [Accelerometer]
+l.93   \item [Accelerometer]
                             
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7249,7 +7302,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97     \begin{description}
+l.95     \begin{description}
                             
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -7262,18 +7315,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.98   \item[{\bf Message format:}]
+l.96   \item[{\bf Message format:}]
                                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (178.49844pt too wide) in paragraph at lines 101--101
+Overfull \hbox (178.49844pt too wide) in paragraph at lines 99--99
 []  \OT1/cmtt/m/n/10 (ACC (n <name>) (a <x> <y> <z>))[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 101--101
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 99--99
 [] [] 
  []
 
@@ -7284,7 +7337,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.102   \item[{\bf Frequency:}]
+l.100   \item[{\bf Frequency:}]
                                
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7306,7 +7359,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.104   \end{description}
+l.102   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -7319,28 +7372,27 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105 \end{description}
+l.103 \end{description}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.107 \subsection
-                 {General perceptors}
+l.105 \subsection
+                 {Soccer perceptors}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no G in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -7358,14 +7410,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.108 \begin{description}
+l.106 \begin{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 107--109
+Overfull \hbox (20.0pt too wide) in paragraph at lines 105--107
 [] 
  []
 
@@ -7376,7 +7428,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.109   \item [Vision Perceptor]
+l.107   \item [Vision Perceptor]
                                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7813,7 +7865,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111  \begin{description}
+l.109  \begin{description}
                           
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -7826,38 +7878,38 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.112   \item[{\bf Message format:}]
+l.110   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (209.99817pt too wide) in paragraph at lines 119--119
+Overfull \hbox (209.99817pt too wide) in paragraph at lines 117--117
 []  \OT1/cmtt/m/n/10 (See +(<name> (pol <distance> <angle1>[] 
  []
 
 
-Overfull \hbox (262.49771pt too wide) in paragraph at lines 119--119
+Overfull \hbox (262.49771pt too wide) in paragraph at lines 117--117
 []   \OT1/cmtt/m/n/10 <angle2>))+(P (team <teamname>) (id <playerID>)[] 
  []
 
 
-Overfull \hbox (262.49771pt too wide) in paragraph at lines 119--119
+Overfull \hbox (262.49771pt too wide) in paragraph at lines 117--117
 []    \OT1/cmtt/m/n/10 + (<bodypart> (pol <distance> <angle1> <angle2[] 
  []
 
 
-Overfull \hbox (262.49771pt too wide) in paragraph at lines 119--119
+Overfull \hbox (262.49771pt too wide) in paragraph at lines 117--117
 []    \OT1/cmtt/m/n/10 >)))+(L (pol <distance> <angle1> <angle2>)(pol[] 
  []
 
 
-Overfull \hbox (188.99835pt too wide) in paragraph at lines 119--119
+Overfull \hbox (188.99835pt too wide) in paragraph at lines 117--117
 []     \OT1/cmtt/m/n/10 <distance> <angle1> <angle2>)))[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 119--119
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 117--117
 [] [] 
  []
 
@@ -7868,7 +7920,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120   \item[{\bf Frequency:}]
+l.118   \item[{\bf Frequency:}]
                                
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7913,7 +7965,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.122   \end{description}
+l.120   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -7926,7 +7978,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.128   \item [GameState Perceptor]
+l.123   \item [GameState Perceptor]
                                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -8324,7 +8376,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.130      \begin{description}
+l.125      \begin{description}
                               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -8337,18 +8389,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.131   \item[{\bf Message format:}]
+l.126   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (173.24849pt too wide) in paragraph at lines 134--134
+Overfull \hbox (173.24849pt too wide) in paragraph at lines 129--129
 []  \OT1/cmtt/m/n/10 (GS (t <time>) (pm <playmode>))[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 134--134
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 129--129
 [] [] 
  []
 
@@ -8359,7 +8411,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.135   \item[{\bf Frequency:}]
+l.130   \item[{\bf Frequency:}]
                                
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -8381,7 +8433,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.137   \end{description}
+l.132   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -8394,7 +8446,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.143   \item [Hear Perceptor]
+l.138   \item [Hear Perceptor]
                               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -8647,7 +8699,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.145   \begin{description}
+l.140   \begin{description}
                            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -8660,18 +8712,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.146   \item[{\bf Message format:}]
+l.141   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (220.49808pt too wide) in paragraph at lines 149--149
+Overfull \hbox (220.49808pt too wide) in paragraph at lines 144--144
 []  \OT1/cmtt/m/n/10 (hear <time> self/<direction> <message>)[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 149--149
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 144--144
 [] [] 
  []
 
@@ -8682,7 +8734,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.150   \item[{\bf Frequency:}]
+l.145   \item[{\bf Frequency:}]
                                
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -8704,7 +8756,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.152   \end{description}
+l.147   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -8717,14 +8769,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.154 \end{description}
+l.149 \end{description}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.155 \section
+l.150 \section
               {Effectors}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9140,7 +9192,7 @@ Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <recently read> \subsection 
                             
-l.159 \subsection
+l.154 \subsection
                  {General Effectors}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9171,14 +9223,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.160 \begin{description}
+l.155 \begin{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 155--161
+Overfull \hbox (20.0pt too wide) in paragraph at lines 150--156
 []
  []
 
@@ -9189,7 +9241,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.161   \item [Create Effector]
+l.156   \item [Create Effector]
                                
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -9534,7 +9586,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.163   \begin{description}
+l.158   \begin{description}
                            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -9547,18 +9599,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.164   \item[{\bf Message format:}]
+l.159   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (104.99908pt too wide) in paragraph at lines 167--167
+Overfull \hbox (104.99908pt too wide) in paragraph at lines 162--162
 []  \OT1/cmtt/m/n/10 (scene <filename>)[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 167--167
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 162--162
 [] [] 
  []
 
@@ -9569,7 +9621,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.168   \end{description}
+l.163   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -9582,7 +9634,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.170   \item [HingeJoint Effector]
+l.165   \item [HingeJoint Effector]
                                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -9911,7 +9963,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.172   \begin{description}
+l.167   \begin{description}
                            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -9924,18 +9976,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.173   \item[{\bf Message format:}]
+l.168   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (78.74931pt too wide) in paragraph at lines 176--176
+Overfull \hbox (78.74931pt too wide) in paragraph at lines 171--171
 []  \OT1/cmtt/m/n/10 (<name> <ax>)[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 176--176
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 171--171
 [] [] 
  []
 
@@ -9946,7 +9998,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177   \end{description}
+l.172   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -9959,7 +10011,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.179   \item [Synchronize Effector]
+l.174   \item [Synchronize Effector]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -10191,7 +10243,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.181   \begin{description}
+l.176   \begin{description}
                            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -10204,18 +10256,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.182   \item[{\bf Message format:}]
+l.177   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (36.74968pt too wide) in paragraph at lines 185--185
+Overfull \hbox (36.74968pt too wide) in paragraph at lines 180--180
 []  \OT1/cmtt/m/n/10 (syn)[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 185--185
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 180--180
 [] [] 
  []
 
@@ -10226,7 +10278,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.186   \end{description}
+l.181   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -10239,14 +10291,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.188 \end{description}
+l.183 \end{description}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.190 \subsection
+l.185 \subsection
                  {Soccer Effectors}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -10276,14 +10328,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.191 \begin{description}
+l.186 \begin{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 190--192
+Overfull \hbox (20.0pt too wide) in paragraph at lines 185--187
 [] 
  []
 
@@ -10294,7 +10346,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.192   \item [Init Effector]
+l.187   \item [Init Effector]
                              
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -10522,7 +10574,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.194   \begin{description}
+l.189   \begin{description}
                            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -10535,23 +10587,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.195   \item[{\bf Message format:}]
+l.190   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (152.24867pt too wide) in paragraph at lines 199--199
+Overfull \hbox (152.24867pt too wide) in paragraph at lines 194--194
 []  \OT1/cmtt/m/n/10 (init (unum <playernumber>)[] 
  []
 
 
-Overfull \hbox (146.99872pt too wide) in paragraph at lines 199--199
+Overfull \hbox (146.99872pt too wide) in paragraph at lines 194--194
 []  \OT1/cmtt/m/n/10 (teamname <yourteamname>))[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 199--199
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 194--194
 [] [] 
  []
 
@@ -10562,7 +10614,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.200   \end{description}
+l.195   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -10575,7 +10627,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.204   \item [Beam Effector]
+l.199   \item [Beam Effector]
                              
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -10792,7 +10844,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.206   \begin{description}
+l.201   \begin{description}
                            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -10805,18 +10857,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.207   \item[{\bf Message format:}]
+l.202   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (115.499pt too wide) in paragraph at lines 210--210
+Overfull \hbox (115.499pt too wide) in paragraph at lines 205--205
 []  \OT1/cmtt/m/n/10 (beam <x> <y> <rot>)[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 210--210
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 205--205
 [] [] 
  []
 
@@ -10827,7 +10879,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.211   \end{description}
+l.206   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -10840,7 +10892,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.215   \item [Say Effector]
+l.210   \item [Say Effector]
                             
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -10977,7 +11029,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217   \begin{description}
+l.212   \begin{description}
                            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -10990,18 +11042,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.218   \item[{\bf Message format:}]
+l.213   \item[{\bf Message format:}]
                                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (89.24922pt too wide) in paragraph at lines 221--221
+Overfull \hbox (89.24922pt too wide) in paragraph at lines 216--216
 []  \OT1/cmtt/m/n/10 (say <message>)[] 
  []
 
 
-Overfull \hbox (5.24995pt too wide) in paragraph at lines 221--221
+Overfull \hbox (5.24995pt too wide) in paragraph at lines 216--216
 [] [] 
  []
 
@@ -11012,7 +11064,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.222   \end{description}
+l.217   \end{description}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -11025,14 +11077,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.224 \end{description}
+l.219 \end{description}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.225 \section
+l.220 \section
               {Model}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11316,7 +11368,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.226 ... allows Nao to have great mobility. { \bf
+l.221 ... allows Nao to have great mobility. { \bf
                                                    rcssserver3d} simulates N...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11362,7 +11414,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.227 \begin{figure}
+l.222 \begin{figure}
                     [ht]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -11373,7 +11425,7 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.229   \includegraphics
+l.224   \includegraphics
                         [scale=0.3]{Chapter2/figures/629px-Models-nao.jpg}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11436,7 +11488,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230   \caption
+l.225   \caption
                 {Nao in simulation monitor}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -11470,7 +11522,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 \end{figure}
+l.227 \end{figure}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -11484,11 +11536,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 20 strings out of 494985
- 303 string characters out of 1181034
+ 21 strings out of 494985
+ 312 string characters out of 1181034
  57268 words of memory out of 3000000
- 3304 multiletter control sequences out of 15000+50000
+ 3305 multiletter control sequences out of 15000+50000
  4116 words of font info for 16 fonts, out of 3000000 for 9000
  73 hyphenation exceptions out of 8191
- 19i,2n,19p,793b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 19i,2n,21p,793b,183s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

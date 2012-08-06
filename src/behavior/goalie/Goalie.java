@@ -119,69 +119,103 @@ public class Goalie {
 			System.out.println(interceptionPoint.x + " " + interceptionPoint.y
 					+ " speed" + movingBall.Speed);
 
+			if (interceptionPoint.y > 0 && interceptionPoint.y < 2) {
+
+				if (((movingBall.getSpeed() * 1) - (1 / 2 * (-10) * 1)) > (TriangleLocalization
+						.FindDistanceAmong2Coordinates(new Coordinate(
+								interceptionPoint.x, interceptionPoint.y),
+								movingBall.getObject()))) {
+
+					MotionTrigger.setMotion("fall_left");
+					Goalie.state = "Fall_left";
+					return true;
+
+				}
+
+			} else if (interceptionPoint.y < 0 && interceptionPoint.y > -2) {
+
+				if (((movingBall.getSpeed() * 1) - (1 / 2 * (-10) * 1)) > (TriangleLocalization
+						.FindDistanceAmong2Coordinates(new Coordinate(
+								interceptionPoint.x, interceptionPoint.y),
+								movingBall.getObject()))) {
+
+					MotionTrigger.setMotion("fall_right");
+					Goalie.state = "Fall_right";
+					return true;
+
+				}
+
+			} else {
+
+			}
+
+		} else {
+
 			if (BallAtBox(movingBall.getObject())) {
 
-				if (movingBall.getSpeed() > 2) {
+				System.out.println("Ball not moving fast");
+				double min = 1000;
 
-					if (interceptionPoint.y > 0 && interceptionPoint.y < 2) {
+				for (int i = 0; i < LocalizationResults.getRivals().size(); i++) {
 
-						MotionTrigger.setMotion("fall_left");
-						Goalie.state = "Fall_left";
-						return true;
+					Coordinate Opponent = TriangleLocalization
+							.get_det_with_distance_angle(
+									0,
+									0,
+									LocalizationResults.getRivals()
+											.elementAt(i).getHorizontal_Angle(),
+									LocalizationResults.getRivals()
+											.elementAt(i).getDistance());
 
-					} else if (interceptionPoint.y < 0
-							&& interceptionPoint.y > -2) {
+					double distance = TriangleLocalization
+							.FindDistanceAmong2Coordinates(
+									movingBall.getObject(), Opponent);
 
-						MotionTrigger.setMotion("fall_right");
-						Goalie.state = "Fall_right";
-						return true;
+					if (distance < min) {
 
-					} else {
-
-					}
-
-				} else {
-
-					System.out.println("Ball not moving fast");
-					double min = 1000;
-
-					for (int i = 0; i < LocalizationResults.getRivals().size(); i++) {
-
-						Coordinate Opponent = TriangleLocalization
-								.get_det_with_distance_angle(0, 0,
-										LocalizationResults.getRivals()
-												.elementAt(i)
-												.getHorizontal_Angle(),
-										LocalizationResults.getRivals()
-												.elementAt(i).getDistance());
-
-						double distance = TriangleLocalization
-								.FindDistanceAmong2Coordinates(
-										movingBall.getObject(), Opponent);
-
-						if (distance < min) {
-
-							min = distance;
-
-						}
-
-					}
-
-					// Ball in our box and opponent agent probably close to the
-					if (min < 1) {
-
-						System.out.println("Opponent near");
-						// wait at guard state
-
-					} else {
-
-						System.out.println("Opponent far");
-						// Goalie needs to act as libero in this situation
-						Goalie.state = "Libero";
+						min = distance;
 
 					}
 
 				}
+
+				for (int i = 0; i < LocalizationResults.getCoplayers().size(); i++) {
+
+					Coordinate Opponent = TriangleLocalization
+							.get_det_with_distance_angle(
+									0,
+									0,
+									LocalizationResults.getCoplayers()
+											.elementAt(i).getHorizontal_Angle(),
+									LocalizationResults.getCoplayers()
+											.elementAt(i).getDistance());
+
+					double distance = TriangleLocalization
+							.FindDistanceAmong2Coordinates(
+									movingBall.getObject(), Opponent);
+
+					if (distance < min) {
+
+						min = distance;
+
+					}
+
+				}
+
+				// Ball in our box and opponent agent probably close to the
+				if (min < 2) {
+
+					System.out.println("Players near");
+					// wait at guard state
+
+				} else {
+
+					System.out.println("Players far");
+					// Goalie needs to act as libero in this situation
+					Goalie.state = "Libero";
+
+				}
+
 			}
 
 		}

@@ -7,7 +7,7 @@ graduate students Patrick MacAlpine and Samuel Barrett and finally two undergrad
 
 In their last paper \cite{UtAustinVillaPaper} about positioning, it is explained their approach of player positioning in the field. First, a full team formation is computed. Second, each players calculates the best assignment of players according to his belief about the world. Finally, a coordination mechanism is used to choose among all players' suggestions. This coordination mechanism using a voting system. Players assignment with the most votes will be used as a result.
 
-I am not the appropriate person to criticize their longterm work and contribution to the Robocup's simulation league. However, I would like to mention that in our approach there is a major difference in the way that players coordinate their actions. The separation of the team into subsets makes it easier to solve all these problem caused due to complexity constraints. Furthermore, we are using active's group players in order to have a better role assignment to positions near to ball which have huge importance in games like soccer. Finally, I wish we had such a perfect movement controller like UT Austin Villa's one. It would be a nice challenge to compare these two coordination systems in the same movements' level.
+I am not the appropriate person to criticize their longterm work and contribution to the Robocup's simulation league, as I deal with this league only for a few months. However, I would like to mention that in our approach there is a major difference in the way that players coordinate their actions. The separation of the team into subsets makes it easier to solve all these problem caused due to complexity constraints. Furthermore, we are using active's group players in order to have a better role assignment to positions near to ball which have huge importance in games like soccer. Finally, I wish we had such a perfect movement controller like UT Austin Villa's one. It would be a nice challenge to compare these two coordination systems in the same movements' level.
 
 
 \section{BeeStanbul}
@@ -22,10 +22,8 @@ to these roles. This
 is accomplished by a distributed Voronoi cell construction approach in which
 each agent calculates its own cell independently from that of the others. Therefore, every agent has a differently shaped cell and these can overlap. The time complexity of the method is $O(n^{2})$ where n is the number of agents in the team. After constructing the cell
 for itself, each agent determines the center of the cell as its new target. Agents
-become closer to each other by using this strategy. In their approach, only teammates in the viewpoint of the agent are considered. So we can realize that there can be situation in a soccer game when each agent who computes his own cell could be completely unaware if any of his teammates is located in his field of view. Having a better knowledge of teammates position in the field was a key feature in our approach.
+become closer to each other by using this strategy. In their approach, only teammates in the viewpoint of the agent are considered. So we can realize that there can be situation in a soccer game when each agent who computes his own cell could be completely unaware if any of his teammates is located in his field of view. Having a better knowledge of teammates position in the field is a key feature in our approach.
 
-
-\section{RoboCanes}
 
 
 

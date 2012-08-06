@@ -4,6 +4,7 @@ In this chapter we are going to discuss how the agent functions. Each agent cons
 
 
 \section{Agent Architecture}
+\label{Architecture}
 Before seeing each part of the agent's software separately, it is time to describe the framework's architecture. Figure \ref{fig:Architecture}
 shows the framework's architecture. Soccer Simulation Server known as rcssserver3d is responsible for sending to our agent perception messages. Communication layer is the one that handles the connection between the agent and the server. In agent layer, these messages are handled by a message parser which is responsible for updating all agent's beliefs. Consequently, functions that require new perceptions start. From now on, agent is able to do what the behavior tells him.
 In our approach, only goalkeeper ''runs'' an independent behavior, the other eight field players start a communication procedure in order to inform the goalkeeper about their beliefs about the worldstate and their attributes. Goalkeeper is going to decide about the actions that every field player should do. So, we can realize that field players do not execute any behavior. We are going to describe coordination procedure later in a separate chapter.
@@ -143,6 +144,7 @@ If queue is neither empty nor full, we make the same procedure checking if it is
 
 
 \section{Motions and Movement}
+\label{Motions}
 In robotics, we could define a motion as a sequence of joint poses. A pose is a set of values for every joint in the robot's body at a given time.
 For example, for a given set of n-joints a pose could be defined as:\\
 \begin{center}
@@ -266,8 +268,13 @@ $Velocity = \frac {Desired Velocity \ast Hardness Factor} {Speed} degrees/cycle$
 \\
 This velocity is calculated for every involved joint in the motion. The final output of the motion controller will be send to the server.
 
-
-
+\subsection{Dynamic Elements in Movement}
+In contrast with the general idea about static motion files stated in the beginning of this Section \ref{Motions}, we have tried to implement some dynamic features in our movements. There is not so much room for improvement in these static motions but we achieved to have nice results.
+\begin{description}
+	\item[Walk Leaning] Walking can be lean to the right and to the left. There was an improvement on overall performance as agent should turn his body every in every occasion.
+	\item[Walk Slowdown] Its important our agent to slowdown his speed in order to stop his body with more stability.
+	\item[Turn]	Agents turns his body as much as he needs from 1 to 40 degrees.
+\end{description} 
 
 
 \section{Actions}
@@ -300,14 +307,13 @@ First of all, simple actions which are make use only of motions and have a simpl
 \subsection{Complex}
 Complex actions are created to make use of more than one simple actions and motions and have a more complicated structure. These complex actions are:
 \begin{description}
- \item[Kick Ball To Goal] This action uses Walk To Ball in order the agent to reach the ball. In this action we use the agent's belief about his location in the field to help us find the direction in which the agent has to kick the ball. This action has a states' machine logic. Figure \ref{fig:GoKickBallToGoal} shows in what order this action is executed.
+ \item[On Ball Action] This action uses Walk To Ball in order the agent to reach the ball. In this action we use the agent's belief about his location in the field to help us find the direction and the kick's type. This action has a states' machine logic. Figure \ref{fig:GoKickBallToGoal} shows in what order this action is executed. For big 
  \begin{figure}[!h]
 \centering
   \includegraphics[scale=0.5]{Chapter3/figures/KickFSM.pdf}
-  \caption{Kick Ball to Goal Action Logic Sequence.}
+  \caption{On Ball Action Logic Sequence.}
   \label{fig:GoKickBallToGoal}
 \end{figure}
- \item[Clear Ball] This action uses Walk To Ball in order the agent to reach the ball. In this action we use the agent's belief about his location in the field to help us find the direction in which the agent should not kick the ball.
  \item[Walk To Coordinate]
  This action takes the agent to a specific coordinate in the soccer field. To achieve this action we need to know our position in the field and the target coordinate. Agent is able to know his position so it is easy for us to calculate in which direction agent has to walk in order to get in the specific coordinate. Figure \ref{fig:WalkToCoordinate} shows us that agent should travel from the point $(X_{start},Y_{start})$, to the point $(X_{target},Y_{target})$. It is easy to find $\vartheta_{target}^{\circ}$:\\
 \begin{center}
@@ -390,3 +396,26 @@ Communication in Simspark is not ideal. There are not restrictions about the say
   \caption{Time Slicing Communication.}
   \label{fig:TimeSlicing}
 \end{figure} 
+
+
+\section{Goalkeeper Behavior}
+This section presents the behavior that leads goalkeeper to make decisions and choose actions for himself. As we said in Section \ref{Architecture}, goalkeeper is the only agent in our team who ``runs'' his own behavior. His behavior depends on a finite state machine. His initial state is ``\textbf{start}'' state. In this state goalkeeper tries to move himself in the center of his goal. When he accomplishes to move there, we change his FSM's states to ``\textbf{Guard}'' state. In guard state he makes use of the \textbf{Watch Object Movement}  action to figure the ball's position and the possible direction and speed of its movement.
+\begin{figure}[!h]
+\centering
+  \includegraphics[trim = 0cm 0cm 10cm 0cm, clip,scale=0.6]{Chapter3/figures/Goalie.pdf}  
+  \caption{Goalkeeper Fall Function.}
+  \label{fig:Goalkeeper}
+\end{figure} 
+Figure \ref{fig:Goalkeeper} is going to help you understand easier this state's basic idea. Goalkeeper Considers his position as the start of both axis x and y due to difficulties in making use of the localization process. So, red dashed line determines the goalkeeper's y-axis. For every movement of the ball he tries to compute if there is an intersection point between his y-axis and the grey dashed line which starts from ball's position in the direction of ball's movement. If there is an intersection point between these two lines then agents computes if this point is out of the two thresholds ($Threshold_{Right}$,$Threshold_{Left}$). If not, we are pretty sure that ball is heading towards our goal. We compute how much time will take to the ball to meet our y-axis according to its speed and taking account the friction between ball and the ground. If this time is equal or less than the time takes our agent to fall, agent performs a right or a left fall. You can see agent falling to prevent a goal in Figure \ref{fig:GoalkeeperFall}. There are also other states. State ``\textbf{Libero}'' is a state in which goalkeeper sees the ball into his box and there are no other agents near to it. Then goalkeeper goes to clear the ball from his box. Through coordination process informs other field players that he is at ``libero'' state to prevent them from going towards the ball too. When he clears the ball, he returns to his initial position. 
+
+\begin{figure}[!h] 
+  \begin{center}
+    \subfigure{\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall.png}}\
+    \subfigure{\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall2.png}}\\
+    \subfigure{\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall3.png}}\
+    \subfigure{\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall4.png}}\
+  \end{center}
+  \caption{Goalkeeper Falls to Prevent Opponents from Scoring.}
+  \label{fig:GoalkeeperFall}
+\end{figure}
+

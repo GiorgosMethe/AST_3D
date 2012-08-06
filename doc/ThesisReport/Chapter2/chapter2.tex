@@ -49,9 +49,6 @@ Perceptor messages are sent via the network protocol.There are both general perc
 \subsection{General perceptors}
 
 \begin{description}
-
-
-
   \item [GyroRate Perceptor]
   The gyro rate perceptor delivers information about the change in orientation of a body. The message contains the GYR identifier, the name of the body to which the gyro perceptor belongs and three rotation angles. These rotation angles describe the change rates in orientation of the body during the last cycle. In other words the current angular velocities along the three axes of freedom of the corresponding body in degrees per second. To keep track of the orientation of the body, the information to each gyro rate perceptor is sent every cycle.
   \begin{description}
@@ -105,7 +102,7 @@ Each hinge joint has minimum and maximum limits on its angular position. This va
   \end{description}
 \end{description}
 
-\subsection{General perceptors}
+\subsection{Soccer perceptors}
 \begin{description}
   \item [Vision Perceptor]
   The Vision perceptor delivers information about seen objects in the environment, where objects are either others players, the ball, field-lines or markers on the field. Currently there are 8 markers on the field: one at each corner point of the field and one at each goal post. With each visible object you get a vector described in spherical coordinates. In other words the distance together with the horizontal and latitudal angle to the center of a visible object relative to the orientation of the camera.
@@ -121,9 +118,6 @@ Each hinge joint has minimum and maximum limits on its angular position. This va
   \item[{\bf Frequency:}]
  Every third cycle (every 0.06 seconds)
   \end{description}
-
-
-
 
 
   \item [GameState Perceptor]

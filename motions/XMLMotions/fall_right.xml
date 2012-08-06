@@ -30,7 +30,7 @@
 				<rae4 end="45"/>
 				<lae4 end="-45"/>
 			</effectors>
-			<duration>1000</duration>
+			<duration>500</duration>
 		</phase>
 		<phase name="start_falling_right" next="start_falling_right_2">
 			<effectors>
@@ -46,7 +46,7 @@
 				<lle4 end="-40"/>
 				<lle5 end="20"/>
 			</effectors>
-			<duration>260</duration>
+			<duration>200</duration>
 		</phase>
 		<phase name="start_falling_right_2" next="straighten">
 			<effectors>
@@ -66,7 +66,7 @@
 				<lle4 end="-40"/>
 				<lle5 end="20"/>
 			</effectors>
-			<duration>200</duration>
+			<duration>150</duration>
 			
 		</phase>
 		<phase name="straighten" isFinal="true">

@@ -45,7 +45,6 @@
 \usepackage{StyleFiles/algorithm}
 \usepackage{StyleFiles/algorithmic}
 \usepackage{amsthm}
-
 \newcommand{\gr}{\selectlanguage{greek}}
 \newcommand{\en}{\selectlanguage{english}}
 

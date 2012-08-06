@@ -87,7 +87,7 @@ public class WatchBallMovement {
 				movingAngle = (float) TriangleLocalization
 						.FindAngleBetweenCoordinates(ballPrevious, ballNow);
 				speed = (float) (TriangleLocalization
-						.FindDistanceAmong2Coordinates(ballPrevious, ballNow) / 0.2);
+						.FindDistanceAmong2Coordinates(ballPrevious, ballNow) / 0.1);
 
 				MovingBall = new MovingObject(ballNow, movingAngle, speed);
 
