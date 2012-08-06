@@ -34,9 +34,6 @@ public class AgentFunction {
 	public static String Head;
 	public static String BeamEff;
 
-	public static float angle = 0, angleSum = 0;
-	public static double turn = 0;
-
 	public static void Act() {
 
 		/*

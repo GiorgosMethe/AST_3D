@@ -15,7 +15,6 @@ package agent.runtime;
 import motion.utils.ReadMotionFiles;
 import perceptor.utils.UpdatePerceptors;
 import agent.constraints.Constraints;
-import agent.roboviz.RVTester;
 import connection.TCPSocket.Connection;
 import connection.utils.ServerCyrcles;
 
@@ -40,7 +39,7 @@ public class AgentRuntime {
 
 			host = "127.0.0.1";
 			port = 3100;
-			num = 1;
+			num = 9;
 			Teamname = "AST_3D";
 
 		} else {
@@ -84,7 +83,7 @@ public class AgentRuntime {
 		 */
 		if (num == Constraints.CoordinationPlayer) {
 
-			RVTester.run(null);
+			// RVTester.run(null);
 
 		}
 

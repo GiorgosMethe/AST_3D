@@ -91,6 +91,7 @@ public class GoKickBallToGoal {
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start2")) {
 
+			VisionType.setType(1);
 			if (HeadMovement.HeadAtBall) {
 
 				if (GKBGDstates.getTimeout() < 10) {
@@ -107,73 +108,68 @@ public class GoKickBallToGoal {
 
 		} else if (GKBGDstates.getState().equalsIgnoreCase("Start3")) {
 
-			if (Math.abs(GKBGDstates.getAngle()) > 10) {
+			VisionType.setType(1);
+			if (CurrentMotion.CurrentMotionPlaying
+					.equalsIgnoreCase("TurnLeft40")
+					|| CurrentMotion.CurrentMotionPlaying
+							.equalsIgnoreCase("TurnRight40")) {
+				if (angleSum == 0) {
+					turn = MotionController.hardnessNormal;
+				}
+				angleSum += 1;
 
-				if (CurrentMotion.CurrentMotionPlaying
-						.equalsIgnoreCase("TurnLeft40")
-						|| CurrentMotion.CurrentMotionPlaying
-								.equalsIgnoreCase("TurnRight40")) {
-					if (angleSum == 0) {
-						turn = MotionController.hardnessNormal;
-					}
-					angleSum += 1;
+				if (angleSum == 72) {
 
-					if (angleSum == 72) {
+					angleSum = 0;
 
-						angleSum = 0;
-
-						angle += 3 + 37 * (turn - 0.3) / 0.7;
-
-					}
+					angle += 3 + 46 * (turn - 0.3) / 0.7;
 
 				}
 
-				if (Vision.isiSee()) {
+			}
 
-					if (Ball.isSeeTheBall()) {
+			float threshold = 0;
 
-						if (Math.abs(GKBGDstates.getAngle()) > (angle + 10)) {
+			if (GKBGDstates.getDistance() < 3) {
+				threshold = 25;
+			} else if (GKBGDstates.getDistance() < 8) {
+				threshold = 10;
+			} else if (GKBGDstates.getDistance() < 12) {
+				threshold = 20;
+			} else {
+				threshold = 40;
+			}
+			if ((Math.abs(Math.abs(GKBGDstates.getAngle()) - Math.abs(angle))) > threshold) {
 
-							if (GKBGDstates.getAngle() < 0) {
+				if (GKBGDstates.getAngle() < 0) {
 
-								if ((HingeJointPerceptor.getHj1() + Ball
-										.getAngleX()) < -10) {
+					if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -10) {
 
-									MotionTrigger.setMotion("TurnRight40");
-									MotionTrigger.setTurn((HingeJointPerceptor
-											.getHj1() + Ball.getAngleX()));
+						MotionTrigger.setMotion("TurnRight40");
 
-								} else {
-									MotionTrigger.setMotion("SideStepLeft");
-								}
+						MotionTrigger.setTurn((float) Math.min(
+								(HingeJointPerceptor.getHj1() + Ball
+										.getAngleX()),
+								Math.abs(GKBGDstates.getAngle()) - angle));
 
-							} else {
-
-								if ((HingeJointPerceptor.getHj1() + Ball
-										.getAngleX()) > 10) {
-
-									MotionTrigger.setMotion("TurnLeft40");
-									MotionTrigger.setTurn((HingeJointPerceptor
-											.getHj1() + Ball.getAngleX()));
-
-								} else {
-									MotionTrigger.setMotion("SideStepRight");
-								}
-
-							}
-
-							GKBGDstates.setState("Start3");
-							GKBGDstates.setAngleFromPost1(Double.NaN);
-							GKBGDstates.setAngleFromPost2(Double.NaN);
-
-						} else {
-
-							GKBGDstates.setState("Start4");
-							GKBGDstates.setAngleFromPost1(Double.NaN);
-							GKBGDstates.setAngleFromPost2(Double.NaN);
-
-						}
+					} else {
+						MotionTrigger.setMotion("SideStepLeft");
 					}
+
+				} else {
+
+					if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 10) {
+
+						MotionTrigger.setMotion("TurnLeft40");
+						MotionTrigger.setTurn((float) Math.min(
+								(HingeJointPerceptor.getHj1() + Ball
+										.getAngleX()),
+								Math.abs(GKBGDstates.getAngle()) - angle));
+
+					} else {
+						MotionTrigger.setMotion("SideStepRight");
+					}
+
 				}
 
 			} else {
