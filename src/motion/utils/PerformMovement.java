@@ -12,11 +12,8 @@
  ******************************************************************************/
 package motion.utils;
 
-import behavior.old.BehaviorDone;
-import connection.utils.ServerCyrcles;
 import motion.old.CurrentMotion;
 import motion.old.MotionController;
-import motion.old.Motions;
 import motion.xml.MotionPlaying;
 import motion.xml.XMLMovement;
 
@@ -29,78 +26,89 @@ public class PerformMovement {
 
 		String AgentAct = "";
 
-		if(OldOn){
+		if (OldOn) {
 
 			AgentAct = MotionController.MotionFactory(OldMotion);
-			if(CurrentMotion.getCurrentMotionPlaying().equalsIgnoreCase("")){
+			if (CurrentMotion.getCurrentMotionPlaying().equalsIgnoreCase("")) {
 				OldOn = false;
 			}
 
-		}else{
+		} else {
 
 			if (MotionTrigger.getMotion().equalsIgnoreCase("Forwards50")) {
 				AgentAct = XMLMovement.execute("walk_fine");
 			} else if (MotionTrigger.getMotion().equalsIgnoreCase("TurnLeft40")) {
-				
-				if (MotionPlaying.getMotionName()== null) {
+
+				if (MotionPlaying.getMotionName() == null) {
 					AgentAct = MotionController.MotionFactory("TurnLeft40");
 					OldOn = true;
 					OldMotion = "TurnLeft40";
-				}else{
-					
+				} else {
+
 					AgentAct = XMLMovement.execute("");
-					
+
 				}
 			} else if (MotionTrigger.getMotion().equalsIgnoreCase("fall_left")) {
 				AgentAct = XMLMovement.execute("fall_left");
 			} else if (MotionTrigger.getMotion().equalsIgnoreCase("fall_right")) {
 				AgentAct = XMLMovement.execute("fall_right");
-			} else if (MotionTrigger.getMotion().equalsIgnoreCase("TurnRight40")) {
-				
+			} else if (MotionTrigger.getMotion()
+					.equalsIgnoreCase("TurnRight40")) {
+
 				if (MotionPlaying.getMotionName() == null) {
 					AgentAct = MotionController.MotionFactory("TurnRight40");
 					OldOn = true;
 					OldMotion = "TurnRight40";
-				}else{
-					
+				} else {
+
 					AgentAct = XMLMovement.execute("");
-					
+
 				}
-			} else if (MotionTrigger.getMotion().equalsIgnoreCase("SideStepRight")) {
+			} else if (MotionTrigger.getMotion().equalsIgnoreCase(
+					"SideStepRight")) {
 				AgentAct = XMLMovement.execute("strafe_right");
-			} else if (MotionTrigger.getMotion().equalsIgnoreCase("SideStepLeft")) {
+			} else if (MotionTrigger.getMotion().equalsIgnoreCase(
+					"SideStepLeft")) {
 				AgentAct = XMLMovement.execute("strafe_left");
 			} else if (MotionTrigger.getMotion().equalsIgnoreCase("stand_back")) {
 				AgentAct = XMLMovement.execute("stand_back");
-			} else if (MotionTrigger.getMotion().equalsIgnoreCase("stand_front")) {
+			} else if (MotionTrigger.getMotion()
+					.equalsIgnoreCase("stand_front")) {
 				AgentAct = XMLMovement.execute("stand_front");
 			} else if (MotionTrigger.getMotion().equalsIgnoreCase(
 					"KickForwardRightOld")) {
 				if (MotionPlaying.getMotionName() == null) {
-					AgentAct = MotionController.MotionFactory("KickForwardRight");
+					AgentAct = MotionController
+							.MotionFactory("KickForwardRight");
 					OldOn = true;
 					OldMotion = "KickForwardRight";
-				}else{
-					
-					
+				} else {
+
 					AgentAct = XMLMovement.execute("");
 				}
 
 			} else if (MotionTrigger.getMotion().equalsIgnoreCase(
 					"KickForwardLeftOld")) {
 				if (MotionPlaying.getMotionName() == null) {
-					AgentAct = MotionController.MotionFactory("KickForwardLeft");
+					AgentAct = MotionController
+							.MotionFactory("KickForwardLeft");
 					OldOn = true;
 					OldMotion = "KickForwardLeft";
-				}else{
-					
+				} else {
+
 					AgentAct = XMLMovement.execute("");
 				}
 			} else if (MotionTrigger.getMotion().equalsIgnoreCase(
-					"KickForwardRight")
-					|| MotionTrigger.getMotion()
-					.equalsIgnoreCase("KickForwardLeft")) {
+					"KickForwardRightNormal")) {
+				AgentAct = XMLMovement.execute("rigth_front_front_kick");
+
+			} else if (MotionTrigger.getMotion().equalsIgnoreCase(
+					"KickForwardRight")) {
 				AgentAct = XMLMovement.execute("strong_right_kick");
+
+			} else if (MotionTrigger.getMotion().equalsIgnoreCase("init")) {
+				AgentAct = XMLMovement.execute("init");
+
 			} else {
 				AgentAct = XMLMovement.execute("");
 			}

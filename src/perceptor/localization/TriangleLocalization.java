@@ -320,7 +320,7 @@ public class TriangleLocalization {
 		double x = cx - (by - ay) * u / D;
 		double y = cy + (bx - ax) * u / D;
 
-		if ((x >= 11.5) || (x <= -11.5) || (y >= 8) || (y <= -8)) {
+		if ((x >= 10.5) || (x <= -10.5) || (y >= 8) || (y <= -8)) {
 			x = cx + (by - ay) * u / D;
 			y = cy - (bx - ax) * u / D;
 		}

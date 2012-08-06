@@ -54,7 +54,7 @@ public class GoKickBallToTargetLocalize {
 		} else if (GKBTTstates.getState().equalsIgnoreCase("GoForKick")) {
 
 			VisionType.setType(1);
-			if (GoKickBallDynamic.Act()) {
+			if (KickBallStrong.Act()) {
 				GKBTTstates.setState("EndKick");
 			}
 

@@ -24,9 +24,21 @@ The server exposes a network interface to all agents, on TCP port 3100 by defaul
 When an agent connects to the server the agent must first send a CreateEffector message followed by a InitEffector message.
 Once established, the server sends groups of messages to the agent that contain the output of the agent's perceptors, including any hinge positions of the model, any heard messages, seen objects, etc. The exact messages sent depend upon the model created for the agent. Details of effector messages are given on the perceptors page. In response to these perceptor messages, the agent may influence the simulation by sending effector messages. These perform tasks such as moving hinges in the model. Details of effector messages are given on the effectors section.
 \section{Monitor}
+\subsection{SimSpark Monitor}
 The SimSpark monitor is responsible for rendering the current simulation. It connects to a running server instance from which it continuously receives a stream of updates that describe the simulation state either as full snapshots or as incremental updates.
 The format of the data stream that the server sends to the monitor is called Monitor Format. It is a customizable language used to describe the simulation state.
 Apart from describing the pure simulation state each monitor format may provide a mechanism to transfer additional game specific state. For the soccer simulation this means for example current play mode and goals scored so far.The monitor client itself only renders the pure scene and defers the rendering of the game state to plugins. These plugins are intended to parse the game state and display it as an overlay, e.g. print out playmode and scores on screen.
+\subsection{Roboviz Monitor}
+\cite{roboviz}
+RoboViz was made by Justin Stoecker in collaboration with the RoboCup group at the University of Miami's Department of Computer Science.
+RoboViz is a software program designed to assess and develop agent behaviors in a multi-agent system, the RoboCup 3D simulated soccer league. RoboViz is an interactive monitor that renders agent and world state information in a three-dimensional scene. In addition, RoboViz provides programmable drawing and debug functionality to agents that can communicate over a network. The tool facilitates the real-time visualization of agents running concurrently on the SimSpark simulator, and provides higher-level analysis and visualization of agent behaviors not currently possible with existing tools. You can see a visual comparison of RoboViz (left) and SimSpark monitor in Figure \ref{fig:Roboviz}.
+\begin{figure}[ht!]
+\centering
+  \includegraphics[width=0.8\textwidth]{Chapter2/figures/comp2.png}
+  \caption{Roboviz(left) vs SimSpark(right) Monitors.\cite{roboviz}} 
+  \label{fig:Roboviz}
+\end{figure}
+
 \section{Perceptors}
 Perceptors are the senses of an agent, allowing awareness of the agent's model state and the environment.
 The server sends perceptor messages to agents, via the network protocol, for every cycle of the simulation.

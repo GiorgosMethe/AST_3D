@@ -12,9 +12,16 @@
  ******************************************************************************/
 package agent.constraints;
 
+import perceptor.localization.CompleteCoordinate;
 import perceptor.localization.Coordinate;
+import perceptor.localization.LocalizationFilter;
+import perceptor.worldstate.GameState;
+import agent.runtime.AgentRuntime;
 
 public class Beam {
+
+	public static String PreviousGameState = "BeforeKickOff";
+	public static boolean Beamed = false;
 
 	public static Coordinate playersInitPositions[] = new Coordinate[] {
 
@@ -39,7 +46,7 @@ public class Beam {
 	 * };
 	 */
 
-	public String Init(int number) {
+	public static String Init(int number) {
 
 		String beam;
 		String beamX = null;
@@ -50,6 +57,17 @@ public class Beam {
 			beamX = String.valueOf(playersInitPositions[(number - 1)].X);
 			beamY = String.valueOf(playersInitPositions[(number - 1)].Y);
 			beamTheta = "0.0";
+
+			CompleteCoordinate a = new CompleteCoordinate(
+					playersInitPositions[(number - 1)].X,
+					playersInitPositions[(number - 1)].Y, 0);
+
+			for (int i = 0; i < 10; i++) {
+
+				LocalizationFilter.filter(a);
+
+			}
+
 		} else {
 
 		}
@@ -57,6 +75,43 @@ public class Beam {
 		beam = beamX + " " + beamY + " " + beamTheta;
 
 		return beam;
+	}
+
+	public static String BeamEffector() {
+
+		String Beam = "";
+
+		if (GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
+
+			if (!PreviousGameState.equalsIgnoreCase("BeforeKickOff")) {
+
+				Beam = "(beam " + Init(AgentRuntime.num) + ")";
+
+			}
+
+		} else if (GameState.getGameState().equalsIgnoreCase("PlayOn")) {
+
+			Beamed = false;
+
+		} else if (GameState.getGameState().equalsIgnoreCase("Goal_Left")
+				|| GameState.getGameState().equalsIgnoreCase("Goal_Right")) {
+
+			if (!Beamed) {
+
+				Beam = "(beam " + Init(AgentRuntime.num) + ")";
+				Beamed = true;
+
+			}
+
+		} else if (GameState.getGameState().equalsIgnoreCase("KickOff_Right")
+				|| GameState.getGameState().equalsIgnoreCase("KickOff_Left")) {
+
+		}
+
+		PreviousGameState = GameState.getGameState();
+
+		return Beam;
+
 	}
 
 }

@@ -32,9 +32,5 @@ public class MotionTrigger {
 	public static void setTurn(float turn) {
 		Turn = turn;
 	}
-	
-	
-	
-	
 
 }

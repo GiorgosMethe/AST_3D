@@ -42,8 +42,7 @@ public class InitAgent {
 
 	public static void Init(String Teamname, int number, Connection con) {
 
-		Beam bm = new Beam();
-		String beam = bm.Init(number);
+		String beam = Beam.Init(number);
 		int cyrcles = ServerCyrcles.getCyrclesNow();
 		// boolean AgentInitialized=false;
 		if (cyrcles >= 0 && cyrcles < 10) {
@@ -78,7 +77,7 @@ public class InitAgent {
 				InitAgent.setPlayerInited(false);
 				BehaviorDone.setName("");
 				BehaviorDone.setBehaviorDone(true);
-				MotionTrigger.setMotion("");
+				MotionTrigger.setMotion("init");
 
 				// XML movement
 				MotionPlaying.setMotionName(null);
@@ -109,7 +108,6 @@ public class InitAgent {
 
 			}
 
-			
 			if (cyrcles == 9) {
 				InitAgent.setPlayerInited(true);
 			}

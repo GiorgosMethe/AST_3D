@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{roboviz}
+Abeyruwan, S., Seekircher, A., Stoecker, J., Visser, D.U.:
+\newblock Roboviz monitor Only available online:
+  \url{https://sites.google.com/site/umroboviz/}.
+
 \bibitem{UtAustinVillaPaper}
 MacAlpine, P., Barrera, F., Stone, P.:
 \newblock Positioning to win: A dynamic role assignment and formation
@@ -7,13 +12,13 @@ MacAlpine, P., Barrera, F., Stone, P.:
 \newblock In: Proceedings of the RoboCup International Symposium. (2012)
 
 \bibitem{UTAustinVillaRobotSoccerTeam}
-{UT Austin Villa}:
+Villa, U.A.:
 \newblock Ut austin villa (2012) Only available online:
   \url{http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/}.
 
 \bibitem{BeeStanbulTDP}
-{Baris Demirdelen and Berkay Toku and Onuralp Ulusoy and Tuna Sonmez and Kubra
-  Ayvaz and Elif Senyurek and Sanem Sariel-Talay}:
+Demirdelen, B., Toku, B., Ulusoy, O., Sonmez, T., Ayvaz, K., Senyurek, E.,
+  Sariel-Talay, S.:
 \newblock beestanbul robocup 3d simulation league team description paper 2012
   (2012) Only available online:
   \url{http://air.cs.itu.edu.tr/publications-1/beeStanbul_TDP2012.pdf}.

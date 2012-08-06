@@ -140,8 +140,8 @@ public class AgentRuntime {
 		 * actually represents the agent's body movement, the head movement and
 		 * if there is one, a communication message towards other agents.
 		 */
-		String Action = AgentFunction.Act + AgentFunction.Head
-				+ AgentFunction.Say;
+		String Action = AgentFunction.BeamEff + AgentFunction.Act
+				+ AgentFunction.Head + AgentFunction.Say;
 
 		connection.sendMessage(Action);
 

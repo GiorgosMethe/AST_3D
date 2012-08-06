@@ -19,7 +19,8 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces RoboCup @Home.}}{9}{figure.2.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Simulation Soccer Field}}{12}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Nao in simulation monitor}}{19}{figure.3.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Roboviz(left) vs SimSpark(right) Monitors.\cite {roboviz}}}{14}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Nao in simulation monitor}}{19}{figure.3.3}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Agent's Architecture.}}{22}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Simulation Update Loop.}}{23}{figure.4.2}

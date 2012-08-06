@@ -15,7 +15,6 @@ package action.simple;
 import motion.utils.MotionTrigger;
 import motion.xml.WalkLeaning;
 import perceptor.joints.HingeJointPerceptor;
-import perceptor.localization.TriangleLocalization;
 import perceptor.vision.Ball;
 import perceptor.vision.Vision;
 
@@ -66,13 +65,15 @@ public class WalkToBallForKick {
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
 							MotionTrigger.setMotion("TurnLeft40");
-							MotionTrigger.setTurn((float) (HingeJointPerceptor.getHj1() + Ball.getAngleX()));
+							MotionTrigger.setTurn((float) (HingeJointPerceptor
+									.getHj1() + Ball.getAngleX()));
 							return false;
 
 						} else {
 
 							MotionTrigger.setMotion("TurnRight40");
-							MotionTrigger.setTurn((float) (HingeJointPerceptor.getHj1() + Ball.getAngleX()));
+							MotionTrigger.setTurn((float) (HingeJointPerceptor
+									.getHj1() + Ball.getAngleX()));
 							return false;
 
 						}

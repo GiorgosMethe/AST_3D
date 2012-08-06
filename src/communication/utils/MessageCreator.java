@@ -142,7 +142,7 @@ public class MessageCreator {
 	 * 
 	 * @player admin wants to create the action message for this player
 	 */
-	
+
 	public static String CreateActionMessage(int player) {
 
 		String message = "";

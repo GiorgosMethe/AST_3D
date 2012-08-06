@@ -26,6 +26,7 @@ public class XMLMotionStorage {
 	public static Motion stand_back;
 	public static Motion fall_right;
 	public static Motion fall_left;
+	public static Motion init;
 	ReadXMLFile rXMLf = new ReadXMLFile();
 
 	public void StoreMotions() {
@@ -72,6 +73,10 @@ public class XMLMotionStorage {
 
 		stand_back = rXMLf.readMotion("stand_back");
 		setStand_back(stand_back);
+		System.out.print(".");
+
+		init = rXMLf.readMotion("init");
+		setInit(init);
 		System.out.print(".");
 
 	}
@@ -170,6 +175,14 @@ public class XMLMotionStorage {
 
 	public static void setFall_left(Motion fall_left) {
 		XMLMotionStorage.fall_left = fall_left;
+	}
+
+	public static Motion getInit() {
+		return init;
+	}
+
+	public static void setInit(Motion init) {
+		XMLMotionStorage.init = init;
 	}
 
 }

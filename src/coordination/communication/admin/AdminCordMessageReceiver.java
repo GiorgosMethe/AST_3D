@@ -17,7 +17,6 @@ import communication.utils.MessageType;
 public class AdminCordMessageReceiver {
 
 	public static void MessageHandler(String msg) {
-		
 
 		if (msg.startsWith("i,")) {
 
@@ -43,7 +42,6 @@ public class AdminCordMessageReceiver {
 
 		if (result) {
 
-			
 			MessageType.setType(2);
 
 		}

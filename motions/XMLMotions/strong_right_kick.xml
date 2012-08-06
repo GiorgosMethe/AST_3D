@@ -3,7 +3,7 @@
 	<low_skills>
 		<low_skill name="strong_right_kick" firstPhase="rigth_high_kick" />
 	</low_skills>
-	
+
 	<phases>
 		<phase name="rigth_high_kick" next="walk_attempt_start">
 			<effectors>

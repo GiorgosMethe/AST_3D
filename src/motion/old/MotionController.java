@@ -1,6 +1,5 @@
 package motion.old;
 
-import motion.utils.MotionTrigger;
 import behavior.old.BehaviorDone;
 import connection.utils.ServerCyrcles;
 
@@ -12,13 +11,13 @@ public class MotionController {
 	private static int speedControl;
 	private static int speed;
 	private static int poseOffset;
+	public static double hardnessNormal = 0;
 
 	public static String MotionFactory(String Motion) {
 
 		int Current = ServerCyrcles.getCyrclesNow();
 		int pose = 0;
 		Str = "";
-		double hardness = 1;
 
 		if (Motion.equalsIgnoreCase("TurnRight40")) {
 
@@ -26,8 +25,10 @@ public class MotionController {
 			speed = 1;
 			speedControl = 11;
 			poseOffset = 1;
-			hardness = 0.4 + (0.6 * ((Math.min(40,
-			Math.abs(motion.utils.MotionTrigger.getTurn()))) / 40));
+			if (hardnessNormal == 0) {
+				hardnessNormal = 0.3 + (0.7 * ((Math.min(37,
+						Math.abs(motion.utils.MotionTrigger.getTurn() - 3))) / 37));
+			}
 
 		} else if (Motion.equalsIgnoreCase("TurnLeft40")) {
 
@@ -35,8 +36,11 @@ public class MotionController {
 			speed = 1;
 			speedControl = 11;
 			poseOffset = 1;
-			hardness = 0.4 + (0.6 * ((Math.min(40,
-			Math.abs(motion.utils.MotionTrigger.getTurn()))) / 40));
+
+			if (hardnessNormal == 0) {
+				hardnessNormal = 0.3 + (0.7 * ((Math.min(37,
+						Math.abs(motion.utils.MotionTrigger.getTurn() - 3))) / 37));
+			}
 
 		} else if (Motion.equalsIgnoreCase("KickForwardRight")) {
 
@@ -68,15 +72,15 @@ public class MotionController {
 			return "";
 
 		} else {
-			
+
 			if ((Current - CurrentMotion.getStartMotionCyrcles()) % speed == 0) {
-				
+
 				int previousPose = CurrentMotion.getMotionPose();
 				pose = previousPose + poseOffset;
 				CurrentMotion.setMotionPose(pose);
 
 				if (pose >= endMotionPose) {
-					
+
 					CurrentMotion.setPoseEnding(true);
 					BehaviorDone.setBehaviorDone(true);
 					CurrentMotion.setStartMotionCyrcles(0);
@@ -84,13 +88,16 @@ public class MotionController {
 					CurrentMotion.setCurrentMotionCyrcles(0);
 					CurrentMotion.setCurrentMotionPlaying("");
 					CurrentMotion.setMotionPose(0);
+					hardnessNormal = 0;
 					return Motions.StopBehavior();
 
 				} else {
-					
+
 					CurrentMotion.setMotionPose(pose);
-					return Motions.Motion(Motion, pose, speedControl, hardness);
-					
+
+					return Motions.Motion(Motion, pose, speedControl,
+							hardnessNormal);
+
 				}
 
 			}

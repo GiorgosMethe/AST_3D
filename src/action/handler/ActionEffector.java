@@ -44,10 +44,9 @@ public class ActionEffector {
 
 			} else if (ActionPlaying.getActionPlaying().getAction()
 					.equalsIgnoreCase("TurnToLocate")) {
-				
-				
+
 				playing = TurnToLocate.Act();
-				
+
 			}
 
 			ActionPlaying.setEnd(playing);

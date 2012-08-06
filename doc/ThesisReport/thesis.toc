@@ -35,13 +35,15 @@
 \contentsline {section}{\numberline {3.4}Simulation Update Loop}{12}{section.3.4}
 \contentsline {section}{\numberline {3.5}Network Protocol}{13}{section.3.5}
 \contentsline {section}{\numberline {3.6}Monitor}{13}{section.3.6}
-\contentsline {section}{\numberline {3.7}Perceptors}{13}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}General perceptors}{14}{subsection.3.7.1}
-\contentsline {subsection}{\numberline {3.7.2}General perceptors}{15}{subsection.3.7.2}
-\contentsline {section}{\numberline {3.8}Effectors}{16}{section.3.8}
+\contentsline {subsection}{\numberline {3.6.1}SimSpark Monitor}{13}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Roboviz Monitor}{14}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}Perceptors}{14}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}General perceptors}{15}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}General perceptors}{16}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}Effectors}{17}{section.3.8}
 \contentsline {subsection}{\numberline {3.8.1}General Effectors}{17}{subsection.3.8.1}
-\contentsline {subsection}{\numberline {3.8.2}Soccer Effectors}{17}{subsection.3.8.2}
-\contentsline {section}{\numberline {3.9}Model}{18}{section.3.9}
+\contentsline {subsection}{\numberline {3.8.2}Soccer Effectors}{18}{subsection.3.8.2}
+\contentsline {section}{\numberline {3.9}Model}{19}{section.3.9}
 \contentsline {chapter}{\numberline {4}Agent}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}Agent Architecture}{21}{section.4.1}
 \contentsline {section}{\numberline {4.2}Connection}{22}{section.4.2}
@@ -83,12 +85,12 @@
 \contentsline {subsection}{\numberline {5.12.2}Properties for Active's Mapping Cost}{66}{subsection.5.12.2}
 \contentsline {chapter}{\numberline {6}Results}{69}{chapter.6}
 \contentsline {section}{\numberline {6.1}Movement}{69}{section.6.1}
-\contentsline {section}{\numberline {6.2}Communication}{70}{section.6.2}
-\contentsline {section}{\numberline {6.3}Coordination}{70}{section.6.3}
-\contentsline {section}{\numberline {6.4}Overview}{70}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Full Game Results}{70}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Mini Tournament ( Tough Opponents )}{70}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Mini Tournament ( Easy Opponents )}{70}{subsection.6.4.3}
+\contentsline {section}{\numberline {6.2}Communication}{69}{section.6.2}
+\contentsline {section}{\numberline {6.3}Coordination}{72}{section.6.3}
+\contentsline {section}{\numberline {6.4}Overview}{72}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Full Game Results}{72}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Mini Tournament ( Tough Opponents )}{72}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Mini Tournament ( Easy Opponents )}{72}{subsection.6.4.3}
 \contentsline {chapter}{\numberline {7}Related Work}{73}{chapter.7}
 \contentsline {section}{\numberline {7.1}UT Austin Villa}{73}{section.7.1}
 \contentsline {section}{\numberline {7.2}BeeStanbul}{74}{section.7.2}

@@ -32,29 +32,47 @@ public class WalkToBall {
 			if (Ball.isSeeTheBall()) {
 
 				if ((Ball.RealDistance() < 0.805) && (Ball.getDistance() < 0.8)) {
-				
 
 					if ((Math.abs(HingeJointPerceptor.getHj1()
-							+ Math.abs(Ball.getAngleX()))) > 15) {
+							+ Math.abs(Ball.getAngleX()))) > 10) {
 
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
 							MotionTrigger.setMotion("TurnLeft40");
-							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
-							
+							MotionTrigger
+									.setTurn((HingeJointPerceptor.getHj1() + Ball
+											.getAngleX()));
+
 							return false;
 
 						} else {
 
 							MotionTrigger.setMotion("TurnRight40");
-							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
+							MotionTrigger
+									.setTurn((HingeJointPerceptor.getHj1() + Ball
+											.getAngleX()));
 							return false;
 
 						}
 
 					} else {
-						MotionTrigger.setMotion("");
-						return true;
+
+						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) < -5) {
+
+							MotionTrigger.setMotion("SideStepRight");
+
+						} else if ((HingeJointPerceptor.getHj1() + Ball
+								.getAngleX()) > 5) {
+
+							MotionTrigger.setMotion("SideStepLeft");
+
+						} else {
+
+							MotionTrigger.setMotion("");
+							return true;
+
+						}
+
 					}
 
 				} else {
@@ -78,13 +96,17 @@ public class WalkToBall {
 						if ((HingeJointPerceptor.getHj1() + Ball.getAngleX()) > 0) {
 
 							MotionTrigger.setMotion("TurnLeft40");
-							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
+							MotionTrigger
+									.setTurn((HingeJointPerceptor.getHj1() + Ball
+											.getAngleX()));
 							return false;
 
 						} else {
 
 							MotionTrigger.setMotion("TurnRight40");
-							MotionTrigger.setTurn((HingeJointPerceptor.getHj1() + Ball.getAngleX()));
+							MotionTrigger
+									.setTurn((HingeJointPerceptor.getHj1() + Ball
+											.getAngleX()));
 							return false;
 
 						}

@@ -12,8 +12,8 @@
  ******************************************************************************/
 package motion.xml;
 
-import connection.utils.ServerCyrcles;
 import motion.utils.GetNormalJointValueDegrees;
+import connection.utils.ServerCyrcles;
 
 public class MoveJoints {
 
@@ -78,7 +78,7 @@ public class MoveJoints {
 					}
 
 					Float move = pha.movements.elementAt(i).value;
-					
+
 					Float velocity = gNjVd.Get(joint, move)
 							/ (pha.duration / ServerCyrcles.ServerStep);
 					String value2str = Float.toString(velocity);

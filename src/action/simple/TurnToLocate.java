@@ -14,15 +14,13 @@ package action.simple;
 
 import motion.utils.MotionTrigger;
 import perceptor.localization.LocalizationFilter;
-import perceptor.localization.LocalizationResults;
-import perceptor.vision.Ball;
 import action.vision.VisionType;
 
 public class TurnToLocate {
 
 	public static boolean Act() {
 
-		if (LocalizationFilter.qe.size()>7 ) {
+		if (LocalizationFilter.qe.size() > 6) {
 
 			VisionType.setType(6);
 			MotionTrigger.setMotion("");
@@ -32,6 +30,7 @@ public class TurnToLocate {
 
 			VisionType.setType(6);
 			MotionTrigger.setMotion("TurnRight40");
+			MotionTrigger.setTurn(40);
 			return false;
 
 		}

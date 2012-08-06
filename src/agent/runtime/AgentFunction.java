@@ -12,19 +12,14 @@
  ******************************************************************************/
 package agent.runtime;
 
-import motion.old.CurrentMotion;
-import motion.utils.MotionTrigger;
 import motion.utils.PerformMovement;
 import perceptor.worldstate.GameState;
-import action.complex.GoKickBallDynamic;
-import action.complex.GoKickBallToGoal;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
-import action.simple.TurnToLocate;
 import action.vision.HeadMovement;
 import action.vision.VisionType;
+import agent.constraints.Beam;
 import behavior.goalie.Goalie;
-import behavior.old.BehaviorDone;
 
 import communication.utils.MessageType;
 import communication.utils.SayEffector;
@@ -37,6 +32,10 @@ public class AgentFunction {
 	public static String Act;
 	public static String Say;
 	public static String Head;
+	public static String BeamEff;
+
+	public static float angle = 0, angleSum = 0;
+	public static double turn = 0;
 
 	public static void Act() {
 
@@ -71,19 +70,17 @@ public class AgentFunction {
 
 			} else {
 
-				if (!CheckIfFall.fallen) {
-					TurnToLocate.Act();
-				}
+				VisionType.setType(6);
 
 			}
 
 		}
-		
-	
-		
+
 		Act = PerformMovement.run();
 
 		Head = HeadMovement.MoveHead(VisionType.getType());
+
+		BeamEff = Beam.BeamEffector();
 
 	}
 

@@ -49,6 +49,9 @@ public class GetMotion {
 		} else if (name.equalsIgnoreCase("fall_left")) {
 			Motion mot = XMLMotionStorage.getFall_left();
 			return mot;
+		} else if (name.equalsIgnoreCase("init")) {
+			Motion mot = XMLMotionStorage.getInit();
+			return mot;
 		}
 
 		return null;

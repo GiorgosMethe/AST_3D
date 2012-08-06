@@ -71,14 +71,15 @@ public class RoleAssignmentFunction {
 
 		}
 
-		 for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++){
+		for (int i = 0; i < CoordinationSplitter.InactiveSubset.size(); i++) {
 
-			 ActionObject a = new ActionObject(CoordinationSplitter.InactiveSubset.elementAt(i).getNumber(),
-					 "TurnToLocate", 0, 0, 0, 0);
-			 
-			 ActionTable.CoordinateActions.addElement(a);
+			ActionObject a = new ActionObject(
+					CoordinationSplitter.InactiveSubset.elementAt(i)
+							.getNumber(), "TurnToLocate", 0, 0, 0, 0);
 
-		 }
+			ActionTable.CoordinateActions.addElement(a);
+
+		}
 
 	}
 

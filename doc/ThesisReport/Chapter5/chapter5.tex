@@ -3,7 +3,7 @@
 In this Chapter are presented the results of our approach in every part of our work. We are going to see what we achieve in motions part, in communication part, in coordination part and finally and most important the overall results which is the real competitive soccer matches against other teams which participated in Robocup competition of 2011 held in Istanbul.
 
 \section{Movement}
-This section presents the improvements we have done in the movements part of this thesis. In general, as we have said above motions files are not created by us but from other teams or other platforms such as Webots Simulator. The only thing that we could do is to try improving these motions until we have reached an adequate result for our team.
+This section presents the improvements we have done in the movements part of this thesis. In general, as we have said above motions files are not created by us but from other teams or other platforms such as Webots Simulator. The only thing that we could do is to try improving these motions until we have reached an adequate result for our team. Table \ref{MotionImprovements} shows the improvements made in motions whenever was possible. Optimized walk motion has reached a speed of .45m/s which is comparable but much slower then the UT Austin Villa's walking engine which produces a walk motion of .71m/s.
 \begin{table}
 \begin{center}
     \begin{tabular}{ | l | l | l | l | l |}
@@ -22,6 +22,22 @@ This section presents the improvements we have done in the movements part of thi
 
 
 \section{Communication}
+Testing communication process through ideal external communication ability when only our team has the ability to send messages gave nice results. Agents were able to ``hear'' all their teammates in an averaged 30 Server-Cycles. However, even in competition's situations when both teams have the ability to send messages to their teammates the results remained approximately the same. Table \ref{CommunicationResults} presents the communication phases' performance during communication process. We can see that there are not serious delays in these communication phases. This happens due to the fact soccer simulation server does not allow players to send messages in the same server cycle. We take advantage of the fact that there are separately tracked capacities for both teams, because teams should not be able to block the hear perceptors of their opponents by shouting permanently. In fact, we send  messages every three cycles, so, it does not a restriction for our team, and server allows our team to shout messages in most cases.
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{ | l | l | l |}
+    \hline
+    \textbf{Communication Phase} 	& Ideal (Cycles) & Normal (Cycles) \\ \hline
+    Init Messages 			& 24  ( .48 Sec ) 			& 24 	( .48 Sec )		 \\ \hline	
+    Coordination Messages			& 24  ( .48 Sec )			& 42.5  ( .85 Sec )			 \\ \hline
+    Action Messages 		& 24  ( .48 Sec )			& 24 ( .48 Sec )	 		 \\ 
+    \hline
+    \end{tabular}
+\end{center}
+\label{CommunicationResults}
+\caption{Communication Results}
+\end{table}
 
 \section{Coordination}
 

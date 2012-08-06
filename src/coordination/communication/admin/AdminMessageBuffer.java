@@ -14,8 +14,6 @@ package coordination.communication.admin;
 
 import java.util.Vector;
 
-import connection.utils.ServerCyrcles;
-
 import agent.constraints.Constraints;
 import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.main.CoordinationRun;
@@ -50,11 +48,11 @@ public class AdminMessageBuffer {
 	}
 
 	public static boolean addC(int num, String msg) {
-				
-		if(CoordinationRun.getStep() == 0){
-			
+
+		if (CoordinationRun.getStep() == 0) {
+
 			if (cBuffer.size() == Constraints.numberPlayers - 1) {
-				
+
 				CoordinationVectorUpdate.update(CoordinationMessageBuffer);
 				CoordinationMessageBuffer.removeAllElements();
 				cBuffer.removeAllElements();
@@ -78,15 +76,13 @@ public class AdminMessageBuffer {
 
 					cBuffer.addElement(num);
 					CoordinationMessageBuffer.addElement(msg);
-					
+
 				}
 
 			}
 
-			
-
 		}
-		
+
 		return false;
 
 	}

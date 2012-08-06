@@ -54,8 +54,8 @@ public class XMLMovement {
 
 			MoveCategory = 2;
 			phase = GetPhase.get(motion, MotionPlaying.getMotionPhase());
-			if ((phase.getDuration() / ServerCyrcles.ServerStep) <= (ServerCyrcles.getCyrclesNow() - MotionPlaying
-					.getStartCyrcle())) {
+			if ((phase.getDuration() / ServerCyrcles.ServerStep) <= (ServerCyrcles
+					.getCyrclesNow() - MotionPlaying.getStartCyrcle())) {
 				MoveCategory = 3;
 
 				if (ChangeFlag == false) {

@@ -62,13 +62,15 @@ public class WalkToCoordinate {
 				if (TriangleLocalization.FindAngleDifference(ThetaToTarget) < 0) {
 
 					MotionTrigger.setMotion("TurnRight40");
-					MotionTrigger.setTurn((float) TriangleLocalization.FindAngleDifference(ThetaToTarget));
+					MotionTrigger.setTurn((float) TriangleLocalization
+							.FindAngleDifference(ThetaToTarget));
 					return false;
 
 				} else {
 
 					MotionTrigger.setMotion("TurnLeft40");
-					MotionTrigger.setTurn((float) TriangleLocalization.FindAngleDifference(ThetaToTarget));
+					MotionTrigger.setTurn((float) TriangleLocalization
+							.FindAngleDifference(ThetaToTarget));
 					return false;
 
 				}

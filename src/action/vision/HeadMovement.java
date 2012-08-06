@@ -92,9 +92,10 @@ public class HeadMovement {
 			HeadMovement.HeadAtRight = true;
 		}
 
+		float moveY = (float) 0 - HingeJointPerceptor.hj2;
+		float realMoveY = gNjV.Get("he2", moveY) / 5;
 		String str = "";
 
-		float realMoveY = gNjV.Get("he2", 0 - HingeJointPerceptor.getHj2())/5;
 		str = "(" + "he1" + " " + HeadMovement.moveX + ")" + "(" + "he2" + " "
 				+ realMoveY + ")";
 
@@ -237,19 +238,16 @@ public class HeadMovement {
 		float moveY = (float) (0.59 * Math.sin(cycles / 8) - 0.078);
 		String str = "";
 
-		if (Vision.isiSee() == true) {
-
-			if (Ball.isSeeTheBall() == true) {
-				str = "(" + "he1" + " " + centerTheBallX() + ")" + "(" + "he2"
-						+ " " + centerTheBallY() + ")";
-			} else {
-				float realMoveX = gNjV.Get("he1", moveX) / 5;
-				float realMoveY = gNjV.Get("he2", moveY) / 5;
-				str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
-						+ realMoveY + ")";
-			}
-
+		if (Ball.isSeeTheBall() == true) {
+			str = "(" + "he1" + " " + centerTheBallX() + ")" + "(" + "he2"
+					+ " " + centerTheBallY() + ")";
+		} else {
+			float realMoveX = gNjV.Get("he1", moveX) / 5;
+			float realMoveY = gNjV.Get("he2", moveY) / 5;
+			str = "(" + "he1" + " " + realMoveX + ")" + "(" + "he2" + " "
+					+ realMoveY + ")";
 		}
+
 		return str;
 	}
 

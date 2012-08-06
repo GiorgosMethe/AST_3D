@@ -14,10 +14,9 @@ package motion.old;
 
 import java.util.Vector;
 
-import connection.utils.ServerCyrcles;
-
 import motion.utils.GetNormalJointValue;
 import motion.utils.GetNormalJointValueDegrees;
+import connection.utils.ServerCyrcles;
 
 public class Motions {
 
@@ -110,7 +109,8 @@ public class Motions {
 						.trim()) * hardness);
 				float a1 = gNjVd.Get(jointReal, a);
 
-				float a2 = (a1 / SpeedControl) * (ServerCyrcles.ServerStep/20);
+				float a2 = (a1 / SpeedControl)
+						* (ServerCyrcles.ServerStep / 20);
 
 				String str = Float.toString(a2);
 
@@ -122,7 +122,8 @@ public class Motions {
 						.trim()) * hardness);
 				float a1 = gNjV.Get(jointReal, a);
 
-				float a2 = (a1 / SpeedControl) * (ServerCyrcles.ServerStep/20);
+				float a2 = (a1 / SpeedControl)
+						* (ServerCyrcles.ServerStep / 20);
 
 				String str = Float.toString(a2);
 

@@ -16,8 +16,8 @@ public class GKBGDstates {
 
 	public static String State;
 	public static int timeout, moveTimeout;
-	public static double angle, X, Y, distance, ballAngle, angleFromGoal,
-			angleFromPost1, angleFromPost2;
+	public static double angle, X, Y, distanceFromPost1, distanceFromPost2,
+			distance, ballAngle, angleFromGoal, angleFromPost1, angleFromPost2;
 
 	public static double getAngleFromGoal() {
 		return angleFromGoal;
@@ -105,6 +105,22 @@ public class GKBGDstates {
 
 	public static void setMoveTimeout(int moveTimeout) {
 		GKBGDstates.moveTimeout = moveTimeout;
+	}
+
+	public static double getDistanceFromPost1() {
+		return distanceFromPost1;
+	}
+
+	public static void setDistanceFromPost1(double distanceFromPost1) {
+		GKBGDstates.distanceFromPost1 = distanceFromPost1;
+	}
+
+	public static double getDistanceFromPost2() {
+		return distanceFromPost2;
+	}
+
+	public static void setDistanceFromPost2(double distanceFromPost2) {
+		GKBGDstates.distanceFromPost2 = distanceFromPost2;
 	}
 
 }
