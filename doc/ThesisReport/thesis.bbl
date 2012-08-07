@@ -1,15 +1,32 @@
 \begin{thebibliography}{1}
 
-\bibitem{roboviz}
-Abeyruwan, S., Seekircher, A., Stoecker, J., Visser, D.U.:
-\newblock Roboviz monitor Only available online:
-  \url{https://sites.google.com/site/umroboviz/}.
-
 \bibitem{UtAustinVillaPaper}
 MacAlpine, P., Barrera, F., Stone, P.:
 \newblock Positioning to win: A dynamic role assignment and formation
   positioning system.
 \newblock In: Proceedings of the RoboCup International Symposium. (2012)
+
+\bibitem{SoccerSimulationLeague3D}
+Robocup:
+\newblock Soccer simulation league wiki Only available online:
+  \url{http://wiki.robocup.org/wiki/Soccer_Simulation_League}.
+
+\bibitem{SimSpark}
+SimSpark:
+\newblock Wiki Only available online:
+  \url{http://simspark.sourceforge.net/wiki}.
+
+\bibitem{roboviz}
+Abeyruwan, S., Seekircher, A., Stoecker, J., Visser, D.U.:
+\newblock Roboviz monitor Only available online:
+  \url{https://sites.google.com/site/umroboviz/}.
+
+\bibitem{Localization}
+Papadimitriou, V.:
+\newblock Localization in simspark environment (2012) Autonomous Agents Fall
+  Semester, Only available online:
+  \url{http://www.intelligence.tuc.gr/~robots/ARCHIVE/2011w/projects/TUCagent3%
+D/home.html}.
 
 \bibitem{UTAustinVillaRobotSoccerTeam}
 Villa, U.A.:

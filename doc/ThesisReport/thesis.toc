@@ -18,88 +18,88 @@
 \contentsline {paragraph}{Humanoid}{5}{section*.5}
 \contentsline {paragraph}{Middle Size}{6}{section*.6}
 \contentsline {paragraph}{Simulation}{6}{section*.7}
-\contentsline {paragraph}{Small Size}{6}{section*.8}
+\contentsline {paragraph}{Small Size}{7}{section*.8}
 \contentsline {paragraph}{Standard Platform}{7}{section*.9}
 \contentsline {section}{\numberline {2.3}RoboCup Rescue}{7}{section.2.3}
 \contentsline {paragraph}{Robot League}{7}{section*.10}
 \contentsline {paragraph}{Simulation League}{8}{section*.11}
-\contentsline {section}{\numberline {2.4}RoboCup @Home}{9}{section.2.4}
-\contentsline {section}{\numberline {2.5}RoboCup Junior}{10}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Soccer}{10}{subsection.2.5.1}
-\contentsline {paragraph}{Dance}{10}{section*.12}
-\contentsline {paragraph}{Rescue}{10}{section*.13}
+\contentsline {section}{\numberline {2.4}RoboCup @Home}{8}{section.2.4}
+\contentsline {section}{\numberline {2.5}RoboCup Junior}{9}{section.2.5}
+\contentsline {paragraph}{Soccer}{9}{section*.12}
+\contentsline {paragraph}{Dance}{10}{section*.13}
+\contentsline {paragraph}{Rescue}{10}{section*.14}
 \contentsline {chapter}{\numberline {3}Soccer Simulation League 3D}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}SimSpark}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Soccer simulation}{11}{section.3.2}
-\contentsline {section}{\numberline {3.3}Server}{11}{section.3.3}
-\contentsline {section}{\numberline {3.4}Simulation Update Loop}{12}{section.3.4}
-\contentsline {section}{\numberline {3.5}Network Protocol}{13}{section.3.5}
-\contentsline {section}{\numberline {3.6}Monitor}{13}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}SimSpark Monitor}{13}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Roboviz Monitor}{14}{subsection.3.6.2}
-\contentsline {section}{\numberline {3.7}Perceptors}{14}{section.3.7}
+\contentsline {section}{\numberline {3.2}Soccer Simulation}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}Server}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}Monitor}{13}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}SimSpark Monitor}{13}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Roboviz Monitor}{14}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Simulation Update Loop}{14}{section.3.5}
+\contentsline {section}{\numberline {3.6}Network Protocol}{15}{section.3.6}
+\contentsline {section}{\numberline {3.7}Perceptors}{15}{section.3.7}
 \contentsline {subsection}{\numberline {3.7.1}General perceptors}{15}{subsection.3.7.1}
-\contentsline {subsection}{\numberline {3.7.2}Soccer perceptors}{16}{subsection.3.7.2}
-\contentsline {section}{\numberline {3.8}Effectors}{17}{section.3.8}
-\contentsline {subsection}{\numberline {3.8.1}General Effectors}{17}{subsection.3.8.1}
-\contentsline {subsection}{\numberline {3.8.2}Soccer Effectors}{18}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.7.2}Soccer perceptors}{17}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}Effectors}{18}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}General Effectors}{18}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}Soccer Effectors}{19}{subsection.3.8.2}
 \contentsline {section}{\numberline {3.9}Model}{19}{section.3.9}
 \contentsline {chapter}{\numberline {4}Agent}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}Agent Architecture}{21}{section.4.1}
 \contentsline {section}{\numberline {4.2}Connection}{22}{section.4.2}
-\contentsline {section}{\numberline {4.3}Perceptions}{22}{section.4.3}
-\contentsline {section}{\numberline {4.4}Localization}{23}{section.4.4}
+\contentsline {section}{\numberline {4.3}Perceptions}{23}{section.4.3}
+\contentsline {section}{\numberline {4.4}Localization Process}{24}{section.4.4}
 \contentsline {section}{\numberline {4.5}Localization Filtering}{26}{section.4.5}
-\contentsline {section}{\numberline {4.6}Motions and Movement}{28}{section.4.6}
+\contentsline {section}{\numberline {4.6}Motions and Movement}{27}{section.4.6}
 \contentsline {subsection}{\numberline {4.6.1}XML-File Based Motions}{29}{subsection.4.6.1}
 \contentsline {subsection}{\numberline {4.6.2}XML-File Based Motion Controller}{30}{subsection.4.6.2}
 \contentsline {subsection}{\numberline {4.6.3}Text-File Based Motions}{32}{subsection.4.6.3}
 \contentsline {subsection}{\numberline {4.6.4}Text-File Based Motion Controller}{33}{subsection.4.6.4}
-\contentsline {subsection}{\numberline {4.6.5}Dynamic Elements in Movement}{33}{subsection.4.6.5}
+\contentsline {subsection}{\numberline {4.6.5}Dynamic Elements in Movement}{34}{subsection.4.6.5}
 \contentsline {section}{\numberline {4.7}Actions}{34}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Simple}{34}{subsection.4.7.1}
-\contentsline {subsection}{\numberline {4.7.2}Complex}{35}{subsection.4.7.2}
-\contentsline {subsection}{\numberline {4.7.3}Vision}{37}{subsection.4.7.3}
-\contentsline {subsection}{\numberline {4.7.4}Other Sensors}{41}{subsection.4.7.4}
-\contentsline {section}{\numberline {4.8}Communication}{41}{section.4.8}
-\contentsline {section}{\numberline {4.9}Goalkeeper Behavior}{42}{section.4.9}
-\contentsline {chapter}{\numberline {5}Team's Coordination}{45}{chapter.5}
-\contentsline {section}{\numberline {5.1}Messages and Communication}{47}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Message Types and Formats}{47}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Coordination's Beliefs}{51}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Ball's Position Weighted Samples}{51}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Agents' Distances from Ball}{53}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Possible Subsets in Coordination Process}{53}{section.5.3}
-\contentsline {section}{\numberline {5.4}Coordination Splitter}{54}{section.5.4}
-\contentsline {section}{\numberline {5.5}Soccer Field Value}{54}{section.5.5}
-\contentsline {section}{\numberline {5.6}Active Positions' Calculation}{54}{section.5.6}
-\contentsline {section}{\numberline {5.7}Active Subset's Coordination}{57}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}On Ball Player}{57}{subsection.5.7.1}
-\contentsline {subsection}{\numberline {5.7.2}Active Players' Best Mapping}{58}{subsection.5.7.2}
-\contentsline {section}{\numberline {5.8}Team Formation}{59}{section.5.8}
-\contentsline {subsection}{\numberline {5.8.1}9-Players Server Version (0.6.5)}{59}{subsection.5.8.1}
-\contentsline {subsection}{\numberline {5.8.2}11-Players Server Version (0.6.6)}{60}{subsection.5.8.2}
-\contentsline {section}{\numberline {5.9}Role Assignment Function}{62}{section.5.9}
-\contentsline {section}{\numberline {5.10}Positions for Support Subset}{63}{section.5.10}
-\contentsline {section}{\numberline {5.11}Support Coordination}{63}{section.5.11}
-\contentsline {section}{\numberline {5.12}Mapping Cost Calculation}{67}{section.5.12}
-\contentsline {subsection}{\numberline {5.12.1}Properties for Support's Mapping Cost}{67}{subsection.5.12.1}
-\contentsline {subsection}{\numberline {5.12.2}Properties for Active's Mapping Cost}{68}{subsection.5.12.2}
-\contentsline {chapter}{\numberline {6}Results}{71}{chapter.6}
-\contentsline {section}{\numberline {6.1}Movement}{71}{section.6.1}
-\contentsline {section}{\numberline {6.2}Communication}{71}{section.6.2}
-\contentsline {section}{\numberline {6.3}Coordination}{74}{section.6.3}
-\contentsline {section}{\numberline {6.4}Overview}{74}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Full Game Results}{74}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Mini Tournament ( Tough Opponents )}{74}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Mini Tournament ( Easy Opponents )}{74}{subsection.6.4.3}
-\contentsline {chapter}{\numberline {7}Related Work}{75}{chapter.7}
-\contentsline {section}{\numberline {7.1}UT Austin Villa}{75}{section.7.1}
-\contentsline {section}{\numberline {7.2}BeeStanbul}{76}{section.7.2}
-\contentsline {chapter}{\numberline {8}Future Work}{77}{chapter.8}
-\contentsline {section}{\numberline {8.1}Dynamic Movement}{77}{section.8.1}
-\contentsline {section}{\numberline {8.2}Passing}{77}{section.8.2}
-\contentsline {section}{\numberline {8.3}Testing and Debugging in New Server's version}{77}{section.8.3}
-\contentsline {section}{\numberline {8.4}Participation in Robocup}{78}{section.8.4}
-\contentsline {chapter}{\numberline {9}Conclusion}{79}{chapter.9}
-\contentsline {chapter}{References}{81}{chapter*.14}
+\contentsline {subsection}{\numberline {4.7.1}Simple}{35}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Complex}{37}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}Vision}{39}{subsection.4.7.3}
+\contentsline {subsection}{\numberline {4.7.4}Other Sensors}{42}{subsection.4.7.4}
+\contentsline {section}{\numberline {4.8}Communication}{42}{section.4.8}
+\contentsline {section}{\numberline {4.9}Goalkeeper Behavior}{43}{section.4.9}
+\contentsline {chapter}{\numberline {5}Team's Coordination}{47}{chapter.5}
+\contentsline {section}{\numberline {5.1}Messages and Communication}{49}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Message Types and Formats}{49}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Coordination Beliefs}{53}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Ball Position Weighted Samples}{53}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Agent Distance from Ball}{55}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Subsets in Coordination Process}{55}{section.5.3}
+\contentsline {section}{\numberline {5.4}Coordination Splitter}{56}{section.5.4}
+\contentsline {section}{\numberline {5.5}Soccer Field Value}{56}{section.5.5}
+\contentsline {section}{\numberline {5.6}Active-Positions Computation}{56}{section.5.6}
+\contentsline {section}{\numberline {5.7}Active-Subset Coordination}{59}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Player on Ball}{59}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Active-Subset Best Mapping}{60}{subsection.5.7.2}
+\contentsline {section}{\numberline {5.8}Team Formation}{60}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}9-Players Server Version (0.6.5)}{61}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}11-Players Server Version (0.6.6)}{62}{subsection.5.8.2}
+\contentsline {section}{\numberline {5.9}Role Assignment Function}{65}{section.5.9}
+\contentsline {section}{\numberline {5.10}Positions for Support-Subset}{65}{section.5.10}
+\contentsline {section}{\numberline {5.11}Support-Subset Coordination}{66}{section.5.11}
+\contentsline {section}{\numberline {5.12}Mapping Cost Computation}{69}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Properties for Support-Subset Mapping Cost}{69}{subsection.5.12.1}
+\contentsline {subsection}{\numberline {5.12.2}Properties for Active-Subset Mapping Cost}{70}{subsection.5.12.2}
+\contentsline {chapter}{\numberline {6}Results}{73}{chapter.6}
+\contentsline {section}{\numberline {6.1}Movement}{73}{section.6.1}
+\contentsline {section}{\numberline {6.2}Communication}{73}{section.6.2}
+\contentsline {section}{\numberline {6.3}Coordination}{76}{section.6.3}
+\contentsline {section}{\numberline {6.4}Overview}{76}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Full Game Results}{76}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Mini-Tournament ( Tough Opponents )}{76}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Mini-Tournament ( Easy Opponents )}{76}{subsection.6.4.3}
+\contentsline {chapter}{\numberline {7}Related Work}{77}{chapter.7}
+\contentsline {section}{\numberline {7.1}UT Austin Villa}{77}{section.7.1}
+\contentsline {section}{\numberline {7.2}BeeStanbul}{78}{section.7.2}
+\contentsline {chapter}{\numberline {8}Future Work}{79}{chapter.8}
+\contentsline {section}{\numberline {8.1}Dynamic Movement}{79}{section.8.1}
+\contentsline {section}{\numberline {8.2}Passing}{79}{section.8.2}
+\contentsline {section}{\numberline {8.3}Testing and Debugging in New Server's version}{79}{section.8.3}
+\contentsline {section}{\numberline {8.4}Participation in Robocup}{80}{section.8.4}
+\contentsline {chapter}{\numberline {9}Conclusion}{81}{chapter.9}
+\contentsline {chapter}{References}{83}{chapter*.15}

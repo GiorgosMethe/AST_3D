@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.1 r9760"
-   sodipodi:docname="SupportPos.svg">
+   sodipodi:docname="Goalie.pdf">
   <defs
      id="defs4">
     <marker
@@ -165,9 +165,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="173.17469"
-     inkscape:cy="795.87265"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="28.814159"
+     inkscape:cy="671.86086"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -479,10 +479,19 @@
        d="m 562.65497,242.72491 a 9.0913725,9.5964489 0 1 1 -18.18274,0 9.0913725,9.5964489 0 1 1 18.18274,0 z"
        transform="matrix(0.53605467,0,0,0.53605467,-238.12359,417.4542)" />
     <path
-       style="fill:#ff0000;stroke:#fc0000;stroke-width:2.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4.6,4.6;stroke-dashoffset:0"
-       d="m 54.043161,54.331464 0,441.941736"
+       style="fill:#ff0000;stroke:#fc0000;stroke-width:2.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4.6, 4.6;stroke-dashoffset:0;marker-start:none;marker-end:none"
+       d="M 303.17634,256.44961 54.626145,275.79909"
+       id="path3099-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:transform-center-x="-30.821247"
+       inkscape:transform-center-y="-99.177996" />
+    <path
+       style="fill:#ff0000;stroke:#fc0000;stroke-width:2.29999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4.6, 4.6;stroke-dashoffset:0"
+       d="m 47.47717,55.341617 0.430187,12.142388 4.544477,128.271525 10.6827,301.52782"
        id="path3099"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
     <path
        sodipodi:type="arc"
        style="fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -532,25 +541,25 @@
        transform="matrix(0.38974002,0,0,0.39014147,-161.01269,155.99413)" />
     <path
        sodipodi:type="arc"
-       style="fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:1.37470805999999990;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:1.37470806;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="path6151-6-3-3"
        sodipodi:cx="553.5636"
        sodipodi:cy="242.72491"
        sodipodi:rx="9.0913725"
        sodipodi:ry="9.5964489"
        d="m 562.65497,242.72491 a 9.0913725,9.5964489 0 1 1 -18.18274,0 9.0913725,9.5964489 0 1 1 18.18274,0 z"
-       transform="matrix(0.38974002,0,0,0.39014147,-161.70273,206.61671)" />
+       transform="matrix(0.38974002,0,0,0.39014147,-159.70273,206.61671)" />
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="163.13963"
-       y="228.58278"
+       x="107.58125"
+       y="222.52187"
        id="text3947"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3949"
-         x="163.13963"
-         y="228.58278"
+         x="107.58125"
+         y="222.52187"
          style="font-size:22px">(x,y)</tspan></text>
     <text
        xml:space="preserve"
@@ -580,7 +589,7 @@
          style="font-size:22px">Ball</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-95-7)"
-       d="M 69.195445,384.65135 55.55839,306.8696"
+       d="M 70.710674,385.15643 57.073619,307.37468"
        id="path3997"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -621,7 +630,7 @@
        transform="matrix(0.53605467,0,0,0.53605467,-135.62102,107.05525)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-95-7)"
-       d="M 160.61776,331.11327 55.05682,295.75793"
+       d="M 160.61776,331.11327 59.09743,295.25285"
        id="path3997-33"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -640,14 +649,42 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="123.88764"
-       y="273.53223"
+       x="159.74806"
+       y="221.52966"
        id="text3947-33"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3949-7"
-         x="123.88764"
-         y="273.53223"
+         x="159.74806"
+         y="221.52966"
          style="font-size:18px">Direction,Speed</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="276.92578"
+       y="244.74292"
+       id="text3947-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3949-8"
+         x="276.92578"
+         y="244.74292"
+         style="font-size:22px;fill:#ff0000">X'<tspan
+   style="font-size:65.00091553%;baseline-shift:sub;fill:#ff0000"
+   id="tspan3122">axis</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="51.898113"
+       y="48.937588"
+       id="text3947-6-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3949-8-8"
+         x="51.898113"
+         y="48.937588"
+         style="font-size:22px;fill:#ff0000">Y'<tspan
+   style="font-size:65.00091553%;baseline-shift:sub;fill:#ff0000"
+   id="tspan3122-7">axis</tspan></tspan></text>
   </g>
 </svg>

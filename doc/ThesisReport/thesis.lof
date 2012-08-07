@@ -15,43 +15,44 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Middle Size League.}}{6}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces 2D simulation game.}}{7}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Kouretes in action.}}{8}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces PANDORA.}}{8}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces RoboCup @Home.}}{9}{figure.2.5}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces ``PANDORA''.}}{9}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces RoboCup @Home.}}{10}{figure.2.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Simulation Soccer Field}}{12}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Roboviz(left) vs SimSpark(right) Monitors.\cite {roboviz}}}{14}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Nao in simulation monitor}}{19}{figure.3.3}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Roboviz(left) vs SimSpark(right) Monitors.}}{14}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Nao in simulation monitor}}{20}{figure.3.3}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Agent's Architecture.}}{22}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Simulation Update Loop.}}{23}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Beliefs Update.}}{24}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Nao's Field of View.}}{24}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Localization Main Idea.}}{25}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Localization Results.}}{26}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Nao's anatomy.}}{28}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Motion Controller.}}{30}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Phase Sequence.}}{31}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Ball Distance from Agent's Foot.}}{35}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Nao Before Kick Ball.}}{36}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces On Ball Action Logic Sequence.}}{37}{figure.4.12}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Walk To Coordinate Action.}}{38}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Obstacle Avoidance.}}{39}{figure.4.14}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Time Slicing Communication.}}{42}{figure.4.15}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Goalkeeper Fall Function.}}{43}{figure.4.16}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{44}{figure.4.17}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Nao's Field of View.}}{25}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Localization Main Idea.}}{26}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Localization Results.}}{27}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Nao's anatomy.}}{29}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Motion Controller.}}{31}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Phase Sequence.}}{32}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Dynamic Turn.}}{35}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Ball Distance from Agent's Feet.}}{36}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Nao Before Kick Ball.}}{36}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces On Ball Action Logic Sequence.}}{37}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Walk To Coordinate Action.}}{38}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Obstacle Avoidance.}}{40}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Time Slicing Communication.}}{43}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Goalkeeper Fall Function.}}{44}{figure.4.17}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{45}{figure.4.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Coordination cycle.}}{46}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Communication Process in Coordination.}}{50}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Ball's Position Observations.}}{52}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Coordination Splitter.}}{55}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Soccer Field Value.}}{56}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Active positions before elimination.}}{56}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Active positions after elimination.}}{57}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Formation Role Positions for 9 vs 9.}}{61}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Formation Role Positions for 11 vs 11.}}{62}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Role Assignment Function.}}{64}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Support Positions.}}{65}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Collision Detection Approach.}}{68}{figure.5.12}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Coordination cycle.}}{48}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Communication Process in Coordination.}}{52}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ball's Position Observations.}}{54}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Coordination Splitter.}}{57}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Soccer Field Value.}}{58}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Active positions before elimination.}}{58}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Active positions after elimination.}}{59}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Formation Role Positions for 9 vs 9.}}{63}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Formation Role Positions for 11 vs 11.}}{64}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Role Assignment Function.}}{66}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Support Positions.}}{67}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Collision Detection Approach.}}{70}{figure.5.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
