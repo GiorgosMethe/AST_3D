@@ -12,44 +12,44 @@ A level-1 auxiliary file: Chapter7/chapter7.aux
 A level-1 auxiliary file: Chapter8/chapter8.aux
 The style file: StyleFiles/splncs.bst
 Database file #1: thesis.bib
-You've used 7 entries,
+You've used 6 entries,
             2087 wiz_defined-function locations,
-            531 strings with 5263 characters,
-and the built_in function-call counts, 1114 in all, are:
-= -- 78
-> -- 64
+            527 strings with 5090 characters,
+and the built_in function-call counts, 943 in all, are:
+= -- 67
+> -- 50
 < -- 0
-+ -- 25
-- -- 18
-* -- 55
-:= -- 179
-add.period$ -- 8
-call.type$ -- 7
-change.case$ -- 7
++ -- 20
+- -- 14
+* -- 43
+:= -- 151
+add.period$ -- 7
+call.type$ -- 6
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 49
-empty$ -- 138
-format.name$ -- 18
-if$ -- 256
+cite$ -- 6
+duplicate$ -- 43
+empty$ -- 120
+format.name$ -- 14
+if$ -- 218
 int.to.chr$ -- 0
-int.to.str$ -- 7
+int.to.str$ -- 6
 missing$ -- 1
-newline$ -- 32
-num.names$ -- 7
-pop$ -- 49
+newline$ -- 28
+num.names$ -- 6
+pop$ -- 43
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 24
+skip$ -- 21
 stack$ -- 0
 substring$ -- 0
-swap$ -- 6
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 7
-width$ -- 8
-write$ -- 63
+while$ -- 6
+width$ -- 7
+write$ -- 54

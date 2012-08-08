@@ -16,11 +16,6 @@ SimSpark:
 \newblock Wiki Only available online:
   \url{http://simspark.sourceforge.net/wiki}.
 
-\bibitem{roboviz}
-Abeyruwan, S., Seekircher, A., Stoecker, J., Visser, D.U.:
-\newblock Roboviz monitor Only available online:
-  \url{https://sites.google.com/site/umroboviz/}.
-
 \bibitem{Localization}
 Papadimitriou, V.:
 \newblock Localization in simspark environment (2012) Autonomous Agents Fall
@@ -29,8 +24,8 @@ Papadimitriou, V.:
 D/home.html}.
 
 \bibitem{UTAustinVillaRobotSoccerTeam}
-Villa, U.A.:
-\newblock Ut austin villa (2012) Only available online:
+UTAustinVilla:
+\newblock Utaustinvilla Only available online:
   \url{http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/}.
 
 \bibitem{BeeStanbulTDP}

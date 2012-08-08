@@ -3,16 +3,17 @@
 In this Chapter are presented the results of our approach in every part of our work. We are going to see what we achieve in motions part, in communication part, in coordination part and finally and most important the overall results which is the real competitive soccer matches against other teams which participated in Robocup competition of 2011 held in Istanbul.
 
 \section{Movement}
-This section presents the improvements we have done in the movements part of this thesis. In general, as we have said above motions files are not created by us but from other teams or other platforms such as Webots Simulator. The only thing that we could do is to try improving these motions until we have reached an adequate result for our team. Table \ref{MotionImprovements} shows the improvements made in motions whenever was possible. Optimized walk motion has reached a speed of .45m/s which is comparable but much slower then the UT Austin Villa's walking engine which produces a walk motion of .71m/s.
+This section presents the improvements we have done in the motions' part. In general, as we have said above motions files are not created by us but from other teams or other platforms such as Webots Simulator. The only thing that we could do is to try improving these motions until we have reached an adequate result for our team. Table \ref{MotionImprovements} shows the improvements made in motions whenever was possible. Optimized walk motion has reached a speed of .45m/s which is comparable but much slower than the UT Austin Villa's walking engine which produces a walk motion of .71m/s. Furthermore strong kick movement has reached a 5.5 meters range in just 2.5 seconds. For turn motion, we use webots motion files in which we have achieved a turn with a speed of 30 degrees per second. 
+
 \begin{table}
 \begin{center}
     \begin{tabular}{ | l | l | l | l | l |}
     \hline
-    \textbf{Motion Version} & \textbf{Walk}(m/s) & \textbf{Turn}(degrees/s) & \textbf{Kick}(meters) & \textbf{S. Kick}(meters) \\ \hline
+    Motion Version & Walk(m/s) & Turn(degrees/s) & Kick(meters) & Strong Kick(meters) \\ \hline
     Webots (Text-Based) & 0.11 			& 21 			& 3 			& - \\ \hline	
     FIIT (XML)			& 0.22 			& 25 			& 3 (4 sec) 	& 4 (5 sec) \\ \hline
-    Webots Opt. 		& - 			& \textbf{30} 	& - 			& - \\ \hline
-    FIIT Opt. 			& \textbf{0.45} & 24 			& \textbf{3} (2 sec) 	& \textbf{5.5} (2 sec) \\
+    Webots Opt. 		& 0.15 			& \textbf{30} 	& 3 			& - \\ \hline
+    FIIT Opt. 			& \textbf{0.45} & 24 			& \textbf{3} (2.5 sec) 	& \textbf{5.5} (2.5 sec) \\
     \hline
     \end{tabular}
 \end{center}
@@ -22,43 +23,73 @@ This section presents the improvements we have done in the movements part of thi
 
 
 \section{Communication}
-Testing communication process through ideal external communication ability when only our team has the ability to send messages gave nice results. Agents were able to ``hear'' all their teammates in an averaged 30 Server-Cycles. However, even in competition's situations when both teams have the ability to send messages to their teammates the results remained approximately the same. Table \ref{CommunicationResults} presents the communication phases' performance during communication process. We can see that there are not serious delays in these communication phases. This happens due to the fact soccer simulation server does not allow players to send messages in the same server cycle. We take advantage of the fact that there are separately tracked capacities for both teams, because teams should not be able to block the hear perceptors of their opponents by shouting permanently. In fact, we send  messages every three cycles, so, it does not a restriction for our team, and server allows our team to shout messages in most cases.
+Testing communication process through ideal external communication when only our team has the ability to send messages gave nice results. Agents were able to ``hear'' all their teammates in an averaged 24 Server-Cycles. However, even in competition's situations when both teams have the ability to send messages to their teammates the results remained approximately the same. Table \ref{CommunicationResults} presents the communication phases' performance during communication process. We can see that there are not serious delays in these communication phases. This happens due to the fact soccer simulation server does not allow players to send messages in the same server cycle. We take advantage of the fact that there are separately tracked capacities for both teams, because teams should not be able to block the hear perceptors of their opponents by shouting permanently. In fact, we send  messages every three cycles, so, it does not a restriction for our team, and server allows our team to shout messages in most cases.
 
 \begin{table}
 \begin{center}
     \begin{tabular}{ | l | l | l |}
     \hline
-    \textbf{Communication Phase} 	& Ideal (Cycles) & Normal (Cycles) \\ \hline
-    Init Messages 			& 24  ( .48 Sec ) 			& 24 	( .48 Sec )		 \\ \hline	
+    \textbf{Communication Phase} 	& Ideal (Cycles) 			& During Match (Cycles) \\ \hline
+    Init Messages 					& 24  ( .48 Sec ) 			& 24 	( .48 Sec )		 \\ \hline	
     Coordination Messages			& 24  ( .48 Sec )			& 42.5  ( .85 Sec )			 \\ \hline
-    Action Messages 		& 24  ( .48 Sec )			& 24 ( .48 Sec )	 		 \\ 
+    Action Messages 				& 24  ( .48 Sec )			& 24 ( .48 Sec )	 		 \\ 
     \hline
     \end{tabular}
 \end{center}
 \label{CommunicationResults}
-\caption{Communication Results}
+\caption{Communication Results in Ideal and Match Conditions}
 \end{table}
 
 \section{Coordination}
+To be written...
+
+Advantages...
+1.
+2.
+3.
+screenshots from matches without opponents which demonstrate these advantages
+screenshots from real matches which demonstrate these advantages
+
+Drawbacks...
+1.
+2.
+screenshots from matches without opponents which demonstrate these advantages
+screenshots from real matches which demonstrate these advantages
 
 \section{Overview}
-
-\subsection{Full Game Results}
-
+In order to test our software in the most realistic way. We decided to play against teams that have already participate in robocup soccer simulation competition. Most of the teams have been participating in this competition for more than one year and consists of more than one members. We have select nine teams from Instabul's competition and one team(MAK) from Iran open 2011. These teams are:
+\begin{description}
+\item[RoboCanes]	University of Miami, USA 
+\item[UT Austin Villa]	University of Texas at Austin, USA
+\item[NomoFC]	Osaka University, Japan
+\item[OxBlue]	University of Oxford, UK
+\item[L3MSIM]	Paris8 University,France
+\item[Kaveh] 	Shahid Rajaee University, Iran University of Science and Technology, Iran
+\item[beeStanbul]	Istanbul Technical University, Turkey
+\item[Farzanegan]	Farzanegan high school, Iran
+\item[MAK]	Ehsan Mosavi, University Of Kerman Mehravaran ,3D Robotics, Iran
+\item[FUTK3D]	Fukui University of Technology, Japan
+\end{description}
+All teams' binaries are from \href{http://simspark.sourceforge.net/binaries/RoboCup2011/}{SimSpark Wiki -Previous Events Binaries}.
+All games have 10 minutes duration same with normal matches in Robocup competition. Server and monitor were running in the same machine\footnotemark. Each team binary was running in separate machines\footnotemark.
+\footnotetext[1]{\textbf{Server}: Intel Core 2 Duo 3.16 Ghz, 5.8GiB Ram}
+\footnotetext[2]{\textbf{Client1}: Intel Core 2 Duo 1.86 Ghz, 2GiB Ram}
+\footnotetext[2]{\textbf{Client2}: Intel Quad Core i5 3.3 Ghz,4GiB Ram}
 \begin{table}
 \begin{center}
     \begin{tabular}{ | l | l | l | }
     \hline
-    Team & Goal Difference & Games   \\ \hline
-    UTAustinVilla 	& -4.6 					& 3 			\\ \hline	
-    Robocanes 		& -						& 0 			\\ \hline
-    BeeStanbul		& -4.0					& 3				\\ \hline
-    NomoFC 			& \textbf{+0.5} 		& 2 			\\ \hline
-    Rail 			& \textbf{0.0} 			& 2 			\\ \hline
-    OxBlue 			& -1.5 					& 2 			\\ \hline
-    FUTK3D 			& - 					& - 			\\ \hline
-    FARZANEGAN 		& \textbf{0.0} 			& 1 			\\ \hline
-    L3M-SIM			& \textbf{+0.6} 		& 5 			\\     
+    Team & Averaged Goal Difference & Games   \\ \hline
+    UTAustinVilla 	& -4.6 		& 3 			\\ \hline	
+    Robocanes 		& -			& - 			\\ \hline
+    BeeStanbul		& -4.0		& 3				\\ \hline
+    NomoFC 			& +0.5 		& 2 			\\ \hline
+    Rail 			& 0.0 		& 3 			\\ \hline
+    OxBlue 			& -1.5 		& 2 			\\ \hline
+    FUTK3D 			& 0.0 		& 1 			\\ \hline
+    FARZANEGAN 		& +0.5 		& 2 			\\ \hline
+    MAK 			& +2.0 		& 1 			\\ \hline
+    L3M-SIM			& +0.6 		& 5 			\\     
     \hline
     \end{tabular}
 \end{center}
@@ -66,33 +97,6 @@ Testing communication process through ideal external communication ability when 
 \caption{Full-Game Results}
 \end{table}
 
-\subsection{Mini-Tournament ( Tough Opponents )}
-\begin{table}
-\begin{center}
-\begin{tabular}{l*{6}{c}r}
-Team              & P & W & D & L & F  & A & Pts \\ \hline
-\textbf{AST3D} 	  & - & - & - & - & -  & - & -  \\
-UTAustinVilla     & - & - & - & - &  - & - & -  \\
-Robocanes         & - & - & - & - &  - & - & -  \\
-BeeStanbul     	  & - & - & - & - &  - & - & -  \\
-\end{tabular}
-\end{center}
-\label{ToughTournament}
-\caption{Tough Mini Tournament}
-\end{table}
 
-\subsection{Mini-Tournament ( Easy Opponents )}
+After all these matches against teams who have participated into one or more Robocup competitions we have gained a lot of experience and we have seen how our team reacts in different situations in such a dynamic environment. Due to lack of dynamic movements, our agents has poor movement especially in comparison with the league's' best teams. However, we were able to perform well and score some goals against weaker teams of this competition. Better movement will give us exactly what we need in order to be competitive  towards the best teams of the simulation league competition. Judging by the results, I am absolutely sure that we could compete in equal terms with other teams for a position in simulation 3D league either in an open competition or in Robocup itself.
 
-\begin{table}
-\begin{center}
-\begin{tabular}{l*{6}{c}r}
-Team              	& P & W & D & L & F  & A & Pts \\ \hline
-\textbf{AST3D} 		& \textbf{5} & \textbf{2} & \textbf{3} & \textbf{0} & \textbf{ 2} & \textbf{0} &  \textbf{9}  \\
-NomoFC            	& 2 & 0 & 1 & 1 &  0 & 1 &  1  \\
-L3M-SIM     		& 1 & 0 & 0 & 1 &  0 & 1 &  0  \\
-Rail     		    & 2 & 0 & 2 & 0 &  0 & 0 &  2  \\
-\end{tabular}
-\end{center}
-\label{EasyTournament}
-\caption{Easy Mini Tournament}
-\end{table}
