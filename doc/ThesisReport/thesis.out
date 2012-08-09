@@ -7,22 +7,22 @@
 \BOOKMARK [1][]{section.2.4}{2.4 RoboCup Junior}{chapter.2}
 \BOOKMARK [0][]{chapter.3}{3 RoboCup 3D Simulation League}{}
 \BOOKMARK [1][]{section.3.1}{3.1 SimSpark Soccer Simulator}{chapter.3}
-\BOOKMARK [1][]{section.3.2}{3.2 Server}{chapter.3}
-\BOOKMARK [1][]{section.3.3}{3.3 Monitor}{chapter.3}
-\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 SimSpark Monitor}{section.3.3}
-\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Roboviz Monitor}{section.3.3}
-\BOOKMARK [1][]{section.3.4}{3.4 Perceptors}{chapter.3}
-\BOOKMARK [2][]{subsection.3.4.1}{3.4.1 General perceptors}{section.3.4}
-\BOOKMARK [2][]{subsection.3.4.2}{3.4.2 Soccer perceptors}{section.3.4}
-\BOOKMARK [1][]{section.3.5}{3.5 Effectors}{chapter.3}
-\BOOKMARK [2][]{subsection.3.5.1}{3.5.1 General Effectors}{section.3.5}
-\BOOKMARK [2][]{subsection.3.5.2}{3.5.2 Soccer Effectors}{section.3.5}
-\BOOKMARK [1][]{section.3.6}{3.6 Model}{chapter.3}
-\BOOKMARK [0][]{chapter.4}{4 Agent}{}
+\BOOKMARK [1][]{section.3.2}{3.2 Robot Model}{chapter.3}
+\BOOKMARK [1][]{section.3.3}{3.3 Server}{chapter.3}
+\BOOKMARK [1][]{section.3.4}{3.4 Monitor}{chapter.3}
+\BOOKMARK [2][]{subsection.3.4.1}{3.4.1 SimSpark Monitor}{section.3.4}
+\BOOKMARK [2][]{subsection.3.4.2}{3.4.2 Roboviz Monitor}{section.3.4}
+\BOOKMARK [1][]{section.3.5}{3.5 Perceptors}{chapter.3}
+\BOOKMARK [2][]{subsection.3.5.1}{3.5.1 General perceptors}{section.3.5}
+\BOOKMARK [2][]{subsection.3.5.2}{3.5.2 Soccer perceptors}{section.3.5}
+\BOOKMARK [1][]{section.3.6}{3.6 Effectors}{chapter.3}
+\BOOKMARK [2][]{subsection.3.6.1}{3.6.1 General Effectors}{section.3.6}
+\BOOKMARK [2][]{subsection.3.6.2}{3.6.2 Soccer Effectors}{section.3.6}
+\BOOKMARK [0][]{chapter.4}{4 Player Skills}{}
 \BOOKMARK [1][]{section.4.1}{4.1 Agent Architecture}{chapter.4}
 \BOOKMARK [1][]{section.4.2}{4.2 Connection}{chapter.4}
 \BOOKMARK [1][]{section.4.3}{4.3 Perceptions}{chapter.4}
-\BOOKMARK [1][]{section.4.4}{4.4 Localization Process}{chapter.4}
+\BOOKMARK [1][]{section.4.4}{4.4 Localization}{chapter.4}
 \BOOKMARK [1][]{section.4.5}{4.5 Localization Filtering}{chapter.4}
 \BOOKMARK [1][]{section.4.6}{4.6 Motions and Movement}{chapter.4}
 \BOOKMARK [2][]{subsection.4.6.1}{4.6.1 XML-File Based Motions}{section.4.6}
@@ -60,13 +60,13 @@
 \BOOKMARK [2][]{subsection.5.12.1}{5.12.1 Properties for Support-Subset Mapping Cost}{section.5.12}
 \BOOKMARK [2][]{subsection.5.12.2}{5.12.2 Properties for Active-Subset Mapping Cost}{section.5.12}
 \BOOKMARK [0][]{chapter.6}{6 Results}{}
-\BOOKMARK [1][]{section.6.1}{6.1 Movement}{chapter.6}
-\BOOKMARK [1][]{section.6.2}{6.2 Communication}{chapter.6}
-\BOOKMARK [1][]{section.6.3}{6.3 Coordination}{chapter.6}
-\BOOKMARK [1][]{section.6.4}{6.4 Overview}{chapter.6}
+\BOOKMARK [1][]{section.6.1}{6.1 Impovements in Movement}{chapter.6}
+\BOOKMARK [1][]{section.6.2}{6.2 Communication Results}{chapter.6}
+\BOOKMARK [1][]{section.6.3}{6.3 Coordination Results}{chapter.6}
+\BOOKMARK [1][]{section.6.4}{6.4 Overall Results}{chapter.6}
 \BOOKMARK [0][]{chapter.7}{7 Related Work}{}
 \BOOKMARK [1][]{section.7.1}{7.1 UT Austin Villa}{chapter.7}
 \BOOKMARK [1][]{section.7.2}{7.2 BeeStanbul}{chapter.7}
 \BOOKMARK [0][]{chapter.8}{8 Conclusion}{}
 \BOOKMARK [1][]{section.8.1}{8.1 Future Work}{chapter.8}
-\BOOKMARK [0][]{chapter*.19}{References}{}
+\BOOKMARK [0][]{chapter*.20}{References}{}

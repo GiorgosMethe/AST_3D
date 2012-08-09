@@ -3,11 +3,11 @@
 \backcite {robocup}{{5}{2}{chapter.2}}
 \backcite {SoccerSimulationLeague3D}{{15}{3}{chapter.3}}
 \backcite {SimSpark}{{15}{3.1}{section.3.1}}
-\backcite {Roboviz}{{18}{3.3.2}{subsection.3.3.2}}
-\backcite {Localization}{{28}{4.4}{section.4.4}}
+\backcite {Roboviz}{{18}{3.4.2}{subsection.3.4.2}}
+\backcite {Localization}{{28}{4.4}{section*.15}}
 \backcite {UtAustinVillaPaper}{{71}{5.11}{section.5.11}}
-\backcite {UtAustinVillaPaper}{{72}{5}{algorithm.5}}
+\backcite {UtAustinVillaPaper}{{71}{5}{algorithm.5}}
 \backcite {UtAustinVillaPaper}{{72}{5.1}{table.5.1}}
-\backcite {UTAustinVillaRobotSoccerTeam}{{81}{7.1}{section.7.1}}
-\backcite {UtAustinVillaPaper}{{81}{7.1}{section.7.1}}
-\backcite {BeeStanbulTDP}{{82}{7.2}{section.7.2}}
+\backcite {UTAustinVillaRobotSoccerTeam}{{79}{7.1}{section.7.1}}
+\backcite {UtAustinVillaPaper}{{79}{7.1}{section.7.1}}
+\backcite {BeeStanbulTDP}{{80}{7.2}{section.7.2}}

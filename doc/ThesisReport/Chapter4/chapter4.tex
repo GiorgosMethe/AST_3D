@@ -3,7 +3,9 @@
 
 In this chapter, we are going to present the most important, exciting and time consuming part of this thesis. Until now, we have discussed all parts that agent is going to need in order to be functional into the soccer field.
 With all these functionalities agents are able to locate themselves in the field, communicate with each other and execute actions combining movements through motion controller. However, agents miss a thinking process with which they will be able to decide about what action they should do for their team's benefit. For example, imagine a human soccer player who is able to do all the things needed in a football match but he has not the ability to choose what to do. Therefore, there must be presented a high-level process which will combine all these skills, motions,communication ability and actions having as a result a complete agent's behavior. As a behavior, we could define the process in which each agent takes as arguments his beliefs and decides what he will do as an output. In our approach, instead of each agent having his own behavior, players are depend on a centralized process which is called coordination.  Coordination's algorithm is responsible to gather messages from all agents and as an output it produces actions which are costless for all players who are included into this process. We chose goalkeeper as the coordination's administrator to be the one who is going to execute this procedure. This means that goalkeeper will only be ``running'' his own behavior and other field players will not. Field players are just sending their beliefs to the goalkeeper and he is sending back the actions which are calculated by the coordination's algorithm execution.
-\begin{figure}[htb!]
+
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.6\textwidth]{Chapter4/figures/CoordinationCycle.pdf}
   \caption{Coordination cycle.} 
@@ -11,7 +13,7 @@ With all these functionalities agents are able to locate themselves in the field
 \end{figure}
 
 
-Figure \ref{fig:CoordinationCycle} shows the difference between a field player and the goalkeeper. Goalkeeper has to calculate actions for all field players as well as execute his own behavior. In contrast, field players do not execute any behavior but only send messages to goalkeeper and receive the calculated actions from him. We selected the goalkeeper to take the responsibility for this task due to the fact that he has the less significant role in the simulation soccer. Coordination's procedure is executed in several phases and not at once. These phases are:
+Figure~\ref{fig:CoordinationCycle} shows the difference between a field player and the goalkeeper. Goalkeeper has to calculate actions for all field players as well as execute his own behavior. In contrast, field players do not execute any behavior but only send messages to goalkeeper and receive the calculated actions from him. We selected the goalkeeper to take the responsibility for this task due to the fact that he has the less significant role in the simulation soccer. Coordination's procedure is executed in several phases and not at once. These phases are:
 \begin{description}
 \item[Update coordination beliefs] Multiple world state beliefs from field players have to be combined in order to update our belief for the world state.
 \item[Split field player into groups] Field players are split into groups according to their significance to the game state. The groups are:
@@ -29,9 +31,9 @@ Figure \ref{fig:CoordinationCycle} shows the difference between a field player a
 \end{description}
 
 
-Algorithm \ref{CoordinationAlgorithm} describes the coordination procedure. In every cycle-step, only few of the above phases are executed. We chose doing that because of the time limitation of the think's cycle. So, in order to have a smooth algorithm's execution we decided to separate functions in a number of server cycles.
+Algorithm~\ref{CoordinationAlgorithm} describes the coordination procedure. In every cycle-step, only few of the above phases are executed. We chose doing that because of the time limitation of the think's cycle. So, in order to have a smooth algorithm's execution we decided to separate functions in a number of server cycles.
 
-\begin{algorithm}[htb!]
+\begin{algorithm}[ht!]
 \caption{Coordination Algorithm }
 \label{CoordinationAlgorithm}
 \begin{algorithmic}[1]
@@ -65,21 +67,15 @@ There are multiple types of messages, each one of them has a different functiona
 \item[Init Message] This type of message declares the start of the coordination procedure for each agent into the field. All field players should sent this message to the coordination's administrator in order coordination procedure to begin.
 
 \begin{description}
-  \item[{\bf Message format:}]
-  \begin{verbatim} 
-  
-  i,<Uniform number>
-  \end{verbatim}
+  \item[{\bf Message format:}] 
+  \texttt{i,<Uniform number> }
 \end{description}
 
 \item[Start Message] This type of message is only sent by the administrator, it declares that all agents are now initialized in the process. Each receiver of this message should immediately start sending coordination messages.
 
 \begin{description}
-  \item[{\bf Message format:}]
-  \begin{verbatim} 
-  
-  s,<Uniform number>
-  \end{verbatim}
+  \item[{\bf Message format:}] 
+  \texttt{s,<Uniform number>}
 \end{description}
 
 \item[Coordination Message] This is the most important type message. It has information about each agent's beliefs. There are four types of these messages in respect to the agent's situation. these types are:
@@ -90,74 +86,59 @@ There are multiple types of messages, each one of them has a different functiona
 \begin{description}
   \item[{\bf Message format:}]
   \begin{verbatim}
-  
   c,<Uniform number>,<Agent X>,<Agent Y>,
-  <Ball X>,<Ball Y>
-  \end{verbatim}
+  <Ball X>,<Ball Y>\end{verbatim}
 \end{description}
 
 \item[Type L] Agent has complete awareness only for his position in the field, ball is not in his field of view and it could be best not to send us faulty observations about ball's position. He sends his uniform number and his position.
 
 \begin{description}
   \item[{\bf Message format:}]
-  \begin{verbatim}
-  
-  l,<Uniform number>,<Agent X>,<Agent Y>
-  \end{verbatim}
+  \texttt{ l,<Uniform number>,<Agent X>,<Agent Y>}
 \end{description}
 
 \item[Type B] Agent has complete awareness only about the ball's distance from his body. its horizontal and its latitudal angle. He sends his uniform number,  and the ball's distance and angle in relation to his body angle.
 
 \begin{description}
   \item[{\bf Message format:}]
-  \begin{verbatim}
-  
+  \begin{verbatim}  
   b,<Uniform number>,<Ball Distance>,
-  <Ball Horizontal-Angle>
-  \end{verbatim}
+  <Ball Horizontal-Angle>\end{verbatim}
 \end{description}
 
 \item[Type X] Agent has complete unawareness of the world state. He is sending only his uniform number.
 
 \begin{description}
-  \item[{\bf Message format:}]
-  \begin{verbatim}
- 
-  x,<Uniform number>
-  \end{verbatim}
+ \item[{\bf Message format:}]
+ \texttt{x,<Uniform number>}
 \end{description}
 
 \end{description}
 \item[End Message]
 This type of message serves to stop field players from sending coordination messages. In this step administrator of the coordination is ready to execute the procedure and calculate the actions for all field players.
 \begin{description}
-  \item[{\bf Message format:}]
-  \begin{verbatim}
-  
-  e,<Uniform number>
-  \end{verbatim}
+  \item[{\bf Message format:}] 
+  \texttt{e,<Uniform number>}
 \end{description}
 \item[Action Message]
 This type of message is only sent by the administrator, it declares which action an agent has been assigned by the coordination process. These messages are sent in the end of the coordination procedure when actions for all field players have been computed.
 \begin{description}
   \item[{\bf Message format:}]
   \begin{verbatim}
-  
-  a,<Uniform number>,<Action ID>,<Action parameter1>,
-  <Action parameter2>,<Action parameter3>
-  \end{verbatim}
+  a,<Uniform number>,<Action ID>,<Action parameter 1>,
+  <Action parameter 2>,<Action parameter 3>\end{verbatim}
 \end{description}
 
 \end{description}
 
-\begin{figure}[htb!]
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/CoordComm.pdf}
   \caption{Communication Process in Coordination.} 
   \label{fig:coordinationprocess}
 \end{figure}
 
-Figure \ref{fig:coordinationprocess} shows the whole procedure of communication between the agents in order to coordinate their actions. First of all, agents have to initialize their presentation in the field with an ``init'' message. Goalkeeper saves these message in a temporal array and when he realizes that all players have been initialized themselves he sends them a ``start'' message. This message means that all players in the field are ready to start the coordination process. In this phase field players send their ``coordination'' messages to the goalkeeper. When goalkeeper gathers these messages from all field players, he sends them an ``end'' message to stop broadcasting. The next phase of the process is the execution of the coordination algorithm which lasts for six server cycles, approximately 120ms. After coordination phase calculated action must be sent to field players. We are using ``action'' messages to inform each player about the action he should do. After this phase, the same process is repeated after a timeout which can be defined by us.
+Figure~\ref{fig:coordinationprocess} shows the whole procedure of communication between the agents in order to coordinate their actions. First of all, agents have to initialize their presentation in the field with an ``init'' message. Goalkeeper saves these message in a temporal array and when he realizes that all players have been initialized themselves he sends them a ``start'' message. This message means that all players in the field are ready to start the coordination process. In this phase field players send their ``coordination'' messages to the goalkeeper. When goalkeeper gathers these messages from all field players, he sends them an ``end'' message to stop broadcasting. The next phase of the process is the execution of the coordination algorithm which lasts for six server cycles, approximately 120ms. After coordination phase calculated action must be sent to field players. We are using ``action'' messages to inform each player about the action he should do. After this phase, the same process is repeated after a timeout which can be defined by us.
 
 
 \section{Coordination Beliefs}
@@ -165,12 +146,15 @@ In the above section we have presented about how field players exchange messages
 
 \subsection{Ball Position Weighted Samples}
 Ball position is calculated only from agents' observation who are able to locate it in the field and have a good knowledge about their position as well. We can infer that these observations are obtained by agents who have sent ``type C'' coordination messages. Furthermore, if goalkeeper has also a ball observation he uses it as well.
-\begin{figure}[htb!]
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/Ball.pdf}
   \caption{Ball's Position Observations.} 
   \label{fig:Ball}
 \end{figure}
+
+
 As we can see in Figure \ref{fig:Ball} ball observation can differ from each other. In our approach, we use a simple algorithm to approach ball's position with great accuracy. A threshold is defined in order to form sets of observations. This threshold is called margin of observation error. Every observation set has a weight. In the beginning, for a given number of n observations we have n observation's sets each one of them has a default weight (1).\\
 \begin{center}
 ${\bf Obsevation_{i} } = (x,y)$\\
@@ -202,7 +186,6 @@ One possible solution to this problem is to split players into subsets which wou
 
 \item[Inactive subset] Inactive subset consists of agents who have sent ``Type X'' messages. It is the less important set of agents in the coordination. Agents who constitute this subset assigned the same action, to find their positions in the field. Finding their positions will be resulted to be inserted either in the active or in the support subset in the next coordination cycle.
 
-
 \item[Support subset] Support subset consists of agents who are neither in the active subset nor in the inactive one. Coordinate actions for these agents is the most time consuming and expensive part of the coordination algorithm.
 \end{description}
 
@@ -210,35 +193,46 @@ One possible solution to this problem is to split players into subsets which wou
 In this section we are going to discuss how the above three groups are generated by coordination splitter. An array full of team's agents is sorted according to the distance each agent has from the ball. We assign to the active subset the agents in the three first positions of the sorted array.
 Other agents with distance less than infinity join the support subset.
 Remind that we assume $\infty$ distance from ball for the agents who have no idea for their position and have not the ball into the field of their view.
-In Figure \ref{fig:Splitter} we can see an example of the coordination splitter's process. Assuming that all agents have complete awareness of their position, we could realize that the agents in the red distance's threshold will join the active subset. The other six players who have farther distance from ball will join the support subset.
-\begin{figure}[htb!]
+In Figure~\ref{fig:Splitter} is presented an example of the coordination splitter's process. Assuming that all agents have complete awareness of their position, we could realize that the agents in the red distance's threshold will join the active subset. The other six agents who have farther distances from ball will join the support subset.
+
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/Splitter.pdf}
   \caption{Coordination Splitter.} 
   \label{fig:Splitter}
 \end{figure}
 
+
 \section{Soccer Field Value}
 \label{FieldValue}
+
 In order to proceed our discussion about coordination process, we have to demonstrate a simple but functional way to give a value in every spot of the soccer field. In Figure \ref{fig:SoccerValue} we see that each spot in the field takes a value from a function. The main idea is that as we ball is moving towards the opponent goal,  this value is becoming higher. In contrast as ball is moving towards our goal, this value is becoming lower. This procedure will prove to be useful in the next steps of coordination process.
-\begin{figure}[htb!]
+
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=\textwidth]{Chapter4/figures/Graph1.pdf}
   \caption{Soccer Field Value.} 
   \label{fig:SoccerValue}
 \end{figure}
 
+
 \section{Active-Positions Computation}
-Until now, we have updated the coordination beliefs and we have split agents into subsets. in this phase of the coordination process, we have to compute adequate and worthy positions for the active subset. We distinguish two cases, in the first case, ball is located in our field's half. In this case we have to find worthy positions which have a defensive approach. On the other hand, if ball is located in the other field's half we have to find positions which have an attacking approach. In both cases we create an array of equidistant coordinates which are located in a radius which is determined by the ball's location and they are not out of field's limits. Figure \ref{fig:ActivePositions2} shows how these positions are shown in the soccer field through roboviz monitor. 
-\begin{figure}[htb!]
+Until now, we have updated the coordination beliefs and we have split agents into subsets. in this phase of the coordination process, we have to compute adequate and worthy positions for the active subset. We distinguish two cases, in the first case, ball is located in our field's half. In this case we have to find worthy positions which have a defensive approach. On the other hand, if ball is located in the other field's half we have to find positions which have an attacking approach. In both cases we create an array of equidistant coordinates which are located in a radius which is determined by the ball's location and they are not out of field's limits. Figure~\ref{fig:ActivePositions2} shows how these positions are shown in the soccer field through roboviz monitor. 
+
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=7cm]{Chapter4/figures/ActivePositions2.png}
   \caption{Active positions before elimination.} 
   \label{fig:ActivePositions2}
 \end{figure}
 
-From these set of coordinates we choose the best according to their values. As we saw in the previous section each coordinate of the field has a utility value. Consequently, we will try to choose a number of coordinates which summarize in a max value in an attacking approach or in a min value in a defensive approach, being careful not to overcome a max number of coordinates which is nine. This will help us later keeping iterations below a maximum threshold. Figure \ref{fig:ActivePositions3} shows how active positions are shown in the soccer field through roboviz monitor after elimination. 
-\begin{figure}[htb!]
+From these set of coordinates we choose the best according to their values. As we saw in the previous section each coordinate of the field has a utility value. Consequently, we will try to choose a number of coordinates which summarize in a max value in an attacking approach or in a min value in a defensive approach, being careful not to overcome a max number of coordinates which is nine. This will help us later keeping iterations below a maximum threshold. Figure~\ref{fig:ActivePositions3} shows how active positions are shown in the soccer field through roboviz monitor after elimination. 
+
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=7cm]{Chapter4/figures/Active3.png}
   \caption{Active positions after elimination.} 
@@ -261,14 +255,14 @@ ${\bf Value_{i}} = d_{i} + a \ast \vartheta_{i}, a\in\mathbb{R}$\\
 ${\bf OnBallPlayer} = \arg\min_{i}(Value_{i}) $\\
 \end{center}
 
-Additionally, we give to the agent who had been assigned an action towards the ball in the previous coordination cycle a small
-advantage over the others to be again the on ball player. We do this due to the fact that there will be continuously changes in the on ball player in cases in which two agents have approximately same distances and angles from the ball.
+Additionally, we give to the agent who had been assigned an action towards the ball in the previous coordination cycle a small advantage over the others to be again the on ball player. We do this due to the fact that there will be continuously changes in the on ball player in cases in which two agents have approximately same distances and angles from the ball.
 
 
 
 \subsection{Active-Subset Best Mapping}
-Next in the active coordination phase, we have to assign positions for the other two agents who have left in the active subset. Algorithm \ref{ActiveMapping} shows how we can find the optimized mapping. In a greedy approach, we calculate the cost of every possible mapping. In addition, in every mapping we take into account the on ball agent's mapping $(OnBallPlayer \rightarrow Ball)$, which will be helpful in order to find possible collisions between the on ball agent and the active ones.
-\begin{algorithm}[htb!]
+Next in the active coordination phase, we have to assign positions for the other two agents who have left in the active subset. Algorithm~\ref{ActiveMapping} shows how we can find the optimized mapping. In a greedy approach, we calculate the cost of every possible mapping. In addition, in every mapping we take into account the on ball agent's mapping $(OnBallPlayer \rightarrow Ball)$, which will be helpful in order to find possible collisions between the on ball agent and the active ones.
+
+\begin{algorithm}[ht!]
 \caption{Active-Subset Best Mapping}
 \label{ActiveMapping}
 \begin{algorithmic}[1]
@@ -305,14 +299,16 @@ Finally, midfield group which consists of two positions:
 \item[Ml] \textit{Midfielder left}
 \item[Mr] \textit{Midfielder right}
 \end{description}
-As an example, Figure \ref{fig:Formation9_0} shows how the different role positions of the formation are depicted in the soccer pitch. In general attackers are responsible to be assigned positions near to ball when ball is on opponents' half of the field. Then, the forward center  is given a position close to the ball and the other two forwards are given positions on either side of the ball in an angle and a distance offset which are determined and dynamically changed according to the ball's exact coordinate. If ball is located in our half, then forwards are given positions which are in the middle of the field. 
+As an example, Figure~\ref{fig:Formation9_0} shows how the different role positions of the formation are depicted in the soccer pitch. In general attackers are responsible to be assigned positions near to ball when ball is on opponents' half of the field. Then, the forward center  is given a position close to the ball and the other two forwards are given positions on either side of the ball in an angle and a distance offset which are determined and dynamically changed according to the ball's exact coordinate. If ball is located in our half, then forwards are given positions which are in the middle of the field. 
 
 On the other hand, defenders are mainly positioned to guard our goal. To determine their position on the field a straight line is computed between our team's  goal and the ball. Central defender is given a position placed on this line and his distance from our goal is proportional to the ball's position. The other two defenders' positions are located on either side of the defender center. 
 
 Midfielders' positions are determined by the ball's position as well. For an attacking phase, in which ball is located to the opponents' half of the pitch, midfielders are given position near to the forwards in order to support our attack. In the opposite situation they are given position in front of our defense line to help defenders. 
 
 Finally, goalkeeper positions himself independently to always be in the best position to stop a shot towards our goal. In some cases, when ball is located near to the field's edges formation positions are adjusted not exceed its limits.
-\begin{figure}[htb!]
+
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/Formation9_0.pdf}
   \caption{Formation Role Positions for 9 vs 9.} 
@@ -339,18 +335,21 @@ Finally, midfield group which consists of two positions:
 \item[Ml] \textit{Midfielder left}
 \item[Mr] \textit{Midfielder right}
 \end{description}
-\begin{figure}[htb!]
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/Formation11_0.pdf}
   \caption{Formation Role Positions for 11 vs 11.} 
   \label{fig:Formation11_0}
 \end{figure}
-Figure \ref{fig:Formation11_0} depicts how the different role positions of the formation shown in the soccer pitch for the newer server version in which team consists of eleven players. Forward group is based on the same principle as the previous version's approach. In addition, a player is added beyond the forward center's position. In the midfield region there are now three players. Midfield center's position is behind with an offset distance from the forward center's position. Moreover, the other two midfielder positions are on either side of the midfield center position in an angle and a distance offset which are determined and dynamically changed according to the ball's exact coordinate. Defense line is exactly the same as it was in the previous version.
+
+
+Figure~\ref{fig:Formation11_0} depicts how the different role positions of the formation shown in the soccer pitch for the newer server version in which team consists of eleven players. Forward group is based on the same principle as the previous version's approach. In addition, a player is added beyond the forward center's position. In the midfield region there are now three players. Midfield center's position is behind with an offset distance from the forward center's position. Moreover, the other two midfielder positions are on either side of the midfield center position in an angle and a distance offset which are determined and dynamically changed according to the ball's exact coordinate. Defense line is exactly the same as it was in the previous version.
 
 \section{Role Assignment Function}
-In this section we present the role assignment function. This function after the evaluation of the current beliefs of the game state and the optimized active positions, tries to assign roles for all agents. This will prove to be very helpful on the next coordination steps when we will have to find positions for the support subset's agents. Given a computed team formation we have to assign roles to the active subset's players. As you already knew, positions for active agents are strictly connected and near to the ball's position on the field. So, for N active players we choose N team formation positions which minimize the distance from the ball. Roles which these positions represent will be assigned to the active players. The other team roles will be available to the support subset during support coordination process. Figure \ref{fig:RoleAss} shows how the role assignment function works. Active players will be assigned the red team roles due to the fact that they are located near to the ball's position. Once these positions will be bounded by the active players, the only roles that support players can compete about will be the grey colored positions. A naive role mapping would have assign roles permanently to specific players. This will perform poorly in such a dynamic environment. It would be also weak in situations where an agent assigned to a defensive role may end up out of position without being able to change roles with another player who may be in a better position to defend our goal. In our approach, every role mapping is calculated with a full sense of the world's state, resulting to a dynamic and unpredictable way of assigning roles to the agents. During testing, there were several cases in which a forward player ended up to have a defense role at the end of the game or the opposite.
+In this section we present the role assignment function. This function after the evaluation of the current beliefs of the game state and the optimized active positions, tries to assign roles for all agents. This will prove to be very helpful on the next coordination steps when we will have to find positions for the support subset's agents. Given a computed team formation we have to assign roles to the active subset's players. As you already knew, positions for active agents are strictly connected and near to the ball's position on the field. So, for N active players we choose N team formation positions which minimize the distance from the ball. Roles which these positions represent will be assigned to the active players. The other team roles will be available to the support subset during support coordination process. Figure~\ref{fig:RoleAss} shows how the role assignment function works. Active players will be assigned the red team roles due to the fact that they are located near to the ball's position. Once these positions will be bounded by the active players, the only roles that support players can compete about will be the grey colored positions. A naive role mapping would have assign roles permanently to specific players. This will perform poorly in such a dynamic environment. It would be also weak in situations where an agent assigned to a defensive role may end up out of position without being able to change roles with another player who may be in a better position to defend our goal. In our approach, every role mapping is calculated with a full sense of the world's state, resulting to a dynamic and unpredictable way of assigning roles to the agents. During testing, there were several cases in which a forward player ended up to have a defense role at the end of the game or the opposite.
 
-\begin{figure}[htb!]
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/RoleAss.pdf}
   \caption{Role Assignment Function.} 
@@ -360,7 +359,8 @@ In this section we present the role assignment function. This function after the
 
 \section{Positions for Support-Subset}
 In this section, we are going to discuss about which positions support subset's agents will be assigned. In an ideal case, we would have same number of support agents and same number of positions, this is going to happen when inactive subset is completely empty. In this case, this section has not any meaning. In other cases, when there are agents who are not able to know their positions or seeing ball, we have to decide about the positions of the team's formation which will be eliminated from the support coordination. Considering the ball's position, we have to make sure that there will be positions for support players near to the ball. So, given N players in the support subset we simply compare these team's formation position to find the N closest to the ball positions. Coordination's final step will find an optimized way to map support subset's agents to these positions.
-\begin{figure}[htb!]
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/SupportPos.pdf}
   \caption{Support Positions.} 
@@ -372,7 +372,8 @@ This is the final step of the coordination process. Until, now we have calculate
 This means a factorial complexity about: $\leqslant 5! \Leftrightarrow  {{5}\choose{5}} = 120$ mappings. Unfortunately, moving from nine to eleven  players this can be a problem, having to calculate at worst case $ 7! \Leftrightarrow  {{7}\choose{7}} = 5040$ mappings. 
 
 It could be difficult for an agent to calculate all these mappings in real-time without any delay in sending effector messages to the server. We find the solution in a UT Austin Villa's paper \cite{UtAustinVillaPaper} which was appeared in the RoboCup international Symposium in Mexico,2012. A dynamic programming implementation which is able to compute an optimal solution within the time constraints imposed by the decision cycle's length ($\approx$ 20ms ).
-\begin{algorithm}[htb!]
+
+\begin{algorithm}[ht!]
 \caption{Dynamic programming implementation \cite{UtAustinVillaPaper}}
 \label{alg3}
 \begin{algorithmic}[1]
@@ -393,8 +394,9 @@ It could be difficult for an agent to calculate all these mappings in real-time 
 \end{algorithmic}
 \end{algorithm}
 
-This dynamic Algorithm \ref{alg3} is based on a key recursive property. This property stems from the fact that for every mapping there is a subset of a lower cost with which we can reduce the cost of the complete mapping by augmenting it with that of the subset's lower cost mapping. An example of this procedure is shown in Table \ref{tab:DynamicTable}. As we see in this table, an optimal mapping is built iteratively for position sets from $\lbrace P_{1} \rbrace$ to $\lbrace P_{1},P_{2},...,P_{n} \rbrace$. In every step of this algorithm we use the lower cost's mapping for a subset of agents and positions which are compatible with our current mapping.
-\begin{table}[htb!]
+This dynamic Algorithm~\ref{alg3} is based on a key recursive property. This property stems from the fact that for every mapping there is a subset of a lower cost with which we can reduce the cost of the complete mapping by augmenting it with that of the subset's lower cost mapping. An example of this procedure is shown in Table~\ref{tab:DynamicTable}. As we see in this table, an optimal mapping is built iteratively for position sets from $\lbrace P_{1} \rbrace$ to $\lbrace P_{1},P_{2},...,P_{n} \rbrace$. In every step of this algorithm we use the lower cost's mapping for a subset of agents and positions which are compatible with our current mapping.
+
+\begin{table}[t!]
 \label{tab:DynamicTable}
 \centering
     \begin{tabular}{ | l | l | l | p{5cm} |}
@@ -410,7 +412,7 @@ This dynamic Algorithm \ref{alg3} is based on a key recursive property. This pro
 
     \end{tabular}
     
-    \caption{Mappings Evaluated During Dynamic Algorithm. \cite{UtAustinVillaPaper}}    
+    \caption{Mappings Evaluated During Dynamic Algorithm~\cite{UtAustinVillaPaper}.}    
 \end{table}
 Remind that in the \textit{Kth} iteration of the algorithm, each agent will be assigned to the $P_{K}$ position. Then the possible positions K-1 will be assigned to the other n-1 agents. These assignments result in a total of $ {{n-1}\choose{k-1}} $ mappings to be evaluated in each iteration. Summing to $\sum\limits_{i=1}^N{{n-1}\choose{k-1}}$ possible mappings.\\
 \begin{center}
@@ -426,13 +428,16 @@ For support players things were easy. In support coordination we have same numbe
 \begin{enumerate}
 \item \textbf{Total distance }$C_{d}$ - Total distance agents have to travel in order to reach in their optimized mapping positions. It is a positive cost, so agents will try to minimize this cost.
 \item \textbf{Possible Collisions }$C_{c}$ - In each mapping we check every combination of two agents and their assigned positions if is is possible for them to collide with each other. For each agent and his target position there is a straight line which we assume approximately as his route to the target. If these lines intersects in a point which has almost the same distance from each agent then we add a very big cost in this mapping. It is a positive cost and agents will try to minimize it. Figure \ref{fig:AvoidCollision} shows the idea behind the detection of a possible collision between two agents. In order to detect a possible collision these two distances $d_{1}$,$d_{2}$ have to have a small difference between them.
-\begin{figure}[htb!]
+\end{enumerate}
+
+
+\begin{figure}[t!]
 \centering
   \includegraphics[width=0.6\textwidth]{Chapter4/figures/AvoidCollision.pdf}
   \caption{Collision Detection Approach.} 
   \label{fig:AvoidCollision}
 \end{figure}
-\end{enumerate}
+
 \begin{center}
 $TotalCost_{i} = C_{d,i}+C_{c,i}$\\
 $Optimized Cost = \arg\min_{i}(TotalCost_{i})$
