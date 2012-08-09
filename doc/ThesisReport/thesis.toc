@@ -23,62 +23,67 @@
 \contentsline {section}{\numberline {3.3}Server}{17}{section.3.3}
 \contentsline {section}{\numberline {3.4}Monitor}{18}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}SimSpark Monitor}{18}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Roboviz Monitor}{18}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Roboviz Monitor}{19}{subsection.3.4.2}
 \contentsline {section}{\numberline {3.5}Perceptors}{19}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}General perceptors}{19}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.1}General perceptors}{20}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Soccer perceptors}{21}{subsection.3.5.2}
 \contentsline {section}{\numberline {3.6}Effectors}{23}{section.3.6}
 \contentsline {subsection}{\numberline {3.6.1}General Effectors}{23}{subsection.3.6.1}
 \contentsline {subsection}{\numberline {3.6.2}Soccer Effectors}{24}{subsection.3.6.2}
-\contentsline {chapter}{\numberline {4}Player Skills}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Agent Architecture}{25}{section.4.1}
-\contentsline {section}{\numberline {4.2}Connection}{26}{section.4.2}
-\contentsline {section}{\numberline {4.3}Perceptions}{27}{section.4.3}
-\contentsline {section}{\numberline {4.4}Localization}{28}{section.4.4}
-\contentsline {section}{\numberline {4.5}Localization Filtering}{30}{section.4.5}
-\contentsline {section}{\numberline {4.6}Motions and Movement}{31}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}XML-File Based Motions}{33}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}XML-File Based Motion Controller}{34}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Text-File Based Motions}{37}{subsection.4.6.3}
-\contentsline {subsection}{\numberline {4.6.4}Text-File Based Motion Controller}{37}{subsection.4.6.4}
-\contentsline {subsection}{\numberline {4.6.5}Dynamic Elements in Movement}{38}{subsection.4.6.5}
-\contentsline {section}{\numberline {4.7}Actions}{39}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Simple}{39}{subsection.4.7.1}
-\contentsline {subsection}{\numberline {4.7.2}Complex}{40}{subsection.4.7.2}
-\contentsline {subsection}{\numberline {4.7.3}Vision}{42}{subsection.4.7.3}
-\contentsline {subsection}{\numberline {4.7.4}Other Sensors}{46}{subsection.4.7.4}
-\contentsline {section}{\numberline {4.8}Communication}{46}{section.4.8}
-\contentsline {section}{\numberline {4.9}Goalkeeper Behavior}{47}{section.4.9}
-\contentsline {chapter}{\numberline {5}Team's Coordination}{51}{chapter.5}
-\contentsline {section}{\numberline {5.1}Messages and Communication}{53}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Message Types and Formats}{53}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Coordination Beliefs}{56}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Ball Position Weighted Samples}{57}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Agent Distance from Ball}{58}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Subsets in Coordination Process}{59}{section.5.3}
-\contentsline {section}{\numberline {5.4}Coordination Splitter}{59}{section.5.4}
-\contentsline {section}{\numberline {5.5}Soccer Field Value}{61}{section.5.5}
-\contentsline {section}{\numberline {5.6}Active-Positions Computation}{61}{section.5.6}
-\contentsline {section}{\numberline {5.7}Active-Subset Coordination}{62}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}Player on Ball}{63}{subsection.5.7.1}
-\contentsline {subsection}{\numberline {5.7.2}Active-Subset Best Mapping}{64}{subsection.5.7.2}
-\contentsline {section}{\numberline {5.8}Team Formation}{64}{section.5.8}
-\contentsline {subsection}{\numberline {5.8.1}9-Players Server Version (0.6.5)}{65}{subsection.5.8.1}
-\contentsline {subsection}{\numberline {5.8.2}11-Players Server Version (0.6.6)}{66}{subsection.5.8.2}
-\contentsline {section}{\numberline {5.9}Role Assignment Function}{68}{section.5.9}
-\contentsline {section}{\numberline {5.10}Positions for Support-Subset}{69}{section.5.10}
-\contentsline {section}{\numberline {5.11}Support-Subset Coordination}{70}{section.5.11}
-\contentsline {section}{\numberline {5.12}Mapping Cost Computation}{72}{section.5.12}
-\contentsline {subsection}{\numberline {5.12.1}Properties for Support-Subset Mapping Cost}{73}{subsection.5.12.1}
-\contentsline {subsection}{\numberline {5.12.2}Properties for Active-Subset Mapping Cost}{74}{subsection.5.12.2}
-\contentsline {chapter}{\numberline {6}Results}{75}{chapter.6}
-\contentsline {section}{\numberline {6.1}Impovements in Movement}{75}{section.6.1}
-\contentsline {section}{\numberline {6.2}Communication Results}{76}{section.6.2}
-\contentsline {section}{\numberline {6.3}Coordination Results}{76}{section.6.3}
-\contentsline {section}{\numberline {6.4}Overall Results}{77}{section.6.4}
-\contentsline {chapter}{\numberline {7}Related Work}{79}{chapter.7}
-\contentsline {section}{\numberline {7.1}UT Austin Villa}{79}{section.7.1}
-\contentsline {section}{\numberline {7.2}BeeStanbul}{80}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusion}{81}{chapter.8}
-\contentsline {section}{\numberline {8.1}Future Work}{81}{section.8.1}
-\contentsline {chapter}{References}{83}{chapter*.20}
+\contentsline {chapter}{\numberline {4}Player Skills}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Agent Architecture}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2}Connection}{28}{section.4.2}
+\contentsline {section}{\numberline {4.3}Perceptions}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Localization}{30}{section.4.4}
+\contentsline {section}{\numberline {4.5}Localization Filtering}{32}{section.4.5}
+\contentsline {section}{\numberline {4.6}Motions and Movement}{34}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}XML-File Based Motions}{35}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}XML-File Based Motion Controller}{36}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Text-File Based Motions}{38}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.4}Text-File Based Motion Controller}{39}{subsection.4.6.4}
+\contentsline {subsection}{\numberline {4.6.5}Dynamic Elements in Movement}{40}{subsection.4.6.5}
+\contentsline {section}{\numberline {4.7}Actions}{40}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Simple}{40}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Complex}{42}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}Vision}{45}{subsection.4.7.3}
+\contentsline {subsection}{\numberline {4.7.4}Other Sensors}{47}{subsection.4.7.4}
+\contentsline {section}{\numberline {4.8}Communication}{48}{section.4.8}
+\contentsline {section}{\numberline {4.9}Goalkeeper Behavior}{49}{section.4.9}
+\contentsline {chapter}{\numberline {5}Team's Coordination}{53}{chapter.5}
+\contentsline {section}{\numberline {5.1}Messages and Communication}{55}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Message Types and Formats}{55}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Coordination Beliefs}{58}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Ball Position Weighted Samples}{59}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Agent Distance from Ball}{60}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Subsets in Coordination Process}{61}{section.5.3}
+\contentsline {section}{\numberline {5.4}Coordination Splitter}{61}{section.5.4}
+\contentsline {section}{\numberline {5.5}Soccer Field Value}{63}{section.5.5}
+\contentsline {section}{\numberline {5.6}Active-Positions Computation}{63}{section.5.6}
+\contentsline {section}{\numberline {5.7}Active-Subset Coordination}{64}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Player on Ball}{65}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Active-Subset Best Mapping}{66}{subsection.5.7.2}
+\contentsline {section}{\numberline {5.8}Team Formation}{66}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}9-Players Server Version (0.6.5)}{67}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}11-Players Server Version (0.6.6)}{68}{subsection.5.8.2}
+\contentsline {section}{\numberline {5.9}Role Assignment Function}{70}{section.5.9}
+\contentsline {section}{\numberline {5.10}Positions for Support-Subset}{71}{section.5.10}
+\contentsline {section}{\numberline {5.11}Support-Subset Coordination}{72}{section.5.11}
+\contentsline {section}{\numberline {5.12}Mapping Cost Computation}{74}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Properties for Support-Subset Mapping Cost}{75}{subsection.5.12.1}
+\contentsline {subsection}{\numberline {5.12.2}Properties for Active-Subset Mapping Cost}{76}{subsection.5.12.2}
+\contentsline {chapter}{\numberline {6}Results}{77}{chapter.6}
+\contentsline {section}{\numberline {6.1}Impovements in Movement}{77}{section.6.1}
+\contentsline {section}{\numberline {6.2}Communication Results}{78}{section.6.2}
+\contentsline {section}{\numberline {6.3}Coordination Results}{78}{section.6.3}
+\contentsline {section}{\numberline {6.4}Overall Results}{79}{section.6.4}
+\contentsline {chapter}{\numberline {7}Related Work}{81}{chapter.7}
+\contentsline {section}{\numberline {7.1}UT Austin Villa}{81}{section.7.1}
+\contentsline {section}{\numberline {7.2}Robocanes}{82}{section.7.2}
+\contentsline {section}{\numberline {7.3}BeeStanbul}{82}{section.7.3}
+\contentsline {section}{\numberline {7.4}Kaveh}{83}{section.7.4}
+\contentsline {section}{\numberline {7.5}L3M\discretionary {-}{}{}SIM}{83}{section.7.5}
+\contentsline {section}{\numberline {7.6}FUT-K\_3D}{83}{section.7.6}
+\contentsline {section}{\numberline {7.7}Farzanegan}{83}{section.7.7}
+\contentsline {chapter}{\numberline {8}Conclusion}{85}{chapter.8}
+\contentsline {section}{\numberline {8.1}Future Work}{85}{section.8.1}
+\contentsline {chapter}{References}{87}{chapter*.20}
