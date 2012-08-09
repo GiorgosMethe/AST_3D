@@ -1,27 +1,23 @@
 \BOOKMARK [0][]{chapter.1}{1 Introduction}{}
 \BOOKMARK [1][]{section.1.1}{1.1 Thesis Outline}{chapter.1}
-\BOOKMARK [0][]{chapter.2}{2 Background}{}
-\BOOKMARK [1][]{section.2.1}{2.1 RoboCup Competition}{chapter.2}
-\BOOKMARK [1][]{section.2.2}{2.2 RoboCup Soccer}{chapter.2}
-\BOOKMARK [1][]{section.2.3}{2.3 RoboCup Rescue}{chapter.2}
-\BOOKMARK [1][]{section.2.4}{2.4 RoboCup @Home}{chapter.2}
-\BOOKMARK [1][]{section.2.5}{2.5 RoboCup Junior}{chapter.2}
-\BOOKMARK [0][]{chapter.3}{3 Soccer Simulation League 3D}{}
-\BOOKMARK [1][]{section.3.1}{3.1 SimSpark}{chapter.3}
-\BOOKMARK [1][]{section.3.2}{3.2 Soccer Simulation}{chapter.3}
-\BOOKMARK [1][]{section.3.3}{3.3 Server}{chapter.3}
-\BOOKMARK [1][]{section.3.4}{3.4 Monitor}{chapter.3}
-\BOOKMARK [2][]{subsection.3.4.1}{3.4.1 SimSpark Monitor}{section.3.4}
-\BOOKMARK [2][]{subsection.3.4.2}{3.4.2 Roboviz Monitor}{section.3.4}
-\BOOKMARK [1][]{section.3.5}{3.5 Simulation Update Loop}{chapter.3}
-\BOOKMARK [1][]{section.3.6}{3.6 Network Protocol}{chapter.3}
-\BOOKMARK [1][]{section.3.7}{3.7 Perceptors}{chapter.3}
-\BOOKMARK [2][]{subsection.3.7.1}{3.7.1 General perceptors}{section.3.7}
-\BOOKMARK [2][]{subsection.3.7.2}{3.7.2 Soccer perceptors}{section.3.7}
-\BOOKMARK [1][]{section.3.8}{3.8 Effectors}{chapter.3}
-\BOOKMARK [2][]{subsection.3.8.1}{3.8.1 General Effectors}{section.3.8}
-\BOOKMARK [2][]{subsection.3.8.2}{3.8.2 Soccer Effectors}{section.3.8}
-\BOOKMARK [1][]{section.3.9}{3.9 Model}{chapter.3}
+\BOOKMARK [0][]{chapter.2}{2 The RoboCup Competition}{}
+\BOOKMARK [1][]{section.2.1}{2.1 RoboCup Soccer}{chapter.2}
+\BOOKMARK [1][]{section.2.2}{2.2 RoboCup Rescue}{chapter.2}
+\BOOKMARK [1][]{section.2.3}{2.3 RoboCup@Home}{chapter.2}
+\BOOKMARK [1][]{section.2.4}{2.4 RoboCup Junior}{chapter.2}
+\BOOKMARK [0][]{chapter.3}{3 RoboCup 3D Simulation League}{}
+\BOOKMARK [1][]{section.3.1}{3.1 SimSpark Soccer Simulator}{chapter.3}
+\BOOKMARK [1][]{section.3.2}{3.2 Server}{chapter.3}
+\BOOKMARK [1][]{section.3.3}{3.3 Monitor}{chapter.3}
+\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 SimSpark Monitor}{section.3.3}
+\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Roboviz Monitor}{section.3.3}
+\BOOKMARK [1][]{section.3.4}{3.4 Perceptors}{chapter.3}
+\BOOKMARK [2][]{subsection.3.4.1}{3.4.1 General perceptors}{section.3.4}
+\BOOKMARK [2][]{subsection.3.4.2}{3.4.2 Soccer perceptors}{section.3.4}
+\BOOKMARK [1][]{section.3.5}{3.5 Effectors}{chapter.3}
+\BOOKMARK [2][]{subsection.3.5.1}{3.5.1 General Effectors}{section.3.5}
+\BOOKMARK [2][]{subsection.3.5.2}{3.5.2 Soccer Effectors}{section.3.5}
+\BOOKMARK [1][]{section.3.6}{3.6 Model}{chapter.3}
 \BOOKMARK [0][]{chapter.4}{4 Agent}{}
 \BOOKMARK [1][]{section.4.1}{4.1 Agent Architecture}{chapter.4}
 \BOOKMARK [1][]{section.4.2}{4.2 Connection}{chapter.4}
@@ -71,10 +67,6 @@
 \BOOKMARK [0][]{chapter.7}{7 Related Work}{}
 \BOOKMARK [1][]{section.7.1}{7.1 UT Austin Villa}{chapter.7}
 \BOOKMARK [1][]{section.7.2}{7.2 BeeStanbul}{chapter.7}
-\BOOKMARK [0][]{chapter.8}{8 Future Work}{}
-\BOOKMARK [1][]{section.8.1}{8.1 Dynamic Movement}{chapter.8}
-\BOOKMARK [1][]{section.8.2}{8.2 Passing}{chapter.8}
-\BOOKMARK [1][]{section.8.3}{8.3 Testing and Debugging in New Server's version}{chapter.8}
-\BOOKMARK [1][]{section.8.4}{8.4 Participation in Robocup}{chapter.8}
-\BOOKMARK [0][]{chapter.9}{9 Conclusion}{}
-\BOOKMARK [0][]{chapter*.15}{References}{}
+\BOOKMARK [0][]{chapter.8}{8 Conclusion}{}
+\BOOKMARK [1][]{section.8.1}{8.1 Future Work}{chapter.8}
+\BOOKMARK [0][]{chapter*.19}{References}{}

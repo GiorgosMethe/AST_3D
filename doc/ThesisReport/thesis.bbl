@@ -6,6 +6,11 @@ MacAlpine, P., Barrera, F., Stone, P.:
   positioning system.
 \newblock In: Proceedings of the RoboCup International Symposium. (2012)
 
+\bibitem{robocup}
+Kitano, H., Asada, M., Kuniyoshi, Y., Noda, I., Osawa, E., Matsubara, H.:
+\newblock Robocup: {A} challenge problem for {AI}.
+\newblock AI Magazine \textbf{18}(1) (1997)  73--85
+
 \bibitem{SoccerSimulationLeague3D}
 Robocup:
 \newblock Soccer simulation league wiki Only available online:
@@ -15,6 +20,11 @@ Robocup:
 SimSpark:
 \newblock Wiki Only available online:
   \url{http://simspark.sourceforge.net/wiki}.
+
+\bibitem{Roboviz}
+Abeyruwan, S., Seekircher, A., Stoecker, J., Visser, D.U.:
+\newblock Roboviz monitor Only available online:
+  \url{https://sites.google.com/site/umroboviz/}.
 
 \bibitem{Localization}
 Papadimitriou, V.:

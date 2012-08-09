@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  8 AUG 2012 04:15
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  9 AUG 2012 03:40
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -429,7 +429,7 @@ File: lgrcmr.fd 2008/01/04 v1.0 Greek Computer Modern
 (./Abstract/abstract.aux) (./Introduction/introduction.aux)
 (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux) (./Chapter3/chapter3.aux)
 (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux) (./Chapter6/chapter6.aux)
-(./Chapter7/chapter7.aux) (./Chapter8/chapter8.aux))
+(./Chapter8/chapter8.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
@@ -449,8 +449,7 @@ LaTeX Font Info:    ... okay on input line 56.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 56.
-
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texmf/tex/context/base/supp-pdf.mkii
@@ -488,7 +487,7 @@ LaTeX Info: Redefining \pageref on input line 56.
 \openout5 = `thesis.out'.
 
 \AtBeginShipoutBox=\box30
- <ThesisFigs/TUClogocolor.jpg, id=325, 113.7048pt x 182.1204pt>
+ <ThesisFigs/TUClogocolor.jpg, id=293, 113.7048pt x 182.1204pt>
 File: ThesisFigs/TUClogocolor.jpg Graphic file (type jpg)
 
 <use ThesisFigs/TUClogocolor.jpg> [1
@@ -583,26 +582,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.20 
+l.21 
       [1
 
 
-]
-
-LaTeX Warning: Reference `Coordinationfile:///home/methe/Desktop/ThesisReport/t
-hesis.bib ' on page 2 undefined on input line 24.
-
-)pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
+])pdfTeX warning (ext4): destination with the same identifier (name{page.2}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.107  \include{Introduction/introduction}
+l.108  \include{Introduction/introduction}
                                            [2]pdfTeX warning (ext4): destinatio
 n with the same identifier (name{page.3}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.107  \include{Introduction/introduction}
+l.108  \include{Introduction/introduction}
                                            [3]
 \openout2 = `Chapter1/chapter1.aux'.
 
@@ -611,107 +605,160 @@ ifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Background} [4
+            {The RoboCup Competition} [4
 
 
 
 ]
 Chapter 2.
-[5] <Chapter1/figures/middleSize1.jpg, id=617, 803.0pt x 538.01pt>
-File: Chapter1/figures/middleSize1.jpg Graphic file (type jpg)
 
-<use Chapter1/figures/middleSize1.jpg>
-<Chapter1/figures/2D.jpg, id=619, 1477.52pt x 990.70125pt>
+Underfull \vbox (badness 1728) has occurred while \output is active []
+
+ [5]
+<Chapter1/figures/kid2011.jpg, id=588, 192.72pt x 127.9179pt>
+File: Chapter1/figures/kid2011.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/kid2011.jpg>
+<Chapter1/figures/teen2011.jpg, id=589, 192.72pt x 127.9179pt>
+File: Chapter1/figures/teen2011.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/teen2011.jpg>
+<Chapter1/figures/adult2011.jpg, id=590, 526.96875pt x 794.97pt>
+File: Chapter1/figures/adult2011.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/adult2011.jpg> [6 <./Chapter1/figures/kid2011.jpg> <./Cha
+pter1/figures/teen2011.jpg> <./Chapter1/figures/adult2011.jpg>]
+<Chapter1/figures/middleSize.jpg, id=601, 800.9925pt x 532.99126pt>
+File: Chapter1/figures/middleSize.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/middleSize.jpg>
+<Chapter1/figures/2D.jpg, id=603, 1477.52pt x 990.70125pt>
 File: Chapter1/figures/2D.jpg Graphic file (type jpg)
 
-<use Chapter1/figures/2D.jpg> [6 <./Chapter1/figures/middleSize1.jpg>]
-<Chapter1/figures/kouretes.jpg, id=626, 2055.68pt x 1376.14125pt>
-File: Chapter1/figures/kouretes.jpg Graphic file (type jpg)
+<use Chapter1/figures/2D.jpg>
+<Chapter1/figures/3d.png, id=604, 207.02344pt x 152.06813pt>
+File: Chapter1/figures/3d.png Graphic file (type png)
 
-<use Chapter1/figures/kouretes.jpg>
-<Chapter1/figures/PANDORA.jpg, id=627, 451.6875pt x 277.78781pt>
-File: Chapter1/figures/PANDORA.jpg Graphic file (type jpg)
+<use Chapter1/figures/3d.png>
 
-<use Chapter1/figures/PANDORA.jpg> [7 <./Chapter1/figures/2D.jpg>]
-<Chapter1/figures/robocup@home.jpeg, id=636, 491.8375pt x 359.3425pt>
-File: Chapter1/figures/robocup@home.jpeg Graphic file (type jpg)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<use Chapter1/figures/robocup@home.jpeg> [8 <./Chapter1/figures/kouretes.jpg>]
-[9 <./Chapter1/figures/PANDORA.jpg>]) [10 <./Chapter1/figures/robocup@home.jpeg
->]
+[7 <./Chapter1/figures/middleSize.jpg>]
+<Chapter1/figures/SmallSize.jpg, id=613, 532.99126pt x 800.9925pt>
+File: Chapter1/figures/SmallSize.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/SmallSize.jpg>
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 61.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+[8 <./Chapter1/figures/SmallSize.jpg> <./Chapter1/figures/2D.jpg> <./Chapter1/f
+igures/3d.png (PNG copy)>]
+<Chapter1/figures/spl.jpg, id=624, 800.9925pt x 532.99126pt>
+File: Chapter1/figures/spl.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/spl.jpg> [9 <./Chapter1/figures/spl.jpg>]
+<Chapter1/figures/rescue.jpg, id=633, 501.875pt x 376.40625pt>
+File: Chapter1/figures/rescue.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/rescue.jpg> [10 <./Chapter1/figures/rescue.jpg>]
+<Chapter1/figures/Bremen2006.jpg, id=641, 626.34pt x 465.74pt>
+File: Chapter1/figures/Bremen2006.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/Bremen2006.jpg>
+Underfull \vbox (badness 7504) has occurred while \output is active []
+
+ [11 <./Chapter1/figures/Bremen2006.jpg>]
+<Chapter1/figures/RoboCup@Home.jpg, id=646, 800.9925pt x 532.99126pt>
+File: Chapter1/figures/RoboCup@Home.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/RoboCup@Home.jpg> [12 <./Chapter1/figures/RoboCup@Home.jp
+g>] <Chapter1/figures/JuniorSoccer.jpg, id=652, 800.9925pt x 532.99126pt>
+File: Chapter1/figures/JuniorSoccer.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/JuniorSoccer.jpg>) [13 <./Chapter1/figures/JuniorSoccer.j
+pg>]
 \openout2 = `Chapter2/chapter2.aux'.
 
- (./Chapter2/chapter2.tex
-Chapter 3.
-[11
+ (./Chapter2/chapter2.tex [14
 
 
 
 ]
-<Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png, id=661, 256.96pt x 177
-.66376pt>
-File: Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png Graphic file (type
- png)
- <use Chapter2/figures/1280px-SoccerSimulation_FieldPlan.png> [12 <./Chapter2/f
-igures/1280px-SoccerSimulation_FieldPlan.png>]
-<Chapter2/figures/comp2.png, id=670, 1622.06pt x 641.39626pt>
-File: Chapter2/figures/comp2.png Graphic file (type png)
+Chapter 3.
+[15]
+<Chapter2/figures/SoccerSimulation_FieldPlan.png, id=674, 546.04pt x 377.41pt>
+File: Chapter2/figures/SoccerSimulation_FieldPlan.png Graphic file (type png)
 
-<use Chapter2/figures/comp2.png> [13] [14 <./Chapter2/figures/comp2.png (PNG co
-py)>]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 63.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [15] [16] [17] [18]
-<Chapter2/figures/629px-Models-nao.jpg, id=698, 631.35875pt x 601.24625pt>
+<use Chapter2/figures/SoccerSimulation_FieldPlan.png> [16 <./Chapter2/figures/S
+occerSimulation_FieldPlan.png>] [17]
+<Chapter2/figures/RobovizMonitor.png, id=687, 801.99625pt x 600.2425pt>
+File: Chapter2/figures/RobovizMonitor.png Graphic file (type png)
+
+<use Chapter2/figures/RobovizMonitor.png>
+<Chapter2/figures/SimSparkMonitor.png, id=688, 803.0pt x 603.25375pt>
+File: Chapter2/figures/SimSparkMonitor.png Graphic file (type png)
+
+<use Chapter2/figures/SimSparkMonitor.png> [18 <./Chapter2/figures/RobovizMonit
+or.png> <./Chapter2/figures/SimSparkMonitor.png>] [19] [20] [21] [22]
+<Chapter2/figures/629px-Models-nao.jpg, id=721, 631.35875pt x 601.24625pt>
 File: Chapter2/figures/629px-Models-nao.jpg Graphic file (type jpg)
 
-<use Chapter2/figures/629px-Models-nao.jpg>) [19] [20 <./Chapter2/figures/629px
+<use Chapter2/figures/629px-Models-nao.jpg>) [23] [24 <./Chapter2/figures/629px
 -Models-nao.jpg>]
 \openout2 = `Chapter3/chapter3.aux'.
 
  (./Chapter3/chapter3.tex
 Chapter 4.
-<Chapter3/figures/Arch.pdf, id=709, 507.8975pt x 454.69875pt>
+<Chapter3/figures/Arch.pdf, id=731, 507.8975pt x 454.69875pt>
 File: Chapter3/figures/Arch.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/Arch.pdf> [21
+<use Chapter3/figures/Arch.pdf> [25
 
 
 
 ]
 <Chapter2/figures/800px-SimulationUpdateLoopSynchronizationBetweenSimSparkAndAg
-ent.png, id=715, 803.0pt x 284.06125pt>
+ent.png, id=738, 803.0pt x 284.06125pt>
 File: Chapter2/figures/800px-SimulationUpdateLoopSynchronizationBetweenSimSpark
 AndAgent.png Graphic file (type png)
 
 <use Chapter2/figures/800px-SimulationUpdateLoopSynchronizationBetweenSimSparkA
-ndAgent.png> [22 <./Chapter3/figures/Arch.pdf>]
-<Chapter3/figures/Message.pdf, id=723, 469.755pt x 132.495pt>
+ndAgent.png> [26 <./Chapter3/figures/Arch.pdf>]
+<Chapter3/figures/Message.pdf, id=746, 469.755pt x 132.495pt>
 File: Chapter3/figures/Message.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/Message.pdf> [23 <./Chapter2/figures/800px-SimulationUpda
+<use Chapter3/figures/Message.pdf> [27 <./Chapter2/figures/800px-SimulationUpda
 teLoopSynchronizationBetweenSimSparkAndAgent.png (PNG copy)>]
-<Chapter3/figures/LViewAngle.pdf, id=730, 580.1675pt x 419.5675pt>
+
+pdfTeX warning: pdflatex (file ./Chapter3/figures/LViewAngle.pdf): PDF inclusio
+n: found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter3/figures/LViewAngle.pdf, id=753, 580.2034pt x 418.28021pt>
 File: Chapter3/figures/LViewAngle.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/LViewAngle.pdf>
-<Chapter3/figures/Localization.pdf, id=732, 545.03625pt x 420.57124pt>
+
+pdfTeX warning: pdflatex (file ./Chapter3/figures/Localization.pdf): PDF inclus
+ion: found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter3/figures/Localization.pdf, id=756, 545.17943pt x 419.52026pt>
 File: Chapter3/figures/Localization.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/Localization.pdf> [24 <./Chapter3/figures/Message.pdf>]
-<Chapter3/figures/LocalizationResults.pdf, id=741, 580.1675pt x 419.5675pt>
+<use Chapter3/figures/Localization.pdf> [28 <./Chapter3/figures/Message.pdf>]
+
+pdfTeX warning: pdflatex (file ./Chapter3/figures/LocalizationResults.pdf): PDF
+ inclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter3/figures/LocalizationResults.pdf, id=766, 580.2034pt x 418.28021pt>
 File: Chapter3/figures/LocalizationResults.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/LocalizationResults.pdf>
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 109.
- [25 <./Chapter3/figures/LViewAngle.pdf>] [26 <./Chapter3/figures/Localization.
-pdf>] [27 <./Chapter3/figures/LocalizationResults.pdf>]
-<Chapter3/figures/Models_NaoAnatomy.png, id=780, 511.9125pt x 682.55pt>
+ [29 <./Chapter3/figures/LViewAngle.pdf>] [30 <./Chapter3/figures/Localization.
+pdf>] [31 <./Chapter3/figures/LocalizationResults.pdf>]
+<Chapter3/figures/Models_NaoAnatomy.png, id=854, 511.9125pt x 682.55pt>
 File: Chapter3/figures/Models_NaoAnatomy.png Graphic file (type png)
 
-<use Chapter3/figures/Models_NaoAnatomy.png> [28pdfTeX warning (ext4): destinat
+<use Chapter3/figures/Models_NaoAnatomy.png> [32pdfTeX warning (ext4): destinat
 ion with the same identifier (name{ALC@rem.1}) has been already used, duplicate
  ignored
 
@@ -832,43 +879,46 @@ l.156
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.156 
-      ] [29 <./Chapter3/figures/Models_NaoAnatomy.png>]
-<Chapter3/figures/MotionController.pdf, id=819, 433.62pt x 452.69125pt>
+      ] [33 <./Chapter3/figures/Models_NaoAnatomy.png>]
+<Chapter3/figures/MotionController.pdf, id=889, 433.62pt x 452.69125pt>
 File: Chapter3/figures/MotionController.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/MotionController.pdf>
-<Chapter3/figures/MotionSequence.pdf, id=821, 166.6225pt x 433.62pt>
+<Chapter3/figures/MotionSequence.pdf, id=891, 166.6225pt x 433.62pt>
 File: Chapter3/figures/MotionSequence.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/MotionSequence.pdf> [30] [31 <./Chapter3/figures/MotionCo
-ntroller.pdf>] [32 <./Chapter3/figures/MotionSequence.pdf>] [33]
-<Chapter3/figures/DynamicTurn.pdf, id=847, 521.95pt x 321.2pt>
+<use Chapter3/figures/MotionSequence.pdf> [34] [35 <./Chapter3/figures/MotionCo
+ntroller.pdf>] [36 <./Chapter3/figures/MotionSequence.pdf>] [37]
+<Chapter3/figures/DynamicTurn.pdf, id=916, 521.95pt x 321.2pt>
 File: Chapter3/figures/DynamicTurn.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/DynamicTurn.pdf> [34] [35 <./Chapter3/figures/DynamicTurn
+<use Chapter3/figures/DynamicTurn.pdf> [38] [39 <./Chapter3/figures/DynamicTurn
 .pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/2dkinematics.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/2dkinematics.pdf, id=859, 622.325pt x 499.466pt>
+<Chapter3/figures/2dkinematics.pdf, id=928, 622.325pt x 499.466pt>
 File: Chapter3/figures/2dkinematics.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/2dkinematics.pdf>
-<Chapter3/figures/NaoKick.png, id=863, 581.17125pt x 597.23125pt>
+<Chapter3/figures/NaoKick.png, id=932, 581.17125pt x 597.23125pt>
 File: Chapter3/figures/NaoKick.png Graphic file (type png)
 
-<use Chapter3/figures/NaoKick.png> [36 <./Chapter3/figures/2dkinematics.pdf> <.
+<use Chapter3/figures/NaoKick.png> [40 <./Chapter3/figures/2dkinematics.pdf> <.
 /Chapter3/figures/NaoKick.png (PNG copy)>]
-<Chapter3/figures/KickFSM.pdf, id=875, 245.91875pt x 633.36626pt>
+<Chapter3/figures/KickFSM.pdf, id=944, 245.91875pt x 633.36626pt>
 File: Chapter3/figures/KickFSM.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/KickFSM.pdf> [37 <./Chapter3/figures/KickFSM.pdf>]
-<Chapter3/figures/GoToPos.pdf, id=884, 580.1675pt x 419.5675pt>
+<use Chapter3/figures/KickFSM.pdf> [41 <./Chapter3/figures/KickFSM.pdf>]
+
+pdfTeX warning: pdflatex (file ./Chapter3/figures/GoToPos.pdf): PDF inclusion: 
+found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter3/figures/GoToPos.pdf, id=952, 580.2034pt x 418.28021pt>
 File: Chapter3/figures/GoToPos.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/GoToPos.pdf> [38 <./Chapter3/figures/GoToPos.pdf>]
-[39]
-<Chapter3/figures/ObstacleAvoidance.pdf, id=898, 530.98375pt x 436.63126pt>
+<use Chapter3/figures/GoToPos.pdf> [42 <./Chapter3/figures/GoToPos.pdf>]
+[43]
+<Chapter3/figures/ObstacleAvoidance.pdf, id=994, 530.98375pt x 436.63126pt>
 File: Chapter3/figures/ObstacleAvoidance.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/ObstacleAvoidance.pdf>pdfTeX warning (ext4): destination 
@@ -1002,56 +1052,56 @@ ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.383 \ENDFOR
-              [40 <./Chapter3/figures/ObstacleAvoidance.pdf>] [41]
-<Chapter3/figures/MAC.pdf, id=917, 475.7775pt x 91.34125pt>
+              [44 <./Chapter3/figures/ObstacleAvoidance.pdf>] [45]
+<Chapter3/figures/MAC.pdf, id=1013, 475.7775pt x 91.34125pt>
 File: Chapter3/figures/MAC.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/MAC.pdf> [42]
+<use Chapter3/figures/MAC.pdf> [46]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/Goalie.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/Goalie.pdf, id=923, 579.27267pt x 462.31065pt>
+<Chapter3/figures/Goalie.pdf, id=1019, 580.2034pt x 462.44354pt>
 File: Chapter3/figures/Goalie.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/Goalie.pdf>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[43 <./Chapter3/figures/MAC.pdf>]
-Underfull \vbox (badness 1067) has occurred while \output is active []
+[47 <./Chapter3/figures/MAC.pdf>]
+Underfull \vbox (badness 1342) has occurred while \output is active []
 
- [44 <./Chapter3/figures/Goalie.pdf>]
-<Chapter3/figures/GoalieFall.png, id=948, 1686.3pt x 1053.9375pt>
+ [48 <./Chapter3/figures/Goalie.pdf>]
+<Chapter3/figures/GoalieFall.png, id=1043, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall.png>
-<Chapter3/figures/GoalieFall2.png, id=950, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall2.png, id=1045, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall2.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall2.png>
-<Chapter3/figures/GoalieFall3.png, id=952, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall3.png, id=1047, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall3.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall3.png>
-<Chapter3/figures/GoalieFall4.png, id=954, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall4.png, id=1049, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall4.png Graphic file (type png)
 
-<use Chapter3/figures/GoalieFall4.png>) [45 <./Chapter3/figures/GoalieFall.png 
+<use Chapter3/figures/GoalieFall4.png>) [49 <./Chapter3/figures/GoalieFall.png 
 (PNG copy)> <./Chapter3/figures/GoalieFall2.png (PNG copy)> <./Chapter3/figures
 /GoalieFall3.png (PNG copy)> <./Chapter3/figures/GoalieFall4.png (PNG copy)>]
 \openout2 = `Chapter4/chapter4.aux'.
 
 
-(./Chapter4/chapter4.tex [46
+(./Chapter4/chapter4.tex [50
 
 
 
 ]
 Chapter 5.
-<Chapter4/figures/CoordinationCycle.pdf, id=972, 443.6575pt x 307.1475pt>
+<Chapter4/figures/CoordinationCycle.pdf, id=1068, 443.6575pt x 307.1475pt>
 File: Chapter4/figures/CoordinationCycle.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/CoordinationCycle.pdf> [47] [48 <./Chapter4/figures/Coord
+<use Chapter4/figures/CoordinationCycle.pdf> [51] [52 <./Chapter4/figures/Coord
 inationCycle.pdf>]pdfTeX warning (ext4): destination with the same identifier (
 name{ALC@line.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -1242,46 +1292,46 @@ C@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.54 \ENDIF
-            [49] [50] [51]
+            [53] [54] [55]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/CoordComm.pdf): PDF inclusion
 : found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/CoordComm.pdf, id=998, 369.7395pt x 366.54305pt>
+<Chapter4/figures/CoordComm.pdf, id=1094, 369.7395pt x 366.54305pt>
 File: Chapter4/figures/CoordComm.pdf Graphic file (type pdf)
 
 <use Chapter4/figures/CoordComm.pdf>
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
- [52 <./Chapter4/figures/CoordComm.pdf>]
+ [56 <./Chapter4/figures/CoordComm.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Ball.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Ball.pdf, id=1141, 579.27267pt x 501.24242pt>
+<Chapter4/figures/Ball.pdf, id=1237, 580.2034pt x 501.43071pt>
 File: Chapter4/figures/Ball.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Ball.pdf> [53] [54 <./Chapter4/figures/Ball.pdf>]
-[55]
+<use Chapter4/figures/Ball.pdf> [57] [58 <./Chapter4/figures/Ball.pdf>]
+[59]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Splitter.pdf): PDF inclusion:
  found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Splitter.pdf, id=1210, 579.27267pt x 523.99892pt>
+<Chapter4/figures/Splitter.pdf, id=1305, 580.2034pt x 524.21819pt>
 File: Chapter4/figures/Splitter.pdf Graphic file (type pdf)
 
 <use Chapter4/figures/Splitter.pdf>
-<Chapter4/figures/Graph1.pdf, id=1213, 1219.55624pt x 701.62125pt>
+<Chapter4/figures/Graph1.pdf, id=1308, 1219.55624pt x 701.62125pt>
 File: Chapter4/figures/Graph1.pdf Graphic file (type pdf)
 
 <use Chapter4/figures/Graph1.pdf>
-<Chapter4/figures/ActivePositions2.png, id=1215, 851.18pt x 902.37125pt>
+<Chapter4/figures/ActivePositions2.png, id=1310, 851.18pt x 902.37125pt>
 File: Chapter4/figures/ActivePositions2.png Graphic file (type png)
 
-<use Chapter4/figures/ActivePositions2.png> [56]
-<Chapter4/figures/Active3.png, id=1221, 922.44624pt x 831.105pt>
+<use Chapter4/figures/ActivePositions2.png> [60]
+<Chapter4/figures/Active3.png, id=1316, 922.44624pt x 831.105pt>
 File: Chapter4/figures/Active3.png Graphic file (type png)
 
-<use Chapter4/figures/Active3.png> [57 <./Chapter4/figures/Splitter.pdf>]
-[58 <./Chapter4/figures/Graph1.pdf> <./Chapter4/figures/ActivePositions2.png (P
-NG copy)>] [59 <./Chapter4/figures/Active3.png (PNG copy)>]pdfTeX warning (ext4
+<use Chapter4/figures/Active3.png> [61 <./Chapter4/figures/Splitter.pdf>]
+[62 <./Chapter4/figures/Graph1.pdf> <./Chapter4/figures/ActivePositions2.png (P
+NG copy)>] [63 <./Chapter4/figures/Active3.png (PNG copy)>]pdfTeX warning (ext4
 ): destination with the same identifier (name{ALC@line.1}) has been already use
 d, duplicate ignored
 <to be read again> 
@@ -1384,42 +1434,40 @@ ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.283 \ENDFOR
-              [60] [61]
+              [64] [65]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation9_0.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation9_0.pdf, id=1329, 579.27267pt x 473.44861pt>
+<Chapter4/figures/Formation9_0.pdf, id=1423, 580.14201pt x 453.95424pt>
 File: Chapter4/figures/Formation9_0.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Formation9_0.pdf> [62 <./Chapter4/figures/Formation9_0.pd
+<use Chapter4/figures/Formation9_0.pdf> [66 <./Chapter4/figures/Formation9_0.pd
 f>]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation11_0.pdf): PDF inclu
 sion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation11_0.pdf, id=1338, 579.27267pt x 473.44861pt>
+<Chapter4/figures/Formation11_0.pdf, id=1432, 580.2034pt x 473.63727pt>
 File: Chapter4/figures/Formation11_0.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Formation11_0.pdf> [63] [64 <./Chapter4/figures/Formation
+<use Chapter4/figures/Formation11_0.pdf> [67] [68 <./Chapter4/figures/Formation
 11_0.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/RoleAss.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/RoleAss.pdf, id=1353, 579.27267pt x 538.8973pt>
+<Chapter4/figures/RoleAss.pdf, id=1448, 580.2034pt x 559.17618pt>
 File: Chapter4/figures/RoleAss.pdf Graphic file (type pdf)
 
 <use Chapter4/figures/RoleAss.pdf>
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/SupportPos.pdf): PDF inclusio
 n: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/SupportPos.pdf, id=1355, 579.27267pt x 512.39833pt>
+<Chapter4/figures/SupportPos.pdf, id=1450, 580.2034pt x 512.6133pt>
 File: Chapter4/figures/SupportPos.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/SupportPos.pdf>
-Underfull \vbox (badness 1917) has occurred while \output is active []
-
- [65 <./Chapter4/figures/RoleAss.pdf>] [66 <./Chapter4/figures/SupportPos.pdf>]
-pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.1}) 
-has been already used, duplicate ignored
+<use Chapter4/figures/SupportPos.pdf> [69 <./Chapter4/figures/RoleAss.pdf>]
+[70 <./Chapter4/figures/SupportPos.pdf>]pdfTeX warning (ext4): destination with
+ the same identifier (name{ALC@line.1}) has been already used, duplicate ignore
+d
 <to be read again> 
                    \relax 
 l.379 \STATE
@@ -1576,18 +1624,18 @@ ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.392 \ENDFOR
-              [67] [68]
+              [71] [72]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/AvoidCollision.pdf): PDF incl
 usion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/AvoidCollision.pdf, id=1702, 392.8808pt x 223.48851pt>
+<Chapter4/figures/AvoidCollision.pdf, id=1796, 392.8808pt x 223.48851pt>
 File: Chapter4/figures/AvoidCollision.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/AvoidCollision.pdf> [69] [70 <./Chapter4/figures/AvoidCol
-lision.pdf>]) [71]
+<use Chapter4/figures/AvoidCollision.pdf> [73] [74 <./Chapter4/figures/AvoidCol
+lision.pdf>]) [75]
 \openout2 = `Chapter5/chapter5.aux'.
 
- (./Chapter5/chapter5.tex [72
+ (./Chapter5/chapter5.tex [76
 
 
 
@@ -1601,75 +1649,62 @@ Overfull \hbox (25.9783pt too wide) in paragraph at lines 10--19
 
 Underfull \vbox (badness 2119) has occurred while \output is active []
 
- [73]
-[74]
+ [77]
+[78]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 75.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 75.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 75.
- [75]) [76]
+ [79]) [80]
 \openout2 = `Chapter6/chapter6.aux'.
 
  (./Chapter6/chapter6.tex
 Chapter 7.
-[77
+[81
 
 
 
-]) [78]
-\openout2 = `Chapter7/chapter7.aux'.
-
- (./Chapter7/chapter7.tex
-Chapter 8.
-) [79
-
-
-
-] [80]
+]) [82]
 \openout2 = `Chapter8/chapter8.aux'.
 
  (./Chapter8/chapter8.tex
-Chapter 9.
-) [81
+Chapter 8.
+[83
 
 
 
-] (./thesis.bbl (./thesis.brf)
+]) [84] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write10
 \openout10 = `thesis.brf'.
 
- [82
+) [85
 
 
-]) [83] (./thesis.aux
+] (./thesis.aux
 (./Abstract/abstract.aux) (./Introduction/introduction.aux)
 (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux) (./Chapter3/chapter3.aux)
 (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux) (./Chapter6/chapter6.aux)
-(./Chapter7/chapter7.aux) (./Chapter8/chapter8.aux))
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./Chapter8/chapter8.aux)) ) 
 Here is how much of TeX's memory you used:
- 7722 strings out of 494985
- 114869 string characters out of 1181034
- 187551 words of memory out of 3000000
- 10279 multiletter control sequences out of 15000+50000
+ 7770 strings out of 494985
+ 116053 string characters out of 1181034
+ 187458 words of memory out of 3000000
+ 10317 multiletter control sequences out of 15000+50000
  94392 words of font info for 74 fonts, out of 3000000 for 9000
  73 hyphenation exceptions out of 8191
  45i,12n,48p,2199b,660s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
-st, replaced by a fixed one
+pdfTeX warning (dest): name{Hfootnote.2} has been r
+eferenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
 s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
-athit.enc}</usr/share/texmf-texlive/fonts/type1/public/cbfonts/grmc1200.pfb></u
+exmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
+athsy.enc}</usr/share/texmf-texlive/fonts/type1/public/cbfonts/grmc1200.pfb></u
 sr/share/texmf-texlive/fonts/type1/public/cbfonts/grmn1200.pfb></usr/share/texm
 f-texlive/fonts/type1/public/cbfonts/grmn1728.pfb></usr/share/texmf-texlive/fon
 ts/type1/public/cbfonts/grxn1728.pfb></usr/share/texmf/fonts/type1/public/lm/lm
@@ -1685,9 +1720,9 @@ onts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-texlive
 /fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (101 pages, 17194162 bytes).
+Output written on thesis.pdf (103 pages, 17707721 bytes).
 PDF statistics:
- 1959 PDF objects out of 2073 (max. 8388607)
- 283 named destinations out of 1000 (max. 500000)
- 893 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2055 PDF objects out of 2073 (max. 8388607)
+ 294 named destinations out of 1000 (max. 500000)
+ 875 words of extra memory for PDF output out of 10000 (max. 10000000)
 
