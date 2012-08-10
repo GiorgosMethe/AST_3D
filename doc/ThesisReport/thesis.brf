@@ -4,7 +4,9 @@
 \backcite {SoccerSimulationLeague3D}{{15}{3}{chapter.3}}
 \backcite {SimSpark}{{15}{3.1}{section.3.1}}
 \backcite {Roboviz}{{19}{3.4.2}{subsection.3.4.2}}
-\backcite {Localization}{{30}{4.4}{section*.15}}
+\backcite {Localization}{{30}{4.4}{section.4.4}}
+\backcite {}{{36}{4.5.1}{subsection.4.5.1}}
+\backcite {Webots04}{{39}{4.5.3}{subsection.4.5.3}}
 \backcite {UtAustinVillaPaper}{{73}{5.11}{section.5.11}}
 \backcite {UtAustinVillaPaper}{{73}{5}{algorithm.5}}
 \backcite {UtAustinVillaPaper}{{74}{5.1}{table.5.1}}

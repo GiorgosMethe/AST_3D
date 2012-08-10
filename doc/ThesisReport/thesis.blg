@@ -8,47 +8,47 @@ A level-1 auxiliary file: Chapter3/chapter3.aux
 A level-1 auxiliary file: Chapter4/chapter4.aux
 A level-1 auxiliary file: Chapter5/chapter5.aux
 A level-1 auxiliary file: Chapter6/chapter6.aux
-A level-1 auxiliary file: Chapter8/chapter8.aux
+A level-1 auxiliary file: Chapter7/chapter7.aux
 The style file: StyleFiles/splncs.bst
 Database file #1: thesis.bib
-You've used 8 entries,
+You've used 9 entries,
             2087 wiz_defined-function locations,
-            538 strings with 5422 characters,
-and the built_in function-call counts, 1468 in all, are:
-= -- 110
-> -- 84
-< -- 1
-+ -- 32
-- -- 24
-* -- 84
-:= -- 229
-add.period$ -- 9
-call.type$ -- 8
-change.case$ -- 8
+            545 strings with 5538 characters,
+and the built_in function-call counts, 1758 in all, are:
+= -- 142
+> -- 88
+< -- 2
++ -- 34
+- -- 25
+* -- 105
+:= -- 265
+add.period$ -- 10
+call.type$ -- 9
+change.case$ -- 9
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 66
-empty$ -- 165
-format.name$ -- 24
-if$ -- 337
+cite$ -- 9
+duplicate$ -- 83
+empty$ -- 192
+format.name$ -- 25
+if$ -- 407
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 2
-newline$ -- 37
-num.names$ -- 8
-pop$ -- 52
+int.to.str$ -- 9
+missing$ -- 3
+newline$ -- 42
+num.names$ -- 9
+pop$ -- 53
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 36
+skip$ -- 48
 stack$ -- 0
-substring$ -- 24
-swap$ -- 16
-text.length$ -- 1
+substring$ -- 48
+swap$ -- 27
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 11
-width$ -- 9
-write$ -- 74
+while$ -- 15
+width$ -- 10
+write$ -- 86

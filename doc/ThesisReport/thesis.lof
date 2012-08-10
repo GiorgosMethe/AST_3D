@@ -28,21 +28,22 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces The Agent Architecture.}}{28}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Server and Agent Communication.}}{29}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Nao's Restricted Field of View.}}{31}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Localization Main Function.}}{32}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Localization Results.}}{33}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Nao's anatomy.}}{35}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Motion Controller.}}{37}{figure.4.7}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Nao's Restricted Field of View and Field Landmarks.}}{30}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Self Localization Example.}}{32}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Object Localization Example.}}{33}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Nao's anatomy: kinematic chains and joints.}}{35}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces XML-Based Motion Controller.}}{38}{figure.4.7}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Phase Sequence.}}{38}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Dynamic Turn, Degrees (y-axis), Hardness Factor (y-axis).}}{41}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Ball Distance from Agent's Feet.}}{42}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Nao Before Kick Ball.}}{42}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces On Ball Action Logic Sequence.}}{43}{figure.4.12}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Walk To Coordinate Action.}}{44}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Obstacle Avoidance.}}{46}{figure.4.14}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Time Slicing Communication.}}{49}{figure.4.15}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Goalkeeper Fall Function.}}{50}{figure.4.16}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{51}{figure.4.17}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Dynamic Walk Leaning: Left Leaning, No Leaning, Right Leaning.}}{41}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Dynamic Turn Gain: Turn Degrees (y-axis) against Gain Factor (x-axis).}}{42}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Nao Performing a Kick after Positioning for Kick.}}{43}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Obstacle Avoidance.}}{46}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Ground Distance between the Agent and the Ball.}}{47}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces On Ball Action Logic Sequence.}}{47}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Walk To Coordinate Action.}}{48}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Time Slicing Communication.}}{49}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Goalkeeper Fall Function.}}{51}{figure.4.17}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{52}{figure.4.18}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Coordination cycle.}}{54}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Communication Process in Coordination.}}{58}{figure.5.2}

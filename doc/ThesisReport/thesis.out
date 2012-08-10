@@ -23,20 +23,20 @@
 \BOOKMARK [1][]{section.4.2}{4.2 Connection}{chapter.4}
 \BOOKMARK [1][]{section.4.3}{4.3 Perceptions}{chapter.4}
 \BOOKMARK [1][]{section.4.4}{4.4 Localization}{chapter.4}
-\BOOKMARK [1][]{section.4.5}{4.5 Localization Filtering}{chapter.4}
-\BOOKMARK [1][]{section.4.6}{4.6 Motions and Movement}{chapter.4}
-\BOOKMARK [2][]{subsection.4.6.1}{4.6.1 XML-File Based Motions}{section.4.6}
-\BOOKMARK [2][]{subsection.4.6.2}{4.6.2 XML-File Based Motion Controller}{section.4.6}
-\BOOKMARK [2][]{subsection.4.6.3}{4.6.3 Text-File Based Motions}{section.4.6}
-\BOOKMARK [2][]{subsection.4.6.4}{4.6.4 Text-File Based Motion Controller}{section.4.6}
-\BOOKMARK [2][]{subsection.4.6.5}{4.6.5 Dynamic Elements in Movement}{section.4.6}
-\BOOKMARK [1][]{section.4.7}{4.7 Actions}{chapter.4}
-\BOOKMARK [2][]{subsection.4.7.1}{4.7.1 Simple}{section.4.7}
-\BOOKMARK [2][]{subsection.4.7.2}{4.7.2 Complex}{section.4.7}
-\BOOKMARK [2][]{subsection.4.7.3}{4.7.3 Vision}{section.4.7}
-\BOOKMARK [2][]{subsection.4.7.4}{4.7.4 Other Sensors}{section.4.7}
-\BOOKMARK [1][]{section.4.8}{4.8 Communication}{chapter.4}
-\BOOKMARK [1][]{section.4.9}{4.9 Goalkeeper Behavior}{chapter.4}
+\BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Self Localization}{section.4.4}
+\BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Object Localization}{section.4.4}
+\BOOKMARK [2][]{subsection.4.4.3}{4.4.3 Localization Filtering}{section.4.4}
+\BOOKMARK [1][]{section.4.5}{4.5 Motion}{chapter.4}
+\BOOKMARK [2][]{subsection.4.5.1}{4.5.1 XML-Based Motion Files}{section.4.5}
+\BOOKMARK [2][]{subsection.4.5.2}{4.5.2 XML-Based Motion Controller}{section.4.5}
+\BOOKMARK [2][]{subsection.4.5.3}{4.5.3 Text-Based Motion Files}{section.4.5}
+\BOOKMARK [2][]{subsection.4.5.4}{4.5.4 Text-Based Motion Controller}{section.4.5}
+\BOOKMARK [2][]{subsection.4.5.5}{4.5.5 Dynamic Motion Elements}{section.4.5}
+\BOOKMARK [1][]{section.4.6}{4.6 Actions}{chapter.4}
+\BOOKMARK [2][]{subsection.4.6.1}{4.6.1 Basic Actions}{section.4.6}
+\BOOKMARK [2][]{subsection.4.6.2}{4.6.2 Complex Actions}{section.4.6}
+\BOOKMARK [1][]{section.4.7}{4.7 Communication}{chapter.4}
+\BOOKMARK [1][]{section.4.8}{4.8 Goalkeeper Behavior}{chapter.4}
 \BOOKMARK [0][]{chapter.5}{5 Team's Coordination}{}
 \BOOKMARK [1][]{section.5.1}{5.1 Messages and Communication}{chapter.5}
 \BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Message Types and Formats}{section.5.1}
@@ -74,4 +74,4 @@
 \BOOKMARK [1][]{section.7.7}{7.7 Farzanegan}{chapter.7}
 \BOOKMARK [0][]{chapter.8}{8 Conclusion}{}
 \BOOKMARK [1][]{section.8.1}{8.1 Future Work}{chapter.8}
-\BOOKMARK [0][]{chapter*.20}{References}{}
+\BOOKMARK [0][]{chapter*.19}{References}{}
