@@ -280,25 +280,33 @@ In this section, we describe the way agents affect and change their environment.
 
 \subsection{Basic Actions}
 Basic actions combine perceptual information and motion files in simple ways to achieve something useful. These basic actions are:
-\begin{description}
  
- \item[Look Straight] Moves the head to its nominal position. Both head joints are set to $0$.
+\subsubsection*{Look Straight}
+ Straight Moves the head to its nominal position. Both head joints are set to $0$.
+
+\subsubsection*{Scan} 
+Moves the head to perform periodic panning and tilting. 
  
- \item[Scan] Moves the head to perform periodic panning and tilting. 
+\subsubsection*{Pan Head} 
+Moves the head to perform periodic panning at zero tilt.
  
- \item[Pan Head] Moves the head to perform periodic panning at zero tilt.
+\subsubsection*{Track Object} 
+Moves the head to bring a particular object to the center of the field of view. This action is applicable only when the object being tracked is visible, but is limited by the joint ranges. 
  
- \item[Track Object] Moves the head to bring a particular object to the center of the field of view. This action is applicable only when the object being tracked is visible, but is limited by the joint ranges. 
+\subsubsection*{Track Moving Object} 
+This action estimates the direction and the speed of a moving object using a small number of observations, obtained while performing the Track Object action. It records a set of five consecutive observations and another set of five consecutive observations delayed by a fixed time period (the default is 5 cycles).  The difference between the average positions of each set gives a vector that reveals the direction of motion. Taking the ratio of the magnitude of this vector and the time delay yields the speed of the moving object. This action is applicable only when the moving object being tracked is visible, but is limited by the joint ranges.
  
- \item[Track Moving Object] This action estimates the direction and the speed of a moving object using a small number of observations, obtained while performing the Track Object action. It records a set of five consecutive observations and another set of five consecutive observations delayed by a fixed time period (the default is 5 cycles).  The difference between the average positions of each set gives a vector that reveals the direction of motion. Taking the ratio of the magnitude of this vector and the time delay yields the speed of the moving object. This action is applicable only when the moving object being tracked is visible, but is limited by the joint ranges.
+\subsubsection*{Find Opponent's Goals} 
+This action estimates the direction of the opponent's goal with respect to the agent by performing the Scan action.
+
+\subsubsection*{Look For Ball} 
+Turns the body of the agent, while performing the Scan action, until the ball appears within the field of view.
  
- \item[Find Opponent's Goal] This action estimates the direction of the opponent's goal with respect to the agent by performing the Scan action.
+\subsubsection*{Turn To Ball} 
+Turns the body of the agent towards the direction of the ball, while performing the Track Ball action. It can applied only when a ball is visible.
  
- \item[Look for Ball] Turns the body of the agent, while performing the Scan action, until the ball appears within the field of view.
- 
- \item[Turn to Ball] Turns the body of the agent towards the direction of the ball, while performing the Track Ball action. It can applied only when a ball is visible.
- 
- \item[Turn to Localize] Turns the body of the agent, while performing the Pan Head action, until the agent's belief about its own location is updated with confidence. It can be used when the agent needs to (re)localize itself into the field.
+\subsubsection*{Turn To Localize} 
+Turns the body of the agent, while performing the Pan Head action, until the agent's belief about its own location is updated with confidence. It can be used when the agent needs to (re)localize itself into the field.
 
 \begin{figure}[t!]
   \centering
@@ -307,19 +315,13 @@ Basic actions combine perceptual information and motion files in simple ways to 
   \label{fig:NaoKick}
 \end{figure}
 
- \item[Stand Up] Makes the agent stand up on its feet, after a confirmed fall on the ground, whether face-up or face-down. This action monitors the inertial sensors (accelerometers and gyroscopes) to check if our agent has fallen on the ground. Incoming gyroscope and accelerometer values above a specific threshold indicate a possible fall, but this has to be confirmed, because it is not unusual to receive values above threshold due to collisions without a fall. To confirm a fall, the action checks the force resistance perceptors located under the agent's feet. If these perceptors imply that the legs do not touch the ground, then we are pretty sure that a fall has occurred. In this case, a stand up motion is executed. Foot pressure values are also used to determine whether the stand up motion succeeded or not. The stand up motion is repeated, until it succeeds. This action is applicable at all times, however a stand up motion is executed only when the robot lies on the ground. 
+\subsubsection*{Stand Up} 
+Makes the agent stand up on its feet, after a confirmed fall on the ground, whether face-up or face-down. This action monitors the inertial sensors (accelerometers and gyroscopes) to check if our agent has fallen on the ground. Incoming gyroscope and accelerometer values above a specific threshold indicate a possible fall, but this has to be confirmed, because it is not unusual to receive values above threshold due to collisions without a fall. To confirm a fall, the action checks the force resistance perceptors located under the agent's feet. If these perceptors imply that the legs do not touch the ground, then we are pretty sure that a fall has occurred. In this case, a stand up motion is executed. Foot pressure values are also used to determine whether the stand up motion succeeded or not. The stand up motion is repeated, until it succeeds. This action is applicable at all times, however a stand up motion is executed only when the robot lies on the ground. 
 
   
- \item[Position for Kick] Positions the agent to an appropriate position with respect to the ball in order to perform a kick successfully. Only forward and side steps are used in this fine positioning. Figure~\ref{fig:NaoKick} shows an example of robot kicking a ball after completing this positioning action.
+\subsubsection*{Prepare for Kick} 
+Positions the agent to an appropriate position with respect to the ball in order to perform a kick successfully. Only forward and side steps are used in this fine positioning. Figure~\ref{fig:NaoKick} shows an example of robot kicking a ball after completing this positioning action.
   
-  
-
-
-
-
-\end{description}
-
-
 \subsection{Complex Actions}
 Complex actions combine perceptual information, motion files, and basic actions. They have a more complicated structure and aim to achieve specific goals. These complex actions are:
 
@@ -349,12 +351,8 @@ Complex actions combine perceptual information, motion files, and basic actions.
 
 
 
-\begin{description}
-
-
-
-
- \item[Avoid Obstacles] This action records all obstacles around the agent and derives an obstacle-free route to a specified target. Initially, this action stores the positions of all obstacles located within 2m from the agent by performing the Pan Head action and watching the perceptor messages. Due to the fact that the simulated Nao's head can pan from $-120^{\circ}$ to $+120^{\circ}$ and the field of view is $120^{\circ}$, we can obtain a complete imaging of all obstacles located close to our agent. It is common to observe the same obstacle more than once; in this situation we only store the average of these observations. In a dynamic, multi-agent environment it is important to avoid collisions with other agents or fixed landmarks, such as goal posts in our simulated soccer games. To avoid obstacles we rely on a simple, yet reliable and effective, method. For each recorded obstacle, we calculate two escape angles that determine the two directions which guarantee avoidance of the obstacle at a safe distance. All other angles between these two escape angles are considered to be forbidden. Afterwards, any escape angle of some obstacle that falls within the forbidden area of some other obstacle is discarded.  The precise calculation of the escape angle set is described in Algorithm~\ref{AngleSet}. The remaining escape angles, and particularly the escape way points they define (the points closest to the obstacle along the direction of the escape angles), are evaluated in terms of the angle and distance overhead they incur with respect to the agent orientation (for the angle) and the target (for the distance). The way point that minimizes the total overhead is selected as a temporary target for avoiding the obstacles, while making progress towards the target. This method will yield dynamically consistent results, meaning that the temporary target will not change in subsequent cycles as long as the obstacles remain stationary, until they are cleared on the way to the real target. Obstacle avoidance is demonstrated in Figure~\ref{fig:ObstacleAvoidance}, in a simple scenario where there are two obstacles between the agent and its target position. Two of the escape angles are discarded; the way point on the left will be selected as a temporary target. 
+\subsubsection*{Avoid Obstacles} 
+This action records all obstacles around the agent and derives an obstacle-free route to a specified target. Initially, this action stores the positions of all obstacles located within 2m from the agent by performing the Pan Head action and watching the perceptor messages. Due to the fact that the simulated Nao's head can pan from $-120^{\circ}$ to $+120^{\circ}$ and the field of view is $120^{\circ}$, we can obtain a complete imaging of all obstacles located close to our agent. It is common to observe the same obstacle more than once; in this situation we only store the average of these observations. In a dynamic, multi-agent environment it is important to avoid collisions with other agents or fixed landmarks, such as goal posts in our simulated soccer games. To avoid obstacles we rely on a simple, yet reliable and effective, method. For each recorded obstacle, we calculate two escape angles that determine the two directions which guarantee avoidance of the obstacle at a safe distance. All other angles between these two escape angles are considered to be forbidden. Afterwards, any escape angle of some obstacle that falls within the forbidden area of some other obstacle is discarded.  The precise calculation of the escape angle set is described in Algorithm~\ref{AngleSet}. The remaining escape angles, and particularly the escape way points they define (the points closest to the obstacle along the direction of the escape angles), are evaluated in terms of the angle and distance overhead they incur with respect to the agent orientation (for the angle) and the target (for the distance). The way point that minimizes the total overhead is selected as a temporary target for avoiding the obstacles, while making progress towards the target. This method will yield dynamically consistent results, meaning that the temporary target will not change in subsequent cycles as long as the obstacles remain stationary, until they are cleared on the way to the real target. Obstacle avoidance is demonstrated in Figure~\ref{fig:ObstacleAvoidance}, in a simple scenario where there are two obstacles between the agent and its target position. Two of the escape angles are discarded; the way point on the left will be selected as a temporary target. 
  
 
 
@@ -369,7 +367,8 @@ Complex actions combine perceptual information, motion files, and basic actions.
 \end{figure} 
 
 
- \item[Walk To Ball] Makes the agent walk towards the ball and stop when the ball is close enough to perform a kick. First, it performs the Turn to Ball action and then walk towards the ball, slowing down when it comes close to the ball. Recall that the ball distance returned by the vision perceptor is the distance between the camera, which is attached to agent's head, and the ball. However, for approaching the ball, we need the distance on the ground between its feet and the ball. To compute this distance, we first use forward kinematics along the sagittal plane of the robot to derive the current height of the camera. Taking the agent's ankle as the origin, it is easy to calculate every joint's position from ankle to head in the two-dimensional space of the sagittal plane using only the current values of the AnklePitch, KneePitch, HipPitch joints. Having the ball distance and the height of the camera, the ground distance can be easily derived using the Pythagorean theorem. 
+\subsubsection*{Walk to Ball}
+Makes the agent walk towards the ball and stop when the ball is close enough to perform a kick. First, it performs the Turn to Ball action and then walk towards the ball, slowing down when it comes close to the ball. Recall that the ball distance returned by the vision perceptor is the distance between the camera, which is attached to agent's head, and the ball. However, for approaching the ball, we need the distance on the ground between its feet and the ball. To compute this distance, we first use forward kinematics along the sagittal plane of the robot to derive the current height of the camera. Taking the agent's ankle as the origin, it is easy to calculate every joint's position from ankle to head in the two-dimensional space of the sagittal plane using only the current values of the AnklePitch, KneePitch, HipPitch joints. Having the ball distance and the height of the camera, the ground distance can be easily derived using the Pythagorean theorem. 
 \[
 GroundDistance = \sqrt{BallDistance^2 + CameraHeight^2}
 \]
@@ -377,13 +376,13 @@ Figure~\ref{fig:2dkinematics} explains the derivation of the ground distance to 
  
  \begin{figure}[t!]
 \centering
-  \includegraphics[trim=0cm 4cm 0cm 4cm,clip,width=0.8\textwidth]   {Chapter3/figures/2dkinematics.pdf}
+  \includegraphics[trim=0cm 4cm 3cm 4cm,clip,width=0.8\textwidth]   {Chapter3/figures/2dkinematics.pdf}
   \caption{Ground Distance between the Agent and the Ball.}
   \label{fig:2dkinematics}
 \end{figure}
 
 
- \item[On Ball Action] This action moves the agent close to the ball and executes an appropriate kick depending on the current state of the game. This action has a finite state machine logic shown in Figure~\ref{fig:GoKickBallToGoal}. It first performs the Walk To Ball action in order to reach the ball. After the successful completion of the Walk To Ball action, the agent performs the Find Opponent's Goal action. Subsequently, it aligns itself with the direction of the opponent's goal; the precision of this alignment is inversely proportional to the distance from the opponent's goal, meaning that far away from the opponent's goal there is more tolerance, since we only want to clear the ball from our own half of the field. Afterwards, it performs the Position for Kick action and finally it executes a kick motion. At any point of time, it is possible that an opponent agent takes the ball away from our agent; if that happens, the agent returns to the beginning.
+\subsubsection*{On Ball Action} This action moves the agent close to the ball and executes an appropriate kick depending on the current state of the game. This action has a finite state machine logic shown in Figure~\ref{fig:GoKickBallToGoal}. It first performs the Walk To Ball action in order to reach the ball. After the successful completion of the Walk To Ball action, the agent performs the Find Opponent's Goal action. Subsequently, it aligns itself with the direction of the opponent's goal; the precision of this alignment is inversely proportional to the distance from the opponent's goal, meaning that far away from the opponent's goal there is more tolerance, since we only want to clear the ball from our own half of the field. Afterwards, it performs the Position for Kick action and finally it executes a kick motion. At any point of time, it is possible that an opponent agent takes the ball away from our agent; if that happens, the agent returns to the beginning.
 
 
  \begin{figure}[t!]
@@ -395,7 +394,7 @@ Figure~\ref{fig:2dkinematics} explains the derivation of the ground distance to 
 
 
 
- \item[Walk To Coordinate]
+\subsubsection*{Walk to Coordinate}
 This action moves the agent to a specific location $(x_t, y_t, \theta_t)$ in the field. To perform this action we need to know our own location $(x_a, y_a, \theta_a)$ in the field; from there it is easy to calculate in which direction to walk in order to reach the given target. Figure~\ref{fig:WalkToCoordinate} shows how the distance $d$ and the direction $\phi$ to the target are calculated:
 \begin{align*}
 \phi &= \text{atan2}(x_t-x_a,y_t-y_a)\\
@@ -412,13 +411,11 @@ Been helped from the above calculations agent is always aware of the distance an
 \end{figure}
 
 
- \item[Walk To Direction]
+\subsubsection*{Walk To Direction}
  This action leads agent to walk towards a specific direction.
  
- \item[Walk With Ball To Direction]
+\subsubsection*{Walk With Ball To Direction}
  As far as agent reaches the ball, he will try to keep the ball in front of its feet and walk towards a direction keeping into mind that the ball has to be always in front. This action is not yet functional in our approach as movements based on motion files make it hard for us keeping ball in front of our agent all the time.
- 
-\end{description}
 
 
 

@@ -14,7 +14,7 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.1 r9760"
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="GoToPos.svg">
   <defs
      id="defs4">
@@ -39,15 +39,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="351.42828"
-     inkscape:cy="876.86869"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="204.55983"
+     inkscape:cy="712.16506"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1680"
-     inkscape:window-height="973"
-     inkscape:window-x="0"
+     inkscape:window-width="1215"
+     inkscape:window-height="776"
+     inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:snap-grids="false"
@@ -70,7 +70,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -88,15 +88,19 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="398.80579"
-       y="100.85938"
+       x="329.10526"
+       y="107.93045"
        id="text3000"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3002"
-         x="398.80579"
-         y="100.85938"
-         style="font-size:22px">Agent</tspan></text>
+         x="329.10526"
+         y="107.93045"
+         style="font-size:22px">Agent(x<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3131">a</tspan>,y<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3133">a</tspan>)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 468.50628,120.0523"
@@ -401,7 +405,11 @@
          id="tspan6155-1"
          x="95.005455"
          y="460.29868"
-         style="font-size:22px">Target(x,y)</tspan></text>
+         style="font-size:22px">Target(x<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3072">t</tspan>,y<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3070">t</tspan>)</tspan></text>
     <path
        transform="translate(-373.35606,179.6487)"
        sodipodi:type="arc"
@@ -425,15 +433,19 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="492.95444"
-       y="65.443146"
+       x="505.09729"
+       y="72.943146"
        id="text6572"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6574"
-         x="492.95444"
-         y="65.443146"
-         style="font-size:22px">Body</tspan></text>
+         x="505.09729"
+         y="72.943146"
+         style="font-size:22px">Θ<tspan
+   style="font-size:65.00091553%;baseline-shift:super"
+   id="tspan3086">o</tspan><tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3084">body</tspan></tspan></text>
     <path
        style="opacity:0.97000002;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.00000008, 6.00000023;stroke-dashoffset:0"
        d="m 119.28573,121.50504 560.71433,-0.57143"
@@ -512,18 +524,39 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="486.18375"
-       y="178.09314"
-       id="text3000-4"
+       x="494.9577"
+       y="160.29367"
+       id="text6572-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3002-7"
-         x="486.18375"
-         y="178.09314"
-         style="font-size:22px">Theta<tspan
+         id="tspan6574-7"
+         x="494.9577"
+         y="160.29367"
+         style="font-size:22px">Θ<tspan
    style="font-size:65.00091553%;baseline-shift:super"
-   id="tspan6763">o</tspan><tspan
-   style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan6761">target</tspan></tspan></text>
-  </g>
+   id="tspan3086-8">o</tspan><tspan
+   id="tspan3117"
+   style="font-size:65%;baseline-shift:sub">target</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="579.64288"
+       y="153.79076"
+       id="text3119"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3121"
+         x="579.64288"
+         y="153.79076" /></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3123"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3125"><rect
+           id="rect3127"
+           width="10.101525"
+           height="64.649765"
+           x="168.69548"
+           y="495.76813" /></flowRegion><flowPara
+         id="flowPara3129">rget</flowPara></flowRoot>  </g>
 </svg>

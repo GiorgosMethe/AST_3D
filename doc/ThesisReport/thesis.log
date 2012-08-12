@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.27)  11 AUG 2012 05:07
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.27)  11 AUG 2012 13:54
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -1030,7 +1030,7 @@ l.152 \[
 Underfull \vbox (badness 1460) has occurred while \output is active []
 
  [35 <./Chapter3/figures/Models_NaoAnatomy.png>] [36]
-<Chapter3/figures/MotionController.pdf, id=900, 453.695pt x 379.4175pt>
+<Chapter3/figures/MotionController.pdf, id=900, 524.96124pt x 434.62375pt>
 File: Chapter3/figures/MotionController.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/MotionController.pdf>
@@ -1046,262 +1046,263 @@ File: Chapter3/figures/DynamicTurn.pdf Graphic file (type pdf)
 File: Chapter3/figures/DynamicTurn.pdf Graphic file (type pdf)
  <use Chapter3/figures/DynamicTurn.pdf>
 [41 <./Chapter3/figures/DynamicTurn.pdf>] [42]
-<Chapter3/figures/NaoKick.png, id=940, 581.17125pt x 597.23125pt>
+<Chapter3/figures/NaoKick.png, id=944, 581.17125pt x 597.23125pt>
 File: Chapter3/figures/NaoKick.png Graphic file (type png)
 
-<use Chapter3/figures/NaoKick.png> [43 <./Chapter3/figures/NaoKick.png (PNG cop
-y)>]pdfTeX warning (ext4): destination with the same identifier (name{ALC@line.
-1}) has been already used, duplicate ignored
+<use Chapter3/figures/NaoKick.png> [43]pdfTeX warning (ext4): destination with 
+the same identifier (name{ALC@line.1}) has been already used, duplicate ignored
+
 <to be read again> 
                    \relax 
-l.330 \STATE
+l.332 \STATE
              {\bf Input: }$Obstacles = \lbrace O_{1},O_{2},...,O_{n} \rbrace $p
 dfTeX warning (ext4): destination with the same identifier (name{ALC@rem.1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.330 \STATE
+l.332 \STATE
              {\bf Input: }$Obstacles = \lbrace O_{1},O_{2},...,O_{n} \rbrace $p
 dfTeX warning (ext4): destination with the same identifier (name{ALC@line.2}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.331 \STATE
+l.333 \STATE
              {\bf Output: }$EscapeAngleSet$pdfTeX warning (ext4): destination w
 ith the same identifier (name{ALC@rem.1}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.331 \STATE
+l.333 \STATE
              {\bf Output: }$EscapeAngleSet$pdfTeX warning (ext4): destination w
 ith the same identifier (name{ALC@line.3}) has been already used, duplicate ign
 ored
 <to be read again> 
                    \relax 
-l.332 \STATE
+l.334 \STATE
             pdfTeX warning (ext4): destination with the same identifier (name{A
 LC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.332 \STATE
+l.334 \STATE
             pdfTeX warning (ext4): destination with the same identifier (name{A
 LC@line.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.333 \FOR{$i = 1 \textbf{ to } n$}
+l.335 \FOR{$i = 1 \textbf{ to } n$}
                                    pdfTeX warning (ext4): destination with the 
 same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.333 \FOR{$i = 1 \textbf{ to } n$}
+l.335 \FOR{$i = 1 \textbf{ to } n$}
                                    pdfTeX warning (ext4): destination with the 
 same identifier (name{ALC@line.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.334 \STATE
+l.336 \STATE
              find $LeftEscapeAngle_i$ for obstacle $O_i$pdfTeX warning (ext4): 
 destination with the same identifier (name{ALC@rem.1}) has been already used, d
 uplicate ignored
 <to be read again> 
                    \relax 
-l.334 \STATE
+l.336 \STATE
              find $LeftEscapeAngle_i$ for obstacle $O_i$pdfTeX warning (ext4): 
 destination with the same identifier (name{ALC@line.6}) has been already used, 
 duplicate ignored
 <to be read again> 
                    \relax 
-l.335 \STATE
+l.337 \STATE
              find $RightEscapeAngle_i$ for obstacle $O_i$pdfTeX warning (ext4):
  destination with the same identifier (name{ALC@rem.1}) has been already used, 
 duplicate ignored
 <to be read again> 
                    \relax 
-l.335 \STATE
+l.337 \STATE
              find $RightEscapeAngle_i$ for obstacle $O_i$pdfTeX warning (ext4):
  destination with the same identifier (name{ALC@line.7}) has been already used,
  duplicate ignored
 <to be read again> 
                    \relax 
-l.336 \ENDFOR
+l.338 \ENDFOR
              pdfTeX warning (ext4): destination with the same identifier (name{
 ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.336 \ENDFOR
+l.338 \ENDFOR
              pdfTeX warning (ext4): destination with the same identifier (name{
 ALC@line.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.337 \STATE
+l.339 \STATE
              $EscapeAngleSet = \emptyset$pdfTeX warning (ext4): destination wit
 h the same identifier (name{ALC@rem.1}) has been already used, duplicate ignore
 d
 <to be read again> 
                    \relax 
-l.337 \STATE
+l.339 \STATE
              $EscapeAngleSet = \emptyset$pdfTeX warning (ext4): destination wit
 h the same identifier (name{ALC@line.9}) has been already used, duplicate ignor
 ed
 <to be read again> 
                    \relax 
-l.338 \FOR{$i = 1 \textbf{ to } n$}
+l.340 \FOR{$i = 1 \textbf{ to } n$}
                                    pdfTeX warning (ext4): destination with the 
 same identifier (name{ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.338 \FOR{$i = 1 \textbf{ to } n$}
+l.340 \FOR{$i = 1 \textbf{ to } n$}
                                    pdfTeX warning (ext4): destination with the 
 same identifier (name{ALC@line.10}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.339 ...j,RightEscapeAngle_j], \forall  j\neq i$}
+l.341 ...j,RightEscapeAngle_j], \forall  j\neq i$}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{ALC@rem.1}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
-l.339 ...j,RightEscapeAngle_j], \forall  j\neq i$}
+l.341 ...j,RightEscapeAngle_j], \forall  j\neq i$}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{ALC@line.11}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.340 \STATE
+l.342 \STATE
              $EscapeAngleSet = EscapeAngleSet \cup \{LeftEscapeAngle_i\}$pdfTeX
  warning (ext4): destination with the same identifier (name{ALC@rem.1}) has bee
 n already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.340 \STATE
+l.342 \STATE
              $EscapeAngleSet = EscapeAngleSet \cup \{LeftEscapeAngle_i\}$pdfTeX
  warning (ext4): destination with the same identifier (name{ALC@line.12}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.341 \ENDIF
+l.343 \ENDIF
             pdfTeX warning (ext4): destination with the same identifier (name{A
 LC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.341 \ENDIF
+l.343 \ENDIF
             pdfTeX warning (ext4): destination with the same identifier (name{A
 LC@line.13}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.342 ...j,RightEscapeAngle_j], \forall  j\neq i$}
+l.344 ...j,RightEscapeAngle_j], \forall  j\neq i$}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{ALC@rem.1}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
-l.342 ...j,RightEscapeAngle_j], \forall  j\neq i$}
+l.344 ...j,RightEscapeAngle_j], \forall  j\neq i$}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{ALC@line.14}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.343 \STATE
+l.345 \STATE
              $EscapeAngleSet = EscapeAngleSet \cup \{RightEscapeAngle_i\}$pdfTe
 X warning (ext4): destination with the same identifier (name{ALC@rem.1}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.343 \STATE
+l.345 \STATE
              $EscapeAngleSet = EscapeAngleSet \cup \{RightEscapeAngle_i\}$pdfTe
 X warning (ext4): destination with the same identifier (name{ALC@line.15}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.344 \ENDIF
+l.346 \ENDIF
             pdfTeX warning (ext4): destination with the same identifier (name{A
 LC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.344 \ENDIF
+l.346 \ENDIF
             pdfTeX warning (ext4): destination with the same identifier (name{A
 LC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.345 \ENDFOR
+l.347 \ENDFOR
              pdfTeX warning (ext4): destination with the same identifier (name{
 ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.346 \RETURN
-              $EscapeAngleSet$ [44]
+l.348 \RETURN
+              $EscapeAngleSet$ [44 <./Chapter3/figures/NaoKick.png (PNG copy)>]
+[45]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/ObstacleAvoidance.pdf): PDF i
 nclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/ObstacleAvoidance.pdf, id=957, 530.31946pt x 434.77179pt>
+<Chapter3/figures/ObstacleAvoidance.pdf, id=973, 519.83308pt x 434.77179pt>
 File: Chapter3/figures/ObstacleAvoidance.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/ObstacleAvoidance.pdf> [45]
+<use Chapter3/figures/ObstacleAvoidance.pdf> [46 <./Chapter3/figures/ObstacleAv
+oidance.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/2dkinematics.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/2dkinematics.pdf, id=964, 622.325pt x 499.466pt>
+<Chapter3/figures/2dkinematics.pdf, id=1036, 622.325pt x 499.466pt>
 File: Chapter3/figures/2dkinematics.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/2dkinematics.pdf> [46 <./Chapter3/figures/ObstacleAvoidan
-ce.pdf>] <Chapter3/figures/KickFSM.pdf, id=1028, 245.91875pt x 633.36626pt>
+<use Chapter3/figures/2dkinematics.pdf> [47 <./Chapter3/figures/2dkinematics.pd
+f>] <Chapter3/figures/KickFSM.pdf, id=1050, 245.91875pt x 633.36626pt>
 File: Chapter3/figures/KickFSM.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/KickFSM.pdf> [47 <./Chapter3/figures/2dkinematics.pdf> <.
-/Chapter3/figures/KickFSM.pdf>]
+<use Chapter3/figures/KickFSM.pdf>
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/GoToPos.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/GoToPos.pdf, id=1040, 580.2034pt x 418.28021pt>
+<Chapter3/figures/GoToPos.pdf, id=1052, 580.2034pt x 418.28021pt>
 File: Chapter3/figures/GoToPos.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/GoToPos.pdf> [48 <./Chapter3/figures/GoToPos.pdf>]
-<Chapter3/figures/MAC.pdf, id=1059, 475.7775pt x 91.34125pt>
+<use Chapter3/figures/GoToPos.pdf> [48 <./Chapter3/figures/KickFSM.pdf>]
+Underfull \vbox (badness 3312) has occurred while \output is active []
+
+ [49 <./Chapter3/figures/GoToPos.pdf>]
+<Chapter3/figures/MAC.pdf, id=1081, 475.7775pt x 91.34125pt>
 File: Chapter3/figures/MAC.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/MAC.pdf>
-Underfull \vbox (badness 1019) has occurred while \output is active []
-
- [49 <./Chapter3/figures/MAC.pdf>]
+<use Chapter3/figures/MAC.pdf> [50 <./Chapter3/figures/MAC.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/Goalie.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/Goalie.pdf, id=1073, 580.2034pt x 462.44354pt>
+<Chapter3/figures/Goalie.pdf, id=1094, 580.2034pt x 462.44354pt>
 File: Chapter3/figures/Goalie.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/Goalie.pdf>
-<Chapter3/figures/GoalieFall.png, id=1078, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall.png, id=1099, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall.png>
-<Chapter3/figures/GoalieFall2.png, id=1080, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall2.png, id=1101, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall2.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall2.png>
-<Chapter3/figures/GoalieFall3.png, id=1082, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall3.png, id=1103, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall3.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall3.png>
-<Chapter3/figures/GoalieFall4.png, id=1084, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall4.png, id=1105, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall4.png Graphic file (type png)
 
-<use Chapter3/figures/GoalieFall4.png>) [50] [51 <./Chapter3/figures/Goalie.pdf
->] [52 <./Chapter3/figures/GoalieFall.png (PNG copy)> <./Chapter3/figures/Goali
+<use Chapter3/figures/GoalieFall4.png>) [51] [52 <./Chapter3/figures/Goalie.pdf
+>] [53 <./Chapter3/figures/GoalieFall.png (PNG copy)> <./Chapter3/figures/Goali
 eFall2.png (PNG copy)> <./Chapter3/figures/GoalieFall3.png (PNG copy)> <./Chapt
 er3/figures/GoalieFall4.png (PNG copy)>]
 \openout2 = `Chapter4/chapter4.aux'.
 
- (./Chapter4/chapter4.tex
+ (./Chapter4/chapter4.tex [54
+
+
+
+]
 Chapter 5.
-<Chapter4/figures/CoordinationCycle.pdf, id=1106, 443.6575pt x 307.1475pt>
+<Chapter4/figures/CoordinationCycle.pdf, id=1131, 443.6575pt x 307.1475pt>
 File: Chapter4/figures/CoordinationCycle.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/CoordinationCycle.pdf> [53
-
-
-
-] [54 <./Chapter4/figures/CoordinationCycle.pdf>]pdfTeX warning (ext4): destina
-tion with the same identifier (name{ALC@line.1}) has been already used, duplica
-te ignored
+<use Chapter4/figures/CoordinationCycle.pdf> [55] [56 <./Chapter4/figures/Coord
+inationCycle.pdf>]pdfTeX warning (ext4): destination with the same identifier (
+name{ALC@line.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.40 \STATE
@@ -1490,46 +1491,46 @@ C@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.56 \ENDIF
-            [55] [56]
+            [57] [58]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/CoordComm.pdf): PDF inclusion
 : found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/CoordComm.pdf, id=1128, 369.7395pt x 366.54305pt>
+<Chapter4/figures/CoordComm.pdf, id=1153, 369.7395pt x 366.54305pt>
 File: Chapter4/figures/CoordComm.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/CoordComm.pdf> [57] [58 <./Chapter4/figures/CoordComm.pdf
+<use Chapter4/figures/CoordComm.pdf> [59] [60 <./Chapter4/figures/CoordComm.pdf
 >]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Ball.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Ball.pdf, id=1275, 580.2034pt x 501.43071pt>
+<Chapter4/figures/Ball.pdf, id=1300, 580.2034pt x 501.43071pt>
 File: Chapter4/figures/Ball.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Ball.pdf> [59] [60 <./Chapter4/figures/Ball.pdf>]
-[61]
+<use Chapter4/figures/Ball.pdf> [61] [62 <./Chapter4/figures/Ball.pdf>]
+[63]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Splitter.pdf): PDF inclusion:
  found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Splitter.pdf, id=1344, 580.2034pt x 524.21819pt>
+<Chapter4/figures/Splitter.pdf, id=1369, 580.2034pt x 524.21819pt>
 File: Chapter4/figures/Splitter.pdf Graphic file (type pdf)
 
 <use Chapter4/figures/Splitter.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62 <./Chapter4/figures/Splitter.pdf>]
-<Chapter4/figures/Graph1.pdf, id=1372, 1219.55624pt x 701.62125pt>
+ [64 <./Chapter4/figures/Splitter.pdf>]
+<Chapter4/figures/Graph1.pdf, id=1397, 1219.55624pt x 701.62125pt>
 File: Chapter4/figures/Graph1.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Graph1.pdf> [63 <./Chapter4/figures/Graph1.pdf>]
-<Chapter4/figures/ActivePositions2.png, id=1438, 851.18pt x 902.37125pt>
+<use Chapter4/figures/Graph1.pdf> [65 <./Chapter4/figures/Graph1.pdf>]
+<Chapter4/figures/ActivePositions2.png, id=1463, 851.18pt x 902.37125pt>
 File: Chapter4/figures/ActivePositions2.png Graphic file (type png)
 
 <use Chapter4/figures/ActivePositions2.png>
-<Chapter4/figures/Active3.png, id=1440, 922.44624pt x 831.105pt>
+<Chapter4/figures/Active3.png, id=1465, 922.44624pt x 831.105pt>
 File: Chapter4/figures/Active3.png Graphic file (type png)
 
-<use Chapter4/figures/Active3.png> [64 <./Chapter4/figures/ActivePositions2.png
- (PNG copy)>] [65 <./Chapter4/figures/Active3.png (PNG copy)>]pdfTeX warning (e
+<use Chapter4/figures/Active3.png> [66 <./Chapter4/figures/ActivePositions2.png
+ (PNG copy)>] [67 <./Chapter4/figures/Active3.png (PNG copy)>]pdfTeX warning (e
 xt4): destination with the same identifier (name{ALC@line.1}) has been already 
 used, duplicate ignored
 <to be read again> 
@@ -1638,38 +1639,38 @@ ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.277 \ENDFOR
-              [66] [67]
+              [68] [69]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation9_0.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation9_0.pdf, id=1462, 580.14201pt x 453.95424pt>
+<Chapter4/figures/Formation9_0.pdf, id=1487, 580.14201pt x 453.95424pt>
 File: Chapter4/figures/Formation9_0.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Formation9_0.pdf> [68 <./Chapter4/figures/Formation9_0.pd
+<use Chapter4/figures/Formation9_0.pdf> [70 <./Chapter4/figures/Formation9_0.pd
 f>]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation11_0.pdf): PDF inclu
 sion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation11_0.pdf, id=1471, 580.2034pt x 473.63727pt>
+<Chapter4/figures/Formation11_0.pdf, id=1496, 580.2034pt x 473.63727pt>
 File: Chapter4/figures/Formation11_0.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Formation11_0.pdf> [69 <./Chapter4/figures/Formation11_0.
+<use Chapter4/figures/Formation11_0.pdf> [71 <./Chapter4/figures/Formation11_0.
 pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/RoleAss.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/RoleAss.pdf, id=1482, 580.2034pt x 559.17618pt>
+<Chapter4/figures/RoleAss.pdf, id=1507, 580.2034pt x 559.17618pt>
 File: Chapter4/figures/RoleAss.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/RoleAss.pdf> [70]
+<use Chapter4/figures/RoleAss.pdf> [72]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/SupportPos.pdf): PDF inclusio
 n: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/SupportPos.pdf, id=1488, 580.2034pt x 512.6133pt>
+<Chapter4/figures/SupportPos.pdf, id=1513, 580.2034pt x 512.6133pt>
 File: Chapter4/figures/SupportPos.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/SupportPos.pdf> [71 <./Chapter4/figures/RoleAss.pdf>]
-[72 <./Chapter4/figures/SupportPos.pdf>]pdfTeX warning (ext4): destination with
+<use Chapter4/figures/SupportPos.pdf> [73 <./Chapter4/figures/RoleAss.pdf>]
+[74 <./Chapter4/figures/SupportPos.pdf>]pdfTeX warning (ext4): destination with
  the same identifier (name{ALC@line.1}) has been already used, duplicate ignore
 d
 <to be read again> 
@@ -1828,15 +1829,15 @@ ALC@rem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.393 \ENDFOR
-              [73] [74]
+              [75] [76]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/AvoidCollision.pdf): PDF incl
 usion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/AvoidCollision.pdf, id=1835, 392.8808pt x 223.48851pt>
+<Chapter4/figures/AvoidCollision.pdf, id=1860, 392.8808pt x 223.48851pt>
 File: Chapter4/figures/AvoidCollision.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/AvoidCollision.pdf> [75 <./Chapter4/figures/AvoidCollisio
-n.pdf>]) [76]
+<use Chapter4/figures/AvoidCollision.pdf> [77 <./Chapter4/figures/AvoidCollisio
+n.pdf>]) [78]
 \openout2 = `Chapter5/chapter5.aux'.
 
  (./Chapter5/chapter5.tex
@@ -1844,62 +1845,58 @@ Chapter 6.
 
 Underfull \vbox (badness 2119) has occurred while \output is active []
 
- [77
+ [79
 
 
 
 ]
-[78] [79]
+[80] [81]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 85.
-) [80]
+) [82]
 \openout2 = `Chapter6/chapter6.aux'.
 
  (./Chapter6/chapter6.tex
 Chapter 7.
-[81
+[83
 
 
 
-] [82]) [83]
+] [84]) [85]
 \openout2 = `Chapter7/chapter7.aux'.
 
- (./Chapter7/chapter7.tex [84
+ (./Chapter7/chapter7.tex [86
 
 
 
 ]
 Chapter 8.
-[85]) [86] (./thesis.bbl (./thesis.brf)
+[87]) [88] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write10
 \openout10 = `thesis.brf'.
 
- [87
+ [89
 
 
-]) [88] (./thesis.aux
+]) [90] (./thesis.aux
 (./Abstract/abstract.aux) (./Introduction/introduction.aux)
 (./Chapter1/chapter1.aux) (./Chapter2/chapter2.aux) (./Chapter3/chapter3.aux)
 (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux) (./Chapter6/chapter6.aux)
-(./Chapter7/chapter7.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./Chapter7/chapter7.aux)) ) 
 Here is how much of TeX's memory you used:
- 8752 strings out of 494985
- 127530 string characters out of 1181034
- 222153 words of memory out of 3000000
+ 8771 strings out of 494985
+ 127731 string characters out of 1181034
+ 222164 words of memory out of 3000000
  11266 multiletter control sequences out of 15000+50000
  103366 words of font info for 77 fonts, out of 3000000 for 9000
  73 hyphenation exceptions out of 8191
- 45i,14n,48p,2350b,681s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
-st, replaced by a fixed one
+ 45i,14n,48p,2326b,681s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.2} has been r
+eferenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1926,9 +1923,9 @@ onts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-texlive
 /fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (106 pages, 17414180 bytes).
+Output written on thesis.pdf (108 pages, 17447959 bytes).
 PDF statistics:
- 2100 PDF objects out of 2487 (max. 8388607)
- 292 named destinations out of 1000 (max. 500000)
+ 2128 PDF objects out of 2487 (max. 8388607)
+ 311 named destinations out of 1000 (max. 500000)
  918 words of extra memory for PDF output out of 10000 (max. 10000000)
 

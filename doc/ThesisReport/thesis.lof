@@ -36,27 +36,27 @@
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Phase Sequence.}}{38}{figure.4.8}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Dynamic Walk Leaning: Left Leaning, No Leaning, Right Leaning.}}{41}{figure.4.9}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Dynamic Turn Gain: Turn Degrees (y-axis) against Gain Factor (x-axis).}}{42}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Nao Performing a Kick after Positioning for Kick.}}{43}{figure.4.11}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Nao Performing a Kick after Positioning for Kick.}}{44}{figure.4.11}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Obstacle Avoidance.}}{46}{figure.4.12}
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Ground Distance between the Agent and the Ball.}}{47}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces On Ball Action Logic Sequence.}}{47}{figure.4.14}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Walk To Coordinate Action.}}{48}{figure.4.15}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Time Slicing Communication.}}{49}{figure.4.16}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Goalkeeper Fall Function.}}{51}{figure.4.17}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{52}{figure.4.18}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces On Ball Action Logic Sequence.}}{48}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Walk To Coordinate Action.}}{49}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Time Slicing Communication.}}{50}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Goalkeeper Fall Function.}}{52}{figure.4.17}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{53}{figure.4.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Coordination cycle.}}{54}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Communication Process in Coordination.}}{58}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Ball's Position Observations.}}{60}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Coordination Splitter.}}{62}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Soccer Field Value.}}{63}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Active positions before elimination.}}{64}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Active positions after elimination.}}{65}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Formation Role Positions for 9 vs 9.}}{68}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Formation Role Positions for 11 vs 11.}}{69}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Role Assignment Function.}}{71}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Support Positions.}}{72}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Collision Detection Approach.}}{75}{figure.5.12}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Coordination cycle.}}{56}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Communication Process in Coordination.}}{60}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ball's Position Observations.}}{62}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Coordination Splitter.}}{64}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Soccer Field Value.}}{65}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Active positions before elimination.}}{66}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Active positions after elimination.}}{67}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Formation Role Positions for 9 vs 9.}}{70}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Formation Role Positions for 11 vs 11.}}{71}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Role Assignment Function.}}{73}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Support Positions.}}{74}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Collision Detection Approach.}}{77}{figure.5.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
