@@ -1,7 +1,7 @@
 \chapter{Team's Coordination}
 \label{Coordination}
 
-In this chapter, we are going to present the most important, exciting and time consuming part of this thesis. Until now, we have discussed all skills that agents need in order to be functional into the soccer field. With all these functionalities agents are able to locate themselves in the field, communicate with each other, and execute actions combining movements through motion controller. However, agents miss a thinking process with which they will be able to decide about what action they should do for their team's benefit. For example, imagine a human soccer player who is able to do all the things needed in a soccer match but he has not the ability to choose what to do. Therefore, there must be presented a high-level process which will combine all these skills, motions, communication ability, and actions having as a result a complete agent's behavior. As a behavior, we could define the process in which each agent takes as input arguments his beliefs and decides what he will do as an output. In our approach, instead of each agent having its own behavior, players are depend on a centralized process called coordination.  Coordination's algorithm is responsible to gather messages from all agents and as output it produces actions which are costless and worthy for all players who are included into this process. We chose goalkeeper as the coordination's administrator to be the one who is going to execute this procedure. This means that only goalkeeper``runs'' his own behavior and other field players do not. Field players just send their beliefs to the goalkeeper and he sends back the actions which are calculated by the coordination's algorithm execution.
+In this chapter, we are going to present the most important, exciting and time consuming part of this thesis. Until now, we have discussed all skills that agents need in order to be functional into the soccer field. With all these functionalities agents are able to locate themselves in the field, communicate with each other, and execute actions combining movements through motion controller. However, agents miss a thinking process with which they will be able to decide about what action they should do for their team's benefit. For example, imagine a human soccer player who is able to do all the things needed in a soccer match but he has not the ability to choose what to do. Therefore, there must be presented a high-level process which will combine all these skills, motions, communication ability, and actions having as a result a complete agent's behavior. As a behavior, we could define the process in which each agent takes as input arguments his beliefs and decides what he will do as an output. In our approach, instead of each agent having its own behavior, players are depend on a centralized process called coordination.  Coordination's algorithm is responsible to gather messages from all agents and as output it produces actions which are costless and worthy for all players who are included into this process. We chose goalkeeper as the coordination's administrator to be the one who is going to execute this procedure. This means that only goalkeeper``runs'' his own behavior (see Section~\ref{GoalKeeper}) and other field players do not. Field players just send their beliefs to the goalkeeper and he sends back the actions which are calculated by the coordination's algorithm execution.
 
 
 \begin{figure}[t!]
@@ -16,11 +16,12 @@ Figure~\ref{fig:CoordinationCycle} shows the difference between a field player a
 \begin{description}
 \item[Update coordination beliefs] Multiple world state beliefs from field players have to be combined in order to update our belief for the world state.
 \item[Split field player into groups] Field players are split into groups according to their significance to each game state. These groups are:
-\begin{description}
-\item[Active] This group consists of three agents. The on ball and two active players. Their responsibility is to support and protect the on ball player who is chosen by coordination to be the one who will be given an action which is related to the ball.
-\item[Inactive] This group consists of agents which are not able to know their positions in the field or they have been fallen on the ground.
-\item[Support] This group consists of the team's rest players and their responsibility is to fill team's formation positions with the best way possible.
-\end{description}
+\begin{itemize}
+\item Active
+\item Inactive
+\item Support
+\item Goalkeeper
+\end{itemize}
 \item[Compute positions for active players] All possible positions which are best candidates for assigning active players.
 \item[Assign actions for active players] Computation of the best two positions according to their cost.
 \item[Generate team's formation] Formation is generated according to ball's position into the soccer field.
@@ -183,6 +184,8 @@ One possible solution to this problem is to split players into subsets which wou
 \item[Inactive subset] Inactive subset consists of agents who have sent ``Type X'' messages. It is the less important set of agents in the coordination procedure. Agents who constitute this subset assigned the same action, to find their positions in the field. Finding their positions will be resulted to be inserted either in the active or in the support subset in the next coordination cycle.
 
 \item[Support subset] Support subset consists of agents who are neither in the active subset nor in the inactive one. Coordinate actions for these agents is the most time consuming and expensive part of the coordination algorithm.
+
+\item[Goalkeeper] We can realize that goalkeeper subsets includes only one agent. The player with the uniform number one is selected to be this agent which is responsible for guarding our goal. Goalkeeper is also the administrator of the coordination process. His independent and individual behavior will be explained in the end of this Chapter, in Section~\ref{GoalKeeper}.
 \end{description}
 
 \begin{figure}[t!]
@@ -191,7 +194,7 @@ One possible solution to this problem is to split players into subsets which wou
   \caption{Coordination Splitter.} 
   \label{fig:Splitter}
 \end{figure}
-y
+
 \section{Coordination Splitter}
 In this section we are going to discuss how the above three groups are generated by coordination splitter. An array full of team's agents is sorted according to the distance each agent has from the ball. We assign to the active subset the agents in the three first positions of the sorted array.
 Other agents with distance less than infinity join the support subset.
@@ -459,14 +462,37 @@ The same principle applies here too, the mapping with the smallest cost will be 
 
 
 
-\section{Overview}
+\section{Coordination Type}
 
 Coordination is not a static procedure and changes during different game states. There are three types of team coordination. These types are:
 \begin{description}
-\item[Active] This is the normal type of coordination. Every aspect of the coordination process we have talked above is used for the team's coordination.
+\item[Active] This is the normal type of coordination. Every aspect of the coordination process we have discussed above is used for the team's coordination and the computation of action for all field players.
 \item[Support] In this type, all players join by default support subset. It is used in situations when only the opponent team has the right to perform a kick to the ball e.g opponent's kick off,  opponents' goal kick, etc.
 \item[Wait] In this type, all players join by default inactive subset. It is used in situations when both teams have to wait for the kick off signal in before kick situations. Every player assigned an action to localize itself into the field.
 \end{description}
 
 
 
+\section{Goalkeeper Behavior}
+\label{GoalKeeper}
+
+This section presents the behavior that leads goalkeeper to make decisions and choose actions for itself. As we said in Section~\ref{Architecture}, goalkeeper is the only agent in our team who ``runs'' his own behavior. His behavior depends on a finite state machine. His initial state is the ``\textbf{start}'' state. In this state goalkeeper tries to position himself in the center of his goal. When he accomplishes moving there, we change its FSM changes to ``\textbf{Guard}'' state. In guard state he makes use of the Track Moving Object action to figure out the ball's current position, the direction, and the speed of its possible movement.
+
+\begin{figure}[t!]
+\centering
+  \includegraphics[trim = 0cm 0cm 10cm 0cm, clip,width=0.6\textwidth]{Chapter3/figures/Goalie.pdf}  
+  \caption{Goalkeeper Fall Function.}
+  \label{fig:Goalkeeper}
+\end{figure} 
+
+Figure~\ref{fig:Goalkeeper} is going to help us understand easier this state's basic idea. Goalkeeper Considers his position as the start of both axis x and y due to difficulties in making use of the localization process to understand object's moving. So, red dashed line determines the goalkeeper's x and y axes. For every movement of the ball he tries to compute if there is an intersection point between its y-axis and the grey dashed line which starts from ball's position in the direction of ball's movement. If there is an intersection point between these two lines then agents computes if this point is between the two mentioned in the figure thresholds ($Threshold_{Right}$,$Threshold_{Left}$). If yes, we are pretty sure that ball is heading towards our goal. We compute how much time will take to the ball to meet our y-axis according to its speed and taking account the friction between ball and the ground. If this time is equal or less than the time takes our agent to fall, agent performs a right or a left fall. You can see agent falling to prevent a goal in Figure~\ref{fig:GoalkeeperFall}. There are also other states. State ``\textbf{Libero}'' is a state in which goalkeeper sees the ball into his box and there are no other agents near to it. Then goalkeeper goes to clear the ball from his box while, through coordination process informs other field players that he is at ``libero'' state to prevent them from going towards the ball too. When he clears the ball, he returns to his initial position and state. 
+
+\begin{figure}[t!] 
+\centering    
+	\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall.png}
+	\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall2.png}
+	\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall3.png}
+	\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall4.png}
+	\caption{Goalkeeper Falls to Prevent Opponents from Scoring.}
+  \label{fig:GoalkeeperFall}
+\end{figure}

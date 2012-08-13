@@ -428,30 +428,3 @@ Communication in Simspark is not ideal. There are not restrictions about the use
   \caption{Time Slicing Communication.}
   \label{fig:TimeSlicing}
 \end{figure} 
-
-
-\section{Goalkeeper Behavior}
-
-In our approach, only goalkeeper ``runs'' an independent behavior, the rest field agents start a communication procedure between them and goalkeeper in order to inform him about their beliefs of the world state and their state whenever it is needed. Goalkeeper, is going to decide about the actions that every field player should do. So, we can realize that field players do not execute any behavior. In contrast, goalkeeper executes this task for them.
-
-This section presents the behavior that leads goalkeeper to make decisions and choose actions for itself. As we said in Section \ref{Architecture}, goalkeeper is the only agent in our team who ``runs'' his own behavior. His behavior depends on a finite state machine. His initial state is ``\textbf{start}'' state. In this state goalkeeper tries to move himself in the center of his goal. When he accomplishes moving there, we change his FSM's state to ``\textbf{Guard}'' state. In guard state he makes use of the Watch Object Movement action to figure out the ball's current position and the  direction and the speed of its possible movement.
-
-\begin{figure}[t!]
-\centering
-  \includegraphics[trim = 0cm 0cm 10cm 0cm, clip,width=0.6\textwidth]{Chapter3/figures/Goalie.pdf}  
-  \caption{Goalkeeper Fall Function.}
-  \label{fig:Goalkeeper}
-\end{figure} 
-
-Figure~\ref{fig:Goalkeeper} is going to help you understand easier this state's basic idea. Goalkeeper Considers his position as the start of both axis x and y due to difficulties in making use of the localization process. So, red dashed line determines the goalkeeper's y-axis and x-axis. For every movement of the ball he tries to compute if there is an intersection point between its y-axis and the grey dashed line which starts from ball's position in the direction of ball's movement. If there is an intersection point between these two lines then agents computes if this point is out of the two thresholds ($Threshold_{Right}$,$Threshold_{Left}$). If not, we are pretty sure that ball is heading towards our goal. We compute how much time will take to the ball to meet our y-axis according to its speed and taking account the friction between ball and the ground. If this time is equal or less than the time takes our agent to fall, agent performs a right or a left fall. You can see agent falling to prevent a goal in Figure~\ref{fig:GoalkeeperFall}. There are also other states. State ``\textbf{Libero}'' is a state in which goalkeeper sees the ball into his box and there are no other agents near to it. Then goalkeeper goes to clear the ball from his box. Through coordination process informs other field players that he is at ``libero'' state to prevent them from going towards the ball too. When he clears the ball, he returns to his initial position. 
-
-\begin{figure}[t!] 
-\centering    
-	\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall.png}
-	\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall2.png}
-	\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall3.png}
-	\includegraphics[trim = 5cm 10cm 30cm 5cm, clip,scale=0.25]{Chapter3/figures/GoalieFall4.png}
-	\caption{Goalkeeper Falls to Prevent Opponents from Scoring.}
-  \label{fig:GoalkeeperFall}
-\end{figure}
-
