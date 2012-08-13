@@ -7,18 +7,18 @@ This section presents the improvements we have done in the motions' part. In gen
 
 \begin{table}
 \begin{center}
-    \begin{tabular}{ | c | c | c | c | c |}
-    \hline
-    \textbf{Motion Version} 			& \textbf{Walk(m/s)} 			& \textbf{Turn(d/s)} 	& \textbf{Kick(m)} 	& \textbf{Strong Kick(m)} \\ \hline
-    Webots (Text-Based) 		& 0.11 				& 21 				& 3 				& - \\ \hline	
-    FIIT (XML)				& 0.22 				& 25 				& 3 (4 sec) 		& 4 (5 sec) \\ \hline
-    \textbf{AST\_3D} 		&  \textbf{0.45} 	& \textbf{30} 		& \textbf{3} (2.5 sec)& \textbf{5.5} (2.5 sec) \\
-    \hline
-    \end{tabular}
+\begin{tabular}{ccccc}
+\textbf{Motion Version} & \textbf{Walk(m/s)}	& \textbf{Turn(d/s)}	& \textbf{Kick(m)}&\textbf{Strong Kick(m)} \\
+\midrule
+Webots (Text-Based) 		& 0.11 				& 21 				& 3 				& - \\
+FIIT (XML)				& 0.22 				& 25 				& 3 (4 sec) 		& 4 (5 sec) \\
+AST\_3D 		&  \textbf{0.45} 	& \textbf{30} 		& \textbf{3} (2.5 sec)& \textbf{5.5} (2.5 sec) \\
+\end{tabular}
 \end{center}
 \label{MotionImprovements}
 \caption{Motion's Performance Improvement}
 \end{table}
+
 
 
 \section{Communication Results}
@@ -26,13 +26,12 @@ Testing communication process through ideal external communication when only our
 
 \begin{table}
 \begin{center}
-    \begin{tabular}{ | c | c | c |}
-    \hline
-    \textbf{Communication Phase} 	& Ideal (Cycles) 			& During Match (Cycles) \\ \hline
-    Init Messages 					& 24  ( .48 Sec ) 			& 24 	( .48 Sec )		 \\ \hline	
-    Coordination Messages			& 24  ( .48 Sec )			& 42.5  ( .85 Sec )			 \\ \hline
-    Action Messages 				    & 24  ( .48 Sec )			& 24 ( .48 Sec )	 		 \\ 
-    \hline
+    \begin{tabular}{ccc}
+    \textbf{Communication Phase} 	& \textbf{Ideal} (Cycles) 			& \textbf{During Match} (Cycles) \\
+    \midrule
+    Init Messages 					& 24  ( 0.48 Sec ) 			& 24 	( 0.48 Sec )		\\
+    Coordination Messages			& 24  ( 0.48 Sec )			& 42.5  ( 0.85 Sec )		\\
+    Action Messages 				    & 24  ( 0.48 Sec )			& 24 ( 0.48 Sec )	 		\\
     \end{tabular}
 \end{center}
 \label{CommunicationResults}
@@ -42,7 +41,7 @@ Testing communication process through ideal external communication when only our
 
 
 \section{Goalkeeper}
-Goalkeeper's behavior was tested against the best team in Robocup 3D Simulation League UT Austin Villa. To determine his ability to stop opponents from scoring we first use a goalkeeper which had an ``empty'' behavior in which he was not able to perform any movement or track the ball, standing useless at the center of our goal. Opponent team managed to score seven goals in this occasion. However, when goalkeeper made use of his current developed behavior he achieved to reduce concede goal from seven to three. 
+Goalkeeper's behavior was tested against the best team in Robocup 3D Simulation League UT Austin Villa. To determine his ability to stop opponents from scoring we first use a goalkeeper which had an ``empty'' behavior in which he was not able to perform any movement or track the ball, standing useless at the center of our goal. Opponent team managed to score seven goals in this occasion. However, when goalkeeper made use of his current developed behavior he achieved to reduce conceded goal from seven to three. 
 
 
 
@@ -50,7 +49,7 @@ Goalkeeper's behavior was tested against the best team in Robocup 3D Simulation 
 
 
 
-\section{Coordination Results}
+\section{Coordination Results}conceded
 To be written...
 
 Advantages...
@@ -87,20 +86,19 @@ All games have 10 minutes duration same with real competition matches in Robocup
 \footnotetext[2]{\textbf{Client2}: Intel Quad Core i5 3.3 Ghz,4GiB Ram}
 \begin{table}
 \begin{center}
-    \begin{tabular}{ | c | c | c | c | c | c | }
-    \hline
-    \textbf{Team} 	& \textbf{W} & \textbf{D} & \textbf{L} & \textbf{AGD}\footnotemark 	& \textbf{Games}   \\ \hline
-    UTAustinVilla 	& 0		& 0		& 4		& -5.2		& 4 			\\ \hline	
-    Robocanes 		& 0		& 0		& 1		& -6.0		& 1 			\\ \hline
-    BeeStanbul		& 0		& 0		& 3		& -4.0		& 3				\\ \hline
-    NomoFC 			& 1		& 2		& 0		& +0.3 		& 3 			\\ \hline
-    Rail 			& 0		& 4		& 0		& 0.0 		& 4 			\\ \hline
-    OxBlue 			& 0		& 0		& 2		& -1.5 		& 2 			\\ \hline
-    FUTK3D 			& 0		& 5		& 0		& 0.0 		& 5 			\\ \hline
-    FARZANEGAN 		& 1		& 1		& 0		& +0.5 		& 2 			\\ \hline
-    MAK 			    & 2		& 0		& 0		& +2.0 		& 2 			\\ \hline
+    \begin{tabular}{cccccc}
+    \textbf{Team} 	& \textbf{W} & \textbf{D} & \textbf{L} & \textbf{AGD}\footnotemark 	& \textbf{Games}   \\
+    \midrule
+    UTAustinVilla 	& 0		& 0		& 4		& -5.2		& 4 			\\
+    Robocanes 		& 0		& 0		& 1		& -6.0		& 1 			\\
+    BeeStanbul		& 0		& 0		& 3		& -4.0		& 3				\\
+    NomoFC 			& 1		& 2		& 0		& +0.3 		& 3 			\\
+    Rail 			& 0		& 4		& 0		& 0.0 		& 4 			\\
+    OxBlue 			& 0		& 0		& 2		& -1.5 		& 2 			\\
+    FUTK3D 			& 0		& 5		& 0		& 0.0 		& 5 			\\
+    FARZANEGAN 		& 1		& 1		& 0		& +0.5 		& 2 			\\
+    MAK 			    & 2		& 0		& 0		& +2.0 		& 2 			\\
     L3M-SIM			& 3		& 2   	& 0		& +0.6 		& 5 			\\     
-    \hline
     \end{tabular}
 \end{center}
 \label{GameResults}

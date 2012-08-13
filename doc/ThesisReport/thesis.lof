@@ -23,7 +23,7 @@
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Junior Soccer League at RoboCup 2011.}}{13}{figure.2.9}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces RoboCup 3D Simulation League Field}}{16}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Nao Robot Model in the Rcssserver3d Soccer Simulation Environment}}{17}{figure.3.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Nao Robot Model in the Rcssserver3d Soccer Simulation Environment in Comparison with Real Aldebaran's Nao.}}{17}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Roboviz (left) vs SimSpark (right) Monitors.}}{19}{figure.3.3}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces The Agent Architecture.}}{28}{figure.4.1}
@@ -52,7 +52,7 @@
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Soccer Field Value.}}{65}{figure.5.5}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Active positions before elimination.}}{66}{figure.5.6}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Active positions after elimination.}}{67}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Formation Role Positions for 9 vs 9.}}{70}{figure.5.8}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Formation Role Positions for 9 vs 9.}}{69}{figure.5.8}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Formation Role Positions for 11 vs 11.}}{71}{figure.5.9}
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Role Assignment Function.}}{73}{figure.5.10}
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Support Positions.}}{74}{figure.5.11}

@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="RoleAss.pdf">
+   sodipodi:docname="RoleAss.svg">
   <defs
      id="defs4">
     <marker
@@ -123,9 +123,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="593.24"
-     inkscape:cy="1166.1586"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="215.1707"
+     inkscape:cy="643.85416"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -154,7 +154,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -430,7 +430,7 @@
        d="m 555.58389,241.71477 a 7.0710678,6.5659914 0 1 1 -14.14214,0 7.0710678,6.5659914 0 1 1 14.14214,0 z" />
     <path
        sodipodi:type="arc"
-       style="opacity:0.53781251;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="opacity:0.53781250999999997;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="path6151"
        sodipodi:cx="553.5636"
        sodipodi:cy="242.72491"
@@ -484,7 +484,7 @@
        transform="matrix(0.53605467,0,0,0.53605467,-238.74035,482.81978)" />
     <path
        sodipodi:type="arc"
-       style="opacity:0.53781251;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="opacity:0.53781250999999997;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="path6151-3"
        sodipodi:cx="553.5636"
        sodipodi:cy="242.72491"
@@ -494,7 +494,7 @@
        transform="translate(-209.27788,33.065837)" />
     <path
        sodipodi:type="arc"
-       style="opacity:0.53781251;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="opacity:0.53781250999999997;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="path6151-4"
        sodipodi:cx="553.5636"
        sodipodi:cy="242.72491"
@@ -648,16 +648,6 @@
          x="91.126083"
          y="235.41888"
          style="font-size:20px">DL</tspan></text>
-    <path
-       sodipodi:type="arc"
-       style="fill:#800080;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="path6151-62-1"
-       sodipodi:cx="553.5636"
-       sodipodi:cy="242.72491"
-       sodipodi:rx="9.0913725"
-       sodipodi:ry="9.5964489"
-       d="m 562.65497,242.72491 a 9.0913725,9.5964489 0 1 1 -18.18274,0 9.0913725,9.5964489 0 1 1 18.18274,0 z"
-       transform="translate(-224.27788,268.92297)" />
     <path
        sodipodi:type="arc"
        style="fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -816,25 +806,13 @@
        transform="translate(-497.84931,33.208696)" />
     <path
        sodipodi:type="arc"
-       style="fill:#800080;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="path6151-62-1-80"
+       style="fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path6151-62-1-2-8"
        sodipodi:cx="553.5636"
        sodipodi:cy="242.72491"
        sodipodi:rx="9.0913725"
        sodipodi:ry="9.5964489"
        d="m 562.65497,242.72491 a 9.0913725,9.5964489 0 1 1 -18.18274,0 9.0913725,9.5964489 0 1 1 18.18274,0 z"
-       transform="translate(-496.42074,451.06584)" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="92.087471"
-       y="701.28864"
-       id="text6153-5-6-3-2"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan6155-1-9-4-4"
-         x="92.087471"
-         y="701.28864"
-         style="font-size:22px">Inactive player</tspan></text>
+       transform="translate(-330.31989,112.63201)" />
   </g>
 </svg>
