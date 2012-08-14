@@ -80,12 +80,11 @@
 \contentsline {section}{\numberline {6.5}Overall Results}{81}{section.6.5}
 \contentsline {chapter}{\numberline {7}Related Work}{85}{chapter.7}
 \contentsline {section}{\numberline {7.1}UT Austin Villa}{85}{section.7.1}
-\contentsline {section}{\numberline {7.2}Robocanes}{86}{section.7.2}
-\contentsline {section}{\numberline {7.3}BeeStanbul}{86}{section.7.3}
-\contentsline {section}{\numberline {7.4}Kaveh}{87}{section.7.4}
-\contentsline {section}{\numberline {7.5}L3M\discretionary {-}{}{}SIM}{87}{section.7.5}
-\contentsline {section}{\numberline {7.6}FUT-K\_3D}{87}{section.7.6}
-\contentsline {section}{\numberline {7.7}Farzanegan}{87}{section.7.7}
+\contentsline {section}{\numberline {7.2}BeeStanbul}{86}{section.7.2}
+\contentsline {section}{\numberline {7.3}Kaveh}{87}{section.7.3}
+\contentsline {section}{\numberline {7.4}L3M-SIM}{87}{section.7.4}
+\contentsline {section}{\numberline {7.5}FUT-K\_3D}{87}{section.7.5}
+\contentsline {section}{\numberline {7.6}Farzanegan}{88}{section.7.6}
 \contentsline {chapter}{\numberline {8}Conclusion}{89}{chapter.8}
 \contentsline {section}{\numberline {8.1}Future Work}{89}{section.8.1}
 \contentsline {chapter}{References}{92}{chapter*.36}

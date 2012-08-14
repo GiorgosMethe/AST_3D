@@ -1,18 +1,15 @@
 \chapter{Related Work}
 \label{related}
 
-\section{UT Austin Villa}\cite{UTAustinVillaRobotSoccerTeam}
-UT Austin Villa is the most known and the best team which is participating in the Robocup's simulation league. Its first appearance was in the Robocup 2007 held in Atlanta, U.S.A, in July 2007. It belongs to University of Texas and consists of five members, professor Peter Stone, 
-graduate students Patrick MacAlpine and Samuel Barrett and finally two undergraduate students Nick Collins and Adrian Lopez-Mobilia. The main characteristic of this team is its state-of-art dynamic movement. Its fast and stable walk is recognizable and offers them great results. A typical example of this great team's results can be that in Robocup's competition in Istanbul 2011 this team won all 24 games it played and scored a total of 136 goals without conceding any.
+\section{UT Austin Villa}
+UT Austin Villa~\cite{UTAustinVillaRobotSoccerTeam} is the most known and the best team which is participating in the Robocup's simulation league. Its first appearance was in the Robocup 2007 held in Atlanta, U.S.A, in July 2007. It belongs to University of Texas and consists of five members, professor Peter Stone, graduate students Patrick MacAlpine and Samuel Barrett and finally two undergraduate students Nick Collins and Adrian Lopez-Mobilia. The main characteristic of this team is its state-of-art dynamic movement. Its fast and stable walk is recognizable and offers them great results. A typical example of this great team's results can be that in Robocup's competition in Istanbul 2011 this team won all 24 games it played and scored a total of 136 goals without conceding any.
 
-In their last paper \cite{UtAustinVillaPaper} about positioning, it is explained their approach of player positioning in the field. First, a full team formation is computed. Second, each players calculates the best assignment of players according to his belief about the world. Finally, a coordination mechanism is used to choose among all players' suggestions. This coordination mechanism using a voting system. Players assignment with the most votes will be used as a result.
+In their last paper about positioning~\cite{UtAustinVillaPaper}, it is explained their approach of player positioning in the field. First, a full team formation is computed. Second, each players calculates the best assignment of players according to his belief about the world. Finally, a coordination mechanism is used to choose among all players' suggestions. This coordination mechanism using a voting system. Players assignment with the most votes will be used as a result.
 
 I am not the appropriate person to criticize their longterm work and contribution to the Robocup's simulation league, as I deal with this league only for a few months. However, I would like to mention that in our approach there is a major difference in the way that players coordinate their actions. The separation of the team into subsets makes it easier to solve all these problem caused due to complexity constraints. Furthermore, we are using active's group players in order to have a better role assignment to positions near to ball which have huge importance in games like soccer. Finally, I wish we had such a perfect movement controller like UT Austin Villa's one. It would be a nice challenge to compare these two coordination systems in the same movements' level.
 
-\section{Robocanes}
-
 \section{BeeStanbul}
-\cite{BeeStanbulTDP} The beeStanbul project from the Artificial Intelligence and Robotics laboratory
+The beeStanbul project~\cite{BeeStanbulTDP} from the Artificial Intelligence and Robotics laboratory
 (AIR lab) at Istanbul Technical University (ITU) is the first initiative from ITU
 to participate in RoboCup competitions. It consists of five members and has been participating in the Robocup's competitions since RoboCup 2010 held in Singapore. It is a nice team which accomplished to qualify up to second round in the last Robocup competition in Mexico 2012.
 
@@ -26,25 +23,29 @@ for itself, each agent determines the center of the cell as its new target. Agen
 become closer to each other by using this strategy. In their approach, only teammates in the viewpoint of the agent are considered. So we can realize that there can be situation in a soccer game when each agent who computes his own cell could be completely unaware if any of his teammates is located in his field of view. Having a better knowledge of teammates position in the field is a key feature in our approach.
 
 \section{Kaveh}
+Kaveh~\cite{Kaveh} team was established in 2005 in SRTTU Robotics and AI laboratory. In their team description paper for RoboCup 2011, most of their efforts are focused on developing and optimizing biped locomotion while they tried to implement a functional high level behavior for the agents. Cooperation between players would lead to better results. Therefore, duty dispense have an important role to reach a good result. Their implemented decision making process for agents is divided into two parts; one is assigned to goalkeeper and another one is assigned to others players like defenders and strikers. Some of these roles are implemented mostly about goalkeeper's responsibility such as diving, free kick and so on.
 
-\section{L3M\-SIM}
+
+
+\section{L3M-SIM}
+L3M\-SIM~\cite{L3MSIM} members mainly comes from the standard platform league, where the french team is named L3M. As a part of the L3M team has decided to experiment the 3D Simulation Soccer League. Their first participation was in RoboCup 2011, in Istanbul. Their major concern which is presented in their team description paper was locomotion, and cooperation parts of their project.
+
+
 
 \section{FUT-K\_3D}
+FUT-K~\cite{FUTK3D} that is mainly composed of undergraduate students of Fukui University of
+Technology in Japan has been organized since fall 2007. In their team description paper for RoboCup 2011, they presented coordinated motion by communication protocol and an implementation of probabilistic behavior selection. Communication algorithm is inspired by a token passing mechanism of access control method for network systems. An agent tries to broadcast its message to the others. Then, agent waits for a confirmation to stop broadcasting this procedure continues with the next agent. In coordination part of their paper, the nearest agent from the ball performs to approach to the ball, and if that keeps the ball, it begins the movement of dribbling or kicks the ball. Other agents begin the coordinated motion keeping a formation with each other. In addition, if the agent keeping the ball goes into other agent¢s location, the rest starts the position change corresponding to the location on agent keeping the ball. Their behavior selection policy is based on a stochastic model called ?Probabilistic Behavior Selection? that even if they encounter the identical situation, they stochastically select one action from multiple pre-defined behavior. They assume the probabilities of each behavior are set before a game. In addition, depending on the result of Probabilistic Behavior Selection, they also consider a method to update the probabilities during the game.
+
+
+
+
 
 
 \section{Farzanegan}
-Team formation is an important part in soccer simulation system, since it allows 
-team members to focus on team-goal, which is simpler than a global-goal over 
-an entire system. In addition team formation allows sharing of information.[9]
-We presented our approach to multi-agent collaboration, based on strategical 
-positions, roles and responsibilities. Also like human soccer, each agent has a 
-strategical position that defines its default position and movement range inside 
-the soccer field. So we have classified our strategical position into two 
-categories:  initial and  game-paly. Strategical positioning, roles and 
-responsibilities are inevitable in soccer domain. 
-Each agent has its own movement range based on its role and responsibilities. 
-When keeping an eye on the ball, the movement range will determine whether 
-the agent should go for the ball, or leave it to its team mates.
+Farzanegan~\cite{Farzanegan} Highschool Laboratory has been working on Robocup science for many years and achieved many remarkable successes in different Robocup Competition Leagues. Their simulation group had been working on Rescue Simulation League and Soccer Simulation 2D League, and subsequence to this their researches has been started in Soccer Simulation 3D since 2009. In their last team description paper for RoboCup 2011, they describe they work they have done in team coordination part.
+They presented their approach to multi-agent collaboration, based on strategical positions, roles and responsibilities. Also like human soccer, each agent has a strategical position that defines its default position and movement range inside the soccer field. So they have classified our strategical position into two categories:  initial and  game-play. Strategical positioning, roles and responsibilities are inevitable in soccer domain. Each agent has its own movement range based on its role and responsibilities. When keeping an eye on the ball, the movement range will determine whether the agent should go for the ball, or leave it to its team mates.
+
+As we can realize, a static approach for team coordination in such a dynamic environment.
 
 
 

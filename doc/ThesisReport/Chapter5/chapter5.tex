@@ -41,7 +41,20 @@ Testing communication process through ideal external communication when only our
 
 
 \section{Goalkeeper}
-Goalkeeper's behavior was tested against the best team in Robocup 3D Simulation League UT Austin Villa. To determine his ability to stop opponents from scoring we first use a goalkeeper which had an ``empty'' behavior in which he was not able to perform any movement or track the ball, standing useless at the center of our goal. Opponent team managed to score seven goals in this occasion. However, when goalkeeper made use of his current developed behavior he achieved to reduce conceded goal from seven to three. 
+Goalkeeper's behavior was tested against the best team in Robocup 3D Simulation League UT Austin Villa. To determine his ability to stop opponents from scoring we first use a goalkeeper which had an ``empty'' behavior in which he was not able to perform any movement or track the ball, standing useless at the center of our goal. Opponent team managed to score seven goals in this occasion. However, when goalkeeper made use of his current developed behavior he achieved to reduce conceded goal from seven to three.
+\begin{table}
+\begin{center}
+    \begin{tabular}{cc}
+    \textbf{GoalKeeper} 	& \textbf{Goal Conceded}\\
+    \midrule
+    No Goalkeeper  					            & 7\\
+    Goalkeeper with Empty Behavior			& 7\\
+    Goalkeeper with Full Behavior			    & 3\\
+    \end{tabular}
+\end{center}
+\label{GoalKeeperResults}
+\caption{Communication Results in Ideal and Match Conditions}
+\end{table}
 
 
 
@@ -106,7 +119,7 @@ All games have 10 minutes duration same with real competition matches in Robocup
 \end{table}
 
 
-\footnotetext[1]{AGD: Averaged Goal Difference}
+\footnotetext[3]{AGD: Averaged Goal Difference}
 
 
 After all these matches against teams who have participated into one or more Robocup competitions we have gained a lot of experience and we have seen how our team reacts in different situations in such a dynamic environment. Due to lack of dynamic movements, our agents has poor movement especially in comparison with the RoboCup Simulation league's best teams. However, we were able to perform well and score some goals against weaker teams of this competition. Better movement will give us exactly what we need in order to be competitive towards the best teams of the league. Judging by the results, I am absolutely sure that we could compete in equal terms with other teams for a position in simulation 3D league either in an open competition or in Robocup itself.

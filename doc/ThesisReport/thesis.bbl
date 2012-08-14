@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{UtAustinVillaPaper}
 MacAlpine, P., Barrera, F., Stone, P.:
@@ -46,8 +46,31 @@ UTAustinVilla:
 \bibitem{BeeStanbulTDP}
 Demirdelen, B., Toku, B., Ulusoy, O., Sonmez, T., Ayvaz, K., Senyurek, E.,
   Sariel-Talay, S.:
-\newblock beestanbul robocup 3d simulation league team description paper 2012
-  (2012) Only available online:
+\newblock beestanbul robocup 3d simulation league team description paper (2012)
+  Only available online:
   \url{http://air.cs.itu.edu.tr/publications-1/beeStanbul_TDP2012.pdf}.
+
+\bibitem{Kaveh}
+Mohammadi, N., Yassari, M., Zahiri, S.A., Salehi, M.:
+\newblock Kaveh robocup 3d simulation league team description paper (2011) Only
+  available online: \url{http://hedayat.fedorapeople.org/misc/rc2011tdps/}.
+
+\bibitem{L3MSIM}
+Yan, Z., Jouandeau, N., Hugel, V.:
+\newblock L3m-sim robocup 3d simulation league team description paper (2011)
+  Only available online:
+  \url{http://hedayat.fedorapeople.org/misc/rc2011tdps/}.
+
+\bibitem{FUTK3D}
+Yashiki, M., Miyajima, K., Sugihara, K., Ohkuma, K., Yamanishi, T.:
+\newblock Fut-k\_3d robocup 3d simulation league team description paper (2011)
+  Only available online:
+  \url{http://hedayat.fedorapeople.org/misc/rc2011tdps/}.
+
+\bibitem{Farzanegan}
+Mousaviyan, A.S., No, S.J., Davari, A.S.A.M., Makki, F.S., Dastserri, N.S.:
+\newblock Farzanegan robocup 3d simulation league team description paper (2011)
+  Only available online:
+  \url{http://hedayat.fedorapeople.org/misc/rc2011tdps/}.
 
 \end{thebibliography}
