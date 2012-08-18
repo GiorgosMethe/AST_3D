@@ -35,56 +35,55 @@
 \contentsline {section}{\numberline {4.2}Connection}{28}{section.4.2}
 \contentsline {section}{\numberline {4.3}Perceptions}{29}{section.4.3}
 \contentsline {section}{\numberline {4.4}Localization}{30}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Self Localization}{31}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}Self Localization}{30}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Object Localization}{31}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Localization Filtering}{32}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Motion}{34}{section.4.5}
+\contentsline {section}{\numberline {4.5}Motion}{35}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}XML-Based Motion Files}{36}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}XML-Based Motion Controller}{37}{subsection.4.5.2}
 \contentsline {subsection}{\numberline {4.5.3}Text-Based Motion Files}{39}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Text-Based Motion Controller}{39}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}Dynamic Motion Elements}{40}{subsection.4.5.5}
-\contentsline {section}{\numberline {4.6}Actions}{41}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Basic Actions}{41}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.5.4}Text-Based Motion Controller}{40}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}Dynamic Motion Elements}{41}{subsection.4.5.5}
+\contentsline {section}{\numberline {4.6}Actions}{42}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Basic Actions}{42}{subsection.4.6.1}
 \contentsline {subsection}{\numberline {4.6.2}Complex Actions}{44}{subsection.4.6.2}
 \contentsline {section}{\numberline {4.7}Communication}{50}{section.4.7}
-\contentsline {chapter}{\numberline {5}Team's Coordination}{51}{chapter.5}
-\contentsline {section}{\numberline {5.1}Messages and Communication}{54}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Message Types and Formats}{54}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Coordination Beliefs}{57}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Ball Position Weighted Samples}{57}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Agent Distance from Ball}{59}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Subsets in Coordination Process}{59}{section.5.3}
-\contentsline {section}{\numberline {5.4}Coordination Splitter}{60}{section.5.4}
-\contentsline {section}{\numberline {5.5}Soccer Field Value}{61}{section.5.5}
-\contentsline {section}{\numberline {5.6}Active-Positions Computation}{62}{section.5.6}
-\contentsline {section}{\numberline {5.7}Active-Subset Coordination}{63}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}Player on Ball}{63}{subsection.5.7.1}
-\contentsline {subsection}{\numberline {5.7.2}Active-Subset Best Mapping}{64}{subsection.5.7.2}
-\contentsline {section}{\numberline {5.8}Team Formation}{65}{section.5.8}
-\contentsline {subsection}{\numberline {5.8.1}9-Players Server Version (0.6.5)}{66}{subsection.5.8.1}
-\contentsline {subsection}{\numberline {5.8.2}11-Players Server Version (0.6.6)}{67}{subsection.5.8.2}
-\contentsline {section}{\numberline {5.9}Role Assignment Function}{68}{section.5.9}
-\contentsline {section}{\numberline {5.10}Positions for Support-Subset}{70}{section.5.10}
-\contentsline {section}{\numberline {5.11}Support-Subset Coordination}{71}{section.5.11}
-\contentsline {section}{\numberline {5.12}Mapping Cost Computation}{73}{section.5.12}
-\contentsline {subsection}{\numberline {5.12.1}Properties for Support-Subset Mapping Cost}{73}{subsection.5.12.1}
-\contentsline {subsection}{\numberline {5.12.2}Properties for Active-Subset Mapping Cost}{74}{subsection.5.12.2}
-\contentsline {section}{\numberline {5.13}Coordination Type}{75}{section.5.13}
-\contentsline {section}{\numberline {5.14}Goalkeeper Behavior}{76}{section.5.14}
-\contentsline {chapter}{\numberline {6}Results}{79}{chapter.6}
-\contentsline {section}{\numberline {6.1}Impovements in Movement}{79}{section.6.1}
-\contentsline {section}{\numberline {6.2}Communication Results}{80}{section.6.2}
-\contentsline {section}{\numberline {6.3}Goalkeeper}{80}{section.6.3}
-\contentsline {section}{\numberline {6.4}Coordination Results}{81}{section.6.4}
-\contentsline {section}{\numberline {6.5}Overall Results}{81}{section.6.5}
-\contentsline {chapter}{\numberline {7}Related Work}{85}{chapter.7}
-\contentsline {section}{\numberline {7.1}UT Austin Villa}{85}{section.7.1}
-\contentsline {section}{\numberline {7.2}BeeStanbul}{86}{section.7.2}
-\contentsline {section}{\numberline {7.3}Kaveh}{87}{section.7.3}
-\contentsline {section}{\numberline {7.4}L3M-SIM}{87}{section.7.4}
-\contentsline {section}{\numberline {7.5}FUT-K\_3D}{87}{section.7.5}
-\contentsline {section}{\numberline {7.6}Farzanegan}{88}{section.7.6}
-\contentsline {chapter}{\numberline {8}Conclusion}{89}{chapter.8}
-\contentsline {section}{\numberline {8.1}Future Work}{89}{section.8.1}
-\contentsline {chapter}{References}{92}{chapter*.36}
+\contentsline {chapter}{\numberline {5}Team's Coordination}{53}{chapter.5}
+\contentsline {section}{\numberline {5.1}Messages and Communication}{56}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Message Types and Formats}{56}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Coordination Beliefs}{59}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Ball Position Weighted Samples}{59}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Agent Distance from Ball}{61}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Subsets in Coordination Process}{61}{section.5.3}
+\contentsline {section}{\numberline {5.4}Coordination Splitter}{62}{section.5.4}
+\contentsline {section}{\numberline {5.5}Soccer Field Value}{63}{section.5.5}
+\contentsline {section}{\numberline {5.6}Active-Positions Computation}{64}{section.5.6}
+\contentsline {section}{\numberline {5.7}Active-Subset Coordination}{65}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Player on Ball}{65}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Active-Subset Best Mapping}{66}{subsection.5.7.2}
+\contentsline {section}{\numberline {5.8}Team Formation}{67}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}9-Players Server Version (0.6.5)}{68}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}11-Players Server Version (0.6.6)}{69}{subsection.5.8.2}
+\contentsline {section}{\numberline {5.9}Role Assignment Function}{70}{section.5.9}
+\contentsline {section}{\numberline {5.10}Positions for Support-Subset}{72}{section.5.10}
+\contentsline {section}{\numberline {5.11}Support-Subset Coordination}{73}{section.5.11}
+\contentsline {section}{\numberline {5.12}Mapping Cost Computation}{75}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Properties for Support-Subset Mapping Cost}{75}{subsection.5.12.1}
+\contentsline {subsection}{\numberline {5.12.2}Properties for Active-Subset Mapping Cost}{76}{subsection.5.12.2}
+\contentsline {section}{\numberline {5.13}Coordination Type}{77}{section.5.13}
+\contentsline {section}{\numberline {5.14}Goalkeeper Behavior}{78}{section.5.14}
+\contentsline {chapter}{\numberline {6}Results}{81}{chapter.6}
+\contentsline {section}{\numberline {6.1}Movement}{81}{section.6.1}
+\contentsline {section}{\numberline {6.2}Communication}{82}{section.6.2}
+\contentsline {section}{\numberline {6.3}Goalkeeper}{82}{section.6.3}
+\contentsline {section}{\numberline {6.4}Coordination}{83}{section.6.4}
+\contentsline {section}{\numberline {6.5}Overall Results}{85}{section.6.5}
+\contentsline {chapter}{\numberline {7}Related Work}{91}{chapter.7}
+\contentsline {section}{\numberline {7.1}UT Austin Villa}{91}{section.7.1}
+\contentsline {section}{\numberline {7.2}BeeStanbul}{92}{section.7.2}
+\contentsline {section}{\numberline {7.3}Kaveh}{93}{section.7.3}
+\contentsline {section}{\numberline {7.4}FUT-K\_3D}{93}{section.7.4}
+\contentsline {section}{\numberline {7.5}Farzanegan}{94}{section.7.5}
+\contentsline {chapter}{\numberline {8}Conclusion}{95}{chapter.8}
+\contentsline {section}{\numberline {8.1}Future Work}{95}{section.8.1}
+\contentsline {chapter}{References}{98}{chapter*.37}

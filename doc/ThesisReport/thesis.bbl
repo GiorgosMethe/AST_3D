@@ -33,6 +33,11 @@ Papadimitriou, V.:
   \url{http://www.intelligence.tuc.gr/~robots/ARCHIVE/2011w/projects/TUCagent3%
 D/home.html}.
 
+\bibitem{fiit}
+FIIT:
+\newblock Robocup 3d Slovak University of Technology in Bratislava, Only
+  available online: \url{http://sourceforge.net/projects/fiitrobocup3d}.
+
 \bibitem{Webots04}
 Michel, O.:
 \newblock Webots: Professional mobile robot simulation.
@@ -54,12 +59,6 @@ Demirdelen, B., Toku, B., Ulusoy, O., Sonmez, T., Ayvaz, K., Senyurek, E.,
 Mohammadi, N., Yassari, M., Zahiri, S.A., Salehi, M.:
 \newblock Kaveh robocup 3d simulation league team description paper (2011) Only
   available online: \url{http://hedayat.fedorapeople.org/misc/rc2011tdps/}.
-
-\bibitem{L3MSIM}
-Yan, Z., Jouandeau, N., Hugel, V.:
-\newblock L3m-sim robocup 3d simulation league team description paper (2011)
-  Only available online:
-  \url{http://hedayat.fedorapeople.org/misc/rc2011tdps/}.
 
 \bibitem{FUTK3D}
 Yashiki, M., Miyajima, K., Sugihara, K., Ohkuma, K., Yamanishi, T.:

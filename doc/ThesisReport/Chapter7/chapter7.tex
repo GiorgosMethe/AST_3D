@@ -1,17 +1,28 @@
 \chapter{Conclusion}
 \label{conclusion}
 
-We have presented a team's framework for the Robocup Simulation League 3D - a physically realistic environment that is partially observable, non-deterministic, noisy and dynamic, as well as a dynamic coordination system which evaluates all the necessary variables and be executed only by one player. Creating a team's framework from scratch was a big challenge especially when this project does not depend in any other third party software's part except from motions files and the dynamic programming implementation created by UT Austin Villa. In general, teams participating in this league consists of more than two members in most cases. It is my personal belief that in order to be competitive in this league there has to be a team effort in which each member should concentrate in a single part and not in the whole problem.
+We have presented a team's framework for the Robocup 3D Simulation League - a physically realistic environment that is partially observable, non-deterministic, noisy and dynamic, as well as a dynamic coordination system which evaluates all the necessary world variables and be executed only by one agent -independent software process. Creating a team's framework from scratch was a big challenge especially when this project does not depend in any other third party software's part except from motions files and the dynamic programming implementation created by UT Austin Villa. In general, teams participating in this league consists of more than two members in most cases. It is my personal belief that in order to be competitive in this league there has to be a team effort in which each member should concentrate in a single part and not in the whole problem.
 
 \section{Future Work}
-Reaching in a level to oppose teams that have already participated in this robotic soccer competition gives us an incentive to keep working in order to improve further our framework. In this section, we present some of our these possible improvements.  
+Reaching to a level to oppose teams that have already participated in this robotic soccer competition gives us an incentive to keep working in order to improve further our team. In this section, we present some of these possible improvements.  
 
-\subsubsection*{Dynamic Movement}
-Most teams which have been participating into the RoboCup 3D Simulation League make use of dynamic movement. This is a major drawback for our side and I really hope this issue to be resolved in the near future.
+
+\subsubsection*{Probabilistic Localization System}
+The robot localization problem is a key problem in making truly autonomous robots. If a robot does not know where it is, it can be difficult to determine what to do next. In our work, there is an adequate localization scheme which can be improved further. Some of our work function requires a more probabilistic localization scheme.
+
+
+\subsubsection*{Dynamic Omni-Directional Movement}
+Most teams which have been participating into the RoboCup 3D Simulation League make use of dynamic movement. This is a major drawback for our side and I really hope this issue to be resolved in the near future. Team coordination will operate even more efficiently since the faster movement of our agents will give even more dynamically consistent results. Furthermore, a fast and stable walking-engine is able to give our team exactly what it need in order to be competitive even with the best teams in the competition.
+
+
 \subsubsection*{Passing}
 Hopefully, is a short-term goal for us to add passing feature in our framework. You could realize that passing is a key attribute in every soccer team's success. There have to be improvements in team formation in order for passing to be implemented well into it.
+
+
 \subsubsection*{Testing and Debugging in New Server's version}
 There are things to be tested in order our team to meet the standards of the new server's version 0.6.6 in which there are some changes with most important that there are now eleven players for each side and field's size has changed. It will be easy to make these changes in our source code, as the whole code allows these changes to be done easily.
+
+
 \subsubsection*{Participation in Robocup}
 Robocup is a well-known competition especially for people who are interested in robotic soccer and generally in artificial intelligence. Since I started this project, during my last semester in the course of Autonomous Agents, I was having the ambition for our team to participate in this league. It will not be easy to be competitive at once but it will be a nice experience. Furthermore, we are going to have the opportunity to test our agent in real match conditions.
  

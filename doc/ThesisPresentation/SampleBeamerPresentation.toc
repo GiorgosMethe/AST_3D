@@ -1,9 +1,0 @@
-\beamer@endinputifotherversion {3.10pt}
-\beamer@sectionintoc {1}{Outline}{2}{0}{1}
-\beamer@sectionintoc {2}{Background}{3}{0}{2}
-\beamer@subsectionintoc {2}{1}{RoboCup}{3}{0}{2}
-\beamer@subsectionintoc {2}{2}{Simulation 3D Soccer }{5}{0}{2}
-\beamer@sectionintoc {3}{Player Skills}{6}{0}{3}
-\beamer@sectionintoc {4}{Team Coordination}{20}{0}{4}
-\beamer@sectionintoc {5}{Results}{32}{0}{5}
-\beamer@sectionintoc {6}{Conclusion}{36}{0}{6}

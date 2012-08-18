@@ -46,7 +46,7 @@ pol 0.19 34.94-21.49)))(L (pol 8.01 -60.03 -3.87) (pol 6.42 51.1
 n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...\end{verbatim}
 
 \noindent
-The above message is an example message our agent has received from the simulation server during simulation. It includes information about the server time, the game state and time, values for each one of the joints, visual observations from the camera, and data from acceleration, gyroscope, and force sensors. We parse these messages and save the enclosed information in data structures appropriate for each type of perception. 
+The above message is an example message our agent may receive from the server during simulation. It includes information about the server time, the game state and time, values for each one of the joints, visual observations from the camera, and data from the accelerometer, gyroscope, and force sensors. We parse these messages and save the enclosed information in data structures appropriate for each type of perception. 
 
 %Figure~\ref{fig:BeliefsUpdate} illustrates this procedure.
 %\begin{figure}[t!]
@@ -58,7 +58,18 @@ The above message is an example message our agent has received from the simulati
 
 
 \section{Localization}
-Once we have all the new perceptions from the server available, we can update our agents' belief about its own current location in the field and the current location of other objects of interest (ball, teammates, opponents). Our localization scheme is largely based on a method proposed by a colleague within a common course project~\cite{Localization}. Localization, as a process, is executed every three cycles (60ms), in fact every time we receive observations from the vision perceptor. 
+Once we have all the new perceptions from the server available, we can update our agents' belief about its current self-location in the field and the current location of other objects of interest (ball, teammates, opponents). Our localization scheme is largely based on a method proposed by a colleague within a common course project~\cite{Localization}. Localization, as a process, is executed every three cycles (60ms), in fact every time we receive observations from the vision perceptor. 
+A key restrictive factor is that the agents are equipped with a restricted vision perceptor which limits the field of their view to 120 degrees. 
+%An example of this limitation is shown in Figure~\ref{fig:fieldofview}. 
+It is easy to realize that the localization process would have been easier, if there was an omni-directional vision perceptor.
+
+
+
+
+
+\subsection{Self Localization} 
+
+The potentially visible objects in our current field of view may be of different types: ball, landmarks, teammates, and opponents. After registering all currently visible objects, we first use only the landmarks, which are located at permanent known positions in the field, to derive candidate self-locations and update the agent's belief about the current position and orientation in the field. There are eight landmarks in the field, shown in Figure~\ref{fig:fieldofview}: the four field corners (F1R, F2R, F1L, F2L) and the goalposts of the two goals (G1R, G2R, G1L, G2L). These eight landmarks cannot be all visible simultaneously at the same time; in general, the number of visible landmarks at any time for a player located within the field will range from zero to four. For example, given the current location of the agent in Figure~\ref{fig:fieldofview}, there are only three visible landmarks: F1R, G1R, G2R. 
 
 \begin{figure}[t!]
 \centering
@@ -67,34 +78,25 @@ Once we have all the new perceptions from the server available, we can update ou
   \label{fig:fieldofview}
 \end{figure}
 
-A key restrictive factor is that the agents are equipped with a restricted vision perceptor which limits the field of their view to 120 degrees. An example of this limitation is shown in Figure~\ref{fig:fieldofview}. It is easy to realize that the localization process would have been easier, if there was an omni-directional vision perceptor.
-
-
-
-\subsection{Self Localization} 
-
-The potentially visible objects in our current field of view may be of different types: ball, landmarks, teammates, and opponents. After registering all currently visible objects, we first use only the landmarks, which are located at permanent known positions in the field, to derive candidate self-locations and update the agent's belief about the current position and orientation in the field. There are eight landmarks in the field, shown in Figure~\ref{fig:fieldofview}: the four field corners (F1R, F2R, F1L, F2L) and the goalposts of the two goals (G1R, G2R, G1L, G2L). These eight landmarks cannot be all visible simultaneously at the same time; in general, the number of visible landmarks at any time will range from zero to four. For example, given the current location of the agent in Figure~\ref{fig:fieldofview}, there are only three visible landmarks: F1R, G1R, G2R. 
-
-The self-localization function takes the distance, as well as the horizontal and vertical angles of two currently visible landmarks as input and returns a candidate self location $(x,y,\theta)$ as output, where $(x,y)$ are the coordinates in the field and $\theta$ is the orientation of the body with respect to the angle system of the field. These two landmarks form two circles with radius equal to the observed distance to each one of them centered at the static and known coordinates of these landmarks. Obviously, these two circles intersect at two points, which represent two candidate self locations. We reject the wrong candidate using the horizontal viewing angles of the two landmarks and also the fact that the correct candidate cannot be way outside the field. Figure~\ref{fig:Localization} shows a typical example of self localization with two landmarks. In cases where the agent sees more than two landmarks, the self-localization function for each pair of landmarks. The final estimated location is computed as the average of the outcomes for all pairs. Apparently, when the agent has less than two visible landmarks in the field of view, self localization does no take place.   
+The self-localization function takes the distance, as well as the horizontal and vertical angles of two currently visible landmarks as input and returns a candidate self location $(x,y,\theta)$ as output, where $(x,y)$ are the coordinates in the field and $\theta$ is the orientation of the body with respect to the angle system of the field. The two visible landmarks form two circles with radius equal to the observed distance to each one of them centered at the static and known coordinates of these landmarks. Obviously, these two circles intersect at two points, which represent two candidate self locations. We reject the wrong candidate using the horizontal viewing angles of the two landmarks and also the fact that the correct candidate cannot be way outside the field. Figure~\ref{fig:Localization} shows a typical example of self localization with two landmarks. In cases where the agent sees more than two landmarks, the self-localization function is called for each pair of landmarks. The final estimated location is computed as the average of the outcomes of all pairs. Apparently, when the agent has less than two visible landmarks in the current field of view, the self-localization update does not take place.   
 
 \begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter3/figures/Localization.pdf}
-  \caption{Self Localization Example.} 
+  \caption{Self-Localization Example with the F1R and G1R Landmarks.} 
   \label{fig:Localization}
 \end{figure}
 
 \subsection{Object Localization} 
 
-Apart from self localization, it is important to be able to compute the position of other visible objects, such as other players and the ball. 
-Knowing our own location in the field helps us locate other visible objects too. For each currently visible object, the vision perceptor informs us about its vertical and horizontal angles and its distance from the agent. This information is sufficient for the calculation of their exact positions into the field's coordinate system. Figure~\ref{fig:LocalizationResults} shows an example scenario of calculating the positions of the ball and an opponent. To successfully locate other objects in the field, the same condition as in self localization applies: there must be at least two visible landmarks. If the currently visible landmarks are less than two, other objects cannot be located in the field, but the agent knows where they are located with respect to itself. 
+Apart from self localization, it is important to be able to compute the position of other visible objects, such as opponents and the ball (note that there is no need to localize teammates in the field; their beliefs are shared via communication). Knowing our own location in the field helps us locate other visible objects too. For each currently visible object, the vision perceptor informs us about its vertical and horizontal angles and its distance from the agent. This information is sufficient for the calculation of their exact positions into the field's coordinate system. Figure~\ref{fig:LocalizationResults} shows an example scenario of calculating the positions of the ball and an opponent. To successfully locate other objects in the field, the same condition as in self localization applies: there must be at least two visible landmarks. If the currently visible landmarks are less than two, other objects cannot be located in the field using the current perceptions; nevertheless, the agent knows where they are located with respect to itself. 
 
 
 
 \begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter3/figures/LocalizationResults.pdf}
-  \caption{Object Localization Example.} 
+  \caption{Object (Ball and Opponent) Localization Example.} 
   \label{fig:LocalizationResults}
 \end{figure}
 \hfill
@@ -104,7 +106,8 @@ Knowing our own location in the field helps us locate other visible objects too.
 
 
 \subsection{Localization Filtering}
-In absence of a more sophisticated probabilistic localization scheme, we are forced to ensure that localization results are qualitative enough for us to rely on. Due to the temporary absences of landmarks from the field of view and the noisy observations from the vision perceptor, localization is not always accurate enough to depend upon. Therefore, a simple filtering procedure on estimates computed by the localization process is employed to update the agent's belief about self locations and positions of other objects. Algorithm~\ref{LocalizationFiltering} outlines the process of localization filtering. In general, the localization process provides the agent with hundreds of estimated locations over time. The general idea we adopt is based on the fact that these estimates do not include long sequences of consecutive faulty estimates. Therefore, it is fairly easy to ignore sporadic faulty estimates (outliers), while updating the agent's belief.
+In the absence of a more sophisticated probabilistic localization scheme, we are forced to ensure that localization results are qualitative enough for us to rely on. Due to the temporary misses of landmarks from the field of view and the noisy observations from the vision perceptor, localization based only on the current perception is not always accurate enough to depend upon. Therefore, a simple filtering procedure on estimates computed by the localization process is employed to update the agent's belief about self locations and positions of other objects over time. 
+
 
 \begin{algorithm}[ht!]
 \caption{Localization Filtering}
@@ -129,10 +132,10 @@ In absence of a more sophisticated probabilistic localization scheme, we are for
 \end{algorithm}
 
  
+In general, the localization process provides the agent with numerous estimated locations over time. The general idea we adopt is based on the fact that these estimates do not include long sequences of consecutive faulty estimates. Therefore, it is fairly easy to ignore sporadic faulty estimates (outliers), while updating the agent's belief.
+To address this problem, we came up with a simple localization filtering algorithm outlined in Algorithm~\ref{LocalizationFiltering}. We maintain a FIFO queue which stores the most recent non-faulty location estimates. The average of the locations in the queue consist the agent's belief about its location in the field at any time. When a new estimated location arrives from the localization process, we first check if the queue is empty; in this case, we simply insert this estimate into the queue. Otherwise, we check if the newly arrived estimate ``agrees'' with the current belief, whereby ``agrees'' means that they are not far apart. If not, this estimate is ignored and additionally one element of the queue is removed. This step represents a simple way of discounting the current belief in the presence of an outlier estimate. If the outlier estimate corresponds to a correct location, it will persist, eventually it will discard the entire queue with the current belief, and afterwards it will initiate a new belief in the empty queue. Finally, if the new estimate ``agrees'' with the current belief, it is inserted in the queue to reinforce the current belief, replacing one element (the oldest one), if the queue has reached capacity. This simple filtering scheme smooths out the belief of our agent's location and rejects most faulty estimates.
 
-To overcome this difficulty, we came up with a simple algorithm. We maintain a FIFO queue which stores the most recent non-faulty location estimates. The average of the locations in the queue the agent's belief about its location in the field. When an estimated location arrives from the localization process, we first check if the queue is empty; in this case, we simply insert this estimate into the queue. Otherwise, we check if the newly arrived estimate ``agrees'' with the current belief. If not, this estimate is ignored and one element of the queue is removed. This step represents a simple way of discounting the current belief in the presence of an outlier estimate. If the outlier estimate corresponds to a correct location, it will persist and eventually will discard the entire queue with the current belief and will initiate a new belief in the empty queue. Finally, if the new estimate ``agrees'' with the current belief, it is inserted in the queue to reinforce the current belief, replacing one element if the queue has reached capacity. This simple filtering scheme smooths the belief of our agent's location and rejects most faulty estimates.
-
-Localization filtering applies both to the calculation of our agent's location and to the calculation for the ball's position. For the sake of efficiency, we do not use it to filter opponent positions (teammate positions are known anyway, since they are shared via communication). The end effect of localization filtering is a significant improvement on the localization outcome, so that we can rely upon it with confidence. 
+Localization filtering applies both to the calculation of the agent's self location and to the calculation of the ball's position. For the sake of efficiency, we do not use it to filter opponent positions. As mentioned already, the filtered locations of teammates are shared among team members via communication. The end effect of localization filtering is a significant improvement on the localization outcome, so that we can rely upon it with confidence. 
 
 
 
@@ -141,7 +144,7 @@ Localization filtering applies both to the calculation of our agent's location a
 
 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.3\textwidth]{Chapter3/figures/Models_NaoAnatomy.png}
+  \includegraphics[width=0.4\textwidth]{Chapter3/figures/Models_NaoAnatomy.png}
   \caption{Nao's anatomy: kinematic chains and joints.}
   \label{fig:NaoAnatomy}
 \end{figure}
@@ -156,7 +159,7 @@ Motion is an important part of every team participating into the RoboCup 3D Simu
 
 
 \subsection{XML-Based Motion Files}
-These motion files have been created and distributed by FIIT RoboCup 3D project~\cite{} and they provide forward walk, left and right side step, strong and regular kick, stand-up, and left and right goalkeeper fall motions. These files have an intuitive XML structure, which facilitates integration into our project. The general structure of these XML-based motion files is shown below.
+These motion files have been created and distributed by FIIT RoboCup 3D project~\cite{fiit} and they provide forward walk, left and right side steps, strong and regular kicks, stand-up, and left and right goalkeeper fall motions. These files have an intuitive XML structure, which facilitates integration into our project. The general structure of these XML-based motion files is shown below.
 \begin{verbatim}
 <phase name="Start" next="Phase1">
    <effectors>
@@ -187,11 +190,11 @@ These motion files have been created and distributed by FIIT RoboCup 3D project~
    <duration>duration</duration>
 </phase>
 \end{verbatim}
-As we can realize by the structure of this XML file, each movement is split into phases. Each phase has a duration and values for every joint of the robot or the kinematic chain(s) related to the movement. Moreover, every phase has an index which points to the next phase. For example, the first phase (``Start'') has an index to the next phase (``Phase1''). Phases with a finalize field can be used to end the corresponding movement. For example, phase ``Phase2'' has a finalize index which points to phase ``Final''; this means that, if we want to end the execution of this movement, we have to do it in phase ``Phase2'' by transitioning to phase ``Final'' instead of continuing with the next phase (``Phase1'').
+As shown in the structure of this XML file, each movement is split into phases. Each phase has a duration and values for every joint of the robot or the kinematic chain(s) related to the movement. Moreover, each phase has an index which points to the next phase. For example, the first phase (\texttt{Start}) has an index to the next phase (\texttt{Phase1}). Phases with a \texttt{finalize} field can be used to end the corresponding movement. For example, phase \texttt{Phase2} has a finalize index which points to phase \texttt{Final}; this means that, if we want to end the execution of this movement, we have to do it in phase \texttt{Phase2} by transitioning to phase \texttt{Final} instead of continuing with the next phase (\texttt{Phase1}).
 
 \subsection{XML-Based Motion Controller}
 
-The motion controller is a major component which controls and enables the movement ability of the robot. It is responsible for handling the movement requests of the agent. Agents do not have access to the motion controller directly, but can trigger desired motions by posting requests to the motion controller in the form of values to a specific variable. Each agent declares in this variable the movement he is willing to perform. In each cycle, the motion controller reads this variable and generates an appropriate hinge joint effector string as a result.
+The motion controller is a major component in our software which enables and controls the movement abilities of the robot. It is responsible for handling the movement requests of the agent. Agents do not have direct access to robot joints and joint poses, but can trigger desired motions by posting requests to the motion controller in the form of values to a specific variable. Each agent declares in this variable the movement he is willing to perform. In each cycle, the motion controller reads this variable and generates an appropriate hinge joint effector string, aiming at either terminating a running motion request (if different than the new one), or initiating the requested one (if there was no running request), or simply continuing with the execution of the current request (if initiated earlier). In effect, the motion controller satisfies a motion request posted by the agent, even if the completion of the motion takes several cycles, ensuring that transitions between different motions are smooth. 
 
 
 \begin{figure}[t!]
@@ -202,22 +205,23 @@ The motion controller is a major component which controls and enables the moveme
 \end{figure}
 
 
-Figure~\ref{fig:MotionController} describes the general architecture of the motion controller. Motion controller checks if there is a motion which is playing already. If  the currently playing motion is the same as the requested one, the motion controller continues with the next of its phases; if not, the controller tries to finalize the playing movement in order to start playing the newly requested one.
+Figure~\ref{fig:MotionController} describes the general architecture of the XML-based motion controller. The motion controller checks if there is a motion which is playing already. If the currently playing motion is the same as the requested one, the motion controller continues with the next of its phases; if not, the controller tries to finalize the playing movement in order to start playing the newly requested one (in a future cycle).
 
 
 \begin{figure}[t!]
 \centering
   \includegraphics[width=0.2\textwidth]{Chapter3/figures/MotionSequence.pdf}
-  \caption{Phase Sequence.}
+  \caption{Phase Execution Sequence for a Typical XML-Based Motion.}
   \label{fig:PhaseSequence}
 \end{figure}
 
 
-Figure~\ref{fig:PhaseSequence} describes the exact motion sequence. In general, XML motions define cyclic phases to generate continuous movement. For example, the walking motion has three main phases which create a cycle. If the motion trigger has not changed at the last phase, we have to continue with the execution of the first phase, not with the final one. As we saw in the structure of every XML-based motion file, each phase has a set of joint values. These values are in degrees. To generate motions for our agent we need to create a motion string, which encloses information about each joint's velocity. This velocity is computed as follows:
+Figure~\ref{fig:PhaseSequence} shows the execution sequence of an example motion file. In general, XML-based motions define cyclic phases to generate continuous movement. For example, the walking motion has three main phases which create a cycle. If the motion trigger has not changed at the end of the last phase (\texttt{Phase 3}), we have to continue with the execution of the first phase (\texttt{Phase 1}), not with the final one. If the motion trigger is different at the end of the last phase, then we proceed to the final phase to terminate the current motion, before starting the new one (if any). As we saw in the structure of every XML-based motion file, each phase lists a set of joint values. These values are in degrees. To generate motions for our agent we need to create a motion string, which encloses information about each joint's velocity. The velocity of a joint $i$ is computed as follows:
 \[
-Joint Velocity = \cfrac{Desired Joint Value - Current Joint Value}{PhaseDuration}
+JointVelocity_i = \cfrac{DesiredJointValue_i - CurrentJointValue_i}{CurrentPhaseDuration}
 \]
-A velocity value is calculated for each joint involved in the motion and the final output of the motion controller is sent to the server. In addition, zero velocity is set for every joint not included in the \texttt{effector} field of each phase, so that they stop moving. 
+The $CurrentJointValue_i$ is provided by the corresponding perceptor message. 
+A velocity value is calculated for each joint involved in the motion and the final output of the motion controller is sent to the server. Note that zero velocity is set for every joint not included in the \texttt{effector} field of the current phase, so that these joints stop moving. 
 
 
 
@@ -236,28 +240,21 @@ LHipYawPitch,LHipRoll,LHipPitch,LKneePitch,LAnklePitch,...
 00:00:280,Pose8,0,0.012,-0.525,1.05,-0.525,-0.012,0,...
 00:00:320,Pose9,0,0.024,-0.525,1.05,-0.525,-0.024,0,...
 \end{verbatim}
-Lines starting with \texttt{\#} are comments. The fist non-comment line must list  all joints involved in the defined movement using their names separated by commas. As an example, a walk motion requires only the joints from the leg kinematic chains. The remaining lines define one pose each. From left to right, each line contains the duration of the pose, the pose number, and the desired angle (in radians) for each joint in the same order they were given at the beginning.
+Lines starting with \texttt{\#} are comments. The fist non-comment line must list  all joints involved in the defined movement using their names separated by commas. As an example, a walk motion requires only the joints from the leg kinematic chains. The remaining lines define one pose each. From left to right, each line contains the duration of the pose, the pose number, and the desired angle (in radians) for each joint in the same order they were given at the beginning. Note that, unlike the XML-based motion files, here the same joint set must be used throughout the entire motion. 
 
 
 \subsection{Text-Based Motion Controller}
-The motion controller for text-based motions is based on the same principle as the XML-based controller. The joint values in the motion files represent radians, so we have to convert these values into degrees before we proceed. Each pose lasts one or two cycles depending on the speed at which we want the motion to be executed. The motion controller could be customized easily to perform these motions in different ways. The following parameters can be modified:
+The motion controller for text-based motions is based on the same principle as the XML-based controller. The joint values in the motion files represent radians, so we have to convert these values into degrees before we proceed. Each pose nominally corresponds to two cycles, but we can make it last one or two or three cycles depending on the speed (faster, normal, slower) at which we want the motion to be executed. The text-based motion controller can be customized to perform these motions in different ways. The following parameters can be modified:
 \begin{description}
 	\item[Duration] The time between poses in simulation cycles. By default, $Duration=2$.
 	\item[PoseStep] The step for advancing from pose to pose. By default, $PoseStep=1$, but we can subsample the motion with other values, e.g. for $PoseStep=2$, we execute pose1, pose3, pose5, ...
 \end{description}
-The desired velocity of each joint is computed by:
+The desired velocity of each joint $i$ is computed by:
 \[
-JointVelocity = \cfrac {Desired Joint Value - Current Joint Value} {Duration \times CycleDuration}
+JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Duration \times CycleDuration}
 \]
+Again, the $CurrentJointValue_i$ is provided by the corresponding perceptor message.
 A velocity value is calculated for each joint involved in the motion and the final output of the motion controller is sent to the server. 
-
-\subsection{Dynamic Motion Elements}
-In contrast to the general idea of static motion files, we have tried to implement some dynamic features into our motions. There is no much room for improvement in static motions, but with these features we managed to achieve some nice results.
-\begin{description}
-	\item[Walk Leaning] The XML-based walk motion can be dynamically modified to lean to the right or to the left. This is accomplished by altering the joint values of the (left or right) HipPitch and AnkePitch joints in specific phases of the walk motion. In effect, these changes force the corresponding leg to perform a slightly smaller step compared to the nominal step size. The end effect is a smooth walk motion which leans slightly to the left or to the right, as shown in Figure~\ref{fig:Lean}, saving time from a full body turn motion.
-	\item[Walk Slowdown] Its important for our agent to slowdown while stopping in order to maintain stability. The XML-based walk motion can be dynamically modified by scaling the phase durations in order to achieve such a slowdown. Increasing the phase durations dynamically by about 35\% yields a smooth approach to a stopping position. 
-	\item[Turn Gain] The text-based turn motion can be dynamically modified using a gain value for scaling the resulting velocities in order to perform the motion in a smoother or rougher way. By default, this gain value is set to $1.0$, however slightly smaller or larger values can result in useful variations of the defined motion. By dynamically changing this value between $0.3$ and $1.0$, the agent is able to turn its body anywhere between 7 and 40 degrees, as shown in Figure~\ref{fig:Turn}.
-\end{description} 
 
 \begin{figure}[t!]
 \centering
@@ -265,6 +262,16 @@ In contrast to the general idea of static motion files, we have tried to impleme
   \caption{Dynamic Walk Leaning: Left Leaning, No Leaning, Right Leaning.}
   \label{fig:Lean}
 \end{figure}
+
+\subsection{Dynamic Motion Elements}
+In contrast to the general idea of static motion files, we have tried to implement some dynamic features into our motions. There is no much room for improvement in static motions, but with these features we managed to achieve some nice results.
+\begin{description}
+	\item[Walk Leaning] The XML-based walk motion can be dynamically modified to lean to the right or to the left. This is accomplished by altering the joint values of the (left or right) HipPitch and AnkePitch joints in specific phases of the walk motion. In effect, these changes force the corresponding leg to perform a slightly smaller step compared to the nominal step size. The end effect is a smooth walk motion which leans slightly to the left or to the right, as shown in Figure~\ref{fig:Lean}, saving time from a full body turn motion.
+	\item[Walk Slowdown] Its important for our agent to slowdown while stopping in order to maintain stability. The XML-based walk motion can be dynamically modified by scaling the phase durations in order to achieve such a slowdown. Increasing the phase durations dynamically by about 35\% yields a smooth approach to a stopping position. 
+	\item[Turn Gain] The text-based turn motions can be dynamically modified using a gain value for scaling the resulting velocities in order to perform the motion in a smoother or rougher way. By default, this gain value is set to $1.0$, however slightly smaller or larger values can result in useful variations of the defined motion. By dynamically changing this value between $0.3$ and $1.0$, the agent is able to turn its body anywhere between 7 and 40 degrees, as shown in Figure~\ref{fig:Turn}.
+\end{description} 
+
+
 
 
 \begin{figure}[t!]
@@ -282,7 +289,7 @@ In this section, we describe the way agents affect and change their environment.
 Basic actions combine perceptual information and motion files in simple ways to achieve something useful. These basic actions are:
  
 \subsubsection*{Look Straight}
- Straight Moves the head to its nominal position. Both head joints are set to $0$.
+ Moves the head to its nominal position. Both head joints are set to $0$.
 
 \subsubsection*{Scan} 
 Moves the head to perform periodic panning and tilting. 
@@ -291,13 +298,13 @@ Moves the head to perform periodic panning and tilting.
 Moves the head to perform periodic panning at zero tilt.
  
 \subsubsection*{Track Object} 
-Moves the head to bring a particular object to the center of the field of view. This action is applicable only when the object being tracked is visible, but is limited by the joint ranges. 
+Moves the head to bring a particular object to the center of the field of view. This action is applicable only when the object being tracked is visible, but, even when the object is visible, it is limited by the head joint ranges. 
  
 \subsubsection*{Track Moving Object} 
-This action estimates the direction and the speed of a moving object using a small number of observations, obtained while performing the Track Object action. It records a set of five consecutive observations and another set of five consecutive observations delayed by a fixed time period (the default is 5 cycles).  The difference between the average positions of each set gives a vector that reveals the direction of motion. Taking the ratio of the magnitude of this vector and the time delay yields the speed of the moving object. This action is applicable only when the moving object being tracked is visible, but is limited by the joint ranges.
+This action estimates the direction and the speed of a moving object using a small number of observations, obtained while performing the Track Object action. It records a set of five consecutive observations and another set of five consecutive observations delayed by a fixed time period (the default is 5 cycles).  The difference between the average positions of each set gives a vector that reveals the direction of motion. Taking the ratio of the magnitude of this vector and the time delay yields the speed of the moving object. This action is applicable only when the moving object being tracked is visible, but, even when the object is visible, it is limited by the head joint ranges.
  
 \subsubsection*{Find Opponent's Goals} 
-This action estimates the direction of the opponent's goal with respect to the agent by performing the Scan action.
+This action finds the direction of the opponent's goal with respect to the agent by performing the Scan action until the opponent's goal becomes visible.
 
 \subsubsection*{Look For Ball} 
 Turns the body of the agent, while performing the Scan action, until the ball appears within the field of view.
@@ -308,22 +315,29 @@ Turns the body of the agent towards the direction of the ball, while performing 
 \subsubsection*{Turn To Localize} 
 Turns the body of the agent, while performing the Pan Head action, until the agent's belief about its own location is updated with confidence. It can be used when the agent needs to (re)localize itself into the field.
 
+\subsubsection*{Stand Up} 
+Makes the agent stand up on its feet, after a confirmed fall on the ground, whether face-up or face-down. This action monitors the inertial sensors (accelerometers and gyroscopes) to check if the agent has fallen on the ground. Incoming gyroscope and accelerometer values above a specific threshold indicate a possible fall, but this has to be confirmed, because it is not unusual to receive values above threshold due to collisions without a fall. To confirm a fall, the action checks the force resistance perceptors located under the agent's feet. If these perceptors indicate that the legs do not touch the ground, then we are quite sure that a fall has occurred. In this case, a stand up motion is executed. Foot pressure values are also used to determine whether the stand up motion succeeded or not. The stand up motion is repeated, until it succeeds. This action is applicable at all times, however a stand up motion is executed only when the robot lies on the ground. 
+
 \begin{figure}[t!]
   \centering
   \includegraphics[trim=0cm 3cm 0cm 4cm, clip,width=0.6\textwidth]{Chapter3/figures/NaoKick.png}
   \caption{Nao Performing a Kick after Positioning for Kick.}
   \label{fig:NaoKick}
 \end{figure}
-
-\subsubsection*{Stand Up} 
-Makes the agent stand up on its feet, after a confirmed fall on the ground, whether face-up or face-down. This action monitors the inertial sensors (accelerometers and gyroscopes) to check if our agent has fallen on the ground. Incoming gyroscope and accelerometer values above a specific threshold indicate a possible fall, but this has to be confirmed, because it is not unusual to receive values above threshold due to collisions without a fall. To confirm a fall, the action checks the force resistance perceptors located under the agent's feet. If these perceptors imply that the legs do not touch the ground, then we are pretty sure that a fall has occurred. In this case, a stand up motion is executed. Foot pressure values are also used to determine whether the stand up motion succeeded or not. The stand up motion is repeated, until it succeeds. This action is applicable at all times, however a stand up motion is executed only when the robot lies on the ground. 
-
   
 \subsubsection*{Prepare for Kick} 
-Positions the agent to an appropriate position with respect to the ball in order to perform a kick successfully. Only forward and side steps are used in this fine positioning. Figure~\ref{fig:NaoKick} shows an example of robot kicking a ball after completing this positioning action.
+Positions the agent to an appropriate position with respect to the ball in order to perform a kick successfully. Only forward and side steps are used in this fine positioning. Figure~\ref{fig:NaoKick} shows an example of robot kicking a ball after completing this action.
   
 \subsection{Complex Actions}
 Complex actions combine perceptual information, motion files, and basic actions. They have a more complicated structure and aim to achieve specific goals. These complex actions are:
+
+
+
+
+
+\subsubsection*{Avoid Obstacles} 
+This action records all obstacles around the agent and derives an obstacle-free route to a specified target. Initially, this action stores the positions of all obstacles located within 2m from the agent by performing the Pan Head action and watching the perceptor messages. Due to the fact that the simulated Nao's head can pan from $-120^{\circ}$ to $+120^{\circ}$ and the field of view is $120^{\circ}$, we can obtain a complete imaging of all obstacles located close to our agent. It is common to observe the same obstacle more than once; in this situation we only store the average of these observations. In a dynamic, multi-agent environment it is important to avoid collisions with other agents or fixed landmarks, such as goal posts in our simulated soccer games. To avoid obstacles we rely on a simple, yet reliable and effective, method. For each recorded obstacle, we calculate two escape angles that determine the two directions (relative to the agent), which guarantee avoidance of the obstacle at a safe distance. All other angles between these two escape angles are considered to be forbidden. Afterwards, any escape angle of some obstacle that falls within the forbidden area of some other obstacle is discarded.  The precise calculation of the escape angle set is described in Algorithm~\ref{AngleSet}. The remaining escape angles, and particularly the escape way points they define (the points closest to the obstacle along the direction of the escape angles), are evaluated in terms of the angle and distance overhead they incur with respect to the agent orientation (for the angle) and the target (for the distance). The way point that minimizes the total overhead is selected as a temporary target for avoiding the obstacles, while making progress towards the target. This method yields dynamically consistent results, meaning that the temporary target does not change in subsequent cycles as long as the obstacles remain stationary, until they are cleared on the way to the real target. Obstacle avoidance is demonstrated in Figure~\ref{fig:ObstacleAvoidance}, in a simple scenario, where there are two obstacles between the agent and its target position. Two of the escape angles are discarded; the way point on the left is selected as a temporary target to clear the obstacles. 
+ 
 
 \begin{algorithm}[t!]
 \caption{Escape Angle Set Calculation}
@@ -351,14 +365,6 @@ Complex actions combine perceptual information, motion files, and basic actions.
 
 
 
-\subsubsection*{Avoid Obstacles} 
-This action records all obstacles around the agent and derives an obstacle-free route to a specified target. Initially, this action stores the positions of all obstacles located within 2m from the agent by performing the Pan Head action and watching the perceptor messages. Due to the fact that the simulated Nao's head can pan from $-120^{\circ}$ to $+120^{\circ}$ and the field of view is $120^{\circ}$, we can obtain a complete imaging of all obstacles located close to our agent. It is common to observe the same obstacle more than once; in this situation we only store the average of these observations. In a dynamic, multi-agent environment it is important to avoid collisions with other agents or fixed landmarks, such as goal posts in our simulated soccer games. To avoid obstacles we rely on a simple, yet reliable and effective, method. For each recorded obstacle, we calculate two escape angles that determine the two directions which guarantee avoidance of the obstacle at a safe distance. All other angles between these two escape angles are considered to be forbidden. Afterwards, any escape angle of some obstacle that falls within the forbidden area of some other obstacle is discarded.  The precise calculation of the escape angle set is described in Algorithm~\ref{AngleSet}. The remaining escape angles, and particularly the escape way points they define (the points closest to the obstacle along the direction of the escape angles), are evaluated in terms of the angle and distance overhead they incur with respect to the agent orientation (for the angle) and the target (for the distance). The way point that minimizes the total overhead is selected as a temporary target for avoiding the obstacles, while making progress towards the target. This method will yield dynamically consistent results, meaning that the temporary target will not change in subsequent cycles as long as the obstacles remain stationary, until they are cleared on the way to the real target. Obstacle avoidance is demonstrated in Figure~\ref{fig:ObstacleAvoidance}, in a simple scenario where there are two obstacles between the agent and its target position. Two of the escape angles are discarded; the way point on the left will be selected as a temporary target. 
- 
-
-
-
-
-
  \begin{figure}[t!]
   \centering
   \includegraphics[width=0.6\textwidth]{Chapter3/figures/ObstacleAvoidance.pdf}
@@ -368,7 +374,7 @@ This action records all obstacles around the agent and derives an obstacle-free 
 
 
 \subsubsection*{Walk to Ball}
-Makes the agent walk towards the ball and stop when the ball is close enough to perform a kick. First, it performs the Turn to Ball action and then walk towards the ball, slowing down when it comes close to the ball. Recall that the ball distance returned by the vision perceptor is the distance between the camera, which is attached to agent's head, and the ball. However, for approaching the ball, we need the distance on the ground between its feet and the ball. To compute this distance, we first use forward kinematics along the sagittal plane of the robot to derive the current height of the camera. Taking the agent's ankle as the origin, it is easy to calculate every joint's position from ankle to head in the two-dimensional space of the sagittal plane using only the current values of the AnklePitch, KneePitch, HipPitch joints. Having the ball distance and the height of the camera, the ground distance can be easily derived using the Pythagorean theorem. 
+Makes the agent walk towards the ball and stop when the ball is close enough to perform a kick. First, it performs the Turn to Ball action and then walk towards the ball, slowing down when it comes close to the ball. Recall that the ball distance returned by the vision perceptor is the distance between the camera, which is attached to agent's head, and the ball, which lies on the ground. However, for approaching the ball with precision, we need the distance on the ground between the agent's feet and the ball. To compute this distance, we first use forward kinematics along the sagittal plane of the robot to derive the current height of the camera. Taking the agent's ankle as the origin, it is easy to calculate every joint's position from ankle to head in the two-dimensional space of the sagittal plane using only the current values of the AnklePitch, KneePitch, HipPitch joints. Having the ball distance and the height of the camera, the ground distance can be easily derived using the Pythagorean Theorem. 
 \[
 GroundDistance = \sqrt{BallDistance^2 + CameraHeight^2}
 \]
@@ -388,19 +394,19 @@ Figure~\ref{fig:2dkinematics} explains the derivation of the ground distance to 
  \begin{figure}[t!]
 \centering
   \includegraphics[width=0.25\textwidth]{Chapter3/figures/KickFSM.pdf}
-  \caption{On Ball Action Logic Sequence.}
+  \caption{On Ball Action Logic Flowchart.}
   \label{fig:GoKickBallToGoal}
 \end{figure}
 
 
 
 \subsubsection*{Walk to Coordinate}
-This action moves the agent to a specific location $(x_t, y_t, \theta_t)$ in the field. To perform this action we need to know our own location $(x_a, y_a, \theta_a)$ in the field; from there it is easy to calculate in which direction to walk in order to reach the given target. Figure~\ref{fig:WalkToCoordinate} shows how the distance $d$ and the direction $\phi$ to the target are calculated:
+This action moves the agent to a specific location $(x_t, y_t, \theta_t)$ in the field. To perform this action we need to know our own location $(x_a, y_a, \theta_a)$ in the field; from there it is easy to calculate in which direction $\phi$ and at what distance $d$ to walk in order to reach the given target:
 \begin{align*}
 \phi &= \text{atan2}(x_t-x_a,y_t-y_a)\\
 d &= \sqrt{(x_t-x_a)^2 + (y_t-y_a)^2}
 \end{align*}
-Been helped from the above calculations agent is always aware of the distance and the direction it has to travel towards its target position. 
+Figure~\ref{fig:WalkToCoordinate} shows an example of this calculation. The actual locomotion of the agent towards the target is done through the Avoid Obstacles action, which takes the pair $(d,\phi)$ as input and ensures that obstacles are avoided on the way to the target. Note that distance and direction are recalculated as the agent makes progress toward its target. After the position $(x_t,y_t)$ has been reached, a final rotation in place turns the agent towards the desired direction $\theta_t$. The action terminates when the agent reaches the desired location $(x_t, y_t, \theta_t)$.
 
 
  \begin{figure}[t!]
@@ -412,19 +418,19 @@ Been helped from the above calculations agent is always aware of the distance an
 
 
 \subsubsection*{Walk To Direction}
- This action leads agent to walk towards a specific direction.
+This action makes the agent walk towards a specific direction. First, it employs a turn in-place action to align with the given direction and then a straight walk action to move along the given direction. This action is not terminated by itself but there has to be a new action request or an ``empty'' action request. The actual locomotion of the agent towards the target direction is done through the Avoid Obstacles action.
  
-\subsubsection*{Walk With Ball To Direction}
- As far as agent reaches the ball, he will try to keep the ball in front of its feet and walk towards a direction keeping into mind that the ball has to be always in front. This action is not yet functional in our approach as movements based on motion files make it hard for us keeping ball in front of our agent all the time.
+\subsubsection*{Dribble Ball To Direction}
+This action attempts to dribble the ball towards a specific direction. It is quite similar to the Walk To Direction action, however the agent  tries to keep the ball in front of its feet at all times.  The actual locomotion of the agent towards the target direction is done through the Avoid Obstacles action. This action is not fully functional in our software, since movements based on motion files make it hard to keep ball consistently in front of the agent. 
 
 
 
 \section{Communication}
-Communication in Simspark is not ideal. There are not restrictions about the use of say effector and every agent can use it in every cycle. However, the hear perceptor comes up with some restrictions. Messages shouted from beyond a maximal distance (currently 50 meters) cannot be heard. Note that as the field is currently only 21x14(0.6.5) or 20x30(0.6.6) meters (25 or 36 diagonally), this does not turn out to be a limit in practice. Due to the limited communication bandwidth we utilize the communication channel in the following way, making sure that every message which is sent from an agent will be heard by other agents in time. A simple communication protocol is created in which time is sliced into pieces each one of them lasts one server cycle (20ms) and repeats every three cycles (60ms). Figure~\ref{fig:TimeSlicing} shows how time is sliced. Every three cycles there is one of these pieces in which only one agent is able to send its message to the others. Every slice has an integer label on it which states the uniform number of the player which is able to send its message. This label grows by one in every time a player send its message until it reaches the maximum uniform number, then it returns to the number one. Agents are not permitted to use a common chronometer for this task but we make sure that each player is synchronized with the others making use of the changing game states. By using this simple protocol we achieve that every player can receive the other eight agents' messages in 540ms.
+Communication in Simspark is not ideal. There are no restrictions about the use of the say effector and every agent can use it at each cycle. However, the hear perceptor comes with some restrictions (cf. Section~\ref{sec:soccerperceptors}). Messages shouted from beyond a maximum distance (currently 50 meters) cannot be heard. Given that the dimensions of the field are currently only $21m\times14m$ (version 0.6.5) or $20m\times 30m$ (version 0.6.6) (about $25m$ or $36m$ in diagonal length), there is no limit in practice. However, due to the limited communication bandwidth, we utilize the communication channel in the following way, to ensure that every message sent from an agent will be heard by the other agents in time. A simple communication protocol has been created in which time is sliced into pieces lasting one server cycle (20ms) each and repeats every three cycles (60ms). Figure~\ref{fig:TimeSlicing} shows how exactly time is sliced. The first of these three cycles is used for sending and the next two cycles are left idle on purpose to ensure that the message sent in the first cycle is delivered to all teammates. During the sending cycle, only one agent is allowed to send its message to the others. Every time slice of the protocol has an associated integer label which indicates the uniform number of the player able to send its message at that slice. This label starts at $1$ and grows by $1$ every time a player sends a message, until it reaches the maximum uniform number and loops back to number $1$. Since there is no common clock, to ensure that the agents are synchronized we make use of the changing game states, which are shared and known to all players; whenever the game state changes, the agents reset their integer label counters. Through this simple protocol, every player can receive reliably the messages from all teammates every 540ms (27 cycles) for a team of 9 players or every 660ms (33 cycles) for a team of 11 players.
 
 \begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter3/figures/MAC.pdf}  
-  \caption{Time Slicing Communication.}
+  \caption{Time Slicing Communication Protocol.}
   \label{fig:TimeSlicing}
 \end{figure} 
