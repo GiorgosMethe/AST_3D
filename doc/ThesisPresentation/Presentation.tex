@@ -767,15 +767,13 @@ rougher way. By dynamically changing this value between 0.3 and 1.0, the agent i
   \begin{frame}[allowframebreaks]
     \frametitle{Complex Actions}
     \begin{description}
-    \item[Avoid Obstacles]
+    \item[Avoid Obstacles] Helps agent to avoid possible obstacles.
 	\begin{itemize}
 	\item Simulated Nao's head can pan from $-120^{\circ}$ to $+120^{\circ}$ and the field of view is $120^{\circ}$, we can obtain a complete imaging of all obstacles located close to our agent.
 	\item For each recorded obstacle, we calculate two escape angles that determine the two directions which guarantee avoidance of the obstacle at a safe distance.
 	\item Any escape angle of some obstacle that falls within the forbidden area of some other obstacle is discarded.
-	\item Any escape angle of some obstacle that falls within the forbidden area of some other obstacle is discarded.
 	\item The remaining escape angles, and particularly the escape way points they define (the points closest to the obstacle along the direction of the escape angles), are evaluated in terms of the angle and distance overhead they incur with respect to the agent orientation (for the angle) and the target (for the distance).
 	\item The way point that minimizes the total overhead is selected as a temporary target for avoiding the obstacles, while making progress towards the target.
-	
 
 \begin{figure}
 \centering
@@ -812,57 +810,92 @@ rougher way. By dynamically changing this value between 0.3 and 1.0, the agent i
 
 	
 	
-    \item[Walk to Ball]
-	\item[On Ball Action]
-    \item[Walk to Coordinate]
-    \item[Walk To Direction]
-    \item[Walk With Ball To Direction]    
+    \item[Walk to Ball] Makes the agent walk towards the ball and stop when the ball is close enough to perform a kick.
+    \begin{itemize}
+    \item It performs the Turn to Ball action and then walk towards the ball, slowing down when it comes close to the ball.
+    \item Ball distance returned by the vision perceptor is the distance between the camera, which is attached to agent's head, and the ball.
+    \item Forward kinematics along the sagittal plane of the robot to derive the current height of the camera.
+    
+    	\begin{figure}[H]
+\centering
+  \includegraphics[trim=0cm 4cm 3cm 4cm,clip,width=0.6\textwidth]{figures/2dkinematics.pdf}
+\end{figure}
+
+	Having the ball distance and the height of the camera, the ground distance can be easily derived using the Pythagorean Theorem. 
+\[
+GroundDistance = \sqrt{BallDistance^2 + CameraHeight^2}
+\]
+	\end{itemize}	
+	\item[On Ball Action] This action moves the agent close to the ball and executes an appropriate kick depending on the current state of the game.
+	\begin{itemize}
+	\item It first performs the Walk To Ball action in order to reach the ball.
+	\item After the successful completion of the Walk To Ball action, the agent performs the Find Opponent's Goal action.
+	\item Subsequently, it aligns itself with the direction of the opponent's goal.
+	\item The precision of this alignment is inversely proportional to the distance from the opponent's goal.
+	\item Afterwards, it performs the Position for Kick action and finally it executes a kick motion.
+	\end{itemize}
+    \item[Walk to Coordinate] This action moves the agent to a specific location $(x_t, y_t, \theta_t)$ in the field.\\
+    \begin{align*}
+\phi &= \text{atan2}(x_t-x_a,y_t-y_a)\\
+d &= \sqrt{(x_t-x_a)^2 + (y_t-y_a)^2}
+\end{align*}
+	\begin{figure}[H]
+\centering
+  \includegraphics[width=0.4\textwidth]{figures/GoToPos.pdf}
+\end{figure}
+    \begin{itemize}
+    \item Distance and direction are recalculated as the agent makes progress toward its target.
+    \item After the position $(x_t,y_t)$ has been reached, a final rotation in place turns the agent towards the desired direction $\theta_t$.
+    \item The action terminates when the agent reaches the desired location $(x_t, y_t, \theta_t)$.
+    \end{itemize}
+    \item[Walk To Direction] This action makes the agent walk towards a specific direction.
+    \begin{itemize}
+    \item It employs a turn in-place action to align with the given direction and then a straight walk action to move along the given direction.
+    \item This action is not terminated by itself but there has to be a new action request.
+    \end{itemize}
+    \item[Dribble Ball To Direction] This action attempts to dribble the ball towards a specific direction.
+    \begin{itemize}
+    \item It is quite similar to the Walk To Direction action, however the agent  tries to keep the ball in front of its feet at all times. 
+    \item This action is not fully functional in our software.
+    \end{itemize}    
     \end{description}
    
     
   \end{frame}
   
   \subsection*{Communication}
-  \frame
-  {
-    \frametitle{Communication}
+  \begin{frame}[allowframebreaks]
 
-   
+    \frametitle{Communication}
+    Communication in Simspark is not ideal. There are no restrictions about the use of the say effector and every agent can use it at each cycle. However, the hear perceptor comes with some restrictions.
+    \begin{itemize}
+    \item The agent processes are not allowed to communicate with each other directly, but the agents may exchange messages via the simulation server.
+    \item Messages should not have a length of more than 20 ASCII characters.
+    \item Messages shouted from beyond a maximal distance (currently 50 meters) cannot be heard.
+    \item Only one message can be heard at any given time and messages from the same team can be heard only every other cycle.
+    \end{itemize} 
+    \newpage
+	 A simple communication protocol has been created in which time is sliced into pieces lasting one server cycle (20ms) each and repeats every three cycles (60ms).
+	 \begin{figure}[H]
+\centering
+  \includegraphics[width=0.6\textwidth]{figures/MAC.pdf}  
+\end{figure}  
+\begin{itemize}
+\item Every time slice of the protocol has an associated integer label which indicates the uniform number of the player able to send its message at that slice.
+\item This label starts at $1$ and grows by $1$ every time a player sends a message.
+\item Through this simple protocol, every player can receive reliably the messages from all teammates every 540ms (27 cycles) for a team of 9 players or every 660ms (33 cycles) for a team of 11 players.
+\end{itemize}
     
-  }
+      
+  \end{frame}
   
   \section{Team Coordination}
 
-  \begin{frame}[allowframebreaks]
+  \begin{frame}
 
     \frametitle{Messages and Communication}
     
-    \begin{algorithm}[H]
-\caption{Coordination Algorithm}
-\label{CoordinationAlgorithm}
-\begin{algorithmic}[1]
-\begin{footnotesize}
-\STATE {\bf Input: }$Coordination Messages = \lbrace M_{1},M_{2},...,M_{N-1} \rbrace, N = number of players $
-\STATE {\bf Output: }$Actions = \lbrace A_{1},A_{2},...,A_{N-1} \rbrace$
-\IF {$ Step = 1$ }
-\STATE $B \leftarrow Update Beliefs() $
-\ELSIF {$ Step = 2$ }
-\STATE $S \leftarrow Coordination Splitter(B) $
-\ELSIF {$ Step = 3$ } 
-\STATE $A_{p} \leftarrow Active Positions(B,S) $
-\ELSIF {$ Step = 4$ }
-\STATE $A_{c} \leftarrow Active Coordination(A_{p},S) $
-\ELSIF {$ Step = 5$ }
-\STATE $ F \leftarrow TeamFormation(B) $
-\STATE $ R \leftarrow Role Assignment(A_{c},B,F) $
-\STATE $ S_{p} \leftarrow Support Positions(R,F,S) $
-\ELSIF {$ Step = 6$ }
-\STATE $ Support Coordination(R,F,S,B,A_{c},S) $
-\ENDIF
-\end{footnotesize}
-\end{algorithmic}
-\end{algorithm}
-    
+        
   \end{frame}
 
   \frame
