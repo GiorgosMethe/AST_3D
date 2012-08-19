@@ -3,5 +3,5 @@
 \beamer@sectionintoc {2}{Background}{4}{0}{2}
 \beamer@sectionintoc {3}{Player Skills}{22}{0}{3}
 \beamer@sectionintoc {4}{Team Coordination}{70}{0}{4}
-\beamer@sectionintoc {5}{Results}{82}{0}{5}
-\beamer@sectionintoc {6}{Conclusion}{86}{0}{6}
+\beamer@sectionintoc {5}{Results}{104}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{109}{0}{6}

@@ -883,114 +883,605 @@ d &= \sqrt{(x_t-x_a)^2 + (y_t-y_a)^2}
 \begin{itemize}
 \item Every time slice of the protocol has an associated integer label which indicates the uniform number of the player able to send its message at that slice.
 \item This label starts at $1$ and grows by $1$ every time a player sends a message.
-\item Through this simple protocol, every player can receive reliably the messages from all teammates every 540ms (27 cycles) for a team of 9 players or every 660ms (33 cycles) for a team of 11 players.
+\item Every player can receive reliably the messages from all teammates every 540ms (27 cycles) for a team of 9 players or every 660ms (33 cycles) for a team of 11 players.
 \end{itemize}
+
+
     
       
   \end{frame}
   
   \section{Team Coordination}
+  
+  \subsection*{General}
+  
+  \begin{frame}[allowframebreaks]
+  
+ 	 \frametitle{Team Coordination}
+ 	 
+ 	 \begin{itemize}
+ 	 \item Agents miss a thinking process with which they will be able to decide about what action they should do for their team's benefit.
+ 	 \item Instead of each agent having its own behavior, players are depend on a centralized process called team coordination.
+ 	 \item Goalkeeper it the coordination's administrator who is going to execute this procedure.
+ 	 \item Team coordination is accomplished through communication.
+ 	 \end{itemize}
+ 	 Coordination's procedure is executed in several phases and not at once. These phases are:
+	\begin{description}
+	\item[Update coordination beliefs] Multiple world state beliefs from field players have to be 	combined in order to update our belief for the world state.
+	\item[Split field player into groups] Field players are split into groups according to their significance to each game state. These groups are:
+	\begin{itemize}
+	\item Active
+	\item Inactive
+	\item Support
+	\item Goalkeeper
+	\end{itemize}
+	\item[Compute positions for active players] All possible positions which are best candidates 	for assigning active players.
+	\item[Assign actions for active players] Computation of the best two positions according to their cost.
+	\item[Generate team's formation] Formation is generated according to ball's position into the soccer field.
+	\item[Assign roles for all players] Team players are assigned roles in relation to the team's formation and their current position.
+	\item[Find positions for support players] All possible team formation's positions which are best candidates for assigning support players there.
+	\item[Assign actions for support players] Computation of the best mapping according to its cost.
+	\end{description}
+ 	 
+\begin{algorithm}[H]
+\caption{Coordination Algorithm}
+\begin{algorithmic}[1]
+\begin{footnotesize}
+\STATE {\bf Input: }$Coordination Messages = \lbrace M_{1},M_{2},...,M_{N-1} \rbrace, N = number of players $
+\STATE {\bf Output: }$Actions = \lbrace A_{1},A_{2},...,A_{N-1} \rbrace$
+\IF {$ Step = 1$ }
+\STATE $B \leftarrow Update Beliefs() $
+\ELSIF {$ Step = 2$ }
+\STATE $S \leftarrow Coordination Splitter(B) $
+\ELSIF {$ Step = 3$ } 
+\STATE $A_{p} \leftarrow Active Positions(B,S) $
+\ELSIF {$ Step = 4$ }
+\STATE $A_{c} \leftarrow Active Coordination(A_{p},S) $
+\ELSIF {$ Step = 5$ }
+\STATE $ F \leftarrow TeamFormation(B) $
+\STATE $ R \leftarrow Role Assignment(A_{c},B,F) $
+\STATE $ S_{p} \leftarrow Support Positions(R,F,S) $
+\ELSIF {$ Step = 6$ }
+\STATE $ Support Coordination(R,F,S,B,A_{c},S) $
+\ENDIF
+\end{footnotesize}
+\end{algorithmic}
+\end{algorithm}
+ 	 
 
-  \begin{frame}
+  \end{frame}  
+  
+  \subsection*{Messages and Communication}
 
-    \frametitle{Messages and Communication}
+  \begin{frame}[allowframebreaks]
+
+    \frametitle{Messaging}
     
-        
-  \end{frame}
+    Types of messages:
+    \begin{description}
+\item[Init Message] This type of message declares the initialization for each agent into the field. 
 
-  \frame
-  {
-    \frametitle{Coordination¢s Beliefs}
+\begin{description}
+  \item[{\bf Message format:}] 
+  \texttt{i,<Uniform number> }
+\end{description}
+
+\item[Start Message] This type of message is only sent by the administrator, it declares that all agents are now initialized in the process.
+
+\begin{description}
+  \item[{\bf Message format:}] 
+  \texttt{s,<Uniform number>}
+\end{description}
+\newpage
+
+\item[Coordination Message] This is the most important type of message. It includes information about each agent's beliefs. There are four types of these messages in respect to the agent's situation in the game. these types are:
+\begin{description}
+
+\item[Type C] Agent has complete awareness of the world state. He sends his uniform number, his position and the ball's position accurately.
+
+\begin{description}
+  \item[{\bf Message format:}]
+  \texttt{c,<Uniform number>,<Agent X>,<Agent Y>,<Ball X>,<Ball Y>}
+\end{description}
+
+\item[Type L] Agent has complete awareness only for his position in the field, ball is not in his field of view.
+\begin{description}
+  \item[{\bf Message format:}]
+  \texttt{ l,<Uniform number>,<Agent X>,<Agent Y>}
+\end{description}
+
+\item[Type B] Agent has complete awareness only about the ball's distance from his body, its horizontal, and its latitudal angle.
+
+\begin{description}
+  \item[{\bf Message format:}] 
+  \texttt{b,<Uniform number>,<Ball Distance>,<Ball Horizontal-Angle>}
+\end{description}
+
+\item[Type X] Agent has complete unawareness of the world state.
+
+\begin{description}
+ \item[{\bf Message format:}]
+ \texttt{x,<Uniform number>}
+\end{description}
+
+\newpage
+
+\end{description}
+\item[End Message]
+This type of message serves to stop field players from sending coordination messages.
+\begin{description}
+  \item[{\bf Message format:}] 
+  \texttt{e,<Uniform number>}
+\end{description}
+\item[Action Message]
+These messages are only sent by the administrator in the end of the coordination procedure, when actions for all field players have been computed.
+\begin{description}
+  \item[{\bf Message format:}]
+  \texttt{a,<Uniform number>,<Action ID>,<Action parameter 1>,
+  <Action parameter 2>,<Action parameter 3>}
+\end{description}
+\end{description}
+\newpage
+
+Messaging Process:
+\begin{itemize}
+\item Agents have to initialize their presentation into the field with ``init'' messages.
+\item Goalkeeper saves these messages in a temporal array and when this array implies that all field players have been initialized themselves, sends them a ``start'' message.
+\item Field players send ``coordination'' messages to the goalkeeper.
+\item When goalkeeper gathers these messages from all field players, sends them an ``end'' message to stop them from broadcasting unnecessarily.
+\item The next phase of this process is the execution of the coordination algorithm which lasts for six simulation cycles, approximately 120ms.
+\item When coordination's administrator is ready to broadcast computed actions to field players, goalkeeper uses ``action'' messages in order to accomplish this procedure.
+\item After this phase, the same process is repeated after a timeout which can be defined manually.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=0.6\textwidth]{figures/CoordComm.pdf}
+\end{figure}
 
    
+  \end{frame}
+
+  \subsection*{Coordination's Beliefs}
+
+  \begin{frame}
+    \frametitle{Coordination's Beliefs}
     
-  }
+    \begin{quote}
+    How could a specific agent, in a multi-agent environment, have the adequate knowledge about the state of the world, receiving different observations from different agents?
+    \end{quote}
+    
+    This agent has to combine all these observations, without knowing which of them are faulty or correct, in order to obtain a realistic representation of the world.\\
+    
+    \textbf{What do we need to know?}
+        
+   
+    \begin{itemize}
+    \item Ball position
+    \item Agents positions
+    \item Agents distances from ball
+    \end{itemize}
+
+  \end{frame}
   
-  \frame
-  {
-    \frametitle{Subsets in Coordination}
+  \begin{frame}[allowframebreaks]
+    \frametitle{Ball Position}
+    Observations source:
+    \begin{itemize}
+    \item Agents who have sent ``type C'' coordination messages.
+    \item Goalkeeper uses his own observation too.
+    \end{itemize}
+    Weighted Observation Sets:
+    \begin{align*}
+	{\bf Obsevation_{i} } &= (x,y) \\ 
+	{\bf Weight_{i}} &= 1
+	\end{align*}
+	
+	These observations sets are correlated, for every two sets which are been correlated, a new set is formed which contains observations from the two parent sets. The weight of the new set will be the sum of its parents' weight.
+	
+	\newpage
+	
+	\begin{align*}
+{\bf Obsevation Set_{i} } &= \lbrace (x_{1},y_{1}),...,(x_{k},y_{k}) \rbrace \vee k \in [1,n] , k\in \mathbb{Z} \\
+{\bf Weight_{i}} &= k
+\end{align*}
+
+Consequently, we have to compute our belief about ball position.
+Given a total number of N-observations, n-observation's sets, each one of them has k-observations, the final ball belief will be:\\
+\begin{align*}
+{\bf Ball Belief} = \displaystyle\sum\limits_{i=1}^n \frac {Weight_{i}} {N \ast k}  \displaystyle\sum\limits_{j=1}^k Obsevation Set_{i}[j]
+\end{align*}
+    
  
-  }
+  \end{frame}
   
-  \frame
-  {
+  
+	\begin{frame}
+    \frametitle{Agents' distance from ball}
+    \begin{itemize}
+    \item For agents who have sent ``Type C'' and ``Type L'' coordination messages and they are able to know their exact position in the field, this distance is calculated by finding the distance between the ball belief's position and the agent's position.
+    \item For agents who have sent ``Type B'' coordination messages we just take the distance part of the message.
+    \item For agents who have sent ``Type X'' messages we assume $\infty$ distance.
+    \end{itemize}   
+    \end{frame}  
+  
+  
+  \subsection*{Subsets into Coordination}
+\begin{frame}
+
+    \frametitle{Subsets}
+    
+    \begin{itemize}
+    \item The existence of multiple agents makes coordination function be too complex and computationally expensive to solve.
+    \item Split players into subsets would make easier for us to coordinate their actions in real-time.
+    \end{itemize}
+    there are three subsets:
+    \begin{description}
+    \item[Active] Active subset consists of three agents and it is the most important set of agents in the coordination.
+    \item[Support] Support subset consists of agents who are neither in the active subset nor in the inactive one.
+    \item[Inactive]Inactive subset consists of agents who have sent ``Type X'' messages. Agents who constitute this subset assigned the same action, to find their positions in the field.
+    \item[Goalkeeper] Agent with the uniform number one is selected to be this agent which is responsible for guarding our goal.
+    \end{description}
+ 
+ \end{frame}  
+  
+  
+  \begin{frame}[allowframebreaks]
+
     \frametitle{Coordination Splitter}
- 
-  }
+    \begin{quote}
+    How the above three groups are generated by coordination splitter?
+    \end{quote}
+    \begin{itemize}
+    \item An array full of team's agents is sorted according to the distance each agent has from the ball.
+    \item We assign to the active subset the agents in the three first positions of the sorted array.
+    \item Other agents with distance less than infinity join the support subset.
+    \end{itemize}
+    
+    \newpage
+    
+    \begin{figure}[H]
+	\centering
+  	\includegraphics[width=0.6\textwidth]{figures/Splitter.pdf}
+	\end{figure}
   
+  \end{frame} 
+  
+  \subsection*{Soccer Field Value}
   \frame
   {
     \frametitle{Soccer Field Value}
+    
+    \begin{figure}[H]
+	\centering
+  	\includegraphics[width=\textwidth]{figures/Graph1.pdf}
+
+	\end{figure}
  
   }
   
-  \frame
+  
+  \subsection*{Active Coordination}
+  
+  
+ \frame
   {
+    \frametitle{On Ball Player}
+    
+    An agent from the active subset has to be selected to do an action related to the ball. We have to find the agent who has minimum cost according to two parameters:
+	\begin{enumerate}
+	\item \textbf{Distance from ball} $d_{i}$ 
+	\item \textbf{Angle towards goal} $\vartheta_{i}$
+	\end{enumerate}
+	Given an active subset:
+	\begin{align*}\
+	{\bf ActiveSubset} &= \lbrace Agent_{1},Agent_{2},Agent_{3} \rbrace  \\
+	{\bf Cost_{i}} &= d_{i} + a \times \vartheta_{i}, a\in\mathbb{R} \\
+	{\bf OnBallPlayer} &= \arg\min_{i}(Cost_{i})
+	\end{align*}
+	Additionally, we give to the agent who had been assigned an action towards the ball in the previous coordination cycle a small advantage over the others to be again the on ball player.
+ 
+  }  
+  
+  
+  
+  \begin{frame}[allowframebreaks]
     \frametitle{Active Positions}
+    Possible candidate positions for the rest players who are assigned to the active subset.
+    \begin{itemize}
+    \item Depend on the position of the ball.
+    \item Defensive or offensive approach to compute these positions.
+    \item In both cases we create an array of equidistant coordinates which are located in a radius which is determined by the ball's location and they are not out of soccer field's limits.
+    \item From these candidate positions we keep only a max number of nine positions according to their values.
+    \end{itemize}
+    
+    \newpage
+    
+    \begin{figure}[H]
+	\centering
+	\includegraphics[height=5cm]{figures/ActivePositions2.png}\		
+  	\includegraphics[height=5cm]{figures/Active3.png}
+	\end{figure}
  
-  }
+  \end{frame}
   
-  \frame
+ \frame
   {
-    \frametitle{Active Coordination}
+    \frametitle{Active Mapping}
+    \begin{itemize}
+    \item 2 Players
+    \item 9 Positions
+    \end{itemize}
+    We have to find which positions from these nine can be assigned to the two agents with the minimum cost. Making use of a brute force algorithm we compute the cost for each and every combination of possible mappings. Using a brute force method the number of possible mapping remains able to be computed in real-time. Assuming maximum number of active positions in our case nine, the possible mappings are: ${{9}\choose{2}} = 72$ mappings.
  
-  }
+  }  
   
-  \frame
-  {
-    \frametitle{Team Formation}
- 
-  }
+  \begin{frame}[allowframebreaks]
+  \frametitle{Properties for Active Mapping}
   
-  \frame
-  {
-    \frametitle{Role Assignment Function}
- 
-  }
-  
-  
-  \frame
-  {
-    \frametitle{Positions for Support Subset}
- 
-  }
-  
-  \frame
-  {
-    \frametitle{Support Coordination}
- 
-  }
-  
-  \frame
-  {
-    \frametitle{Mapping Cost}
- 
-  }
 
+	\begin{enumerate}
+	\item \textbf{Total distance }$C_{d}$ - Total distance agents have to travel in order to reach in their optimized mapping positions.
+	\item \textbf{Possible Collisions }$C_{c}$ - In each mapping we check every combination of two agents and their assigned positions if it is possible for them to collide with each other.
+	\item \textbf{Field's value }$C_{v}$ - Agents will try to maximize this cost according to the game's state and the value which has every position in the field.
+	\item \textbf{Close routes }$C_{r}$ - Agents routes should be safe, so we calculate the difference between start positions' distance and target positions' distance.
+	\item \textbf{Neighboring positions }$C_{p}$ - In general agents will try to avoid be assigned in neighboring positions. So if their target positions are near to each other this is going to add more cost.
+	\item \textbf{Positions aligned to X-axis }$C_{a}$ - We want team stretching into the field in order to have players in most regions of the soccer pitch.
+	\end{enumerate}
+	\begin{align*}
+	Total cost &= C_{d,i}+C_{c,i}-C_{v,i}-C_{r,i}-C_{p,i}-C_{a,i}\\
+Optimized Cost &= \arg\min_{i}(TotalCost_{i})
+	\end{align*}
+  
+  
+  \end{frame}
+ 
+ \subsection*{Team Formation}
+  
+  \frame
+  {
+    \frametitle{Team Formation 9-Players Version}
+    \begin{figure}[t!]
+	\centering
+ 	 \includegraphics[width=0.7\textwidth]{figures/Formation9_0.pdf}
+	\end{figure}
+ 
+  }
+  
+  \frame
+  {
+    \frametitle{Team Formation 11-Players Version}
+    \begin{figure}[H]
+	\centering
+ 	 \includegraphics[width=0.7\textwidth]{figures/Formation11_0.pdf}
+	s\end{figure}
+ 
+  }
+  
+  \subsection*{Role Assignment}
+  	\begin{frame}[allowframebreaks]
+    \frametitle{Role Assignment}
+    
+    Given a computed team formation we have to assign roles to the active subset's players.
+    
+    \begin{itemize}
+    \item So, for N active players we choose N team formation positions which minimize the distance from the ball.
+    \item Roles which these positions represent will be assigned to the active players.
+    \end{itemize}
+        
+    \newpage
+    
+    \begin{figure}[t!]
+	\centering
+  	\includegraphics[width=0.7\textwidth]{figures/RoleAss.pdf}
+	\end{figure}
+
+  	\newpage
+  
+	\begin{figure}[H]
+	\centering
+  	\includegraphics[width=0.7\textwidth]{figures/SupportPos.pdf}
+	\end{figure}
+  
+  	\end{frame}
+
+  	\subsection*{Support Coordination}
+  
+ 	\begin{frame}[allowframebreaks]
+  
+ 	 \frametitle{Support Coordination}
+  
+  	\begin{itemize}
+  	\item Same number from positions, agents.
+  	\item Brute force algorithm for 9 players, factorial complexity, $\leqslant 5! \Leftrightarrow  	{{5}\choose{5}} = 120$ mappings. 
+ 	 \item For 11 players, factorial complexity,$ 7! \Leftrightarrow  {{7}\choose{7}} = 5040$ mappings. 
+  	\end{itemize}
+	\begin{quote}
+	Solution?
+	\end{quote}
+  	\textbf{Dynamic programming algorithm}, based on a simple property.
+	\begin{theorem}
+	For every mapping there is a subset of a lower cost with which we can reduce the cost of the complete mapping by augmenting it with that of the subset's lower cost mapping.
+	\end{theorem}  
+	
+	\newpage
+	
+	\begin{algorithm}[H]
+\caption{Dynamic programming implementation}
+\begin{algorithmic}[1]
+\begin{footnotesize}
+\STATE {\bf Input: }$SupportPlayers = \lbrace A_{1},A_{2},...,A_{n} \rbrace$
+\STATE {\bf Input: }$SupportPositions = \lbrace P_{1},P_{2},...,P_{n} \rbrace $
+\STATE {\bf Output: }$OptSupportMap$
+\STATE $OptSupportMap = \varnothing $
+\FOR{$k = 1 \to n$} 
+\FOR{{\bf each} $\alpha$ in SupportPlayers}
+\STATE $ S = {{n-1}\choose{k-1}} $, sets of k-1 agents for supportPlayers - $\lbrace \alpha \rbrace$
+\FOR{{\bf each} s in S}
+\STATE $SupportRoleMap$ $m_{0}$ = $RoleMap[s]$
+\STATE $SupportRoleMap$ $m$ = $m_{0}$ $ \cup (\alpha \rightarrow P_{k})$
+\STATE $OptSupportMap[\lbrace \alpha \rbrace \cup s] = mincost(m,OptSupportMap[\lbrace \alpha \rbrace \cup s])$
+\ENDFOR
+\ENDFOR
+\ENDFOR
+\end{footnotesize}
+\end{algorithmic}
+\end{algorithm} 
+
+	As we see in this table, an optimal mapping is built iteratively for position sets from $\lbrace P_{1} \rbrace$ to $\lbrace P_{1},P_{2},...,P_{n} \rbrace$. In every step of this algorithm we use the lower cost's mapping for a subset of agents and positions which are compatible with our current mapping.
+
+	\begin{table}[t!]
+	\label{tab:DynamicTable}
+	\centering
+	\begin{small}
+
+    \begin{tabular}{ | c | c | c | }
+    \hline
+    $\lbrace P_{1} \rbrace$   & $\lbrace P_{1},P_{2} \rbrace$ 	& $\lbrace P_{1},P_{2},P_{3} \rbrace$\\ \hline
+    $A_{1} \rightarrow P_{1}$ & $A_{1} \rightarrow P_{2},min(A_{2} \rightarrow P_{1})$	 	& $A_{1} \rightarrow P_{3},min(\lbrace A_{2},A_{3} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ \hline
+    $A_{2} \rightarrow P_{1}$ & $A_{1} \rightarrow P_{1},min(A_{3} \rightarrow P_{1})$	 	& $A_{2} \rightarrow P_{3},min(\lbrace A_{1},A_{3} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ \hline
+     						  & $A_{2} \rightarrow P_{2},min(A_{1} \rightarrow P_{1})$ 		& 	$A_{3} \rightarrow P_{3},min(\lbrace A_{1},A_{2} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ \hline
+       						  & $A_{2} \rightarrow P_{2},min(A_{3} \rightarrow P_{1})$ 		&   \\ \hline
+       						  & $A_{3} \rightarrow P_{2},min(A_{1} \rightarrow P_{1})$ 		&   		\\ \hline
+    						  & $A_{3} \rightarrow P_{2},min(A_{2} \rightarrow P_{1})$		&   \\
+    \hline
+
+    \end{tabular}
+    \end{small}
+     
+	\end{table}
+
+	\newpage
+
+	These assignments result in a total of $ {{n-1}\choose{k-1}} $ mappings to be evaluated in each iteration. Summing to $\sum\limits_{i=1}^N{{n-1}\choose{k-1}}$ possible mappings.\\
+\[
+\sum\limits_{i=1}^N{{n}\choose{k-1}} = \sum\limits_{i=0}^{n-1}{{n-1}\choose{k}} = 2^{n-1}
+\]
+
+	\begin{itemize}
+	\item For nine players in each team, this algorithm would not have any impact. As the previous brute force algorithm was having 5! (120 mappings), which is not much bigger computational complexity than this approach $5 \ast 2^{4}$ (80 mappings).
+
+	\item For seven players in our support subset, this approach gives us great improvement in our coordination time, $7 \ast 2^{6}$ (448 mappings) $\ll$ 7! (5040 mappings) in comparison to the brute force algorithm.
+	\end{itemize}
+
+  
+  \end{frame}
+  
+  
+  
+  
+  
+  \frame 
+  {
+    \frametitle{Properties for Support Mapping}
+    \begin{enumerate}
+	\item \textbf{Total distance }$C_{d}$ - Total distance agents have to travel in order to reach in their optimized mapping positions.
+	\item \textbf{Possible Collisions }$C_{c}$ - In each mapping we check every combination of two agents and their assigned positions if it is possible for them to collide with each other.
+	\end{enumerate}
+	\begin{align*}
+	Total cost &= C_{d,i}+C_{c,i}\\
+Optimized Cost &= \arg\min_{i}(TotalCost_{i})
+	\end{align*}
+    
+  
+ 
+  }
+  
   \section{Results}
+  
+  \subsection*{Movement}
 
   \frame
   {
-    \frametitle{Movement}
+    \frametitle{Movement Results and Improvements}
+    \begin{table}
+\begin{center}
+\begin{footnotesize}
+\begin{tabular}{ccccc}
+\textbf{Motion Version} & \textbf{Walk(m/s)}	& \textbf{Turn(d/s)}	& \textbf{Kick(m)}&\textbf{Strong Kick(m)} \\  \hline
+Webots (Text-Based) 		& 0.11 				& 21 				& 3 				& - \\
+FIIT (XML)				& 0.22 				& 25 				& 3 (4 sec) 		& 4 (5 sec) \\
+\textbf{AST\_3D} 		& 0.45 	& 30 		& 3 (2.5 sec)& 5.5 (2.5 sec) \\
+\end{tabular}
+\end{footnotesize}
+\end{center}
+\end{table}
 
   }
   
+  \subsection*{Communication}
+  
   \frame
   {
-    \frametitle{Communication}
+    \frametitle{Communication Results}
+    \begin{table}[h!]
+\begin{center}
+    \begin{tabular}{ccc}
+    \textbf{Communication Phase} 	& \textbf{Ideal (Cycles)}			& \textbf{During Match (Cycles)} \\
+    \hline
+    Init Messages 					& 24  ( 0.48 Sec ) 			& 24 	( 0.48 Sec )		\\
+    Coordination Messages			& 24  ( 0.48 Sec )			& 42.5  ( 0.85 Sec )		\\
+    Action Messages 				    & 24  ( 0.48 Sec )			& 24 ( 0.48 Sec )	 		\\
+    \end{tabular}
+\end{center}
+\end{table}
 
   }
 
 
+  \subsection*{Coordination}
   \frame
   {
-    \frametitle{Coordination}
+    \frametitle{Coordination Results}
 
   }
 
+  \subsection*{GoalKeeper}
   \frame
   {
-    \frametitle{Matches}
+    \frametitle{Goalkeeper Results}
+    
+    \begin{table}[h!]
+\begin{center}
+    \begin{tabular}{cc}
+    \textbf{GoalKeeper Type} 	& \textbf{Goals Conceded}\\
+    \hline
+    No Goalkeeper						& 7\\
+    Goalkeeper with ``Empty'' Behavior	& 7\\
+    Goalkeeper with ``Full'' Behavior	& 3\\
+    \end{tabular}
+\end{center}
+\end{table}
+    
+    
+
+  }
+  
+  \subsection*{Games}
+  \frame
+  {
+    \frametitle{Full-Games Results}
+    
+ \begin{table}[h]
+\begin{center}
+    \begin{tabular}{cccccc}
+    \textbf{Team} 	& \textbf{W} & \textbf{D} & \textbf{L} & \textbf{AGD} & \textbf{Games}   \\
+    \hline
+    UTAustinVilla 	& 0		& 0		& 4		& -5.2		& 4 			\\
+    Robocanes 		& 0		& 0		& 1		& -6.0		& 1 			\\
+    BeeStanbul		& 0		& 0		& 3		& -4.0		& 3				\\
+    NomoFC 			& 1		& 2		& 0		& +0.3 		& 3 			\\
+    Rail 			& 0		& 4		& 0		& 0.0 		& 4 			\\
+    OxBlue 			& 0		& 0		& 2		& -1.5 		& 2 			\\
+    FUTK3D 			& 0		& 5		& 0		& 0.0 		& 5 			\\
+    FARZANEGAN 		& 1		& 1		& 0		& +0.5 		& 2 			\\
+    MAK 			    & 2		& 0		& 0		& +2.0 		& 2 			\\
+    L3M-SIM			& 3		& 2   	& 0		& +0.6 		& 5 			\\     
+    \end{tabular}
+\end{center}
+\end{table}
+    
+    
 
   }
 
@@ -999,12 +1490,22 @@ d &= \sqrt{(x_t-x_a)^2 + (y_t-y_a)^2}
   \frame
   {
     \frametitle{Future Work}
+Reaching to a level to oppose teams that have already participated in this robotic soccer competition gives us an incentive to keep working in order to improve further our team. In this section, we present some of these possible improvements.  
+\begin{itemize}
+\item Probabilistic Localization System
+\item Dynamic Omni-Directional Movement
+\item Passing
+\item Testing and Debugging in New Server's version
+\item Participation in Robocup
+\end{itemize}
+
 
   }
 
   \frame
   {
-    \frametitle{}
+    \frametitle{Final}
+    
 
   }
 

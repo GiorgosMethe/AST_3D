@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.27)  18 AUG 2012 23:09
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.27)  19 AUG 2012 16:45
 entering extended mode
  %&-line parsing enabled.
 **Presentation.tex
@@ -1246,38 +1246,178 @@ File: figures/MAC.pdf Graphic file (type pdf)
 
 ] [71
 
+
 ] [72
+
 
 ]
 [73
 
-] [74
+
+]
+
+pdfTeX warning: pdflatex (file ./figures/CoordComm.pdf): PDF inclusion: found P
+DF version <1.5>, but at most version <1.4> allowed
+<figures/CoordComm.pdf, id=2297, 369.7395pt x 366.54305pt>
+File: figures/CoordComm.pdf Graphic file (type pdf)
+
+<use figures/CoordComm.pdf> [74
 
 ] [75
 
+
 ] [76
+
 
 ] [77
 
+
 ] [78
+
 
 ] [79
 
+
 ] [80
 
-] [81
+
+ <./figures/CoordComm.pdf>] [81
 
 ] [82
 
 ] [83
 
+
 ] [84
 
 ] [85
 
-] [86
+]
+
+pdfTeX warning: pdflatex (file ./figures/Splitter.pdf): PDF inclusion: found PD
+F version <1.5>, but at most version <1.4> allowed
+<figures/Splitter.pdf, id=2780, 580.2034pt x 524.21819pt>
+File: figures/Splitter.pdf Graphic file (type pdf)
+
+<use figures/Splitter.pdf> [86
 
 ] [87
+
+
+ <./figures/Splitter.pdf>]
+<figures/Graph1.pdf, id=2857, 1219.55624pt x 701.62125pt>
+File: figures/Graph1.pdf Graphic file (type pdf)
+
+<use figures/Graph1.pdf> [88
+
+ <./figures/Graph1.pdf>] [89
+
+]
+<figures/ActivePositions2.png, id=2978, 851.18pt x 902.37125pt>
+File: figures/ActivePositions2.png Graphic file (type png)
+
+<use figures/ActivePositions2.png>
+<figures/Active3.png, id=2979, 922.44624pt x 831.105pt>
+File: figures/Active3.png Graphic file (type png)
+
+<use figures/Active3.png> [90
+
+] [91
+
+
+ <./figures/ActivePositions2.png (PNG copy)> <./figures/Active3.png (PNG copy)>
+]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 1217.
+
+[92
+
+] [93
+
+] [94
+
+
+]
+
+pdfTeX warning: pdflatex (file ./figures/Formation9_0.pdf): PDF inclusion: foun
+d PDF version <1.5>, but at most version <1.4> allowed
+<figures/Formation9_0.pdf, id=3120, 580.14201pt x 453.95424pt>
+File: figures/Formation9_0.pdf Graphic file (type pdf)
+
+<use figures/Formation9_0.pdf> [95
+
+ <./figures/Formation9_0.pdf>]
+
+pdfTeX warning: pdflatex (file ./figures/Formation11_0.pdf): PDF inclusion: fou
+nd PDF version <1.5>, but at most version <1.4> allowed
+<figures/Formation11_0.pdf, id=3155, 580.2034pt x 473.63727pt>
+File: figures/Formation11_0.pdf Graphic file (type pdf)
+
+<use figures/Formation11_0.pdf> [96
+
+ <./figures/Formation11_0.pdf>]
+
+pdfTeX warning: pdflatex (file ./figures/RoleAss.pdf): PDF inclusion: found PDF
+ version <1.5>, but at most version <1.4> allowed
+<figures/RoleAss.pdf, id=3187, 580.2034pt x 539.10118pt>
+File: figures/RoleAss.pdf Graphic file (type pdf)
+
+<use figures/RoleAss.pdf>
+
+pdfTeX warning: pdflatex (file ./figures/SupportPos.pdf): PDF inclusion: found 
+PDF version <1.5>, but at most version <1.4> allowed
+<figures/SupportPos.pdf, id=3189, 580.2034pt x 512.6133pt>
+File: figures/SupportPos.pdf Graphic file (type pdf)
+
+<use figures/SupportPos.pdf> [97
+
+]
+Overfull \vbox (231.93076pt too high) detected at line 1286
+ []
+
+[98
+
+
+ <./figures/RoleAss.pdf> <./figures/SupportPos.pdf>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 1368.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1368.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1368.
+
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1368.
+
+ [99
+
+] [100
+
+
+] [101
+
+
+]
+[102
+
+
+] [103
+
+] [104
+
+] [105
+
+] [106
+
+] [107
+
+] [108
+
+] [109
+
+] [110
 
 ]
 \tf@nav=\write6
@@ -1289,35 +1429,38 @@ File: figures/MAC.pdf Graphic file (type pdf)
 \tf@snm=\write8
 \openout8 = `Presentation.snm'.
 
-
-(./Presentation.aux) ) 
+ (./Presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 15943 strings out of 494985
- 292377 string characters out of 1181034
+ 16206 strings out of 494985
+ 296610 string characters out of 1181034
  359412 words of memory out of 3000000
- 18463 multiletter control sequences out of 15000+50000
- 60043 words of font info for 62 fonts, out of 3000000 for 9000
+ 18654 multiletter control sequences out of 15000+50000
+ 79482 words of font info for 78 fonts, out of 3000000 for 9000
  73 hyphenation exceptions out of 8191
  49i,17n,60p,892b,804s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/
-share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/
-lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmsso9.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Presentation.pdf (87 pages, 3436672 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr
+/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+sso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb>
+Output written on Presentation.pdf (110 pages, 7024080 bytes).
 PDF statistics:
- 2773 PDF objects out of 2984 (max. 8388607)
- 190 named destinations out of 1000 (max. 500000)
- 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4047 PDF objects out of 4296 (max. 8388607)
+ 251 named destinations out of 1000 (max. 500000)
+ 270 words of extra memory for PDF output out of 10000 (max. 10000000)
 
