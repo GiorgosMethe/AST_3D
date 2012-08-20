@@ -42,16 +42,6 @@ import java.util.Vector;
 import javax.swing.Timer;
 
 import perceptor.localization.Coordinate;
-import perceptor.localization.LocalizationFilter;
-import perceptor.localization.LocalizationResults;
-import perceptor.localization.TriangleLocalization;
-
-import coordination.TeamRoles.RoleAssignmentFunction;
-import coordination.action.ActionObject;
-import coordination.active.ActiveCoordination;
-import coordination.communication.message.CoordinationVectorUpdate;
-import coordination.main.CoordinationBeliefs;
-import coordination.support.SupportCoordination;
 
 /**
  * Program for testing network drawing on RoboVis with all shapes both animated
@@ -63,7 +53,7 @@ public class RVTester {
 
 	// private static final int TEST_DURATION = 100000000;
 	private static final int ROBOVIS_PORT = 32769;
-	
+
 	public static Vector<Coordinate> Coordinates = new Vector<Coordinate>();
 
 	private DatagramSocket socket;
@@ -89,7 +79,6 @@ public class RVTester {
 
 	/** Method for all animated drawings */
 	private void renderAnimatedShapes() throws IOException {
-		
 
 		// if (((!HeadMovement.HeadAtRight) || (!HeadMovement.HeadAtLeft))) {
 		// if (ObstaclePerceptor.Obstacles != null) {
@@ -137,79 +126,79 @@ public class RVTester {
 		// }
 
 		// this draws agent position and position through localization filter
-		//		 if (!Double.isNaN(LocalizationResults.getCurrent_location().getX())
-		//		 && !Double.isNaN(LocalizationResults.getCurrent_location()
-		//		 .getY())) {
-		//		
-		//		 drawCircle(new float[] {
-		//		 (float) LocalizationResults.getCurrent_location().getX(),
-		//		 (float) LocalizationResults.getCurrent_location().getY() },
-		//		 0.2f, 2, Color.YELLOW, "animated.circles");
+		// if (!Double.isNaN(LocalizationResults.getCurrent_location().getX())
+		// && !Double.isNaN(LocalizationResults.getCurrent_location()
+		// .getY())) {
+		//
+		// drawCircle(new float[] {
+		// (float) LocalizationResults.getCurrent_location().getX(),
+		// (float) LocalizationResults.getCurrent_location().getY() },
+		// 0.2f, 2, Color.YELLOW, "animated.circles");
 
-		//		 drawLine(
-		//		 new float[] {
-		//		 (float) LocalizationResults.getCurrent_location()
-		//		 .getX(),
-		//		 (float) LocalizationResults.getCurrent_location()
-		//		 .getY(), 0 },
-		//		 new float[] {
-		//		 (float) TriangleLocalization
-		//		 .get_det_with_distance_angle(
-		//		 LocalizationResults
-		//		 .getCurrent_location()
-		//		 .getX(),
-		//		 LocalizationResults
-		//		 .getCurrent_location()
-		//		 .getY(),
-		//		 LocalizationResults.getBody_angle(),
-		//		 1).getX(),
-		//		 (float) TriangleLocalization
-		//		 .get_det_with_distance_angle(
-		//		 LocalizationResults
-		//		 .getCurrent_location()
-		//		 .getX(),
-		//		 LocalizationResults
-		//		 .getCurrent_location()
-		//		 .getY(),
-		//		 LocalizationResults.getBody_angle(),
-		//		 1).getY(), 0 }, 1.0f, Color.YELLOW,
-		//		 "animated.lines.field");
+		// drawLine(
+		// new float[] {
+		// (float) LocalizationResults.getCurrent_location()
+		// .getX(),
+		// (float) LocalizationResults.getCurrent_location()
+		// .getY(), 0 },
+		// new float[] {
+		// (float) TriangleLocalization
+		// .get_det_with_distance_angle(
+		// LocalizationResults
+		// .getCurrent_location()
+		// .getX(),
+		// LocalizationResults
+		// .getCurrent_location()
+		// .getY(),
+		// LocalizationResults.getBody_angle(),
+		// 1).getX(),
+		// (float) TriangleLocalization
+		// .get_det_with_distance_angle(
+		// LocalizationResults
+		// .getCurrent_location()
+		// .getX(),
+		// LocalizationResults
+		// .getCurrent_location()
+		// .getY(),
+		// LocalizationResults.getBody_angle(),
+		// 1).getY(), 0 }, 1.0f, Color.YELLOW,
+		// "animated.lines.field");
 
-		//}
+		// }
 
-//		if (LocalizationFilter.MyFilteredPosition != null) {
-//
-//			drawCircle(new float[] {
-//					(float) LocalizationFilter.MyFilteredPosition.getX(),
-//					(float) LocalizationFilter.MyFilteredPosition.getY() },
-//					0.2f, 2, Color.RED, "animated.circles");
+		// if (LocalizationFilter.MyFilteredPosition != null) {
+		//
+		// drawCircle(new float[] {
+		// (float) LocalizationFilter.MyFilteredPosition.getX(),
+		// (float) LocalizationFilter.MyFilteredPosition.getY() },
+		// 0.2f, 2, Color.RED, "animated.circles");
 
-//			drawLine(
-//					new float[] {
-//							(float) LocalizationFilter.MyFilteredPosition
-//							.getX(),
-//							(float) LocalizationFilter.MyFilteredPosition
-//							.getY(), 0 },
-//							new float[] {
-//							(float) TriangleLocalization
-//							.get_det_with_distance_angle(
-//									LocalizationFilter.MyFilteredPosition
-//									.getX(),
-//									LocalizationFilter.MyFilteredPosition
-//									.getY(),
-//									LocalizationFilter.MyFilteredPosition
-//									.getTheta(), 1).getX(),
-//									(float) TriangleLocalization
-//									.get_det_with_distance_angle(
-//											LocalizationFilter.MyFilteredPosition
-//											.getX(),
-//											LocalizationFilter.MyFilteredPosition
-//											.getY(),
-//											LocalizationFilter.MyFilteredPosition
-//											.getTheta(), 1).getY(), 0 },
-//											1.0f, Color.RED, "animated.lines.field");
+		// drawLine(
+		// new float[] {
+		// (float) LocalizationFilter.MyFilteredPosition
+		// .getX(),
+		// (float) LocalizationFilter.MyFilteredPosition
+		// .getY(), 0 },
+		// new float[] {
+		// (float) TriangleLocalization
+		// .get_det_with_distance_angle(
+		// LocalizationFilter.MyFilteredPosition
+		// .getX(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getY(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getTheta(), 1).getX(),
+		// (float) TriangleLocalization
+		// .get_det_with_distance_angle(
+		// LocalizationFilter.MyFilteredPosition
+		// .getX(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getY(),
+		// LocalizationFilter.MyFilteredPosition
+		// .getTheta(), 1).getY(), 0 },
+		// 1.0f, Color.RED, "animated.lines.field");
 
-		//}
+		// }
 
 		// if (LocalizationResults.getBall_location()!=null){
 		//
@@ -258,237 +247,260 @@ public class RVTester {
 		//
 		// }
 
-		//		if (ActiveCoordination.OptimizedActiveMap != null) {
+		// if (ActiveCoordination.OptimizedActiveMap != null) {
 		//
-		//			for (int i = 0; i < ActiveCoordination.OptimizedActiveMap.size(); i++) {
+		// for (int i = 0; i < ActiveCoordination.OptimizedActiveMap.size();
+		// i++) {
 		//
-		//				if (ActiveCoordination.OnBallPlayer != 0
-		//						&& ActiveCoordination.OnBallPlayer != ActiveCoordination.OptimizedActiveMap
-		//								.elementAt(i).getAgent().getNumber()) {
+		// if (ActiveCoordination.OnBallPlayer != 0
+		// && ActiveCoordination.OnBallPlayer !=
+		// ActiveCoordination.OptimizedActiveMap
+		// .elementAt(i).getAgent().getNumber()) {
 		//
-		//					drawCircle(new float[] {
-		//							(float) ActiveCoordination.OptimizedActiveMap
-		//									.elementAt(i).getPosition().getX(),
-		//							(float) ActiveCoordination.OptimizedActiveMap
-		//									.elementAt(i).getPosition().getY() }, 0.2f,
-		//							2, Color.RED, "animated.circles");
+		// drawCircle(new float[] {
+		// (float) ActiveCoordination.OptimizedActiveMap
+		// .elementAt(i).getPosition().getX(),
+		// (float) ActiveCoordination.OptimizedActiveMap
+		// .elementAt(i).getPosition().getY() }, 0.2f,
+		// 2, Color.RED, "animated.circles");
 		//
-		//					if (ActiveCoordination.OptimizedActiveMap.elementAt(i)
-		//							.getAgent().getType() == 0
-		//							|| ActiveCoordination.OptimizedActiveMap
-		//									.elementAt(i).getAgent().getType() == 1) {
+		// if (ActiveCoordination.OptimizedActiveMap.elementAt(i)
+		// .getAgent().getType() == 0
+		// || ActiveCoordination.OptimizedActiveMap
+		// .elementAt(i).getAgent().getType() == 1) {
 		//
-		//						drawLine(
-		//								new float[] {
-		//										(float) ActiveCoordination.OptimizedActiveMap
-		//												.elementAt(i).getAgent()
-		//												.getPlayer().X,
-		//										(float) ActiveCoordination.OptimizedActiveMap
-		//												.elementAt(i).getAgent()
-		//												.getPlayer().Y, 0 },
-		//								new float[] {
-		//										(float) ActiveCoordination.OptimizedActiveMap
-		//												.elementAt(i).getPosition()
-		//												.getX(),
-		//										(float) ActiveCoordination.OptimizedActiveMap
-		//												.elementAt(i).getPosition()
-		//												.getY(), 0 }, 1.0f, lightGreen,
-		//								"animated.lines.field");
+		// drawLine(
+		// new float[] {
+		// (float) ActiveCoordination.OptimizedActiveMap
+		// .elementAt(i).getAgent()
+		// .getPlayer().X,
+		// (float) ActiveCoordination.OptimizedActiveMap
+		// .elementAt(i).getAgent()
+		// .getPlayer().Y, 0 },
+		// new float[] {
+		// (float) ActiveCoordination.OptimizedActiveMap
+		// .elementAt(i).getPosition()
+		// .getX(),
+		// (float) ActiveCoordination.OptimizedActiveMap
+		// .elementAt(i).getPosition()
+		// .getY(), 0 }, 1.0f, lightGreen,
+		// "animated.lines.field");
 		//
-		//					}
+		// }
 		//
-		//				}
+		// }
 		//
-		//			}
+		// }
 		//
-		//		}
+		// }
 		//
-		//		if (SupportCoordination.OptimizedSupportMap != null) {
+		// if (SupportCoordination.OptimizedSupportMap != null) {
 		//
-		//			for (int i = 0; i < SupportCoordination.OptimizedSupportMap.size(); i++) {
+		// for (int i = 0; i < SupportCoordination.OptimizedSupportMap.size();
+		// i++) {
 		//
-		//				drawCircle(new float[] {
-		//						(float) SupportCoordination.OptimizedSupportMap
-		//								.elementAt(i).getPosition().getX(),
-		//						(float) SupportCoordination.OptimizedSupportMap
-		//								.elementAt(i).getPosition().getY() }, 0.2f, 2,
-		//						Color.YELLOW, "animated.circles");
+		// drawCircle(new float[] {
+		// (float) SupportCoordination.OptimizedSupportMap
+		// .elementAt(i).getPosition().getX(),
+		// (float) SupportCoordination.OptimizedSupportMap
+		// .elementAt(i).getPosition().getY() }, 0.2f, 2,
+		// Color.YELLOW, "animated.circles");
 		//
-		//				if (SupportCoordination.OptimizedSupportMap.elementAt(i)
-		//						.getAgent().getType() == 0
-		//						|| SupportCoordination.OptimizedSupportMap.elementAt(i)
-		//								.getAgent().getType() == 1) {
+		// if (SupportCoordination.OptimizedSupportMap.elementAt(i)
+		// .getAgent().getType() == 0
+		// || SupportCoordination.OptimizedSupportMap.elementAt(i)
+		// .getAgent().getType() == 1) {
 		//
-		//					drawLine(
-		//							new float[] {
-		//									(float) SupportCoordination.OptimizedSupportMap
-		//											.elementAt(i).getAgent()
-		//											.getPlayer().X,
-		//									(float) SupportCoordination.OptimizedSupportMap
-		//											.elementAt(i).getAgent()
-		//											.getPlayer().Y, 0 },
-		//							new float[] {
-		//									(float) SupportCoordination.OptimizedSupportMap
-		//											.elementAt(i).getPosition().getX(),
-		//									(float) SupportCoordination.OptimizedSupportMap
-		//											.elementAt(i).getPosition().getY(),
-		//									0 }, 1.0f, Color.YELLOW,
-		//							"animated.lines.field");
+		// drawLine(
+		// new float[] {
+		// (float) SupportCoordination.OptimizedSupportMap
+		// .elementAt(i).getAgent()
+		// .getPlayer().X,
+		// (float) SupportCoordination.OptimizedSupportMap
+		// .elementAt(i).getAgent()
+		// .getPlayer().Y, 0 },
+		// new float[] {
+		// (float) SupportCoordination.OptimizedSupportMap
+		// .elementAt(i).getPosition().getX(),
+		// (float) SupportCoordination.OptimizedSupportMap
+		// .elementAt(i).getPosition().getY(),
+		// 0 }, 1.0f, Color.YELLOW,
+		// "animated.lines.field");
 		//
-		//				}
+		// }
 		//
-		//			}
+		// }
 		//
-		//		}
+		// }
 		//
-		//		if (CoordinationBeliefs.Ball != null) {
 		//
-		//			drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
-		//					(float) CoordinationBeliefs.Ball.getY() }, 0.1f, 2,
-		//					Color.CYAN, "animated.circles");
+		// if(Coordination.roboviz = true){
+		// if (CoordinationBeliefs.Ball != null) {
 		//
-		//		}
+		// drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
+		// (float) CoordinationBeliefs.Ball.getY() }, 0.2f, 3,
+		// Color.BLUE, "animated.circles");
 		//
-		//		if (CoordinationVectorUpdate.CoordinationVector.size() != 0) {
+		// }
 		//
-		//			for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector
-		//					.size(); i++) {
+		// if (BallObservationFilter.BallSampleVector != null) {
 		//
-		//				if (RoleAssignmentFunction.ActiveRoles != null) {
-		//					for (int j = 0; j < RoleAssignmentFunction.ActiveRoles
-		//							.size(); j++) {
-		//						if (RoleAssignmentFunction.ActiveRoles.elementAt(j)
-		//								.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
-		//								.elementAt(i).getNumber()) {
 		//
-		//							if (ActiveCoordination.OnBallPlayer == RoleAssignmentFunction.ActiveRoles
-		//									.elementAt(j).getAgent().getNumber()) {
+		// for (int i = 0; i < BallObservationFilter.BallSampleVector.size();
+		// i++) {
+		// if(BallObservationFilter.BallSampleVector.elementAt(i).getSamplesNum()>1){
+		// drawCircle(new float[] { (float)
+		// BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getX(),
+		// (float)
+		// BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getY()
+		// }, 0.5f, 3,
+		// Color.RED, "animated.circles");
 		//
-		//								drawAgentAnnotation(
-		//										String.format(
-		//												"OB n:%d,r:%d,c:%d",
-		//												CoordinationVectorUpdate.CoordinationVector
-		//														.elementAt(i)
-		//														.getNumber(),
-		//												RoleAssignmentFunction.ActiveRoles
-		//														.elementAt(j).getRole(),
-		//												CoordinationVectorUpdate.CoordinationVector
-		//														.elementAt(i).getType()),
-		//										true,
-		//										CoordinationVectorUpdate.CoordinationVector
-		//												.elementAt(i).getNumber(),
-		//										Color.RED);
-		//							} else {
+		// }else{
 		//
-		//								drawAgentAnnotation(
-		//										String.format(
-		//												"A n:%d,r:%d,c:%d",
-		//												CoordinationVectorUpdate.CoordinationVector
-		//														.elementAt(i)
-		//														.getNumber(),
-		//												RoleAssignmentFunction.ActiveRoles
-		//														.elementAt(j).getRole(),
-		//												CoordinationVectorUpdate.CoordinationVector
-		//														.elementAt(i).getType()),
-		//										true,
-		//										CoordinationVectorUpdate.CoordinationVector
-		//												.elementAt(i).getNumber(),
-		//										Color.ORANGE);
 		//
-		//							}
+		// drawCircle(new float[] { (float)
+		// BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getX(),
+		// (float)
+		// BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getY()
+		// }, 0.5f, 3,
+		// Color.CYAN, "animated.circles");
 		//
-		//						}
-		//					}
-		//				}
+		// }
 		//
-		//				if (RoleAssignmentFunction.SupportRoles != null) {
-		//					for (int j = 0; j < RoleAssignmentFunction.SupportRoles
-		//							.size(); j++) {
-		//						if (RoleAssignmentFunction.SupportRoles.elementAt(j)
-		//								.getAgent().getNumber() == CoordinationVectorUpdate.CoordinationVector
-		//								.elementAt(i).getNumber()) {
+		// }
 		//
-		//							drawAgentAnnotation(String.format(
-		//									"S n:%d,r:%d,c:%d",
-		//									CoordinationVectorUpdate.CoordinationVector
-		//											.elementAt(i).getNumber(),
-		//									RoleAssignmentFunction.SupportRoles
-		//											.elementAt(j).getRole(),
-		//									CoordinationVectorUpdate.CoordinationVector
-		//											.elementAt(i).getType()), true,
-		//									CoordinationVectorUpdate.CoordinationVector
-		//											.elementAt(i).getNumber(),
-		//									Color.YELLOW);
+		// }
 		//
-		//						}
-		//					}
-		//				}
 		//
-		//				if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
-		//						.getType() == 0
-		//						|| CoordinationVectorUpdate.CoordinationVector
-		//								.elementAt(i).getType() == 1) {
+		// if (CoordinationVectorUpdate.CoordinationVector.size() != 0) {
 		//
-		//					drawCircle(new float[] {
-		//							(float) CoordinationVectorUpdate.CoordinationVector
-		//									.elementAt(i).getPlayer().getX(),
-		//							(float) CoordinationVectorUpdate.CoordinationVector
-		//									.elementAt(i).getPlayer().getY() }, 0.2f,
-		//							2, Color.BLUE, "animated.circles");
+		// for (int i = 0; i <
+		// CoordinationVectorUpdate.CoordinationVector.size(); i++) {
 		//
-		//				}
 		//
-		//			}
+		// if
+		// (CoordinationVectorUpdate.CoordinationVector.elementAt(i).getType()
+		// == 0){
 		//
-		//		}
+		// drawCircle(new float[] { (float)
+		// CoordinationVectorUpdate.CoordinationVector.elementAt(i).getBall().getX(),
+		// (float)
+		// CoordinationVectorUpdate.CoordinationVector.elementAt(i).getBall().getY()
+		// }, 0.1f, 2,
+		// Color.WHITE, "animated.circles");
+		//
+		// }
+		//
+		// }
+		//
+		// }
+		//
+		// }
+		//
+		// if (CoordinationVectorUpdate.CoordinationVector.size() != 0) {
+		//
+		// for (int i = 0; i < CoordinationVectorUpdate.CoordinationVector
+		// .size(); i++) {
+		//
+		// if (RoleAssignmentFunction.ActiveRoles != null) {
+		// for (int j = 0; j < RoleAssignmentFunction.ActiveRoles
+		// .size(); j++) {
+		// if (RoleAssignmentFunction.ActiveRoles.elementAt(j)
+		// .getAgent().getNumber() ==
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getNumber()) {
+		//
+		// if (ActiveCoordination.OnBallPlayer ==
+		// RoleAssignmentFunction.ActiveRoles
+		// .elementAt(j).getAgent().getNumber()) {
+		//
+		// drawAgentAnnotation(
+		// String.format(
+		// "OB n:%d,r:%d,c:%d",
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i)
+		// .getNumber(),
+		// RoleAssignmentFunction.ActiveRoles
+		// .elementAt(j).getRole(),
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getType()),
+		// true,
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getNumber(),
+		// Color.RED);
+		// } else {
+		//
+		// drawAgentAnnotation(
+		// String.format(
+		// "A n:%d,r:%d,c:%d",
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i)
+		// .getNumber(),
+		// RoleAssignmentFunction.ActiveRoles
+		// .elementAt(j).getRole(),
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getType()),
+		// true,
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getNumber(),
+		// Color.ORANGE);
+		//
+		// }
+		//
+		// }
+		// }
+		// }
+		//
+		// if (RoleAssignmentFunction.SupportRoles != null) {
+		// for (int j = 0; j < RoleAssignmentFunction.SupportRoles
+		// .size(); j++) {
+		// if (RoleAssignmentFunction.SupportRoles.elementAt(j)
+		// .getAgent().getNumber() ==
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getNumber()) {
+		//
+		// drawAgentAnnotation(String.format(
+		// "S n:%d,r:%d,c:%d",
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getNumber(),
+		// RoleAssignmentFunction.SupportRoles
+		// .elementAt(j).getRole(),
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getType()), true,
+		// CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getNumber(),
+		// Color.YELLOW);
+		//
+		// }
+		// }
+		// }
+		//
+		// if (CoordinationVectorUpdate.CoordinationVector.elementAt(i)
+		// .getType() == 0
+		// || CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getType() == 1) {
+		//
+		// drawCircle(new float[] {
+		// (float) CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getPlayer().getX(),
+		// (float) CoordinationVectorUpdate.CoordinationVector
+		// .elementAt(i).getPlayer().getY() }, 0.2f,
+		// 2, Color.BLUE, "animated.circles");
+		//
+		// }
+		//
+		// }
+		//
+		// }
 
 		// swap all sets starting with "animated"
-		//swapBuffers("animated");
+		swapBuffers("animated");
 	}
 
 	/** Method for all static drawings */
 	@SuppressWarnings("unused")
 	private void renderStaticShapes() throws IOException {
-		// draw 3D coordinate axes
-		//		drawLine(new float[] { 0, 0, 0 }, new float[] { 3, 0, 0 }, 3.0f,
-		//				Color.RED, "static.axes");
-		//		drawLine(new float[] { 0, 0, 0 }, new float[] { 0, 3, 0 }, 3.0f,
-		//				Color.GREEN, "static.axes");
-		//		drawLine(new float[] { 0, 0, 0 }, new float[] { 0, 0, 3 }, 3.0f,
-		//				Color.BLUE, "static.axes");
-
-		// draw 1 meter lines on field
-		//		drawLine(new float[] { -9, -6, 0 }, new float[] { 9, -6, 0 }, 1.0f,
-		//				lightGreen, "static.lines.field");
-		//		drawLine(new float[] { -9, 6, 0 }, new float[] { 9, 6, 0 }, 1.0f,
-		//				lightGreen, "static.lines.field");
-		//		for (int i = 0; i <= 18; i++)
-		//			drawLine(new float[] { -9 + i, -6, 0 },
-		//					new float[] { -9 + i, 6, 0 }, 1.0f, lightGreen,
-		//					"static.lines.field");
-
-		// draw some circles
-		//		drawCircle(new float[] { -5, 0 }, 3, 2, Color.BLUE, "static.circles");
-		//		drawCircle(new float[] { 5, 0 }, 3, 2, Color.BLUE, "static.circles");
-
-		// draw some spheres
-		//		drawSphere(new float[] { -5, 0, 2 }, 0.5f, Color.PINK, "static.spheres");
-		//		drawSphere(new float[] { 5, 0, 2 }, 0.5f, Color.PINK, "static.spheres");
-		//
-		//		drawAnnotation("hello\nworld", new float[] { 0, 0, 2 }, Color.GREEN,
-		//				"static.annotations");
-
-		// draw a polygon
-		//		float[][] v = { { 0, 0, 0 }, { 1, 0, 0 }, { 1, 1, 0 }, { 0, 3, 0 },
-		//				{ -2, -2, 0 }, };
-		//		drawPolygon(v, new Color(1.0f, 1.0f, 1.0f, 0.5f), "static.polygons");
-		//
-		//		drawAgentAnnotation("testing", true, 1, Color.red);
-		//		drawAgentAnnotation("I'm agent #2", true, 2, Color.yellow);
-
-		
-
-
 		swapBuffers("static");
 	}
 

@@ -37,7 +37,7 @@ public class BallObservationFilter {
 				// samples which have value almost same values
 				if (TriangleLocalization
 						.FindDistanceAmong2Coordinates(BallSampleVector
-								.elementAt(i).getBallPosition(), sample) < 1) {
+								.elementAt(i).getBallPosition(), sample) < 1.5) {
 
 					// add the coordinates of the two samples
 					BallSampleVector.elementAt(i).setSumOfObservations(
@@ -60,7 +60,7 @@ public class BallObservationFilter {
 			if (!flag) {
 
 				BallSampleVector.addElement(new BallObservationSamples(sample,
-						new Coordinate(0, 0), 0.0f, 1));
+						sample, 0.0f, 1));
 
 			}
 
@@ -73,36 +73,27 @@ public class BallObservationFilter {
 		int samples = 0;
 
 		for (int i = 0; i < BallSampleVector.size(); i++) {
-			BallSampleVector.elementAt(i).setBallPosition(
-					TriangleLocalization.addCoordinates(BallSampleVector
-							.elementAt(i).getBallPosition(), BallSampleVector
-							.elementAt(i).getSumOfObservations()));
-			Coordinate temp = BallSampleVector.elementAt(i).getBallPosition();
-			Coordinate avg = new Coordinate(temp.X
-					/ BallSampleVector.elementAt(i).getSamplesNum(), temp.Y
-					/ BallSampleVector.elementAt(i).getSamplesNum());
 
-			BallSampleVector.elementAt(i).setBallPosition(avg);
-
-			samples += BallSampleVector.elementAt(i).getSamplesNum();
+			samples += Math.pow(BallSampleVector.elementAt(i).getSamplesNum(),
+					3);
 		}
 
 		Coordinate result = new Coordinate(0, 0);
 
 		for (int i = 0; i < BallSampleVector.size(); i++) {
 
-			Coordinate WeightedAvg = new Coordinate((BallSampleVector
-					.elementAt(i).getBallPosition().X
-					* BallSampleVector.elementAt(i).getSamplesNum() / samples),
+			Coordinate WeightedAvg = new Coordinate(
+					(BallSampleVector.elementAt(i).getBallPosition().X
+							* Math.pow(BallSampleVector.elementAt(i)
+									.getSamplesNum(), 3) / samples),
 					BallSampleVector.elementAt(i).getBallPosition().Y
-							* BallSampleVector.elementAt(i).getSamplesNum()
-							/ samples);
+							* Math.pow(BallSampleVector.elementAt(i)
+									.getSamplesNum(), 3) / samples);
 
 			result = TriangleLocalization.addCoordinates(result, WeightedAvg);
 
 		}
 
-		BallSampleVector.removeAllElements();
 		return result;
 
 	}

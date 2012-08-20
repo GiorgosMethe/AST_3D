@@ -1,23 +1,27 @@
 \chapter{Team Coordination}
 \label{Coordination}
 
-In this chapter, we are going to present the most important, exciting, and time-consuming part of this thesis. Up to this chapter, we have discussed all skills that agents need in order to be functional in the soccer field. With these functionalities agents are able to locate themselves in the field, communicate with each other, and execute actions combining movements through the motion controller. However, agents miss a thinking process with which they will be able to decide what action they should take for the global benefit of the team. In real human soccer, this will correspond to players with excellent individual skills for a soccer match, but no reasoning ability to choose what is best to do at each time. Therefore, it is crucial to come up with a high-level process which will coordinate all these skills, motions, communication ability, and actions yielding as a result a complete behavior for each agent within the frame of a global team strategy. As behavior, we define the process in which an agent takes as input arguments its beliefs and decides what to do as an output. In our approach, instead of each agent deciding its own behavior, players depend on a centralized process, called team coordination, which implicitly determines individual behaviors for each agent.  The team coordination algorithm is responsible for gathering messages from all agents and producing appropriate actions for all agents towards achieving a common goal. We choose one player (by default, the goalkeeper) to act as the central coordinator, that is the one who is going to execute this team coordination procedure on behalf of the entire team. This means that all players communicate their beliefs to the goalkeeper, the goalkeeper executes the team coordination procedure for the entire team, and finally the goalkeeper sends back to the players the actions they are required to take.
+In this chapter, we are going to present the most important, exciting, and time-consuming part of this thesis. Up to this chapter, we have discussed all skills that agents need in order to be functional in the soccer field. With these functionalities agents are able to locate themselves in the field, communicate with each other, and execute actions combining movements through the motion controller. However, agents miss a thinking process with which they will be able to decide what action they should take for the global benefit of the team. In real human soccer, this will correspond to players with excellent individual skills for a soccer match, but no reasoning ability to choose what is best to do at each time. Therefore, it is crucial to come up with a high-level process which will coordinate all these skills, motions, communication ability, and actions yielding as a result a complete behavior for each agent within the frame of a global team strategy. As behavior, we define the process in which an agent takes as input arguments its beliefs and decides what to do as an output. 
+
+\section{Coordination Protocol}
+
+In our approach, instead of each agent deciding its own behavior, players depend on a centralized process, called team coordination, which implicitly determines individual behaviors for each agent.  The team coordination algorithm is responsible for gathering messages from all agents and producing appropriate actions for all agents towards achieving a common goal. We choose one player (by default, the goalkeeper) to act as the central coordinator, that is the one who is going to execute this team coordination procedure on behalf of the entire team. This means that all players communicate their beliefs to the goalkeeper, the goalkeeper executes the team coordination procedure for the entire team, and finally the goalkeeper sends back to the players the actions they are required to take.
 
 
 \begin{figure}[t!]
 \centering
   \includegraphics[width=0.6\textwidth]{Chapter4/figures/CoordinationCycle.pdf}
-  \caption{Coordination cycle.} 
+  \caption{The Coordination Protocol.} 
   \label{fig:CoordinationCycle}
 \end{figure}
 
 
-Figure~\ref{fig:CoordinationCycle} shows the entire coordination cycle (which may last several simulation cycles). All players initially update their beliefs. The coordinator (goalkeeper) waits for messages from all other players. Once these messages are gathered at the coordinator, the coordination procedure is executed and the resulting actions for each player are communicated back to the players. At this point all players execute their actions, in essence realizing their behavior. We selected the goalkeeper to act as coordinator, because its role is quite distinct and independent from the other players and therefore it can afford to dedicate more computational resources to the team coordination algorithm compared to the other players. 
+Figure~\ref{fig:CoordinationCycle} shows the entire coordination protocol (which may last several simulation cycles). All players initially update their beliefs. The coordinator (goalkeeper) waits for messages from all other players. Once these messages are gathered at the coordinator, the coordination procedure is executed and the resulting actions for each player are communicated back to the players. At this point all players execute their actions, in essence realizing their behavior. We selected the goalkeeper to act as coordinator, because its role is quite distinct and independent from the other players and therefore it can afford to dedicate more computational resources to the team coordination algorithm compared to the other players. 
 
 The team coordination procedure executed only by the coordinator after all messages have been received is split in several phases:
 \begin{description}
 %\item[Gather Coordination Messages] The coordinator waits for all players to submit their local beliefs about the world state. This phase is completed as soon as all messages have been received. 
-\item[Update Coordination Beliefs] The local world state beliefs from the other players from the previous phase are combined in order to update the global belief about the world state (global ball location, distances of all players from the global ball location). 
+\item[Update Coordination Beliefs] The local world state beliefs from the other players are combined in order to update the global belief about the world state (global ball location, distances of all players from the global ball location, locations of all players). 
 \item[Split Players in Subsets] Field players are split into non-overlapping subsets according to their significance in the current game state. These subsets are:
 \begin{itemize}
 \item \textit{Goalkeeper}: one player, the goalkeeper
@@ -35,12 +39,13 @@ The team coordination procedure executed only by the coordinator after all messa
 Algorithm~\ref{CoordinationAlgorithm} describes the entire coordination procedure, which currently lasts six simulation cycles. In each simulation cycle, some, but not all, of the above phases are executed. This choice was dictated by the time limitation of the agent think cycle; with this choice, each group of phases fits within a single simulation cycle causing no delays and enabling real-time operation. 
 
 \begin{algorithm}[ht!]
-\caption{Coordination Algorithm }
+\caption{Coordination Protocol }
 \label{CoordinationAlgorithm}
 \begin{algorithmic}[1]
 \begin{small}
 \STATE {\bf Input: }$Coordination Messages = \lbrace M_{1},M_{2},...,M_{N-1} \rbrace, N = Number Of Players $
 \STATE {\bf Output: }$Actions = \lbrace A_{1},A_{2},...,A_{N-1} \rbrace$
+\STATE
 \IF {$ CoordinationCycle = 1$ }
 \STATE $B \leftarrow Update Beliefs(Coordination Messages) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
@@ -48,19 +53,19 @@ Algorithm~\ref{CoordinationAlgorithm} describes the entire coordination procedur
 \STATE $S \leftarrow Coordination Splitter(B) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 3$ } 
-\STATE $A_{p} \leftarrow Active Positions(B,S) $
+\STATE $P_{active} \leftarrow Active Positions(B,S) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 4$ }
-\STATE $A_{c} \leftarrow Active Coordination(A_{p},S,B) $
+\STATE $A_{active} \leftarrow Active Coordination(P_{active},S,B) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 5$ }
 \STATE $ F \leftarrow TeamFormation(B) $
-\STATE $ R \leftarrow Role Assignment(A_{c},B,F) $
-\STATE $ S_{p} \leftarrow Support Positions(R,F,S) $
+\STATE $ R \leftarrow Role Assignment(A_{active},B,F) $
+\STATE $ P_{support} \leftarrow Support Positions(R,F,S) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 6$ }
-\STATE $A_{c} \leftarrow Support Coordination(R,F,S,B,A_{c},S) $
-\STATE $Actions = A_{p} \cup A_{c}$
+\STATE $A_{support} \leftarrow Support Coordination(P_{support},S,B,R,F,A_{active}) $
+\STATE $Actions = A_{active} \cup A_{support} \cup A_{inactive}$
 \STATE $CoordinationCycle = 0$
 \ENDIF
 \end{small}
@@ -68,75 +73,67 @@ Algorithm~\ref{CoordinationAlgorithm} describes the entire coordination procedur
 \end{algorithm}
 
 
-\section{Messages and Communication}
-Coordination could only be accomplished through communication. We use the common communication channel through simulation server in order to provide the messaging between players involved in coordination process. For this reason, communication plays a major role in our approach. The general idea of this communication process among player is that goalkeeper should be able to know all agents' beliefs about the world state before proceed with the execution the coordination algorithm. Furthermore field agent must be taken the calculated action from goalkeeper. 
+\section{Coordination and Communication}
+Coordination is accomplished through communication. We use the common communication channel through the simulation server in order to provide the messaging between players involved in the coordination process. For this reason, communication plays a major role in our approach. The general idea of this communication process among players is that the coordinator (goalkeeper) needs to know all agents' beliefs about the world state before proceed with the execution of the coordination protocol. Furthermore, communication is needed to send the outcome of coordination from the coordinator to all players. 
 
-\subsection{Message Types and Formats}
-There are multiple types of messages, each one of them has different functionality and serves an exact purpose. These message types are:
+There are several types of messages, each one of them having different functionality and serving a specific purpose. The arguments of each message are preceded by a single-letter identifier indicating the type of the message. The message types used in our coordination protocol are:
 \begin{description}
-\item[Init Message] This type of message declares the initialization for each agent into the field. All field players should sent this message to the coordination's administrator in order coordination procedure to begin.
+\item[Init Message] This type of message declares the presence of each agent in the simulation environment. All players, other than the coordinator, must send this message to the coordinator before the coordination protocol begins.
+\begin{description}
+  \item[{\bf Message format:}] 
+  \texttt{i,<Agent Uniform Number> }
+\end{description}
+
+\item[Start Message] This type of message is sent only by the coordinator; it declares that all agents are now initialized and ready to begin the coordination process. Each agent receiving this message should immediately start sending coordination messages.
 
 \begin{description}
   \item[{\bf Message format:}] 
-  \texttt{i,<Uniform number> }
+  \texttt{s,<Coordinator Uniform Number>}
 \end{description}
 
-\item[Start Message] This type of message is only sent by the administrator, it declares that all agents are now initialized in the process. Each receiver, agent, of this message should immediately start sending coordination messages.
-
-\begin{description}
-  \item[{\bf Message format:}] 
-  \texttt{s,<Uniform number>}
-\end{description}
-
-\item[Coordination Message] This is the most important type of message. It includes information about each agent's beliefs. There are four types of these messages in respect to the agent's situation in the game. these types are:
+\item[Coordination Message] This is the most important type of message. It includes information about each agent's beliefs. There are four subtypes of this message depending on  the current beliefs of the agent:
 \begin{description}
 
-\item[Type C] Agent has complete awareness of the world state. He sends his uniform number, his position and the ball's position accurately.
+\item[Type C] The agent has complete awareness of the ball and self location; the message includes the uniform number, the self position, and the ball position.
 
 \begin{description}
   \item[{\bf Message format:}]
-  \begin{verbatim}
-  c,<Uniform number>,<Agent X>,<Agent Y>,
-  <Ball X>,<Ball Y>\end{verbatim}
+  \texttt{c,<Agent Uniform Number>,<Agent X>,<Agent Y>,\\<Ball X>,<Ball Y>}
 \end{description}
 
-\item[Type L] Agent has complete awareness only for his position in the field, ball is not in his field of view and it could be best not to send faulty observations about ball's position. He sends his uniform number and his position.
+\item[Type L] The agent has complete awareness only of his own position in the field; the ball is not currently within the field of view and, even though there may be a filtered belief about the ball location, it is better to avoid sending possibly faulty information. The message includes only the uniform number and the self position.
 
 \begin{description}
   \item[{\bf Message format:}]
-  \texttt{ l,<Uniform number>,<Agent X>,<Agent Y>}
+  \texttt{l,<Agent Uniform Number>,<Agent X>,<Agent Y>}
 \end{description}
 
-\item[Type B] Agent has complete awareness only about the ball's distance from his body, its horizontal, and its latitudal angle. He sends his uniform number,  and the ball's distance and angle in relation to his body angle.
+\item[Type B] The agent has complete awareness of the ball's location, only with respect to itself. The message includes the uniform number, the distance of the ball and the horizontal angle of the ball relative to its own body angle.
 
 \begin{description}
   \item[{\bf Message format:}]
-  \begin{verbatim}  
-  b,<Uniform number>,<Ball Distance>,
-  <Ball Horizontal-Angle>\end{verbatim}
+\texttt{b,<Agent Uniform Number>,<Ball Distance>,<Ball Angle>}
 \end{description}
 
-\item[Type X] Agent has complete unawareness of the world state. He sends only his uniform number. This is the type of agent who will be assigned a position into inactive subset.
+\item[Type X] The agent has complete unawareness of the ball and self location or has fallen on the ground. The message includes only the uniform number. These agents join the inactive subset.
 
 \begin{description}
  \item[{\bf Message format:}]
- \texttt{x,<Uniform number>}
+ \texttt{x,<Agent Uniform Number>}
 \end{description}
 
 \end{description}
 \item[End Message]
-This type of message serves to stop field players from sending coordination messages. In this step administrator of the coordination is ready to execute the procedure and calculate the actions for all field players.
+This type of message asks the players, other than the coordinator, to stop sending coordination messages. At this point, the coordinator is ready to execute the coordination procedure and calculate actions for all players.
 \begin{description}
   \item[{\bf Message format:}] 
-  \texttt{e,<Uniform number>}
+  \texttt{e,<Coordinator Uniform Number>}
 \end{description}
 \item[Action Message]
-This type of message is only sent by the administrator, it declares which action an agent has been assigned by the coordination process. These messages are sent in the end of the coordination procedure when actions for all field players have been computed.
+This type of message is sent only by the administrator; it declares which action each agent has been assigned by the coordination process. These messages are sent at the end of the coordination procedure, when actions for all players have been computed. The message includes the uniform number of the recipient agent, the action identifier, and the possible action parameters. 
 \begin{description}
   \item[{\bf Message format:}]
-  \begin{verbatim}
-  a,<Uniform number>,<Action ID>,<Action parameter 1>,
-  <Action parameter 2>,<Action parameter 3>\end{verbatim}
+  \texttt{a,<Agent Uniform Number>,<Action ID>,<Action Parameters>}
 \end{description}
 
 \end{description}
@@ -148,45 +145,39 @@ This type of message is only sent by the administrator, it declares which action
   \label{fig:coordinationprocess}
 \end{figure}
 
-Figure~\ref{fig:coordinationprocess}, presents the messaging procedure between the agents in order to coordinate their actions. First of all, agents have to initialize their initialization into the field with ``init'' messages. Goalkeeper saves these messages in a temporal array and when this array implies that all field players have been initialized themselves, sends them a ``start'' message. This message means that all players in the field are ready to start the coordination process. In this phase field players send their ``coordination'' messages to the goalkeeper. When goalkeeper gathers these messages from all field players, sends them an ``end'' message to stop them from broadcasting unnecessarily. The next phase of this process is the execution of the coordination algorithm which lasts for six simulation cycles, approximately 120ms. When coordination's administrator is ready to broadcast computed actions to field players, goalkeeper uses ``action'' messages in order to accomplish this procedure. ``Action'' messages informs players about the action they should do. After this phase, the same process is repeated after a timeout which can be defined by us.
+Figure~\ref{fig:coordinationprocess} presents the messaging procedure between the agents in order to coordinate their actions. First, agents have to initialize their presence in the field with ``init'' messages. The coordinator saves these messages and, when all other players have initialized themselves, broadcasts a ``start'' message. This message means that all players are now ready to start the coordination process. In this phase, all players, other than the coordinator, send their ``coordination'' messages to the coordinator. When the coordinator gathers these messages from all players, it broadcasts an ``end'' message to make them stop sending unnecessary ``coordination'' messages. The next phase of this process is the execution of the coordination protocol which lasts six simulation cycles, approximately 120ms. When it finishes, the coordinator broadcasts the resulting actions to each one of the other players using individual ``action'' messages. The receiving agents execute the commanded actions, until a new ``action'' message arrives. While action execution is ongoing, after a timeout period defined by the user (currently set at 20 simulation cycles), the same coordination process is repeated, excluding the initialization phase.
 
 
 \section{Coordination Beliefs}
-In the above section we have presented about how field players exchange messages with the goalkeeper which is the administrator of the coordination and the agent who executes the coordination's algorithm. In this section we are going to discuss about how this specific agent could have the adequate knowledge of the world state receiving different observations from different agents. This is a field of major importance in such a multi agent system like simulation soccer. Having multiple observations of the same world could be a problem. Administrator has to combine all these observations without knowing which of them is faulty or correct in order to obtain a realistic representation of the world. Knowing ball position and agents' positions will be more than enough to execute the algorithm without making guesses.
 
-\subsection{Ball Position Weighted Samples}
-First of all, ball position is computed only by agents' observations. These players who are able to locate it into the field and have a good knowledge about their position as well. We can infer that these observations are obtained by agents who have sent ``type C'' coordination messages. Furthermore, if goalkeeper has also a ball observation he uses it as well.
+In the previous section we presented how players exchange messages with the coordinator. In this section we are going to discuss how the coordinator fuses the individual beliefs received by the other agents into a single global belief. This step is of major importance in any multi-agent system. Having multiple observations of the same world could potentially be a problem. The coordinator has to combine these observations without knowing which one of them is faulty or correct in order to obtain a global realistic representation of the world. Knowledge of the ball and agents' positions is sufficient to execute the coordination algorithm without making guesses.
+
+The global ball position is computed taking into account only the information communicated by the agents using ``type C'' coordination messages. Furthermore, information of the coordinator is taken into account, if the coordinator also has sufficient knowledge about the ball and self location. Apparently, the maximum number of ball observations at any time is the number of all agents, when all of them have sufficient knowledge about the ball and self location.
 \begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/Ball.pdf}
-  \caption{Ball's Position Observations.} 
+  \caption{Global Ball Position Estimation from Multiple Ball Observations.} 
   \label{fig:Ball}
 \end{figure}
-As we can see in Figure~\ref{fig:Ball} different ball observations can differ from each other. In our approach, we use a simple algorithm to approach ball position with great accuracy. A threshold is defined in order to form sets of observations. This threshold is called margin of observation error. Every observation set has a weight. In the beginning, for a given number of n observations we have n observation sets with only one observation included in each one of them and a default weight (1).
-\begin{align*}
-{\bf Obsevation_{i} } &= (x,y) \\ 
-{\bf Weight_{i}} &= 1
-\end{align*}
-After the initialization of these observation sets, we try to correlate these sets with each other, for every two sets which are been correlated, a new set is formed which contains observations from the two parent sets. The weight of the new set will be the sum of its parents' weight.\\
-\begin{align*}
-{\bf Obsevation Set_{i} } &= \lbrace (x_{1},y_{1}),...,(x_{k},y_{k}) \rbrace \vee k \in [1,n] , k\in \mathbb{Z} \\
-{\bf Weight_{i}} &= k
-\end{align*}
-Figure~\ref{fig:Ball} shows this procedure. There are four sets of observations which have been assigned a weight. The set with the most observations included is naturally assigned the biggest weight. Consequently, we have to compute our belief about ball position.
-Given a total number of N-observations, n-observation's sets, each one of them has k-observations, the final ball belief will be:\\
-\begin{align*}
-{\bf Ball Belief} = \displaystyle\sum\limits_{i=1}^n \frac {Weight_{i}} {N \ast k}  \displaystyle\sum\limits_{j=1}^k Obsevation Set_{i}[j]
-\end{align*}
+As shown in Figure~\ref{fig:Ball}, different ball observations can differ from each other. In our approach, we use a simple algorithm to estimate the global ball position with accuracy. A threshold is defined (by default, 1 meter) in order to split the observations in subsets. Each subset is assigned a weight equal to the number of observations it contains. Additionally, each subset is represented by the average of the observations it contains. The first incoming observation defines the first subset with weight $1$. For each subsequent incoming observation, we check its distance against all representatives of all existing subsets. If the minimum of these distances is below the threshold, then this new observation is assigned to the subset that gave this minimum distance, updating at the same time the weight and the representative of that subset. Otherwise, the new observation gives rise to a new subset with a single member. 
+
+Figure~\ref{fig:Ball} shows the resulting four subsets for a given set of nine observations. The set with the most observations included is naturally assigned the biggest weight. Consequently, we have to compute our belief about the global ball position.
+++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
-\subsection{Agent Distance from Ball}
-The next step into beliefs section is to determine each agent's distance from the ball. This can be accomplished by two ways. First, for agents who have sent ``Type C'' and ``Type L'' coordination messages and they are able to know their exact position in the field, this distance is calculated by finding the distance between the ball belief's position and the agent's position. For players who have sent ``Type B'' coordination messages we just take the distance part of the message. Finally, for ``Type X'' messages we assume $\infty$ distance.
+Given a total number of $N$ observations $o_j$ split into $m$ observation subsets $s_i$, the final ball belief is computed as:
+\begin{align*}
+{\bf Global Ball Belief} = \sum_{i=1}^m \frac {|s_i|^2} {\sum_{k=1}^m |s_k|^2} \sum_{o_{ij} \in s_i} \cfrac{o_{ij}}{|s_i|}
+\end{align*}
+
+
+The next step towards forming the global beliefs is to determine each agent's position and its distance from the estimated global ball position. Players who have sent a ``Type C'' or ``Type L'' coordination message have already communicated their exact position in the field; their distance from the ball is simply calculated as the distance between the estimated global ball position and the players' position. Players who have sent a ``Type B'' coordination message don't know their exact position in the field, but this can be inferred using the estimated global ball position and the information they submitted about the distance and angle of the ball observation with respect to themselves; their distance from the ball is simply the one they reported. Finally, for players who have sent a ``Type X'' coordination message, we assume an infinite distance to distinguish them from all other players; their position in the field cannot be inferred. 
 
 
 \section{Subsets in Coordination Process}
-The existence of multiple agents makes coordination function to be too complex and computationally expensive to solve by one single agent. In our case, it would be goalkeeper who had to solve this huge problem for nine players or eleven which is the number of players in the next server's version. 
-One possible solution to this problem is to split players into subsets which would be easier to coordinate their actions in real-time. In our approach, there are three subsets:
+The existence of multiple agents makes coordination a complex and computationally expensive problem to be solved by a single agent. In our case, the coordinator (goalkeeper) would have to solve this huge problem for a total of nine players or eleven players, depending on the server's version).
+Instead of trying to solve the coordination problem at one level, a simple approach is to first decompose the problem into smaller coordination problems and then solve each one of them. To this end, we split the players into small subsets in which coordination can be achieved quickly to meet real-time requirements. In our approach, there are four such subsets:
 
 \begin{description}
 \item[Active subset] Active subset consists of three agents and it is the most important set of agents in the coordination. Agents who constitute this subset have the responsibility of making worthy actions for their team. Moreover, having to compute optimized actions for three players is not too complex for such an important group. 

@@ -12,6 +12,7 @@
  ******************************************************************************/
 package coordination.main;
 
+import perceptor.utils.BallObservationFilter;
 import coordination.TeamRoles.RoleAssignmentFunction;
 import coordination.active.ActiveCoordination;
 import coordination.strategy.ActivePositions;
@@ -51,6 +52,8 @@ public class Coordination {
 
 			CoordinationType.AssignCoordinationType();
 
+			BallObservationFilter.BallSampleVector.removeAllElements();
+
 			CoordinationBeliefs.UpdateBeliefs();
 
 			CoordinationRun.setStep(2);
@@ -63,6 +66,8 @@ public class Coordination {
 			 * together.
 			 */
 		} else if (CoordinationRun.getStep() == 2) {
+
+			roboviz = true;
 
 			CoordinationSplitter.Split();
 
