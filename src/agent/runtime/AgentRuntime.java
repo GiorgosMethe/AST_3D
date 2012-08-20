@@ -40,7 +40,7 @@ public class AgentRuntime {
 
 			host = "127.0.0.1";
 			port = 3100;
-			num = 1;
+			num = 3;
 			Teamname = "AST_3D";
 
 		} else {
@@ -82,11 +82,11 @@ public class AgentRuntime {
 		/*
 		 * This method drawing information in the monitor
 		 */
-		if (num == Constraints.CoordinationPlayer) {
+		//if (num == Constraints.CoordinationPlayer) {
 
 			RVTester.run(null);
 
-		}
+		//}
 
 		/*
 		 * This method is the main-loop of the AST 3D agent

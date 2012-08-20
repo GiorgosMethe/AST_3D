@@ -221,7 +221,7 @@ Figure~\ref{fig:PhaseSequence} shows the execution sequence of an example motion
 JointVelocity_i = \cfrac{DesiredJointValue_i - CurrentJointValue_i}{CurrentPhaseDuration}
 \]
 The $CurrentJointValue_i$ is provided by the corresponding perceptor message. 
-A velocity value is calculated for each joint involved in the motion and the final output of the motion controller is sent to the server. Note that zero velocity is set for every joint not included in the \texttt{effector} field of the current phase, so that these joints stop moving. 
+At the beginning of a phase, a velocity value is calculated for each joint involved in the motion and the final output of the motion controller is sent to the server. Note that zero velocity is set for every joint not included in the \texttt{effector} field of the current phase, so that these joints stop moving. These velocity values are not modified until the phase is completed. 
 
 
 
@@ -258,8 +258,9 @@ A velocity value is calculated for each joint involved in the motion and the fin
 
 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.8\textwidth]{Chapter3/figures/DynamicTurn.pdf}
-  \caption{Dynamic Walk Leaning: Left Leaning, No Leaning, Right Leaning.}
+  \includegraphics[height=6cm]{Chapter3/figures/leanLeft.png}\quad\quad\quad\quad
+  \includegraphics[height=6cm]{Chapter3/figures/leanRight.png}
+  \caption{Dynamic Walk Leaning: Left Leaning (left), Right Leaning (right).}
   \label{fig:Lean}
 \end{figure}
 
@@ -418,7 +419,7 @@ Figure~\ref{fig:WalkToCoordinate} shows an example of this calculation. The actu
 
 
 \subsubsection*{Walk To Direction}
-This action makes the agent walk towards a specific direction. First, it employs a turn in-place action to align with the given direction and then a straight walk action to move along the given direction. This action is not terminated by itself but there has to be a new action request or an ``empty'' action request. The actual locomotion of the agent towards the target direction is done through the Avoid Obstacles action.
+This action makes the agent walk towards a specific direction. If the change with respect to the current orientation is small (default: $7^\circ$), it employs a left or right leaning walk action. For larger changes, it employs a turn action to align with the given direction in parallel to a straight walk action to move along the given direction. The turn action ceases as soon as the agent has aligned its orientation with the given direction. The Walk to Direction action terminates only when a new action request or an ``empty'' action request is posted. The actual locomotion of the agent towards the target direction make use of the Avoid Obstacles action at all times.
  
 \subsubsection*{Dribble Ball To Direction}
 This action attempts to dribble the ball towards a specific direction. It is quite similar to the Walk To Direction action, however the agent  tries to keep the ball in front of its feet at all times.  The actual locomotion of the agent towards the target direction is done through the Avoid Obstacles action. This action is not fully functional in our software, since movements based on motion files make it hard to keep ball consistently in front of the agent. 

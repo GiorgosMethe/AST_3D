@@ -12,7 +12,9 @@
  ******************************************************************************/
 package agent.runtime;
 
+import motion.utils.MotionTrigger;
 import motion.utils.PerformMovement;
+import motion.xml.WalkLeaning;
 import perceptor.worldstate.GameState;
 import action.handler.ActionEffector;
 import action.sensor.CheckIfFall;
@@ -47,6 +49,7 @@ public class AgentFunction {
 
 			if (!GameState.getGameState().equalsIgnoreCase("BeforeKickOff")) {
 
+				
 				Say = SayEffector.Say(MessageType.getType());
 
 				Coordination.MakeCoordination();
@@ -58,7 +61,9 @@ public class AgentFunction {
 
 					} else {
 
-						ActionEffector.Act();
+						MotionTrigger.setMotion("Forwards50");
+						WalkLeaning.setLean("left");
+						//ActionEffector.Act();
 
 					}
 				}
@@ -73,6 +78,8 @@ public class AgentFunction {
 
 		}
 
+
+		
 		Act = PerformMovement.run();
 
 		Head = HeadMovement.MoveHead(VisionType.getType());

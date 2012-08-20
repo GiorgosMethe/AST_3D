@@ -1,7 +1,7 @@
-\chapter{Team's Coordination}
+\chapter{Team Coordination}
 \label{Coordination}
 
-In this chapter, we are going to present the most important, exciting and time consuming part of this thesis. Until now, we have discussed all skills that agents need in order to be functional into the soccer field. With all these functionalities agents are able to locate themselves in the field, communicate with each other, and execute actions combining movements through motion controller. However, agents miss a thinking process with which they will be able to decide about what action they should do for their team's benefit. For example, imagine a human soccer player who is able to do all the things needed in a soccer match but he has not the ability to choose what to do. Therefore, there must be presented a high-level process which will combine all these skills, motions, communication ability, and actions having as a result a complete agent's behavior. As a behavior, we could define the process in which each agent takes as input arguments his beliefs and decides what he will do as an output. In our approach, instead of each agent having its own behavior, players are depend on a centralized process called coordination.  Coordination's algorithm is responsible to gather messages from all agents and as output it produces actions which are costless and worthy for all players who are included into this process. We chose goalkeeper as the coordination's administrator to be the one who is going to execute this procedure. This means that only goalkeeper``runs'' his own behavior (see Section~\ref{GoalKeeper}) and other field players do not. Field players just send their beliefs to the goalkeeper and he sends back the actions which are calculated by the coordination's algorithm execution.
+In this chapter, we are going to present the most important, exciting, and time-consuming part of this thesis. Up to this chapter, we have discussed all skills that agents need in order to be functional in the soccer field. With these functionalities agents are able to locate themselves in the field, communicate with each other, and execute actions combining movements through the motion controller. However, agents miss a thinking process with which they will be able to decide what action they should take for the global benefit of the team. In real human soccer, this will correspond to players with excellent individual skills for a soccer match, but no reasoning ability to choose what is best to do at each time. Therefore, it is crucial to come up with a high-level process which will coordinate all these skills, motions, communication ability, and actions yielding as a result a complete behavior for each agent within the frame of a global team strategy. As behavior, we define the process in which an agent takes as input arguments its beliefs and decides what to do as an output. In our approach, instead of each agent deciding its own behavior, players depend on a centralized process, called team coordination, which implicitly determines individual behaviors for each agent.  The team coordination algorithm is responsible for gathering messages from all agents and producing appropriate actions for all agents towards achieving a common goal. We choose one player (by default, the goalkeeper) to act as the central coordinator, that is the one who is going to execute this team coordination procedure on behalf of the entire team. This means that all players communicate their beliefs to the goalkeeper, the goalkeeper executes the team coordination procedure for the entire team, and finally the goalkeeper sends back to the players the actions they are required to take.
 
 
 \begin{figure}[t!]
@@ -12,48 +12,58 @@ In this chapter, we are going to present the most important, exciting and time c
 \end{figure}
 
 
-Figure~\ref{fig:CoordinationCycle} shows the difference between a field player and the goalkeeper. Goalkeeper has to calculate actions for all field players as well as execute his own behavior. In contrast to field players which do not execute any behavior but only send messages to goalkeeper and receive the calculated actions from it. We selected the goalkeeper to take the responsibility for this task due to the fact that he has the most individual role in the simulation soccer. Coordination's procedure is executed in several phases and not at once. These phases are:
+Figure~\ref{fig:CoordinationCycle} shows the entire coordination cycle (which may last several simulation cycles). All players initially update their beliefs. The coordinator (goalkeeper) waits for messages from all other players. Once these messages are gathered at the coordinator, the coordination procedure is executed and the resulting actions for each player are communicated back to the players. At this point all players execute their actions, in essence realizing their behavior. We selected the goalkeeper to act as coordinator, because its role is quite distinct and independent from the other players and therefore it can afford to dedicate more computational resources to the team coordination algorithm compared to the other players. 
+
+The team coordination procedure executed only by the coordinator after all messages have been received is split in several phases:
 \begin{description}
-\item[Update coordination beliefs] Multiple world state beliefs from field players have to be combined in order to update our belief for the world state.
-\item[Split field player into groups] Field players are split into groups according to their significance to each game state. These groups are:
+%\item[Gather Coordination Messages] The coordinator waits for all players to submit their local beliefs about the world state. This phase is completed as soon as all messages have been received. 
+\item[Update Coordination Beliefs] The local world state beliefs from the other players from the previous phase are combined in order to update the global belief about the world state (global ball location, distances of all players from the global ball location). 
+\item[Split Players in Subsets] Field players are split into non-overlapping subsets according to their significance in the current game state. These subsets are:
 \begin{itemize}
-\item Active
-\item Inactive
-\item Support
-\item Goalkeeper
+\item \textit{Goalkeeper}: one player, the goalkeeper
+\item \textit{Inactive}: players fallen on the ground or players with lost self-location
+\item \textit{Active}: three players, the ones closest to the ball
+\item \textit{Support}: all remaining players
 \end{itemize}
-\item[Compute positions for active players] All possible positions which are best candidates for assigning active players.
-\item[Assign actions for active players] Computation of the best two positions according to their cost.
-\item[Generate team's formation] Formation is generated according to ball's position into the soccer field.
-\item[Assign roles for all players] Team players are assigned roles in relation to the team's formation and their current position.
-\item[Find positions for support players] All possible team formation's positions which are best candidates for assigning support players there.
-\item[Assign actions for support players] Computation of the best mapping according to its cost.
+\item[Determine Active Positions] Several candidate positions are determined for the active players.
+\item[Coordinate Active Players] The active player closest to the ball is assigned to go to the ball and the best pair of candidate positions is selected for the remaining active players according to a cost function.
+\item[Generate Team Formation] A formation is generated for the entire team (excluding the goalkeeper) depending on the current position of the ball in the soccer field.
+\item[Assign Team Roles] All team players, except the goalkeeper, are assigned roles taking into account the desired  formation of the team and their current position.
+\item[Determine Support Positions]  Candidate positions are determined for the support players. These are determined by the desired team formation, after excluding the roles assumed by the active players and a number of least-significant roles equal to the number of inactive players. 
+\item[Coordinate Support Players] The best mapping between support players and support positions according to a cost function is computed.
 \end{description}
-
-
-Algorithm~\ref{CoordinationAlgorithm} describes the coordination procedure. In every cycle-step, only few of the above phases are executed. We chose doing that because of the time limitation of the think's cycle. So, in order to have a smooth algorithm's execution we decided to separate functions in a number of server cycles being able to execute it in real-time.
+Algorithm~\ref{CoordinationAlgorithm} describes the entire coordination procedure, which currently lasts six simulation cycles. In each simulation cycle, some, but not all, of the above phases are executed. This choice was dictated by the time limitation of the agent think cycle; with this choice, each group of phases fits within a single simulation cycle causing no delays and enabling real-time operation. 
 
 \begin{algorithm}[ht!]
 \caption{Coordination Algorithm }
 \label{CoordinationAlgorithm}
 \begin{algorithmic}[1]
-\STATE {\bf Input: }$Coordination Messages = \lbrace M_{1},M_{2},...,M_{N-1} \rbrace, N = number of players $
+\begin{small}
+\STATE {\bf Input: }$Coordination Messages = \lbrace M_{1},M_{2},...,M_{N-1} \rbrace, N = Number Of Players $
 \STATE {\bf Output: }$Actions = \lbrace A_{1},A_{2},...,A_{N-1} \rbrace$
-\IF {$ Step = 1$ }
-\STATE $B \leftarrow Update Beliefs() $
-\ELSIF {$ Step = 2$ }
+\IF {$ CoordinationCycle = 1$ }
+\STATE $B \leftarrow Update Beliefs(Coordination Messages) $
+\STATE $CoordinationCycle = CoordinationCycle + 1$
+\ELSIF {$ CoordinationCycle = 2$ }
 \STATE $S \leftarrow Coordination Splitter(B) $
-\ELSIF {$ Step = 3$ } 
+\STATE $CoordinationCycle = CoordinationCycle + 1$
+\ELSIF {$ CoordinationCycle = 3$ } 
 \STATE $A_{p} \leftarrow Active Positions(B,S) $
-\ELSIF {$ Step = 4$ }
-\STATE $A_{c} \leftarrow Active Coordination(A_{p},S) $
-\ELSIF {$ Step = 5$ }
+\STATE $CoordinationCycle = CoordinationCycle + 1$
+\ELSIF {$ CoordinationCycle = 4$ }
+\STATE $A_{c} \leftarrow Active Coordination(A_{p},S,B) $
+\STATE $CoordinationCycle = CoordinationCycle + 1$
+\ELSIF {$ CoordinationCycle = 5$ }
 \STATE $ F \leftarrow TeamFormation(B) $
 \STATE $ R \leftarrow Role Assignment(A_{c},B,F) $
 \STATE $ S_{p} \leftarrow Support Positions(R,F,S) $
-\ELSIF {$ Step = 6$ }
-\STATE $ Support Coordination(R,F,S,B,A_{c},S) $
+\STATE $CoordinationCycle = CoordinationCycle + 1$
+\ELSIF {$ CoordinationCycle = 6$ }
+\STATE $A_{c} \leftarrow Support Coordination(R,F,S,B,A_{c},S) $
+\STATE $Actions = A_{p} \cup A_{c}$
+\STATE $CoordinationCycle = 0$
 \ENDIF
+\end{small}
 \end{algorithmic}
 \end{algorithm}
 

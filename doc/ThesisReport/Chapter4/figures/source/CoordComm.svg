@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.1 r9760"
-   sodipodi:docname="CoordComm.pdf">
+   sodipodi:docname="CoordComm.svg">
   <defs
      id="defs4">
     <marker
@@ -397,17 +397,17 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
      inkscape:cx="145.89948"
-     inkscape:cy="725.36553"
+     inkscape:cy="927.39604"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="728"
-     inkscape:window-height="451"
+     inkscape:window-width="1680"
+     inkscape:window-height="973"
      inkscape:window-x="0"
      inkscape:window-y="24"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -442,15 +442,15 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="108.42857"
+       x="80.428574"
        y="24.790754"
        id="text3051"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3053"
-         x="108.42857"
+         x="80.428574"
          y="24.790754"
-         style="font-size:20px">Admin</tspan></text>
+         style="font-size:20px">Coordinator</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -462,7 +462,7 @@
          id="tspan3053-9"
          x="233.41498"
          y="25.462641"
-         style="font-size:20px">Player 1</tspan></text>
+         style="font-size:20px">Agent 1</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -474,7 +474,7 @@
          id="tspan3053-9-7"
          x="357.134"
          y="26.176926"
-         style="font-size:20px">Player N-1</tspan></text>
+         style="font-size:20px">Agent N-1</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
        d="M 273.24626,39.643645 140.4112,66.412688"
