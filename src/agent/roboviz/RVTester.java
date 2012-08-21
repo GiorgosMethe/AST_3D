@@ -41,9 +41,13 @@ import java.util.Vector;
 
 import javax.swing.Timer;
 
+import connection.utils.ServerCyrcles;
+
 import coordination.communication.message.CoordinationVectorUpdate;
 import coordination.main.Coordination;
 import coordination.main.CoordinationBeliefs;
+import coordination.strategy.ActivePositions;
+import coordination.strategy.TeamFormation;
 
 import perceptor.localization.Coordinate;
 import perceptor.utils.BallObservationFilter;
@@ -339,71 +343,106 @@ public class RVTester {
 		// }
 		//
 		//
-		if(Coordination.roboviz = true){
-			if (CoordinationBeliefs.Ball != null) {
-
-				drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
-						(float) CoordinationBeliefs.Ball.getY() }, 0.2f, 3,
-						Color.BLUE, "animated.circles");
-
+//		if(Coordination.roboviz = true){
+//			if (CoordinationBeliefs.Ball != null) {
+//
+//				drawCircle(new float[] { (float) CoordinationBeliefs.Ball.getX(),
+//						(float) CoordinationBeliefs.Ball.getY() }, 0.2f, 3,
+//						Color.BLUE, "animated.circles");
+//
+//			}
+//
+//			if (BallObservationFilter.BallSampleVector != null) {
+//
+//
+//				for (int i = 0; i < BallObservationFilter.BallSampleVector.size();
+//						i++) {
+//					if(BallObservationFilter.BallSampleVector.elementAt(i).getSamplesNum()>1){
+//						drawCircle(new float[] { (float)
+//								BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getX(),
+//								(float)
+//								BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getY()
+//						}, 1.0f, 3,
+//						Color.RED, "animated.circles");
+//
+//					}else{
+//
+//
+//						drawCircle(new float[] { (float)
+//								BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getX(),
+//								(float)
+//								BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getY()
+//						}, 1.0f, 3,
+//						Color.CYAN, "animated.circles");
+//
+//					}
+//
+//				}
+//
+//			}
+//
+//
+//
+//
+//			if (CoordinationVectorUpdate.CoordinationVector.size() != 0) {
+//
+//				for (int i = 0; i <
+//						CoordinationVectorUpdate.CoordinationVector.size(); i++) {
+//
+//
+//					if
+//					(CoordinationVectorUpdate.CoordinationVector.elementAt(i).getType()
+//							== 0){
+//
+//						drawCircle(new float[] { (float)
+//								CoordinationVectorUpdate.CoordinationVector.elementAt(i).getBall().getX(),
+//								(float)
+//								CoordinationVectorUpdate.CoordinationVector.elementAt(i).getBall().getY()
+//						}, 0.1f, 2,
+//						Color.WHITE, "animated.circles");
+//
+//					}
+//
+//				}
+//
+//			}
+//
+//		}
+		
+		
+		if(ServerCyrcles.getCyrclesNow()>100){
+			
+			ActivePositions.Calculate();
+			
+			drawCircle(new float[] { (float)
+					8,
+					(float)
+					6
+			}, 0.1f, 3,
+			Color.RED, "animated.circles");
+			
+			for(int i=0;i<ActivePositions.ActivePositions.size();i++){
+				
+				drawCircle(new float[] { (float)
+						ActivePositions.ActivePositions.elementAt(i).getX(),
+						(float)
+						ActivePositions.ActivePositions.elementAt(i).getY()
+				}, 0.2f, 4,
+				Color.WHITE, "animated.circles");
+				
+				
+				
 			}
-
-			if (BallObservationFilter.BallSampleVector != null) {
-
-
-				for (int i = 0; i < BallObservationFilter.BallSampleVector.size();
-						i++) {
-					if(BallObservationFilter.BallSampleVector.elementAt(i).getSamplesNum()>1){
-						drawCircle(new float[] { (float)
-								BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getX(),
-								(float)
-								BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getY()
-						}, 1.0f, 3,
-						Color.RED, "animated.circles");
-
-					}else{
-
-
-						drawCircle(new float[] { (float)
-								BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getX(),
-								(float)
-								BallObservationFilter.BallSampleVector.elementAt(i).getBallPosition().getY()
-						}, 1.0f, 3,
-						Color.CYAN, "animated.circles");
-
-					}
-
-				}
-
-			}
-
-
-
-
-			if (CoordinationVectorUpdate.CoordinationVector.size() != 0) {
-
-				for (int i = 0; i <
-						CoordinationVectorUpdate.CoordinationVector.size(); i++) {
-
-
-					if
-					(CoordinationVectorUpdate.CoordinationVector.elementAt(i).getType()
-							== 0){
-
-						drawCircle(new float[] { (float)
-								CoordinationVectorUpdate.CoordinationVector.elementAt(i).getBall().getX(),
-								(float)
-								CoordinationVectorUpdate.CoordinationVector.elementAt(i).getBall().getY()
-						}, 0.1f, 2,
-						Color.WHITE, "animated.circles");
-
-					}
-
-				}
-
-			}
-
+			
+			
+			
+			
+			
+			
+			
 		}
+		
+		
 		//
 		// if (CoordinationVectorUpdate.CoordinationVector.size() != 0) {
 		//

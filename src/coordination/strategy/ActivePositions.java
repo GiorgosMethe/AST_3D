@@ -34,7 +34,8 @@ public class ActivePositions {
 		float distance;
 		float Theta = 0;
 
-		Coordinate Ball = CoordinationBeliefs.Ball;
+		//Coordinate Ball = CoordinationBeliefs.Ball;
+		Coordinate Ball = new Coordinate(8, 6);
 
 		if (Ball.X > Constraints.FieldLength / 2) {
 

@@ -48,20 +48,21 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Global Ball Position Estimation from Multiple Ball Observations.}}{61}{figure.5.3}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Coordination Splitter.}}{64}{figure.5.4}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Soccer Field Value.}}{65}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Initial Candidate Active Positions (Defense/left, Offense/right).}}{66}{figure.5.6}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Initial Candidate Active Positions (Defense/left, Offense/right).}}{65}{figure.5.6}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Final Candidate Active Positions (Defense/left, Offense/right).}}{66}{figure.5.7}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Collision Detection Feature in the Evaluation Function.}}{69}{figure.5.8}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Template of Role Positions in the Team Formation for the 9-Players Version.}}{71}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Template of Role Positions in the Team Formation for the 11-Players Version.}}{73}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Role Assignment Function for a Given Team Formation.}}{74}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Determination of Support Positions from a Given Team Formation.}}{75}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Goalkeeper Fall Function.}}{79}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{80}{figure.5.14}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Template of Role Positions in the Team Formation for the 11-Players Version.}}{72}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Role Positions in the Team Formation in Different Ball Positions(red spots).}}{73}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Role Assignment Function for a Given Team Formation.}}{75}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Determination of Support Positions from a Given Team Formation.}}{76}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Goalkeeper Fall Function.}}{80}{figure.5.14}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Goalkeeper Falls to Prevent Opponents from Scoring.}}{81}{figure.5.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Attacking Positioning Resulting by Coordination Process, Example 1.}}{84}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Attacking Positioning Resulting by Coordination Process, Example 2.}}{85}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Defending Positioning Resulting by Coordination Process, Example 1.}}{86}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Defending Positioning Resulting by Coordination Process, Example 2.}}{87}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Strategic Consistency Resulting by Coordination Process Via Team Roles Assignment.}}{88}{figure.6.5}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Attacking Positioning Resulting by Coordination Process, Example 1.}}{86}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Attacking Positioning Resulting by Coordination Process, Example 2.}}{87}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Defending Positioning Resulting by Coordination Process, Example 1.}}{88}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Defending Positioning Resulting by Coordination Process, Example 2.}}{89}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Strategic Consistency Resulting by Coordination Process Via Team Roles Assignment.}}{90}{figure.6.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

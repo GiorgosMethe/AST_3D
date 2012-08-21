@@ -233,7 +233,8 @@ In both cases, we start by creating a set of equidistant positions around the ba
 
 \begin{figure}[t!]
 \centering
-  \includegraphics[width=7cm]{Chapter4/figures/ActivePositions2.png}
+  \includegraphics[height=5cm, clip, trim=0cm 10cm 20cm 0cm]{Chapter4/figures/ActiveBefore(-8,6).png} \	
+  \includegraphics[height=5cm, clip, trim=20cm 10cm 0cm 0cm]{Chapter4/figures/ActiveBefore(8,6).png}
   \caption{Initial Candidate Active Positions (Defense/left, Offense/right).} 
   \label{fig:ActivePositions2}
 \end{figure}
@@ -243,7 +244,8 @@ These sets of candidate positions is further filtered using the soccer field uti
 
 \begin{figure}[t!]
 \centering
-  \includegraphics[width=7cm]{Chapter4/figures/Active3.png}
+  \includegraphics[height=5cm, clip, trim=0cm 10cm 20cm 0cm]{Chapter4/figures/ActiveAfter(-8,6).png} \	
+  \includegraphics[height=5cm, clip, trim=20cm 10cm 0cm 0cm]{Chapter4/figures/ActiveAfter(8,6).png}
   \caption{Final Candidate Active Positions (Defense/left, Offense/right).} 
   \label{fig:ActivePositions3}
 \end{figure}
@@ -362,25 +364,13 @@ Finally, the Goalkeeper position is determined independently to always be in the
 \end{center}
 \vspace*{-0.4cm}
 \end{table}
-
-\begin{figure}[b!]
+~
+\begin{figure}[t!]
 \centering
-  \includegraphics[width=0.8\textwidth]{Chapter4/figures/Formation9_0.pdf}
+  \includegraphics[width=0.7\textwidth]{Chapter4/figures/Formation9_0.pdf}
   \caption{Template of Role Positions in the Team Formation for the 9-Players Version.} 
   \label{fig:Formation9_0}
 \end{figure}
-
-
-\subsubsection*{11-Players Server Version (0.6.6)} 
-
-Table~\ref{TeamFormation11} shows the four groups of roles in our formation for the 11-player team, the corresponding short identifier, and a short description for each role.
-Figure~\ref{fig:Formation11_0} shows how the different role positions of the formation are depicted into the soccer pitch for the newest server version in which team consists of eleven players. Again, since the formation is a function of the ball position, when the ball is located near or outside the field limits formation positions are adjusted to not exceed the field limits.
-
-The Forwards are positioned based on the same principles as the previous version's approach. The additional player, Forward Support, is positioned behind the Forward Center at a fixed distance. The additional player in the Midfielders, Midfielder Center, is positioned behind  the Forward Support at a fixed distance. The other two Midfielder positions are on either side of the Midfielder Center in an angle and a distance offset which are dynamically determined by the exact coordinates of the Midfielder Center. The Defense line is determined exactly as in the previous version. As before, the Goalkeeper is totally independent. 
-
-
-
-
 
 \begin{table}[t!]
 \vspace*{-0.5cm}
@@ -405,15 +395,42 @@ The Forwards are positioned based on the same principles as the previous version
 \end{center}
 \vspace*{-0.9cm}
 \end{table}
-
-
-
-\begin{figure}[t!]
+~
+\begin{figure}[b!]
 \centering
-  \includegraphics[width=0.8\textwidth]{Chapter4/figures/Formation11_0.pdf}
+  \includegraphics[width=0.7\textwidth]{Chapter4/figures/Formation11_0.pdf}
   \caption{Template of Role Positions in the Team Formation for the 11-Players Version.} 
   \label{fig:Formation11_0}
 \end{figure}
+
+\begin{figure}[t!]
+\centering
+  \includegraphics[height=0.3\textheight]{Chapter4/figures/Formation(0,0).pdf}\\
+  \includegraphics[height=0.3\textheight]{Chapter4/figures/Formation(5,5).pdf}\\
+  \includegraphics[height=0.3\textheight]{Chapter4/figures/Formation(-5,-5).pdf}\\
+  \caption{Role Positions in the Team Formation in Different Ball Positions(red spots).} 
+  \label{fig:FormationExamples}
+\end{figure}
+
+\subsubsection*{11-Players Server Version (0.6.6)} 
+
+Table~\ref{TeamFormation11} shows the four groups of roles in our formation for the 11-player team, the corresponding short identifier, and a short description for each role.
+Figure~\ref{fig:Formation11_0} shows how the different role positions of the formation are depicted into the soccer pitch for the newest server version in which team consists of eleven players. Again, since the formation is a function of the ball position, when the ball is located near or outside the field limits formation positions are adjusted to not exceed the field limits.
+
+The Forwards are positioned based on the same principles as the previous version's approach. The additional player, Forward Support, is positioned behind the Forward Center at a fixed distance. The additional player in the Midfielders, Midfielder Center, is positioned behind  the Forward Support at a fixed distance. The other two Midfielder positions are on either side of the Midfielder Center in an angle and a distance offset which are dynamically determined by the exact coordinates of the Midfielder Center. The Defense line is determined exactly as in the previous version. As before, the Goalkeeper is totally independent. Figure~\ref{fig:FormationExamples} presents three different team formation corresponding to three different ball positions. Figure~\ref{fig:SupportPos} shows an example where there is one inactive player and therefore one role from the team formation is discarded, namely the one farthest away from the ball. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Team Roles Assignment}
 In this section we present the role assignment function, which assigns roles to all agents. This will prove to be very helpful in the next coordination phase, when we have to find candidate positions for the support subset. Given a generated team formation we have to assign roles to the active subset. Recall that positions for the active agents are strictly tied to the position of the ball in the field. So, for any given number of active players, we choose an equal number of team formation positions which are closest to the ball and we assign the corresponding roles to the active players. The remaining team roles and their positions, in particular, will be available to the support subset as candidate positions during the support coordination process. Figure~\ref{fig:RoleAss} shows how the role assignment function works. Active players will be assigned the red team roles due to the fact that they are located near to the position of the ball. Note that the roles assigned to the active players will not necessarily be the three Forwards roles. Excluding the roles bound to active players, the remaining roles marked in grey are the ones the support players will compete for. A naive role mapping function would have assigned roles statically to specific players. This approach will perform poorly in such a dynamic environment. It would also be weak in situations where an agent assigned to a defensive role may end up being beamed out of field due to a penalty without being able to exchange roles with another player who may be in a better position to defend our goal. In our dynamic approach, every role mapping is calculated with a full sense of the world state, resulting in a dynamically adaptive way of assigning roles to the agents. During testing, there were several cases in which a forward player ended up assuming a defense role at the end of the game or the opposite.
@@ -426,7 +443,6 @@ In this section we present the role assignment function, which assigns roles to 
   \label{fig:RoleAss}
 \end{figure}
 
-
 \begin{figure}[t!]
 \centering
   \includegraphics[width=0.8\textwidth]{Chapter4/figures/SupportPos.pdf}
@@ -435,7 +451,7 @@ In this section we present the role assignment function, which assigns roles to 
 \end{figure}
 
 \section{Determination of Support Positions}
-In this section, we are going to discuss about which roles and positions of the team formation will be assigned to the support subset. In an ideal case, there would be an equal number of support agents and roles/positions; this is true only when the inactive subset is empty. In this case, the positions for the support subset are determined automatically. In most cases, however, there are some inactive players and therefore we have to decide which positions of the team formation will be selected for the support subset. Using the position of the ball as a guide, we have to ensure that there will be positions for support players near the ball. So, for any given number of support players, we choose an equal number of team formation positions (excluding the ones given to the active players) which are closest to the ball and we assign the corresponding roles to the support players. Figure~\ref{fig:SupportPos} shows an example where there is one inactive player and therefore one role from the team formation is discarded, namely the one farthest away from the ball. 
+In this section, we are going to discuss about which roles and positions of the team formation will be assigned to the support subset. In an ideal case, there would be an equal number of support agents and roles/positions; this is true only when the inactive subset is empty. In this case, the positions for the support subset are determined automatically. In most cases, however, there are some inactive players and therefore we have to decide which positions of the team formation will be selected for the support subset. Using the position of the ball as a guide, we have to ensure that there will be positions for support players near the ball. So, for any given number of support players, we choose an equal number of team formation positions (excluding the ones given to the active players) which are closest to the ball and we assign the corresponding roles to the support players. 
 
 
 
@@ -479,22 +495,21 @@ SupportCost(SupportMapping) &= \sum_{i=1}^n w_dC_{d,i}+w_cC_{c,i}
 \end{align*}
 where $(w_d,w_c)$ are the weights of the features, currently set at $(1,1)$. An example of this procedure is shown in Table~\ref{tab:DynamicTable}. As we see in this table, an optimal mapping is built iteratively for position sets from $\lbrace P_{1} \rbrace$ to $\lbrace P_{1},P_{2},...,P_{n} \rbrace$. In every step of this algorithm we use the lower cost's mapping for a subset of agents and positions which are compatible with our current mapping.
 \begin{table}[t!]
+\caption{Mappings Evaluated During Dynamic Algorithm.}
 \label{tab:DynamicTable}
 \centering
-    \begin{tabular}{ | c | c | c | p{5cm} |}
+	
+    \begin{tabular}{ | c | c | c | }
     \hline
     $\lbrace P_{1} \rbrace$   & $\lbrace P_{1},P_{2} \rbrace$ 	& $\lbrace P_{1},P_{2},P_{3} \rbrace$\\ \hline
-    $A_{1} \rightarrow P_{1}$ & $A_{1} \rightarrow P_{2},min(A_{2} \rightarrow P_{1})$	 	& $A_{1} \rightarrow P_{3},min(\lbrace A_{2},A_{3} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ \hline
-    $A_{2} \rightarrow P_{1}$ & $A_{1} \rightarrow P_{1},min(A_{3} \rightarrow P_{1})$	 	& $A_{2} \rightarrow P_{3},min(\lbrace A_{1},A_{3} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ \hline
-     						  & $A_{2} \rightarrow P_{2},min(A_{1} \rightarrow P_{1})$ 		& $A_{3} \rightarrow P_{3},min(\lbrace A_{1},A_{2} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ \hline
-       						  & $A_{2} \rightarrow P_{2},min(A_{3} \rightarrow P_{1})$ 		&   \\ \hline
-       						  & $A_{3} \rightarrow P_{2},min(A_{1} \rightarrow P_{1})$ 		&   \\ \hline
+    $A_{1} \rightarrow P_{1}$ & $A_{1} \rightarrow P_{2},min(A_{2} \rightarrow P_{1})$	 	& $A_{1} \rightarrow P_{3},min(\lbrace A_{2},A_{3} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ 
+    $A_{2} \rightarrow P_{1}$ & $A_{1} \rightarrow P_{1},min(A_{3} \rightarrow P_{1})$	 	& $A_{2} \rightarrow P_{3},min(\lbrace A_{1},A_{3} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ 
+     						  & $A_{2} \rightarrow P_{2},min(A_{1} \rightarrow P_{1})$ 		& $A_{3} \rightarrow P_{3},min(\lbrace A_{1},A_{2} \rbrace \rightarrow \lbrace P_{1},P_{2} \rbrace)$  \\ 
+       						  & $A_{2} \rightarrow P_{2},min(A_{3} \rightarrow P_{1})$ 		&   \\ 
+       						  & $A_{3} \rightarrow P_{2},min(A_{1} \rightarrow P_{1})$ 		&   \\ 
     						  & $A_{3} \rightarrow P_{2},min(A_{2} \rightarrow P_{1})$		&   \\
     \hline
-
-    \end{tabular}
-    
-    \caption{Mappings Evaluated During Dynamic Algorithm.}    
+    \end{tabular}      
 \end{table}
 Remind that in the \textit{Kth} iteration of the algorithm, each agent will be assigned to the $P_{K}$ position. Then the possible positions K-1 will be assigned to the other n-1 agents. These assignments result in a total of $ {{n-1}\choose{k-1}} $ mappings to be evaluated in each iteration. Summing to $\sum\limits_{i=1}^N{{n-1}\choose{k-1}}$ possible mappings.\\
 \begin{center}
