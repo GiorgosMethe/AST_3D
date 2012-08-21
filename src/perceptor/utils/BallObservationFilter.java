@@ -12,7 +12,11 @@
  ******************************************************************************/
 package perceptor.utils;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Vector;
+
+import coordination.communication.message.CoordinationMessage;
 
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
@@ -22,6 +26,20 @@ public class BallObservationFilter {
 	public static Vector<BallObservationSamples> BallSampleVector = new Vector<BallObservationSamples>();
 
 	public static void AddSample(Coordinate sample) {
+		
+		final Comparator<BallObservationSamples> NEGATIVE_ORDER = new Comparator<BallObservationSamples>() {
+
+			@Override
+			public int compare(BallObservationSamples e1, BallObservationSamples e2) {
+				boolean Cmp = e2.getSamplesNum() <= (e1.getSamplesNum());
+				if (Cmp != true) {
+					return 1;
+				} else {
+					return 0;
+				}
+			}
+		};
+		
 
 		if (BallSampleVector.size() == 0) {
 
@@ -29,6 +47,12 @@ public class BallObservationFilter {
 					sample, 0.0f, 1));
 
 		} else {
+			
+			if(BallSampleVector.size()>1){
+				
+				Collections.sort(BallSampleVector, NEGATIVE_ORDER);
+				
+			}
 
 			boolean flag = false;
 
@@ -37,7 +61,7 @@ public class BallObservationFilter {
 				// samples which have value almost same values
 				if (TriangleLocalization
 						.FindDistanceAmong2Coordinates(BallSampleVector
-								.elementAt(i).getBallPosition(), sample) < 1.5) {
+								.elementAt(i).getBallPosition(), sample) < 1) {
 
 					// add the coordinates of the two samples
 					BallSampleVector.elementAt(i).setSumOfObservations(
