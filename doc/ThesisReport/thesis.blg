@@ -1,6 +1,7 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Acknowledgment/Acknowledgment.aux
 A level-1 auxiliary file: Introduction/introduction.aux
 A level-1 auxiliary file: Chapter1/chapter1.aux
 A level-1 auxiliary file: Chapter2/chapter2.aux
@@ -13,7 +14,7 @@ The style file: StyleFiles/splncs.bst
 Database file #1: thesis.bib
 You've used 13 entries,
             2087 wiz_defined-function locations,
-            563 strings with 6281 characters,
+            564 strings with 6306 characters,
 and the built_in function-call counts, 2420 in all, are:
 = -- 184
 > -- 140

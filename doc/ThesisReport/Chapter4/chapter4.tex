@@ -47,24 +47,24 @@ Algorithm~\ref{CoordinationAlgorithm} describes the entire coordination procedur
 \STATE {\bf Output: }$Actions = \lbrace A_{1},A_{2},...,A_{N-1} \rbrace$
 \STATE
 \IF {$ CoordinationCycle = 1$ }
-\STATE $B \leftarrow Update Beliefs(Coordination Messages) $
+\STATE $B \leftarrow Update Coordination Beliefs(Coordination Messages) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 2$ }
-\STATE $S \leftarrow Coordination Splitter(B) $
+\STATE $S \leftarrow Split Players In Subsets(B) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 3$ } 
-\STATE $P_{active} \leftarrow Active Positions(B,S) $
+\STATE $P_{active} \leftarrow Determine Active Positions(B,S) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 4$ }
-\STATE $A_{active} \leftarrow Active Coordination(P_{active},S,B) $
+\STATE $A_{active} \leftarrow Coordinate Active Players(P_{active},S,B) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 5$ }
-\STATE $ F \leftarrow TeamFormation(B) $
-\STATE $ R \leftarrow Role Assignment(A_{active},B,F) $
-\STATE $ P_{support} \leftarrow Support Positions(R,F,S) $
+\STATE $ F \leftarrow Generate Team Formation(B) $
+\STATE $ R \leftarrow Assign Team Roles(A_{active},B,F) $
+\STATE $ P_{support} \leftarrow Determine Support Positions(R,F,S) $
 \STATE $CoordinationCycle = CoordinationCycle + 1$
 \ELSIF {$ CoordinationCycle = 6$ }
-\STATE $A_{support} \leftarrow Support Coordination(P_{support},S,B,R,F,A_{active}) $
+\STATE $A_{support} \leftarrow Coordinate Support Players(P_{support},S,B,R,F,A_{active}) $
 \STATE $Actions = A_{active} \cup A_{support} \cup A_{inactive}$
 \STATE $CoordinationCycle = 0$
 \ENDIF
@@ -148,7 +148,7 @@ This type of message is sent only by the administrator; it declares which action
 Figure~\ref{fig:coordinationprocess} presents the messaging procedure between the agents in order to coordinate their actions. First, agents have to initialize their presence in the field with ``init'' messages. The coordinator saves these messages and, when all other players have initialized themselves, broadcasts a ``start'' message. This message means that all players are now ready to start the coordination process. In this phase, all players, other than the coordinator, send their ``coordination'' messages to the coordinator. When the coordinator gathers these messages from all players, it broadcasts an ``end'' message to make them stop sending unnecessary ``coordination'' messages. The next phase of this process is the execution of the coordination protocol which lasts six simulation cycles, approximately 120ms. When it finishes, the coordinator broadcasts the resulting actions to each one of the other players using individual ``action'' messages. The receiving agents execute the commanded actions, until a new ``action'' message arrives. While action execution is ongoing, after a timeout period defined by the user (currently set at 20 simulation cycles), the same coordination process is repeated, excluding the initialization phase.
 
 
-\section{Coordination Beliefs}
+\section{Coordination Beliefs Update}
 
 In the previous section we presented how players exchange messages with the coordinator. In this section we are going to discuss how the coordinator fuses the individual beliefs received by the other agents into a single global belief. This step is of major importance in any multi-agent system. Having multiple observations of the same world could potentially be a problem. The coordinator has to combine these observations without knowing which one of them is faulty or correct in order to obtain a global realistic representation of the world. Knowledge of the ball and agents' positions is sufficient to execute the coordination algorithm without making guesses.
 
@@ -161,14 +161,9 @@ The global ball position is computed taking into account only the information co
 \end{figure}
 As shown in Figure~\ref{fig:Ball}, different ball observations can differ from each other. In our approach, we use a simple algorithm to estimate the global ball position with accuracy. A threshold is defined (by default, 1 meter) in order to split the observations in subsets. Each subset is assigned a weight equal to the number of observations it contains. Additionally, each subset is represented by the average of the observations it contains. The first incoming observation defines the first subset with weight $1$. For each subsequent incoming observation, we check its distance against all representatives of all existing subsets. If the minimum of these distances is below the threshold, then this new observation is assigned to the subset that gave this minimum distance, updating at the same time the weight and the representative of that subset. Otherwise, the new observation gives rise to a new subset with a single member. 
 
-Figure~\ref{fig:Ball} shows the resulting four subsets for a given set of nine observations. The set with the most observations included is naturally assigned the biggest weight. Consequently, we have to compute our belief about the global ball position.
-++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-Given a total number of $N$ observations $o_j$ split into $m$ observation subsets $s_i$, the final ball belief is computed as:
+Figure~\ref{fig:Ball} shows the resulting four subsets for a given set of nine observations. The set with the most observations included is naturally assigned the biggest weight. Consequently, we have to compute our belief about the global ball position. Average positions which are derived from each observation set, multiplied with the corresponding weight raised to the power of three, are divided with the summing weights of all observation sets. Given a total number of $N$ observations $o_j$ split into $m$ observation subsets $s_i$, the final ball belief is computed as:
 \begin{align*}
-{\bf Global Ball Belief} = \sum_{i=1}^m \frac {|s_i|^2} {\sum_{k=1}^m |s_k|^2} \sum_{o_{ij} \in s_i} \cfrac{o_{ij}}{|s_i|}
+{\bf Global Ball Belief} = \sum_{i=1}^m \frac {|s_i|^3} {\sum_{k=1}^m |s_k|^3} \sum_{o_{ij} \in s_i} \cfrac{o_{ij}}{|s_i|}
 \end{align*}
 
 
@@ -196,7 +191,7 @@ Instead of trying to solve the coordination problem at one level, a simple appro
   \label{fig:Splitter}
 \end{figure}
 
-\section{Coordination Splitter}
+\section{Coordination Subsets Segmentation}
 In this section we are going to discuss how the above three groups are generated by coordination splitter. An array full of team's agents is sorted according to the distance each agent has from the ball. We assign to the active subset the agents in the three first positions of the sorted array.
 Other agents with distance less than infinity join the support subset.
 Recall that we assume $\infty$ distance from ball for the agents who have no knowledge for their position and have not the ball into the field of their view.
@@ -224,7 +219,7 @@ In order to proceed our discussion about coordination process, we have to demons
   \label{fig:ActivePositions2}
 \end{figure}
 
-\section{Active-Positions Computation}
+\section{Active Positions Determination}
 Until now, we have updated the coordination beliefs and we have split agents into subsets. in this phase of the coordination process, we have to compute adequate and worthy positions for the active subset. We distinguish two cases, in the first case, ball is located in our field's half. In this case we have to find worthy positions which have a defensive approach. On the other hand, if ball is located in the other field's half we have to find positions which have an attacking approach. In both cases we create an array of equidistant coordinates which are located in a radius which is determined by the ball's location and they are not out of soccer field's limits. Figure~\ref{fig:ActivePositions2} shows how these positions are shown in the soccer field through roboviz monitor. 
 From these set of coordinates we choose the best according to their values. As we saw in the previous section each coordinate of the field has a utility value. Consequently, we will try to choose a number of coordinates which summarize in a max value in an attacking approach or in a min value in a defensive approach, being careful not to overcome a max number of coordinates which is nine. This will help us later keeping iterations below a maximum number. Figure~\ref{fig:ActivePositions3} shows how active positions are shown in the soccer field through roboviz monitor after elimination. 
 
@@ -237,7 +232,7 @@ From these set of coordinates we choose the best according to their values. As w
 \end{figure}
 
 
-\section{Active-Subset Coordination}
+\section{Active Players Coordination}
 Once we have find worthy positions for the active players it is time to find the player who is more adequate than others to become the on ball player. Moreover, we should assign each of the rest two players into an active position. This is called mapping function and will have a significant role in the next coordination's phases. 
 \subsection{Player on Ball}
 An agent from the active subset has to be selected in order to be sent an action which is related to the ball. We have to find the agent who has minimum value according to two parameters:
@@ -256,10 +251,10 @@ Additionally, we give to the agent who had been assigned an action towards the b
 
 
 
-\subsection{Active-Subset Best Mapping}
+\subsection{Active Players Optimized Mapping}
 Next in the active coordination phase, we have to assign positions for the other two agents who have left in the active subset. Algorithm~\ref{ActiveMapping} shows how we can find the optimized mapping. In a greedy approach, we calculate the cost of every possible mapping. In addition, in every mapping we take into account the on ball agent's mapping $(OnBallPlayer \rightarrow Ball)$, which will be helpful in order to find possible collisions between the on ball agent and the active ones.
 \begin{algorithm}[ht!]
-\caption{Active-Subset Best Mapping}
+\caption{Active Subset Optimized Mapping}
 \label{ActiveMapping}
 \begin{algorithmic}[1]
 \STATE {\bf Input: }$ActivePlayers = ActiveSubset - Agent_{OnBall} $
@@ -284,7 +279,7 @@ We can realize that even we are using a brute force method the number of possibl
 \end{figure}
 
 
-\section{Team Formation}
+\section{Team Formation Generation}
 Team formation itself is not a main contribution of this thesis but serves to set up the role assignment function and the coordination of the support subset. In general, team's formation is determined by the ball's position into the field. The formation is broken up into three groups including all players of the team except from goalkeeper. This section presents the team's formation used in our approach for both 0.6.5 and 0.6.6 \textit{rcssserver3d} versions.
 \subsection{9-Players Server Version (0.6.5)}
 \textbf{Attacking} group which consists of three positions:
@@ -355,7 +350,7 @@ Figure~\ref{fig:Formation11_0} depicts how the different role positions of the f
 \end{figure}
 
 
-\section{Role Assignment Function}
+\section{Team Roles Assignment}
 In this section we present the role assignment function. This function after the evaluation of the current beliefs of the game state and the optimized active positions, tries to assign roles for all agents. This will prove to be very helpful on the next coordination steps when we will have to find positions for the support subset's agents. Given a computed team formation we have to assign roles to the active subset's players. As you already know, positions for active agents are strictly connected and near to the ball's position on the field. So, for N active players we choose N team formation positions which minimize the distance from the ball. Roles which these positions represent will be assigned to the active players. The other team roles will be available to the support subset during support coordination process. Figure~\ref{fig:RoleAss} shows how the role assignment function works. Active players will be assigned the red team roles due to the fact that they are located near to the ball's position. Once these positions will be bounded by the active players, the only roles that support players can compete about will be the grey colored positions. A naive role mapping would have assign roles permanently to specific players. This will perform poorly in such a dynamic environment. It would be also weak in situations where an agent assigned to a defensive role may end up out of position without being able to change roles with another player who may be in a better position to defend our goal. In our approach, every role mapping is calculated with a full sense of the world's state, resulting to a dynamic and unpredictable way of assigning roles to the agents. During testing, there were several cases in which a forward player ended up to have a defense role at the end of the game or the opposite.
 
 
@@ -366,18 +361,18 @@ In this section we present the role assignment function. This function after the
   \label{fig:SupportPos}
 \end{figure}
 
-\section{Positions for Support-Subset}
+\section{Support Positions Determination}
 In this section, we are going to discuss about which positions support subset's agents will be assigned. In an ideal case, we would have same number of support agents and same number of positions, this is going to happen when inactive subset is completely empty. In this case, this section has not any meaning. In other cases, when there are agents who are not able to know their positions or seeing ball, we have to decide about the positions of the team's formation which will be eliminated from the support coordination. Considering the ball's position, we have to make sure that there will be positions for support players near to the ball. So, given N players in the support subset we simply compare these team's formation position to find the N closest to the ball positions. Coordination's final step will find an optimized way to map support subset's agents to these positions.
 
 
 
-\section{Support-Subset Coordination}
+\section{Support Players Coordination}
 This is the final step of the coordination process. Until, now we have calculated the optimal mapping of the active subset's agents. So, it's time to find a mapping which will give as an optimal solution for the support agents as well. Given a support positions set which has been discussed in the previous two sections we have to assign each agent from the support subset in a specific position from this set. Using a greedy algorithm which would calculate all possible mappings to find the optimal one was the first solution to this problem. However, a brute force approach would only be applicable for the previous server version in which each team consists of nine players. In this case, we would have to calculate all possible mappings only for the support subset which consists of five players at maximum. 
 This means a factorial complexity about: $\leqslant 5! \Leftrightarrow  {{5}\choose{5}} = 120$ mappings. Unfortunately, moving to the next server version and from nine to elevens players this can be a problem, having to calculate at worst case $ 7! \Leftrightarrow  {{7}\choose{7}} = 5040$ mappings. 
 
 It could be difficult for an agent to calculate all these mappings in real-time without any delay in sending effector messages to the server. Our support coordination algorithm scheme is completely based on a method proposed by a UT Austin Villa team's paper which was appeared in the RoboCup international Symposium in Mexico,2012~\cite{UtAustinVillaPaper}. A dynamic programming implementation which is able to compute an optimal solution within the time constraints imposed by the decision cycle's length ($\approx$ 20ms).
 \begin{algorithm}[ht!]
-\caption{Dynamic programming implementation \cite{UtAustinVillaPaper}}
+\caption{Dynamic Programming Implementation}
 \label{alg3}
 \begin{algorithmic}[1]
 \STATE {\bf Inputs: }$SupportPlayers = \lbrace A_{1},A_{2},...,A_{n} $
@@ -413,7 +408,7 @@ This dynamic Algorithm~\ref{alg3} is based on a key recursive property. This pro
 
     \end{tabular}
     
-    \caption{Mappings Evaluated During Dynamic Algorithm~\cite{UtAustinVillaPaper}.}    
+    \caption{Mappings Evaluated During Dynamic Algorithm.}    
 \end{table}
 Remind that in the \textit{Kth} iteration of the algorithm, each agent will be assigned to the $P_{K}$ position. Then the possible positions K-1 will be assigned to the other n-1 agents. These assignments result in a total of $ {{n-1}\choose{k-1}} $ mappings to be evaluated in each iteration. Summing to $\sum\limits_{i=1}^N{{n-1}\choose{k-1}}$ possible mappings.\\
 \begin{center}
@@ -431,7 +426,7 @@ In this section we present how each mapping's cost is computed. This function se
   \label{fig:AvoidCollision}
 \end{figure}
 
-\subsection{Properties for Support-Subset Mapping Cost}
+\subsection{Properties for Support Players Mapping Cost}
 For support players things were easy. In support coordination we have same number of agents and positions. So there are only two properties:  
 \begin{enumerate}
 \item \textbf{Total distance }$C_{d}$ - Total distance agents have to travel in order to reach in their optimized mapping positions. It is a positive cost, so agents will try to minimize this cost.
@@ -445,7 +440,7 @@ Optimized Cost &= \arg\min_{i}(TotalCost_{i})
 As you can realize, the mapping with the smallest cost will be chosen by coordination's executor.
 
 
-\subsection{Properties for Active-Subset Mapping Cost}
+\subsection{Properties for Active Players Mapping Cost}
 In active coordination we have two agents and a maximum of nine positions. It is obvious that we have to take into consideration more than the two above properties. Using the same support's properties will force our players to go always to the nearest positions. So, we had to think about other properties in order to assign target positions for our players which will be valuable for the team's defensive and offensive movement without the ball. These properties are shown below:
 \begin{enumerate}
 \item \textbf{Total distance }$C_{d}$

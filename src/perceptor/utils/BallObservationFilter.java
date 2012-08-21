@@ -26,7 +26,7 @@ public class BallObservationFilter {
 		if (BallSampleVector.size() == 0) {
 
 			BallSampleVector.addElement(new BallObservationSamples(sample,
-					new Coordinate(0, 0), 0.0f, 1));
+					sample, 0.0f, 1));
 
 		} else {
 
@@ -83,12 +83,12 @@ public class BallObservationFilter {
 		for (int i = 0; i < BallSampleVector.size(); i++) {
 
 			Coordinate WeightedAvg = new Coordinate(
-					(BallSampleVector.elementAt(i).getBallPosition().X
+					((BallSampleVector.elementAt(i).getSumOfObservations().getX()/BallSampleVector.elementAt(i).getSamplesNum())
 							* Math.pow(BallSampleVector.elementAt(i)
 									.getSamplesNum(), 3) / samples),
-					BallSampleVector.elementAt(i).getBallPosition().Y
+									((BallSampleVector.elementAt(i).getSumOfObservations().getY()/BallSampleVector.elementAt(i).getSamplesNum())
 							* Math.pow(BallSampleVector.elementAt(i)
-									.getSamplesNum(), 3) / samples);
+									.getSamplesNum(), 3) / samples));
 
 			result = TriangleLocalization.addCoordinates(result, WeightedAvg);
 
