@@ -38,26 +38,18 @@
 \BOOKMARK [1][]{section.4.7}{4.7 Communication}{chapter.4}
 \BOOKMARK [0][]{chapter.5}{5 Team Coordination}{}
 \BOOKMARK [1][]{section.5.1}{5.1 Coordination Protocol}{chapter.5}
-\BOOKMARK [1][]{section.5.2}{5.2 Coordination and Communication}{chapter.5}
-\BOOKMARK [1][]{section.5.3}{5.3 Coordination Beliefs Update}{chapter.5}
-\BOOKMARK [1][]{section.5.4}{5.4 Subsets in Coordination Process}{chapter.5}
-\BOOKMARK [1][]{section.5.5}{5.5 Coordination Subsets Segmentation}{chapter.5}
-\BOOKMARK [1][]{section.5.6}{5.6 Soccer Field Value}{chapter.5}
-\BOOKMARK [1][]{section.5.7}{5.7 Active Positions Determination}{chapter.5}
+\BOOKMARK [1][]{section.5.2}{5.2 Coordination Modes}{chapter.5}
+\BOOKMARK [1][]{section.5.3}{5.3 Coordination and Communication}{chapter.5}
+\BOOKMARK [1][]{section.5.4}{5.4 Coordination Beliefs Update}{chapter.5}
+\BOOKMARK [1][]{section.5.5}{5.5 Determination of Coordination Subsets}{chapter.5}
+\BOOKMARK [1][]{section.5.6}{5.6 Soccer Field Utility Fuction}{chapter.5}
+\BOOKMARK [1][]{section.5.7}{5.7 Determination of Active Positions}{chapter.5}
 \BOOKMARK [1][]{section.5.8}{5.8 Active Players Coordination}{chapter.5}
-\BOOKMARK [2][]{subsection.5.8.1}{5.8.1 Player on Ball}{section.5.8}
-\BOOKMARK [2][]{subsection.5.8.2}{5.8.2 Active Players Optimized Mapping}{section.5.8}
 \BOOKMARK [1][]{section.5.9}{5.9 Team Formation Generation}{chapter.5}
-\BOOKMARK [2][]{subsection.5.9.1}{5.9.1 9-Players Server Version \(0.6.5\)}{section.5.9}
-\BOOKMARK [2][]{subsection.5.9.2}{5.9.2 11-Players Server Version \(0.6.6\)}{section.5.9}
 \BOOKMARK [1][]{section.5.10}{5.10 Team Roles Assignment}{chapter.5}
-\BOOKMARK [1][]{section.5.11}{5.11 Support Positions Determination}{chapter.5}
+\BOOKMARK [1][]{section.5.11}{5.11 Determination of Support Positions}{chapter.5}
 \BOOKMARK [1][]{section.5.12}{5.12 Support Players Coordination}{chapter.5}
-\BOOKMARK [1][]{section.5.13}{5.13 Mapping Cost Computation}{chapter.5}
-\BOOKMARK [2][]{subsection.5.13.1}{5.13.1 Properties for Support Players Mapping Cost}{section.5.13}
-\BOOKMARK [2][]{subsection.5.13.2}{5.13.2 Properties for Active Players Mapping Cost}{section.5.13}
-\BOOKMARK [1][]{section.5.14}{5.14 Coordination Type}{chapter.5}
-\BOOKMARK [1][]{section.5.15}{5.15 Goalkeeper Behavior}{chapter.5}
+\BOOKMARK [1][]{section.5.13}{5.13 Goalkeeper Behavior}{chapter.5}
 \BOOKMARK [0][]{chapter.6}{6 Results}{}
 \BOOKMARK [1][]{section.6.1}{6.1 Movement}{chapter.6}
 \BOOKMARK [1][]{section.6.2}{6.2 Communication}{chapter.6}
@@ -73,4 +65,4 @@
 \BOOKMARK [1][]{section.7.5}{7.5 Farzanegan}{chapter.7}
 \BOOKMARK [0][]{chapter.8}{8 Conclusion}{}
 \BOOKMARK [1][]{section.8.1}{8.1 Future Work}{chapter.8}
-\BOOKMARK [0][]{chapter*.39}{References}{}
+\BOOKMARK [0][]{chapter*.43}{References}{}

@@ -396,8 +396,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="145.89948"
-     inkscape:cy="927.39604"
+     inkscape:cx="237.87792"
+     inkscape:cy="745.56858"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -571,22 +571,10 @@
        id="path6418"
        inkscape:connector-curvature="0" />
     <path
-       style="opacity:0.67578125000000000;fill:#ff0000;fill-opacity:0.82745097999999984;fill-rule:nonzero;stroke:none;marker-start:none"
-       d="m 141.02944,242.72492 0,-10.89286 131.96429,0 131.96429,0 0,10.89286 0,10.89286 -131.96429,0 -131.96429,0 0,-10.89286 z"
+       style="opacity:0.67578125;fill:#ff0000;fill-opacity:0.82745098;fill-rule:nonzero;stroke:none;marker-start:none"
+       d="m 141.02944,241.2503 0,-13.41824 131.96429,0 131.96429,0 0,13.41824 0,13.41824 -131.96429,0 -131.96429,0 0,-13.41824 z"
        id="path6416"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="193.59486"
-       y="248.41621"
-       id="text5789-3-5"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5791-0-8"
-         x="193.59486"
-         y="248.41621"
-         style="font-size:14px">Coordination Algorithm</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#marker7464);marker-end:url(#Arrow1Mend)"
        d="m 141.23543,255.96022 132.58349,24.24366 131.5714,-0.50508"
@@ -667,22 +655,10 @@
        id="path5835-2-4-2-4"
        inkscape:connector-curvature="0" />
     <path
-       style="opacity:0.67578125;fill:#ff0000;fill-opacity:0.82745098;fill-rule:nonzero;stroke:none"
+       style="opacity:0.67578125;fill:#008080;fill-opacity:0.82745098;fill-rule:nonzero;stroke:none"
        d="m 141.53451,337.30044 0,-22.88841 131.96429,0 131.96429,0 0,22.88841 0,22.88843 -131.96429,0 -131.96429,0 0,-22.88843 z"
        id="path6416-7"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="208.8658"
-       y="344.66626"
-       id="text5789-3-5-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5791-0-8-4"
-         x="208.8658"
-         y="344.66626"
-         style="font-size:14px">Coordination Timeout</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Mend);marker-end:url(#Arrow1Mend)"
        d="m 140.79383,361.794 132.32998,24.24366 131.31983,-0.50508"
@@ -809,5 +785,29 @@
        d="m 130.67538,82.110667 0,-17.96393 4.68506,0 4.68506,0 0,17.96393 0,17.963923 -4.68506,0 -4.68506,0 0,-17.963923 z"
        id="path6416-70-1-9-5"
        inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="197.59486"
+       y="244.41621"
+       id="text5789-3-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5791-0-8"
+         x="197.59486"
+         y="244.41621"
+         style="font-size:14px">Coordination Protocol</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="196.8658"
+       y="344.66626"
+       id="text5789-3-5-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5791-0-8-4"
+         x="196.8658"
+         y="344.66626"
+         style="font-size:14px">Coordination Timeout</tspan></text>
   </g>
 </svg>
