@@ -159,6 +159,7 @@ Figure~\ref{fig:coordinationprocess} presents the messaging procedure between th
 
 
 \section{Coordination Beliefs Update}
+\label{sec:UpdateBeliefs}
 
 In the previous section we presented how players exchange messages with the coordinator. In this section we are going to discuss how the coordinator fuses the individual beliefs received by the other agents into a single global belief. This step is of major importance in any multi-agent system. Having multiple observations of the same world could potentially be a problem. The coordinator has to combine these observations without knowing which one of them is faulty or correct in order to obtain a global realistic representation of the world. Knowledge of the ball and agents' positions is sufficient to execute the coordination algorithm without making guesses.
 
@@ -420,20 +421,7 @@ Figure~\ref{fig:Formation11_0} shows how the different role positions of the for
 The Forwards are positioned based on the same principles as the previous version's approach. The additional player, Forward Support, is positioned behind the Forward Center at a fixed distance. The additional player in the Midfielders, Midfielder Center, is positioned behind  the Forward Support at a fixed distance. The other two Midfielder positions are on either side of the Midfielder Center in an angle and a distance offset which are dynamically determined by the exact coordinates of the Midfielder Center. The Defense line is determined exactly as in the previous version. As before, the Goalkeeper is totally independent. Figure~\ref{fig:FormationExamples} presents three different team formation corresponding to three different ball positions. Figure~\ref{fig:SupportPos} shows an example where there is one inactive player and therefore one role from the team formation is discarded, namely the one farthest away from the ball. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Team Roles Assignment}
-In this section we present the role assignment function, which assigns roles to all agents. This will prove to be very helpful in the next coordination phase, when we have to find candidate positions for the support subset. Given a generated team formation we have to assign roles to the active subset. Recall that positions for the active agents are strictly tied to the position of the ball in the field. So, for any given number of active players, we choose an equal number of team formation positions which are closest to the ball and we assign the corresponding roles to the active players. The remaining team roles and their positions, in particular, will be available to the support subset as candidate positions during the support coordination process. Figure~\ref{fig:RoleAss} shows how the role assignment function works. Active players will be assigned the red team roles due to the fact that they are located near to the position of the ball. Note that the roles assigned to the active players will not necessarily be the three Forwards roles. Excluding the roles bound to active players, the remaining roles marked in grey are the ones the support players will compete for. A naive role mapping function would have assigned roles statically to specific players. This approach will perform poorly in such a dynamic environment. It would also be weak in situations where an agent assigned to a defensive role may end up being beamed out of field due to a penalty without being able to exchange roles with another player who may be in a better position to defend our goal. In our dynamic approach, every role mapping is calculated with a full sense of the world state, resulting in a dynamically adaptive way of assigning roles to the agents. During testing, there were several cases in which a forward player ended up assuming a defense role at the end of the game or the opposite.
+\clearpage
 
 
 \begin{figure}[t!]
@@ -442,6 +430,10 @@ In this section we present the role assignment function, which assigns roles to 
   \caption{Role Assignment Function for a Given Team Formation.} 
   \label{fig:RoleAss}
 \end{figure}
+
+\section{Team Roles Assignment}
+In this section we present the role assignment function, which assigns roles to all agents. This will prove to be very helpful in the next coordination phase, when we have to find candidate positions for the support subset. Given a generated team formation we have to assign roles to the active subset. Recall that positions for the active agents are strictly tied to the position of the ball in the field. So, for any given number of active players, we choose an equal number of team formation positions which are closest to the ball and we assign the corresponding roles to the active players. The remaining team roles and their positions, in particular, will be available to the support subset as candidate positions during the support coordination process. Figure~\ref{fig:RoleAss} shows how the role assignment function works. Active players will be assigned the red team roles due to the fact that they are located near to the position of the ball. Note that the roles assigned to the active players will not necessarily be the three Forwards roles. Excluding the roles bound to active players, the remaining roles marked in grey are the ones the support players will compete for. A naive role mapping function would have assigned roles statically to specific players. This approach will perform poorly in such a dynamic environment. It would also be weak in situations where an agent assigned to a defensive role may end up being beamed out of field due to a penalty without being able to exchange roles with another player who may be in a better position to defend our goal. In our dynamic approach, every role mapping is calculated with a full sense of the world state, resulting in a dynamically adaptive way of assigning roles to the agents. During testing, there were several cases in which a forward player ended up assuming a defense role at the end of the game or the opposite.
+
 
 \begin{figure}[t!]
 \centering
@@ -455,45 +447,39 @@ In this section, we are going to discuss about which roles and positions of the 
 
 
 
-
-
 \section{Support Players Coordination}
 This is the final step of the coordination process, which maps support players to support positions. In Section~\ref{sec:ActiveCoordination} we showed how the active players determine such a mapping optimally. Unfortunately, this optimal algorithm is not applicable to the support subset due to prohibitive computation costs in certain cases. Given that the size of the support subset varies between 0 and 8 or 10 (depending on the server's version and the coordination type) and considering only an equal number of support positions, in the worst case the exhaustive algorithm would have to examine between 40320 and 3628800 possible mappings. Our experience has shown that the exhaustive algorithm can work satisfactorily on support subsets of size up to 6 (720 possible mappings), assuming an equal number of candidate support positions.  
 
 Given the difficulties of applying the exhaustive algorithm to the support subset, we turned our attention to approximate, yet fast and effective, approaches in order to avoid delays in our think cycle. Our support coordination algorithm scheme is based on a method proposed by the UT Austin Villa team~\cite{UtAustinVillaPaper}. Their approach is based on dynamic programming and is able to compute an approximately optimal solution within the time constraints imposed by the duration of the think cycle ($\approx$ 20ms).
 
 \begin{algorithm}[t!]
-\caption{Dynamic Programming Implementation}
+\caption{Support Player Optimal Mapping (Dynamic Programming)}
 \label{alg3}
 \begin{algorithmic}[1]
-\STATE {\bf Inputs: }$SupportPlayers = \lbrace A_{1},A_{2},...,A_{n} $
-\STATE $SupportPositions = \lbrace P_{1},P_{2},...,P_{n} \rbrace $
-\STATE {\bf Outputs: }$OptSupportMap$
-\STATE $OptSupportMap = \varnothing $
+\STATE {\bf Input: }$SupportPlayers = \lbrace A_{1},A_{2},...,A_{n} \rbrace $
+\STATE {\bf Input: }$SupportPositions = \lbrace P_{1},P_{2},...,P_{n} \rbrace $
+\STATE {\bf Output: }$Optimal Support Mapping$
+\STATE
+\STATE $OptimalSupportMappingCost = +\infty$
 \FOR{$k = 1 \to n$} 
 \FOR{{\bf each} $\alpha$ in SupportPlayers}
 \STATE $ S = {{n-1}\choose{k-1}} $, sets of k-1 agents for supportPlayers - $\lbrace \alpha \rbrace$
 \FOR{{\bf each} s in S}
-\STATE $SupportRoleMap$ $m_{0}$ = $RoleMap[s]$
-\STATE $SupportRoleMap$ $m$ = $m_{0}$ $ \cup (\alpha \rightarrow P_{k})$
-\STATE $OptSupportMap[\lbrace \alpha \rbrace \cup s] = mincost(m,OptSupportMap[\lbrace \alpha \rbrace \cup s])$
+\STATE $SupportMapping = RoleMap[s] \cup (\alpha \rightarrow P_{k})$
+\STATE $SupportMappingCost = SupportCost(SupportMapping)$
+\IF{$SupportMappingCost < OptimalSupportMappingCost$}
+\STATE $OptimalSupportMappingCost = SupportMapping$
+\STATE $OptimalSupportMappingCost = SupportMappingCost$
+\ENDIF
 \ENDFOR
 \ENDFOR
 \ENDFOR
+\RETURN $OptimalSupportMappingCost$
 \end{algorithmic}
 \end{algorithm}
 
-This dynamic Algorithm~\ref{alg3} is based on a key recursive property. This property stems from the fact that for every mapping there is a subset of a lower cost with which we can reduce the cost of the complete mapping by augmenting it with that of the subset's lower cost mapping.
-More specifically, the evaluation function scores each possible mapping using the following features defined for each agent $i$: 
-\begin{enumerate}
-\item \textbf{Distance} $C_{d,i}$
-\item \textbf{Potential Collisions} $C_{c,i}$
-\end{enumerate}
-The features described above are computed for each of the three agent, are weighted, and are summed to form the final evaluation function of a mapping: 
-\begin{align*}
-SupportCost(SupportMapping) &= \sum_{i=1}^n w_dC_{d,i}+w_cC_{c,i}
-\end{align*}
-where $(w_d,w_c)$ are the weights of the features, currently set at $(1,1)$. An example of this procedure is shown in Table~\ref{tab:DynamicTable}. As we see in this table, an optimal mapping is built iteratively for position sets from $\lbrace P_{1} \rbrace$ to $\lbrace P_{1},P_{2},...,P_{n} \rbrace$. In every step of this algorithm we use the lower cost's mapping for a subset of agents and positions which are compatible with our current mapping.
+Dynamic Algorithm~\ref{alg3} is based on a key recursive property. This property stems from the fact that for every mapping there is a subset of a lower cost with which we can reduce the cost of the complete mapping by augmenting it with that of the subset's lower cost mapping.
+An example of this procedure is shown in Table~\ref{tab:DynamicTable}. As we see in this table, an optimal mapping is built iteratively for position sets from $\lbrace P_{1} \rbrace$ to $\lbrace P_{1},P_{2},...,P_{n} \rbrace$. In every step of this algorithm we use the lower cost's mapping for a subset of agents and positions which are compatible with our current mapping.
 \begin{table}[t!]
 \caption{Mappings Evaluated During Dynamic Algorithm.}
 \label{tab:DynamicTable}
@@ -516,6 +502,17 @@ Remind that in the \textit{Kth} iteration of the algorithm, each agent will be a
 $\sum\limits_{i=1}^N{{n}\choose{k-1}}$ = $\sum\limits_{i=0}^{n-1}{{n-1}\choose{k}}$ = $2^{n-1}$
 \end{center}
 Therefore, the total number of mappings that we have to calculate their costs using this approach are $n2^{n-1}$. For nine players in each team, this algorithm would not have any impact. As the previous brute force algorithm was having 5! (120 mappings), which is not much bigger computational complexity than this approach $5 \ast 2^{4}$ (80 mappings). However, in the new version of soccer simulator server in which we can have up to seven players in our support subset, this approach gives us great improvement in our coordination time, $7 \ast 2^{6}$ (448 mappings) $\ll$ 7! (5040 mappings) in comparison to the brute force algorithm.
+
+Each cost of every mapping is evaluated with the same features, that we use in support coordination.More specifically, the evaluation function scores each possible mapping using the following features defined for each agent $i$: 
+\begin{enumerate}
+\item \textbf{Distance} $C_{d,i}$
+\item \textbf{Potential Collisions} $C_{c,i}$
+\end{enumerate}
+The features described above are computed for each of the three agent, are weighted, and are summed to form the final evaluation function of a mapping: 
+\begin{align*}
+SupportCost(SupportMapping) &= \sum_{i=1}^n w_dC_{d,i}+w_cC_{c,i}
+\end{align*}
+where $(w_d,w_c)$ are the weights of the features, currently set at $(1,1)$.
 
 
 

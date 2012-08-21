@@ -58,23 +58,21 @@
 \contentsline {section}{\numberline {5.7}Determination of Active Positions}{64}{section.5.7}
 \contentsline {section}{\numberline {5.8}Active Players Coordination}{66}{section.5.8}
 \contentsline {section}{\numberline {5.9}Team Formation Generation}{69}{section.5.9}
-\contentsline {section}{\numberline {5.10}Team Roles Assignment}{74}{section.5.10}
-\contentsline {section}{\numberline {5.11}Determination of Support Positions}{75}{section.5.11}
-\contentsline {section}{\numberline {5.12}Support Players Coordination}{76}{section.5.12}
+\contentsline {section}{\numberline {5.10}Team Roles Assignment}{75}{section.5.10}
+\contentsline {section}{\numberline {5.11}Determination of Support Positions}{77}{section.5.11}
+\contentsline {section}{\numberline {5.12}Support Players Coordination}{77}{section.5.12}
 \contentsline {section}{\numberline {5.13}Goalkeeper Behavior}{79}{section.5.13}
 \contentsline {chapter}{\numberline {6}Results}{83}{chapter.6}
-\contentsline {section}{\numberline {6.1}Movement}{83}{section.6.1}
+\contentsline {section}{\numberline {6.1}Motion}{83}{section.6.1}
 \contentsline {section}{\numberline {6.2}Communication}{84}{section.6.2}
-\contentsline {section}{\numberline {6.3}Goalkeeper}{84}{section.6.3}
-\contentsline {section}{\numberline {6.4}Coordination Beliefs Update}{85}{section.6.4}
-\contentsline {section}{\numberline {6.5}Coordination}{85}{section.6.5}
-\contentsline {section}{\numberline {6.6}Overall Results}{87}{section.6.6}
-\contentsline {chapter}{\numberline {7}Related Work}{93}{chapter.7}
-\contentsline {section}{\numberline {7.1}UT Austin Villa}{93}{section.7.1}
-\contentsline {section}{\numberline {7.2}BeeStanbul}{94}{section.7.2}
-\contentsline {section}{\numberline {7.3}Kaveh}{95}{section.7.3}
-\contentsline {section}{\numberline {7.4}FUT-K\_3D}{95}{section.7.4}
-\contentsline {section}{\numberline {7.5}Farzanegan}{95}{section.7.5}
-\contentsline {chapter}{\numberline {8}Conclusion}{97}{chapter.8}
-\contentsline {section}{\numberline {8.1}Future Work}{97}{section.8.1}
-\contentsline {chapter}{References}{100}{chapter*.43}
+\contentsline {section}{\numberline {6.3}Goalkeeper}{85}{section.6.3}
+\contentsline {section}{\numberline {6.4}Coordination}{85}{section.6.4}
+\contentsline {section}{\numberline {6.5}Overall Results}{92}{section.6.5}
+\contentsline {chapter}{\numberline {7}Related Work}{95}{chapter.7}
+\contentsline {section}{\numberline {7.1}UT Austin Villa}{95}{section.7.1}
+\contentsline {section}{\numberline {7.2}BeeStanbul}{96}{section.7.2}
+\contentsline {section}{\numberline {7.3}FUT-K\_3D}{97}{section.7.3}
+\contentsline {section}{\numberline {7.4}Farzanegan}{97}{section.7.4}
+\contentsline {chapter}{\numberline {8}Conclusion}{99}{chapter.8}
+\contentsline {section}{\numberline {8.1}Future Work}{99}{section.8.1}
+\contentsline {chapter}{References}{102}{chapter*.45}
