@@ -10,19 +10,25 @@
 \select@language {english}
 \select@language {greek}
 \select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Team Formation Description for the 9-Players Version}}{71}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Team Formation Description for the 11-Players Version}}{72}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Mappings Evaluated During Dynamic Algorithm.}}{79}{table.5.3}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Team Formation Description for the 9-Players Version}}{69}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Team Formation Description for the 11-Players Version}}{70}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Mappings Evaluated by the Support Players Mapping Algorithm.}}{77}{table.5.3}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Motion's Performance Improvement (Averaged Speeds and Ranges)}}{84}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Communication Results in Ideal and Match Conditions}}{84}{table.6.2}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Goalkeeper Averaged Results in Half-Games.}}{85}{table.6.3}
-\contentsline {table}{\numberline {6.4}{\ignorespaces All Played Games Results}}{93}{table.6.4}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Mini Tournament (Tournament not completed yet)}}{94}{table.6.5}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Motion's Performance Improvement (Averaged Speeds and Ranges)}}{82}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Communication Results in Ideal and Match Conditions}}{82}{table.6.2}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Goalkeeper Averaged Results in Half-Games.}}{83}{table.6.3}
+\contentsline {table}{\numberline {6.4}{\ignorespaces All Played Games Results}}{91}{table.6.4}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Mini Tournament (Tournament not completed yet)}}{92}{table.6.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

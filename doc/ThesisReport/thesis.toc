@@ -10,69 +10,76 @@
 \select@language {english}
 \select@language {greek}
 \select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Thesis Outline}{3}{section.1.1}
-\contentsline {chapter}{\numberline {2}The RoboCup Competition}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}RoboCup Soccer}{6}{section.2.1}
-\contentsline {section}{\numberline {2.2}RoboCup Rescue}{9}{section.2.2}
-\contentsline {section}{\numberline {2.3}RoboCup@Home}{12}{section.2.3}
-\contentsline {section}{\numberline {2.4}RoboCup Junior}{12}{section.2.4}
-\contentsline {chapter}{\numberline {3}RoboCup 3D Simulation League}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}SimSpark Soccer Simulator}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Robot Model}{16}{section.3.2}
-\contentsline {section}{\numberline {3.3}Server}{17}{section.3.3}
-\contentsline {section}{\numberline {3.4}Monitor}{18}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}SimSpark Monitor}{18}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Roboviz Monitor}{19}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Perceptors}{19}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}General perceptors}{20}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Soccer perceptors}{21}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}Effectors}{23}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}General Effectors}{23}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Soccer Effectors}{24}{subsection.3.6.2}
-\contentsline {chapter}{\numberline {4}Player Skills}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Agent Architecture}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Connection}{28}{section.4.2}
-\contentsline {section}{\numberline {4.3}Perceptions}{29}{section.4.3}
-\contentsline {section}{\numberline {4.4}Localization}{30}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Self Localization}{30}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Object Localization}{31}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Localization Filtering}{32}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Motion}{35}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}XML-Based Motion Files}{36}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}XML-Based Motion Controller}{37}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Text-Based Motion Files}{39}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Text-Based Motion Controller}{40}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}Dynamic Motion Elements}{41}{subsection.4.5.5}
-\contentsline {section}{\numberline {4.6}Actions}{42}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Basic Actions}{42}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Complex Actions}{44}{subsection.4.6.2}
-\contentsline {section}{\numberline {4.7}Communication}{50}{section.4.7}
-\contentsline {chapter}{\numberline {5}Team Coordination}{53}{chapter.5}
-\contentsline {section}{\numberline {5.1}Coordination Protocol}{53}{section.5.1}
-\contentsline {section}{\numberline {5.2}Coordination Modes}{56}{section.5.2}
-\contentsline {section}{\numberline {5.3}Coordination and Communication}{57}{section.5.3}
-\contentsline {section}{\numberline {5.4}Coordination Beliefs Update}{60}{section.5.4}
-\contentsline {section}{\numberline {5.5}Determination of Coordination Subsets}{62}{section.5.5}
-\contentsline {section}{\numberline {5.6}Soccer Field Utility Fuction}{63}{section.5.6}
-\contentsline {section}{\numberline {5.7}Determination of Active Positions}{64}{section.5.7}
-\contentsline {section}{\numberline {5.8}Active Players Coordination}{66}{section.5.8}
-\contentsline {section}{\numberline {5.9}Team Formation Generation}{69}{section.5.9}
-\contentsline {section}{\numberline {5.10}Team Roles Assignment}{75}{section.5.10}
-\contentsline {section}{\numberline {5.11}Determination of Support Positions}{77}{section.5.11}
-\contentsline {section}{\numberline {5.12}Support Players Coordination}{77}{section.5.12}
-\contentsline {section}{\numberline {5.13}Goalkeeper Behavior}{79}{section.5.13}
-\contentsline {chapter}{\numberline {6}Results}{83}{chapter.6}
-\contentsline {section}{\numberline {6.1}Motion}{83}{section.6.1}
-\contentsline {section}{\numberline {6.2}Communication}{84}{section.6.2}
-\contentsline {section}{\numberline {6.3}Goalkeeper}{85}{section.6.3}
-\contentsline {section}{\numberline {6.4}Coordination}{85}{section.6.4}
-\contentsline {section}{\numberline {6.5}Overall Results}{92}{section.6.5}
-\contentsline {chapter}{\numberline {7}Related Work}{95}{chapter.7}
-\contentsline {section}{\numberline {7.1}UT Austin Villa}{95}{section.7.1}
-\contentsline {section}{\numberline {7.2}BeeStanbul}{96}{section.7.2}
-\contentsline {section}{\numberline {7.3}FUT-K\_3D}{97}{section.7.3}
-\contentsline {section}{\numberline {7.4}Farzanegan}{97}{section.7.4}
-\contentsline {chapter}{\numberline {8}Conclusion}{99}{chapter.8}
-\contentsline {section}{\numberline {8.1}Future Work}{99}{section.8.1}
-\contentsline {chapter}{References}{102}{chapter*.45}
+\contentsline {section}{\numberline {1.1}Thesis Contribution}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Thesis Outline}{2}{section.1.2}
+\contentsline {chapter}{\numberline {2}The RoboCup Competition}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}RoboCup Soccer}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}RoboCup Rescue}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}RoboCup@Home}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}RoboCup Junior}{10}{section.2.4}
+\contentsline {chapter}{\numberline {3}RoboCup 3D Simulation League}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}SimSpark Soccer Simulator}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Robot Model}{14}{section.3.2}
+\contentsline {section}{\numberline {3.3}Server}{15}{section.3.3}
+\contentsline {section}{\numberline {3.4}Monitor}{16}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}SimSpark Monitor}{16}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Roboviz Monitor}{17}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Perceptors}{17}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}General perceptors}{18}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Soccer perceptors}{19}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Effectors}{21}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}General Effectors}{21}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Soccer Effectors}{22}{subsection.3.6.2}
+\contentsline {chapter}{\numberline {4}Player Skills}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Agent Architecture}{25}{section.4.1}
+\contentsline {section}{\numberline {4.2}Connection}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}Perceptions}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Localization}{28}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Self Localization}{28}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Object Localization}{29}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Localization Filtering}{30}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Motion}{33}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}XML-Based Motion Files}{34}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}XML-Based Motion Controller}{35}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Text-Based Motion Files}{37}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Text-Based Motion Controller}{38}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}Dynamic Motion Elements}{39}{subsection.4.5.5}
+\contentsline {section}{\numberline {4.6}Actions}{40}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Basic Actions}{40}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Complex Actions}{42}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Communication}{48}{section.4.7}
+\contentsline {chapter}{\numberline {5}Team Coordination}{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}Coordination Protocol}{51}{section.5.1}
+\contentsline {section}{\numberline {5.2}Coordination Modes}{54}{section.5.2}
+\contentsline {section}{\numberline {5.3}Coordination and Communication}{55}{section.5.3}
+\contentsline {section}{\numberline {5.4}Coordination Beliefs Update}{58}{section.5.4}
+\contentsline {section}{\numberline {5.5}Determination of Coordination Subsets}{60}{section.5.5}
+\contentsline {section}{\numberline {5.6}Soccer Field Utility Fuction}{61}{section.5.6}
+\contentsline {section}{\numberline {5.7}Determination of Active Positions}{62}{section.5.7}
+\contentsline {section}{\numberline {5.8}Active Players Coordination}{64}{section.5.8}
+\contentsline {section}{\numberline {5.9}Team Formation Generation}{67}{section.5.9}
+\contentsline {section}{\numberline {5.10}Team Roles Assignment}{72}{section.5.10}
+\contentsline {section}{\numberline {5.11}Determination of Support Positions}{73}{section.5.11}
+\contentsline {section}{\numberline {5.12}Support Players Coordination}{74}{section.5.12}
+\contentsline {section}{\numberline {5.13}Goalkeeper Behavior}{77}{section.5.13}
+\contentsline {chapter}{\numberline {6}Results}{81}{chapter.6}
+\contentsline {section}{\numberline {6.1}Motion}{81}{section.6.1}
+\contentsline {section}{\numberline {6.2}Communication}{82}{section.6.2}
+\contentsline {section}{\numberline {6.3}Goalkeeper}{83}{section.6.3}
+\contentsline {section}{\numberline {6.4}Coordination}{83}{section.6.4}
+\contentsline {section}{\numberline {6.5}Games}{90}{section.6.5}
+\contentsline {chapter}{\numberline {7}Related Work}{93}{chapter.7}
+\contentsline {section}{\numberline {7.1}UT Austin Villa}{93}{section.7.1}
+\contentsline {section}{\numberline {7.2}BeeStanbul}{94}{section.7.2}
+\contentsline {section}{\numberline {7.3}FUT-K\_3D}{95}{section.7.3}
+\contentsline {section}{\numberline {7.4}Farzanegan}{95}{section.7.4}
+\contentsline {chapter}{\numberline {8}Conclusion}{97}{chapter.8}
+\contentsline {section}{\numberline {8.1}Future Work}{97}{section.8.1}
+\contentsline {chapter}{References}{100}{chapter*.45}
