@@ -40,13 +40,10 @@ Professor Minos Garofalakis (ECE)\\
   \frame
   {
     \frametitle{Abstract}
-    In this thesis we present...
+    This thesis presents a complete team design for the RoboCup 3D Simulation League focusing on player behavior, team strategy, and team coordination. Our agents are designed in a way that enables them to act effectively both autonomously and as members of the team.
 
   }  
-  
-  
-  
-  \section{Outline}
+
 
   \frame
   {
@@ -55,61 +52,111 @@ Professor Minos Garofalakis (ECE)\\
     \tableofcontents
   }
 
-  \section{Background}
+ \section{Background}
 
  \subsection*{RoboCup}
   \frame
   {
     \frametitle{Robocup Competition}
-    RoboCup is an international robotics competition founded in 1997. The official goal of the project is stated as an ambitious endeavor: ``By the year 2050, a team of fully autonomous humanoid robot soccer players shall win the soccer game, complying with the official rule of the FIFA, against the winner of the most recent World Cup''.
+    \begin{itemize}[<+->]
+    	\item RoboCup is an international robotics competition.
+        \item Founded in 1997.
+        \item The official goal of the project is stated as an ambitious endeavor: ``By the year 2050, a team of fully autonomous humanoid robot soccer players shall win the soccer game, complying with the official rule of the FIFA, against the winner of the most recent World Cup''.
+     \end{itemize}
 
   }
   
+  \subsection*{RoboCup Leagues}
+   
   \frame
   {
-    \frametitle{Robocup Leagues}
-   	\begin{description}
-   	\item[Soccer] Popular, well-known Rules, cooperative multi-agent systems in dynamic adversarial environments.
-   	\item[Rescue] Prompt support for planning disaster mitigation, search and rescue.
-   	\item[@Home] Aims to develop service and assistive robot technology with high relevance for future personal domestic applications.
-   	\item[Junior] It is designed to introduce RoboCup to primary and secondary school children
-   	\end{description}
-
-  }
-
-
-  \subsection*{RoboCup Simulation Soccer}
-  \frame
-  {
-    \frametitle{Soccer Simulation League}
-    One of the oldest leagues in RoboCup's Soccer. The Simulation League focus on artificial 				intelligence and team strategy. Independently moving software players (agents) play soccer on a 	virtual field inside a computer. There are two sub-leagues: 2D and 3D.
-    
-
-  }
-  
-  \frame
-  {
-    \frametitle{2D vs 3D}
-    \begin{figure}[t!] 
+    \frametitle{Soccer}
+    Standard Platform League
+    \begin{itemize}
+    	\item Same robot platform
+     \end{itemize}
+   	\begin{figure}[t!] 
 \centering
-    \includegraphics[height=3.5cm]{figures/2D.jpg}\	
-    \includegraphics[height=3.5cm]{figures/3d.png}
+    \includegraphics[width=0.6\textwidth]{Chapter1/figures/spl.jpg}
 \end{figure}
+   	
+
+  }  
+  
+  \frame
+  {
+    \frametitle{Soccer}
+    Humanoid League
+   	\begin{figure}[t!] 
+\centering
+    \includegraphics[height=3cm]{Chapter1/figures/kid2011.jpg}\ 
+    \includegraphics[height=3cm]{Chapter1/figures/teen2011.jpg}\ 
+    \includegraphics[height=3cm]{Chapter1/figures/adult2011.jpg}
+\end{figure}
+   	
+
+  }
+  
+  \frame
+  {
+    \frametitle{Rescue}
+\begin{figure}[t!]
+\centering
+  \includegraphics[width=0.6\textwidth]{Chapter1/figures/rescue.jpg}
+\end{figure}
+   	
+
+  }
+  
+  
+  \frame
+  {
+    \frametitle{@Home}
+\begin{figure}[t!]
+\centering
+  \includegraphics[width=0.6\textwidth]{Chapter1/figures/RoboCup@Home.jpg}
+\end{figure}
+   	
+
+  }
+  
+
+
+  \subsection*{RoboCup Simulation League}
+  \frame
+  {
+    \frametitle{Simulation League}
+     \begin{itemize}[<+->]
+    	\item One of the oldest leagues in RoboCup Soccer.
+        \item Independently moving software players (agents).
+        \item virtual field inside a computer.
+        \item 2D League, 3D League.
+     \end{itemize}
     
 
   }
   
-  \subsection*{RoboCup 3D Simulation Soccer}
+  \frame
+  {
+    \frametitle{Simulation League 2D vs 3D}   
+   	\begin{figure}[t!] 
+\centering
+    \includegraphics[height=3.5cm]{Chapter1/figures/2D.jpg}\	
+    \includegraphics[height=3.5cm]{Chapter1/figures/3d.png}
+\end{figure}
+   	
+
+  } 
+  
+  \subsection*{Simulation League 3D}
   \frame
   {
     \frametitle{3D Simulation Soccer}
-    \begin{itemize}
-    \item At its beginning, the only available robot model was a spherical agent.
-    \item In 2006, a simple model of the Fujitsu HOAP-2 robot was made available, being the first time that humanoid models were used in the simulation league.
-    \item In 2008, the introduction of a Nao robot model to the simulation gave another perspective to the league. 
-    
-    \item \textbf{SimSpark} is used as the official Robocup
-3D simulator.
+    \begin{itemize}[<+->]
+    \item At its beginning, spherical agent.
+    \item In 2006, Fujitsu HOAP-2 robot.
+    \item In 2008, Nao robot model.   
+    \item \textbf{SimSpark} is used as the official Robocup 3D simulator.
     \end{itemize}
          
   }
@@ -117,12 +164,10 @@ Professor Minos Garofalakis (ECE)\\
   \frame
   {
     \frametitle{SimSpark}
-    \begin{itemize}
-    \item \textbf{SimSpark} is a generic physics simulator system for multiple agents in three-dimensional
-	environments.
-
-	\item \textit{Rcssserver3d} is the official competition environment for the RoboCup 3D Simulation League. It implements a simulated soccer environment, whereby two teams of up to
-	nine, and in the latest version up to eleven, humanoid robots play against each other.
+    \begin{itemize}[<+->]
+    \item \textbf{SimSpark} is a generic physics simulator system.
+    \item Multiple agents in three-dimensional environment.
+	\item \textit{Rcssserver3d} is the official competition environment for the RoboCup 3D Simulation League.
 
     \end{itemize}
          
@@ -131,7 +176,7 @@ Professor Minos Garofalakis (ECE)\\
   \frame
   {
     \frametitle{Server's Versions}
-    \begin{itemize}
+    \begin{itemize}[<+->]
     \item Version 0.6.5
     \begin{description}
     \item[Players] 9
@@ -154,7 +199,7 @@ Professor Minos Garofalakis (ECE)\\
     \frametitle{Soccer Field}
     \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.8\textwidth]{figures/SoccerSimulation_FieldPlan.png}
+  \includegraphics[width=0.8\textwidth]{Chapter2/figures/SoccerSimulation_FieldPlan.png}
 \end{figure}
          
   }
@@ -165,8 +210,8 @@ Professor Minos Garofalakis (ECE)\\
     The Nao humanoid robot manufactured by Aldebaran Robotics. Its height is about 57cm and its 			weight is around 4.5kg. The simulated model comes with 22 degrees of freedom.
     \begin{figure}
 \centering
-  \includegraphics[trim=7cm 0cm 0cm 0cm, clip, width=0.4\textwidth]{figures/629px-Models-nao.jpg}
-  \includegraphics[width=0.4\textwidth]{figures/RealNao.jpg}
+  \includegraphics[trim=7cm 0cm 0cm 0cm, clip, width=0.4\textwidth]{Chapter2/figures/629px-Models-nao.jpg}
+  \includegraphics[width=0.4\textwidth]{Chapter2/figures/RealNao.jpg}
 \end{figure}
 
    
@@ -175,262 +220,93 @@ Professor Minos Garofalakis (ECE)\\
   \frame
   {
     \frametitle{Server}
-    The SimSpark server hosts the process that manages and advances the simulation. The
-	simulation state is constantly modified through the simulation update loop. Each simulation 			step corresponds to 20ms of simulated time.
+    The SimSpark server hosts the process that manages and advances the simulation.
+    \begin{itemize}[<+->]
+	\item Simulation Cycle, 20ms
+	\item Sense
+	\item Think
+	\item Act
+    \end{itemize}
 	\begin{figure}[t!]
 	\centering
-  		\includegraphics[width=0.6\textwidth]														{figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png}
+  		\includegraphics[width=0.6\textwidth]														{Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png}
 	\end{figure}
      
   }
   
-  
-  
-  \frame
-  {
-    \frametitle{Monitor}
-    \begin{itemize}
-    \item SimSpark Monitor
-    \begin{itemize}
-    \item Responsible for rendering the current simulation
-    \item Default SimSpark monitor
-	\end{itemize}    
 
-    \item RoboViz Monitor 
-	\begin{itemize}
-    \item Designed to assess and debug agent behaviors in the RoboCup 3D
-Simulation League
-    \item Allow drawing
-    \item Official monitor of the RoboCup 3D simulation Soccer League
-	\end{itemize}     
-    \end{itemize}
-    
-     
-  }
-  
-  \frame
-  {
-    \frametitle{Monitors Comparison}
-    \begin{figure} 
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{figures/RobovizMonitor.png}\	
-    \includegraphics[width=0.45\textwidth]{figures/SimSparkMonitor.png}
-  \end{center}
-\end{figure}
-    
-     
-  }
-  
-
-  \begin{frame}[allowframebreaks]
+  \begin{frame}
   \frametitle{Agent Perceptors}
 Perceptors are the senses of an agent, allowing awareness of the agent's model state and the environment.  
   
-    \begin{description}
-    \item[HingeJoint Perceptor] A hinge joint perceptor receives information about the angle of
-the corresponding single-axis hinge joint.
-\begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(HJ (n <name>) (ax <ax>))}
-  \item[{\bf Frequency:}]
-  Every cycle
-  \end{description}
+    \begin{itemize}[<+->]
+    \item HingeJoint Perceptor
 
-    \item[ForceResistance Perceptor] This perceptor informs about the force that acts on a
-body.
-\begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(FRP (n <name>) (c <px> <py> <pz>) (f <fx> <fy> <fz>))}
-  \item[{\bf Frequency:}]Only in cycles where a body collision occurs
-  \end{description}
+    \item ForceResistance Perceptor
 
-    \item[GyroRate Perceptor] The gyro-rate perceptor delivers information about the change
-in orientation of a body.
-\begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(GYR (n <name>) (rt <x> <y> <z>))}
-  \item[{\bf Frequency:}]
-  Every cycle
-  \end{description}
+    \item GyroRate Perceptor
 
-    \item[Accelerometer Perceptor] This perceptor measures the proper acceleration a body ex-
-periences relative to free fall.
-\begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(ACC (n <name>) (a <x> <y> <z>))}
-  \item[{\bf Frequency:}]
-  Every cycle
-  \end{description}
+    \item Accelerometer Perceptor
 
-    \item[Vision Perceptor] Vision perceptor delivers information about seen objects in the environment, where objects are either others players, the ball, field lines, or markers on the field.
-   \begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(See +(<name> (pol <d> <a1> <a2>))}\\
-  \texttt{+(P (team <name>) (id <ID>) +(<bodypart> (pol <d> <a1> <a2>)))}\\
-  \texttt{+(L (pol <d> <a1> <a2>)(pol <d> <a1> <a2>)) )}\\
-  \item[{\bf Frequency:}]
- Every third cycle (60ms)
-  \end{description}
+    \item Vision Perceptor
 
-    \item[Hear Perceptor] Hear perceptor serves as an
-aural sensor and receives messages shouted by other players.
-\begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(hear <time> self/<direction> <message>)}
-  \item[{\bf Frequency:}]
-  Only in cycles, where a message is heard
-  \end{description}
+    \item Hear Perceptor
 
-    \item[GameState Perceptor] The game state perceptor delivers information about the ac-
-tual state of the soccer game environment.
-\begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(GS (t <time>) (pm <playmode>))}
-  \item[{\bf Frequency:}]
- Every cycle
-  \end{description}
+    \item GameState Perceptor
 
-    \end{description}
+    \end{itemize}
   \end{frame}
   
-  \begin{frame}[allowframebreaks]
+  \begin{frame}
     
     \frametitle{Agent Effectors}
     Effectors allow agents to perform actions within the simulation. Agents control them by sending messages to the server and the server changes the game state accordingly.
-    
-    
-    
-    \begin{description}
-    
-    
-    \item[Create Effector]An agent uses this effector to advice the server to construct the physical representation and all further effectors and perceptors of the agent in the simulation environment according to a scene description file it passes as a parameter.
-    
-    
-    \begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(scene <filename>)}
-  \item[{\bf Frequency:}]
-  Only once
-  \end{description}
-  
-  
-    \item[HingeJoint Effector] Effector for all axes with a single degree of freedom.
-    
-    
-    \begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(<name> <ax>)}
-  \item[{\bf Frequency:}]
-  Once per cycle maximum
-  \end{description}
-  
-  
-    \item[Synchronize Effector]Agents running in Agent Sync Mode must send this command at the end of each simulation cycle.
-    
-    
-    \begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(syn)}
-  \item[{\bf Frequency:}]
-  Every cycle
-  \end{description}
-  
-  
-    \item[Init Effector]The init effector registers the agent as a member of a team with a specific player number.
-    
-    
-    \begin{description}
-  \item[{\bf Message format:}]  
-  \texttt{(init (unum <playernumber>) (teamname <teamname>) )}
-  \item[{\bf Frequency:}]
-  Only once
-  \end{description}
-  
-  
-    \item[Beam Effector]The beam effector allows a player to position itself anywhere on the field only before any kick-off.
-    
-    
-    
-    \begin{description}
-  \item[{\bf Message format:}]  
-  \texttt{(beam <x> <y> <rot>)}
-  \item[{\bf Frequency:}]
-  Once before each kick-off
-  \end{description}
-  
-  
-  
-    \item[Say Effector]The say effector permits communication among agents by broadcasting messages in plain ASCII text (20 characters maximum).
-    
-    
-    
-    \begin{description}
-  \item[{\bf Message format:}]
-  \texttt{(say <message>)}
-  \item[{\bf Frequency:}]
-  Once per cycle maximum
-  \end{description}
-    \end{description}
+
+    \begin{itemize}[<+->]
+     
+    \item Create Effector
+
+    \item HingeJoint Effector
+
+    \item Synchronize Effector
+
+    \item Init Effector
+
+    \item Beam Effector
+
+    \item Say Effector
+
+    \end{itemize}
        
      
   \end{frame}
   
+ \section{Player Skills}
 
-
-  \section{Player Skills}
-
- \subsection*{General Skills}
-
-  \frame
-  {
-    \frametitle{Architecture}
-    \begin{itemize}
-    \item Connection with Server
-    \item Update Beliefs and Sensors' Data
-    \item Localization Process
-    \item Locomotion
-    \item Actions
-    \item Agent Behavior
-    \item Communication
-    \item Team Coordination
-    \end{itemize}
-    
-
-    
-  }
-
-
-
-
+  \subsection*{Architecture}
 
  \frame
   {
-    \frametitle{Architecture}
+    \frametitle{Agents Architecture}
     
     \begin{figure}
 	\centering
- 	 \includegraphics[width=0.7\textwidth]{figures/Arch.pdf}
+ 	 \includegraphics[width=0.7\textwidth]{Chapter3/figures/Arch.pdf}
 	\end{figure}
-
     
   }
+	
 
 
+ \subsection*{General Skills}
   \frame
   {
     \frametitle{Connection}
     
-	\begin{itemize}
-    \item Agent has to be connected to the server at all times during a simulated game.
-    \pause
-    \item Agent
-receives sense messages from the server every 20ms at the beginning of each simulation
-cycle.
-
-    \pause
-    \item Agents willing
-to send action messages, can do so at the end of their think cycles, which may or may not
-coincide with the simulation cycles.
+	\begin{itemize}[<+->]
+    \item Agent connected to the server at all times during a simulated game.
+    \item Sense messages from the server every 20ms.
+    \item Action messages, at the end of their think cycles.
 
     \end{itemize}
 
@@ -440,21 +316,17 @@ coincide with the simulation cycles.
   \frame
   {
     \frametitle{Perception}
-    \begin{itemize}
-	 \item Perceptions in simulated soccer are quite different compared to those in real soccer 			games.
-    \pause
-    \item Agents do not have to process raw data coming directly from sensors, but rather listen
-	to sensor and higher-level observation messages sent by the server at each cycle.
-	\pause
+    \begin{itemize}[<+->]
+	\item Different from real robot soccer games.
+    \item No raw data.
+    \item Perceptor Messages.
     \item Agents update their beliefs and store sensors' data parsing these messages.
  	\end{itemize}
-
-
-    
+  
   }
   
   \begin{frame}[fragile]
-  \frametitle{Sense Message Example}
+  \frametitle{Perception Message Example}
   \begin{footnotesize}
   \begin{verbatim}(time (now 46.20))(GS (t 0.00) (pm BeforeKickOff))(GYR (n torso)
 (rt 0.00 0.00 0.00))(ACC (n torso) (a 0.00 -0.00 9.81))(HJ (n hj
@@ -477,18 +349,14 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   {
     \frametitle{Self-Localization}
     
-	\begin{itemize}
-	\item Localization is executed every three cycles (60ms).
-    \pause
+	\begin{itemize}[<+->]
+	\item Executed every three cycles (60ms).
     \item Localization uses the eight visible landmarks into the field.
     \begin{itemize}
-    \item G1R, G2R
-    \item G1L, G2L
-    \item F1R, F2R
-    \item F1L, F2L
+    \item G1R, G2R, G1L, G2L
+    \item F1R, F2R, F1L, F2L
     \end{itemize}
-	\pause
-    \item A key restrictive factor is that the agents are equipped with a restricted vision 				perceptor which limits the field of their view to 120 degrees.
+    \item Limited field of view (120 Degrees).
 
  	\end{itemize}
 
@@ -497,11 +365,11 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
 
   \frame
   {
-    \frametitle{Simulated Nao's Field of View}
+    \frametitle{Simulated Nao's Restricted Field of View}
 
    \begin{figure}
 	\centering
-  	\includegraphics[width=0.8\textwidth]{figures/LViewAngle.pdf} 		
+  	\includegraphics[width=0.8\textwidth]{Chapter3/figures/LViewAngle.pdf} 		
 	\end{figure}
     
   }
@@ -512,7 +380,7 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
     \frametitle{Self-Localization Technique}
 	\begin{figure}
 	\centering
-  	\includegraphics[width=0.8\textwidth]{figures/Localization.pdf}
+  	\includegraphics[width=0.8\textwidth]{Chapter3/figures/Localization.pdf}
 	\end{figure}
    
     
@@ -520,24 +388,12 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   
   \frame
   {
-    \frametitle{Object Localization}
-	\begin{itemize}
-	\item Computing the position of other visible objects.
-	\pause
-	\begin{itemize}
-	\item Other Players
-	\item Ball
-	\end{itemize}
-	\pause
-    \item Information about Visible Objects
-    \pause
-    \begin{itemize}
-	\item Distance
-	\item Horizontal, Vertical Angles
-	\end{itemize}
-	\pause
-	\item Enough information to compute those objects' positions if we know our exact position.
- 	\end{itemize}
+    \frametitle{Localization Results}
+	\begin{figure}[t!]
+\centering
+  \includegraphics[width=0.8\textwidth]{Chapter3/figures/LocalizationResults.pdf}
+ 
+\end{figure}
    
     
   }

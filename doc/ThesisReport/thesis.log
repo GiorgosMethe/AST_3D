@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  22 AUG 2012 17:25
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  22 AUG 2012 21:48
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -938,40 +938,40 @@ File: ThesisFigs/TUClogocolor.jpg Graphic file (type jpg)
 
 
 ]) (./thesis.toc
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 20.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 12.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 20.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 12.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 20.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 12.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 20.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 12.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 20.
+(Font)              <12> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 20.
+(Font)              <8> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 20.
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+(Font)              <6> on input line 12.
+LaTeX Font Info:    Try loading font information for U+msa on input line 12.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -2421,11 +2421,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  15541 strings out of 494985
  256481 string characters out of 1181034
- 348298 words of memory out of 3000000
+ 349298 words of memory out of 3000000
  17797 multiletter control sequences out of 15000+50000
  116310 words of font info for 85 fonts, out of 3000000 for 9000
  73 hyphenation exceptions out of 8191
- 45i,13n,70p,3332b,906s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,13n,70p,2442b,906s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -2454,7 +2454,7 @@ fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></u
 sr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (120 pages, 32986446 bytes).
+Output written on thesis.pdf (120 pages, 32986143 bytes).
 PDF statistics:
  2480 PDF objects out of 2487 (max. 8388607)
  343 named destinations out of 1000 (max. 500000)

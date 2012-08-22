@@ -1,7 +1,6 @@
-\beamer@endinputifotherversion {3.10pt}
-\beamer@sectionintoc {1}{Outline}{3}{0}{1}
-\beamer@sectionintoc {2}{Background}{4}{0}{2}
-\beamer@sectionintoc {3}{Player Skills}{22}{0}{3}
-\beamer@sectionintoc {4}{Team Coordination}{70}{0}{4}
-\beamer@sectionintoc {5}{Results}{104}{0}{5}
-\beamer@sectionintoc {6}{Conclusion}{109}{0}{6}
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {1}{Background}{4}{0}{1}
+\beamer@sectionintoc {2}{Player Skills}{50}{0}{2}
+\beamer@sectionintoc {3}{Team Coordination}{93}{0}{3}
+\beamer@sectionintoc {4}{Results}{127}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{132}{0}{5}

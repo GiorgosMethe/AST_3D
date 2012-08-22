@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.27)  19 AUG 2012 16:45
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  22 AUG 2012 21:43
 entering extended mode
  %&-line parsing enabled.
 **Presentation.tex
@@ -8,18 +8,18 @@ Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, ibycus, monogreek, greek, ancientgreek, loaded.
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
-Package: beamerbasercs 2010/06/12 (rcs-revision c3821710bb40)
+Package: beamerbasercs 2007/01/28 (rcs-revision 1.4)
 )
-Document Class: beamer 2010/06/21 development version 3.10 A class for typesett
-ing presentations (rcs-revision a6b1a8434d30)
+Document Class: beamer 2007/03/11 cvs version 3.07 A class for typesetting pres
+entations (rcs-revision 1.70)
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasemodes.sty
-Package: beamerbasemodes 2010/05/01 (rcs-revision efa082c6111d)
+Package: beamerbasemodes 2007/01/28 (rcs-revision 1.22)
 \beamer@tempbox=\box26
 \beamer@tempcount=\count79
 \c@beamerpauses=\count80
 
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasedecode.sty
-Package: beamerbasedecode 2010/05/01 (rcs-revision efa082c6111d)
+Package: beamerbasedecode 2007/01/28 (rcs-revision 1.20)
 \beamer@slideinframe=\count81
 \beamer@minimum=\count82
 )
@@ -70,39 +70,12 @@ Package: beamerbasedecode 2010/05/01 (rcs-revision efa082c6111d)
 \beamer@tocsectionnumber=\count101
 
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseoptions.sty
-Package: beamerbaseoptions 2010/04/27 (rcs-revision 982469101dd6)
+Package: beamerbaseoptions 2007/01/28 (rcs-revision 1.8)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 ))
-\beamer@paperwidth=\skip42
-\beamer@paperheight=\skip43
-
-(/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
-Package: geometry 2008/12/21 v4.2 Page Geometry
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
-Package ifvtex Info: VTeX not detected.
-)
-\Gm@cnth=\count102
-\Gm@cntv=\count103
-\c@Gm@tempcnt=\count104
-\Gm@bindingoffset=\dimen119
-\Gm@wd@mp=\dimen120
-\Gm@odd@mp=\dimen121
-\Gm@even@mp=\dimen122
-\Gm@dimlist=\toks15
-
-(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
-(/usr/share/texmf-texlive/tex/latex/base/size11.clo
-File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
-)
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
@@ -120,65 +93,55 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count105
+\Gread@gobject=\count102
 ))
-\Gin@req@height=\dimen123
-\Gin@req@width=\dimen124
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
 )
 (/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks16
+\pgfutil@everybye=\toks15
 )
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box34
-
-(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+Package: pgfrcs 2008/02/20 v2.00 (rcs-revision 1.21)
 ))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+Package: pgfsys 2008/02/07 v2.00 (rcs-revision 1.31)
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks17
-\pgfkeys@temptoks=\toks18
-
-(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks19
-))
-\pgf@x=\dimen125
-\pgf@y=\dimen126
-\pgf@xa=\dimen127
-\pgf@ya=\dimen128
-\pgf@xb=\dimen129
-\pgf@yb=\dimen130
-\pgf@xc=\dimen131
-\pgf@yc=\dimen132
-\w@pgf@writea=\write3
-\r@pgf@reada=\read1
-\c@pgf@counta=\count106
-\c@pgf@countb=\count107
-\c@pgf@countc=\count108
-\c@pgf@countd=\count109
+\pgfkeys@pathtoks=\toks16
+\pgfkeys@temptoks=\toks17
+)
+\pgf@x=\dimen121
+\pgf@y=\dimen122
+\pgf@xa=\dimen123
+\pgf@ya=\dimen124
+\pgf@xb=\dimen125
+\pgf@yb=\dimen126
+\pgf@xc=\dimen127
+\pgf@yc=\dimen128
+\c@pgf@counta=\count103
+\c@pgf@countb=\count104
+\c@pgf@countc=\count105
+\c@pgf@countd=\count106
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+File: pgf.cfg 2008/01/13  (rcs-revision 1.6)
 )
-Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 885.
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
-File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+File: pgfsys-pdftex.def 2007/12/20  (rcs-revision 1.20)
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+File: pgfsys-common-pdf.def 2007/12/17  (rcs-revision 1.8)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count110
-\pgfsyssoftpath@bigbuffer@items=\count111
+File: pgfsyssoftpath.code.tex 2008/01/23  (rcs-revision 1.6)
+\pgfsyssoftpath@smallbuffer@items=\count107
+\pgfsyssoftpath@bigbuffer@items=\count108
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -201,112 +164,140 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+Package: pgfcore 2008/01/15 v2.00 (rcs-revision 1.6)
 
 (/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen133
-\pgfmath@count=\count112
-\pgfmath@box=\box35
-\pgfmath@toks=\toks20
-\pgfmath@stack@operand=\toks21
-\pgfmath@stack@operation=\toks22
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgfmath@box=\box34
 )
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
-(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count113
-))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@stack=\toks18
+\c@pgfmath@parsecounta=\count109
+\c@pgfmath@parsecountb=\count110
+\c@pgfmath@parsecountc=\count111
+\pgfmath@parsex=\dimen129
+)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathoperations.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathtrig.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathrnd.code.tex))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathbase.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen134
-\pgf@picmaxx=\dimen135
-\pgf@picminy=\dimen136
-\pgf@picmaxy=\dimen137
-\pgf@pathminx=\dimen138
-\pgf@pathmaxx=\dimen139
-\pgf@pathminy=\dimen140
-\pgf@pathmaxy=\dimen141
-\pgf@xx=\dimen142
-\pgf@xy=\dimen143
-\pgf@yx=\dimen144
-\pgf@yy=\dimen145
-\pgf@zx=\dimen146
-\pgf@zy=\dimen147
+File: pgfcorepoints.code.tex 2008/02/03  (rcs-revision 1.13)
+\pgf@picminx=\dimen130
+\pgf@picmaxx=\dimen131
+\pgf@picminy=\dimen132
+\pgf@picmaxy=\dimen133
+\pgf@pathminx=\dimen134
+\pgf@pathmaxx=\dimen135
+\pgf@pathminy=\dimen136
+\pgf@pathmaxy=\dimen137
+\pgf@xx=\dimen138
+\pgf@xy=\dimen139
+\pgf@yx=\dimen140
+\pgf@yy=\dimen141
+\pgf@zx=\dimen142
+\pgf@zy=\dimen143
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen148
-\pgf@path@lasty=\dimen149
+File: pgfcorepathconstruct.code.tex 2008/02/13  (rcs-revision 1.14)
+\pgf@path@lastx=\dimen144
+\pgf@path@lasty=\dimen145
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen150
-\pgf@shorten@start@additional=\dimen151
+File: pgfcorepathusage.code.tex 2008/01/23  (rcs-revision 1.11)
+\pgf@shorten@end@additional=\dimen146
+\pgf@shorten@start@additional=\dimen147
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box36
-\pgf@hbox=\box37
-\pgf@layerbox@main=\box38
-\pgf@picture@serial@count=\count114
+File: pgfcorescopes.code.tex 2008/01/15  (rcs-revision 1.26)
+\pgfpic=\box35
+\pgf@hbox=\box36
+\pgf@layerbox@main=\box37
+\pgf@picture@serial@count=\count112
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen152
+File: pgfcoregraphicstate.code.tex 2007/12/12  (rcs-revision 1.8)
+\pgflinewidth=\dimen148
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
-File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen153
-\pgf@pt@y=\dimen154
-\pgf@pt@temp=\dimen155
+File: pgfcoretransformations.code.tex 2008/02/04  (rcs-revision 1.10)
+\pgf@pt@x=\dimen149
+\pgf@pt@y=\dimen150
+\pgf@pt@temp=\dimen151
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+File: pgfcorequick.code.tex 2006/10/11  (rcs-revision 1.2)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+File: pgfcorepathprocessing.code.tex 2008/01/23  (rcs-revision 1.7)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+File: pgfcorearrows.code.tex 2007/06/07  (rcs-revision 1.8)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen156
-\pgf@sys@shading@range@num=\count115
+File: pgfcoreshade.code.tex 2007/12/10  (rcs-revision 1.9)
+\pgf@max=\dimen152
+\pgf@sys@shading@range@num=\count113
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
-
-(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box39
-))
+File: pgfcoreimage.code.tex 2008/01/15  (rcs-revision 1.1)
+\pgfexternal@startupbox=\box38
+)
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+File: pgfcorelayers.code.tex 2008/01/15  (rcs-revision 1.1)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+File: pgfcorepatterns.code.tex 2008/01/15  (rcs-revision 1.1)
 )))
-(/usr/share/texmf/tex/latex/pgf/utilities/xxcolor.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfbaseimage.sty
+
+Package pgf Warning: This package is obsolete and no longer needed on input lin
+e 13.
+
+) (/usr/share/texmf/tex/latex/pgf/utilities/xxcolor.sty
 Package: xxcolor 2003/10/24 ver 0.1
-\XC@nummixins=\count116
-\XC@countmixins=\count117
+\XC@nummixins=\count114
+\XC@countmixins=\count115
 )
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks19
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
+Package: geometry 2008/12/21 v4.2 Page Geometry
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count116
+\Gm@cntv=\count117
+\c@Gm@tempcnt=\count118
+\Gm@bindingoffset=\dimen153
+\Gm@wd@mp=\dimen154
+\Gm@odd@mp=\dimen155
+\Gm@even@mp=\dimen156
+\Gm@dimlist=\toks20
+
+(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
@@ -321,8 +312,8 @@ O)
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
 \@linkdim=\dimen157
-\Hy@linkcounter=\count118
-\Hy@pagecounter=\count119
+\Hy@linkcounter=\count119
+\Hy@pagecounter=\count120
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -390,10 +381,10 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count120
+\Fld@menulength=\count121
 \Field@Width=\dimen158
 \Fld@charsize=\dimen159
-\Field@toks=\toks23
+\Field@toks=\toks21
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -405,7 +396,9 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count121
+
+Package hyperref Warning: Option `pdfpagelabels' is turned off
+(hyperref)                because \thepage is undefined.
 
 Hyperref stopped early
 )
@@ -414,50 +407,32 @@ Hyperref stopped early
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
 \Fld@listcount=\count122
 )
-(/usr/share/texmf/tex/latex/beamer/base/beamerbaserequires.sty
-Package: beamerbaserequires 2010/05/01  (rcs-revision efa082c6111d)
-
+(/usr/share/texmf-texlive/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasecompatibility.sty
-Package: beamerbasecompatibility 2010/07/12  (rcs-revision 6648c3177e4e)
+Package: beamerbasecompatibility 2007/01/28  (rcs-revision 1.63)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasefont.sty
-Package: beamerbasefont 2010/05/10  (rcs-revision cd36e8a33c6b)
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2009/06/22 v3.00
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\@emptytoks=\toks24
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-)))
-(/usr/share/texmf/tex/latex/beamer/base/beamerbasetranslator.sty
-Package: beamerbasetranslator 2010/06/11  (rcs-revision 85fd1cc7fc42)
-
-(/usr/share/texmf/tex/latex/beamer/base/translator/translator.sty
-Package: translator 2010/06/12 ver 1.10
-
-(/usr/share/texmf/tex/latex/beamer/base/translator/translator-language-mappings
-.tex))) (/usr/share/texmf/tex/latex/beamer/base/beamerbasemisc.sty
-Package: beamerbasemisc 2010/06/06  (rcs-revision bff0a9294b45)
+Package: beamerbasefont 2007/01/28  (rcs-revision 1.16)
+)
+(/usr/share/texmf/tex/latex/beamer/base/beamerbasemisc.sty
+Package: beamerbasemisc 2007/01/28  (rcs-revision 1.24)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasetwoscreens.sty
-Package: beamerbasetwoscreens 2010/05/01  (rcs-revision efa082c6111d)
+Package: beamerbasetwoscreens 2007/01/28  (rcs-revision 1.7)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseoverlay.sty
-Package: beamerbaseoverlay 2010/05/07  (rcs-revision 5584dad462a9)
+Package: beamerbaseoverlay 2007/01/28  (rcs-revision 1.50)
 \beamer@argscount=\count123
-\beamer@lastskipcover=\skip44
+\beamer@lastskipcover=\skip42
 \beamer@trivlistdepth=\count124
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasetitle.sty
-Package: beamerbasetitle 2010/06/12  (rcs-revision 717e481ca47a)
+Package: beamerbasetitle 2007/01/28  (rcs-revision 1.25)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasesection.sty
-Package: beamerbasesection 2010/06/17  (rcs-revision e0d9401bb743)
+Package: beamerbasesection 2007/01/28  (rcs-revision 1.21)
 \c@lecture=\count125
 \c@part=\count126
 \c@section=\count127
@@ -465,61 +440,61 @@ Package: beamerbasesection 2010/06/17  (rcs-revision e0d9401bb743)
 \c@subsubsection=\count129
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseframe.sty
-Package: beamerbaseframe 2010/06/06  (rcs-revision bff0a9294b45)
-\beamer@framebox=\box40
-\beamer@frametitlebox=\box41
-\beamer@zoombox=\box42
+Package: beamerbaseframe 2007/01/28  (rcs-revision 1.60)
+\beamer@framebox=\box39
+\beamer@frametitlebox=\box40
+\beamer@zoombox=\box41
 \beamer@zoomcount=\count130
 \beamer@zoomframecount=\count131
 \beamer@frametextheight=\dimen160
 \c@subsectionslide=\count132
-\beamer@frametopskip=\skip45
-\beamer@framebottomskip=\skip46
-\beamer@frametopskipautobreak=\skip47
-\beamer@framebottomskipautobreak=\skip48
-\beamer@envbody=\toks25
+\beamer@frametopskip=\skip43
+\beamer@framebottomskip=\skip44
+\beamer@frametopskipautobreak=\skip45
+\beamer@framebottomskipautobreak=\skip46
+\beamer@envbody=\toks22
 \c@framenumber=\count133
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseverbatim.sty
-Package: beamerbaseverbatim 2010/05/01  (rcs-revision efa082c6111d)
-\beamer@verbatimfileout=\write4
+Package: beamerbaseverbatim 2007/01/28  (rcs-revision 1.8)
+\beamer@verbatimfileout=\write3
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseframesize.sty
-Package: beamerbaseframesize 2010/06/27  (rcs-revision 6baa2d92e6f1)
-\beamer@splitbox=\box43
+Package: beamerbaseframesize 2007/01/28  (rcs-revision 1.18)
+\beamer@splitbox=\box42
 \beamer@autobreakcount=\count134
 \beamer@autobreaklastheight=\dimen161
-\beamer@frametitletoks=\toks26
-\beamer@framesubtitletoks=\toks27
+\beamer@frametitletoks=\toks23
+\beamer@framesubtitletoks=\toks24
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseframecomponents.sty
-Package: beamerbaseframecomponents 2010/07/12  (rcs-revision 09e82992d9b1)
-\beamer@footins=\box44
+Package: beamerbaseframecomponents 2007/01/28  (rcs-revision 1.41)
+\beamer@footins=\box43
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasecolor.sty
-Package: beamerbasecolor 2010/06/06  (rcs-revision d1a9b48be06d)
+Package: beamerbasecolor 2007/01/28  (rcs-revision 1.42)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasenotes.sty
-Package: beamerbasenotes 2010/05/01  (rcs-revision efa082c6111d)
-\beamer@frameboxcopy=\box45
+Package: beamerbasenotes 2007/01/28  (rcs-revision 1.23)
+\beamer@frameboxcopy=\box44
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasetoc.sty
-Package: beamerbasetoc 2010/06/11  (rcs-revision 242ecaa6783b)
+Package: beamerbasetoc 2007/01/28  (rcs-revision 1.21)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasetemplates.sty
-Package: beamerbasetemplates 2010/05/01  (rcs-revision efa082c6111d)
-\beamer@sbttoks=\toks28
+Package: beamerbasetemplates 2007/01/28  (rcs-revision 1.51)
+\beamer@sbttoks=\toks25
 
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseauxtemplates.sty
-Package: beamerbaseauxtemplates 2010/05/01  (rcs-revision efa082c6111d)
+Package: beamerbaseauxtemplates 2007/01/28  (rcs-revision 1.28)
 
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseboxes.sty
-Package: beamerbaseboxes 2010/05/01  (rcs-revision efa082c6111d)
-\bmb@box=\box46
-\bmb@colorbox=\box47
-\bmb@boxshadow=\box48
-\bmb@boxshadowball=\box49
-\bmb@boxshadowballlarge=\box50
+Package: beamerbaseboxes 2007/03/11  (rcs-revision 1.32)
+\bmb@box=\box45
+\bmb@colorbox=\box46
+\bmb@boxshadow=\box47
+\bmb@boxshadowball=\box48
+\bmb@boxshadowballlarge=\box49
 \bmb@temp=\dimen162
 \bmb@dima=\dimen163
 \bmb@dimb=\dimen164
@@ -528,26 +503,30 @@ Package: beamerbaseboxes 2010/05/01  (rcs-revision efa082c6111d)
 \beamer@blockheadheight=\dimen166
 ))
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaselocalstructure.sty
-Package: beamerbaselocalstructure 2010/06/01  (rcs-revision 81f9e33f7cc2)
+Package: beamerbaselocalstructure 2007/01/28  (rcs-revision 1.53)
 
 (/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks29
+\@enLab=\toks26
 )
 \c@figure=\count135
 \c@table=\count136
-\abovecaptionskip=\skip49
-\belowcaptionskip=\skip50
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasenavigation.sty
-Package: beamerbasenavigation 2010/05/01  (rcs-revision efa082c6111d)
+Package: beamerbasenavigation 2007/01/28  (rcs-revision 1.36)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasetheorems.sty
-Package: beamerbasetheorems 2010/06/06  (rcs-revision 7e7cc5e53e9d)
+Package: beamerbasetheorems 2007/01/28  (rcs-revision 1.10)
 
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+(/usr/share/texmf-texlive/tex/latex/translator/translator.sty
+Package: translator 2007/03/11 ver 1.00
+
+(/usr/share/texmf-texlive/tex/latex/translator/translator-language-mappings.tex
+)) (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip51
+\@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
@@ -555,7 +534,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks30
+\@emptytoks=\toks27
 \ex@=\dimen167
 ))
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
@@ -575,8 +554,8 @@ LaTeX Info: Redefining \overline on input line 307.
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box51
-\strutbox@=\box52
+\Mathstrutbox@=\box50
+\strutbox@=\box51
 \big@size=\dimen169
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
@@ -585,75 +564,71 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \dotsspace@=\muskip11
 \c@parentequation=\count144
 \dspbrk@lvl=\count145
-\tag@help=\toks31
+\tag@help=\toks28
 \row@=\count146
 \column@=\count147
 \maxfields@=\count148
-\andhelp@=\toks32
+\andhelp@=\toks29
 \eqnshift@=\dimen170
 \alignsep@=\dimen171
 \tagshift@=\dimen172
 \tagwidth@=\dimen173
 \totwidth@=\dimen174
 \lineht@=\dimen175
-\@envbody=\toks33
-\multlinegap=\skip52
-\multlinetaggap=\skip53
-\mathdisplay@stack=\toks34
+\@envbody=\toks30
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
 (/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks35
-\thm@bodyfont=\toks36
-\thm@headfont=\toks37
-\thm@notefont=\toks38
-\thm@headpunct=\toks39
-\thm@preskip=\skip54
-\thm@postskip=\skip55
-\thm@headsep=\skip56
-\dth@everypar=\toks40
+\thm@style=\toks32
+\thm@bodyfont=\toks33
+\thm@headfont=\toks34
+\thm@notefont=\toks35
+\thm@headpunct=\toks36
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks37
 )
 \c@theorem=\count149
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasethemes.sty
-Package: beamerbasethemes 2010/05/01  (rcs-revision efa082c6111d)
-))
-(/usr/share/texmf/tex/latex/beamer/base/themes/theme/beamerthemedefault.sty
-Package: beamerthemedefault 2010/06/17  (rcs-revision d02a7cf4d8ae)
+Package: beamerbasethemes 2007/01/28  (rcs-revision 1.10)
+)
+(/usr/share/texmf/tex/latex/beamer/themes/theme/beamerthemedefault.sty
+Package: beamerthemedefault 2007/01/28  (rcs-revision 1.7)
 
-(/usr/share/texmf/tex/latex/beamer/base/themes/font/beamerfontthemedefault.sty
-Package: beamerfontthemedefault 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texmf/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
+Package: beamerfontthemedefault 2007/01/28  (rcs-revision 1.13)
 )
-(/usr/share/texmf/tex/latex/beamer/base/themes/color/beamercolorthemedefault.st
-y
-Package: beamercolorthemedefault 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texmf/tex/latex/beamer/themes/color/beamercolorthemedefault.sty
+Package: beamercolorthemedefault 2007/01/28  (rcs-revision 1.28)
 )
-(/usr/share/texmf/tex/latex/beamer/base/themes/inner/beamerinnerthemedefault.st
-y
-Package: beamerinnerthemedefault 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texmf/tex/latex/beamer/themes/inner/beamerinnerthemedefault.sty
+Package: beamerinnerthemedefault 2007/01/28  (rcs-revision 1.20)
 \beamer@dima=\dimen176
 \beamer@dimb=\dimen177
 )
-(/usr/share/texmf/tex/latex/beamer/base/themes/outer/beamerouterthemedefault.st
-y
-Package: beamerouterthemedefault 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texmf/tex/latex/beamer/themes/outer/beamerouterthemedefault.sty
+Package: beamerouterthemedefault 2007/01/28  (rcs-revision 1.14)
 )))
-(/usr/share/texmf/tex/latex/beamer/base/themes/theme/beamerthemeCambridgeUS.sty
-Package: beamerthemeCambridgeUS 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texmf/tex/latex/beamer/themes/theme/beamerthemeCambridgeUS.sty
+Package: beamerthemeCambridgeUS 2007/01/28  (rcs-revision 1.2)
 
-(/usr/share/texmf/tex/latex/beamer/base/themes/inner/beamerinnerthemerounded.st
-y
-Package: beamerinnerthemerounded 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/share/texmf/tex/latex/beamer/themes/inner/beamerinnerthemerounded.sty
+Package: beamerinnerthemerounded 2007/01/28  (rcs-revision 1.5)
 )
-(/usr/share/texmf/tex/latex/beamer/base/themes/outer/beamerouterthemeinfolines.
-sty
-Package: beamerouterthemeinfolines 2010/07/10  (rcs-revision 445340293dde)
+(/usr/share/texmf/tex/latex/beamer/themes/outer/beamerouterthemeinfolines.sty
+Package: beamerouterthemeinfolines 2007/01/28  (rcs-revision 1.9)
 )
-(/usr/share/texmf/tex/latex/beamer/base/themes/color/beamercolorthemebeaver.sty
-Package: beamercolorthemebeaver 2010/06/17  (rcs-revision d02a7cf4d8ae)
-)) (./StyleFiles/algorithm.sty
+(/usr/share/texmf/tex/latex/beamer/themes/color/beamercolorthemebeaver.sty
+Package: beamercolorthemebeaver 2007/01/28  (rcs-revision 1.2)
+))
+(./StyleFiles/algorithm.sty
 
 LaTeX Warning: You have requested package `StyleFiles/algorithm',
                but the package provides `algorithm'.
@@ -663,15 +638,15 @@ Document Style `algorithm' - floating environment
 (/usr/share/texmf-texlive/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count150
-\float@exts=\toks41
-\float@box=\box53
-\@float@everytoks=\toks42
-\@floatcapt=\box54
+\float@exts=\toks38
+\float@box=\box52
+\@float@everytoks=\toks39
+\@floatcapt=\box53
 )
 (/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks43
+\@float@every@algorithm=\toks40
 \c@algorithm=\count151
 )
 (./StyleFiles/algorithmic.sty
@@ -687,29 +662,29 @@ Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count153
 \calc@Adimen=\dimen178
 \calc@Bdimen=\dimen179
-\calc@Askip=\skip57
-\calc@Bskip=\skip58
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count154
-\calc@Cskip=\skip59
+\calc@Cskip=\skip57
 )
 \c@ALC@line=\count155
 \c@ALC@rem=\count156
 \c@ALC@depth=\count157
-\ALC@tlm=\skip60
-\algorithmicindent=\skip61
+\ALC@tlm=\skip58
+\algorithmicindent=\skip59
 )
 (/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip62
-\f@ncyO@elh=\skip63
-\f@ncyO@erh=\skip64
-\f@ncyO@olh=\skip65
-\f@ncyO@orh=\skip66
-\f@ncyO@elf=\skip67
-\f@ncyO@erf=\skip68
-\f@ncyO@olf=\skip69
-\f@ncyO@orf=\skip70
+\fancy@headwidth=\skip60
+\f@ncyO@elh=\skip61
+\f@ncyO@erh=\skip62
+\f@ncyO@olh=\skip63
+\f@ncyO@orh=\skip64
+\f@ncyO@elf=\skip65
+\f@ncyO@erf=\skip66
+\f@ncyO@olf=\skip67
+\f@ncyO@orf=\skip68
 )
 (/usr/share/texmf-texlive/tex/latex/amsfonts/eucal.sty
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
@@ -779,6 +754,19 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 22.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count158
+\scratchdimen=\dimen180
+\scratchbox=\box54
+\nofMPsegments=\count159
+\nofMParguments=\count160
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count161
+\MPscratchDim=\dimen181
+\MPnumerator=\count162
+\everyMPtoPDFconversion=\toks42
+)
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
 -------------------- Geometry parameters
@@ -820,21 +808,7 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count158
-\scratchdimen=\dimen180
-\scratchbox=\box55
-\nofMPsegments=\count159
-\nofMParguments=\count160
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count161
-\MPscratchDim=\dimen181
-\MPnumerator=\count162
-\everyMPtoPDFconversion=\toks45
-) ABD: EveryShipout initializing macros
 Package hyperref Info: Link coloring OFF on input line 22.
-
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -846,10 +820,10 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
  (./Presentation.out) (./Presentation.out)
-\@outlinefile=\write5
-\openout5 = `Presentation.out'.
+\@outlinefile=\write4
+\openout4 = `Presentation.out'.
 
-\AtBeginShipoutBox=\box56
+\AtBeginShipoutBox=\box55
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
@@ -893,31 +867,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 22.
 
-(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-basic-dicti
-onary/translator-basic-dictionary-English.dict
-Dictionary: translator-basic-dictionary, Language: English 
-)
-(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-bibliograph
-y-dictionary/translator-bibliography-dictionary-English.dict
-Dictionary: translator-bibliography-dictionary, Language: English 
-)
-(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-environment
--dictionary/translator-environment-dictionary-English.dict
-Dictionary: translator-environment-dictionary, Language: English 
-)
-(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-months-dict
-ionary/translator-months-dictionary-English.dict
-Dictionary: translator-months-dictionary, Language: English 
-)
-(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-numbers-dic
-tionary/translator-numbers-dictionary-English.dict
-Dictionary: translator-numbers-dictionary, Language: English 
-)
-(/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-theorem-dic
-tionary/translator-theorem-dictionary-English.dict
+(/usr/share/texmf-texlive/tex/latex/translator/translator-theorem-dictionary-En
+glish.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./Presentation.nav)
-[1
+) (./Presentation.nav) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
@@ -929,141 +882,141 @@ Dictionary: translator-theorem-dictionary, Language: English
 
 ] [6
 
-] <figures/2D.jpg, id=226, 1477.52pt x 990.70125pt>
-File: figures/2D.jpg Graphic file (type jpg)
+]
+<Chapter1/figures/spl.jpg, id=309, 800.9925pt x 532.99126pt>
+File: Chapter1/figures/spl.jpg Graphic file (type jpg)
 
-<use figures/2D.jpg> <figures/3d.png, id=227, 207.02344pt x 152.06813pt>
-File: figures/3d.png Graphic file (type png)
+<use Chapter1/figures/spl.jpg> [7
 
-<use figures/3d.png> [7
+ <./Chapter1/figures/spl.jpg>]
+<Chapter1/figures/kid2011.jpg, id=339, 192.72pt x 127.9179pt>
+File: Chapter1/figures/kid2011.jpg Graphic file (type jpg)
 
- <./figures/2D.jpg> <./figures/3d.png (PNG copy)>]
-[8
+<use Chapter1/figures/kid2011.jpg>
+<Chapter1/figures/teen2011.jpg, id=340, 192.72pt x 127.9179pt>
+File: Chapter1/figures/teen2011.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/teen2011.jpg>
+<Chapter1/figures/adult2011.jpg, id=341, 526.96875pt x 794.97pt>
+File: Chapter1/figures/adult2011.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/adult2011.jpg> [8
+
+ <./Chapter1/figures/kid2011.jpg> <./Chapter1/figures/teen2011.jpg> <./Chapter1
+/figures/adult2011.jpg>]
+<Chapter1/figures/rescue.jpg, id=368, 501.875pt x 376.40625pt>
+File: Chapter1/figures/rescue.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/rescue.jpg> [9
+
+ <./Chapter1/figures/rescue.jpg>]
+<Chapter1/figures/RoboCup@Home.jpg, id=394, 800.9925pt x 532.99126pt>
+File: Chapter1/figures/RoboCup@Home.jpg Graphic file (type jpg)
+
+<use Chapter1/figures/RoboCup@Home.jpg> [10
+
+ <./Chapter1/figures/RoboCup@Home.jpg>] [11
+
+] [12
+
+] [13
+
+] [14
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 129.
- [9
+<Chapter1/figures/2D.jpg, id=526, 1477.52pt x 990.70125pt>
+File: Chapter1/figures/2D.jpg Graphic file (type jpg)
 
-] [10
+<use Chapter1/figures/2D.jpg>
+<Chapter1/figures/3d.png, id=527, 207.02344pt x 152.06813pt>
+File: Chapter1/figures/3d.png Graphic file (type png)
 
-]
-<figures/SoccerSimulation_FieldPlan.png, id=345, 546.04pt x 377.41pt>
-File: figures/SoccerSimulation_FieldPlan.png Graphic file (type png)
+<use Chapter1/figures/3d.png> [15
 
-<use figures/SoccerSimulation_FieldPlan.png> [11
-
- <./figures/SoccerSimulation_FieldPlan.png>] <figures/629px-Models-nao.jpg, id=
-376, 875.27pt x 834.11626pt>
-File: figures/629px-Models-nao.jpg Graphic file (type jpg)
-
-<use figures/629px-Models-nao.jpg>
-<figures/RealNao.jpg, id=378, 301.125pt x 301.125pt>
-File: figures/RealNao.jpg Graphic file (type jpg)
- <use figures/RealNao.jpg>
-Overfull \vbox (3.43248pt too high) detected at line 173
- []
-
-[12
-
- <./figures/629px-Models-nao.jpg> <./figures/RealNao.jpg>]
-<figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png, id=408
-, 1371.1225pt x 484.81125pt>
-File: figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png Gr
-aphic file (type png)
-
-<use figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png>
-[13
-
- <./figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png (PNG
- copy)>] [14
-
-]
-<figures/RobovizMonitor.png, id=468, 801.99625pt x 600.2425pt>
-File: figures/RobovizMonitor.png Graphic file (type png)
-
-<use figures/RobovizMonitor.png>
-<figures/SimSparkMonitor.png, id=469, 803.0pt x 603.25375pt>
-File: figures/SimSparkMonitor.png Graphic file (type png)
-
-<use figures/SimSparkMonitor.png> [15
-
- <./figures/RobovizMonitor.png> <./figures/SimSparkMonitor.png>]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 294.
-
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [16
+ <./Chapter1/figures/2D.jpg> <./Chapter1/figures/3d.png (PNG copy)>] [16
 
 ] [17
 
-
-]
-[18
-
+] [18
 
 ] [19
 
-] [20
-
+]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 174.
+ [20
 
 ] [21
 
-
 ] [22
 
-] <figures/Arch.pdf, id=700, 506.89375pt x 418.56375pt>
-File: figures/Arch.pdf Graphic file (type pdf)
+] [23
 
-<use figures/Arch.pdf> [23
-
- <./figures/Arch.pdf>] [24
+] [24
 
 ] [25
 
-] [26
+]
+[26
 
 ] [27
 
 ] [28
 
-]
-[29
+] [29
+
+] [30
 
 ]
-\openout4 = `Presentation.vrb'.
+<Chapter2/figures/SoccerSimulation_FieldPlan.png, id=947, 546.04pt x 377.41pt>
+File: Chapter2/figures/SoccerSimulation_FieldPlan.png Graphic file (type png)
 
- (./Presentation.vrb) [30
+<use Chapter2/figures/SoccerSimulation_FieldPlan.png> [31
 
-] [31
+ <./Chapter2/figures/SoccerSimulation_FieldPlan.png>]
+<Chapter2/figures/629px-Models-nao.jpg, id=977, 875.27pt x 834.11626pt>
+File: Chapter2/figures/629px-Models-nao.jpg Graphic file (type jpg)
 
-] [32
+<use Chapter2/figures/629px-Models-nao.jpg>
+<Chapter2/figures/RealNao.jpg, id=979, 301.125pt x 301.125pt>
+File: Chapter2/figures/RealNao.jpg Graphic file (type jpg)
 
-] [33
-
-]
-
-pdfTeX warning: pdflatex (file ./figures/LViewAngle.pdf): PDF inclusion: found 
-PDF version <1.5>, but at most version <1.4> allowed
-<figures/LViewAngle.pdf, id=1015, 580.2034pt x 418.28021pt>
-File: figures/LViewAngle.pdf Graphic file (type pdf)
-
-<use figures/LViewAngle.pdf> [34
-
- <./figures/LViewAngle.pdf>]
-
-pdfTeX warning: pdflatex (file ./figures/Localization.pdf): PDF inclusion: foun
-d PDF version <1.5>, but at most version <1.4> allowed
-<figures/Localization.pdf, id=1066, 545.17943pt x 419.52026pt>
-File: figures/Localization.pdf Graphic file (type pdf)
-
-<use figures/Localization.pdf>
-Overfull \vbox (2.32193pt too high) detected at line 519
+<use Chapter2/figures/RealNao.jpg>
+Overfull \vbox (3.43248pt too high) detected at line 218
  []
 
-[35
+[32
 
- <./figures/Localization.pdf>] [36
+ <./Chapter2/figures/629px-Models-nao.jpg> <./Chapter2/figures/RealNao.jpg>]
+<Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.pn
+g, id=1007, 1371.1225pt x 484.81125pt>
+File: Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAge
+nt.png Graphic file (type png)
+
+<use Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgen
+t.png> [33
+
+ <./Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent
+.png (PNG copy)>]
+File: Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAge
+nt.png Graphic file (type png)
+
+<use Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgen
+t.png> [34
+
+]
+File: Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAge
+nt.png Graphic file (type png)
+
+<use Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgen
+t.png> [35
+
+]
+File: Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAge
+nt.png Graphic file (type png)
+
+<use Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgen
+t.png> [36
 
 ] [37
 
@@ -1079,319 +1032,371 @@ Overfull \vbox (2.32193pt too high) detected at line 519
 
 ] [43
 
+] [44
+
+] [45
+
+] [46
+
+] [47
+
+] [48
+
 ]
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 587.
+[49
 
+] <Chapter3/figures/Arch.pdf, id=1451, 506.89375pt x 418.56375pt>
+File: Chapter3/figures/Arch.pdf Graphic file (type pdf)
 
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
+<use Chapter3/figures/Arch.pdf> [50
+
+ <./Chapter3/figures/Arch.pdf>] [51
+
+]
+[52
+
+] [53
+
+] [54
+
+] [55
+
+] [56
+
+] [57
+
+]
+\openout3 = `Presentation.vrb'.
+
+ (./Presentation.vrb
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 3.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+]
+
+pdfTeX warning: pdflatex (file ./Chapter3/figures/LViewAngle.pdf): PDF inclusio
+n: found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter3/figures/LViewAngle.pdf, id=1826, 580.2034pt x 418.28021pt>
+File: Chapter3/figures/LViewAngle.pdf Graphic file (type pdf)
+
+<use Chapter3/figures/LViewAngle.pdf> [64
+
+ <./Chapter3/figures/LViewAngle.pdf>]
+
+pdfTeX warning: pdflatex (file ./Chapter3/figures/Localization.pdf): PDF inclus
+ion: found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter3/figures/Localization.pdf, id=1875, 545.17943pt x 419.52026pt>
+File: Chapter3/figures/Localization.pdf Graphic file (type pdf)
+
+<use Chapter3/figures/Localization.pdf>
+Overfull \vbox (2.32193pt too high) detected at line 387
+ []
+
+[65
+
+ <./Chapter3/figures/Localization.pdf>]
+
+pdfTeX warning: pdflatex (file ./Chapter3/figures/LocalizationResults.pdf): PDF
+ inclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter3/figures/LocalizationResults.pdf, id=1924, 580.2034pt x 418.28021pt>
+File: Chapter3/figures/LocalizationResults.pdf Graphic file (type pdf)
+
+<use Chapter3/figures/LocalizationResults.pdf> [66
+
+ <./Chapter3/figures/LocalizationResults.pdf>] [67
+
+] [68
+
+] [69
+
+]
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 443.
+
+ (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 587
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 443
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 587
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 443
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 587.
+(Font)              <9> on input line 443.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 587.
+(Font)              <6> on input line 443.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 587.
-LaTeX Font Info:    Try loading font information for U+msa on input line 587.
+(Font)              <5> on input line 443.
+LaTeX Font Info:    Try loading font information for U+msa on input line 443.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 587.
+LaTeX Font Info:    Try loading font information for U+msb on input line 443.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 587.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 443.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 587.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 443.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 587.
- [44
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 443.
+ [70
 
 ]
-<figures/Models_NaoAnatomy.png, id=1375, 511.9125pt x 682.55pt>
-File: figures/Models_NaoAnatomy.png Graphic file (type png)
 
-<use figures/Models_NaoAnatomy.png> [45
+LaTeX Warning: File `figures/Models_NaoAnatomy.png' not found on input line 460
+.
 
- <./figures/Models_NaoAnatomy.png>]
+
+! Package pdftex.def Error: File `figures/Models_NaoAnatomy.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.460   }
+         
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[71
+
+]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 615.
+(Font)              <10.95> on input line 471.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 615.
+(Font)              <8> on input line 471.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 615.
-
-[46
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 471.
+ [72
 
 ]
-\openout4 = `Presentation.vrb'.
+\openout3 = `Presentation.vrb'.
 
  (./Presentation.vrb
-<figures/MotionSequence.pdf, id=1440, 166.6225pt x 433.62pt>
-File: figures/MotionSequence.pdf Graphic file (type pdf)
 
-<use figures/MotionSequence.pdf>)
-Overfull \vbox (7.19572pt too high) detected at line 653
+LaTeX Warning: File `figures/MotionSequence.pdf' not found on input line 34.
+
+
+! Package pdftex.def Error: File `figures/MotionSequence.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 ....2\textwidth]{figures/MotionSequence.pdf}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+Overfull \vbox (7.19572pt too high) detected at line 509
  []
 
-[47
-
- <./figures/MotionSequence.pdf>] [48
-
-]
-\openout4 = `Presentation.vrb'.
-
- (./Presentation.vrb) [49
-
-] [50
-
-]
-[51
-
-] <figures/DynamicTurn.pdf, id=1584, 521.95pt x 321.2pt>
-File: figures/DynamicTurn.pdf Graphic file (type pdf)
-
-<use figures/DynamicTurn.pdf> [52
-
- <./figures/DynamicTurn.pdf>] [53
-
-] [54
-
-]
-[55
-
-
-] [56
-
-
-] [57
-
-
-]
-
-pdfTeX warning: pdflatex (file ./figures/ObstacleAvoidance.pdf): PDF inclusion:
- found PDF version <1.5>, but at most version <1.4> allowed
-<figures/ObstacleAvoidance.pdf, id=1758, 519.83308pt x 434.77179pt>
-File: figures/ObstacleAvoidance.pdf Graphic file (type pdf)
-
-<use figures/ObstacleAvoidance.pdf>
-
-pdfTeX warning: pdflatex (file ./figures/2dkinematics.pdf): PDF inclusion: foun
-d PDF version <1.5>, but at most version <1.4> allowed
-<figures/2dkinematics.pdf, id=1760, 622.325pt x 499.466pt>
-File: figures/2dkinematics.pdf Graphic file (type pdf)
-
-<use figures/2dkinematics.pdf>
-
-pdfTeX warning: pdflatex (file ./figures/GoToPos.pdf): PDF inclusion: found PDF
- version <1.5>, but at most version <1.4> allowed
-<figures/GoToPos.pdf, id=1763, 580.2034pt x 418.28021pt>
-File: figures/GoToPos.pdf Graphic file (type pdf)
-
-<use figures/GoToPos.pdf> [58
-
-] [59
-
-
- <./figures/ObstacleAvoidance.pdf>] [60
-
-
-]
-[61
-
-
-] [62
-
-
- <./figures/2dkinematics.pdf>] [63
-
-
-] [64
-
-
- <./figures/GoToPos.pdf>]
-[65
-
-
-] [66
-
-
-] <figures/MAC.pdf, id=2089, 475.7775pt x 91.34125pt>
-File: figures/MAC.pdf Graphic file (type pdf)
-
-<use figures/MAC.pdf> [67
-
-] [68
-
-
- <./figures/MAC.pdf>] [69
-
-
-] [70
-
-] [71
-
-
-] [72
-
-
-]
 [73
 
+] [74
 
 ]
+\openout3 = `Presentation.vrb'.
 
-pdfTeX warning: pdflatex (file ./figures/CoordComm.pdf): PDF inclusion: found P
-DF version <1.5>, but at most version <1.4> allowed
-<figures/CoordComm.pdf, id=2297, 369.7395pt x 366.54305pt>
-File: figures/CoordComm.pdf Graphic file (type pdf)
-
-<use figures/CoordComm.pdf> [74
-
-] [75
-
+ (./Presentation.vrb) [75
 
 ] [76
 
-
 ] [77
 
+]
 
-] [78
+LaTeX Warning: File `figures/DynamicTurn.pdf' not found on input line 590.
 
+
+! Package pdftex.def Error: File `figures/DynamicTurn.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.590   }
+         
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \vbox (99.83755pt too high) detected at line 590
+ []
+
+[78
 
 ] [79
 
-
 ] [80
 
+] [81
 
- <./figures/CoordComm.pdf>] [81
 
 ] [82
+
 
 ] [83
 
 
-] [84
+]
+
+LaTeX Warning: File `figures/ObstacleAvoidance.pdf' not found on input line 720
+.
+
+
+! Package pdftex.def Error: File `figures/ObstacleAvoidance.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.720   \end{frame}
+                   
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/2dkinematics.pdf' not found on input line 720.
+
+
+! Package pdftex.def Error: File `figures/2dkinematics.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.720   \end{frame}
+                   
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/GoToPos.pdf' not found on input line 720.
+
+
+! Package pdftex.def Error: File `figures/GoToPos.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.720   \end{frame}
+                   
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[84
 
 ] [85
 
-]
 
-pdfTeX warning: pdflatex (file ./figures/Splitter.pdf): PDF inclusion: found PD
-F version <1.5>, but at most version <1.4> allowed
-<figures/Splitter.pdf, id=2780, 580.2034pt x 524.21819pt>
-File: figures/Splitter.pdf Graphic file (type pdf)
+] [86
 
-<use figures/Splitter.pdf> [86
 
 ] [87
 
 
- <./figures/Splitter.pdf>]
-<figures/Graph1.pdf, id=2857, 1219.55624pt x 701.62125pt>
-File: figures/Graph1.pdf Graphic file (type pdf)
+]
+Overfull \vbox (2992.53232pt too high) detected at line 720
+ []
 
-<use figures/Graph1.pdf> [88
+[88
 
- <./figures/Graph1.pdf>] [89
 
 ]
-<figures/ActivePositions2.png, id=2978, 851.18pt x 902.37125pt>
-File: figures/ActivePositions2.png Graphic file (type png)
 
-<use figures/ActivePositions2.png>
-<figures/Active3.png, id=2979, 922.44624pt x 831.105pt>
-File: figures/Active3.png Graphic file (type png)
+LaTeX Warning: File `figures/MAC.pdf' not found on input line 748.
 
-<use figures/Active3.png> [90
+
+! Package pdftex.def Error: File `figures/MAC.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.748   \end{frame}
+                   
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[89
+
+] [90
+
 
 ] [91
 
 
- <./figures/ActivePositions2.png (PNG copy)> <./figures/Active3.png (PNG copy)>
-]
+] [92
 
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1217.
-
-[92
 
 ] [93
 
 ] [94
 
 
+] [95
+
+
+] [96
+
+
 ]
 
-pdfTeX warning: pdflatex (file ./figures/Formation9_0.pdf): PDF inclusion: foun
-d PDF version <1.5>, but at most version <1.4> allowed
-<figures/Formation9_0.pdf, id=3120, 580.14201pt x 453.95424pt>
-File: figures/Formation9_0.pdf Graphic file (type pdf)
-
-<use figures/Formation9_0.pdf> [95
-
- <./figures/Formation9_0.pdf>]
-
-pdfTeX warning: pdflatex (file ./figures/Formation11_0.pdf): PDF inclusion: fou
-nd PDF version <1.5>, but at most version <1.4> allowed
-<figures/Formation11_0.pdf, id=3155, 580.2034pt x 473.63727pt>
-File: figures/Formation11_0.pdf Graphic file (type pdf)
-
-<use figures/Formation11_0.pdf> [96
-
- <./figures/Formation11_0.pdf>]
-
-pdfTeX warning: pdflatex (file ./figures/RoleAss.pdf): PDF inclusion: found PDF
- version <1.5>, but at most version <1.4> allowed
-<figures/RoleAss.pdf, id=3187, 580.2034pt x 539.10118pt>
-File: figures/RoleAss.pdf Graphic file (type pdf)
-
-<use figures/RoleAss.pdf>
-
-pdfTeX warning: pdflatex (file ./figures/SupportPos.pdf): PDF inclusion: found 
-PDF version <1.5>, but at most version <1.4> allowed
-<figures/SupportPos.pdf, id=3189, 580.2034pt x 512.6133pt>
-File: figures/SupportPos.pdf Graphic file (type pdf)
-
-<use figures/SupportPos.pdf> [97
-
-]
-Overfull \vbox (231.93076pt too high) detected at line 1286
- []
-
-[98
+LaTeX Warning: File `figures/CoordComm.pdf' not found on input line 899.
 
 
- <./figures/RoleAss.pdf> <./figures/SupportPos.pdf>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 1368.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1368.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1368.
+! Package pdftex.def Error: File `figures/CoordComm.pdf' not found.
 
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1368.
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.899   \end{frame}
+                   
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
- [99
+[97
+
+] [98
+
+
+] [99
+
 
 ] [100
 
@@ -1399,11 +1404,11 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
 ] [101
 
 
-]
-[102
+] [102
 
 
 ] [103
+
 
 ] [104
 
@@ -1411,33 +1416,256 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
 
 ] [106
 
+
 ] [107
 
 ] [108
 
-] [109
+]
+
+LaTeX Warning: File `figures/Splitter.pdf' not found on input line 1004.
+
+
+! Package pdftex.def Error: File `figures/Splitter.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1004   \end{frame}
+                    
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[109
 
 ] [110
 
+
 ]
-\tf@nav=\write6
-\openout6 = `Presentation.nav'.
 
-\tf@toc=\write7
-\openout7 = `Presentation.toc'.
+LaTeX Warning: File `figures/Graph1.pdf' not found on input line 1017.
 
-\tf@snm=\write8
-\openout8 = `Presentation.snm'.
+
+! Package pdftex.def Error: File `figures/Graph1.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1017   }
+          
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \vbox (133.98492pt too high) detected at line 1017
+ []
+
+[111
+
+] [112
+
+]
+
+LaTeX Warning: File `figures/ActivePositions2.png' not found on input line 1062
+.
+
+
+! Package pdftex.def Error: File `figures/ActivePositions2.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1062   \end{frame}
+                    
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/Active3.png' not found on input line 1062.
+
+
+! Package pdftex.def Error: File `figures/Active3.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1062   \end{frame}
+                    
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[113
+
+] [114
+
+
+]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 1073.
+
+[115
+
+] [116
+
+] [117
+
+
+]
+
+LaTeX Warning: File `figures/Formation9_0.pdf' not found on input line 1105.
+
+
+! Package pdftex.def Error: File `figures/Formation9_0.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1105   }
+          
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \vbox (31.21501pt too high) detected at line 1105
+ []
+
+[118
+
+]
+
+LaTeX Warning: File `figures/Formation11_0.pdf' not found on input line 1115.
+
+
+! Package pdftex.def Error: File `figures/Formation11_0.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1115   }
+          
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \vbox (31.21501pt too high) detected at line 1115
+ []
+
+[119
+
+]
+
+LaTeX Warning: File `figures/RoleAss.pdf' not found on input line 1142.
+
+
+! Package pdftex.def Error: File `figures/RoleAss.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1142   	\end{frame}
+                     
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/SupportPos.pdf' not found on input line 1142.
+
+
+! Package pdftex.def Error: File `figures/SupportPos.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1142   	\end{frame}
+                     
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[120
+
+]
+Overfull \vbox (276.8343pt too high) detected at line 1142
+ []
+
+[121
+
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 1224.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1224.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1224.
+
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1224.
+
+ [122
+
+] [123
+
+
+] [124
+
+
+] [125
+
+
+] [126
+
+] [127
+
+] [128
+
+] [129
+
+] [130
+
+] [131
+
+] [132
+
+]
+[133
+
+]
+\tf@nav=\write5
+\openout5 = `Presentation.nav'.
+
+\tf@toc=\write6
+\openout6 = `Presentation.toc'.
+
+\tf@snm=\write7
+\openout7 = `Presentation.snm'.
 
  (./Presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 16206 strings out of 494985
- 296610 string characters out of 1181034
- 359412 words of memory out of 3000000
- 18654 multiletter control sequences out of 15000+50000
+ 14271 strings out of 494985
+ 246962 string characters out of 1181034
+ 326435 words of memory out of 3000000
+ 16712 multiletter control sequences out of 15000+50000
  79482 words of font info for 78 fonts, out of 3000000 for 9000
  73 hyphenation exceptions out of 8191
- 49i,17n,60p,892b,804s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,16n,60p,892b,806s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr
 /share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/te
@@ -1458,9 +1686,9 @@ e1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on Presentation.pdf (110 pages, 7024080 bytes).
+Output written on Presentation.pdf (133 pages, 2635840 bytes).
 PDF statistics:
- 4047 PDF objects out of 4296 (max. 8388607)
- 251 named destinations out of 1000 (max. 500000)
- 270 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3896 PDF objects out of 4296 (max. 8388607)
+ 298 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
