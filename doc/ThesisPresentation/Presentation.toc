@@ -1,6 +1,12 @@
 \beamer@endinputifotherversion {3.07pt}
+\select@language {greek}
+\select@language {english}
 \beamer@sectionintoc {1}{Background}{4}{0}{1}
-\beamer@sectionintoc {2}{Player Skills}{50}{0}{2}
-\beamer@sectionintoc {3}{Team Coordination}{93}{0}{3}
-\beamer@sectionintoc {4}{Results}{127}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{132}{0}{5}
+\beamer@sectionintoc {2}{Player Skills}{43}{0}{2}
+\beamer@sectionintoc {3}{Team Coordination}{108}{0}{3}
+\beamer@sectionintoc {4}{Results}{179}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{190}{0}{5}
+\select@language {greek}
+\select@language {english}
+\select@language {greek}
+\select@language {english}
