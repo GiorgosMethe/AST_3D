@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  22 AUG 2012 22:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  23 AUG 2012 20:22
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -2454,7 +2454,7 @@ fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></u
 sr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (120 pages, 32986140 bytes).
+Output written on thesis.pdf (120 pages, 32985868 bytes).
 PDF statistics:
  2480 PDF objects out of 2487 (max. 8388607)
  343 named destinations out of 1000 (max. 500000)

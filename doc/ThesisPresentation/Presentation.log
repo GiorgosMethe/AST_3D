@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  23 AUG 2012 13:21
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.16)  23 AUG 2012 20:20
 entering extended mode
  %&-line parsing enabled.
 **Presentation.tex
@@ -970,23 +970,23 @@ File: lgrcmr.fd 2008/01/04 v1.0 Greek Computer Modern
 ))
 \openout1 = `Presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 45.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1045,7 +1045,7 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-Package hyperref Info: Link coloring OFF on input line 34.
+Package hyperref Info: Link coloring OFF on input line 45.
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -1054,849 +1054,714 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count228
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
  (./Presentation.out) (./Presentation.out)
 \@outlinefile=\write5
 \openout5 = `Presentation.out'.
 
 \AtBeginShipoutBox=\box59
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 34.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 45.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 34.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 45.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+(Font)                  OT1/cmss/m/n --> T1/lmr/m/n on input line 45.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 34.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 34.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 45.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 34.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 34.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 45.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 34.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 34.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 45.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 34.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 34.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 45.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 34.
+(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 34.
+(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/lmr/bx/n on input line 34.
+(Font)                  OT1/cmss/bx/n --> T1/lmr/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/bx/n --> T1/lmss/bx/n on input line 34.
+(Font)                  T1/lmss/bx/n --> T1/lmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 34.
+(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 34.
+(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 34.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 45.
 
 (/usr/share/texmf-texlive/tex/latex/translator/translator-theorem-dictionary-En
 glish.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 
-Package layouts Warning: Layout scale set to 0.5 on input line 34.
+Package layouts Warning: Layout scale set to 0.5 on input line 45.
 
-LaTeX Font Info:    Try loading font information for LGR+lmss on input line 34.
+LaTeX Font Info:    Try loading font information for LGR+lmss on input line 45.
 
 (/usr/share/texmf-texlive/tex/latex/cbfonts/lgrlmss.fd
 File: lgrlmss.fd 2008/01/02 v1.0 Greek Computer Modern Sans Serif
 ) (./Presentation.nav)
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<TUClogocolor.jpg, id=49, 113.7048pt x 182.1204pt>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg>
+[2
 
-] (./Presentation.toc) [3
+ <./TUClogocolor.jpg>] (./Presentation.toc)
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [3
 
-] [4
+]
+(./Presentation.toc)
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [4
 
-] [5
+]
+<robocup.jpg, id=150, 341.275pt x 195.73125pt>
+File: robocup.jpg Graphic file (type jpg)
+ <use robocup.jpg>
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [6
+<use TUClogocolor.jpg> [5
 
-] <Chapter1/figures/spl.jpg, id=313, 800.9925pt x 532.99126pt>
+ <./robocup.jpg>]
+<Chapter1/figures/spl.jpg, id=180, 800.9925pt x 532.99126pt>
 File: Chapter1/figures/spl.jpg Graphic file (type jpg)
 
-<use Chapter1/figures/spl.jpg> [7
+<use Chapter1/figures/spl.jpg>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [6
 
- <./Chapter1/figures/spl.jpg>]
-<Chapter1/figures/kid2011.jpg, id=343, 192.72pt x 127.9179pt>
+ <./Chapter1/figures/spl.jpg>] <Chapter1/figures/kid2011.jpg, id=209, 192.72pt 
+x 127.9179pt>
 File: Chapter1/figures/kid2011.jpg Graphic file (type jpg)
 
 <use Chapter1/figures/kid2011.jpg>
-<Chapter1/figures/teen2011.jpg, id=344, 192.72pt x 127.9179pt>
+<Chapter1/figures/teen2011.jpg, id=210, 192.72pt x 127.9179pt>
 File: Chapter1/figures/teen2011.jpg Graphic file (type jpg)
 
 <use Chapter1/figures/teen2011.jpg>
-<Chapter1/figures/adult2011.jpg, id=345, 526.96875pt x 794.97pt>
+<Chapter1/figures/adult2011.jpg, id=211, 526.96875pt x 794.97pt>
 File: Chapter1/figures/adult2011.jpg Graphic file (type jpg)
 
-<use Chapter1/figures/adult2011.jpg> [8
+<use Chapter1/figures/adult2011.jpg>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [7
 
  <./Chapter1/figures/kid2011.jpg> <./Chapter1/figures/teen2011.jpg> <./Chapter1
-/figures/adult2011.jpg>]
-<Chapter1/figures/rescue.jpg, id=372, 501.875pt x 376.40625pt>
-File: Chapter1/figures/rescue.jpg Graphic file (type jpg)
+/figures/adult2011.jpg>] <Chapter1/figures/SmallSize.jpg, id=239, 532.99126pt x
+ 800.9925pt>
+File: Chapter1/figures/SmallSize.jpg Graphic file (type jpg)
 
-<use Chapter1/figures/rescue.jpg> [9
+<use Chapter1/figures/SmallSize.jpg>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [8
 
- <./Chapter1/figures/rescue.jpg>]
-<Chapter1/figures/RoboCup@Home.jpg, id=398, 800.9925pt x 532.99126pt>
-File: Chapter1/figures/RoboCup@Home.jpg Graphic file (type jpg)
+ <./Chapter1/figures/SmallSize.jpg>]
+<Chapter1/figures/middleSize.jpg, id=267, 800.9925pt x 532.99126pt>
+File: Chapter1/figures/middleSize.jpg Graphic file (type jpg)
 
-<use Chapter1/figures/RoboCup@Home.jpg> [10
+<use Chapter1/figures/middleSize.jpg>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [9
 
- <./Chapter1/figures/RoboCup@Home.jpg>] [11
-
-] [12
-
-] [13
-
-] [14
-
-]
-<Chapter1/figures/2D.jpg, id=530, 1477.52pt x 990.70125pt>
+ <./Chapter1/figures/middleSize.jpg>]
+<Chapter1/figures/2D.jpg, id=295, 1477.52pt x 990.70125pt>
 File: Chapter1/figures/2D.jpg Graphic file (type jpg)
 
 <use Chapter1/figures/2D.jpg>
-<Chapter1/figures/3d.png, id=531, 207.02344pt x 152.06813pt>
+<Chapter1/figures/3d.png, id=296, 207.02344pt x 152.06813pt>
 File: Chapter1/figures/3d.png Graphic file (type png)
 
-<use Chapter1/figures/3d.png> [15
+<use Chapter1/figures/3d.png>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [10
 
- <./Chapter1/figures/2D.jpg> <./Chapter1/figures/3d.png (PNG copy)>] [16
+ <./Chapter1/figures/2D.jpg> <./Chapter1/figures/3d.png (PNG copy)>] (./Present
+ation.toc)
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [17
-
-] [18
-
-] [19
+<use TUClogocolor.jpg> [11
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 188.
- [20
-
-] [21
-
-] [22
-
-] [23
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 191.
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [12
 
 ]
-<Chapter2/figures/SoccerSimulation_FieldPlan.png, id=768, 546.04pt x 377.41pt>
+<Chapter2/figures/SoccerSimulation_FieldPlan.png, id=384, 546.04pt x 377.41pt>
 File: Chapter2/figures/SoccerSimulation_FieldPlan.png Graphic file (type png)
 
-<use Chapter2/figures/SoccerSimulation_FieldPlan.png> [24
+<use Chapter2/figures/SoccerSimulation_FieldPlan.png>
+Overfull \vbox (4.51794pt too high) detected at line 201
+ []
 
- <./Chapter2/figures/SoccerSimulation_FieldPlan.png>]
-<Chapter2/figures/629px-Models-nao.jpg, id=797, 875.27pt x 834.11626pt>
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [13
+
+ <./Chapter2/figures/SoccerSimulation_FieldPlan.png>] <Chapter2/figures/629px-M
+odels-nao.jpg, id=414, 875.27pt x 834.11626pt>
 File: Chapter2/figures/629px-Models-nao.jpg Graphic file (type jpg)
 
 <use Chapter2/figures/629px-Models-nao.jpg>
-<Chapter2/figures/RealNao.jpg, id=799, 301.125pt x 301.125pt>
+<Chapter2/figures/RealNao.jpg, id=416, 301.125pt x 301.125pt>
 File: Chapter2/figures/RealNao.jpg Graphic file (type jpg)
 
 <use Chapter2/figures/RealNao.jpg>
-Overfull \vbox (3.42863pt too high) detected at line 232
- []
-
-[25
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [14
 
  <./Chapter2/figures/629px-Models-nao.jpg> <./Chapter2/figures/RealNao.jpg>]
 <Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.pn
-g, id=828, 1371.1225pt x 484.81125pt>
+g, id=444, 1371.1225pt x 484.81125pt>
 File: Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAge
 nt.png Graphic file (type png)
 
 <use Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgen
-t.png> [26
+t.png>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [15
 
  <./Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent
 .png (PNG copy)>]
-File: Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAge
-nt.png Graphic file (type png)
-
-<use Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgen
-t.png> [27
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg>
+[16
 
 ]
-File: Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAge
-nt.png Graphic file (type png)
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [17
 
-<use Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgen
-t.png> [28
+] (./Presentation.toc)
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg>
+[18
 
-]
-File: Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAge
-nt.png Graphic file (type png)
-
-<use Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgen
-t.png> [29
-
-] [30
-
-] [31
-
-] [32
-
-] [33
-
-] [34
-
-] [35
-
-] [36
-
-] [37
-
-] [38
-
-] [39
-
-] [40
-
-] [41
-
-]
-[42
-
-] <Chapter3/figures/Arch.pdf, id=1271, 506.89375pt x 418.56375pt>
+] <Chapter3/figures/Arch.pdf, id=555, 506.89375pt x 418.56375pt>
 File: Chapter3/figures/Arch.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/Arch.pdf> [43
+<use Chapter3/figures/Arch.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [19
 
- <./Chapter3/figures/Arch.pdf>] [44
-
-]
-[45
-
-] [46
-
-] [47
-
-] [48
-
-] [49
-
-] [50
-
-]
+ <./Chapter3/figures/Arch.pdf>]
 \openout3 = `Presentation.vrb'.
 
  (./Presentation.vrb
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 3.
-
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 10.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [51
+))
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [52
-
-] [53
-
-] [54
-
-] [55
-
-] [56
+<use TUClogocolor.jpg> [20
 
 ]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/LViewAngle.pdf): PDF inclusio
 n: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/LViewAngle.pdf, id=1647, 580.2034pt x 418.28021pt>
+<Chapter3/figures/LViewAngle.pdf, id=614, 580.2034pt x 418.28021pt>
 File: Chapter3/figures/LViewAngle.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/LViewAngle.pdf> [57
+<use Chapter3/figures/LViewAngle.pdf>
+Overfull \vbox (0.52632pt too high) detected at line 334
+ []
+
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [21
 
  <./Chapter3/figures/LViewAngle.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/Localization.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/Localization.pdf, id=1696, 545.17943pt x 419.52026pt>
+<Chapter3/figures/Localization.pdf, id=666, 545.17943pt x 419.52026pt>
 File: Chapter3/figures/Localization.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/Localization.pdf>
-Overfull \vbox (2.31808pt too high) detected at line 400
+Overfull \vbox (2.31808pt too high) detected at line 344
  []
 
-[58
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [22
 
  <./Chapter3/figures/Localization.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/LocalizationResults.pdf): PDF
  inclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/LocalizationResults.pdf, id=1745, 580.2034pt x 418.28021pt>
+<Chapter3/figures/LocalizationResults.pdf, id=715, 580.2034pt x 418.28021pt>
 File: Chapter3/figures/LocalizationResults.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/LocalizationResults.pdf> [59
+<use Chapter3/figures/LocalizationResults.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [23
 
- <./Chapter3/figures/LocalizationResults.pdf>] [60
-
-] [61
-
-] [62
-
-] [63
-
-] [64
-
-]
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 460.
+ <./Chapter3/figures/LocalizationResults.pdf>]
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 392.
 
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 460
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 392
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 460
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 392
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 460.
+(Font)              <6> on input line 392.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 460.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 460.
-LaTeX Font Info:    Try loading font information for U+msa on input line 460.
+(Font)              <5> on input line 392.
+LaTeX Font Info:    Try loading font information for U+msa on input line 392.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 460.
+LaTeX Font Info:    Try loading font information for U+msb on input line 392.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 460.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 460.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 392.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 460.
- [65
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 392.
+
+Overfull \vbox (4.96758pt too high) detected at line 392
+ []
+
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [24
 
 ]
-<Chapter3/figures/Models_NaoAnatomy.png, id=1964, 511.9125pt x 682.55pt>
+<Chapter3/figures/Models_NaoAnatomy.png, id=803, 511.9125pt x 682.55pt>
 File: Chapter3/figures/Models_NaoAnatomy.png Graphic file (type png)
 
-<use Chapter3/figures/Models_NaoAnatomy.png> [66
+<use Chapter3/figures/Models_NaoAnatomy.png>
+Overfull \vbox (3.4727pt too high) detected at line 406
+ []
+
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [25
 
  <./Chapter3/figures/Models_NaoAnatomy.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 491.
+(Font)              <10.95> on input line 418.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 491.
+(Font)              <8> on input line 418.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 491.
- [67
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 418.
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [68
+<use TUClogocolor.jpg> [26
 
 ]
 \openout3 = `Presentation.vrb'.
 
  (./Presentation.vrb
-<Chapter3/figures/MotionSequence.pdf, id=2051, 166.6225pt x 433.62pt>
+<Chapter3/figures/MotionSequence.pdf, id=864, 166.6225pt x 433.62pt>
 File: Chapter3/figures/MotionSequence.pdf Graphic file (type pdf)
 
 <use Chapter3/figures/MotionSequence.pdf>)
-Overfull \vbox (7.19188pt too high) detected at line 529
+Overfull \vbox (7.19188pt too high) detected at line 456
  []
 
-[69
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [27
 
- <./Chapter3/figures/MotionSequence.pdf>] [70
+ <./Chapter3/figures/MotionSequence.pdf>]
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [71
-
-] [72
+<use TUClogocolor.jpg> [28
 
 ]
 \openout3 = `Presentation.vrb'.
 
- (./Presentation.vrb) [73
+ (./Presentation.vrb)
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg>
+[29
 
-] [74
-
-] [75
-
-] [76
-
-] [77
-
-] [78
-
-] [79
-
-]
-<Chapter3/figures/DynamicTurn.pdf, id=2343, 521.95pt x 321.2pt>
+] <Chapter3/figures/DynamicTurn.pdf, id=945, 521.95pt x 321.2pt>
 File: Chapter3/figures/DynamicTurn.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/DynamicTurn.pdf> [80
+<use Chapter3/figures/DynamicTurn.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [30
 
- <./Chapter3/figures/DynamicTurn.pdf>] <Chapter3/figures/leanLeft.png, id=2371,
- 439.6425pt x 516.93124pt>
+ <./Chapter3/figures/DynamicTurn.pdf>]
+<Chapter3/figures/leanLeft.png, id=973, 439.6425pt x 516.93124pt>
 File: Chapter3/figures/leanLeft.png Graphic file (type png)
 
 <use Chapter3/figures/leanLeft.png>
-<Chapter3/figures/leanRight.png, id=2372, 427.5975pt x 524.96124pt>
+<Chapter3/figures/leanRight.png, id=974, 427.5975pt x 524.96124pt>
 File: Chapter3/figures/leanRight.png Graphic file (type png)
 
-<use Chapter3/figures/leanRight.png> [81
+<use Chapter3/figures/leanRight.png>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [31
 
  <./Chapter3/figures/leanLeft.png (PNG copy)> <./Chapter3/figures/leanRight.png
- (PNG copy)>] [82
+ (PNG copy)>]
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [83
-
-] [84
-
-] [85
+<use TUClogocolor.jpg> [32
 
 ]
-[86
-
-] [87
-
-] [88
-
-] [89
-
-] [90
-
-] [91
-
-] [92
-
-] [93
-
-] [94
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [33
 
 ]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/ObstacleAvoidance.pdf): PDF i
 nclusion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/ObstacleAvoidance.pdf, id=2740, 519.83308pt x 434.77179pt>
+<Chapter3/figures/ObstacleAvoidance.pdf, id=1055, 519.83308pt x 434.77179pt>
 File: Chapter3/figures/ObstacleAvoidance.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/ObstacleAvoidance.pdf> [95
+<use Chapter3/figures/ObstacleAvoidance.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [34
 
  <./Chapter3/figures/ObstacleAvoidance.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/2dkinematics.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/2dkinematics.pdf, id=2823, 622.325pt x 499.466pt>
+<Chapter3/figures/2dkinematics.pdf, id=1138, 622.325pt x 499.466pt>
 File: Chapter3/figures/2dkinematics.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/2dkinematics.pdf> [96
+<use Chapter3/figures/2dkinematics.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [35
 
  <./Chapter3/figures/2dkinematics.pdf>]
-File: Chapter3/figures/2dkinematics.pdf Graphic file (type pdf)
- <use Chapter3/figures/2dkinematics.pdf> [97
-
-]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/GoToPos.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/GoToPos.pdf, id=2885, 580.2034pt x 418.28021pt>
+<Chapter3/figures/GoToPos.pdf, id=1170, 580.2034pt x 418.28021pt>
 File: Chapter3/figures/GoToPos.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/GoToPos.pdf> [98
+<use Chapter3/figures/GoToPos.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [36
 
- <./Chapter3/figures/GoToPos.pdf>]
-File: Chapter3/figures/GoToPos.pdf Graphic file (type pdf)
-
-<use Chapter3/figures/GoToPos.pdf> [99
-
-]
-File: Chapter3/figures/GoToPos.pdf Graphic file (type pdf)
- <use Chapter3/figures/GoToPos.pdf>
-[100
-
-] [101
-
-] [102
-
-] [103
-
-] [104
-
-]
-<Chapter3/figures/MAC.pdf, id=3086, 475.7775pt x 91.34125pt>
+ <./Chapter3/figures/GoToPos.pdf>] <Chapter3/figures/MAC.pdf, id=1211, 475.7775
+pt x 91.34125pt>
 File: Chapter3/figures/MAC.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/MAC.pdf> [105
+<use Chapter3/figures/MAC.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [37
 
- <./Chapter3/figures/MAC.pdf>]
-File: Chapter3/figures/MAC.pdf Graphic file (type pdf)
-
-<use Chapter3/figures/MAC.pdf> [106
-
-]
-File: Chapter3/figures/MAC.pdf Graphic file (type pdf)
- <use Chapter3/figures/MAC.pdf> [107
+ <./Chapter3/figures/MAC.pdf>] (./Presentation.toc)
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [38
 
 ]
-<Chapter4/figures/CoordinationCycle.pdf, id=3170, 451.6875pt x 391.4625pt>
+<Chapter4/figures/CoordinationCycle.pdf, id=1280, 451.6875pt x 391.4625pt>
 File: Chapter4/figures/CoordinationCycle.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/CoordinationCycle.pdf> [108
+<use Chapter4/figures/CoordinationCycle.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [39
 
  <./Chapter4/figures/CoordinationCycle.pdf>]
-File: Chapter4/figures/CoordinationCycle.pdf Graphic file (type pdf)
- <use Chapter4/figures/CoordinationCycle.pdf> [109
-
-]
-File: Chapter4/figures/CoordinationCycle.pdf Graphic file (type pdf)
-
-<use Chapter4/figures/CoordinationCycle.pdf> [110
-
-]
-File: Chapter4/figures/CoordinationCycle.pdf Graphic file (type pdf)
-
-<use Chapter4/figures/CoordinationCycle.pdf> [111
-
-]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 771.
- [112
-
-] [113
-
-] [114
-
-] [115
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 674.
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [40
 
 ]
-[116
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [117
-
-] [118
-
-] [119
-
-] [120
-
-] [121
-
-] [122
-
-] [123
-
-] [124
-
-] [125
-
-] [126
-
-] [127
+<use TUClogocolor.jpg> [41
 
 ]
-[128
-
-] [129
-
-] [130
-
-] [131
-
-] [132
-
-] [133
-
-] [134
-
-] [135
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [42
 
 ]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/CoordComm.pdf): PDF inclusion
 : found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/CoordComm.pdf, id=3908, 368.13348pt x 389.02704pt>
+<Chapter4/figures/CoordComm.pdf, id=1392, 368.13348pt x 389.02704pt>
 File: Chapter4/figures/CoordComm.pdf Graphic file (type pdf)
 
 <use Chapter4/figures/CoordComm.pdf>
-Overfull \vbox (8.62634pt too high) detected at line 830
+Overfull \vbox (8.62634pt too high) detected at line 733
  []
 
-[136
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [43
 
- <./Chapter4/figures/CoordComm.pdf>] [137
+ <./Chapter4/figures/CoordComm.pdf>]
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [138
-
-] [139
+<use TUClogocolor.jpg> [44
 
 ]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Ball.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Ball.pdf, id=4043, 580.2034pt x 524.72992pt>
+<Chapter4/figures/Ball.pdf, id=1476, 580.2034pt x 524.72992pt>
 File: Chapter4/figures/Ball.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Ball.pdf> [140
+<use Chapter4/figures/Ball.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [45
 
  <./Chapter4/figures/Ball.pdf>]
 
-pdfTeX warning: pdflatex (file ./Chapter4/figures/Splitter.pdf): PDF inclusion:
- found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Splitter.pdf, id=4121, 580.2034pt x 524.21819pt>
-File: Chapter4/figures/Splitter.pdf Graphic file (type pdf)
-
-<use Chapter4/figures/Splitter.pdf> [141
-
- <./Chapter4/figures/Splitter.pdf>]
-<Chapter4/figures/Graph1.pdf, id=4170, 1219.55624pt x 701.62125pt>
-File: Chapter4/figures/Graph1.pdf Graphic file (type pdf)
-
-<use Chapter4/figures/Graph1.pdf> [142
-
- <./Chapter4/figures/Graph1.pdf>]
-<Chapter4/figures/ActiveBefore(-8,6).png, id=4257, 1340.00626pt x 831.105pt>
-File: Chapter4/figures/ActiveBefore(-8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveBefore(-8,6).png>
-<Chapter4/figures/ActiveBefore(8,6).png, id=4259, 1148.29pt x 719.68875pt>
-File: Chapter4/figures/ActiveBefore(8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveBefore(8,6).png>
-<Chapter4/figures/ActiveAfter(-8,6).png, id=4261, 1341.01pt x 841.1425pt>
-File: Chapter4/figures/ActiveAfter(-8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveAfter(-8,6).png>
-<Chapter4/figures/ActiveAfter(8,6).png, id=4263, 1343.0175pt x 844.15375pt>
-File: Chapter4/figures/ActiveAfter(8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveAfter(8,6).png> [143
-
- <./Chapter4/figures/ActiveBefore(-8,6).png (PNG copy)> <./Chapter4/figures/Act
-iveBefore(8,6).png (PNG copy)> <./Chapter4/figures/ActiveAfter(-8,6).png (PNG c
-opy)> <./Chapter4/figures/ActiveAfter(8,6).png (PNG copy)>]
-File: Chapter4/figures/ActiveBefore(-8,6).png Graphic file (type png)
- <use Chapter4/figures/ActiveBefore(-8,6).png>
-File: Chapter4/figures/ActiveBefore(8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveBefore(8,6).png>
-File: Chapter4/figures/ActiveAfter(-8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveAfter(-8,6).png>
-File: Chapter4/figures/ActiveAfter(8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveAfter(8,6).png> [144
-
-]
-File: Chapter4/figures/ActiveBefore(-8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveBefore(-8,6).png>
-File: Chapter4/figures/ActiveBefore(8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveBefore(8,6).png>
-File: Chapter4/figures/ActiveAfter(-8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveAfter(-8,6).png>
-File: Chapter4/figures/ActiveAfter(8,6).png Graphic file (type png)
-
-<use Chapter4/figures/ActiveAfter(8,6).png> [145
-
-] [146
-
-] [147
-
-] [148
-
-] [149
-
-]
-[150
-
-] [151
-
-] [152
-
-] [153
-
-]
-Overfull \hbox (17.513pt too wide) in paragraph at lines 948--948
-[]  
- []
-
-[154
-
-]
-
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation9_0.pdf): PDF inclus
 ion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation9_0.pdf, id=4600, 580.14201pt x 453.95424pt>
+<Chapter4/figures/Formation9_0.pdf, id=1553, 580.14201pt x 453.95424pt>
 File: Chapter4/figures/Formation9_0.pdf Graphic file (type pdf)
 
 <use Chapter4/figures/Formation9_0.pdf>
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation11_0.pdf): PDF inclu
 sion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation11_0.pdf, id=4602, 580.2034pt x 473.63727pt>
+<Chapter4/figures/Formation11_0.pdf, id=1555, 580.2034pt x 473.63727pt>
 File: Chapter4/figures/Formation11_0.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Formation11_0.pdf> [155
+<use Chapter4/figures/Formation11_0.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [46
 
  <./Chapter4/figures/Formation9_0.pdf> <./Chapter4/figures/Formation11_0.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation(0,0).pdf): PDF incl
 usion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation(0,0).pdf, id=4637, 1063.975pt x 666.49pt>
+<Chapter4/figures/Formation(0,0).pdf, id=1591, 1063.975pt x 666.49pt>
 File: Chapter4/figures/Formation(0,0).pdf Graphic file (type pdf)
 
 <use Chapter4/figures/Formation(0,0).pdf>
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation(5,5).pdf): PDF incl
 usion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation(5,5).pdf, id=4639, 1046.30902pt x 653.64201pt>
+<Chapter4/figures/Formation(5,5).pdf, id=1593, 1046.30902pt x 653.64201pt>
 File: Chapter4/figures/Formation(5,5).pdf Graphic file (type pdf)
 
 <use Chapter4/figures/Formation(5,5).pdf>
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/Formation(-5,-5).pdf): PDF in
 clusion: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/Formation(-5,-5).pdf, id=4641, 1078.42903pt x 674.52pt>
+<Chapter4/figures/Formation(-5,-5).pdf, id=1595, 1078.42903pt x 674.52pt>
 File: Chapter4/figures/Formation(-5,-5).pdf Graphic file (type pdf)
 
-<use Chapter4/figures/Formation(-5,-5).pdf> [156
+<use Chapter4/figures/Formation(-5,-5).pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [47
 
  <./Chapter4/figures/Formation(0,0).pdf> <./Chapter4/figures/Formation(5,5).pdf
-> <./Chapter4/figures/Formation(-5,-5).pdf>] [157
+> <./Chapter4/figures/Formation(-5,-5).pdf>]
 
-] [158
+pdfTeX warning: pdflatex (file ./Chapter4/figures/Splitter.pdf): PDF inclusion:
+ found PDF version <1.5>, but at most version <1.4> allowed
+<Chapter4/figures/Splitter.pdf, id=1631, 580.2034pt x 524.21819pt>
+File: Chapter4/figures/Splitter.pdf Graphic file (type pdf)
 
-] [159
+<use Chapter4/figures/Splitter.pdf>
+Overfull \vbox (7.75606pt too high) detected at line 806
+ []
 
-] [160
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [48
 
-] [161
+ <./Chapter4/figures/Splitter.pdf>]
+<Chapter4/figures/ActiveBefore(-8,6).png, id=1681, 1340.00626pt x 831.105pt>
+File: Chapter4/figures/ActiveBefore(-8,6).png Graphic file (type png)
+
+<use Chapter4/figures/ActiveBefore(-8,6).png>
+<Chapter4/figures/ActiveBefore(8,6).png, id=1683, 1148.29pt x 719.68875pt>
+File: Chapter4/figures/ActiveBefore(8,6).png Graphic file (type png)
+
+<use Chapter4/figures/ActiveBefore(8,6).png>
+<Chapter4/figures/ActiveAfter(-8,6).png, id=1685, 1341.01pt x 841.1425pt>
+File: Chapter4/figures/ActiveAfter(-8,6).png Graphic file (type png)
+
+<use Chapter4/figures/ActiveAfter(-8,6).png>
+<Chapter4/figures/ActiveAfter(8,6).png, id=1687, 1343.0175pt x 844.15375pt>
+File: Chapter4/figures/ActiveAfter(8,6).png Graphic file (type png)
+
+<use Chapter4/figures/ActiveAfter(8,6).png>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [49
+
+ <./Chapter4/figures/ActiveBefore(-8,6).png (PNG copy)> <./Chapter4/figures/Act
+iveBefore(8,6).png (PNG copy)> <./Chapter4/figures/ActiveAfter(-8,6).png (PNG c
+opy)> <./Chapter4/figures/ActiveAfter(8,6).png (PNG copy)>]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg>
+[50
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 864.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 864.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 864.
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [51
+
+]
+<Chapter4/figures/Graph1.pdf, id=1775, 1219.55624pt x 701.62125pt>
+File: Chapter4/figures/Graph1.pdf Graphic file (type pdf)
+
+<use Chapter4/figures/Graph1.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [52
+
+ <./Chapter4/figures/Graph1.pdf>]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [53
 
 ]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/RoleAss.pdf): PDF inclusion: 
 found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/RoleAss.pdf, id=4810, 580.2034pt x 539.10118pt>
+<Chapter4/figures/RoleAss.pdf, id=1892, 580.2034pt x 539.10118pt>
 File: Chapter4/figures/RoleAss.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/RoleAss.pdf> [162
+<use Chapter4/figures/RoleAss.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [54
 
  <./Chapter4/figures/RoleAss.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter4/figures/SupportPos.pdf): PDF inclusio
 n: found PDF version <1.5>, but at most version <1.4> allowed
-<Chapter4/figures/SupportPos.pdf, id=5002, 580.2034pt x 512.6133pt>
+<Chapter4/figures/SupportPos.pdf, id=2084, 580.2034pt x 512.6133pt>
 File: Chapter4/figures/SupportPos.pdf Graphic file (type pdf)
 
-<use Chapter4/figures/SupportPos.pdf> [163
+<use Chapter4/figures/SupportPos.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [55
 
- <./Chapter4/figures/SupportPos.pdf>] [164
-
-] [165
-
-] [166
-
-] [167
-
-] [168
-
-] [169
-
-] [170
+ <./Chapter4/figures/SupportPos.pdf>]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [56
 
 ]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1057.
+(amsmath)                 on input line 948.
 
-[171
+File: TUClogocolor.jpg Graphic file (type jpg)
+<use TUClogocolor.jpg> [57
 
-] [172
+]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [58
 
-] [173
+]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg>
+[59
 
-] [174
+]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [60
 
-] [175
-
-] [176
+]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [61
 
 ]
 
 pdfTeX warning: pdflatex (file ./Chapter3/figures/Goalie.pdf): PDF inclusion: f
 ound PDF version <1.5>, but at most version <1.4> allowed
-<Chapter3/figures/Goalie.pdf, id=5528, 429.83002pt x 580.48761pt>
+<Chapter3/figures/Goalie.pdf, id=2427, 429.83002pt x 580.48761pt>
 File: Chapter3/figures/Goalie.pdf Graphic file (type pdf)
 
-<use Chapter3/figures/Goalie.pdf> [177
+<use Chapter3/figures/Goalie.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [62
 
  <./Chapter3/figures/Goalie.pdf>]
-<Chapter3/figures/GoalieFall.png, id=5560, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall.png, id=2459, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall.png>
-<Chapter3/figures/GoalieFall2.png, id=5562, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall2.png, id=2461, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall2.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall2.png>
-<Chapter3/figures/GoalieFall3.png, id=5564, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall3.png, id=2463, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall3.png Graphic file (type png)
 
 <use Chapter3/figures/GoalieFall3.png>
-<Chapter3/figures/GoalieFall4.png, id=5566, 1686.3pt x 1053.9375pt>
+<Chapter3/figures/GoalieFall4.png, id=2465, 1686.3pt x 1053.9375pt>
 File: Chapter3/figures/GoalieFall4.png Graphic file (type png)
 
-<use Chapter3/figures/GoalieFall4.png> [178
+<use Chapter3/figures/GoalieFall4.png>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [63
 
  <./Chapter3/figures/GoalieFall.png (PNG copy)> <./Chapter3/figures/GoalieFall2
 .png (PNG copy)> <./Chapter3/figures/GoalieFall3.png (PNG copy)> <./Chapter3/fi
-gures/GoalieFall4.png (PNG copy)>]
-[179
+gures/GoalieFall4.png (PNG copy)>] (./Presentation.toc)
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [64
 
-] [180
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 1021.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1021.
 
-] <Chapter5/figures/BallObs1.png, id=5650, 349.305pt x 324.21124pt>
+File: TUClogocolor.jpg Graphic file (type jpg)
+
+<use TUClogocolor.jpg> [65
+
+]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [66
+
+]
+<Chapter5/figures/BallObs1.png, id=2584, 349.305pt x 324.21124pt>
 File: Chapter5/figures/BallObs1.png Graphic file (type png)
 
 <use Chapter5/figures/BallObs1.png>
-<Chapter5/figures/BallObs2.png, id=5651, 435.6275pt x 389.455pt>
+<Chapter5/figures/BallObs2.png, id=2585, 435.6275pt x 389.455pt>
 File: Chapter5/figures/BallObs2.png Graphic file (type png)
 
 <use Chapter5/figures/BallObs2.png>
-<Chapter5/figures/BallObs3.png, id=5652, 295.1025pt x 224.84pt>
+<Chapter5/figures/BallObs3.png, id=2586, 295.1025pt x 224.84pt>
 File: Chapter5/figures/BallObs3.png Graphic file (type png)
 
 <use Chapter5/figures/BallObs3.png>
-<Chapter5/figures/BallObs4.png, id=5653, 302.12875pt x 236.885pt>
+<Chapter5/figures/BallObs4.png, id=2587, 302.12875pt x 236.885pt>
 File: Chapter5/figures/BallObs4.png Graphic file (type png)
 
-<use Chapter5/figures/BallObs4.png> [181
+<use Chapter5/figures/BallObs4.png>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [67
 
  <./Chapter5/figures/BallObs1.png (PNG copy)> <./Chapter5/figures/BallObs2.png 
 (PNG copy)> <./Chapter5/figures/BallObs3.png (PNG copy)> <./Chapter5/figures/Ba
@@ -1904,67 +1769,85 @@ llObs4.png (PNG copy)>]
 
 pdfTeX warning: pdflatex (file ./Chapter5/figures/3.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<Chapter5/figures/3.pdf, id=5683, 715.19809pt x 536.40402pt>
+<Chapter5/figures/3.pdf, id=2618, 715.19809pt x 536.40402pt>
 File: Chapter5/figures/3.pdf Graphic file (type pdf)
 
-<use Chapter5/figures/3.pdf> [182
+<use Chapter5/figures/3.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [68
 
  <./Chapter5/figures/3.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter5/figures/4.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<Chapter5/figures/4.pdf, id=5768, 826.42706pt x 619.35945pt>
+<Chapter5/figures/4.pdf, id=2703, 826.42706pt x 619.35945pt>
 File: Chapter5/figures/4.pdf Graphic file (type pdf)
 
-<use Chapter5/figures/4.pdf> [183
+<use Chapter5/figures/4.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [69
 
  <./Chapter5/figures/4.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter5/figures/1.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<Chapter5/figures/1.pdf, id=5871, 840.72014pt x 620.01945pt>
+<Chapter5/figures/1.pdf, id=2806, 840.72014pt x 620.01945pt>
 File: Chapter5/figures/1.pdf Graphic file (type pdf)
 
-<use Chapter5/figures/1.pdf> [184
+<use Chapter5/figures/1.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [70
 
  <./Chapter5/figures/1.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter5/figures/2.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<Chapter5/figures/2.pdf, id=5974, 822.6078pt x 617.6421pt>
+<Chapter5/figures/2.pdf, id=2909, 822.6078pt x 617.6421pt>
 File: Chapter5/figures/2.pdf Graphic file (type pdf)
 
-<use Chapter5/figures/2.pdf> [185
+<use Chapter5/figures/2.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [71
 
  <./Chapter5/figures/2.pdf>]
 
 pdfTeX warning: pdflatex (file ./Chapter5/figures/5.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<Chapter5/figures/5.pdf, id=6076, 828.18552pt x 618.39418pt>
+<Chapter5/figures/5.pdf, id=3011, 828.18552pt x 618.39418pt>
 File: Chapter5/figures/5.pdf Graphic file (type pdf)
 
-<use Chapter5/figures/5.pdf> [186
+<use Chapter5/figures/5.pdf>
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [72
 
- <./Chapter5/figures/5.pdf>] [187
-
-] [188
+ <./Chapter5/figures/5.pdf>]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [73
 
 ]
-[189
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [74
 
-] [190
+]
+File: TUClogocolor.jpg Graphic file (type jpg)
 
-] [191
+<use TUClogocolor.jpg> [75
 
-] [192
+] (./Presentation.toc)
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg>
+[76
 
-] [193
+]
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [77
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1318.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1208.
 
- [194
+File: TUClogocolor.jpg Graphic file (type jpg)
+ <use TUClogocolor.jpg> [78
 
 ]
 \tf@nav=\write6
@@ -1976,38 +1859,44 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
 \tf@snm=\write8
 \openout8 = `Presentation.snm'.
 
- (./Presentation.aux) ) 
+
+(./Presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 17568 strings out of 494985
- 315494 string characters out of 1181034
+ 17350 strings out of 494985
+ 313623 string characters out of 1181034
  405855 words of memory out of 3000000
- 19759 multiletter control sequences out of 15000+50000
- 72578 words of font info for 70 fonts, out of 3000000 for 9000
+ 19756 multiletter control sequences out of 15000+50000
+ 88893 words of font info for 84 fonts, out of 3000000 for 9000
  73 hyphenation exceptions out of 8191
- 45i,16n,70p,320b,1043s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
-lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-texlive/fonts/type1/public/cbfo
-nts/gsmi1728.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmsso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.
-pfb>
-Output written on Presentation.pdf (194 pages, 31302345 bytes).
+ 45i,16n,70p,320b,919s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Navigation79} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation80} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation81} has been referenced but does not exis
+t, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmss8.pfb></usr/share/texmf-texlive/fonts/type1/public/cbfonts/gsmi172
+8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lms
+y10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
+Output written on Presentation.pdf (78 pages, 30938323 bytes).
 PDF statistics:
- 6521 PDF objects out of 7423 (max. 8388607)
- 420 named destinations out of 1000 (max. 500000)
- 722 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3353 PDF objects out of 3580 (max. 8388607)
+ 190 named destinations out of 1000 (max. 500000)
+ 444 words of extra memory for PDF output out of 10000 (max. 10000000)
 

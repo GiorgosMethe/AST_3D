@@ -25,11 +25,22 @@
 \usepackage[english,greek]{babel}
 \usepackage[iso-8859-7]{inputenc}
 
-\title[Player Behavior and Team Strategy]{Player Behavior and Team Strategy in Robocup Simulation 3D League}
+
+\logo{\includegraphics[height=0.5cm]{TUClogocolor}}
+\title[Player Behavior and Team Strategy]{\bf Player Behavior and Team Strategy\\
+for the Robocup 3D Simulation League}
 \author[Georgios Methenitis]{Georgios Methenitis}
-\institute[TUC]{Technical University of Crete}
-\date[Chania, 2012]{Chania, August, 2012}
-\subject{Computational Sciences}
+\institute[TUC]{
+Department of Electronic and Computer Engineering\\
+Technical University of Crete\\
+\vspace*{2cm}
+Thesis Committee\\
+Assistant Professor Michail G. Lagoudakis\\
+Assistant Professor Georgios Chalkiadakis\\
+Professor Minos Garofalakis
+}
+\date[Chania, August 2012]{Chania, August 2012}
+\subject{Autonomous Agents}
 
 \begin{document}
 
@@ -37,42 +48,49 @@
 \selectlanguage{english}
 \newcommand{\putat}[3]{\begin{picture}(0,0)(0,0)\put(#1,#2){#3}\end{picture}}
 
-  \frame
+  \frame[plain]
   {
     \titlepage
-    \begin{center}
-    \begin{small}
-     Thesis Committee\\
-    Assistant Professor Michail G. Lagoudakis (ECE)\\
-Assistant Professor Georgios Chalkiadakis (ECE)\\
-Professor Minos Garofalakis (ECE)\\
-    \end{small}
-    \end{center}
   }
+
+
+\setcounter{tocdepth}{1}
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Presentation Outline}
+    \tableofcontents[currentsection]
+    %\tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
 
   
   \frame
   {
     \frametitle{Abstract}
-    This thesis presents a complete team design for the RoboCup 3D Simulation League focusing on player behavior, team strategy, and team coordination. Our agents are designed in a way that enables them to act effectively both autonomously and as members of the team.
+    This thesis presents a complete team design for the RoboCup 3D Simulation League focusing on player behavior, team strategy, and team coordination.
 
   }  
 
 
   \frame
   {
-    \frametitle{Outline of Topics}
-
+    \frametitle{Presentation Outline}
     \tableofcontents
   }
 
- \section{Background}
+ \section{RoboCup}
 
  \subsection*{RoboCup}
   \frame
   {
     \frametitle{Robocup Competition}
-    \begin{itemize}[<+->]
+    \begin{figure}[t!] 
+	\centering
+    \includegraphics[width=0.2\textwidth]{robocup.jpg}    
+    \end{figure}
+    \vspace{0.5cm}
+    \begin{itemize}
     	\item RoboCup is an international robotics competition.
         \item Founded in 1997.
         \item The official goal of the project is stated as an ambitious endeavor: ``By the year 2050, a team of fully autonomous humanoid robot soccer players shall win the soccer game, complying with the official rule of the FIFA, against the winner of the most recent World Cup''.
@@ -84,11 +102,8 @@ Professor Minos Garofalakis (ECE)\\
    
   \frame
   {
-    \frametitle{Soccer}
+    \frametitle{Robocup Soccer Competition}
     Standard Platform League
-    \begin{itemize}
-    	\item Same robot platform
-     \end{itemize}
    	\begin{figure}[t!] 
 \centering
     \includegraphics[width=0.6\textwidth]{Chapter1/figures/spl.jpg}
@@ -99,7 +114,7 @@ Professor Minos Garofalakis (ECE)\\
   
   \frame
   {
-    \frametitle{Soccer}
+    \frametitle{Robocup Soccer Competition}
     Humanoid League
    	\begin{figure}[t!] 
 \centering
@@ -113,10 +128,11 @@ Professor Minos Garofalakis (ECE)\\
   
   \frame
   {
-    \frametitle{Rescue}
+    \frametitle{Robocup Soccer Competition}
+    Small-Size
 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.6\textwidth]{Chapter1/figures/rescue.jpg}
+  \includegraphics[trim= 0cm 10cm 0cm 5cm, clip, width=0.6\textwidth]{Chapter1/figures/SmallSize.jpg}
 \end{figure}
    	
 
@@ -125,10 +141,11 @@ Professor Minos Garofalakis (ECE)\\
   
   \frame
   {
-    \frametitle{@Home}
+    \frametitle{Robocup Soccer Competition}
+    Middle-Size
 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.6\textwidth]{Chapter1/figures/RoboCup@Home.jpg}
+  \includegraphics[trim= 0cm 0cm 0cm 0cm, clip, width=0.6\textwidth]{Chapter1/figures/middleSize.jpg}
 \end{figure}
    	
 
@@ -139,81 +156,46 @@ Professor Minos Garofalakis (ECE)\\
   \subsection*{RoboCup Simulation League}
   \frame
   {
-    \frametitle{Simulation League}
-     \begin{itemize}[<+->]
-    	\item One of the oldest leagues in RoboCup Soccer.
-        \item Independently moving software players (agents).
-        \item virtual field inside a computer.
-        \item 2D League, 3D League.
-     \end{itemize}
-    
-
-  }
-  
-  \frame
-  {
-    \frametitle{Simulation League 2D vs 3D}   
+    \frametitle{Robocup Soccer Competition}
+    Simulation League
    	\begin{figure}[t!] 
 \centering
     \includegraphics[height=3.5cm]{Chapter1/figures/2D.jpg}\	
     \includegraphics[height=3.5cm]{Chapter1/figures/3d.png}
 \end{figure}
-   	
+     \begin{itemize}
+        \item Virtual games inside a computer
+        \item Independent software agents
+        \item 2D League and 3D League
+     \end{itemize}
+    
 
-  } 
-  
-  \subsection*{Simulation League 3D}
-  \frame
-  {
-    \frametitle{3D Simulation Soccer}
-    \begin{itemize}[<+->]
-    \item At its beginning, spherical agent.
-    \item In 2006, Fujitsu HOAP-2 robot.
-    \item In 2008, Nao robot model.   
-    \item \textbf{SimSpark} is used as the official Robocup 3D simulator.
-    \end{itemize}
-         
   }
+
   
+\section{3D Simulation League}
+
+ 
   \frame
   {
     \frametitle{SimSpark}
-    \begin{itemize}[<+->]
-    \item \textbf{SimSpark} is a generic physics simulator system.
-    \item Multiple agents in three-dimensional environment.
-	\item \textit{Rcssserver3d} is the official competition environment for the RoboCup 3D Simulation League.
-
-    \end{itemize}
-         
-  }
-  
-  \frame
-  {
-    \frametitle{Server's Versions}
     \begin{itemize}
-    \item Version 0.6.5
-    \begin{description}
-    \item[Players] 9
-    \item[Length] 21m
-    \item[Width] 14m
-    \end{description}
-    
-    \item Version 0.6.6
-     \begin{description}
-    \item[Players] 11
-    \item[Length] 30m
-    \item[Width] 20m
-    \end{description}
+    \item \textbf{SimSpark} is used as the official Robocup 3D simulator.
+    \item Generic physics simulator.
+    \item Multiple agents in three-dimensional environment.
+	\item \textit{Rcssserver3d} is the official competition environment.
+	\item Version 0.6.5: 9 Players, 21m x 14m Field 
+	\item Version 0.6.6: 11 Players, 30m x 20m Field 
     \end{itemize}
          
   }
   
   \frame
   {
-    \frametitle{Soccer Field}
+    \frametitle{Simulation Soccer Field}
     \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.8\textwidth]{Chapter2/figures/SoccerSimulation_FieldPlan.png}
+  \includegraphics[width=0.9\textwidth]{Chapter2/figures/SoccerSimulation_FieldPlan.png}
 \end{figure}
          
   }
@@ -221,7 +203,7 @@ Professor Minos Garofalakis (ECE)\\
   \frame
   {
     \frametitle{Robot Model}
-    The Nao humanoid robot manufactured by Aldebaran Robotics. Its height is about 57cm and its 			weight is around 4.5kg. The simulated model comes with 22 degrees of freedom.
+    The Nao humanoid robot manufactured by Aldebaran Robotics. Its height is about 57cm and its weight is around 4.5kg.
     \begin{figure}
 \centering
   \includegraphics[trim=7cm 0cm 0cm 0cm, clip, width=0.4\textwidth]{Chapter2/figures/629px-Models-nao.jpg}
@@ -235,15 +217,12 @@ Professor Minos Garofalakis (ECE)\\
   {
     \frametitle{Server}
     The SimSpark server hosts the process that manages and advances the simulation.
-    \begin{itemize}[<+->]
+    \begin{itemize}
 	\item Simulation Cycle, 20ms
-	\item Sense
-	\item Think
-	\item Act
     \end{itemize}
 	\begin{figure}[t!]
 	\centering
-  		\includegraphics[width=0.6\textwidth]														{Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png}
+  	\includegraphics[width=0.8\textwidth]														{Chapter3/figures/SimulationUpdateLoopSynchronizationBetweenSimSparkAndAgent.png}
 	\end{figure}
      
   }
@@ -251,9 +230,8 @@ Professor Minos Garofalakis (ECE)\\
 
   \begin{frame}
   \frametitle{Agent Perceptors}
-Perceptors are the senses of an agent, allowing awareness of the agent's model state and the environment.  
-  
-    \begin{itemize}[<+->]
+	Perceptors are the senses of an agent.
+    \begin{enumerate}
     \item HingeJoint Perceptor
 
     \item ForceResistance Perceptor
@@ -268,29 +246,28 @@ Perceptors are the senses of an agent, allowing awareness of the agent's model s
 
     \item GameState Perceptor
 
-    \end{itemize}
-  \end{frame}
-  
+    \end{enumerate}
+  \end{frame}  
   \begin{frame}
     
     \frametitle{Agent Effectors}
-    Effectors allow agents to perform actions within the simulation. Agents control them by sending messages to the server and the server changes the game state accordingly.
+    Effectors allow agents to perform actions within the simulation.
 
-    \begin{itemize}[<+->]
+    \begin{enumerate}
      
     \item Create Effector
+    
+    \item Init Effector
+    
+    \item Beam Effector
+    
+    \item Synchronize Effector
 
     \item HingeJoint Effector
 
-    \item Synchronize Effector
-
-    \item Init Effector
-
-    \item Beam Effector
-
     \item Say Effector
 
-    \end{itemize}
+    \end{enumerate}
        
      
   \end{frame}
@@ -309,38 +286,19 @@ Perceptors are the senses of an agent, allowing awareness of the agent's model s
 	\end{figure}
     
   }
-	
-
-
- \subsection*{General Skills}
-  \frame
-  {
-    \frametitle{Connection}
-    
-	\begin{itemize}[<+->]
-    \item Agent connected to the server at all times during a simulated game.
-    \item Sense messages from the server every 20ms.
-    \item Action messages, at the end of their think cycles.
-    \end{itemize}
-
-    
-  }
   
-  \frame
-  {
-    \frametitle{Perception}
-    \begin{itemize}[<+->]
+  \subsection*{Perceptions}
+    
+  \begin{frame}[fragile]
+  \frametitle{Perception}
+  \begin{itemize}
 	\item Different from real robot soccer games.
-    \item No raw data.
-    \item Perceptor Messages.
+    \item No raw data from sensors
+    \item Processed data
+    \item Sense Messages
     \item Agents update their beliefs and store sensors' data parsing these messages.
  	\end{itemize}
-  
-  }
-  
-  \begin{frame}[fragile]
-  \frametitle{Perception Message Example}
-  \begin{footnotesize}
+  \begin{tiny}
   \begin{verbatim}(time (now 46.20))(GS (t 0.00) (pm BeforeKickOff))(GYR (n torso)
 (rt 0.00 0.00 0.00))(ACC (n torso) (a 0.00 -0.00 9.81))(HJ (n hj
 1)(ax 0.00))(HJ (n hj2) (ax 0.01))(See (G2R (pol 14.83 -11.81 1.
@@ -353,7 +311,7 @@ pol 0.19 34.94-21.49)))(L (pol 8.01 -60.03 -3.87) (pol 6.42 51.1
 ) (ax -0.01))(HJ (n raj2) (ax -0.00))(HJ (n raj3)(ax -0.00))(HJ(
 n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   \end{verbatim}
-  \end{footnotesize}
+  \end{tiny}
 \end{frame}
 
 
@@ -362,48 +320,34 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   {
     \frametitle{Self-Localization}
     
-	\begin{itemize}[<+->]
-	\item Executed every three cycles (60ms).
-    \item Localization uses the eight visible landmarks into the field.
-    \begin{itemize}
-    \item G1R, G2R, G1L, G2L
-    \item F1R, F2R, F1L, F2L
-    \end{itemize}
-    \item Limited field of view (120 Degrees).
-
+	\begin{itemize}
+	\item Self-Localization uses visible landmarks.
+	\item Executed every three cycles (60ms).    
+    \item Restricted by field of view (120 Degrees).
  	\end{itemize}
-
-  }
-  
-
-  \frame
-  {
-    \frametitle{Simulated Nao's Restricted Field of View}
-
-   \begin{figure}
+ 	
+ 	\begin{figure}
 	\centering
-  	\includegraphics[width=0.8\textwidth]{Chapter3/figures/LViewAngle.pdf} 		
+  	\includegraphics[width=0.65\textwidth]{Chapter3/figures/LViewAngle.pdf} 		
 	\end{figure}
-    
+
   }
-    
   
   \frame
   {
-    \frametitle{Self-Localization Technique}
+    \frametitle{Self-Localization}
 	\begin{figure}
 	\centering
   	\includegraphics[width=0.8\textwidth]{Chapter3/figures/Localization.pdf}
 	\end{figure}
-   
     
   }
   
   \frame
   {
-    \frametitle{Localization Results}
+    \frametitle{Object-Localization}
 	\begin{figure}[t!]
-\centering
+	\centering
   \includegraphics[width=0.8\textwidth]{Chapter3/figures/LocalizationResults.pdf}
  
 \end{figure}
@@ -414,29 +358,18 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   \frame
   {
     \frametitle{Localization Filtering}
-    \begin{quote}
-    Why a localization filtering is needed?
-    \end{quote}
-	\begin{itemize}[<+->]
-	\item Absence of a more sophisticated probabilistic localization scheme.
-	\item Temporary absences of observations from self-localization.
+    Why a filtering is needed?
+	\begin{itemize}
+	\item Absences of observations from self-localization.
 	\item Noisy observations.   
-	\item Filter incoming observations.
-	\item Filter incoming observations.
 	\end{itemize}
 	Filtering is applicable for ball and self localization.
    
-    
-  }
- 
-  \frame
-  {
-    \frametitle{Localization Filtering Algorithm}
-\begin{algorithm}[H]
+   \begin{algorithm}[H]
 \caption{Localization Filtering}
 \label{LocalizationFiltering}
 \begin{algorithmic}[1]
-\begin{footnotesize}
+\begin{tiny}
 \STATE {\bf Input: }$LastEstimate$
 \STATE {\bf Output: }$FilteredLocation$
 \STATE $Queue$: a FIFO queue storing the $MaxSize$ (default=10) most recent estimates
@@ -452,17 +385,14 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
 \STATE $Queue.Add(LastEstimate)$
 \ENDIF
 \RETURN $AverageLocation(Queue)$
-\end{footnotesize}
+\end{tiny}
 \end{algorithmic}
 \end{algorithm}
-   
     
   }
-  
-  
+    
   \subsection*{Motions and Movement}
-  
-  
+
   \frame
   {
     \frametitle{Nao's Anatomy}
@@ -470,7 +400,7 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
 joints.
 \begin{figure}
 \centering
-  \includegraphics[width=0.3\textwidth]{Chapter3/figures/Models_NaoAnatomy.png}
+  \includegraphics[width=0.4\textwidth]{Chapter3/figures/Models_NaoAnatomy.png}
 \end{figure}
 
   }
@@ -478,16 +408,13 @@ joints.
   \frame
   {
     \frametitle{Motion and Movement}
-	\begin{itemize}[<+->]
-	\item In robotics, a complex motion is commonly defined as a sequence of timed joint poses.
+	\begin{itemize}
+	\item A motion is commonly defined as a sequence of timed joint poses.
 	\item A pose is a set of values for every joint in the robot's body or in a specific kinematic chain at a given time.
 	 \[
 	Pose(t)= \lbrace J_{1}(t), J_{2}(t), \ldots ,J_{n}(t) \rbrace
 	\]  
 	\end{itemize} 
-	 
-
-
   }
   
   \begin{frame}[fragile]
@@ -531,10 +458,9 @@ joints.
 
 \frame
   {
-    \frametitle{XML-Based Motion Controller}
-    \frametitle{Motion and Movement}
-	\begin{itemize}[<+->]
-	\item To generate motions.
+    \frametitle{XML-Based Motion Controller}	
+	\begin{itemize}
+	\item Responsible for generating motions.
 	\item Velocity computation is required.
 	\item This velocity is computed as follows:
 	\[
@@ -548,28 +474,18 @@ Joint Velocity = \cfrac{Desired Joint Value - Current Joint Value}{PhaseDuration
    
  \begin{frame}[fragile]
   \frametitle{Text-Based Motion Files}
-  \begin{footnotesize}
+  \begin{tiny}
   \begin{verbatim}#WEBOTS_MOTION,V1.0
 LHipYawPitch,LHipRoll,LHipPitch,LKneePitch,LAnklePitch,...
 00:00:000,Pose1,0,-0.012,-0.525,1.05,-0.525,0.012,0,...
 00:00:040,Pose2,0,-0.011,-0.525,1.05,-0.525,0.011,0,...
 00:00:080,Pose3,0,-0.009,-0.525,1.05,-0.525,0.009,0,...
 00:00:120,Pose4,0,-0.007,-0.525,1.05,-0.525,0.007,0,...
-00:00:160,Pose5,0,-0.004,-0.525,1.05,-0.525,0.004,0,...
-00:00:200,Pose6,0,0.001,-0.525,1.051,-0.525,-0.001,0,...
-00:00:240,Pose7,0,0.006,-0.525,1.05,-0.525,-0.006,0,...
-00:00:280,Pose8,0,0.012,-0.525,1.05,-0.525,-0.012,0,...
-00:00:320,Pose9,0,0.024,-0.525,1.05,-0.525,-0.024,0,...
 \end{verbatim}
-  \end{footnotesize}
-\end{frame}
-
-\frame
-  {
-    \frametitle{Text-Based Motion Controller}
-    
-Parameters that can be modified:
-\begin{itemize}[<+->]
+  \end{tiny}
+  
+  Parameters that can be modified:
+\begin{itemize}
 	\item Duration, time between poses in simulation cycles.
 	\item PoseStep, step for advancing from pose to pose.
 
@@ -578,39 +494,33 @@ Parameters that can be modified:
 JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Duration \times CycleDuration}
 \]
 \end{itemize}
-
-  }
+\end{frame}
   
   
 \frame
   {
     \frametitle{Dynamic Motion Elements}
-    \begin{itemize}[<+->]
+    \begin{itemize}
     \item Walk Leaning 
     \item Walk Slowdown
     \item Dynamic Turn
     \end{itemize}
 
-  }
-  
-  \frame
-  {
+    \begin{figure}
+	\centering
+ 	 \includegraphics[width=0.5\textwidth]{Chapter3/figures/DynamicTurn.pdf}
+	\end{figure}
+	
 	\begin{description}
 	\item[X-Axis] Gain factor
 	\item[Y-Axis] Agent turn
-\end{description}	    
-    
-    \frametitle{Dynamic Turn Example}
-    \begin{figure}
-	\centering
- 	 \includegraphics[width=0.8\textwidth]{Chapter3/figures/DynamicTurn.pdf}
-	\end{figure}
+	\end{description}	    
   }
   
   \frame
   {
 
-\frametitle{Walk Leaning}
+\frametitle{Walk Leaning (left and right)}
   \begin{figure}[t!]
 \centering
   \includegraphics[height=6cm]{Chapter3/figures/leanLeft.png}\quad
@@ -621,18 +531,9 @@ JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Durati
   \subsection*{Actions}
   \begin{frame}
 
-    \frametitle{Actions}
-    Actions are split into groups in terms of their complexity:
-    \begin{itemize}[<+->]
-    \item Basic Actions
-    \item Complex Actions
-    \end{itemize}
-  
-  \end{frame}
-  
-  \begin{frame}
-    \frametitle{Simple Actions}
-	\begin{itemize}[<+->]
+    \frametitle{Basic Actions}
+    Basic actions combine perception and motion files in simple ways.
+    \begin{itemize}
     \item Look Straight
     \item Scan
     \item Pan Head
@@ -651,99 +552,101 @@ JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Durati
   
   \begin{frame}
     \frametitle{Complex Actions}
-    \begin{itemize}[<+->]
-	\item Avoid Obstacles
+    Complex actions combine perceptual information, motion files, and basic actions. They
+have a more complicated structure and aim to achieve specific goals.
+
+    \begin{itemize}
+    \item On Ball Action
+    \item Walk To Direction
+    \item Dribble Ball To Direction 
+    	
     \end{itemize}
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Complex Actions}
+    \begin{itemize}			  
+	\item Avoid Obstacles
 \begin{figure}
 \centering
   \includegraphics[width=0.6\textwidth]{Chapter3/figures/ObstacleAvoidance.pdf}
 \end{figure}
+\end{itemize}
 
-\end{frame}
+  \end{frame}
 
 \begin{frame}
     \frametitle{Complex Actions}
-	\begin{itemize}[<+->]
-	\item On Ball Action	
-    \item Walk to Ball
+    \begin{itemize}			
+    \item Walk to Ball  
 \begin{figure}[H]
 \centering
-  \includegraphics[trim=0cm 4cm 3cm 4cm,clip,width=0.6\textwidth]{Chapter3/figures/2dkinematics.pdf}
+  \includegraphics[trim=0cm 4cm 3cm 4cm,clip,width=0.8\textwidth]{Chapter3/figures/2dkinematics.pdf}
 \end{figure}
-
-	\end{itemize}
+\end{itemize}
 
   \end{frame}
-  
-  
+
   \begin{frame}
     \frametitle{Complex Actions}
-	\begin{itemize}[<+->]
-	\item Walk To Direction 	
-	\item Dribble Ball To Direction
+    \begin{itemize}	
 	\item Walk to Coordinate
 	\begin{figure}[H]
 \centering
-  \includegraphics[trim=0cm 0cm 0cm 0cm,clip,width=0.5\textwidth]{Chapter3/figures/GoToPos.pdf}
+  \includegraphics[trim=0cm 0cm 0cm 0cm,clip,width=0.8\textwidth]{Chapter3/figures/GoToPos.pdf}
 \end{figure}
 	
 	
     \end{itemize}
 
   \end{frame}
-
-
 
   \subsection*{Communication}
 
 \begin{frame}
 
-    \frametitle{Communication Restrictions}  
-  \begin{itemize}[<+->]       
+    \frametitle{Communication}
+    Restrictions:  
+  \begin{itemize}     
     \item Maximum distance of 50 meters.   
     \item Maximum length of 20 ASCII characters.
     \item Only one message can be heard at any given time.
     \item Messages from the same team can be heard only every other cycle.
     \end{itemize}
-
-\end{frame}
-  
-  \begin{frame}
-
-    \frametitle{Communication Protocol}
-
-    \begin{itemize}[<+->]
-        
-    \item Every time slice of the protocol has an associated integer label which indicates the uniform number of the player able to send its message at that slice. 
+    Protocol: 
+    \begin{itemize}        
+    \item Time slices, with integer labels indicate uniform numbers.
     \begin{figure}[H]
 \centering
   \includegraphics[width=0.5\textwidth]{Chapter3/figures/MAC.pdf}
 \end{figure}   
     \item This label starts at $1$ and grows by $1$ every time a player sends a message.
-    \item Every player can receive reliably the messages from all teammates every 540ms (27 cycles) for a team of 9 players or every 660ms (33 cycles) for a team of 11 players.
+    \item Every player can ``hear'' all his teammates every 540ms (9 players) and 660ms (11 players).
     \end{itemize}
 
 \end{frame}
-    
- 
+
   \section{Team Coordination}
-  
-  \subsection*{Protocol}
-  
  
+  \subsection*{Coordination Protocol}
+   
   \begin{frame}
   
  	 \frametitle{Team Coordination}
- 	 
- 	 \begin{itemize}[<+->]
- 	 \item Dynamic determination of individual behaviors for each agent. 
- 	 \item Executed only by one agent, the coordinator.
- 	 \item All players communicate their beliefs to the coordinator.
- 	 \item Coordinator sends back to the players the computed actions.
- 	 \begin{figure}[t!]
-\centering
-  \includegraphics[width=0.3\textwidth]{Chapter4/figures/CoordinationCycle.pdf}
-\end{figure}
+ 	 \putat{170}{-160}{\includegraphics[width=0.5\textwidth]{Chapter4/figures/CoordinationCycle.pdf}}
+ 	 \begin{itemize}
+ 	 \item Dynamic determination of\\
+ 	  	   individual behaviors for\\
+ 	  	    each agent. 
+ 	 \item Executed only by one agent,\\
+ 	  the coordinator.
+ 	 \item All players communicate \\
+ 	 their beliefs to the\\
+ 	  coordinator.
+ 	 \item Coordinator sends back\\
+ 	  to the players the computed\\
+ 	   actions.
  	 \end{itemize}
  	 
  	 \end{frame}
@@ -752,7 +655,7 @@ JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Durati
   \begin{frame}
   
  	 \frametitle{Coordination Phases}
- 	 \begin{itemize}[<+->]
+ 	 \begin{itemize}
  	 \item Update Coordination Beliefs
  	 \item Determine Coordination Subsets
  	 \begin{itemize}
@@ -776,11 +679,11 @@ JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Durati
  	 \frametitle{Coordination Modes}
 
 Coordination is not a static procedure and may change dynamically during different game states. There are three modes of team coordination:
-\begin{itemize}[<+->]
+\begin{enumerate}
 \item Active Mode
 \item Support Mode
 \item Wait Mode
-\end{itemize}
+\end{enumerate}
 
 \end{frame}
 
@@ -789,8 +692,8 @@ Coordination is not a static procedure and may change dynamically during differe
 
 \begin{frame}
  	 \frametitle{Message Types and Communication}
- 	 There are several types of messages, each one of them having different functionality and serving a specific purpose.
-\begin{itemize}[<+->]
+ 	 There are several types of messages:
+\begin{itemize}
 \item Init Message 
 
 \item Start Message 
@@ -835,11 +738,10 @@ Coordination is not a static procedure and may change dynamically during differe
 
 \subsection*{Coordination Beliefs Update}
 
-
 \begin{frame}
  	 \frametitle{Coordination Beliefs}
-	 Coordination need to have a good knowledge about the world state. 	 
- 	 \begin{itemize}[<+->]
+	 Coordination need to have a good knowledge about the game state. 	 
+ 	 \begin{itemize}
  	 \item Global ball position
  	 \item Agents' distances from ball
  	 \item Agents' positions
@@ -852,47 +754,63 @@ Coordination is not a static procedure and may change dynamically during differe
  	 \frametitle{Estimated Ball Position}
 	 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.5\textwidth]{Chapter4/figures/Ball.pdf}
+  \includegraphics[width=0.4\textwidth]{Chapter4/figures/Ball.pdf}
 \end{figure}
 \begin{align*}
-{\bf Global Ball Belief} = \sum_{i=1}^m \frac {w(s_i)} {\sum_{k=1}^m w(s_k)} \sum_{o_{ij} \in s_i} \cfrac{o_{ij}}{|s_i|}
+w(s_i) &= |s_i|^3\\
+{\bf Global Ball Belief} &= \sum_{i=1}^m \frac {w(s_i)} {\sum_{k=1}^m w(s_k)} \sum_{o_{ij} \in s_i} \cfrac{o_{ij}}{|s_i|}
 \end{align*}
  	 	 
 \end{frame}
 
 
+  \subsection*{Team Formation}
+  \begin{frame}
+  \frametitle{Generation of Team Formation}
+   Team formation is dynamically generated according to the position of the ball.
+  \begin{itemize}
+ 	 \item 9 Players Version.
+ 	 \item 11 Players Version. 	 
+  \end{itemize}
+  \begin{figure}[t!]
+\centering
+  \includegraphics[width=0.44\textwidth]{Chapter4/figures/Formation9_0.pdf}\quad
+  \includegraphics[width=0.50\textwidth]{Chapter4/figures/Formation11_0.pdf}
+\end{figure}
+  \end{frame}
+  
+  \begin{frame}
+ 	 \frametitle{Team Formation Examples}
+ 	 \begin{figure}[t!]
+\centering
+  \includegraphics[height=0.36\textheight]{Chapter4/figures/Formation(0,0).pdf}\	
+  \includegraphics[height=0.36\textheight]{Chapter4/figures/Formation(5,5).pdf}\\ \vspace{0.1cm}
+  \includegraphics[height=0.36\textheight]{Chapter4/figures/Formation(-5,-5).pdf}
+\end{figure}
+  \end{frame}
+
+
 
 \subsection*{Determination of Coordination Subsets}
 \begin{frame}
+\begin{itemize}
+\item Same number of positions, agents.
+ 	 \item Computationally expensive problem.
+ 	 \item Exhaustive algorithm, in a worst case scenario,between 40320 and 3628800 possible mappings.
+\end{itemize}
  	 \frametitle{Coordination Splitter}
  	 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.6\textwidth]{Chapter4/figures/Splitter.pdf}
+  \includegraphics[width=0.5\textwidth]{Chapter4/figures/Splitter.pdf}
 \end{figure}
 \end{frame}
-
-
-
-
-
-\subsection*{Soccer Field Utility Fuction}
-\begin{frame}
- 	 \frametitle{Soccer Field Utility Fuction}
-\begin{figure}[t!]
-\centering
-  \includegraphics[width=\textwidth]{Chapter4/figures/Graph1.pdf}
-\end{figure}
-\end{frame}
-
-
-
 
 
 \subsection*{Active Players Coordination}
 \begin{frame}
  	 \frametitle{Determination of Active Positions}
  	 
- 	 \begin{itemize}[<+->]
+ 	 \begin{itemize}
  	 \item Dynamic production of active positions.	 	 
  	 \begin{figure}[t!]
 \centering
@@ -912,12 +830,9 @@ Coordination is not a static procedure and may change dynamically during differe
  	 \end{itemize}
 \end{frame}
 
-
-
-
 \begin{frame}
  	 \frametitle{Active Players Coordination}
- 	 \begin{itemize}[<+->]
+ 	 \begin{itemize}
  	 \item On Ball player.
  	 \item Agent closest to the ball.
  	 \item Angle from goal is also taken into consideration.
@@ -930,7 +845,6 @@ Coordination is not a static procedure and may change dynamically during differe
  	 
 \end{frame}
 
-
 \begin{frame}
  	 \frametitle{Active Coordination Evaluation Function}
 The evaluation function scores each possible mapping using the following features defined for each agent $i$: 
@@ -941,42 +855,29 @@ The evaluation function scores each possible mapping using the following feature
 \item \textbf{Close Targets} $C_{t,i}$
 \item \textbf{Horizontal Stretch} $C_{h,i}$
 \end{enumerate}
+\begin{small}
 \begin{align*}
 ActiveCost(ActiveMapping) &= \sum_{i=1}^3 w_dC_{d,i}+w_cC_{c,i}-w_uC_{u,i}-w_tC_{t,i}-w_hC_{h,i}
 \end{align*}
-where $(w_d,w_c,w_u,w_t,w_h)$ are the weights of the features, currently set at $(1,1,1/7,1,1)$.
+\end{small}
+Where $(w_d,w_c,w_u,w_t,w_h)$ are the weights of the features, currently set at $(1,1,1/7,1,1)$.
+\end{frame}
+
+
+\subsection*{Soccer Field Utility Fuction}
+\begin{frame}
+ 	 \frametitle{Soccer Field Utility Fuction}
+\begin{figure}[t!]
+\centering
+  \includegraphics[width=\textwidth]{Chapter4/figures/Graph1.pdf}
+\end{figure}
 \end{frame}
   
-  \subsection*{Team Formation}
-  \begin{frame}
- 	 \frametitle{Generation of Team Formation}
-  Serves to set up the role assignment function and the coordination of the support subset.
-  \begin{itemize}
- 	 \item 9 Players Version.
- 	 \item 11 Players Version. 	 
-  \end{itemize}
-  \begin{figure}[t!]
-\centering
-  \includegraphics[width=0.33\textwidth]{Chapter4/figures/Formation9_0.pdf}\quad
-  \includegraphics[width=0.37\textwidth]{Chapter4/figures/Formation11_0.pdf}
-\end{figure}
-  \end{frame}
-  
-  \begin{frame}
- 	 \frametitle{Team Formation Examples}
- 	 \begin{figure}[t!]
-\centering
-  \includegraphics[height=0.36\textheight]{Chapter4/figures/Formation(0,0).pdf}\	
-  \includegraphics[height=0.36\textheight]{Chapter4/figures/Formation(5,5).pdf}\\ \vspace{0.1cm}
-  \includegraphics[height=0.36\textheight]{Chapter4/figures/Formation(-5,-5).pdf}
-\end{figure}
-  \end{frame}
-  
-  
+
 \subsection*{Team Roles Assignment}
   \begin{frame}
  	 \frametitle{Team Roles Assignment}
- 	 \begin{itemize}[<+->]
+ 	 \begin{itemize}
  	 \item Assigns roles to all agents.
  	 \item Roles close to ball, active players.
  	 \item Remaining roles will be assigned to support players.
@@ -1003,20 +904,10 @@ where $(w_d,w_c,w_u,w_t,w_h)$ are the weights of the features, currently set at 
   \end{frame}
   
   
-	\subsection*{Support Players Coordination} 
-	\begin{frame}
- 	 \frametitle{Team Roles Assignment Example 1}
- 	 \begin{itemize}[<+->]
- 	 \item Same number of positions, agents.
- 	 \item Computationally expensive problem.
- 	 \item The exhaustive algorithm, in a worst case scenario, would have to examine between 40320 and 3628800 possible mappings.
- 	 \item The exhaustive algorithm can work satisfactorily on support subsets of size up to 6 (720 possible mappings).
- 	 \end{itemize}
-  \end{frame}
-  
+  \subsection*{Support Players Coordination} 
   \begin{frame}
  	 \frametitle{Dynamic Algorithm}
- 	 \begin{itemize}[<+->]
+ 	 \begin{itemize}
  	 \item Given the difficulties of applying the exhaustive algorithm.
  	 \item A method proposed by the UT Austin Villa team.
  	 \item Able to compute an approximately optimal solution.
@@ -1058,11 +949,11 @@ n \sum_{k=1}^n {{n-1}\choose{k-1}} = n \sum_{k=0}^{n-1}{{n-1}\choose{k}} = n 2^{
   
   \subsection*{Goalkeeper Behavior}
   \begin{frame}
- 	 \frametitle{Dynamic Algorithm Complexity}
- 	 \begin{itemize}[<+->]
-  \item Only agent in our team who ``runs'' his own behavior.
+ 	 \frametitle{Goalkeeper}
+ 	 \begin{itemize}
+  \item The only agent in our team who ``runs'' his own behavior.
   \item His behavior depends on a finite state machine.
-  
+  \end{itemize}
   \begin{figure}[t!]
 \begin{center}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,node distance=3.5cm,auto]
@@ -1077,8 +968,7 @@ n \sum_{k=1}^n {{n-1}\choose{k-1}} = n \sum_{k=0}^{n-1}{{n-1}\choose{k}} = n 2^{
 \end{center}
 \end{figure} 
 
-  \end{itemize}
-  \end{frame}
+\end{frame}
   
   
   
@@ -1120,9 +1010,9 @@ n \sum_{k=1}^n {{n-1}\choose{k-1}} = n \sum_{k=0}^{n-1}{{n-1}\choose{k}} = n 2^{
 \begin{tabular}{lrrrr}
 \textbf{Motion Version} & \textbf{Walk(m/s)}	& \textbf{Turn(d/s)}	& \textbf{Kick(m)}&\textbf{Strong Kick(m)} \\
 \midrule
-Webots (Text-Based) 		& 0.11 				& 21 				& 3 				& - \\
+Webots (Text-Based) 	& 0.11 				& 21 				& 3 				& - \\
 FIIT (XML)				& 0.22 				& 25 				& 3 (4 Sec.) 		& 4 (5 Sec.) \\
-\textbf{AST\_3D} 		& 0.45 	& 30 		& 3 (2.5 Sec.)& 5.5 (2.5 Sec.) \\
+Kouretes3D 				& 0.45 				& 30 				& 3 (2.5 Sec.)		& 5.5 (2.5 Sec.) \\
 \end{tabular}
 \end{footnotesize}
 \end{center}
@@ -1163,10 +1053,10 @@ FIIT (XML)				& 0.22 				& 25 				& 3 (4 Sec.) 		& 4 (5 Sec.) \\
     \frametitle{Coordination Beliefs (Global Ball Position)}
   \begin{figure}[h!]
 \centering
-  \includegraphics[height=3cm,width=3cm]{Chapter5/figures/BallObs1.png}\quad	
-  \includegraphics[height=3cm,width=3cm]{Chapter5/figures/BallObs2.png}\\ \vspace{0.2cm}
-  \includegraphics[height=3cm,width=3cm]{Chapter5/figures/BallObs3.png}\quad		
-  \includegraphics[height=3cm,width=3cm]{Chapter5/figures/BallObs4.png}
+  \includegraphics[height=3.5cm,width=3.5cm]{Chapter5/figures/BallObs1.png}\quad	
+  \includegraphics[height=3.5cm,width=3.5cm]{Chapter5/figures/BallObs2.png}\\ \vspace{0.2cm}
+  \includegraphics[height=3.5cm,width=3.5cm]{Chapter5/figures/BallObs3.png}\quad		
+  \includegraphics[height=3.5cm,width=3.5cm]{Chapter5/figures/BallObs4.png}
   
 \end{figure}
   }
@@ -1279,11 +1169,11 @@ FIIT (XML)				& 0.22 				& 25 				& 3 (4 Sec.) 		& 4 (5 Sec.) \\
 \begin{center}
 \begin{tabular}{l*{6}{c}r}
 Team              	& P & W & D & L & F  & A & Pts \\ \hline
-\textbf{AST3D} 		& \textbf{8} & \textbf{2} & \textbf{6} & \textbf{0} & \textbf{ 2} & \textbf{0} &  \textbf{12}  \\
+Kouretes3D 		& \textbf{8} & \textbf{2} & \textbf{6} & \textbf{0} & \textbf{ 2} & \textbf{0} &  \textbf{12}  \\
 NomoFC            	& 2 & 0 & 1 & 1 &  0 & 1 &  1  \\
 L3M-SIM     		& 2 & 0 & 1 & 1 &  0 & 1 &  1  \\
 Rail     		    & 2 & 0 & 2 & 0 &  0 & 0 &  2  \\
-farzanegan     		& 2 & 0 & 2 & 0 &  0 & 0 &  2  \\
+Farzanegan     		& 2 & 0 & 2 & 0 &  0 & 0 &  2  \\
 \end{tabular}
 \end{center}
 \end{table}
@@ -1294,12 +1184,12 @@ farzanegan     		& 2 & 0 & 2 & 0 &  0 & 0 &  2  \\
   \frame
   {
     \frametitle{Future Work} 
-\begin{itemize}[<+->]
-\item Probabilistic localization system
-\item Dynamic Omni-Directional locomotiom
-\item Passing
-\item Participation in Robocup
-\end{itemize}
+	\begin{itemize}
+	\item Probabilistic localization system
+	\item Dynamic omni-directional locomotiom
+	\item Passing
+	\item Participation in Robocup
+	\end{itemize}
 
 
   }
