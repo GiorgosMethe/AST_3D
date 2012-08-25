@@ -1,12 +1,12 @@
-\beamer@endinputifotherversion {3.07pt}
+\beamer@endinputifotherversion {3.10pt}
 \select@language {greek}
 \select@language {english}
 \beamer@sectionintoc {1}{RoboCup}{4}{0}{1}
 \beamer@sectionintoc {2}{3D Simulation League}{11}{0}{2}
 \beamer@sectionintoc {3}{Player Skills}{18}{0}{3}
-\beamer@sectionintoc {4}{Team Coordination}{38}{0}{4}
-\beamer@sectionintoc {5}{Results}{64}{0}{5}
-\beamer@sectionintoc {6}{Conclusion}{76}{0}{6}
+\beamer@sectionintoc {4}{Team Coordination}{37}{0}{4}
+\beamer@sectionintoc {5}{Results}{68}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{80}{0}{6}
 \select@language {greek}
 \select@language {english}
 \select@language {greek}

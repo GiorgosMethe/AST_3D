@@ -129,7 +129,7 @@ Professor Minos Garofalakis
   \frame
   {
     \frametitle{Robocup Soccer Competition}
-    Small-Size
+    Small-Size League
 \begin{figure}[t!]
 \centering
   \includegraphics[trim= 0cm 10cm 0cm 5cm, clip, width=0.6\textwidth]{Chapter1/figures/SmallSize.jpg}
@@ -142,7 +142,7 @@ Professor Minos Garofalakis
   \frame
   {
     \frametitle{Robocup Soccer Competition}
-    Middle-Size
+    Middle-Size League
 \begin{figure}[t!]
 \centering
   \includegraphics[trim= 0cm 0cm 0cm 0cm, clip, width=0.6\textwidth]{Chapter1/figures/middleSize.jpg}
@@ -292,13 +292,12 @@ Professor Minos Garofalakis
   \begin{frame}[fragile]
   \frametitle{Perception}
   \begin{itemize}
-	\item Different from real robot soccer games.
-    \item No raw data from sensors
-    \item Processed data
-    \item Sense Messages
-    \item Agents update their beliefs and store sensors' data parsing these messages.
+	\item Different from real robot soccer games
+    \item Processed but noisy data from sensors
+    \item Perceptor Messages
+    \item Agents update their beliefs by parsing these messages.
  	\end{itemize}
-  \begin{tiny}
+  \begin{scriptsize}
   \begin{verbatim}(time (now 46.20))(GS (t 0.00) (pm BeforeKickOff))(GYR (n torso)
 (rt 0.00 0.00 0.00))(ACC (n torso) (a 0.00 -0.00 9.81))(HJ (n hj
 1)(ax 0.00))(HJ (n hj2) (ax 0.01))(See (G2R (pol 14.83 -11.81 1.
@@ -311,7 +310,7 @@ pol 0.19 34.94-21.49)))(L (pol 8.01 -60.03 -3.87) (pol 6.42 51.1
 ) (ax -0.01))(HJ (n raj2) (ax -0.00))(HJ (n raj3)(ax -0.00))(HJ(
 n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   \end{verbatim}
-  \end{tiny}
+  \end{scriptsize}
 \end{frame}
 
 
@@ -335,7 +334,7 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   
   \frame
   {
-    \frametitle{Self-Localization}
+    \frametitle{Self Localization}
 	\begin{figure}
 	\centering
   	\includegraphics[width=0.8\textwidth]{Chapter3/figures/Localization.pdf}
@@ -345,7 +344,7 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   
   \frame
   {
-    \frametitle{Object-Localization}
+    \frametitle{Object Localization}
 	\begin{figure}[t!]
 	\centering
   \includegraphics[width=0.8\textwidth]{Chapter3/figures/LocalizationResults.pdf}
@@ -358,12 +357,12 @@ n raj4) (ax 0.00))(HJ (n laj1) (ax 0.01))(HJ (n laj2) (ax 0.00)) ...
   \frame
   {
     \frametitle{Localization Filtering}
-    Why a filtering is needed?
+    Why is filtering needed?
 	\begin{itemize}
-	\item Absences of observations from self-localization.
-	\item Noisy observations.   
+	\item Temporary loss of observations
+	\item Noisy observations   
 	\end{itemize}
-	Filtering is applicable for ball and self localization.
+	Filtering is applied to ball and self localization.
    
    \begin{algorithm}[H]
 \caption{Localization Filtering}
@@ -410,10 +409,13 @@ joints.
     \frametitle{Motion and Movement}
 	\begin{itemize}
 	\item A motion is commonly defined as a sequence of timed joint poses.
-	\item A pose is a set of values for every joint in the robot's body or in a specific kinematic chain at a given time.
-	 \[
-	Pose(t)= \lbrace J_{1}(t), J_{2}(t), \ldots ,J_{n}(t) \rbrace
-	\]  
+	\item A pose is a set of values for a set of joints at a given time.
+	\begin{align*}
+	Pose(t) &= \lbrace J_{1}(t), J_{2}(t), \ldots ,J_{n}(t) \rbrace \\
+	Pose(t+1) &= \lbrace J_{1}(t+1), J_{2}(t+1), \ldots ,J_{n}(t+1) \rbrace \\
+	Pose(t+2) &= \lbrace J_{1}(t+2), J_{2}(t+2), \ldots ,J_{n}(t+2) \rbrace \\
+	\ldots
+	\end{align*} 
 	\end{itemize} 
   }
   
@@ -460,9 +462,9 @@ joints.
   {
     \frametitle{XML-Based Motion Controller}	
 	\begin{itemize}
-	\item Responsible for generating motions.
-	\item Velocity computation is required.
-	\item This velocity is computed as follows:
+	\item Responsible for executing motions.
+	\item Velocity values are required for control.
+	\item This velocity is computed at the beginning of each phase:
 	\[
 Joint Velocity = \cfrac{Desired Joint Value - Current Joint Value}{PhaseDuration}
 \]
@@ -474,7 +476,7 @@ Joint Velocity = \cfrac{Desired Joint Value - Current Joint Value}{PhaseDuration
    
  \begin{frame}[fragile]
   \frametitle{Text-Based Motion Files}
-  \begin{tiny}
+  \begin{scriptsize}
   \begin{verbatim}#WEBOTS_MOTION,V1.0
 LHipYawPitch,LHipRoll,LHipPitch,LKneePitch,LAnklePitch,...
 00:00:000,Pose1,0,-0.012,-0.525,1.05,-0.525,0.012,0,...
@@ -482,7 +484,7 @@ LHipYawPitch,LHipRoll,LHipPitch,LKneePitch,LAnklePitch,...
 00:00:080,Pose3,0,-0.009,-0.525,1.05,-0.525,0.009,0,...
 00:00:120,Pose4,0,-0.007,-0.525,1.05,-0.525,0.007,0,...
 \end{verbatim}
-  \end{tiny}
+  \end{scriptsize}
   
   Parameters that can be modified:
 \begin{itemize}
@@ -506,27 +508,18 @@ JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Durati
     \item Dynamic Turn
     \end{itemize}
 
-    \begin{figure}
-	\centering
- 	 \includegraphics[width=0.5\textwidth]{Chapter3/figures/DynamicTurn.pdf}
-	\end{figure}
+    
+
+ 	 \putat{140}{-100}{\includegraphics[width=0.5\textwidth]{Chapter3/figures/DynamicTurn.pdf}}
+
+ 	 \putat{140}{30}{\includegraphics[height=4cm]{Chapter3/figures/leanLeft.png}\quad
+  	\includegraphics[height=4cm]{Chapter3/figures/leanRight.png}}
+
 	
-	\begin{description}
-	\item[X-Axis] Gain factor
-	\item[Y-Axis] Agent turn
-	\end{description}	    
+
+	    
   }
   
-  \frame
-  {
-
-\frametitle{Walk Leaning (left and right)}
-  \begin{figure}[t!]
-\centering
-  \includegraphics[height=6cm]{Chapter3/figures/leanLeft.png}\quad
-  \includegraphics[height=6cm]{Chapter3/figures/leanRight.png}
-\end{figure}
-  }
   
   \subsection*{Actions}
   \begin{frame}
@@ -539,7 +532,7 @@ JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Durati
     \item Pan Head
     \item Track Object
     \item Track Moving Object
-    \item Find Opponent¢s Goals
+    \item Find Opponent's Goals
 	\item Look For Ball
 	\item Turn To Ball
 	\item Turn To Localize
@@ -556,11 +549,27 @@ JointVelocity_i = \cfrac {Desired Joint Value_i - Current Joint Value_i} {Durati
 have a more complicated structure and aim to achieve specific goals.
 
     \begin{itemize}
+    \item Walk To Ball 
     \item On Ball Action
+    \item Avoid Obstacles
+    \item Walk To Coordinate
     \item Walk To Direction
     \item Dribble Ball To Direction 
     	
     \end{itemize}
+
+  \end{frame}
+  
+  
+  \begin{frame}
+    \frametitle{Complex Actions}
+    \begin{itemize}			
+    \item Walk to Ball  
+\begin{figure}[H]
+\centering
+  \includegraphics[trim=0cm 4cm 3cm 4cm,clip,width=0.8\textwidth]{Chapter3/figures/2dkinematics.pdf}
+\end{figure}
+\end{itemize}
 
   \end{frame}
 
@@ -576,17 +585,6 @@ have a more complicated structure and aim to achieve specific goals.
 
   \end{frame}
 
-\begin{frame}
-    \frametitle{Complex Actions}
-    \begin{itemize}			
-    \item Walk to Ball  
-\begin{figure}[H]
-\centering
-  \includegraphics[trim=0cm 4cm 3cm 4cm,clip,width=0.8\textwidth]{Chapter3/figures/2dkinematics.pdf}
-\end{figure}
-\end{itemize}
-
-  \end{frame}
 
   \begin{frame}
     \frametitle{Complex Actions}
@@ -607,21 +605,21 @@ have a more complicated structure and aim to achieve specific goals.
 \begin{frame}
 
     \frametitle{Communication}
-    Restrictions:  
+    \textbf{Restrictions} 
   \begin{itemize}     
     \item Maximum distance of 50 meters.   
     \item Maximum length of 20 ASCII characters.
     \item Only one message can be heard at any given time.
     \item Messages from the same team can be heard only every other cycle.
     \end{itemize}
-    Protocol: 
+    \textbf{Protocol}
     \begin{itemize}        
     \item Time slices, with integer labels indicate uniform numbers.
     \begin{figure}[H]
 \centering
   \includegraphics[width=0.5\textwidth]{Chapter3/figures/MAC.pdf}
 \end{figure}   
-    \item This label starts at $1$ and grows by $1$ every time a player sends a message.
+    \item The label starts at $1$ and grows by $1$ every time a player sends a message.
     \item Every player can ``hear'' all his teammates every 540ms (9 players) and 660ms (11 players).
     \end{itemize}
 
@@ -664,10 +662,10 @@ have a more complicated structure and aim to achieve specific goals.
 		\item \textit{Active}: three players, the ones closest to the ball
 		\item \textit{Support}: all remaining players
 	 \end{itemize}
- 	 \item Determine Active Positions
- 	 \item Coordinate Active Players
- 	 \item Generate Team Formation
+	 \item Generate Team Formation
  	 \item Assign Team Roles
+ 	 \item Determine Active Positions
+ 	 \item Coordinate Active Players	 
  	 \item Determine Support Positions
  	 \item Coordinate Support Players
  	 \end{itemize}	 
@@ -752,10 +750,10 @@ Coordination is not a static procedure and may change dynamically during differe
 
 \begin{frame}
  	 \frametitle{Estimated Ball Position}
-	 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.4\textwidth]{Chapter4/figures/Ball.pdf}
-\end{figure}
+  \includegraphics[width=0.5\textwidth]{Chapter4/figures/Ball.pdf}
+  
+  \vspace{-0.5cm}
 \begin{align*}
 w(s_i) &= |s_i|^3\\
 {\bf Global Ball Belief} &= \sum_{i=1}^m \frac {w(s_i)} {\sum_{k=1}^m w(s_k)} \sum_{o_{ij} \in s_i} \cfrac{o_{ij}}{|s_i|}
@@ -767,10 +765,10 @@ w(s_i) &= |s_i|^3\\
   \subsection*{Team Formation}
   \begin{frame}
   \frametitle{Generation of Team Formation}
-   Team formation is dynamically generated according to the position of the ball.
+   Team formation is dynamically generated based on the position of the ball.
   \begin{itemize}
- 	 \item 9 Players Version.
- 	 \item 11 Players Version. 	 
+ 	 \item 9 Players Version
+ 	 \item 11 Players Version 	 
   \end{itemize}
   \begin{figure}[t!]
 \centering
@@ -794,9 +792,9 @@ w(s_i) &= |s_i|^3\\
 \subsection*{Determination of Coordination Subsets}
 \begin{frame}
 \begin{itemize}
-\item Same number of positions, agents.
- 	 \item Computationally expensive problem.
- 	 \item Exhaustive algorithm, in a worst case scenario,between 40320 and 3628800 possible mappings.
+\item Same number of positions and agents
+ 	 \item Computationally expensive problem
+ 	 \item Exhaustive algorithm (worst case): 40320 - 3628800 mappings
 \end{itemize}
  	 \frametitle{Coordination Splitter}
  	 \begin{figure}[t!]
@@ -806,20 +804,65 @@ w(s_i) &= |s_i|^3\\
 \end{frame}
 
 
+\subsection*{Team Roles Assignment}
+  \begin{frame}
+ 	 \frametitle{Team Roles Assignment}
+ 	 \begin{itemize}
+ 	 \item Assigns roles to all agents.
+ 	 \item Roles close to ball, active players.
+ 	 \item Remaining roles will be assigned to support players.
+ 	 \item Inactive agents.
+ 	 \item Same number of roles will be discarded.
+ 	 \end{itemize}
+
+ \end{frame}
+  
+  \begin{frame}
+ 	 \frametitle{Team Roles Assignment Example 1}
+ 	 \begin{figure}[t!]
+\centering
+  \includegraphics[width=0.6\textwidth]{Chapter4/figures/RoleAss.pdf}
+\end{figure}
+  \end{frame}
+  
+  \begin{frame}
+ 	 \frametitle{Team Roles Assignment Example 2}
+ 	 \begin{figure}[t!]
+\centering
+  \includegraphics[width=0.6\textwidth]{Chapter4/figures/SupportPos.pdf}
+\end{figure}
+  \end{frame}
+
+
+\subsection*{Coordination}
+
+\begin{frame}
+\frametitle{Coordination}
+\begin{itemize}
+\item Active Players (up to 3): exhaustive optimal algorithm
+\item Support Players (up to 8 or 10): dynamic programming algorithm
+\item Goalkeeper: own behavior
+\item Inactive Players: fixed predefined action
+\end{itemize}
+\end{frame}
+
+
+
+
 \subsection*{Active Players Coordination}
 \begin{frame}
  	 \frametitle{Determination of Active Positions}
  	 
  	 \begin{itemize}
- 	 \item Dynamic production of active positions.	 	 
+ 	 \item Dynamic generation of active positions	 	 
  	 \begin{figure}[t!]
 \centering
   \includegraphics[height=2.5cm, width=3cm, clip, trim=0cm 10cm 20cm 0cm]{Chapter4/figures/ActiveBefore(-8,6).png} \quad	
   \includegraphics[height=2.5cm, width=3cm, clip, trim=20cm 10cm 0cm 0cm]{Chapter4/figures/ActiveBefore(8,6).png}
 \end{figure}
 
-\item Positions elimination making use of their utility field value.
-\item Max number of 9 positions.
+\item Position elimination using the field utility value
+\item Up to 9 candidate positions
 \begin{figure}[t!]
 \centering
   \includegraphics[height=2.5cm, width=3cm, clip, trim=0cm 10cm 20cm 0cm]{Chapter4/figures/ActiveAfter(-8,6).png} \quad	
@@ -873,45 +916,103 @@ Where $(w_d,w_c,w_u,w_t,w_h)$ are the weights of the features, currently set at 
 \end{figure}
 \end{frame}
   
+  \begin{frame}
+ 	 \frametitle{Active Players Optimal Mapping}
 
-\subsection*{Team Roles Assignment}
-  \begin{frame}
- 	 \frametitle{Team Roles Assignment}
- 	 \begin{itemize}
- 	 \item Assigns roles to all agents.
- 	 \item Roles close to ball, active players.
- 	 \item Remaining roles will be assigned to support players.
- 	 \item Inactive agents.
- 	 \item Same number of roles will be discarded.
- 	 \end{itemize}
+  \begin{algorithm}[H]
+\caption{Active Players Optimal Mapping}
+\begin{algorithmic}[1]
+\begin{small}
+\STATE {\bf Input: }$ActivePlayers = ActiveSubset - OnBallPlayer = \{Agent_1,Agent_2\}$
+\STATE {\bf Input: }$ActivePositions = \lbrace P_{1},P_{2},...,P_{N} \rbrace, N\leq 9 $
+\STATE {\bf Output: } $Optimal Active Mapping$
+\STATE 
+\STATE $OptimalActiveMappingCost = +\infty$
+\FOR{{\bf each} $(P_i,P_j) \in ActivePositions \times ActivePositions, i\neq j$}
+\STATE $ActiveMapping = \{Agent_1 \leftarrow P_i,\ Agent_2 \leftarrow P_j,\ OnBallPlayer \leftarrow Ball\}$
+\STATE $ActiveMappingCost = ActiveCost(ActiveMapping)$
+\IF{$ActiveMappingCost < OptimalActiveMappingCost$}
+\STATE $OptimalActiveMapping = ActiveMapping$
+\STATE $OptimalActiveMappingCost = ActiveMappingCost$
+\ENDIF
+\ENDFOR
+\RETURN $OptimalActiveMapping$
+\end{small}
+\end{algorithmic}
+\end{algorithm}
 
- \end{frame}
-  
-  \begin{frame}
- 	 \frametitle{Team Roles Assignment Example 1}
- 	 \begin{figure}[t!]
-\centering
-  \includegraphics[width=0.6\textwidth]{Chapter4/figures/RoleAss.pdf}
-\end{figure}
-  \end{frame}
-  
-  \begin{frame}
- 	 \frametitle{Team Roles Assignment Example 2}
- 	 \begin{figure}[t!]
-\centering
-  \includegraphics[width=0.6\textwidth]{Chapter4/figures/SupportPos.pdf}
-\end{figure}
-  \end{frame}
-  
-  
+\end{frame}
+
   \subsection*{Support Players Coordination} 
+  
+  
   \begin{frame}
- 	 \frametitle{Dynamic Algorithm}
+ 	 \frametitle{Support Players Coordination}
  	 \begin{itemize}
- 	 \item Given the difficulties of applying the exhaustive algorithm.
+ 	  	 \item Set of $\leq$ 8 or 10 positions.
+ 	 \item Set of $\leq$ 8 or 10 agents.
+ 	 \item Dynamic programming algorithm.
  	 \item A method proposed by the UT Austin Villa team.
- 	 \item Able to compute an approximately optimal solution.
+ 	 \item Able to compute an approximately optimal solution.	
+ 	 \item A subset of mappings is checked.
+  	 \item Cost function to determine which one is good.
+ 	 \end{itemize}
  	 
+\end{frame}
+
+  
+\begin{frame}
+ 	 \frametitle{Support Coordination Evaluation Function}
+The evaluation function scores each possible mapping using the following features defined for each agent $i$: 
+\begin{enumerate}
+\item \textbf{Distance} $C_{d,i}$
+\item \textbf{Potential Collisions} $C_{c,i}$
+\end{enumerate}
+\begin{small}
+\begin{align*}
+ActiveCost(ActiveMapping) &= \sum_{i=1}^3 w_dC_{d,i}+w_cC_{c,i}
+\end{align*}
+\end{small}
+Where $(w_d,w_c)$ are the weights of the features, currently set at $(1,1)$.
+\end{frame}  
+  
+  
+  \begin{frame}
+ 	 \frametitle{Support Players Mapping}
+
+  \begin{algorithm}[H]
+\caption{Support Players Mapping}
+\begin{algorithmic}[1]
+\begin{scriptsize}
+\STATE {\bf Input: }$SupportPlayers = \lbrace A_{1},A_{2},...,A_{n} \rbrace $, $SupportPositions = \lbrace P_{1},P_{2},...,P_{n} \rbrace $
+\STATE {\bf Input: }$OAM=Optimal Active Mapping$
+\STATE {\bf Output: }$BestSupport Mapping$
+\STATE
+\STATE $BestSupportMapping[s] = \emptyset$, where $s \subseteq SupportPlayers$
+\STATE $BestSupportMappingCost[s] = +\infty$, where $s \subseteq SupportPlayers$
+\FOR{$k = 1 \to n$} 
+\FOR{{\bf each} $\alpha$ in $SupportPlayers$}
+\STATE $ S = {{n-1}\choose{k-1}} $ sets of $k-1$ agents from $SupportPlayers - \lbrace \alpha \rbrace$
+\FOR{{\bf each} $s$ in $S$}
+\STATE $SupportMapping = \{\alpha \leftarrow P_{k}\} \cup BestSupportMapping[s]$
+\STATE $SupportMappingCost = SupportCost(SupportMapping,OAM)$
+\IF{$SupportMappingCost < BestSupportMappingCost[\{\alpha\} \cup s]$}
+\STATE $BestSupportMapping[\{\alpha\} \cup s] = SupportMapping$
+\STATE $BestSupportMappingCost[\{\alpha\} \cup s] = SupportMappingCost$
+\ENDIF
+\ENDFOR
+\ENDFOR
+\ENDFOR
+\RETURN $BestSupportMapping[SupportPlayers]$
+\end{scriptsize}
+\end{algorithmic}
+\end{algorithm}
+
+\end{frame}
+  
+  \begin{frame}
+ 	 \frametitle{Support Coordination Example}
+
  	   	\begin{table}[t!]
 \begin{center}
 \begin{tiny}
@@ -929,7 +1030,7 @@ $\lbrace A_{3} \leftarrow P_{1}\rbrace$  & $\lbrace A_{2} \leftarrow P_{2}\rbrac
 \end{tiny}
 \end{center}	
 \end{table}
-  	\end{itemize}
+  	
   \end{frame}
   
   
@@ -1012,7 +1113,7 @@ n \sum_{k=1}^n {{n-1}\choose{k-1}} = n \sum_{k=0}^{n-1}{{n-1}\choose{k}} = n 2^{
 \midrule
 Webots (Text-Based) 	& 0.11 				& 21 				& 3 				& - \\
 FIIT (XML)				& 0.22 				& 25 				& 3 (4 Sec.) 		& 4 (5 Sec.) \\
-Kouretes3D 				& 0.45 				& 30 				& 3 (2.5 Sec.)		& 5.5 (2.5 Sec.) \\
+\textbf{Kouretes3D} 				& \textbf{0.45} 				& \textbf{30} 				& \textbf{3 (2.5 Sec.)}		& \textbf{5.5 (2.5 Sec.)} \\
 \end{tabular}
 \end{footnotesize}
 \end{center}
@@ -1072,17 +1173,17 @@ Kouretes3D 				& 0.45 				& 30 				& 3 (2.5 Sec.)		& 5.5 (2.5 Sec.) \\
 \end{figure}
 
  }
-  
-   \frame
+ 
+    \frame
   {
-    \frametitle{Formation Consistency}
+    \frametitle{Offensive Positioning 2}
 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.8\textwidth]{Chapter5/figures/4.pdf}
+  \includegraphics[width=0.8\textwidth]{Chapter5/figures/5.pdf}
 \end{figure}
 
-  }  
- 
+  } 
+  
   \frame
   {
     \frametitle{Defensive Positioning 1}
@@ -1103,16 +1204,16 @@ Kouretes3D 				& 0.45 				& 30 				& 3 (2.5 Sec.)		& 5.5 (2.5 Sec.) \\
 
   }
   
-  
-   \frame
+     \frame
   {
-    \frametitle{Offensive Positioning 2}
+    \frametitle{Formation Consistency}
 \begin{figure}[t!]
 \centering
-  \includegraphics[width=0.8\textwidth]{Chapter5/figures/5.pdf}
+  \includegraphics[width=0.8\textwidth]{Chapter5/figures/4.pdf}
 \end{figure}
 
-  }  
+  } 
+ 
 
   \subsection*{GoalKeeper}
   \frame
