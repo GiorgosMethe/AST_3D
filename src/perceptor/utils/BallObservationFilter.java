@@ -16,8 +16,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
 
-import coordination.communication.message.CoordinationMessage;
-
 import perceptor.localization.Coordinate;
 import perceptor.localization.TriangleLocalization;
 
@@ -26,11 +24,12 @@ public class BallObservationFilter {
 	public static Vector<BallObservationSamples> BallSampleVector = new Vector<BallObservationSamples>();
 
 	public static void AddSample(Coordinate sample) {
-		
+
 		final Comparator<BallObservationSamples> NEGATIVE_ORDER = new Comparator<BallObservationSamples>() {
 
 			@Override
-			public int compare(BallObservationSamples e1, BallObservationSamples e2) {
+			public int compare(BallObservationSamples e1,
+					BallObservationSamples e2) {
 				boolean Cmp = e2.getSamplesNum() <= (e1.getSamplesNum());
 				if (Cmp != true) {
 					return 1;
@@ -39,7 +38,6 @@ public class BallObservationFilter {
 				}
 			}
 		};
-		
 
 		if (BallSampleVector.size() == 0) {
 
@@ -47,11 +45,11 @@ public class BallObservationFilter {
 					sample, 0.0f, 1));
 
 		} else {
-			
-			if(BallSampleVector.size()>1){
-				
+
+			if (BallSampleVector.size() > 1) {
+
 				Collections.sort(BallSampleVector, NEGATIVE_ORDER);
-				
+
 			}
 
 			boolean flag = false;
@@ -107,10 +105,14 @@ public class BallObservationFilter {
 		for (int i = 0; i < BallSampleVector.size(); i++) {
 
 			Coordinate WeightedAvg = new Coordinate(
-					((BallSampleVector.elementAt(i).getSumOfObservations().getX()/BallSampleVector.elementAt(i).getSamplesNum())
+					((BallSampleVector.elementAt(i).getSumOfObservations()
+							.getX() / BallSampleVector.elementAt(i)
+							.getSamplesNum())
 							* Math.pow(BallSampleVector.elementAt(i)
 									.getSamplesNum(), 3) / samples),
-									((BallSampleVector.elementAt(i).getSumOfObservations().getY()/BallSampleVector.elementAt(i).getSamplesNum())
+					((BallSampleVector.elementAt(i).getSumOfObservations()
+							.getY() / BallSampleVector.elementAt(i)
+							.getSamplesNum())
 							* Math.pow(BallSampleVector.elementAt(i)
 									.getSamplesNum(), 3) / samples));
 
