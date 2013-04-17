@@ -28,6 +28,6 @@ Kill team:
 
 *************************************************************************************
 *XML Motion files were created by FIIT RoboCup 3D team.
-*Classic Motion files from WEBOTS SoccerStadium simulator and from TUC's Kuretes SPL team.
+*Classic Motion files from WEBOTS SoccerStadium simulator and from TUC's Kouretes SPL team.
 *************************************************************************************
  
